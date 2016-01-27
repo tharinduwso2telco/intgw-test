@@ -181,7 +181,7 @@ public class APIHomeSteps extends BasicTestObject {
 	@Then("^I should see \"([^\"]*)\" message$")
 	public void i_should_see_message(String arg1) throws Throwable {
 		SubscriptionsPage subscroptionpage = new SubscriptionsPage(driver);
-		Assert.assertTrue("No subscription mismatched", subscroptionpage.validateNoSubscription(arg1));
+		Assert.assertTrue("No subscription mismatched", subscroptionpage.isNoSubscriptionMsg(arg1));
 	}
 	
 }

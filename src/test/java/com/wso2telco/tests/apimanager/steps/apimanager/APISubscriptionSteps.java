@@ -14,7 +14,7 @@ public class APISubscriptionSteps extends BasicTestObject {
 	@Then("^I should see \"([^\"]*)\" under Applications with Subscriptions$")
 	public void i_should_see_under_Applications_with_Subscriptions(String arg1) throws Throwable {
 	   SubscriptionsPage subpage = new SubscriptionsPage(driver);
-	   Assert.assertTrue("Apps with subscription did not load properly", subpage.validateAppsWithSubscriptions(arg1));  
+	   Assert.assertTrue("Apps with subscription did not load properly", subpage.isAppsWithSubscriptions(arg1));  
 	}
 
 	@When("^I enter token validity of production as \"([^\"]*)\"$")

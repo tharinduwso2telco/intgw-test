@@ -36,7 +36,7 @@ public class APIPublisherHome extends BasicTestObject {
 	@Then("^I should see apipublisher username \"([^\"]*)\" at the top right corner of the page$")
 	public void i_should_see_apipublisher_username_at_the_top_right_corner_of_the_page(String arg1) throws Throwable {
 		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
-		Assert.assertTrue("Incorrect user login", publisherHome.validateUserLogin(arg1));
+		Assert.assertTrue("Incorrect user login", publisherHome.isUserLogin(arg1));
 	}
 
 	@When("^I click on apipublisher Add link$")
@@ -210,19 +210,19 @@ public class APIPublisherHome extends BasicTestObject {
 	@Then("^I should see apipublisher production URL as \"([^\"]*)\"$")
 	public void i_should_see_apipublisher_production_URL_as(String arg1) throws Throwable {
 		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
-		Assert.assertTrue("Production URL mismatched", publisherHome.validateProdUrl(arg1));
+		Assert.assertTrue("Production URL mismatched", publisherHome.isProductionUrl(arg1));
 	}
 	
 	@Then("^I should see apipublisher sandbox URL as \"([^\"]*)\"$")
 	public void i_should_see_apipublisher_sandbox_URL_as(String arg1) throws Throwable {
 		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
-		Assert.assertTrue("Production URL mismatched", publisherHome.validateSandboxUrl(arg1));
+		Assert.assertTrue("Production URL mismatched", publisherHome.isSandboxUrl(arg1));
 	}
 	
 	@Then("^I should see apipublisher tier availability as \"([^\"]*)\"$")
 	public void i_should_see_apipublisher_tier_availability_as(String arg1) throws Throwable {
 		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
-		Assert.assertTrue("Production URL mismatched", publisherHome.validateTierAvailability(arg1));
+		Assert.assertTrue("Production URL mismatched", publisherHome.isTierAvailability(arg1));
 	}
 	
 	@When("^I provide  apipublisher Implement endpoint type as \"([^\"]*)\"$")
