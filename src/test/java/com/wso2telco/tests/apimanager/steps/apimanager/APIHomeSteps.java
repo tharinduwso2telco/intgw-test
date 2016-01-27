@@ -117,7 +117,7 @@ public class APIHomeSteps extends BasicTestObject {
 	public void i_should_see_apimanager_at_the_top_right_corner_of_the_page(String arg1) throws Throwable {
 	    LoginPage loginPage = new LoginPage(driver);
 	    Thread.sleep(10000);
-		Assert.assertTrue("User Name did not show properly", loginPage.validateUserName(arg1));
+		Assert.assertTrue("User Name did not show properly", loginPage.isUserName(arg1));
 	}
 
 	@When("^I click on arrow after the apimanager username$")
@@ -131,13 +131,13 @@ public class APIHomeSteps extends BasicTestObject {
 	    LoginPage loginPage = new LoginPage(driver);
 		loginPage.clickLogout();
 	}
-
-	@Then("^I should see the apimanager login and sign-up buttons at the top right corner of the page$")
-	public void i_should_see_the_apimanager_login_and_sign_up_buttons_at_the_top_right_corner_of_the_page() throws Throwable {
+	
+	@Then("^I should see the apimanager login as \"([^\"]*)\" and sign-up buttons as \"([^\"]*)\" at the top right corner of the page$")
+	public void i_should_see_the_apimanager_login_as_and_sign_up_buttons_as_at_the_top_right_corner_of_the_page(String arg1, String arg2) throws Throwable {
 	    LoginPage loginPage = new LoginPage(driver);
 	    Thread.sleep(10000);
-		Assert.assertTrue("Login button did not show properly", loginPage.validateLogin());
-		Assert.assertTrue("Sign up did not show properly", loginPage.validateSignUp());
+		Assert.assertTrue("Login button did not show properly", loginPage.isLogin(arg1));
+		Assert.assertTrue("Sign up did not show properly", loginPage.isSignUp(arg2));
 	}
 	
 	@When("^I click on apimanager APIs module$")
