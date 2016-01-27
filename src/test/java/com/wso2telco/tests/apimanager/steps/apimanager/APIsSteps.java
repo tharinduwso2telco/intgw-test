@@ -9,11 +9,11 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class APIsSteps extends BasicTestObject {
-	
-	@Then("^I should see the apimanager APIs page$")
-	public void i_should_see_the_apimanager_APIs_page() throws Throwable {
+
+	@Then("^I should see the apimanager APIs page header as \"([^\"]*)\"$")
+	public void i_should_see_the_apimanager_APIs_page_header_as(String arg1) throws Throwable {
 	    APIsPage apispage = new APIsPage(driver);
-	    apispage.isAPIPage();
+	    apispage.isAPIPage(arg1);
 	}
 	
 	@Then("^I should see apimanager \"([^\"]*)\" api from the left pane$")
