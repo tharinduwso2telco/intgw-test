@@ -12,15 +12,13 @@ public class APIManageSteps extends BasicTestObject {
 	
 	String winHandleBefore = driver.getWindowHandle();
 
-
-	@Then("^I should see the apimanager Manager page$")
-	public void i_should_see_the_apimanager_Manager_page() throws Throwable {
-		
+	@Then("^I should see the apimanager Manager page header as \"([^\"]*)\"$")
+	public void i_should_see_the_apimanager_Manager_page_header_as(String arg1) throws Throwable {
 		for(String winHandle : driver.getWindowHandles()){
 		    driver.switchTo().window(winHandle);
 		}
 		ManagerPage managerpage = new ManagerPage(driver);
-		Assert.assertTrue("Manager page did not load properly", managerpage.validateManagerPage());
+		Assert.assertTrue("Manager page did not load properly", managerpage.isManagerPage(arg1));
 	}
 
 	@When("^I enter apimanager Manager page \"([^\"]*)\" as user name and \"([^\"]*)\" as password$")
@@ -50,10 +48,10 @@ public class APIManageSteps extends BasicTestObject {
 		managerpage.clickLogin();
 	}
 
-	@Then("^I should see the apimanager Manager Home page$")
-	public void i_should_see_the_apimanager_Manager_Home_page() throws Throwable {
+	@Then("^I should see the apimanager Manager Home page header as \"([^\"]*)\"$")
+	public void i_should_see_the_apimanager_Manager_Home_page_header_as(String arg1) throws Throwable {
 		  ManagerPage managerpage = new ManagerPage(driver);
-		  Assert.assertTrue("Manager Home page did not load properly", managerpage.validateHomePage());
+		  Assert.assertTrue("Manager Home page did not load properly", managerpage.isHomePage(arg1));
 	}
 	
 	@When("^I click on apimanager Manager \"([^\"]*)\"$")
@@ -89,7 +87,7 @@ public class APIManageSteps extends BasicTestObject {
 	@Then("^I should see apimanager Manager Home and Billing tabs$")
 	public void I_should_see_apimanager_Manager_Home_and_Billing_tabs() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		Assert.assertTrue("System provide access to black list white list", managerpage.validateManageTabs());
+		Assert.assertTrue("System provide access to black list white list", managerpage.isManagerTwoTabsAccess());
 	}
 	
 	@When("^I close the browser and reopen the browsers and navigate to apimanager page$")
@@ -102,13 +100,13 @@ public class APIManageSteps extends BasicTestObject {
 	@Then("^I should see apimanager Manager Home Billing Workflow Blacklist Whitelist tabs$")
 	public void i_should_see_apimanager_Manager_Home_Billing_Workflow_Blacklist_Whitelist_tabs() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		Assert.assertTrue("All the tabs are not visible", managerpage.validateAllTabs());
+		Assert.assertTrue("All the tabs are not visible", managerpage.isAllTabsAccessible());
 	}
 	
 	@Then("^I should see apimanager Manager Home Billing Workflow$")
 	public void i_should_see_apimanager_Manager_Home_Billing_Workflow() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		Assert.assertTrue("3 Tabs are not visible", managerpage.validateThreeTabs());
+		Assert.assertTrue("3 Tabs are not visible", managerpage.isThreeTabs());
 	}
 	
 	@When("^I click on apimanager Manager page Workflow tab$")
@@ -120,7 +118,7 @@ public class APIManageSteps extends BasicTestObject {
 	@Then("^I should see apimanager Manager Approval Tasks page$")
 	public void i_should_see_apimanager_Manager_Approval_Tasks_page() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		Assert.assertTrue("Application creation link is not visible", managerpage.validateApllicationCreation());
+		Assert.assertTrue("Application creation link is not visible", managerpage.isApllicationCreation());
 	}
 	
 	@When("^I click on Application creation link$")
@@ -132,7 +130,7 @@ public class APIManageSteps extends BasicTestObject {
 	@Then("^I should see created application \"([^\"]*)\" at the top of the Approval Tasks table$")
 	public void i_should_see_created_application_at_the_top_of_the_Approval_Tasks_table(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		Assert.assertTrue("App name is not visible in the area", managerpage.validateAppName(arg1));
+		Assert.assertTrue("App name is not visible in the area", managerpage.isApplicationNameVisible(arg1));
 	}
 	
 	@When("^I click on Application Details drop box for \"([^\"]*)\" row$")
@@ -166,12 +164,6 @@ public class APIManageSteps extends BasicTestObject {
 		managerpage.clickComplete(arg2);
 	}
 	
-	@Then("^I should see Enter aprrove/reject reasons pop up$")
-	public void i_should_see_Enter_aprrove_reject_reasons_pop_up() throws Throwable {
-		ManagerPage managerpage = new ManagerPage(driver);
-		Assert.assertTrue("Approve / Reject pop up did not load", managerpage.validateApproveReject());
-	}
-	
 	@When("^I enter aprrove/reject reason as \"([^\"]*)\"$")
 	public void i_enter_aprrove_reject_reason_as(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
@@ -187,7 +179,7 @@ public class APIManageSteps extends BasicTestObject {
 	@Then("^I should not see the created application in Approval Tasks table as \"([^\"]*)\"$")
 	public void i_should_not_see_the_created_application_in_Approval_Tasks_table_as(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		Assert.assertTrue("App name is visible after approving", managerpage.validateAppNameNOT(arg1));
+		Assert.assertTrue("App name is visible after approving", managerpage.isApplicationNameNotVisible(arg1));
 	}
 	
 	@When("^I click on subscriptions creation under tasks$")

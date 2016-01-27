@@ -38,7 +38,7 @@ When I click on apimanager My Applications
 Then I should see the apimanager Application page header as "Applications"
 When I click on apimanager My Subscriptions
 Then I should see the apimanager Subscriptions page header as "Subscriptions"
-When I click on apimanager Manage 
+When I click on apimanager Manage
 Then I should see the apimanager Manager page header as "Manager"
 When I enter apimanager Manager page "<username>" as user name and "<Password>" as password
 And I click on apimanager Manager page login button
