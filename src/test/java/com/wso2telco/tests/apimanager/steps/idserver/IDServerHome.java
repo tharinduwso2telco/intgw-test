@@ -34,11 +34,7 @@ public class IDServerHome extends BasicTestObject {
 		carbonLogin.clickCarbonLogin();
 	}
 
-	@Then("^I should see the ids Home page$")
-	public void i_should_see_the_ids_Home_page() throws Throwable {
-		CarbonHomePage carbonHome = new CarbonHomePage(driver);
-		Assert.assertTrue("Sign-out link is not displayed", carbonHome.validateSignout("Sign-Out"));
-	}
+	
 
 	@When("^I click on ids Configuration tab$")
 	public void i_click_on_ids_Configuration_tab() throws Throwable {
