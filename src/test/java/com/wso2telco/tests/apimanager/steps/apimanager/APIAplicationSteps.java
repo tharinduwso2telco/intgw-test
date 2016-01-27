@@ -9,17 +9,17 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class APIAplicationSteps extends BasicTestObject {
-
-	@Then("^I should see the apimanager Application page$")
-	public void i_should_see_the_apimanager_Application_page() throws Throwable {
-	    ApplicationsPage apppage = new ApplicationsPage(driver);
-	    apppage.validateApplicationPage();
-	}
 	
-	@Then("^I should see the apimanager Application page Add New Application form$")
-	public void i_should_see_the_apimanager_Application_page_Add_New_Application_form() throws Throwable {
+	@Then("^I should see the apimanager Application page header as \"([^\"]*)\"$")
+	public void i_should_see_the_apimanager_Application_page_header_as(String arg1) throws Throwable {
 	    ApplicationsPage apppage = new ApplicationsPage(driver);
-	    Assert.assertTrue("Application Form header mismatched", apppage.validateApplicationFormHeader());
+	    apppage.isApplicationPageHeader(arg1);
+	}
+
+	@Then("^I should see the apimanager Application page Add New Application form header as \"([^\"]*)\"$")
+	public void i_should_see_the_apimanager_Application_page_Add_New_Application_form_header_as(String arg1) throws Throwable {
+	    ApplicationsPage apppage = new ApplicationsPage(driver);
+	    Assert.assertTrue("Application Form header mismatched", apppage.isApplicationFormHeader(arg1));
 	}
 	
 	@When("^I enter \"([^\"]*)\" as Name \"([^\"]*)\" as Callback URL and \"([^\"]*)\" as Description$")
@@ -39,10 +39,10 @@ public class APIAplicationSteps extends BasicTestObject {
 	@Then("^I should see the added Application Name as \"([^\"]*)\" _ \"([^\"]*)\" Tier as \"([^\"]*)\" Status as \"([^\"]*)\" and Description as \"([^\"]*)\"$")
 	public void i_should_see_the_added_Application_Name_as___Tier_as_Status_as_and_Description_as(String arg1, String arg2, String arg3, String arg4, String arg5) throws Throwable {
 		ApplicationsPage apppage = new ApplicationsPage(driver);
-		Assert.assertTrue("Application name mismatched", apppage.validateApplicationName(arg1));
-		Assert.assertTrue("Application name mismatched", apppage.validateTeirname(arg2));
-		Assert.assertTrue("Application name mismatched", apppage.validateStatus(arg3));
-		Assert.assertTrue("Application name mismatched", apppage.validateCallbackurl(arg4));
+		Assert.assertTrue("Application name mismatched", apppage.isApplicationName(arg1));
+		Assert.assertTrue("Application name mismatched", apppage.isTeirname(arg2));
+		Assert.assertTrue("Application name mismatched", apppage.isApplicationStatus(arg3));
+		Assert.assertTrue("Application name mismatched", apppage.isCallbackurl(arg4));
 		Assert.assertTrue("Application name mismatched", apppage.validateDescription(arg5));
 	}
 
