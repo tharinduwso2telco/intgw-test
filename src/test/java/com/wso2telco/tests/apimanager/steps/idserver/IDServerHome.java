@@ -34,7 +34,11 @@ public class IDServerHome extends BasicTestObject {
 		carbonLogin.clickCarbonLogin();
 	}
 
-	
+	@Then("^I should see the ids Home page header as \"([^\"]*)\"$")
+	public void i_should_see_the_ids_Home_page_header_as(String arg1) throws Throwable {
+		CarbonHomePage carbonHome = new CarbonHomePage(driver);
+		Assert.assertTrue(carbonHome.isIDSHomeDisplayed(arg1));
+	}
 
 	@When("^I click on ids Configuration tab$")
 	public void i_click_on_ids_Configuration_tab() throws Throwable {
@@ -54,4 +58,21 @@ public class IDServerHome extends BasicTestObject {
 		carbonUserRolePage.clickUserRoles();
 	}
 
+	@When("^I click on ids Main tab$")
+	public void i_click_on_ids_Main_tab() throws Throwable {
+		CarbonHomePage carbonHome = new CarbonHomePage(driver);
+		carbonHome.clickMain();
+	}
+	
+	@Then("^I should see ids Main menu \"([^\"]*)\" as the first item$")
+	public void i_should_see_ids_Main_menu_as_the_first_item(String arg1) throws Throwable {
+		CarbonHomePage carbonHome = new CarbonHomePage(driver);
+		Assert.assertTrue(carbonHome.isMenuListDisplayed(arg1));
+	}
+	
+	@When("^I click on ids Main List link$")
+	public void i_click_on_ids_Main_List_link() throws Throwable {
+		CarbonHomePage carbonHome = new CarbonHomePage(driver);
+		carbonHome.clickList();
+	}
 }
