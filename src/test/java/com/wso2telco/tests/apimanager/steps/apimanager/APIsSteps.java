@@ -13,13 +13,13 @@ public class APIsSteps extends BasicTestObject {
 	@Then("^I should see the apimanager APIs page$")
 	public void i_should_see_the_apimanager_APIs_page() throws Throwable {
 	    APIsPage apispage = new APIsPage(driver);
-	    apispage.validateAPIsPage();
+	    apispage.isAPIPage();
 	}
 	
 	@Then("^I should see apimanager \"([^\"]*)\" api from the left pane$")
 	public void i_should_see_apimanager_api_from_the_left_pane(String arg1) throws Throwable {
 		APIsPage apispage = new APIsPage(driver);
-		Assert.assertTrue("API is not properly created", apispage.validateCreatedAPI(arg1));
+		Assert.assertTrue("API is not properly created", apispage.isCreatedAPI(arg1));
 	}
 	
 	@When("^I click on the apimanager \"([^\"]*)\" api$")
@@ -27,11 +27,11 @@ public class APIsSteps extends BasicTestObject {
 		APIsPage apispage = new APIsPage(driver);
 		apispage.clickCreatedAPI(arg1);
 	}
-	
+	//TODO
 	@Then("^I should see the apimanager APIs \"([^\"]*)\" status as published$")
 	public void i_should_see_the_apimanager_APIs_status_as_published(String arg1) throws Throwable {
 		APIsPage apispage = new APIsPage(driver);
-		Assert.assertTrue("API status is not published", apispage.validateApiStatus());
+		Assert.assertTrue("API status is not published", apispage.validateApiStatus(""));
 	}
 	
 	@When("^I click on Applications dropdown$")
@@ -69,11 +69,11 @@ public class APIsSteps extends BasicTestObject {
 		APIsPage apiPage = new APIsPage(driver);
 		apiPage.clickSubscribe();
 	}
-
+//TODO:
 	@Then("^I should see Subscription Successful pop up$")
 	public void i_should_see_Subscription_Successful_pop_up() throws Throwable {
 		APIsPage apiPage = new APIsPage(driver);
-		Assert.assertTrue("Subscription success popup is not loaded", apiPage.validateSubscriptionSuccessPopup());
+		Assert.assertTrue("Subscription success popup is not loaded", apiPage.validateSubscriptionSuccessPopup(""));
 	}
 
 	@When("^I click Go to My Subscription button$")

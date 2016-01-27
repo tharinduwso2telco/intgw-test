@@ -52,13 +52,13 @@ When I click on close window
 And I click on apimanager APIs module
 Then I should see the apimanager APIs page 
 When I click on the apimanager "<apiName>" api
-Then I should see the apimanager APIs "<apiName>" status as published
+Then I should see the apimanager APIs "<apiName>" status as "Published"
 When I click on Applications dropdown
 Then I should see "<AppName>" Application
 When I select "<AppName>"
 And I select "<operator>"
 And I click apimanager "<APIName>" API page subscribe button
-Then I should see Subscription Successful pop up
+Then I should see "Subscription Successful" on Subscription Successful pop up
 When I click Go to My Subscription button
 Then I should see the apimanager Subscriptions page
 And I should see "<AppName>" under Applications with Subscriptions
