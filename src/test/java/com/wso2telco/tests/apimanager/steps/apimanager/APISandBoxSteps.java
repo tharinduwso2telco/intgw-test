@@ -10,13 +10,13 @@ import cucumber.api.java.en.When;
 
 public class APISandBoxSteps extends BasicTestObject {
 
-	@Then("^I should see the Login in apimanager Sandbox page$")
-	public void i_should_see_the_Login_in_apimanager_Sandbox_page() throws Throwable {
+	@Then("^I should see the Login in apimanager Sandbox page header as \"([^\"]*)\"$")
+	public void i_should_see_the_Login_in_apimanager_Sandbox_page_header_as(String arg1) throws Throwable {
 		for(String winHandle : driver.getWindowHandles()){
 		    driver.switchTo().window(winHandle);
 		}
 		SandBoxPage sandbox = new SandBoxPage(driver);
-	    Assert.assertTrue("Sandbox page did not load properly", sandbox.validateLoginPage());
+	    Assert.assertTrue("Sandbox page did not load properly", sandbox.isSandboxLoginPage(arg1));
 	}
 
 	@When("^I enter apimanager Sandbox page \"([^\"]*)\" as user name and \"([^\"]*)\" as password$")
@@ -33,11 +33,11 @@ public class APISandBoxSteps extends BasicTestObject {
 		Thread.sleep(10000);
 	}
 
-	@Then("^I should see the apimanager sandbox index page$")
-	public void I_should_see_the_apimanager_sandbox_index_page() throws Throwable {
+	@Then("^I should see the apimanager sandbox index page header as \"([^\"]*)\"$")
+	public void i_should_see_the_apimanager_sandbox_index_page_header_as(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
 		Thread.sleep(10000);
-	    Assert.assertTrue("Sandbox Welcome page did not load properly", sandbox.validateWelcome());
+	    Assert.assertTrue("Sandbox Welcome page did not load properly", sandbox.isSandboxWelcome(arg1));
 	}
 
 	@When("^I click on apimanager Sandbox page \"([^\"]*)\"$")
