@@ -27,11 +27,11 @@ public class APIHomeSteps extends BasicTestObject {
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.clickSignUp();
 	}
-
-	@Then("^I should see the apimanager sign-up for a new account form$")
-	public void i_should_see_the_apimanager_sign_up_for_a_new_account_form() throws Throwable {
+	
+	@Then("^I should see the apimanager sign-up for a new account form as \"([^\"]*)\"$")
+	public void i_should_see_the_apimanager_sign_up_for_a_new_account_form_as(String arg1) throws Throwable {
 	    SignUpPage signupPage = new SignUpPage(driver);
-		Assert.assertTrue("Sign up page did not load properly", signupPage.isSignUpHeader(""));
+		Assert.assertTrue("Sign up page did not load properly", signupPage.isSignUpHeader(arg1));
 	}
 
 	@When("^I enter apimanager Sign-up for a new account username as \"([^\"]*)\"$")
