@@ -4,9 +4,6 @@ import org.junit.Assert;
 
 import com.wso2telco.apimanager.pageobjects.apihome.subscriptions.SubscriptionsPage;
 import com.wso2telco.tests.apimanager.base.BasicTestObject;
-
-
-
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
@@ -72,4 +69,24 @@ public class APISubscriptionSteps extends BasicTestObject {
 	}
 
 
+	@When("^I click regenerate under apimanager Subscriptions page production$")
+	public void i_click_regenerate_under_apimanager_Subscriptions_page_production() throws Throwable {
+		SubscriptionsPage subpage = new SubscriptionsPage(driver);
+		subpage.clickReGenProd();
+	}
+
+	@Then("^I should see \"([^\"]*)\" as Token Validity of production$")
+	public void i_should_see_as_Token_Validity_of_production(String arg1) throws Throwable {
+	    
+	}
+
+	@When("^I click regenerate under apimanager Subscriptions page sandbox$")
+	public void i_click_regenerate_under_apimanager_Subscriptions_page_sandbox() throws Throwable {
+	    
+	}
+
+	@Then("^I should see \"([^\"]*)\" as Token Validity of sandbox$")
+	public void i_should_see_as_Token_Validity_of_sandbox(String arg1) throws Throwable {
+	    
+	}
 }
