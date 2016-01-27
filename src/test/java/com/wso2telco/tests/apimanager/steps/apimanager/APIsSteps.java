@@ -13,13 +13,13 @@ public class APIsSteps extends BasicTestObject {
 	@Then("^I should see the apimanager APIs page$")
 	public void i_should_see_the_apimanager_APIs_page() throws Throwable {
 	    APIsPage apispage = new APIsPage(driver);
-	    apispage.validateAPIsPage();
+	    apispage.isAPIPage();
 	}
 	
 	@Then("^I should see apimanager \"([^\"]*)\" api from the left pane$")
 	public void i_should_see_apimanager_api_from_the_left_pane(String arg1) throws Throwable {
 		APIsPage apispage = new APIsPage(driver);
-		Assert.assertTrue("API is not properly created", apispage.validateCreatedAPI(arg1));
+		Assert.assertTrue("API is not properly created", apispage.isCreatedAPI(arg1));
 	}
 	
 	@When("^I click on the apimanager \"([^\"]*)\" api$")
@@ -27,11 +27,11 @@ public class APIsSteps extends BasicTestObject {
 		APIsPage apispage = new APIsPage(driver);
 		apispage.clickCreatedAPI(arg1);
 	}
-	
-	@Then("^I should see the apimanager APIs \"([^\"]*)\" status as published$")
-	public void i_should_see_the_apimanager_APIs_status_as_published(String arg1) throws Throwable {
+
+	@Then("^I should see the apimanager APIs \"([^\"]*)\" status as \"([^\"]*)\"$")
+	public void i_should_see_the_apimanager_APIs_status_as(String arg1, String arg2) throws Throwable {
 		APIsPage apispage = new APIsPage(driver);
-		Assert.assertTrue("API status is not published", apispage.validateApiStatus());
+		Assert.assertTrue("API status is not published", apispage.isAPIStatus(arg2));
 	}
 	
 	@When("^I click on Applications dropdown$")
@@ -43,13 +43,13 @@ public class APIsSteps extends BasicTestObject {
 	@Then("^I should not see \"([^\"]*)\" Application$")
 	public void i_should_not_see_Application(String arg1) throws Throwable {
 		APIsPage apiPage = new APIsPage(driver);
-		Assert.assertTrue("Application name is on the drop down", apiPage.validateAppName(arg1));
+		Assert.assertTrue("Application name is on the drop down", apiPage.isApplicationNameNotVisible(arg1));
 	}
 	
 	@Then("^I should see \"([^\"]*)\" Application$")
 	public void i_should_see_Application(String arg1) throws Throwable {
 		APIsPage apiPage = new APIsPage(driver);
-		Assert.assertTrue("Application name is not on the drop down", apiPage.validateAppNameInApplications(arg1));
+		Assert.assertTrue("Application name is not on the drop down", apiPage.isApplicationNameVisible(arg1));
 	}
 
 	@When("^I select \"([^\"]*)\"$")
@@ -70,10 +70,10 @@ public class APIsSteps extends BasicTestObject {
 		apiPage.clickSubscribe();
 	}
 
-	@Then("^I should see Subscription Successful pop up$")
-	public void i_should_see_Subscription_Successful_pop_up() throws Throwable {
+	@Then("^I should see \"([^\"]*)\" on Subscription Successful pop up$")
+	public void i_should_see_on_Subscription_Successful_pop_up(String arg1) throws Throwable {
 		APIsPage apiPage = new APIsPage(driver);
-		Assert.assertTrue("Subscription success popup is not loaded", apiPage.validateSubscriptionSuccessPopup());
+		Assert.assertTrue("Subscription success popup is not loaded", apiPage.isSubscriptionSuccessPopup(arg1));
 	}
 
 	@When("^I click Go to My Subscription button$")
