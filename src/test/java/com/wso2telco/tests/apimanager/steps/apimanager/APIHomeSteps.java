@@ -31,7 +31,7 @@ public class APIHomeSteps extends BasicTestObject {
 	@Then("^I should see the apimanager sign-up for a new account form$")
 	public void i_should_see_the_apimanager_sign_up_for_a_new_account_form() throws Throwable {
 	    SignUpPage signupPage = new SignUpPage(driver);
-		Assert.assertTrue("Sign up page did not load properly", signupPage.validateSignUpHeader());
+		Assert.assertTrue("Sign up page did not load properly", signupPage.isSignUpHeader(""));
 	}
 
 	@When("^I enter apimanager Sign-up for a new account username as \"([^\"]*)\"$")
@@ -79,7 +79,7 @@ public class APIHomeSteps extends BasicTestObject {
 	@Then("^I should see the apimanager Sign-up for a new account success pop up with \"([^\"]*)\"\\.$")
 	public void i_should_see_the_apimanager_Sign_up_for_a_new_account_success_pop_up_with(String arg1) throws Throwable {
 	    SignUpPage signupPage = new SignUpPage(driver);
-		Assert.assertTrue("Success message did not load properly", signupPage.validateSuccessMsg(arg1));
+		Assert.assertTrue("Success message did not load properly", signupPage.isUserSignupSuccessMsg(arg1));
 	}
 
 	@When("^I click on apimanager Sign-up for a new account success pop up ok button$")

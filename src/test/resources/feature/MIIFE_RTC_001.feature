@@ -4,7 +4,7 @@ Feature: Check if users can self register on the API Store
 Scenario Outline: Check if users can self register on the API Store
 Given I am in apimanager
 When I click on apimanager sign-up button
-Then I should see the apimanager sign-up for a new account form
+Then I should see the apimanager sign-up for a new account form as "Sign - Up for a New Account"
 When I enter apimanager Sign-up for a new account username as "<username>" 
 And I enter apimanager Sign-up for a new account Password as "<Password>"
 And I enter apimanager Sign-up for a new account Re-type password as "<RetypePword>"
