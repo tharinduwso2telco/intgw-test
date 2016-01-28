@@ -5,7 +5,7 @@ Scenario Outline: Check if the users can login to all the modules in API Manager
 Given I am in ids page
 When I enter ids username credentials
 And I click on ids sign in
-Then I should see the ids Home page header as "WSO2 API Manager Home"
+Then I should see the ids Home page header as "WSO2 Identity Server Home"
 When I click on ids Configuration tab
 Then I should see ids Configuration menu with first item as "Users and Roles"
 When I click on ids Configuration Users and Roles link
