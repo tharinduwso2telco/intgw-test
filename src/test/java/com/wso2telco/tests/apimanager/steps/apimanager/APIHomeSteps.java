@@ -86,12 +86,14 @@ public class APIHomeSteps extends BasicTestObject {
 	public void i_click_on_apimanager_Sign_up_for_a_new_account_success_pop_up_ok_button() throws Throwable {
 	    SignUpPage signupPage = new SignUpPage(driver);
 		signupPage.clickOk();
+		Thread.sleep(10000);
 	}
 
 	@When("^I click on apimanager login$")
 	public void i_click_on_apimanager_login() throws Throwable {
 	    LoginPage loginPage = new LoginPage(driver);
 		loginPage.clickLogInLink();
+		Thread.sleep(10000);
 	}
 
 	@Then("^I should see the apimanager \"([^\"]*)\" pop up$")
@@ -117,7 +119,7 @@ public class APIHomeSteps extends BasicTestObject {
 	public void i_should_see_apimanager_at_the_top_right_corner_of_the_page(String arg1) throws Throwable {
 	    LoginPage loginPage = new LoginPage(driver);
 	    Thread.sleep(10000);
-		Assert.assertTrue("User Name did not show properly", loginPage.isUserName(arg1));
+		Assert.assertTrue("User Name did not show properly",loginPage.isUserName(arg1));
 	}
 
 	@When("^I click on arrow after the apimanager username$")
