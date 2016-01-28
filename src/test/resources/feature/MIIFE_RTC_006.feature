@@ -1,6 +1,6 @@
 Feature: Create and Publish an API
 
-@Smoke 
+@Smoke
 Scenario Outline: Check if the user is able to create api with a user with publisher role
 Given I am in ids page
 When I enter ids username credentials
@@ -37,9 +37,10 @@ Given I am in apipublisher
 When I provide apipublisher username as "<username>" and password as "<Password>"
 And I click on apipublisher login button
 Then I should see apipublisher username "<username>" at the top right corner of the page
+When I search existing API "<apiName>" and delete it
 When I click on apipublisher Add link
 And I provide apipublisher Design name as "<apiName>"
-And I provide apipublisher Design Context as "API"
+And I provide apipublisher Design Context as "APIa"
 And I provide apipublisher Design Version as "1.0.0.1"
 And I provide apipublisher Design Provide URL pattern as "/aux/wso2tel"
 And I click on apipublisher Design "Get" checkbox
@@ -80,4 +81,4 @@ Then I should see the apimanager APIs "<apiName>" status as published
 
 Examples:
 | username|Password |apiName   |prodEndpoint |sandEndpoint |roleType		   |
-|AutoTest1|1qaz2wsx@|AuxTestAPI|auxProd		 |auxSand	   |Internal/publisher |
+|AutoTest1|1qaz2wsx@|AuxTestAPIa|auxProd		 |auxSand	   |Internal/publisher |
