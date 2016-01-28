@@ -260,18 +260,28 @@ public class IDServerUserRoles extends BasicTestObject {
    @Then("^I clear existing aggrigator role$")
 	public void I_clear_existing_aggrigator_role() throws Throwable {
 		CarbonRolesPage carbonRoles = new CarbonRolesPage(driver);
-
-		carbonRoles.enterAggrigatorRoleName("aggrigator");
+        carbonRoles.enterAggrigatorRoleName("aggrigator");
 		carbonRoles.clickSearch();
 
 		if (carbonRoles.isRoleVisible()) {
 			carbonRoles.clickDelete();
 			carbonRoles.clickYes();
 			carbonRoles.clickOK();
-
 		} else {
 			carbonRoles.clickOK();
-
 		}
 	}
+   
+   @When("^I click delete existing username as \"([^\"]*)\"$")
+   public void i_click_delete_existing_username_as(String arg1) throws Throwable {
+	   CarbonRolesPage carbonRoles = new CarbonRolesPage(driver);
+	   
+       if (carbonRoles.isUserNameVisible()) {
+    	   carbonRoles.clickDeleteUser(arg1);
+    	   carbonRoles.clickYes();
+    	   carbonRoles.clickOK();
+	} else {
+		 carbonRoles.clickOK();
+	}
+   }
 }
