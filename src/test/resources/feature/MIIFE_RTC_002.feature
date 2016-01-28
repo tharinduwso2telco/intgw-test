@@ -14,7 +14,7 @@ When I click ids User Management Roles link
 Then I should see ids User Management Roles page header as "Roles"
 And I clear existing aggrigator role
 When I click on ids User Management Roles add new role link
-Then I should see ids User Management Add Role page header as "Add Role"
+Then I should see ids User Management Add Role page header as "Step 1 : Enter role details"
 When I enter ids Add Role role name as "aggrigator"
 And I click on ids Add Role next button
 Then I should see ids Add Role Select permission to Add Role page header as "Step 2 : Select permissions to add to Role"
@@ -24,7 +24,7 @@ When I enter ids Select Users to Add Role user name pattern as "<username>"
 And I click on ids Select Users to Add Role search
 And I select ids Select Users to Add Role "<username>" check box
 And I click on ids Select Users to Add Role Finish
-Then I should see  ids Add Role "Success" pop up
+Then I should see ids Add Role Success pop up message as "Role PRIMARY/aggrigator is added successfully."
 When I close the browser
 And I am in apimanager
 And I click on apimanager login

@@ -23,11 +23,11 @@ public class IDServerUserRoles extends BasicTestObject {
 		CarbonUserRoles carbonUserRolePage = new CarbonUserRoles(driver);
 		carbonUserRolePage.clickRolesLink();
 	}
-
-	@Then("^I should see ids User Management Roles page$")
-	public void i_should_see_ids_User_Management_Roles_page() throws Throwable {
+	
+	@Then("^I should see ids User Management Roles page header as \"([^\"]*)\"$")
+	public void i_should_see_ids_User_Management_Roles_page_header_as(String arg1) throws Throwable {
 	    CarbonRolesPage carbonRoles = new CarbonRolesPage(driver);
-	    Assert.assertTrue("Roles page did not load properly",carbonRoles.validateRoles());
+	    Assert.assertTrue("Roles page did not load properly",carbonRoles.isRolePage(arg1));
 	}
 
 	@When("^I click on ids User Management Roles add new role link$")
@@ -36,10 +36,10 @@ public class IDServerUserRoles extends BasicTestObject {
 		 carbonRoles.clickAddNewRole();
 	}
 
-	@Then("^I should see ids User Management Add Role page$")
-	public void i_should_see_ids_User_Management_Add_Role_page() throws Throwable {
+	@Then("^I should see ids User Management Add Role page header as \"([^\"]*)\"$")
+	public void i_should_see_ids_User_Management_Add_Role_page_header_as(String arg1) throws Throwable {
 		CarbonRolesPage carbonRoles = new CarbonRolesPage(driver);
-	    Assert.assertTrue("Add Role page did not load properly",carbonRoles.validateAddRoles());
+	    Assert.assertTrue("Add Role page did not load properly",carbonRoles.isAddRolesPage(arg1));
 	}
 
 	@When("^I enter ids Add Role role name as \"([^\"]*)\"$")
@@ -54,10 +54,10 @@ public class IDServerUserRoles extends BasicTestObject {
 		carbonRoles.clickNext();
 	}
 
-	@Then("^I should see ids Add Role Select permission to Add Role page$")
-	public void i_should_see_ids_Add_Role_Select_permission_to_Add_Role_page() throws Throwable {
+	@Then("^I should see ids Add Role Select permission to Add Role page header as \"([^\"]*)\"$")
+	public void i_should_see_ids_Add_Role_Select_permission_to_Add_Role_page_header_as(String arg1) throws Throwable {
 		CarbonRolesPage carbonRoles = new CarbonRolesPage(driver);
-	    Assert.assertTrue("Select permission to Add Role page did not load properly",carbonRoles.validateSelectPermission());
+	    Assert.assertTrue("Select permission to Add Role page did not load properly",carbonRoles.isSelectPermission(arg1));
 	}
 
 	@When("^I click on ids Add Role Select permission to Add Role next button$")
@@ -66,10 +66,10 @@ public class IDServerUserRoles extends BasicTestObject {
 		carbonRoles.clickNext();
 	}
 
-	@Then("^I should see ids Add Role Select Users to Add Role page$")
-	public void i_should_see_ids_Add_Role_Select_Users_to_Add_Role_page() throws Throwable {
+	@Then("^I should see ids Add Role Select Users to Add Role page header as \"([^\"]*)\"$")
+	public void i_should_see_ids_Add_Role_Select_Users_to_Add_Role_page_header_as(String arg1) throws Throwable {
 		CarbonRolesPage carbonRoles = new CarbonRolesPage(driver);
-		Assert.assertTrue("Select Users to Add Role page did not load properly",carbonRoles.validateSelectUsers());
+		Assert.assertTrue("Select Users to Add Role page did not load properly",carbonRoles.isSelectUsers(arg1));
 	}
 
 	@When("^I enter ids Select Users to Add Role user name pattern as \"([^\"]*)\"$")
@@ -96,10 +96,10 @@ public class IDServerUserRoles extends BasicTestObject {
 		carbonRoles.clickFinish();
 	}
 
-	@Then("^I should see  ids Add Role Success pop up$")
-	public void i_should_see_ids_Add_Role_Success_pop_up() throws Throwable {
+	@Then("^I should see ids Add Role Success pop up message as \"([^\"]*)\"$")
+	public void i_should_see_ids_Add_Role_Success_pop_up_message_as(String arg1) throws Throwable {
 		CarbonRolesPage carbonRoles = new CarbonRolesPage(driver);
-		carbonRoles.validateSuccessPopup();
+		Assert.assertTrue("Success message loaded properly", carbonRoles.isSuccessPopup(arg1));
 	}
 	
 	@When("^I click ids User Management Users link$")
@@ -265,7 +265,7 @@ public class IDServerUserRoles extends BasicTestObject {
 		carbonRoles.enterAggrigatorRoleName("aggrigator");
 		carbonRoles.clickSearch();
 
-		if (carbonRoles.validateRoleTable()) {
+		if (carbonRoles.isRoleVisible()) {
 			carbonRoles.clickDelete();
 			carbonRoles.clickYes();
 			carbonRoles.clickOK();
