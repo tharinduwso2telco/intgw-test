@@ -11,13 +11,6 @@ import cucumber.api.java.en.When;
 
 public class IDServerUserRoles extends BasicTestObject {
 	
-	
-	@Then("^I should see ids User Management page$")
-	public void i_should_see_ids_User_Management_page() throws Throwable {
-		CarbonUserRoles carbonUserRolePage = new CarbonUserRoles(driver);
-		Assert.assertTrue("User Management page did not load properly", carbonUserRolePage.validateUserRoles());
-	}
-
 	@When("^I click ids User Management Roles link$")
 	public void i_click_ids_User_Management_Roles_link() throws Throwable {
 		CarbonUserRoles carbonUserRolePage = new CarbonUserRoles(driver);
@@ -101,17 +94,23 @@ public class IDServerUserRoles extends BasicTestObject {
 		CarbonRolesPage carbonRoles = new CarbonRolesPage(driver);
 		Assert.assertTrue("Success message loaded properly", carbonRoles.isSuccessPopup(arg1));
 	}
+
+	@Then("^I should see ids User Management page header as \"([^\"]*)\"$")
+	public void i_should_see_ids_User_Management_page_header_as(String arg1) throws Throwable {
+		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
+		Assert.assertTrue("Users page did not load properly",carbonUserRolesPage.isSystemUserStore(arg1));
+	}
 	
 	@When("^I click ids User Management Users link$")
 	public void i_click_ids_User_Management_Users_link() throws Throwable {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
 		carbonUserRolesPage.clickUsersLink();
 	}
-	
-	@Then("^I should see ids User Management Users page$")
-	public void i_should_see_ids_User_Management_Users_page() throws Throwable {
+
+	@Then("^I should see ids User Management Users page header as \"([^\"]*)\"$")
+	public void i_should_see_ids_User_Management_Users_page_header_as(String arg1) throws Throwable {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
-		Assert.assertTrue("Users page did not load properly",carbonUserRolesPage.validateUserSearch());
+		Assert.assertTrue("User page did not load properly", carbonUserRolesPage.isUserPage(arg1));
 	}
 
 	@When("^I enter ids Search Users to Enter user name pattern as \"([^\"]*)\"$")
@@ -129,7 +128,7 @@ public class IDServerUserRoles extends BasicTestObject {
 	@Then("^I should see the \"([^\"]*)\" on ids Users search area$")
 	public void i_should_see_the_on_ids_Users_search_area(String arg1) throws Throwable {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
-		Assert.assertTrue("Username is not there on the search result area",carbonUserRolesPage.validateSearchedUser(arg1));
+		Assert.assertTrue("Username is not there on the search result area",carbonUserRolesPage.isUserSearch(arg1));
 	}
 	
 	@When("^I click on ids Users view roles link and delete existing Publisher role from the user$")

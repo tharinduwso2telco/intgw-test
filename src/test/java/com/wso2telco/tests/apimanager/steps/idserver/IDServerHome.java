@@ -46,10 +46,10 @@ public class IDServerHome extends BasicTestObject {
 		carbonHome.clickConfigure();
 	}
 
-	@Then("^I should see ids Configuration menu$")
-	public void i_should_see_ids_Configuration_menu() throws Throwable {
+	@Then("^I should see ids Configuration menu with first item as \"([^\"]*)\"$")
+	public void i_should_see_ids_Configuration_menu_with_first_item_as(String arg1) throws Throwable {
 		CarbonUserRoles carbonUserRolePage = new CarbonUserRoles(driver);
-		Assert.assertTrue("Configuration tab did not load properly", carbonUserRolePage.validateConfigure());
+		Assert.assertTrue("Configuration tab did not load properly", carbonUserRolePage.isConfigurePage(arg1));
 	}
 
 	@When("^I click on ids Configuration Users and Roles link$")

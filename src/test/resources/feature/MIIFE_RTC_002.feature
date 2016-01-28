@@ -9,7 +9,7 @@ Then I should see the ids Home page header as "WSO2 Identity Server Home"
 When I click on ids Configuration tab
 Then I should see ids Configuration menu with first item as "Users and Roles"
 When I click on ids Configuration Users and Roles link
-Then I should see ids User Management page header as "User Management"
+Then I should see ids User Management page header as "System User Store"
 When I click ids User Management Roles link
 Then I should see ids User Management Roles page header as "Roles"
 And I clear existing aggrigator role

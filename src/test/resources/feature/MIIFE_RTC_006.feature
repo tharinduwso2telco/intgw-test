@@ -5,13 +5,13 @@ Scenario Outline: Check if the user is able to create api with a user with publi
 Given I am in ids page
 When I enter ids username credentials
 And I click on ids sign in
-Then I should see the ids Home page
+Then I should see the ids Home page header as "WSO2 Identity Server Home"
 When I click on ids Configuration tab
-Then I should see ids Configuration menu
+Then I should see ids Configuration menu with first item as "Users and Roles"
 When I click on ids Configuration Users and Roles link
-Then I should see ids User Management page
+Then I should see ids User Management page header as "System User Store"
 When I click ids User Management Users link
-Then I should see ids User Management Users page
+Then I should see ids User Management Users page header as "Users"
 When I enter ids Search Users to Enter user name pattern as "<username>" 
 And I click on ids Users search button
 Then I should see the "<username>" on ids Users search area
