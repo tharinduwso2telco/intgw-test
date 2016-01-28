@@ -37,7 +37,7 @@ public class IDServerHome extends BasicTestObject {
 	@Then("^I should see the ids Home page header as \"([^\"]*)\"$")
 	public void i_should_see_the_ids_Home_page_header_as(String arg1) throws Throwable {
 		CarbonHomePage carbonHome = new CarbonHomePage(driver);
-		Assert.assertTrue("Home page did not load properly",carbonHome.isIDSHomeDisplayed(arg1));
+		Assert.assertTrue("Home page did not load properly", carbonHome.isIDSHomeDisplayed(arg1));
 	}
 
 	@When("^I click on ids Configuration tab$")
