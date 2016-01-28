@@ -135,9 +135,9 @@ public class IDServerUserRoles extends BasicTestObject {
 	public void i_click_on_ids_Users_view_roles_link_and_delete_existing_Publisher_role_from_the_user() throws Throwable {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
 		carbonUserRolesPage.clickUsersViewRoles();
-		if (carbonUserRolesPage.validatePublisherRole()){
+		if (carbonUserRolesPage.isPublisherRole()){
 			carbonUserRolesPage.untickInternalPublisher();
-			if (carbonUserRolesPage.validateInternalSubscriber()){
+			if (carbonUserRolesPage.isInternalSubscriber()){
 				carbonUserRolesPage.untickInternalSubscriber();
 			}
 			carbonUserRolesPage.clickEditRolesFinish();
@@ -156,7 +156,7 @@ public class IDServerUserRoles extends BasicTestObject {
 	@Then("^I should see the ids List of roles page table header as \"([^\"]*)\"$")
 	public void i_should_see_the_ids_List_of_roles_page_table_header_as(String arg1) throws Throwable {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
-		Assert.assertTrue("Assign role page did not load properly", carbonUserRolesPage.validateAssignRolesPage(arg1));	
+		Assert.assertTrue("Assign role page did not load properly", carbonUserRolesPage.isAssignRolesPage(arg1));	
 	}
 	
 	@When("^I enter ids Role list of users Enter role name pattern as \"([^\"]*)\"$")
@@ -174,7 +174,7 @@ public class IDServerUserRoles extends BasicTestObject {
 	@Then("^I should see ids List of roles search area as \"([^\"]*)\"$")
 	public void i_should_see_ids_List_of_roles_search_area_as(String arg1) throws Throwable {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
-		Assert.assertTrue(arg1 + " Role did not appear in the search area",carbonUserRolesPage.validateRolesSearchArea(arg1));
+		Assert.assertTrue(arg1 + " Role did not appear in the search area",carbonUserRolesPage.isRolesSearchArea(arg1));
 	}
 	
 	@When("^I click on ids List of roles \"([^\"]*)\" permissions link$")
@@ -182,17 +182,17 @@ public class IDServerUserRoles extends BasicTestObject {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
 		carbonUserRolesPage.clickRolesPermission(arg1);
 	}
-	//TODO
-	@Then("^I should see the ids permissions of the role page$")
-	public void i_should_see_the_ids_permissions_of_the_role_page() throws Throwable {
+
+	@Then("^I should see the ids permissions of the role page header as \"([^\"]*)\"$")
+	public void i_should_see_the_ids_permissions_of_the_role_page_header_as(String arg1) throws Throwable {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
-		Assert.assertTrue("Role permission page did not load properly",carbonUserRolesPage.validateRolePermissionPage(""));
+		Assert.assertTrue("Role permission page did not load properly",carbonUserRolesPage.isRolePermissionPage(arg1));
 	}
 	
 	@Then("^ids permissions of the role page Publish check box should be checked$")
 	public void ids_permissions_of_the_role_page_Publish_check_box_should_be_checked() throws Throwable {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
-		Assert.assertTrue("Publisher role did not selected bydefault",carbonUserRolesPage.validatePublisherRoleChecked());
+		Assert.assertTrue("Publisher role did not selected bydefault",carbonUserRolesPage.isPublisherRoleChecked());
 	}
 	
 	@When("^I click on ids Permissions of the role page create check box$")
@@ -210,7 +210,7 @@ public class IDServerUserRoles extends BasicTestObject {
 	@Then("^ids Role update success message should pop up \"([^\"]*)\"$")
 	public void ids_Role_update_success_message_should_pop_up(String arg1) throws Throwable {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
-		Assert.assertTrue("Success message did not load properly",carbonUserRolesPage.validateRoleAssignUpdate(arg1));
+		Assert.assertTrue("Success message did not load properly",carbonUserRolesPage.isRoleAssignUpdate(arg1));
 	}
 	
 	@When("^I click on ids Role update success message ok button$")
@@ -234,7 +234,7 @@ public class IDServerUserRoles extends BasicTestObject {
 	@Then("^ids List of roles Role update success message should pop up \"([^\"]*)\"$")
 	public void ids_List_of_roles_Role_update_success_message_should_pop_up(String arg1) throws Throwable {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
-		Assert.assertTrue("Success message did not load properly",carbonUserRolesPage.validateRoleAssignUpdate(arg1));
+		Assert.assertTrue("Success message did not load properly",carbonUserRolesPage.isRoleAssignUpdate(arg1));
 	}
 	
 	@When("^I click on List of roles Role update success message ok button$")
