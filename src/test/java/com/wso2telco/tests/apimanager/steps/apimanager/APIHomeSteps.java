@@ -97,7 +97,7 @@ public class APIHomeSteps extends BasicTestObject {
 	@Then("^I should see the apimanager \"([^\"]*)\" pop up$")
 	public void i_should_see_the_apimanager_pop_up(String arg1) throws Throwable {
 		 LoginPage loginPage = new LoginPage(driver);
-		 Assert.assertTrue(loginPage.isLoginDisplayed(arg1));
+		 Assert.assertTrue("Login pop up is not displayed",loginPage.isLoginDisplayed(arg1));
 	}
 
 	@When("^I enter apimanager Login username as \"([^\"]*)\" and password as \"([^\"]*)\"$")
@@ -161,7 +161,7 @@ public class APIHomeSteps extends BasicTestObject {
 	@Then("^I should see the apimanager Subscriptions page header as \"([^\"]*)\"$")
 	public void i_should_see_the_apimanager_Subscriptions_page_header_as(String arg1) throws Throwable {
 	    SubscriptionsPage subpage = new SubscriptionsPage(driver);
-	    subpage.isSubscriptionHeaderDisplayed(arg1);
+	    Assert.assertTrue("Subscription page did not load properly",subpage.isSubscriptionHeaderDisplayed(arg1));   
 	}
 
 	@When("^I click on apimanager Manage$")

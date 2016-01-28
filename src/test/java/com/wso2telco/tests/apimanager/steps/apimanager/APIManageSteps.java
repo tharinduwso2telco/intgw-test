@@ -191,12 +191,12 @@ public class APIManageSteps extends BasicTestObject {
 	@Then("^I should see apimanager Manager Approval Tasks page header as \"([^\"]*)\"$")
 	public void i_should_see_apimanager_Manager_Approval_Tasks_page_header_as(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		Assert.assertTrue(managerpage.isApprovalTaskDisplayed(arg1));
+		Assert.assertTrue("Approval Tasks page did not load properly",managerpage.isApprovalTaskDisplayed(arg1));
 	}
 	
 	@Then("^I should see Enter aprrove/reject reasons pop up header as \"([^\"]*)\"$")
 	public void i_should_see_Enter_aprrove_reject_reasons_pop_up_header_as(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		Assert.assertTrue(managerpage.isApproveRejectPopupDisplayed(arg1));
+		Assert.assertTrue("Enter aprrove/reject reasons pop up did not load properly",managerpage.isApproveRejectPopupDisplayed(arg1));
 	}
 }
