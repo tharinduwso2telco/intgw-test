@@ -62,8 +62,8 @@ public class APISubscriptionSteps extends BasicTestObject {
 		return conKeySand;
 	}
 
-	@Then("^consumer Secret of sandbox$")
-	public String consumer_Secret_of_sandbox() throws Throwable {
+	@Then("^I should see consumer Secret of sandbox$")
+	public String i_should_see_consumer_Secret_of_sandbox() throws Throwable {
 		SubscriptionsPage subpage = new SubscriptionsPage(driver);
 		String secKeySand = subpage.getSecKeySand();
 		return secKeySand;

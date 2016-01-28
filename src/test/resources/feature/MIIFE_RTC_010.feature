@@ -4,7 +4,7 @@ Feature: Check if the application creation works as expected for service provide
 Scenario Outline: Check if the application creation works as expected for service provider
 Given I am in apimanager
 When I click on apimanager login
-Then I should see the apimanager Login pop up
+Then I should see the apimanager "Login" pop up
 When I enter apimanager Login username as "<username>" and password as "<Password>" 
 And I click on apimanager Login pop up login button
 Then I should see apimanager "<username>" at the top right corner of the page

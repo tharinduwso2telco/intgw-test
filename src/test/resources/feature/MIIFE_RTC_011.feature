@@ -111,7 +111,7 @@ And I should see consumer Secret of production
 When I enter token validity of sandbox as "<validity>"
 And I click generate under apimanager Subscriptions page sandbox
 Then I should see consumer Key of sandbox
-And consumer Secret of sandbox
+And I should see consumer Secret of sandbox
 When I close the browser
 And I am in ids page
 And I enter ids username credentials
@@ -127,7 +127,7 @@ When I click on Inbound Authentication Configuration
 And I click on OAuth/OpenID Connect Configuration
 And I click on OAth client secret show button
 Then I should see OAth client key
-And OAth client secret
+And I should see OAth client secret
 When I click on Local and Outbound Authentication Configuration 
 And I select Advanced Configuration
 Then I should see Advanced Authentication Configuration for "<AppName>" page

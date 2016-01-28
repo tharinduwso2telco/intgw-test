@@ -14,7 +14,7 @@ public class IDServerServiceProvider extends BasicTestObject  {
 	@Then("^I should see \"([^\"]*)\" Application in Service Providers table$")
 	public void i_should_see_Application_in_Service_Providers_table(String arg1) throws Throwable {
 		CarbonServiceProvider csp = new CarbonServiceProvider(driver);
-		Assert.assertTrue(csp.isAppinSPTable(arg1));	
+		Assert.assertTrue("Application did not include in SP table",csp.isAppinSPTable(arg1));	
 	}
 	
 	@When("^I click on \"([^\"]*)\" edit link$")
@@ -26,7 +26,7 @@ public class IDServerServiceProvider extends BasicTestObject  {
 	@Then("^I should see ids Service providers page header as \"([^\"]*)\"$")
 	public void i_should_see_ids_Service_providers_page_header_as(String arg1) throws Throwable {
 		CarbonServiceProvider csp = new CarbonServiceProvider(driver);
-		Assert.assertTrue(csp.isSPpageDisplyed(arg1));
+		Assert.assertTrue("Service providers page did not load properly",csp.isSPpageDisplyed(arg1));
 	}
 	
 	@When("^I click on Inbound Authentication Configuration$")
@@ -62,7 +62,7 @@ public class IDServerServiceProvider extends BasicTestObject  {
 	@Then("^I should see Advanced Authentication Configuration for \"([^\"]*)\" page$")
 	public void i_should_see_Advanced_Authentication_Configuration_for_page(String arg1) throws Throwable {
 		CarbonServiceProvider csp = new CarbonServiceProvider(driver);
-		Assert.assertTrue(csp.isAdConfigpageDisplyed(arg1));
+		Assert.assertTrue("Advanced Authentication Configuration page did not load properly",csp.isAdConfigpageDisplyed(arg1));
 	}
 	
 	@When("^I click on Add Authentication Step$")
@@ -93,7 +93,7 @@ public class IDServerServiceProvider extends BasicTestObject  {
 	@Then("^I should see View/Update application settings page header as \"([^\"]*)\"$")
 	public void i_should_see_View_Update_application_settings_page_header_as(String arg1) throws Throwable {
 		CarbonServiceProvider csp = new CarbonServiceProvider(driver);
-		Assert.assertTrue(csp.isViewUpdatepageDisplyed(arg1));
+		Assert.assertTrue("View/Update application settings page did not load properly",csp.isViewUpdatepageDisplyed(arg1));
 	}
 	
 	@When("^I click on Code$")
@@ -149,7 +149,7 @@ public class IDServerServiceProvider extends BasicTestObject  {
 	@Then("^I should see Application updated successfully pop up message as \"([^\"]*)\"$")
 	public void i_should_see_Application_updated_successfully_pop_up_message_as(String arg1) throws Throwable {
 		CarbonServiceProvider csp = new CarbonServiceProvider(driver);
-		Assert.assertTrue(csp.isSuccessMessageDisplyed(arg1));
+		Assert.assertTrue("Application updated successfully message did not show properly",csp.isSuccessMessageDisplyed(arg1));
 	}
 	
 	@Then("^I should see OAth client key$")
@@ -157,20 +157,20 @@ public class IDServerServiceProvider extends BasicTestObject  {
 		APISubscriptionSteps apiSubscriptionSteps = new APISubscriptionSteps();
 		String conKeyProd = apiSubscriptionSteps.i_should_see_consumer_Key_of_production();
 		CarbonServiceProvider csp = new CarbonServiceProvider(driver);
-		Assert.assertTrue(csp.isClientKeyDisplyed(conKeyProd));
+		Assert.assertTrue("OAth client key did not match",csp.isClientKeyDisplyed(conKeyProd));
 	}
 	
-	@Then("^OAth client secret$")
-	public void oath_client_secret() throws Throwable {
+	@Then("^I should see OAth client secret$")
+	public void i_should_see_oath_client_secret() throws Throwable {
 		APISubscriptionSteps apiSubscriptionSteps = new APISubscriptionSteps();
 		String secKeyProd = apiSubscriptionSteps.i_should_see_consumer_Secret_of_production();
 		CarbonServiceProvider csp = new CarbonServiceProvider(driver);
-		Assert.assertTrue(csp.isClientSecretDisplyed(secKeyProd));
+		Assert.assertTrue("OAth client secret did not match",csp.isClientSecretDisplyed(secKeyProd));
 	}
 	
 	@Then("^I should see \"([^\"]*)\" as call back url$")
 	public void i_should_see_as_call_back_url(String arg1) throws Throwable {
 		CarbonServiceProvider csp = new CarbonServiceProvider(driver);
-		Assert.assertTrue(csp.isCallBackURLDisplyed(arg1));
+		Assert.assertTrue("Call back URL did not show properly",csp.isCallBackURLDisplyed(arg1));
 	}
 }

@@ -86,18 +86,20 @@ public class APIHomeSteps extends BasicTestObject {
 	public void i_click_on_apimanager_Sign_up_for_a_new_account_success_pop_up_ok_button() throws Throwable {
 	    SignUpPage signupPage = new SignUpPage(driver);
 		signupPage.clickOk();
+		Thread.sleep(10000);
 	}
 
 	@When("^I click on apimanager login$")
 	public void i_click_on_apimanager_login() throws Throwable {
 	    LoginPage loginPage = new LoginPage(driver);
 		loginPage.clickLogInLink();
+		Thread.sleep(10000);
 	}
 
 	@Then("^I should see the apimanager \"([^\"]*)\" pop up$")
 	public void i_should_see_the_apimanager_pop_up(String arg1) throws Throwable {
 		 LoginPage loginPage = new LoginPage(driver);
-		 Assert.assertTrue(loginPage.isLoginDisplayed(arg1));
+		 Assert.assertTrue("Login pop up is not displayed",loginPage.isLoginDisplayed(arg1));
 	}
 
 	@When("^I enter apimanager Login username as \"([^\"]*)\" and password as \"([^\"]*)\"$")
@@ -117,7 +119,7 @@ public class APIHomeSteps extends BasicTestObject {
 	public void i_should_see_apimanager_at_the_top_right_corner_of_the_page(String arg1) throws Throwable {
 	    LoginPage loginPage = new LoginPage(driver);
 	    Thread.sleep(10000);
-		Assert.assertTrue("User Name did not show properly", loginPage.isUserName(arg1));
+		Assert.assertTrue("User Name did not show properly",loginPage.isUserName(arg1));
 	}
 
 	@When("^I click on arrow after the apimanager username$")
@@ -161,7 +163,7 @@ public class APIHomeSteps extends BasicTestObject {
 	@Then("^I should see the apimanager Subscriptions page header as \"([^\"]*)\"$")
 	public void i_should_see_the_apimanager_Subscriptions_page_header_as(String arg1) throws Throwable {
 	    SubscriptionsPage subpage = new SubscriptionsPage(driver);
-	    subpage.isSubscriptionHeaderDisplayed(arg1);
+	    Assert.assertTrue("Subscription page did not load properly",subpage.isSubscriptionHeaderDisplayed(arg1));   
 	}
 
 	@When("^I click on apimanager Manage$")

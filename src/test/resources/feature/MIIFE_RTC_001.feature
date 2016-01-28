@@ -14,7 +14,7 @@ And I enter apimanager Sign-up for a new account Email as "<Email>"
 And I click on apimanager Sign-up for a new account submit button 
 Then I should see the apimanager Sign-up for a new account success pop up with "User added successfully. You can now sign into the API store using the new user account".
 When I click on apimanager Sign-up for a new account success pop up ok button
-And I click on apimanager login
+#And I click on apimanager login
 Then I should see the apimanager "Login" pop up
 When I enter apimanager Login username as "<username>" and password as "<Password>" 
 And I click on apimanager Login pop up login button
@@ -24,6 +24,6 @@ And I click on apimanager logout button
 Then I should see the apimanager login as "Login" and sign-up buttons as "Sign-up" at the top right corner of the page
 
 Examples:
-| username     |Password |RetypePword|LastName|FirstName|Email|
-|AuxTestUser006|1qaz2wsx@|1qaz2wsx@|AuxTestLast|AuxTestFirst|AuxTest123@gmail.com|
+| username     |Password |RetypePword|LastName   |FirstName   |Email               |
+|AuxTestUser013|1qaz2wsx@|1qaz2wsx@  |AuxTestLast|AuxTestFirst|AuxTest123@gmail.com|
 
