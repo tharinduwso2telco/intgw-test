@@ -151,7 +151,7 @@ And I click on View/Update application settings page update
 Then I should see Application updated successfully pop up message as "Application updated successfully"
 
 
-
+#J cannot delete app
 Examples:
-| username     |Password |AppName        |Application Details|Action |status|APIName           |operator|validity|Callback URL                                                     |
-|AuxLogoutUser |1qaz2wsx@|AuxTestAPI100  |Unlimited          |Approve|READY |AuxTestAPI-1.0.0.1|DIALOG  |-1      |https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|
+| username     |Password |AppName           |Application Details|Action |status|APIName           |operator|validity|Callback URL                                                     |
+|AuxLogoutUser |1qaz2wsx@|AuxLogoutUserApp  |Unlimited          |Approve|READY |AuxTestAPI-1.0.0.1|DIALOG  |-1      |https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|
