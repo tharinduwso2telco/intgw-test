@@ -4,6 +4,7 @@ import org.junit.Assert;
 
 import com.wso2telco.identityserver.pageobjects.carbon.CarbonServiceProvider;
 import com.wso2telco.tests.apimanager.base.BasicTestObject;
+import com.wso2telco.tests.apimanager.steps.apimanager.APISubscriptionSteps;
 
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -42,11 +43,134 @@ public class IDServerServiceProvider extends BasicTestObject  {
 	
 	@When("^I click on OAth client secret show button$")
 	public void i_click_on_OAth_client_secret_show_button() throws Throwable {
-	    
+		CarbonServiceProvider csp = new CarbonServiceProvider(driver);
+		csp.clickShow();
 	}
 	
 	@When("^I click on Local and Outbound Authentication Configuration$")
 	public void i_click_on_Local_and_Outbound_Authentication_Configuration() throws Throwable {
-	    
+		CarbonServiceProvider csp = new CarbonServiceProvider(driver);
+		csp.clickOutbound();
+	}
+	
+	@When("^I select Advanced Configuration$")
+	public void i_select_Advanced_Configuration() throws Throwable {
+		CarbonServiceProvider csp = new CarbonServiceProvider(driver);
+		csp.clickAdConfig(); 
+	}
+	
+	@Then("^I should see Advanced Authentication Configuration for \"([^\"]*)\" page$")
+	public void i_should_see_Advanced_Authentication_Configuration_for_page(String arg1) throws Throwable {
+		CarbonServiceProvider csp = new CarbonServiceProvider(driver);
+		Assert.assertTrue(csp.isAdConfigpageDisplyed(arg1));
+	}
+	
+	@When("^I click on Add Authentication Step$")
+	public void i_click_on_Add_Authentication_Step() throws Throwable {
+		CarbonServiceProvider csp = new CarbonServiceProvider(driver);
+		csp.clickAddAuthStep();
+	}
+	
+	@When("^I select LOA under Local Authenticators$")
+	public void i_select_LOA_under_Local_Authenticators() throws Throwable {
+		CarbonServiceProvider csp = new CarbonServiceProvider(driver);
+		csp.clickAuthenticators();
+		csp.selectLOA();
+	}
+	
+	@When("^I click update$")
+	public void i_click_update() throws Throwable {
+		CarbonServiceProvider csp = new CarbonServiceProvider(driver);
+		csp.clickUpdate();
+	}
+	
+	@When("^I click edit in Actions$")
+	public void i_click_edit_in_Actions() throws Throwable {
+		CarbonServiceProvider csp = new CarbonServiceProvider(driver);
+		csp.clickEdit();
+	}
+	
+	@Then("^I should see View/Update application settings page header as \"([^\"]*)\"$")
+	public void i_should_see_View_Update_application_settings_page_header_as(String arg1) throws Throwable {
+		CarbonServiceProvider csp = new CarbonServiceProvider(driver);
+		Assert.assertTrue(csp.isViewUpdatepageDisplyed(arg1));
+	}
+	
+	@When("^I click on Code$")
+	public void i_click_on_Code() throws Throwable {
+		CarbonServiceProvider csp = new CarbonServiceProvider(driver);
+		csp.selectCode();
+	}
+	
+	@When("^I click on Implicit$")
+	public void i_click_on_Implicit() throws Throwable {
+		CarbonServiceProvider csp = new CarbonServiceProvider(driver);
+		csp.selectImplicit();
+	}
+
+	@When("^I click on Password$")
+	public void i_click_on_Password() throws Throwable {
+		CarbonServiceProvider csp = new CarbonServiceProvider(driver);
+		csp.selectPassword();
+	}
+
+	@When("^I click on Client Credential$")
+	public void i_click_on_Client_Credential() throws Throwable {
+		CarbonServiceProvider csp = new CarbonServiceProvider(driver);
+		csp.selectClient();
+	}
+
+	@When("^I click on Refresh Token$")
+	public void i_click_on_Refresh_Token() throws Throwable {
+		CarbonServiceProvider csp = new CarbonServiceProvider(driver);
+		csp.selectRefresh();
+	}
+
+	@When("^I click on SAML$")
+	public void i_click_on_SAML() throws Throwable {
+		CarbonServiceProvider csp = new CarbonServiceProvider(driver);
+		csp.selectSAML();
+	}
+
+	@When("^I click on IWA-NTLM$")
+	public void i_click_on_IWA_NTLM() throws Throwable {
+		CarbonServiceProvider csp = new CarbonServiceProvider(driver);
+		csp.selectIWA();
+	}
+
+
+	
+	@When("^I click on View/Update application settings page update$")
+	public void i_click_on_View_Update_application_settings_page_update() throws Throwable {
+		CarbonServiceProvider csp = new CarbonServiceProvider(driver);
+		csp.clickUpdate();
+	}
+	
+	@Then("^I should see Application updated successfully pop up message as \"([^\"]*)\"$")
+	public void i_should_see_Application_updated_successfully_pop_up_message_as(String arg1) throws Throwable {
+		CarbonServiceProvider csp = new CarbonServiceProvider(driver);
+		Assert.assertTrue(csp.isSuccessMessageDisplyed(arg1));
+	}
+	
+	@Then("^I should see OAth client key$")
+	public void i_should_see_OAth_client_key() throws Throwable {
+		APISubscriptionSteps apiSubscriptionSteps = new APISubscriptionSteps();
+		String conKeyProd = apiSubscriptionSteps.i_should_see_consumer_Key_of_production();
+		CarbonServiceProvider csp = new CarbonServiceProvider(driver);
+		Assert.assertTrue(csp.isClientKeyDisplyed(conKeyProd));
+	}
+	
+	@Then("^OAth client secret$")
+	public void oath_client_secret() throws Throwable {
+		APISubscriptionSteps apiSubscriptionSteps = new APISubscriptionSteps();
+		String secKeyProd = apiSubscriptionSteps.i_should_see_consumer_Secret_of_production();
+		CarbonServiceProvider csp = new CarbonServiceProvider(driver);
+		Assert.assertTrue(csp.isClientSecretDisplyed(secKeyProd));
+	}
+	
+	@Then("^I should see \"([^\"]*)\" as call back url$")
+	public void i_should_see_as_call_back_url(String arg1) throws Throwable {
+		CarbonServiceProvider csp = new CarbonServiceProvider(driver);
+		Assert.assertTrue(csp.isCallBackURLDisplyed(arg1));
 	}
 }

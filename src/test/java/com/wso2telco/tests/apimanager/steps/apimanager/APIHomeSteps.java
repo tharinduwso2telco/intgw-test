@@ -157,9 +157,9 @@ public class APIHomeSteps extends BasicTestObject {
 		HomePage homepage = new HomePage(driver);
 	    homepage.clickMySubscriptionsLink();
 	}
-
-	@Then("^I should see the apimanager \"([^\"]*)\" page$")
-	public void i_should_see_the_apimanager_Subscriptions_page(String arg1) throws Throwable {
+	     
+	@Then("^I should see the apimanager Subscriptions page header as \"([^\"]*)\"$")
+	public void i_should_see_the_apimanager_Subscriptions_page_header_as(String arg1) throws Throwable {
 	    SubscriptionsPage subpage = new SubscriptionsPage(driver);
 	    subpage.isSubscriptionHeaderDisplayed(arg1);
 	}

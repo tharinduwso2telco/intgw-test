@@ -50,7 +50,7 @@ And I click on apimanager Manager logout button
 Then I should see the apimanager Manager page header as "Manager"
 When I click on close window
 And I click on apimanager APIs module
-Then I should see the apimanager APIs page 
+Then I should see the apimanager APIs page header as "APIs"
 When I click on the apimanager "<apiName>" api
 Then I should see the apimanager APIs "<apiName>" status as "Published"
 When I click on Applications dropdown
@@ -63,7 +63,7 @@ When I click Go to My Subscription button
 Then I should see the apimanager Subscriptions page header as "Subscriptions"
 And I should see "<AppName>" under Applications with Subscriptions
 When I click on apimanager Manage 
-Then I should see the apimanager Manager page
+Then I should see the apimanager Manager page header as "Manager"
 When I enter apimanager Manager page admin username credentials
 And I click on apimanager Manager page login button
 Then I should see the apimanager Manager Home page header as "Home"
@@ -128,7 +128,6 @@ And I click on OAuth/OpenID Connect Configuration
 And I click on OAth client secret show button
 Then I should see OAth client key
 And OAth client secret
-#validate with API manager
 When I click on Local and Outbound Authentication Configuration 
 And I select Advanced Configuration
 Then I should see Advanced Authentication Configuration for "<AppName>" page
@@ -142,8 +141,12 @@ And I click edit in Actions
 Then I should see View/Update application settings page header as "View/Update application"
 When I click on Code
 Then I should see "<Callback URL>" as call back url
-#validate with API manager
-When I click on Implicit Password Client Credential Refresh Token SAML IWA-NTLM
+When I click on Implicit
+And I click on Password 
+And I click on Client Credential 
+And I click on Refresh Token 
+And I click on SAML 
+And I click on IWA-NTLM
 And I click on View/Update application settings page update
 Then I should see Application updated successfully pop up message as "Application updated successfully"
 
