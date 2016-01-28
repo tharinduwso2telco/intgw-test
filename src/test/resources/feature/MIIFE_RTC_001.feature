@@ -1,19 +1,18 @@
 Feature: Check if users can self register on the API Store
 
-Background:
+#Background:
+@Smoke
+Scenario Outline: Check if users can self register on the API Store
 Given I am in ids page
 When I enter ids username credentials
 And I click on ids sign in
 And I click on ids Configuration tab
 And I click on ids Configuration Users and Roles link
 And I click ids User Management Users link
-And I enter ids Search Users to Enter user name pattern as "AuxTestUser004" 
+And I enter ids Search Users to Enter user name pattern as "<username>" 
 And I click on ids Users search button
-And I click delete existing username as "AuxTestUser004"
+And I click delete existing username as "<username>"
 Then I close the browser
-
-
-Scenario Outline: Check if users can self register on the API Store
 Given I am in apimanager
 And I click on apimanager sign-up button
 Then I should see the apimanager sign-up for a new account form as "Sign - Up for a New Account"
@@ -36,6 +35,6 @@ And I click on apimanager logout button
 Then I should see the apimanager login as "Login" and sign-up buttons as "Sign-up" at the top right corner of the page
 
 Examples:
-| username     |Password |RetypePword|LastName   |FirstName   |Email               |
-|AuxTestUser004|1qaz2wsx@|1qaz2wsx@  |AuxTestLast|AuxTestFirst|AuxTest123@gmail.com|
+| username    	  |Password |RetypePword|LastName   |FirstName   |Email               |
+|AuxTestSignupUser|1qaz2wsx@|1qaz2wsx@  |AuxTestLast|AuxTestFirst|AuxTest123@gmail.com|
 
