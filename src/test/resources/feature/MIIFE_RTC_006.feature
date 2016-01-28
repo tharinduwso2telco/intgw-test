@@ -17,12 +17,12 @@ And I click on ids Users search button
 Then I should see the "<username>" on ids Users search area
 When I click on ids Users view roles link and delete existing Publisher role from the user
 And I click on ids Users assign roles link under "<username>"
-Then I should see the ids List of roles page
+Then I should see the ids List of roles page table header as "Unassigned Roles"
 When I enter ids Role list of users Enter role name pattern as "publisher"
 And I click on ids List of roles search button
 Then I should see ids List of roles search area as "<roleType>" 
 When I click on ids List of roles "<roleType>" permissions link
-Then I should see the ids permissions of the role page
+Then I should see the ids permissions of the role page header as "Permissions of the Role"
 And ids permissions of the role page Publish check box should be checked
 When I click on ids Permissions of the role page create check box
 And I click on ids Permissions of the role page update button

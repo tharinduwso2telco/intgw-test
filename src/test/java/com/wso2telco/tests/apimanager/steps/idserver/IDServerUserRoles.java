@@ -152,11 +152,11 @@ public class IDServerUserRoles extends BasicTestObject {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
 		carbonUserRolesPage.clickAssignRoles(arg1);		
 	}
-	
-	@Then("^I should see the ids List of roles page$")
-	public void i_should_see_the_ids_List_of_roles_page() throws Throwable {
+
+	@Then("^I should see the ids List of roles page table header as \"([^\"]*)\"$")
+	public void i_should_see_the_ids_List_of_roles_page_table_header_as(String arg1) throws Throwable {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
-		Assert.assertTrue("Assign role page did not load properly", carbonUserRolesPage.validateAssignRolesPage());		
+		Assert.assertTrue("Assign role page did not load properly", carbonUserRolesPage.validateAssignRolesPage(arg1));	
 	}
 	
 	@When("^I enter ids Role list of users Enter role name pattern as \"([^\"]*)\"$")
@@ -182,11 +182,11 @@ public class IDServerUserRoles extends BasicTestObject {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
 		carbonUserRolesPage.clickRolesPermission(arg1);
 	}
-	
+	//TODO
 	@Then("^I should see the ids permissions of the role page$")
 	public void i_should_see_the_ids_permissions_of_the_role_page() throws Throwable {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
-		Assert.assertTrue("Role permission page did not load properly",carbonUserRolesPage.validateRolePermissionPage());
+		Assert.assertTrue("Role permission page did not load properly",carbonUserRolesPage.validateRolePermissionPage(""));
 	}
 	
 	@Then("^ids permissions of the role page Publish check box should be checked$")
