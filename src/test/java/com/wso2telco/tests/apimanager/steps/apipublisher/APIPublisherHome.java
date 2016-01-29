@@ -20,11 +20,11 @@ public class APIPublisherHome extends BasicTestObject {
 		}
 	}
 	
-	@When("^I provide apipublisher username as \"([^\"]*)\" and password as \"([^\"]*)\"$")
-	public void i_provide_apipublisher_username_as_and_password_as(String arg1, String arg2) throws Throwable {
+	@When("^I provide apipublisher username and password for \"([^\"]*)\"$")
+	public void i_provide_apipublisher_username_and_password_for(String arg1) throws Throwable {
 		APIPublisherLoginPage publisherLogin = new APIPublisherLoginPage(driver);
-		publisherLogin.enterUsername(arg1);
-		publisherLogin.enterPassword(arg2);
+		publisherLogin.enterUsername(config.getValue(getEnvironment() + arg1 + "user"));
+		publisherLogin.enterPassword(config.getValue(getEnvironment() + arg1 + "pwd"));
 	}
 	
 	@When("^I click on apipublisher login button$")
@@ -36,7 +36,7 @@ public class APIPublisherHome extends BasicTestObject {
 	@Then("^I should see apipublisher username \"([^\"]*)\" at the top right corner of the page$")
 	public void i_should_see_apipublisher_username_at_the_top_right_corner_of_the_page(String arg1) throws Throwable {
 		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
-		Assert.assertTrue("Incorrect user login", publisherHome.isUserLogin(arg1));
+		Assert.assertTrue("Incorrect user login", publisherHome.isUserLogin(config.getValue(getEnvironment() + arg1 + "user")));
 	}
 	
 	@When("^I search existing API \"([^\"]*)\" and delete it$")

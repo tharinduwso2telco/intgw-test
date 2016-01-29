@@ -20,18 +20,18 @@ And I click on ids Add Role next button
 Then I should see ids Add Role Select permission to Add Role page header as "Step 2 : Select permissions to add to Role"
 When I click on ids Add Role Select permission to Add Role next button
 Then I should see ids Add Role Select Users to Add Role page header as "Step 3 : Select users to add to Role"
-When I enter ids Select Users to Add Role user name pattern as "<username>"
+When I enter ids Select Users to Add Role user name pattern as "<usertype>"
 And I click on ids Select Users to Add Role search
-And I select ids Select Users to Add Role "<username>" check box
+And I select ids Select Users to Add Role "<usertype>" check box
 And I click on ids Select Users to Add Role Finish
 Then I should see ids Add Role Success pop up message as "Role PRIMARY/aggrigator is added successfully."
 When I close the browser
 And I am in apimanager
 And I click on apimanager login
 Then I should see the apimanager "Login" pop up
-When I enter apimanager Login username as "<username>" and password as "<Password>" 
+When I enter apimanager Login username and password for "<usertype>" 
 And I click on apimanager Login pop up login button
-Then I should see apimanager "<username>" at the top right corner of the page
+Then I should see apimanager "<usertype>" at the top right corner of the page
 When I click on apimanager APIs module
 Then I should see the apimanager APIs page header as "APIs"
 When I click on apimanager My Applications
@@ -40,20 +40,20 @@ When I click on apimanager My Subscriptions
 Then I should see the apimanager Subscriptions page header as "Subscriptions"
 When I click on apimanager Manage
 Then I should see the apimanager Manager page header as "Manager"
-When I enter apimanager Manager page "<username>" as user name and "<Password>" as password
+When I enter apimanager Manager page username and password for "<usertype>"
 And I click on apimanager Manager page login button
 Then I should see the apimanager Manager Home page header as "Home"
 When I click on close window
 And I click on apimanager Sandbox
 Then I should see the Login in apimanager Sandbox page header as "Login"
-When I enter apimanager Sandbox page "<username>" as user name and "<Password>" as password
+When I enter apimanager Sandbox page username and password for "<usertype>"
 And I click on apimanager Sandbox page login button
 Then I should see the apimanager sandbox index page header as "Welcome"
 
 
 Examples:
-|username|Password|
-|AuxTestUser|1qaz2wsx@|
+|usertype  |
+|AGGRIGATOR|
 
 
 #H line 53 please check error message, ideally user should be able to logged in.

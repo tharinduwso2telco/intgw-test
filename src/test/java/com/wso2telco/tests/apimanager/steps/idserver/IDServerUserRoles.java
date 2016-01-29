@@ -68,7 +68,7 @@ public class IDServerUserRoles extends BasicTestObject {
 	@When("^I enter ids Select Users to Add Role user name pattern as \"([^\"]*)\"$")
 	public void i_enter_ids_Select_Users_to_Add_Role_user_name_pattern_as(String arg1) throws Throwable {
 		CarbonRolesPage carbonRoles = new CarbonRolesPage(driver);
-		carbonRoles.eneterSearchValue(arg1);
+		carbonRoles.eneterSearchValue(config.getValue(getEnvironment() + arg1 + "user"));
 	}
 
 	@When("^I click on ids Select Users to Add Role search$")
@@ -80,7 +80,7 @@ public class IDServerUserRoles extends BasicTestObject {
 	@When("^I select ids Select Users to Add Role \"([^\"]*)\" check box$")
 	public void i_select_ids_Select_Users_to_Add_Role_check_box(String arg1) throws Throwable {
 		CarbonRolesPage carbonRoles = new CarbonRolesPage(driver);
-		carbonRoles.selectUser(arg1);
+		carbonRoles.selectUser(config.getValue(getEnvironment() + arg1 + "user"));
 	}
 
 	@When("^I click on ids Select Users to Add Role Finish$")
@@ -116,7 +116,7 @@ public class IDServerUserRoles extends BasicTestObject {
 	@When("^I enter ids Search Users to Enter user name pattern as \"([^\"]*)\"$")
 	public void i_enter_ids_Search_Users_to_Enter_user_name_pattern_as(String arg1) throws Throwable {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
-		carbonUserRolesPage.setSearchCriteria(arg1);
+		carbonUserRolesPage.setSearchCriteria(config.getValue(getEnvironment() + arg1 + "user"));
 	}
 
 	@When("^I click on ids Users search button$")
@@ -128,7 +128,7 @@ public class IDServerUserRoles extends BasicTestObject {
 	@Then("^I should see the \"([^\"]*)\" on ids Users search area$")
 	public void i_should_see_the_on_ids_Users_search_area(String arg1) throws Throwable {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
-		Assert.assertTrue("Username is not there on the search result area",carbonUserRolesPage.isUserSearch(arg1));
+		Assert.assertTrue("Username is not there on the search result area",carbonUserRolesPage.isUserSearch(config.getValue(getEnvironment() + arg1 + "user")));
 	}
 	
 	@When("^I click on ids Users view roles link and delete existing Publisher role from the user$")
@@ -150,7 +150,7 @@ public class IDServerUserRoles extends BasicTestObject {
 	@When("^I click on ids Users assign roles link under \"([^\"]*)\"$")
 	public void i_click_on_ids_Users_assign_roles_link_under(String arg1) throws Throwable {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
-		carbonUserRolesPage.clickAssignRoles(arg1);		
+		carbonUserRolesPage.clickAssignRoles(config.getValue(getEnvironment() + arg1 + "user"));		
 	}
 
 	@Then("^I should see the ids List of roles page table header as \"([^\"]*)\"$")
@@ -247,7 +247,7 @@ public class IDServerUserRoles extends BasicTestObject {
 	public void I_close_the_browser() throws Throwable {
 		driver.close();
 		launchBrowser();
-		driver.get(config.getValue("apiManagerSiteName"));
+		driver.get(config.getValue(getEnvironment() + "ApiManagerSiteName"));
 	}
 	
 	@When("^I close the browser and reopen the browsers and navigate to apipublisher page$")
@@ -255,7 +255,7 @@ public class IDServerUserRoles extends BasicTestObject {
 		driver.close();
 		launchBrowser();
 		Thread.sleep(10000);
-		driver.get(config.getValue("apiManagerPublisher"));
+		driver.get(config.getValue(getEnvironment() + "ApiManagerPublisher"));
 	}
 
    @Then("^I clear existing aggrigator role$")
@@ -278,7 +278,7 @@ public class IDServerUserRoles extends BasicTestObject {
 	   CarbonRolesPage carbonRoles = new CarbonRolesPage(driver);
 	   
        if (carbonRoles.isUserNameVisible()) {
-    	   carbonRoles.clickDeleteUser(arg1);
+    	   carbonRoles.clickDeleteUser(config.getValue(getEnvironment() + arg1 + "user"));
     	   carbonRoles.clickYes();
     	   carbonRoles.clickOK();
 	} else {

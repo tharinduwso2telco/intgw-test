@@ -17,8 +17,9 @@ public class APIHomeSteps extends BasicTestObject {
 	@Given("^I am in apimanager$")
 	public void i_am_in_apimanager() throws Throwable {
 		if (driver==null){
+			initialize();
 			launchBrowser();
-			driver.get(config.getValue("apiManagerSiteName"));
+			driver.get(config.getValue(getEnvironment() + "ApiManagerSiteName"));
 		}
 	}
 
@@ -34,22 +35,22 @@ public class APIHomeSteps extends BasicTestObject {
 		Assert.assertTrue("Sign up page did not load properly", signupPage.isSignUpHeader(arg1));
 	}
 
-	@When("^I enter apimanager Sign-up for a new account username as \"([^\"]*)\"$")
-	public void i_enter_apimanager_Sign_up_for_a_new_account_username_as(String arg1) throws Throwable {
+	@When("^I enter apimanager Sign-up for a new account username for \"([^\"]*)\"$")
+	public void i_enter_apimanager_Sign_up_for_a_new_account_username_for(String arg1) throws Throwable {
 	    SignUpPage signupPage = new SignUpPage(driver);
-		signupPage.enterNewUName(arg1);
+		signupPage.enterNewUName(config.getValue(getEnvironment() + arg1 + "user"));
 	}
 
-	@When("^I enter apimanager Sign-up for a new account Password as \"([^\"]*)\"$")
-	public void i_enter_apimanager_Sign_up_for_a_new_account_Password_as(String arg1) throws Throwable {
+	@When("^I enter apimanager Sign-up for a new account Password for \"([^\"]*)\"$")
+	public void i_enter_apimanager_Sign_up_for_a_new_account_Password_for(String arg1) throws Throwable {
 	    SignUpPage signupPage = new SignUpPage(driver);
-		signupPage.enterPWord(arg1);
+		signupPage.enterPWord(config.getValue(getEnvironment() + arg1 + "pwd"));
 	}
 
-	@When("^I enter apimanager Sign-up for a new account Re-type password as \"([^\"]*)\"$")
-	public void i_enter_apimanager_Sign_up_for_a_new_account_Re_type_password_as(String arg1) throws Throwable {
+	@When("^I enter apimanager Sign-up for a new account Re-type password for \"([^\"]*)\"$")
+	public void i_enter_apimanager_Sign_up_for_a_new_account_Re_type_password_for(String arg1) throws Throwable {
 	    SignUpPage signupPage = new SignUpPage(driver);
-		signupPage.reTypePWord(arg1);
+		signupPage.reTypePWord(config.getValue(getEnvironment() + arg1 + "pwd"));
 	}
 
 	@When("^I enter apimanager Sign-up for a new account Last name as \"([^\"]*)\"$")
@@ -102,11 +103,11 @@ public class APIHomeSteps extends BasicTestObject {
 		 Assert.assertTrue("Login pop up is not displayed",loginPage.isLoginDisplayed(arg1));
 	}
 
-	@When("^I enter apimanager Login username as \"([^\"]*)\" and password as \"([^\"]*)\"$")
-	public void i_enter_apimanager_Login_username_as_and_password_as(String arg1, String arg2) throws Throwable {
+	@When("^I enter apimanager Login username and password for \"([^\"]*)\"$")
+	public void i_enter_apimanager_Login_username_and_password_for(String arg1) throws Throwable {
 	    LoginPage loginPage = new LoginPage(driver);
-		loginPage.enterLoginUserName(arg1);
-		loginPage.enterLoginPassword(arg2);
+		loginPage.enterLoginUserName(config.getValue(getEnvironment() + arg1 + "user"));
+		loginPage.enterLoginPassword(config.getValue(getEnvironment() + arg1 + "pwd"));
 	}
 
 	@When("^I click on apimanager Login pop up login button$")
@@ -119,7 +120,7 @@ public class APIHomeSteps extends BasicTestObject {
 	public void i_should_see_apimanager_at_the_top_right_corner_of_the_page(String arg1) throws Throwable {
 	    LoginPage loginPage = new LoginPage(driver);
 	    Thread.sleep(10000);
-		Assert.assertTrue("User Name did not show properly",loginPage.isUserName(arg1));
+		Assert.assertTrue("User Name did not show properly",loginPage.isUserName(config.getValue(getEnvironment() + arg1 + "user")));
 	}
 
 	@When("^I click on arrow after the apimanager username$")

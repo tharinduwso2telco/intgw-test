@@ -16,16 +16,17 @@ public class IDServerHome extends BasicTestObject {
 	@Given("^I am in ids page$")
 	public void i_am_in_ids_page() throws Throwable {
 		if (driver==null){
+			initialize();
 			launchBrowser();
-			driver.get(config.getValue("carbonSiteName"));
+			driver.get(config.getValue(getEnvironment() + "CarbonSiteName"));
 		}
 	}
 
 	@When("^I enter ids username credentials$")
 	public void i_enter_ids_username_credentials() throws Throwable {
 		CarbonLoginPage carbonLogin = new CarbonLoginPage(driver);
-		carbonLogin.setCarbonUsername(config.getValue("adminUserName"));
-		carbonLogin.setCarbonPassword(config.getValue("adminPassword"));
+		carbonLogin.setCarbonUsername(config.getValue(getEnvironment() + "AdminUserName"));
+		carbonLogin.setCarbonPassword(config.getValue(getEnvironment() + "AdminPassword"));
 	}
 
 	@When("^I click on ids sign in$")

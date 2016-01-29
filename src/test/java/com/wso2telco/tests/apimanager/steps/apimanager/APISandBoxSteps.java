@@ -19,11 +19,11 @@ public class APISandBoxSteps extends BasicTestObject {
 	    Assert.assertTrue("Sandbox page did not load properly", sandbox.isSandboxLoginPage(arg1));
 	}
 
-	@When("^I enter apimanager Sandbox page \"([^\"]*)\" as user name and \"([^\"]*)\" as password$")
-	public void i_enter_apimanager_Sandbox_page_as_user_name_and_as_password(String arg1, String arg2) throws Throwable {
+	@When("^I enter apimanager Sandbox page username and password for \"([^\"]*)\"$")
+	public void i_enter_apimanager_Sandbox_page_username_and_password_for(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
-		sandbox.enterUserName(arg1);
-		sandbox.enterPassword(arg2);
+		sandbox.enterUserName(config.getValue(getEnvironment() + arg1 + "user"));
+		sandbox.enterPassword(config.getValue(getEnvironment() + arg1 + "pwd"));
 	}
 
 	@When("^I click on apimanager Sandbox page login button$")
@@ -40,8 +40,8 @@ public class APISandBoxSteps extends BasicTestObject {
 	    Assert.assertTrue("Sandbox Welcome page did not load properly", sandbox.isSandboxWelcome(arg1));
 	}
 
-	@When("^I click on apimanager Sandbox page \"([^\"]*)\"$")
-	public void i_click_on_apimanager_Sandbox_page(String arg1) throws Throwable {
+	@When("^I click on apimanager Sandbox page$")
+	public void i_click_on_apimanager_Sandbox_page() throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
 		sandbox.clickUserName();
 	}
