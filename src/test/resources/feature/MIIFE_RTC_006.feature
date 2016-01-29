@@ -77,7 +77,7 @@ And I click on apimanager Login pop up login button
 Then I should see apimanager "<username>" at the top right corner of the page
 And I should see apimanager "<apiName>" api from the left pane
 When I click on the apimanager "<apiName>" api
-Then I should see the apimanager APIs "<apiName>" status as published
+Then I should see the apimanager APIs "<apiName>" status as "Published"
 
 Examples:
 | username|Password |apiName   |prodEndpoint |sandEndpoint |roleType		   |
