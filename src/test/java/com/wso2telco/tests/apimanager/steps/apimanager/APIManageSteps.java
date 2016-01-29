@@ -69,13 +69,13 @@ public class APIManageSteps extends BasicTestObject {
 	@When("^I click on apimanager Manager admin$")
 	public void i_click_on_apimanager_Manager_admin() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		managerpage.clickLogout();
+		managerpage.clickUserName();
 	}
 	
 	@When("^I click on apimanager Manager dialogAdmin$")
 	public void i_click_on_apimanager_Manager_dialogAdmin() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		managerpage.clickLogout();
+		managerpage.clickUserName();
 	}
 
 	@When("^I click on close window$")
@@ -107,6 +107,7 @@ public class APIManageSteps extends BasicTestObject {
 	public void i_should_see_apimanager_Manager_Home_Billing_Workflow() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		Assert.assertTrue("3 Tabs are not visible", managerpage.isThreeTabs());
+		Thread.sleep(10000);
 	}
 	
 	@When("^I click on apimanager Manager page Workflow tab$")
@@ -149,12 +150,14 @@ public class APIManageSteps extends BasicTestObject {
 	public void i_click_Assign_To_Me_button_for_Application_Details_row(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.clickAssignMe(arg1);
+		Thread.sleep(10000);
 	}
 	
 	@When("^I click on Start button for \"([^\"]*)\" Application Details row$")
 	public void i_click_on_Start_button_for_Application_Details_row(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.clickStart(arg1);
+		Thread.sleep(10000);
 	}
 	
 	@When("^I select \"([^\"]*)\" and click complete button for \"([^\"]*)\" Application Details row$")
@@ -162,24 +165,28 @@ public class APIManageSteps extends BasicTestObject {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.selectCondition(arg1, arg2);
 		managerpage.clickComplete(arg2);
+		Thread.sleep(10000);
 	}
 	
 	@When("^I enter aprrove/reject reason as \"([^\"]*)\"$")
 	public void i_enter_aprrove_reject_reason_as(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.enterApproveRejectReason(arg1);
+		Thread.sleep(10000);
 	}
 	
 	@When("^click aprrove/reject reason ok button$")
 	public void click_aprrove_reject_reason_ok_button() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.clickApproveOK();
+		Thread.sleep(10000);
 	}
 	
 	@Then("^I should not see the created application in Approval Tasks table as \"([^\"]*)\"$")
 	public void i_should_not_see_the_created_application_in_Approval_Tasks_table_as(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		Assert.assertTrue("App name is visible after approving", managerpage.isApplicationNameNotVisible(arg1));
+		Thread.sleep(10000);
 	}
 	
 	@When("^I click on subscriptions creation under tasks$")
@@ -198,5 +205,6 @@ public class APIManageSteps extends BasicTestObject {
 	public void i_should_see_Enter_aprrove_reject_reasons_pop_up_header_as(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		Assert.assertTrue("Enter aprrove/reject reasons pop up did not load properly",managerpage.isApproveRejectPopupDisplayed(arg1));
+		Thread.sleep(10000);
 	}
 }

@@ -75,16 +75,6 @@ public class IDServerHome extends BasicTestObject {
 		CarbonHomePage carbonHome = new CarbonHomePage(driver);
 		carbonHome.clickList();
 	}
-	
-	@Then("^I should not see \"([^\"]*)\" Application in Service Providers table$")
-	public void i_should_not_see_Application_in_Service_Providers_table(String arg1) throws Throwable {
-		CarbonHomePage carbonHome = new CarbonHomePage(driver);
-		
-	       if (carbonHome.isAppAvailable(arg1)) {
-	    	   carbonHome.clickAppDelete(arg1);
-	    	   carbonHome.clickYes();
-		}
 	       
 	   }
-	}
 
