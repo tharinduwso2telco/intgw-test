@@ -50,16 +50,18 @@ public class APIsSteps extends BasicTestObject {
 	public void i_should_see_Application(String arg1) throws Throwable {
 		APIsPage apiPage = new APIsPage(driver);
 		Assert.assertTrue("Application name is not on the drop down", apiPage.isApplicationNameVisible(arg1));
+		Thread.sleep(10000);
 	}
 
 	@When("^I select \"([^\"]*)\"$")
 	public void i_select(String arg1) throws Throwable {
 		APIsPage apiPage = new APIsPage(driver);
 		apiPage.clickAppName(arg1);
+		Thread.sleep(10000);
 	}
 	
-	@When("^I select \"([^\"]*)\" as operator$")
-	public void i_select_as_operator(String arg1) throws Throwable {
+	@When("^I select DIALOG as \"([^\"]*)\"$")
+	public void i_select_dialog_as(String arg1) throws Throwable {
 		APIsPage apiPage = new APIsPage(driver);
 		apiPage.clickOperator(arg1);
 	}

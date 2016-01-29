@@ -9,46 +9,46 @@ Then I should see the apimanager "Login" pop up
 When I enter apimanager Login username as "<username>" and password as "<Password>" 
 And I click on apimanager Login pop up login button
 Then I should see apimanager "<username>" at the top right corner of the page
-When I click on apimanager Manage 
-Then I should see the apimanager Manager page header as "Manager"
-When I enter apimanager Manager page admin username credentials
-And I click on apimanager Manager page login button
-Then I should see the apimanager Manager Home page header as "Home"
-And I should see apimanager Manager Home Billing Workflow Blacklist Whitelist tabs
-When I click on apimanager Manager page Workflow tab
-Then I should see apimanager Manager Approval Tasks page header as "Approval Tasks"
-When I click on Application creation link
-Then I should see created application "<AppName>" at the top of the Approval Tasks table
-When I click on Application Details drop box for "<AppName>" row
-And I select "<Application Details>" for "<AppName>" Application Details row
-And I click Assign To Me button for "<AppName>" Application Details row
-And I click on Start button for "<AppName>" Application Details row
-And I select "<Action>" and click complete button for "<AppName>" Application Details row
-Then I should see Enter aprrove/reject reasons pop up header as "aprrove/reject reasons"
-When I enter aprrove/reject reason as "Approved"
-And click aprrove/reject reason ok button
-Then I should not see the created application in Approval Tasks table as "<AppName>"
-When I click on apimanager Manager admin
-And I click on apimanager Manager logout button
-Then I should see the apimanager Manager page header as "Manager"
-When I enter apimanager Manager page operator username credentials
-And I click on apimanager Manager page login button
-Then I should see the apimanager Manager Home page header as "Home"
-And I should see apimanager Manager Home Billing Workflow
-When I click on apimanager Manager page Workflow tab
-Then I should see apimanager Manager Approval Tasks page header as "Approval Tasks"
-When I click on Application creation link
-Then I should see created application "<AppName>" at the top of the Approval Tasks table
-When I click on Start button for "<AppName>" Application Details row
-And I select "<Action>" and click complete button for "<AppName>" Application Details row
-Then I should see Enter aprrove/reject reasons pop up header as "aprrove/reject reasons"
-When I enter aprrove/reject reason as "Approved"
-And click aprrove/reject reason ok button
-Then I should not see the created application in Approval Tasks table as "<AppName>"
-When I click on apimanager Manager dialogAdmin
-And I click on apimanager Manager logout button
-Then I should see the apimanager Manager page header as "Manager"
-When I click on close window
+#When I click on apimanager Manage 
+#Then I should see the apimanager Manager page header as "Manager"
+#When I enter apimanager Manager page admin username credentials
+#And I click on apimanager Manager page login button
+#Then I should see the apimanager Manager Home page header as "Home"
+#And I should see apimanager Manager Home Billing Workflow Blacklist Whitelist tabs
+#When I click on apimanager Manager page Workflow tab
+#Then I should see apimanager Manager Approval Tasks page header as "Approval Tasks"
+#When I click on Application creation link
+#Then I should see created application "<AppName>" at the top of the Approval Tasks table
+#When I click on Application Details drop box for "<AppName>" row
+#And I select "<Application Details>" for "<AppName>" Application Details row
+#And I click Assign To Me button for "<AppName>" Application Details row
+#And I click on Start button for "<AppName>" Application Details row
+#And I select "<Action>" and click complete button for "<AppName>" Application Details row
+#Then I should see Enter aprrove/reject reasons pop up header as "Enter approve/reject reasons"
+#When I enter aprrove/reject reason as "Approved"
+#And click aprrove/reject reason ok button
+#Then I should not see the created application in Approval Tasks table as "<AppName>"
+#When I click on apimanager Manager admin
+#And I click on apimanager Manager logout button
+#Then I should see the apimanager Manager page header as "Manager"
+#When I enter apimanager Manager page operator username credentials
+#And I click on apimanager Manager page login button
+#Then I should see the apimanager Manager Home page header as "Home"
+#And I should see apimanager Manager Home Billing Workflow
+#When I click on apimanager Manager page Workflow tab
+#Then I should see apimanager Manager Approval Tasks page header as "Approval Tasks"
+#When I click on Application creation link
+#Then I should see created application "<AppName>" at the top of the Approval Tasks table
+#When I click on Start button for "<AppName>" Application Details row
+#And I select "<Action>" and click complete button for "<AppName>" Application Details row
+#Then I should see Enter aprrove/reject reasons pop up header as "Enter approve/reject reasons"
+#When I enter aprrove/reject reason as "Approved"
+#And click aprrove/reject reason ok button
+#Then I should not see the created application in Approval Tasks table as "<AppName>"
+#When I click on apimanager Manager dialogAdmin
+#And I click on apimanager Manager logout button
+#Then I should see the apimanager Manager page header as "Manager"
+#When I click on close window
 And I click on apimanager APIs module
 Then I should see the apimanager APIs page header as "APIs"
 When I click on the apimanager "<apiName>" api
@@ -56,7 +56,7 @@ Then I should see the apimanager APIs "<apiName>" status as "Published"
 When I click on Applications dropdown
 Then I should see "<AppName>" Application
 When I select "<AppName>"
-And I select "<operator>"
+When I select DIALOG as "<operator>"
 And I click apimanager "<APIName>" API page subscribe button
 Then I should see "Subscription Successful" on Subscription Successful pop up
 When I click Go to My Subscription button
@@ -69,13 +69,13 @@ And I click on apimanager Manager page login button
 Then I should see the apimanager Manager Home page header as "Home"
 And I should see apimanager Manager Home Billing Workflow Blacklist Whitelist tabs
 When I click on apimanager Manager page Workflow tab
-Then I should see Enter aprrove/reject reasons pop up header as "aprrove/reject reasons"
+Then I should see Enter aprrove/reject reasons pop up header as "Enter approve/reject reasons"
 When I click on subscriptions creation under tasks
 Then I should see created application "<AppName>" at the top of the Approval Tasks table
 When I click Assign To Me button for "<AppName>" Application Details row
 And I click on Start button for "<AppName>" Application Details row
 And I select "<Action>" and click complete button for "<AppName>" Application Details row
-Then I should see Enter aprrove/reject reasons pop up header as "aprrove/reject reasons"
+Then I should see Enter aprrove/reject reasons pop up header as "Enter approve/reject reasons"
 When I enter aprrove/reject reason as "Approved"
 And click aprrove/reject reason ok button
 Then I should not see the created application in Approval Tasks table as "<AppName>"
@@ -93,7 +93,7 @@ Then I should see created application "<AppName>" at the top of the Approval Tas
 When I click Assign To Me button for "<AppName>" Application Details row
 And I click on Start button for "<AppName>" Application Details row
 And I select "<Action>" and click complete button for "<AppName>" Application Details row
-Then I should see Enter aprrove/reject reasons pop up header as "aprrove/reject reasons"
+Then I should see Enter aprrove/reject reasons pop up header as "Enter approve/reject reasons"
 When I enter aprrove/reject reason as "Approved"
 And click aprrove/reject reason ok button
 Then I should not see the created application in Approval Tasks table as "<AppName>"
@@ -153,5 +153,5 @@ Then I should see Application updated successfully pop up message as "Applicatio
 
 #J cannot delete app
 Examples:
-| username     |Password |AppName           |Application Details|Action |status|APIName           |operator|validity|Callback URL                                                     |
-|AuxLogoutUser |1qaz2wsx@|AuxLogoutUserApp  |Unlimited          |Approve|READY |AuxTestAPI-1.0.0.1|DIALOG  |-1      |https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|
+| username     |Password |AppName                      |Application Details|Action |status|apiName	 |operator|validity|Callback URL                                                     |
+|AuxLogoutUser |1qaz2wsx@|AuxLogoutUser_AusTestingApp02|Unlimited          |Approve|READY |AuxAppTest|DIALOG  |-1      |https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|
