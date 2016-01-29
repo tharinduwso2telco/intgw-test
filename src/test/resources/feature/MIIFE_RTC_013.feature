@@ -56,5 +56,5 @@ And click aprrove/reject reason ok button
 Then I should not see the created application in Approval Tasks table as "<AppName>"
 
 Examples:
-| username     |Password |AppName           |Action |APIName           |operator|
+| username     |Password |AppName                        |Action |APIName           |operator|
 |AuxTestUser002|1qaz2wsx@|AuxTestUser002_AuxTestAppTest13|Approve|AuxTestAPI-1.0.0.1|DIALOG  |
