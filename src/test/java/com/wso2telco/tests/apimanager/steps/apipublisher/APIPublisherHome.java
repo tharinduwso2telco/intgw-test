@@ -23,7 +23,7 @@ public class APIPublisherHome extends BasicTestObject {
 	@When("^I provide apipublisher username as \"([^\"]*)\" and password as \"([^\"]*)\"$")
 	public void i_provide_apipublisher_username_as_and_password_as(String arg1, String arg2) throws Throwable {
 		APIPublisherLoginPage publisherLogin = new APIPublisherLoginPage(driver);
-		publisherLogin.enterUsername(arg2);
+		publisherLogin.enterUsername(arg1);
 		publisherLogin.enterPassword(arg2);
 	}
 	
@@ -37,6 +37,14 @@ public class APIPublisherHome extends BasicTestObject {
 	public void i_should_see_apipublisher_username_at_the_top_right_corner_of_the_page(String arg1) throws Throwable {
 		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
 		Assert.assertTrue("Incorrect user login", publisherHome.isUserLogin(arg1));
+	}
+	
+	@When("^I search existing API \"([^\"]*)\" and delete it$")
+	public void i_search_existing_API_and_delete_it(String arg1) throws Throwable {
+		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
+		publisherHome.enterAPINameSearch(arg1);
+		publisherHome.clickSearch();
+		publisherHome.deleteExistingAPI(arg1);
 	}
 
 	@When("^I click on apipublisher Add link$")

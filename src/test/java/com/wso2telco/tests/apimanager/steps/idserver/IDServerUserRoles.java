@@ -137,9 +137,9 @@ public class IDServerUserRoles extends BasicTestObject {
 		carbonUserRolesPage.clickUsersViewRoles();
 		if (carbonUserRolesPage.isPublisherRole()){
 			carbonUserRolesPage.untickInternalPublisher();
-			if (carbonUserRolesPage.isInternalSubscriber()){
+			/*if (carbonUserRolesPage.isInternalSubscriber()){
 				carbonUserRolesPage.untickInternalSubscriber();
-			}
+			}*/
 			carbonUserRolesPage.clickEditRolesFinish();
 			carbonUserRolesPage.clickEditRolesSuccessMsgOk();
 		} else {
@@ -254,6 +254,7 @@ public class IDServerUserRoles extends BasicTestObject {
 	public void i_close_the_browser_and_reopen_the_browsers_and_navigate_to_apipublisher_page() throws Throwable {
 		driver.close();
 		launchBrowser();
+		Thread.sleep(10000);
 		driver.get(config.getValue("apiManagerPublisher"));
 	}
 
