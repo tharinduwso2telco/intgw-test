@@ -6,9 +6,9 @@ Scenario Outline: Check if subscriptions can be created
 Given I am in apimanager
 When I click on apimanager login
 Then I should see the apimanager "Login" pop up
-When I enter apimanager Login username as "<username>" and password as "<Password>" 
+When I enter apimanager Login username and password for "<usertype>" 
 And I click on apimanager Login pop up login button
-Then I should see apimanager "<username>" at the top right corner of the page
+Then I should see apimanager "<usertype>" at the top right corner of the page
 When I click on the apimanager "<APIName>" api
 Then I should see the apimanager APIs "<APIName>" status as "Published"
 When I click on Applications dropdown
@@ -56,5 +56,5 @@ And click aprrove/reject reason ok button
 Then I should not see the created application in Approval Tasks table as "<AppName>"
 
 Examples:
-| username     |Password |AppName                        |Action |APIName           |operator|
-|AuxTestUser002|1qaz2wsx@|AuxTestUser002_AuxTestAppTest13|Approve|AuxTestAPI-1.0.0.1|DIALOG  |
+| usertype    |AppName                        |Action |APIName           |operator|
+|SUBSCRIBERAPP|AuxTestUser002_AuxTestAppTest13|Approve|AuxTestAPI-1.0.0.1|DIALOG  |
