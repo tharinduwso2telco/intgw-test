@@ -1,7 +1,7 @@
-Feature: Validate Adding a range of numbers as Whitelist Numbers
+Feature: Validate if duplicate values can be added as Whitelist Numbers
 
 @Smoke
-Scenario Outline: Check if a range of numbers can be added to whitelist
+Scenario Outline: Check if the system will inform to the user if a duplicate value is entered for white list
 Given I am in apimanager
 When I click on apimanager login
 Then I should see the apimanager "Login" pop up
@@ -20,19 +20,17 @@ When I click on whitelist subscriber drop box
 And I select "<usertype>" as subscriber
 And I select "<appname>" as Application
 And I select "<API>" as whitelist API
-And I select Whitelist numbers range radio button
-And I enter "<Min Number>" as Min Number
-And I enter "<Max Number>" as Max Number
-And I click on whitelist Upload Number List button
+And I select Upload number Manually radio button
+And I enter the "<WhiteList Number>" as the number to whitelist
+And I click whitelist page Upload Number button
 Then I should see success pop up
 When I click on apimanager Manager page Whitelist tab
-And I select Upload White list number list radio button
-And I click whitelist Add Number List button
-Then I should see the pop up to enter the numbers as "<Enter Number List>" 
-When I click on add number list pop up ok button
-Then I should see the success pop up
+And I select Upload number Manually radio button
+And I enter the "<WhiteList Number>" as the number to whitelist
+And I click whitelist page Upload Number button
+Then I should see error message
 
 
 Examples:
-| usertype|API |whitelist pageHeader|appname|Min Number |Max Number |Enter Number List                                  |Number List            |
-|LOGOUT   |USSD|APIwise Whitelist   |test1  |94778123450|94778123460|Please enter whitelist numbers Separated with comma|94778123412,94778123414|
+| usertype|API |WhiteList Number|whitelist pageHeader|appname|
+|LOGOUT   |USSD|94123496898     |APIwise Whitelist   |test1  |
