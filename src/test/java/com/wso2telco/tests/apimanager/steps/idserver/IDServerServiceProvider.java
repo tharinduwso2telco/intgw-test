@@ -21,6 +21,7 @@ public class IDServerServiceProvider extends BasicTestObject  {
 	public void i_click_on_edit_link(String arg1) throws Throwable {
 		CarbonServiceProvider csp = new CarbonServiceProvider(driver);
 		csp.clickAppEdit(arg1);
+		Thread.sleep(10000);
 	}
 	
 	@Then("^I should see ids Service providers page header as \"([^\"]*)\"$")

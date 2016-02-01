@@ -56,7 +56,7 @@ Then I should see the apimanager APIs "<apiName>" status as "Published"
 When I click on Applications dropdown
 Then I should see "<AppName>" Application
 When I select "<AppName>"
-When I select DIALOG as "<operator>"
+And I select DIALOG as "<operator>"
 And I click apimanager "<APIName>" API page subscribe button
 Then I should see "Subscription Successful" on Subscription Successful pop up
 When I click Go to My Subscription button
@@ -69,8 +69,7 @@ And I click on apimanager Manager page login button
 Then I should see the apimanager Manager Home page header as "Home"
 And I should see apimanager Manager Home Billing Workflow Blacklist Whitelist tabs
 When I click on apimanager Manager page Workflow tab
-Then I should see Enter aprrove/reject reasons pop up header as "Enter approve/reject reasons"
-When I click on subscriptions creation under tasks
+And I click on subscriptions creation under tasks
 Then I should see created application "<AppName>" at the top of the Approval Tasks table
 When I click Assign To Me button for "<AppName>" Application Details row
 And I click on Start button for "<AppName>" Application Details row
@@ -112,7 +111,7 @@ When I enter token validity of sandbox as "<validity>"
 And I click generate under apimanager Subscriptions page sandbox
 Then I should see consumer Key of sandbox
 And I should see consumer Secret of sandbox
-When I close the browser
+When I close the api manager 
 And I am in ids page
 And I enter ids username credentials
 And I click on ids sign in
@@ -122,7 +121,7 @@ Then I should see ids Main menu "Service Providers" as the first item
 When I click on ids Main List link
 Then I should see "<AppName>" Application in Service Providers table
 When I click on "<AppName>" edit link
-Then I should see ids Service providers page header as "Service providers"
+Then I should see ids Service providers page header as "Service Providers"
 When I click on Inbound Authentication Configuration
 And I click on OAuth/OpenID Connect Configuration
 And I click on OAth client secret show button

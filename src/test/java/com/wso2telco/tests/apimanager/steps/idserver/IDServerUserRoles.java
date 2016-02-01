@@ -250,6 +250,13 @@ public class IDServerUserRoles extends BasicTestObject {
 		driver.get(config.getValue(getEnvironment() + "ApiManagerSiteName"));
 	}
 	
+	@When("^I close the api manager$")
+	public void i_close_the_api_manager() throws Throwable {
+		driver.close();
+		launchBrowser();
+		driver.get(config.getValue(getEnvironment() + "CarbonSiteName"));
+	}
+	
 	@When("^I close the browser and reopen the browsers and navigate to apipublisher page$")
 	public void i_close_the_browser_and_reopen_the_browsers_and_navigate_to_apipublisher_page() throws Throwable {
 		driver.close();

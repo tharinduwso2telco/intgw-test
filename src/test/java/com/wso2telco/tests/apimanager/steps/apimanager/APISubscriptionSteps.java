@@ -29,12 +29,14 @@ public class APISubscriptionSteps extends BasicTestObject {
 	public void i_click_generate_under_apimanager_Subscriptions_page_production() throws Throwable {
 		SubscriptionsPage subpage = new SubscriptionsPage(driver);
 		subpage.clickProdGen();
+		Thread.sleep(10000);
 	}
 	
 	@When("^I click generate under apimanager Subscriptions page sandbox$")
 	public void i_click_generate_under_apimanager_Subscriptions_page_sandbox() throws Throwable {
 		SubscriptionsPage subpage = new SubscriptionsPage(driver);
 		subpage.clickSandGen();
+		Thread.sleep(10000);
 	}
 	
 	@When("^I enter token validity of sandbox as \"([^\"]*)\"$")
