@@ -150,8 +150,6 @@ And I click on IWA-NTLM
 And I click on View/Update application settings page update
 Then I should see Application updated successfully pop up message as "Application updated successfully"
 
-
-#J cannot delete app
 Examples:
 |usertype|AppName                      |Application Details|Action |status|apiName	 |operator|validity|Callback URL                                                     |
 |LOGOUT  |AuxLogoutUser_AusTestingApp02|Unlimited          |Approve|READY |AuxAppTest|DIALOG  |-1      |https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|
