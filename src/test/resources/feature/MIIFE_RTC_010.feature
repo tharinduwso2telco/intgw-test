@@ -26,5 +26,5 @@ Then I should not see "<AppName>" Application
 
 
 Examples:
-| usertype|Password |APIName 	|Name         |Callback URL                                                      |Description  |Tier   |status  |No subscriptions                                                                                                       |AppName                     |
-|APPCREATE|1qaz2wsx@|AuxAppTest |AuxTestUser005|https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|AuXTestAPI003|Default|INACTIVE|No subscriptions are created yet. To add a new subscription , select an API and subscribe to it from API listing page .|AuxTestUser005_AuXTestAPI003|
+| usertype|APIName 	|Name         |Callback URL                                                      |Description  |Tier   |status  |No subscriptions                                                                                                       |AppName                     |
+|APPCREATE|AuxAppTest |AuxTestUser005|https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|AuXTestAPI003|Default|INACTIVE|No subscriptions are created yet. To add a new subscription , select an API and subscribe to it from API listing page .|AuxTestUser005_AuXTestAPI003|

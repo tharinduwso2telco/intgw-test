@@ -2,18 +2,18 @@ Feature: Create and Publish an API
 
 @Smoke
 Scenario Outline: Check if the user is able to create api with a user with publisher role
-Given I am in ids page
-When I enter ids username credentials
-And I click on ids sign in
+Given I am in identity server page
+When I enter identity server username credentials
+And I click on identity server sign in
 Then I should see the ids Home page header as "WSO2 Identity Server Home"
-When I click on ids Configuration tab
+When I click on identity server Configuration tab
 Then I should see ids Configuration menu with first item as "Users and Roles"
-When I click on ids Configuration Users and Roles link
-Then I should see ids User Management page header as "System User Store"
-When I click ids User Management Users link
+When I click on identity server Configuration Users and Roles link
+Then I should see identity server User Management page header as "System User Store"
+When I click identity server User Management Users link
 Then I should see ids User Management Users page header as "Users"
-When I enter ids Search Users to Enter user name pattern as "<usertype>" 
-And I click on ids Users search button
+When I enter identity server Search Users to Enter user name pattern as "<usertype>" 
+And I click on identity server Users search button
 Then I should see the "<usertype>" on ids Users search area
 When I click on ids Users view roles link and delete existing Publisher role from the user
 And I click on ids Users assign roles link under "<usertype>"

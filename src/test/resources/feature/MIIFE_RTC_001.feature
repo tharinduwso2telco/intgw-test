@@ -14,7 +14,7 @@ And I click on identity server Users search button
 And I click delete existing username as "<usertype>"
 Then I close the browser
 Given I am in apimanager
-And I click on apimanager sign-up button
+When I click on apimanager sign-up button
 Then I should see the apimanager sign-up for a new account form as "Sign - Up for a New Account"
 When I enter apimanager Sign-up for a new account username for "<usertype>" 
 And I enter apimanager Sign-up for a new account Password for "<usertype>"
