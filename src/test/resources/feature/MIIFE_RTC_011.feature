@@ -1,4 +1,4 @@
-Feature: Check if apps are saved as SP in identity server after the token generation and API invocation are completed
+Feature: Validate if apps are saved after the token generation and API invocation completed
 
 @Smoke
 Scenario Outline: Check if apps are saved as SP in identity server after the token generation and API invocation are completed
@@ -151,4 +151,4 @@ Then I should see Application updated successfully pop up message as "Applicatio
 
 Examples:
 |usertype|AppName                      |Application Details|Action |status|apiName	 |operator|validity|Callback URL                                                     |
-|LOGOUT  |AuxLogoutUser_AusTestingApp02|Unlimited          |Approve|READY |AuxAppTest|DIALOG  |-1      |https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|
+|LOGOUT  |AuxLogoutUser_AusTestingApp03|Unlimited          |Approve|READY |AuxAppTest|DIALOG  |-1      |https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|

@@ -1,4 +1,4 @@
-Feature: check if the token expires as expected
+Feature: Validate token expiration
 
 @Smoke
 Scenario Outline: check if the token expires as expected

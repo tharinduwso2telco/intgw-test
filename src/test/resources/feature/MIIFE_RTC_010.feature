@@ -1,4 +1,4 @@
-Feature: Check if the application creation works as expected for service provider
+Feature: Application Creation for service provider
 
 @Smoke
 Scenario Outline: Check if the application creation works as expected for service provider
@@ -14,7 +14,6 @@ And I should see the apimanager Application page Add New Application form header
 And I clear existing "<Name>" for "<usertype>"
 When I enter "<Name>" as Name "<Callback URL>" as Callback URL and "<Description>" as Description
 And I click on Add button
-#cannot proceed because, delete existing app is not possible
 Then I should see the added Application Name as "<usertype>" _ "<Name>" Tier as "<Tier>" Status as "<status>" and Description as "<Description>"
 When I click on apimanager My Subscriptions
 Then I should see "<No subscriptions>" message

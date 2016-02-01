@@ -13,8 +13,8 @@ import cucumber.api.java.en.When;
 
 public class IDServerHome extends BasicTestObject {
 	
-	@Given("^I am in ids page$")
-	public void i_am_in_ids_page() throws Throwable {
+	@Given("^I am in identity server page$")
+	public void i_am_in_identity_server_page() throws Throwable {
 		if (driver==null){
 			initialize();
 			launchBrowser();
@@ -22,15 +22,15 @@ public class IDServerHome extends BasicTestObject {
 		}
 	}
 
-	@When("^I enter ids username credentials$")
-	public void i_enter_ids_username_credentials() throws Throwable {
+	@When("^I enter identity server username credentials$")
+	public void i_enter_identity_server_username_credentials() throws Throwable {
 		CarbonLoginPage carbonLogin = new CarbonLoginPage(driver);
 		carbonLogin.setCarbonUsername(config.getValue(getEnvironment() + "AdminUserName"));
 		carbonLogin.setCarbonPassword(config.getValue(getEnvironment() + "AdminPassword"));
 	}
 
-	@When("^I click on ids sign in$")
-	public void i_click_on_ids_sign_in() throws Throwable {
+	@When("^I click on identity server sign in$")
+	public void i_click_on_identity_server_sign_in() throws Throwable {
 		CarbonLoginPage carbonLogin = new CarbonLoginPage(driver);
 		carbonLogin.clickCarbonLogin();
 	}
@@ -41,8 +41,8 @@ public class IDServerHome extends BasicTestObject {
 		Assert.assertTrue("Home page did not load properly", carbonHome.isIDSHomeDisplayed(arg1));
 	}
 
-	@When("^I click on ids Configuration tab$")
-	public void i_click_on_ids_Configuration_tab() throws Throwable {
+	@When("^I click on identity server Configuration tab$")
+	public void i_click_on_identity_server_Configuration_tab() throws Throwable {
 		CarbonHomePage carbonHome = new CarbonHomePage(driver);
 		carbonHome.clickConfigure();
 	}
@@ -53,8 +53,8 @@ public class IDServerHome extends BasicTestObject {
 		Assert.assertTrue("Configuration tab did not load properly", carbonUserRolePage.isConfigurePage(arg1));
 	}
 
-	@When("^I click on ids Configuration Users and Roles link$")
-	public void i_click_on_ids_Configuration_Users_and_Roles_link() throws Throwable {
+	@When("^I click on identity server Configuration Users and Roles link$")
+	public void i_click_on_identity_server_Configuration_Users_and_Roles_link() throws Throwable {
 		CarbonUserRoles carbonUserRolePage = new CarbonUserRoles(driver);
 		carbonUserRolePage.clickUserRoles();
 	}

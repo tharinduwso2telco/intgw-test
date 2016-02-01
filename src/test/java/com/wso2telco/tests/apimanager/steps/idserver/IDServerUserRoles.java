@@ -11,8 +11,8 @@ import cucumber.api.java.en.When;
 
 public class IDServerUserRoles extends BasicTestObject {
 	
-	@When("^I click ids User Management Roles link$")
-	public void i_click_ids_User_Management_Roles_link() throws Throwable {
+	@When("^I click identity server User Management Roles link$")
+	public void i_click_identity_server_User_Management_Roles_link() throws Throwable {
 		CarbonUserRoles carbonUserRolePage = new CarbonUserRoles(driver);
 		carbonUserRolePage.clickRolesLink();
 	}
@@ -95,14 +95,14 @@ public class IDServerUserRoles extends BasicTestObject {
 		Assert.assertTrue("Success message loaded properly", carbonRoles.isSuccessPopup(arg1));
 	}
 
-	@Then("^I should see ids User Management page header as \"([^\"]*)\"$")
-	public void i_should_see_ids_User_Management_page_header_as(String arg1) throws Throwable {
+	@Then("^I should see identity server User Management page header as \"([^\"]*)\"$")
+	public void i_should_see_identity_server_User_Management_page_header_as(String arg1) throws Throwable {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
 		Assert.assertTrue("Users page did not load properly",carbonUserRolesPage.isSystemUserStore(arg1));
 	}
 	
-	@When("^I click ids User Management Users link$")
-	public void i_click_ids_User_Management_Users_link() throws Throwable {
+	@When("^I click identity server User Management Users link$")
+	public void i_click_identity_server_User_Management_Users_link() throws Throwable {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
 		carbonUserRolesPage.clickUsersLink();
 	}
@@ -113,14 +113,14 @@ public class IDServerUserRoles extends BasicTestObject {
 		Assert.assertTrue("User page did not load properly", carbonUserRolesPage.isUserPage(arg1));
 	}
 
-	@When("^I enter ids Search Users to Enter user name pattern as \"([^\"]*)\"$")
-	public void i_enter_ids_Search_Users_to_Enter_user_name_pattern_as(String arg1) throws Throwable {
+	@When("^I enter identity server Search Users to Enter user name pattern as \"([^\"]*)\"$")
+	public void i_enter_identity_server_Search_Users_to_Enter_user_name_pattern_as(String arg1) throws Throwable {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
 		carbonUserRolesPage.setSearchCriteria(config.getValue(getEnvironment() + arg1 + "user"));
 	}
 
-	@When("^I click on ids Users search button$")
-	public void i_click_on_ids_Users_search_button() throws Throwable {
+	@When("^I click on identity server Users search button$")
+	public void i_click_on_identity_server_Users_search_button() throws Throwable {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
 		carbonUserRolesPage.clickUserSearchButton();
 	}

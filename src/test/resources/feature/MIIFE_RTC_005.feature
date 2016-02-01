@@ -1,4 +1,4 @@
-Feature: check if the logout feature works as expected
+Feature: Logout validation
 
 @Smoke
 Scenario Outline: check if the logout feature works as expected

@@ -1,5 +1,4 @@
-Feature: Check if self registered user can access only allowed modules on manage module
-
+Feature: Login Valdation of manage module using a self registered user
 @Smoke
 Scenario Outline: Check if self registered user can access only allowed modules on manage module
 Given I am in apimanager

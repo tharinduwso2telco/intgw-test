@@ -1,4 +1,4 @@
-Feature: Check if subscriptions can be created
+Feature: Validate Subscription Creation
 
 @Smoke
 Scenario Outline: Check if subscriptions can be created

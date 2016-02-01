@@ -1,4 +1,4 @@
-Feature: Check if tokens can be regenerated
+Feature: Validate token regeneration
 
 @Smoke
 Scenario Outline: Check if tokens can be regenerated

@@ -1,16 +1,16 @@
-Feature: Check if users can self register on the API Store
+Feature: Sign Up Validation 
 
 #Background:
 @Smoke
 Scenario Outline: Check if users can self register on the API Store
-Given I am in ids page
-When I enter ids username credentials
-And I click on ids sign in
-And I click on ids Configuration tab
-And I click on ids Configuration Users and Roles link
-And I click ids User Management Users link
-And I enter ids Search Users to Enter user name pattern as "<usertype>" 
-And I click on ids Users search button
+Given I am in identity server page
+When I enter identity server username credentials
+And I click on identity server sign in
+And I click on identity server Configuration tab
+And I click on identity server Configuration Users and Roles link
+And I click identity server User Management Users link
+And I enter identity server Search Users to Enter user name pattern as "<usertype>" 
+And I click on identity server Users search button
 And I click delete existing username as "<usertype>"
 Then I close the browser
 Given I am in apimanager
