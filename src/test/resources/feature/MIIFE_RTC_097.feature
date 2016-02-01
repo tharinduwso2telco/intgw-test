@@ -15,16 +15,16 @@ And I click on apimanager Manager page login button
 Then I should see the apimanager Manager Home page header as "Home"
 And I should see apimanager Manager Home Billing Workflow Blacklist Whitelist tabs
 When I click on apimanager Manager page Blacklist tab
-Then I should see apimanager Manager APIwise Blacklist page header as "<blacklist pageHeader>"
+Then I should see apimanager Manager APIwise Blacklist page header as "<blacklistPageHeader>"
 When I click on API dropbox
 And I select "<API>" as blacklist API
 And I click on Blacklisted subscribers Add New button
-Then I should see add nember alert header as "<AddNumber Alert>"
-When I enter the "<BlackList Number>" to blacklist
+Then I should see add nember alert header as "<AddNumberAlert>"
+When I enter the "<BlackListNumber>" to blacklist
 And I click add blacklist number alert ok button
-Then I should see "<BlackList Number>" in blacklisted subscribers table
+Then I should see "<BlackListNumber>" in blacklisted subscribers table
 
 Examples:
-| usertype|API |BlackList Number|blacklist pageHeader|AddNumber Alert               |
+| usertype|API |BlackListNumber |blacklistPageHeader |AddNumberAlert               |
 |LOGOUT   |USSD|94123456898     |APIwise Blacklist   |Please enter subscriber number|
 

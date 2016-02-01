@@ -19,7 +19,7 @@ Then I should see apimanager Manager Approval Tasks page header as "Approval Tas
 When I click on Application creation link
 Then I should see created application "<AppName>" at the top of the Approval Tasks table
 When I click on Application Details drop box for "<AppName>" row
-And I select "<Application Details>" for "<AppName>" Application Details row
+And I select "<ApplicationDetails>" for "<AppName>" Application Details row
 And I click Assign To Me button for "<AppName>" Application Details row
 And I click on Start button for "<AppName>" Application Details row
 And I select "<Action>" and click complete button for "<AppName>" Application Details row
@@ -56,5 +56,5 @@ And I should see the added Application "<AppName>" and the "<New Status>" as sta
 
 
 Examples:
-|usertype|AppName                      |Application Details|Action |status|New Status|
+|usertype|AppName                      |ApplicationDetails |Action |status|New Status|
 |LOGOUT  |AuxLogoutUser_AusTestingApp03|Unlimited          |Approve|READY |ACTIVE    |
