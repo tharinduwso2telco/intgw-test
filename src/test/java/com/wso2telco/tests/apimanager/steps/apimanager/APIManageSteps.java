@@ -114,6 +114,7 @@ public class APIManageSteps extends BasicTestObject {
 	public void i_click_on_apimanager_Manager_page_Workflow_tab() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.clickWorkflow();
+		Thread.sleep(10000);
 	}
 	
 	@Then("^I should see apimanager Manager Approval Tasks page$")
