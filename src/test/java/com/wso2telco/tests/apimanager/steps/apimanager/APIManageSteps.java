@@ -21,11 +21,11 @@ public class APIManageSteps extends BasicTestObject {
 		Assert.assertTrue("Manager page did not load properly", managerpage.isManagerPage(arg1));
 	}
 
-	@When("^I enter apimanager Manager page \"([^\"]*)\" as user name and \"([^\"]*)\" as password$")
-	public void i_enter_apimanager_Manager_page_as_user_name_and_as_password(String arg1, String arg2) throws Throwable {
+	@When("^I enter apimanager Manager page username and password for \"([^\"]*)\"$")
+	public void i_enter_apimanager_Manager_page_username_and_password_for(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		managerpage.enterUserName(arg1);
-		managerpage.enterPassword(arg2);
+		managerpage.enterUserName(config.getValue(getEnvironment() + arg1 + "user"));
+		managerpage.enterPassword(config.getValue(getEnvironment() + arg1 + "pwd"));
 	 }
 	
 	@When("^I enter apimanager Manager page admin username credentials$")
@@ -54,8 +54,8 @@ public class APIManageSteps extends BasicTestObject {
 		  Assert.assertTrue("Manager Home page did not load properly", managerpage.isHomePage(arg1));
 	}
 	
-	@When("^I click on apimanager Manager \"([^\"]*)\"$")
-	public void i_click_on_apimanager_Manager(String arg1) throws Throwable {
+	@When("^I click on apimanager Manager$")
+	public void i_click_on_apimanager_Manager() throws Throwable {
 		 ManagerPage managerpage = new ManagerPage(driver);
 		 managerpage.clickUserName();
 	}
@@ -93,8 +93,9 @@ public class APIManageSteps extends BasicTestObject {
 	@When("^I close the browser and reopen the browsers and navigate to apimanager page$")
 	public void i_close_the_browser_and_reopen_the_browsers_and_navigate_to_apimanager_page() throws Throwable {
 		driver.close();
+		initialize();
 		launchBrowser();
-		driver.get(config.getValue("apiManagerSiteName"));
+		driver.get(config.getValue(getEnvironment() + "ApiManagerSiteName"));
 	}
 
 	@Then("^I should see apimanager Manager Home Billing Workflow Blacklist Whitelist tabs$")

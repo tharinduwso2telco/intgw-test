@@ -12,11 +12,11 @@ When I click on ids Configuration Users and Roles link
 Then I should see ids User Management page header as "System User Store"
 When I click ids User Management Users link
 Then I should see ids User Management Users page header as "Users"
-When I enter ids Search Users to Enter user name pattern as "<username>" 
+When I enter ids Search Users to Enter user name pattern as "<usertype>" 
 And I click on ids Users search button
-Then I should see the "<username>" on ids Users search area
+Then I should see the "<usertype>" on ids Users search area
 When I click on ids Users view roles link and delete existing Publisher role from the user
-And I click on ids Users assign roles link under "<username>"
+And I click on ids Users assign roles link under "<usertype>"
 Then I should see the ids List of roles page table header as "Unassigned Roles"
 When I enter ids Role list of users Enter role name pattern as "publisher"
 And I click on ids List of roles search button
@@ -34,9 +34,9 @@ Then ids List of roles Role update success message should pop up "successfully."
 When I click on List of roles Role update success message ok button
 When I close the browser and reopen the browsers and navigate to apipublisher page
 Given I am in apipublisher
-When I provide apipublisher username as "<username>" and password as "<Password>"
+When I provide apipublisher username and password for "<usertype>"
 And I click on apipublisher login button
-Then I should see apipublisher username "<username>" at the top right corner of the page
+Then I should see apipublisher username "<usertype>" at the top right corner of the page
 When I search existing API "<apiName>" and delete it
 When I click on apipublisher Add link
 And I provide apipublisher Design name as "<apiName>"
@@ -72,13 +72,13 @@ And I should see apipublisher sandbox URL as "<sandEndpoint>"
 And I should see apipublisher tier availability as "Default,Bronze"
 When I close the browser and reopen the browsers and navigate to apimanager page
 And I click on apimanager login
-And I enter apimanager Login username as "<username>" and password as "<Password>" 
+And I enter apimanager Login username and password for "<usertype>" 
 And I click on apimanager Login pop up login button
-Then I should see apimanager "<username>" at the top right corner of the page
+Then I should see apimanager "<usertype>" at the top right corner of the page
 And I should see apimanager "<apiName>" api from the left pane
 When I click on the apimanager "<apiName>" api
 Then I should see the apimanager APIs "<apiName>" status as "Published"
 
 Examples:
-| username|Password |apiName   |prodEndpoint |sandEndpoint |roleType		   |
-|AutoTest1|1qaz2wsx@|AuxTestAPIa|auxProd		 |auxSand	   |Internal/publisher |
+| usertype|apiName    |prodEndpoint  |sandEndpoint |roleType		   |
+|PUBLISHER|AuxTestAPIa|auxProd		 |auxSand	   |Internal/publisher |

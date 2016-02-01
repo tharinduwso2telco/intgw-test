@@ -8,6 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
+
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
@@ -35,7 +36,7 @@ public class BasicTestObject extends TestBase {
 	
 	private String headerValue;
 	
-	private String environment;
+	public static String environment;
 	
 	public void initialize() throws Exception {
 		try {
@@ -56,7 +57,7 @@ public class BasicTestObject extends TestBase {
 				
 				//Setting environment
 				//setEnvironment(System.getProperty("env"));
-				setEnvironment("production");
+				setEnvironment("staging");
 				logInstruction("Initializing Config Completed");
 				isInitialized = true;
 			}
@@ -169,8 +170,9 @@ public class BasicTestObject extends TestBase {
 	
 	public String getEnvironment() {
 	return environment;
-}
+	}
 
+	@SuppressWarnings("static-access")
 	public void setEnvironment(String environment) {
 		this.environment = environment;
 	}

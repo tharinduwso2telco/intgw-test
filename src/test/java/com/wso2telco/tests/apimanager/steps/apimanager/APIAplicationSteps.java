@@ -26,7 +26,7 @@ public class APIAplicationSteps extends BasicTestObject {
 	@Then("^I clear existing \"([^\"]*)\" for \"([^\"]*)\"$")
 	public void i_clear_existing_for(String arg1, String arg2) throws Throwable {
 		ApplicationsPage apppage = new ApplicationsPage(driver);
-		if (apppage.isAppAvailable(arg1, arg2)) {
+		if (apppage.isAppAvailable(arg1, config.getValue(getEnvironment() + arg2 + "user"))) {
 			apppage.clickDelete(arg1);
 			apppage.clickYes();
 		}
