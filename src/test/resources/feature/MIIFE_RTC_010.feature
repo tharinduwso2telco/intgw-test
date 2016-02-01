@@ -1,4 +1,4 @@
-Feature: Check if the application creation works as expected for service provider
+Feature: Application Creation for service provider
 
 @Smoke
 Scenario Outline: Check if the application creation works as expected for service provider

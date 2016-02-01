@@ -1,4 +1,4 @@
-Feature: Check if apps are saved as SP in identity server after the token generation and API invocation are completed
+Feature: Validate if apps are saved after the token generation and API invocation completed
 
 @Smoke
 Scenario Outline: Check if apps are saved as SP in identity server after the token generation and API invocation are completed
@@ -115,9 +115,9 @@ And I click generate under apimanager Subscriptions page sandbox
 Then I should see consumer Key of sandbox
 And I should see consumer Secret of sandbox
 When I close the api manager 
-And I am in ids page
-And I enter ids username credentials
-And I click on ids sign in
+And I am in identity server page
+And I enter identity server username credentials
+And I click on identity server sign in
 Then I should see the ids Home page header as "WSO2 Identity Server Home"
 When I click on ids Main tab
 Then I should see ids Main menu "Service Providers" as the first item
@@ -153,5 +153,5 @@ And I click on View/Update application settings page update
 Then I should see Application updated successfully pop up message as "Application updated successfully"
 
 Examples:
-|usertype|AppName                	        |Application Details|Action |status|apiName	  |operator|validity|Callback URL                                                     |Description |appName				 |
+|usertype|AppName                	        |ApplicationDetails |Action |status|apiName	  |operator|validity|CallbackURL                                                      |Description |appName				 |
 |LOGOUT  |AuxLogoutUser_AuxTestingAppRTC_011|Unlimited          |Approve|READY |AuxAppTest|DIALOG  |-1      |https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|AuXTestAPI  |AuxTestingAppRTC_011 |

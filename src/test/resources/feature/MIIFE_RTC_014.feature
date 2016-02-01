@@ -1,4 +1,4 @@
-Feature: Check if tokens can be generated
+Feature: Validate token generation
 
 @Smoke
 Scenario Outline: Check if tokens can be generated

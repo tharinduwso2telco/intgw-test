@@ -1,16 +1,16 @@
-Feature: Check if the users can login to all the modules in API Manager with the aggrigator role
+Feature: Login Validation To all Modules
 
 @Smoke
 Scenario Outline: Check if the users can login to all the modules in API Manager with the aggrigator role
-Given I am in ids page
-When I enter ids username credentials
-And I click on ids sign in
+Given I am in identity server page
+When I enter identity server username credentials
+And I click on identity server sign in
 Then I should see the ids Home page header as "WSO2 Identity Server Home"
-When I click on ids Configuration tab
+When I click on identity server Configuration tab
 Then I should see ids Configuration menu with first item as "Users and Roles"
-When I click on ids Configuration Users and Roles link
-Then I should see ids User Management page header as "System User Store"
-When I click ids User Management Roles link
+When I click on identity server Configuration Users and Roles link
+Then I should see identity server User Management page header as "System User Store"
+When I click identity server User Management Roles link
 Then I should see ids User Management Roles page header as "Roles"
 And I clear existing aggrigator role
 When I click on ids User Management Roles add new role link

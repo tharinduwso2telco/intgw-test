@@ -1,4 +1,4 @@
-Feature: Check if the users can login to all the modules in API Manager without the aggrigator role
+Feature: Login Valdation of a user without the aggrigator role
 
 @Smoke
 Scenario Outline: Check if the users can login to all the modules in API Manager without the aggrigator role
