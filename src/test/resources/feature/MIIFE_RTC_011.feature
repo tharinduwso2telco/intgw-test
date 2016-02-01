@@ -2,13 +2,16 @@ Feature: Check if apps are saved as SP in identity server after the token genera
 
 @Smoke
 Scenario Outline: Check if apps are saved as SP in identity server after the token generation and API invocation are completed
-#J need to clarify whether have to include application creation steps here too
 Given I am in apimanager
 When I click on apimanager login
 Then I should see the apimanager "Login" pop up
 When I enter apimanager Login username and password for "<usertype>" 
 And I click on apimanager Login pop up login button
 Then I should see apimanager "<usertype>" at the top right corner of the page
+When I click on apimanager My Applications
+And I clear existing "<appName>" for "<usertype>"
+And I enter "<appName>" as Name "<Callback URL>" as Callback URL and "<Description>" as Description
+And I click on Add button
 When I click on apimanager Manage 
 Then I should see the apimanager Manager page header as "Manager"
 When I enter apimanager Manager page admin username credentials
@@ -56,7 +59,7 @@ Then I should see the apimanager APIs "<apiName>" status as "Published"
 When I click on Applications dropdown
 Then I should see "<AppName>" Application
 When I select "<AppName>"
-And I select DIALOG as "<operator>"
+And I select operator as "<operator>"
 And I click apimanager "<APIName>" API page subscribe button
 Then I should see "Subscription Successful" on Subscription Successful pop up
 When I click Go to My Subscription button
@@ -150,5 +153,5 @@ And I click on View/Update application settings page update
 Then I should see Application updated successfully pop up message as "Application updated successfully"
 
 Examples:
-|usertype|AppName                      |Application Details|Action |status|apiName	 |operator|validity|Callback URL                                                     |
-|LOGOUT  |AuxLogoutUser_AusTestingApp02|Unlimited          |Approve|READY |AuxAppTest|DIALOG  |-1      |https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|
+|usertype|AppName                	        |Application Details|Action |status|apiName	  |operator|validity|Callback URL                                                     |Description |appName				 |
+|LOGOUT  |AuxLogoutUser_AuxTestingAppRTC_011|Unlimited          |Approve|READY |AuxAppTest|DIALOG  |-1      |https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|AuXTestAPI  |AuxTestingAppRTC_011 |
