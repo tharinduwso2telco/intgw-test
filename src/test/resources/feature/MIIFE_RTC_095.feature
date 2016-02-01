@@ -25,8 +25,14 @@ And I enter "<Min Number>" as Min Number
 And I enter "<Max Number>" as Max Number
 And I click on whitelist Upload Number List button
 Then I should see success pop up
+When I click on apimanager Manager page Whitelist tab
+And I select Upload White list number list radio button
+And I click whitelist Add Number List button
+Then I should see the pop up to enter the numbers as "<Enter Number List>" 
+When I click on add number list pop up ok button
+Then I should see the success pop up
 
 
 Examples:
-| usertype|API |whitelist pageHeader|appname|Min Number |Max Number |
-|LOGOUT   |USSD|APIwise Whitelist   |test1  |94778123450|94778123460|
+| usertype|API |whitelist pageHeader|appname|Min Number |Max Number |Enter Number List                                  |Number List            |
+|LOGOUT   |USSD|APIwise Whitelist   |test1  |94778123450|94778123460|Please enter whitelist numbers Separated with comma|94778123412,94778123414|
