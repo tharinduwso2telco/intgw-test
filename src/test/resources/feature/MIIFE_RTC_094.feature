@@ -30,4 +30,4 @@ Then I should see success pop up
 
 Examples:
 | usertype|API |WhiteListNumber|whitelistPageHeader|appname|
-|LOGOUT   |USSD|94123496898    |APIwise Whitelist  |test1  |
+|LOGOUT   |USSD|94123496898    |APIwise Whitelist  |AuxLogoutUser_AusTestingApp03  |

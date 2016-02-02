@@ -351,7 +351,8 @@ public class APIManageSteps extends BasicTestObject {
 	@When("^I select \"([^\"]*)\" as subscriber$")
 	public void i_select_as_subscriber(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		managerpage.selectSubscriber(arg1);
+		String username = config.getValue(getEnvironment() + arg1 + "user");
+		managerpage.selectSubscriber(username);
 	}
 
 	@When("^I click on whitelist application drop box$")

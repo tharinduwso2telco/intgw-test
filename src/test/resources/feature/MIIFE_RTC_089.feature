@@ -56,5 +56,5 @@ And I should see the added Application Name as "<usertype>" _ "<Name>" and the "
 
 
 Examples:
-|usertype|AppName                      |ApplicationDetails |Action |status|New Status|
-|LOGOUT  |AuxLogoutUser_AusTestingApp03|Unlimited          |Approve|READY |ACTIVE    |
+|usertype|AppName                      |ApplicationDetails |Action |status|New Status|Name|
+|LOGOUT  |AuxLogoutUser_AusTestingApp03|Unlimited          |Approve|READY |ACTIVE    |AusTestingApp03|
