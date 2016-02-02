@@ -144,13 +144,13 @@ public class APIManageSteps extends BasicTestObject {
 			throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		Assert.assertTrue("Application creation link is not visible",
-				managerpage.isApllicationCreation());
+				managerpage.isApplicationCreation());
 	}
 
 	@When("^I click on Application creation link$")
 	public void i_click_on_Application_creation_link() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		managerpage.clickApplicationCration();
+		managerpage.clickApplicationCreation();
 	}
 
 	@Then("^I should see created application \"([^\"]*)\" at the top of the Approval Tasks table$")

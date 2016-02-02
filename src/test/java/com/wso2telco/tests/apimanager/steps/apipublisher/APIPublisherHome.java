@@ -171,7 +171,7 @@ public class APIPublisherHome extends BasicTestObject {
 	@When("^I select \"([^\"]*)\" from the apipublisher Design Required dropdown$")
 	public void i_select_from_the_apipublisher_Design_Required_dropdown(String arg1) throws Throwable {
 		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
-		publisherHome.SelectRequiredType(arg1);
+		publisherHome.selectRequiredType(arg1);
 	}
 	
 	@When("^I click on apipublisher Design submit Required button$")
