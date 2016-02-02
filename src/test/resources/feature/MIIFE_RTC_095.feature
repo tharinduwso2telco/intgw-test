@@ -18,7 +18,9 @@ When I click on apimanager Manager page Whitelist tab
 Then I should see apimanager Manager APIwise Whitelist page header as "<whitelistPageHeader>"
 When I click on whitelist subscriber drop box
 And I select "<usertype>" as subscriber
+And I click on whitelist application drop box
 And I select "<appname>" as Application
+And I click on whitelist API drop box
 And I select "<API>" as whitelist API
 And I select Whitelist numbers range radio button
 And I enter "<MinNumber>" as Min Number
@@ -30,8 +32,9 @@ When I click on apimanager Manager page Whitelist tab
 And I select Upload White list number list radio button
 And I click whitelist Add Number List button
 Then I should see the pop up to enter the numbers as "<EnterNumberList>" 
+When I enter the number list as "<NumberList>"
 When I click on add number list pop up ok button
-Then I should see the success pop up
+Then I should see success pop up
 
 
 Examples:
