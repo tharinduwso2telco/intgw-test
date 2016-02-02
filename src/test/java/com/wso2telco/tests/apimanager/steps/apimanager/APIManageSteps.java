@@ -265,6 +265,12 @@ public class APIManageSteps extends BasicTestObject {
 		Thread.sleep(2000);
 	}
 
+	@Then("^I clear existing \"([^\"]*)\"$")
+	public void i_clear_existing(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.clearBlacklistNumber(arg1);
+	}
+	
 	@When("^I click on API dropbox$")
 	public void i_click_on_API_dropbox() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
@@ -345,7 +351,8 @@ public class APIManageSteps extends BasicTestObject {
 	@When("^I select \"([^\"]*)\" as subscriber$")
 	public void i_select_as_subscriber(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		managerpage.selectSubscriber(arg1);
+		String username = config.getValue(getEnvironment() + arg1 + "user");
+		managerpage.selectSubscriber(username);
 	}
 
 	@When("^I click on whitelist application drop box$")
@@ -389,5 +396,69 @@ public class APIManageSteps extends BasicTestObject {
 	public void i_click_whitelist_page_Upload_Number_button() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.clickUploadNumberButton();
+	}
+	
+	@Then("^I should see success pop up$")
+	public void i_should_see_success_pop_up() throws Throwable {
+	    //write the code after fixing the system error
+	}
+	
+	@When("^I select Whitelist numbers range radio button$")
+	public void i_select_Whitelist_numbers_range_radio_button() throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.clickNumberRangeButton();
+	}
+	
+	@When("^I enter \"([^\"]*)\" as Min Number$")
+	public void i_enter_as_Min_Number(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.enterMinNumber(arg1);
+	}
+	
+	@When("^I enter \"([^\"]*)\" as Max Number$")
+	public void i_enter_as_Max_Number(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.enterMaxNumber(arg1);
+	}
+	
+	@When("^I click on whitelist Upload Number List button$")
+	public void i_click_on_whitelist_Upload_Number_List_button() throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.clickUploadNumberList();
+	}
+	
+	@When("^I select Upload White list number list radio button$")
+	public void i_select_Upload_White_list_number_list_radio_button() throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.clickUploadWhitelistNumberList();
+	}
+	
+	@When("^I click whitelist Add Number List button$")
+	public void i_click_whitelist_Add_Number_List_button() throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.clickAddNumberList();
+	}
+	
+	@Then("^I should see the pop up to enter the numbers as \"([^\"]*)\"$")
+	public void i_should_see_the_pop_up_to_enter_the_numbers_as(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.isAddNumberAlertDisplayed(arg1);
+	}
+	
+	@When("^I click on add number list pop up ok button$")
+	public void i_click_on_add_number_list_pop_up_ok_button() throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.clickAlertOKButton();
+	}
+	
+	@When("^I enter the number list as \"([^\"]*)\"$")
+	public void i_enter_the_number_list_as(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.enterWhiteListNumberList(arg1);
+	}
+	
+	@Then("^I should see error message$")
+	public void i_should_see_error_message() throws Throwable {
+	    // enter code here once after whitelist error is fixed
 	}
 }
