@@ -16,6 +16,7 @@ Then I should see the apimanager Manager Home page header as "Home"
 And I should see apimanager Manager Home Billing Workflow Blacklist Whitelist tabs
 When I click on apimanager Manager page Whitelist tab
 Then I should see apimanager Manager APIwise Whitelist page header as "<whitelistPageHeader>"
+#J need to clear the whitelist number if available 
 When I click on whitelist subscriber drop box
 And I select "<usertype>" as subscriber
 And I click on whitelist application drop box
