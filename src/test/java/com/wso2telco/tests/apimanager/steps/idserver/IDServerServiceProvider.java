@@ -57,13 +57,13 @@ public class IDServerServiceProvider extends BasicTestObject  {
 	@When("^I select Advanced Configuration$")
 	public void i_select_Advanced_Configuration() throws Throwable {
 		CarbonServiceProvider csp = new CarbonServiceProvider(driver);
-		csp.clickAdConfig(); 
+		csp.clickAddConfig(); 
 	}
 	
 	@Then("^I should see Advanced Authentication Configuration for \"([^\"]*)\" page$")
 	public void i_should_see_Advanced_Authentication_Configuration_for_page(String arg1) throws Throwable {
 		CarbonServiceProvider csp = new CarbonServiceProvider(driver);
-		Assert.assertTrue("Advanced Authentication Configuration page did not load properly",csp.isAdConfigpageDisplyed(arg1));
+		Assert.assertTrue("Advanced Authentication Configuration page did not load properly",csp.isAddConfigPageDisplyed(arg1));
 	}
 	
 	@When("^I click on Add Authentication Step$")
@@ -94,7 +94,7 @@ public class IDServerServiceProvider extends BasicTestObject  {
 	@Then("^I should see View/Update application settings page header as \"([^\"]*)\"$")
 	public void i_should_see_View_Update_application_settings_page_header_as(String arg1) throws Throwable {
 		CarbonServiceProvider csp = new CarbonServiceProvider(driver);
-		Assert.assertTrue("View/Update application settings page did not load properly",csp.isViewUpdatepageDisplyed(arg1));
+		Assert.assertTrue("View/Update application settings page did not load properly",csp.isViewUpdatePageDisplyed(arg1));
 	}
 	
 	@When("^I click on Code$")
