@@ -449,4 +449,9 @@ public class APIManageSteps extends BasicTestObject {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.enterWhiteListNumberList(arg1);
 	}
+	
+	@Then("^I should see error message$")
+	public void i_should_see_error_message() throws Throwable {
+	    // enter code here once after whitelist error is fixed
+	}
 }
