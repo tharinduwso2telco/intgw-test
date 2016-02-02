@@ -209,4 +209,61 @@ public class APIManageSteps extends BasicTestObject {
 		Assert.assertTrue("Enter aprrove/reject reasons pop up did not load properly",managerpage.isApproveRejectPopupDisplayed(arg1));
 		Thread.sleep(10000);
 	}
+	
+	@When("^I click on apimanager Manager page Blacklist tab$")
+	public void i_click_on_apimanager_Manager_page_Blacklist_tab() throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.clickBlackList();
+		Thread.sleep(3000);
+	}
+	
+	@Then("^I should see apimanager Manager APIwise Blacklist page header as \"([^\"]*)\"$")
+	public void i_should_see_apimanager_Manager_APIwise_Blacklist_page_header_as(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("APIwise blacklist page did not load properly",managerpage.isAPIBlacklistPageDisplayed(arg1));
+		Thread.sleep(2000);
+	}
+	
+	@When("^I click on API dropbox$")
+	public void i_click_on_API_dropbox() throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.clickAPIDropDown();
+		Thread.sleep(1000);
+	}
+	
+	@When("^I select \"([^\"]*)\" as blacklist API$")
+	public void i_select_as_blacklist_API(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.selectUSSD();
+	}
+	
+	@When("^I click on Blacklisted subscribers Add New button$")
+	public void i_click_on_Blacklisted_subscribers_Add_New_button() throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.clickAddNewButton();
+	}
+	
+	@Then("^I should see add nember alert header as \"([^\"]*)\"$")
+	public void i_should_see_add_nember_alert_header_as(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Add number alert did not load properly",managerpage.isAddNumberAlertDisplayed(arg1));
+	}
+	
+	@When("^I enter the \"([^\"]*)\" to blacklist$")
+	public void i_enter_the_to_blacklist(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.enterBlackListNumber(arg1);
+	}
+	
+	@When("^I click add blacklist number alert ok button$")
+	public void i_click_add_blacklist_number_alert_ok_button() throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.clickAlertOKButton();
+	}
+	
+	@Then("^I should see \"([^\"]*)\" in blacklisted subscribers table$")
+	public void i_should_see_in_blacklisted_subscribers_table(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Added number did not showed in table",managerpage.isAddedNumberDisplayed(arg1));
+	}
 }
