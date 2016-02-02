@@ -56,9 +56,16 @@ public class APIAplicationSteps extends BasicTestObject {
 		ApplicationsPage apppage = new ApplicationsPage(driver);
 		Assert.assertTrue("Application name mismatched", apppage.isApplicationName(arg1, arg2));
 		Thread.sleep(5000);
-		Assert.assertTrue("Application name mismatched", apppage.isTeirname(arg3));
-		Assert.assertTrue("Application name mismatched", apppage.isApplicationStatus(arg4));
-		Assert.assertTrue("Application name mismatched", apppage.validateDescription(arg5));
+		Assert.assertTrue("Application tier mismatched", apppage.isTeirname(arg3));
+		Assert.assertTrue("Application status mismatched", apppage.isApplicationStatus(arg4));
+		Assert.assertTrue("Application descripion mismatched", apppage.validateDescription(arg5));
+	}
+
+	@Then("^I should see the added Application Name as \"([^\"]*)\" _ \"([^\"]*)\" and the \"([^\"]*)\" as status$")
+	public void i_should_see_the_added_Application_Name_as___and_the_as_status(String arg1, String arg2, String arg3) throws Throwable {
+		ApplicationsPage apppage = new ApplicationsPage(driver);
+		Assert.assertTrue("Application name mismatched", apppage.isApplicationName(arg1, arg2));
+		Assert.assertTrue("Application status mismatched", apppage.isApplicationStatus(arg3));
 	}
 
 }

@@ -18,7 +18,9 @@ When I click on apimanager Manager page Whitelist tab
 Then I should see apimanager Manager APIwise Whitelist page header as "<whitelistPageHeader>"
 When I click on whitelist subscriber drop box
 And I select "<usertype>" as subscriber
+And I click on whitelist application drop box
 And I select "<appname>" as Application
+And I click on whitelist API drop box
 And I select "<API>" as whitelist API
 And I select Upload number Manually radio button
 And I enter the "<WhiteListNumber>" as the number to whitelist

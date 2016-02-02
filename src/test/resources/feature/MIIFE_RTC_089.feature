@@ -51,7 +51,7 @@ When I click on close window
 Then I am in apimanager
 When I click on apimanager My Applications
 Then I should see the apimanager Application page header as "Applications"
-And I should see the added Application "<AppName>" and the "<New Status>" as status
+And I should see the added Application Name as "<usertype>" _ "<Name>" and the "<New Status>" as status
 
 
 
