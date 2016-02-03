@@ -29,8 +29,7 @@ And I select "<application>" as Performance Error Rates Application
 And I click on Performance Error Rates API drop down
 And I select "<API>" as Performance Error Rates API
 And I click on generate button
-#validate graphs
-Then I should see graphs
+Then I should see generated Performance Error Rates graphs
 
 
 Examples:

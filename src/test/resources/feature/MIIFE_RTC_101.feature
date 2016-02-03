@@ -28,7 +28,7 @@ And I click on Total API Traffic API drop down
 And I select "<API>" as Total API Traffic API
 And I click on generate button
 #validate graph
-Then I should see graphs
+Then I should see generated Total API Traffic pie chart and the line graph
 
 
 Examples:

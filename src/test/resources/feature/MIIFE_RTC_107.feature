@@ -28,8 +28,7 @@ And I select "<serviceProvider>" as the Customer Care Reports service provider
 And I click on Customer Care Reports Application drop down
 And I select "<application>" as Customer Care Reports Application
 And I click on generate button
-#validate graphs
-Then I should see graphs
+Then I should see the generated Customer Care Report
 
 
 Examples:

@@ -28,7 +28,7 @@ And I click on Operator API Traffic API drop down
 And I select "<API>" as Operator API Traffic API
 And I click on generate button
 #validate graph
-Then I should see graphs
+Then I should see the generated Operator API Traffic pie chart
 Examples:
 | usertype|
 |LOGOUT   |

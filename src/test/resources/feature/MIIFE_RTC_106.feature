@@ -30,7 +30,7 @@ And I click on Revenue Breakdown Application drop down
 And I select "<application>" as Revenue Breakdown Application
 And I click on generate button
 #validate graphs
-Then I should see graphs
+Then I should see the generated pie chart of Revenue Breakdown
 
 
 Examples:

@@ -60,8 +60,7 @@ And I select "<month>" as Monthly Invoice Month
 And I click on Monthly Invoice service provider drop down
 And I select "<serviceProvider>" as the Monthly Invoice service provider
 And I click on generate 
-#validate graphs
-Then I should see graphs
+Then I should see the generated Billing Summary of Monthly Invoice
 
 
 Examples:

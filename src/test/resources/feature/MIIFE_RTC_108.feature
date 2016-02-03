@@ -27,8 +27,7 @@ And I select "<serviceProvider>" as the API Response Times service provider
 And I click on API Response Times Application drop down
 And I select "<application>" as API Response Times Application
 And I click on API Response Times generate button
-#validate graphs
-Then I should see graphs
+Then I should see the generated API Response Times graphs
 
 
 Examples:
