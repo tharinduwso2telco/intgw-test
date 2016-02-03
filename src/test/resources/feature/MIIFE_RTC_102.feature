@@ -1,5 +1,7 @@
 Feature: Validate Transaction Log 
 
+
+#MIIFE_RTC_111 is covered by this scenario
 @Smoke
 Scenario Outline: Check if Transaction Log is loaded accurately
 Given I am in apimanager
