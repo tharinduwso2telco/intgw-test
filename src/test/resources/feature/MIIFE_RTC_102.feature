@@ -33,8 +33,6 @@ And I click on Download report button
 Then download excel sheet
 
 
-
-
 Examples:
 | usertype|
 |LOGOUT   |
