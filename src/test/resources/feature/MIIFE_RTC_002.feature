@@ -12,8 +12,8 @@ When I click on identity server Configuration Users and Roles link
 Then I should see identity server User Management page header as "System User Store"
 When I click identity server User Management Roles link
 Then I should see ids User Management Roles page header as "Roles"
-And I clear existing aggrigator role
-When I click on ids User Management Roles add new role link
+When I clear existing aggrigator role
+And I click on ids User Management Roles add new role link
 Then I should see ids User Management Add Role page header as "Step 1 : Enter role details"
 When I enter ids Add Role role name as "aggrigator"
 And I click on ids Add Role next button

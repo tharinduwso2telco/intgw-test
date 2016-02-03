@@ -49,6 +49,7 @@ public class APISubscriptionSteps extends BasicTestObject {
 	public String i_should_see_consumer_Key_of_production() throws Throwable {
 		SubscriptionsPage subpage = new SubscriptionsPage(driver);
 		String conKeyProd = subpage.getConsKeyProd();
+		Assert.assertTrue("Consumer key is not generated", subpage.isProductionConsumerKey());
 		return conKeyProd;
 	}
 
@@ -56,6 +57,7 @@ public class APISubscriptionSteps extends BasicTestObject {
 	public String i_should_see_consumer_Secret_of_production() throws Throwable {
 		SubscriptionsPage subpage = new SubscriptionsPage(driver);
 		String secKeyProd = subpage.geteSecKeyProd();
+		Assert.assertTrue("Production consumer secrect key is not displayed", subpage.isProductionConsumerSecrectKey());
 		return secKeyProd;
 	}
 
@@ -63,6 +65,7 @@ public class APISubscriptionSteps extends BasicTestObject {
 	public String i_should_see_consumer_Key_of_sandbox() throws Throwable {
 		SubscriptionsPage subpage = new SubscriptionsPage(driver);
 		String conKeySand = subpage.getConsKeySand();
+		Assert.assertTrue("Sandbox consumer key is not displayed", subpage.isSandboxConsumerKey());
 		return conKeySand;
 	}
 
@@ -70,6 +73,7 @@ public class APISubscriptionSteps extends BasicTestObject {
 	public String i_should_see_consumer_Secret_of_sandbox() throws Throwable {
 		SubscriptionsPage subpage = new SubscriptionsPage(driver);
 		String secKeySand = subpage.getSecKeySand();
+		Assert.assertTrue("Sandbox consumer secrect key is not displayed", subpage.isSandboxSecrectKey());
 		return secKeySand;
 	}
 

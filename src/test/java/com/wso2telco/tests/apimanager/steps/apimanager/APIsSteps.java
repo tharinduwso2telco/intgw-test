@@ -13,7 +13,7 @@ public class APIsSteps extends BasicTestObject {
 	@Then("^I should see the apimanager APIs page header as \"([^\"]*)\"$")
 	public void i_should_see_the_apimanager_APIs_page_header_as(String arg1) throws Throwable {
 	    APIsPage apispage = new APIsPage(driver);
-	    apispage.isAPIPage(arg1);
+	    Assert.assertTrue("API page header did not load", apispage.isAPIPage(arg1));
 	}
 	
 	@Then("^I should see apimanager \"([^\"]*)\" api from the left pane$")

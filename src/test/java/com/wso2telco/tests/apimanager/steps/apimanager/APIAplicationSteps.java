@@ -13,7 +13,7 @@ public class APIAplicationSteps extends BasicTestObject {
 	@Then("^I should see the apimanager Application page header as \"([^\"]*)\"$")
 	public void i_should_see_the_apimanager_Application_page_header_as(String arg1) throws Throwable {
 	    ApplicationsPage apppage = new ApplicationsPage(driver);
-	    apppage.isApplicationPageHeader(arg1);
+	    Assert.assertTrue("API manager header did not load", apppage.isApplicationPageHeader(arg1));
 	}
 
 	@Then("^I should see the apimanager Application page Add New Application form header as \"([^\"]*)\"$")

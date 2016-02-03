@@ -265,7 +265,7 @@ public class IDServerUserRoles extends BasicTestObject {
 		driver.get(config.getValue(getEnvironment() + "ApiManagerPublisher"));
 	}
 
-   @Then("^I clear existing aggrigator role$")
+   @When("^I clear existing aggrigator role$")
 	public void I_clear_existing_aggrigator_role() throws Throwable {
 		CarbonRolesPage carbonRoles = new CarbonRolesPage(driver);
         carbonRoles.enterAggrigatorRoleName("aggrigator");

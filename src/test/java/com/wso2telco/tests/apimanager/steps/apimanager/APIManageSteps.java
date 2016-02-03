@@ -265,7 +265,7 @@ public class APIManageSteps extends BasicTestObject {
 		Thread.sleep(sleepTime);
 	}
 
-	@Then("^I clear existing \"([^\"]*)\"$")
+	@When("^I clear existing \"([^\"]*)\"$")
 	public void i_clear_existing(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.clearBlacklistNumber(arg1);
