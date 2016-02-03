@@ -87,14 +87,14 @@ public class APIHomeSteps extends BasicTestObject {
 	public void i_click_on_apimanager_Sign_up_for_a_new_account_success_pop_up_ok_button() throws Throwable {
 	    SignUpPage signupPage = new SignUpPage(driver);
 		signupPage.clickOk();
-		Thread.sleep(10000);
+		Thread.sleep(sleepTime);
 	}
 
 	@When("^I click on apimanager login$")
 	public void i_click_on_apimanager_login() throws Throwable {
 	    LoginPage loginPage = new LoginPage(driver);
 		loginPage.clickLogInLink();
-		Thread.sleep(10000);
+		Thread.sleep(sleepTime);
 	}
 
 	@Then("^I should see the apimanager \"([^\"]*)\" pop up$")
@@ -119,7 +119,7 @@ public class APIHomeSteps extends BasicTestObject {
 	@Then("^I should see apimanager \"([^\"]*)\" at the top right corner of the page$")
 	public void i_should_see_apimanager_at_the_top_right_corner_of_the_page(String arg1) throws Throwable {
 	    LoginPage loginPage = new LoginPage(driver);
-	    Thread.sleep(10000);
+	    Thread.sleep(sleepTime);
 		Assert.assertTrue("User Name did not show properly",loginPage.isUserName(config.getValue(getEnvironment() + arg1 + "user")));
 	}
 
@@ -138,7 +138,7 @@ public class APIHomeSteps extends BasicTestObject {
 	@Then("^I should see the apimanager login as \"([^\"]*)\" and sign-up buttons as \"([^\"]*)\" at the top right corner of the page$")
 	public void i_should_see_the_apimanager_login_as_and_sign_up_buttons_as_at_the_top_right_corner_of_the_page(String arg1, String arg2) throws Throwable {
 	    LoginPage loginPage = new LoginPage(driver);
-	    Thread.sleep(10000);
+	    Thread.sleep(sleepTime);
 		Assert.assertTrue("Login button did not show properly", loginPage.isLogin(arg1));
 		Assert.assertTrue("Sign up did not show properly", loginPage.isSignUp(arg2));
 	}
@@ -171,7 +171,7 @@ public class APIHomeSteps extends BasicTestObject {
 	public void i_click_on_apimanager_Manage() throws Throwable {
 		HomePage homepage = new HomePage(driver);
 	    homepage.clickManageLink();
-	    Thread.sleep(10000);
+	    Thread.sleep(sleepTime);
 	}
 
 

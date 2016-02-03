@@ -45,7 +45,7 @@ public class APIPublisherHome extends BasicTestObject {
 		publisherHome.enterAPINameSearch(arg1);
 		publisherHome.clickSearch();
 		publisherHome.deleteExistingAPI(arg1);
-		Thread.sleep(10000);
+		Thread.sleep(sleepTime);
 	}
 
 	@When("^I click on apipublisher Add link$")
@@ -214,7 +214,7 @@ public class APIPublisherHome extends BasicTestObject {
 	public void i_click_on_apipublisher_Manage_save_publish_button() throws Throwable {
 		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
 		publisherHome.clickSavePublish();
-		Thread.sleep(10000);
+		Thread.sleep(sleepTime);
 	}
 	
 	@Then("^I should see apipublisher production URL as \"([^\"]*)\"$")

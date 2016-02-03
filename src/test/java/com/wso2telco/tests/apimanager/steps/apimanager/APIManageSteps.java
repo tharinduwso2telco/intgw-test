@@ -128,7 +128,7 @@ public class APIManageSteps extends BasicTestObject {
 			throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		Assert.assertTrue("3 Tabs are not visible", managerpage.isThreeTabs());
-		Thread.sleep(10000);
+		Thread.sleep(sleepTime);
 	}
 
 	@When("^I click on apimanager Manager page Workflow tab$")
@@ -136,7 +136,7 @@ public class APIManageSteps extends BasicTestObject {
 			throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.clickWorkflow();
-		Thread.sleep(10000);
+		Thread.sleep(sleepTime);
 	}
 
 	@Then("^I should see apimanager Manager Approval Tasks page$")
@@ -180,7 +180,7 @@ public class APIManageSteps extends BasicTestObject {
 			String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.clickAssignMe(arg1);
-		Thread.sleep(10000);
+		Thread.sleep(sleepTime);
 	}
 
 	@When("^I click on Start button for \"([^\"]*)\" Application Details row$")
@@ -188,7 +188,7 @@ public class APIManageSteps extends BasicTestObject {
 			throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.clickStart(arg1);
-		Thread.sleep(10000);
+		Thread.sleep(sleepTime);
 	}
 
 	@When("^I select \"([^\"]*)\" and click complete button for \"([^\"]*)\" Application Details row$")
@@ -197,21 +197,21 @@ public class APIManageSteps extends BasicTestObject {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.selectCondition(arg1, arg2);
 		managerpage.clickComplete(arg2);
-		Thread.sleep(10000);
+		Thread.sleep(sleepTime);
 	}
 
 	@When("^I enter aprrove/reject reason as \"([^\"]*)\"$")
 	public void i_enter_aprrove_reject_reason_as(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.enterApproveRejectReason(arg1);
-		Thread.sleep(10000);
+		Thread.sleep(sleepTime);
 	}
 
 	@When("^click aprrove/reject reason ok button$")
 	public void click_aprrove_reject_reason_ok_button() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.clickApproveOK();
-		Thread.sleep(10000);
+		Thread.sleep(sleepTime);
 	}
 
 	@Then("^I should not see the created application in Approval Tasks table as \"([^\"]*)\"$")
@@ -220,7 +220,7 @@ public class APIManageSteps extends BasicTestObject {
 		ManagerPage managerpage = new ManagerPage(driver);
 		Assert.assertTrue("App name is visible after approving",
 				managerpage.isApplicationNameNotVisible(arg1));
-		Thread.sleep(10000);
+		Thread.sleep(sleepTime);
 	}
 
 	@When("^I click on subscriptions creation under tasks$")
@@ -245,7 +245,7 @@ public class APIManageSteps extends BasicTestObject {
 		Assert.assertTrue(
 				"Enter aprrove/reject reasons pop up did not load properly",
 				managerpage.isApproveRejectPopupDisplayed(arg1));
-		Thread.sleep(10000);
+		Thread.sleep(sleepTime);
 	}
 
 	@When("^I click on apimanager Manager page Blacklist tab$")
@@ -253,7 +253,7 @@ public class APIManageSteps extends BasicTestObject {
 			throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.clickBlackList();
-		Thread.sleep(3000);
+		Thread.sleep(sleepTime);
 	}
 
 	@Then("^I should see apimanager Manager APIwise Blacklist page header as \"([^\"]*)\"$")
@@ -262,7 +262,7 @@ public class APIManageSteps extends BasicTestObject {
 		ManagerPage managerpage = new ManagerPage(driver);
 		Assert.assertTrue("APIwise blacklist page did not load properly",
 				managerpage.isAPIBlacklistPageDisplayed(arg1));
-		Thread.sleep(2000);
+		Thread.sleep(sleepTime);
 	}
 
 	@Then("^I clear existing \"([^\"]*)\"$")
@@ -275,7 +275,7 @@ public class APIManageSteps extends BasicTestObject {
 	public void i_click_on_API_dropbox() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.clickAPIDropDown();
-		Thread.sleep(1000);
+		Thread.sleep(sleepTime);
 	}
 
 	@When("^I select \"([^\"]*)\" as blacklist API$")

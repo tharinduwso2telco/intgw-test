@@ -30,13 +30,13 @@ public class APISandBoxSteps extends BasicTestObject {
 	public void i_click_on_apimanager_Sandbox_page_login_button() throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
 		sandbox.clickLogin();
-		Thread.sleep(10000);
+		Thread.sleep(sleepTime);
 	}
 
 	@Then("^I should see the apimanager sandbox index page header as \"([^\"]*)\"$")
 	public void i_should_see_the_apimanager_sandbox_index_page_header_as(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
-		Thread.sleep(10000);
+		Thread.sleep(sleepTime);
 	    Assert.assertTrue("Sandbox Welcome page did not load properly", sandbox.isSandboxWelcome(arg1));
 	}
 

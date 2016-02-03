@@ -21,7 +21,7 @@ public class IDServerServiceProvider extends BasicTestObject  {
 	public void i_click_on_edit_link(String arg1) throws Throwable {
 		CarbonServiceProvider csp = new CarbonServiceProvider(driver);
 		csp.clickAppEdit(arg1);
-		Thread.sleep(10000);
+		Thread.sleep(sleepTime);
 	}
 	
 	@Then("^I should see ids Service providers page header as \"([^\"]*)\"$")
@@ -139,8 +139,6 @@ public class IDServerServiceProvider extends BasicTestObject  {
 		csp.selectIWA();
 	}
 
-
-	
 	@When("^I click on View/Update application settings page update$")
 	public void i_click_on_View_Update_application_settings_page_update() throws Throwable {
 		CarbonServiceProvider csp = new CarbonServiceProvider(driver);

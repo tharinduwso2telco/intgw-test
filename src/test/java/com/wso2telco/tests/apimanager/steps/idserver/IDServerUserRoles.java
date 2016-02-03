@@ -261,7 +261,7 @@ public class IDServerUserRoles extends BasicTestObject {
 	public void i_close_the_browser_and_reopen_the_browsers_and_navigate_to_apipublisher_page() throws Throwable {
 		driver.close();
 		launchBrowser();
-		Thread.sleep(10000);
+		Thread.sleep(sleepTime);
 		driver.get(config.getValue(getEnvironment() + "ApiManagerPublisher"));
 	}
 

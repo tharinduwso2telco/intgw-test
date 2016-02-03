@@ -38,6 +38,8 @@ public class BasicTestObject extends TestBase {
 	
 	public static String environment;
 	
+	public Long sleepTime = Long.parseLong(config.getValue("sleepTime"));
+	
 	public void initialize() throws Exception {
 		try {
 			if (!isInitialized) {
