@@ -39,4 +39,4 @@ Then I should see success pop up
 
 Examples:
 | usertype|API |whitelistPageHeader|appname|MinNumber  |MaxNumber  |EnterNumberList                                    |NumberList             |
-|LOGOUT   |USSD|APIwise Whitelist  |test1  |94778123450|94778123460|Please enter whitelist numbers Separated with comma|94778123412,94778123414|
+|LOGOUT   |AuxAppTest|APIwise Whitelist  |AuxLogoutUser_AuxLogoutUserApp |94778123450|94778123460|Please enter whitelist numbers Separated with comma|94778123412,94778123414|

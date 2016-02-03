@@ -376,7 +376,7 @@ public class APIManageSteps extends BasicTestObject {
 	@When("^I select \"([^\"]*)\" as whitelist API$")
 	public void i_select_as_whitelist_API(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		managerpage.selectWhiteListAPIUSSD();
+		managerpage.selectWhiteListAPI();
 	}
 	
 	@When("^I select Upload number Manually radio button$")
@@ -442,7 +442,8 @@ public class APIManageSteps extends BasicTestObject {
 	@Then("^I should see the pop up to enter the numbers as \"([^\"]*)\"$")
 	public void i_should_see_the_pop_up_to_enter_the_numbers_as(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		managerpage.isAddNumberAlertDisplayed(arg1);
+		Assert.assertTrue("Enter Number alert did not appear",
+				managerpage.isAddNumberAlertDisplayed(arg1));
 	}
 	
 	@When("^I click on add number list pop up ok button$")
