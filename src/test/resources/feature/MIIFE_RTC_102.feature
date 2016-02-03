@@ -32,7 +32,7 @@ And I click on Transaction Log Status drop down
 And I select "<status>" as Transaction Log Status
 And I click on Download report button
 #validate downloaded excel sheet
-Then download excel sheet
+Then I should see downloaded excel sheet
 
 
 Examples:

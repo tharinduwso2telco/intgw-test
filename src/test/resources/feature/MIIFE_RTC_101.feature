@@ -15,7 +15,7 @@ And I click on apimanager Manager page login button
 Then I should see the apimanager Manager Home page header as "Home"
 And I should see apimanager Manager Home Billing Workflow Blacklist Whitelist tabs
 When I click on apimanager Manager page Billing and Metering tab
-Then I should see apimanager Manager Total API Traffic page header as "<apiiTrafficPageHeader>"
+Then I should see apimanager Manager Total API Traffic page header as "<apiTrafficPageHeader>"
 When I enter "<fromDate>" as Total API Traffic from date
 And I enter "<toDate>" as Total API Traffic to date
 And I click on Total API Traffic operator drop down
