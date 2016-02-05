@@ -157,8 +157,7 @@ public class APIManageSteps extends BasicTestObject {
 	public void i_should_see_created_application_at_the_top_of_the_Approval_Tasks_table(
 			String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		Assert.assertTrue("App name is not visible in the area",
-				managerpage.isApplicationNameVisible(arg1));
+		Assert.assertTrue("App name is not visible in the area", managerpage.isApplicationNameVisible(arg1));
 	}
 
 	@When("^I click on Application Details drop box for \"([^\"]*)\" row$")
@@ -218,8 +217,7 @@ public class APIManageSteps extends BasicTestObject {
 	public void i_should_not_see_the_created_application_in_Approval_Tasks_table_as(
 			String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		Assert.assertTrue("App name is visible after approving",
-				managerpage.isApplicationNameNotVisible(arg1));
+		Assert.assertTrue("App name is visible after approving", managerpage.isApplicationNameNotVisible(arg1));
 		Thread.sleep(sleepTime);
 	}
 
@@ -260,9 +258,8 @@ public class APIManageSteps extends BasicTestObject {
 	public void i_should_see_apimanager_Manager_APIwise_Blacklist_page_header_as(
 			String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		Assert.assertTrue("APIwise blacklist page did not load properly",
-				managerpage.isAPIBlacklistPageDisplayed(arg1));
 		Thread.sleep(sleepTime);
+		Assert.assertTrue("APIwise blacklist page did not load properly", managerpage.isAPIBlacklistPageDisplayed(arg1));
 	}
 
 	@When("^I clear existing \"([^\"]*)\"$")
@@ -271,22 +268,21 @@ public class APIManageSteps extends BasicTestObject {
 		managerpage.clearBlacklistNumber(arg1);
 	}
 	
-	@When("^I click on API dropbox$")
+/*	@When("^I click on API dropbox$")
 	public void i_click_on_API_dropbox() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.clickAPIDropDown();
 		Thread.sleep(sleepTime);
-	}
+	}*/
 
 	@When("^I select \"([^\"]*)\" as blacklist API$")
 	public void i_select_as_blacklist_API(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		managerpage.selectUSSD();
+		managerpage.selectAPI(arg1);//selectUSSD();
 	}
 
 	@When("^I click on Blacklisted subscribers Add New button$")
-	public void i_click_on_Blacklisted_subscribers_Add_New_button()
-			throws Throwable {
+	public void i_click_on_Blacklisted_subscribers_Add_New_button() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.clickAddNewButton();
 	}
@@ -295,8 +291,7 @@ public class APIManageSteps extends BasicTestObject {
 	public void i_should_see_add_nember_alert_header_as(String arg1)
 			throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		Assert.assertTrue("Add number alert did not load properly",
-				managerpage.isAddNumberAlertDisplayed(arg1));
+		Assert.assertTrue("Add number alert did not load properly", managerpage.isAddNumberAlertDisplayed(arg1));
 	}
 
 	@When("^I enter the \"([^\"]*)\" to blacklist$")
