@@ -64,7 +64,7 @@ public class APIAplicationSteps extends BasicTestObject {
 	@Then("^I should see the added Application Name as \"([^\"]*)\" _ \"([^\"]*)\" and the \"([^\"]*)\" as status$")
 	public void i_should_see_the_added_Application_Name_as___and_the_as_status(String arg1, String arg2, String arg3) throws Throwable {
 		ApplicationsPage apppage = new ApplicationsPage(driver);
-		String username = getEnvironment() + arg1 + "user";
+		String username = config.getValue(getEnvironment() + arg1 + "user");
 		Assert.assertTrue("Application name mismatched", apppage.isApplicationName(username, arg2));
 		Assert.assertTrue("Application status mismatched", apppage.isApplicationStatus(arg3));
 	}
