@@ -16,8 +16,7 @@ Then I should see the apimanager Manager Home page header as "Home"
 And I should see apimanager Manager Home Billing Workflow Blacklist Whitelist tabs
 When I click on apimanager Manager page Blacklist tab
 Then I should see apimanager Manager APIwise Blacklist page header as "<blacklistPageHeader>"
-When I click on API dropbox
-And I select "<API>" as blacklist API
+When I select "<API>" as blacklist API
 And I click on Blacklisted subscribers Add New button
 Then I should see add nember alert header as "<AddNumberAlert>"
 When I enter the "<BlackListNumber>" to blacklist

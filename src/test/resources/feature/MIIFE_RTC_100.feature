@@ -26,8 +26,7 @@ And I click whitelist page Upload Number button
 Then I should see success pop up
 When I click on apimanager Manager page Blacklist tab
 Then I should see apimanager Manager APIwise Blacklist page header as "<blacklistPageHeader>"
-When I click on API dropbox
-And I select "<API>" as blacklist API
+When I select "<API>" as blacklist API
 And I click on Blacklisted subscribers Add New button
 Then I should see add nember alert header as "<AddNumberAlert>"
 When I enter the "<WhiteListNumber>" to blacklist
