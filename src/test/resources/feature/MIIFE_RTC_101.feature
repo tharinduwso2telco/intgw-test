@@ -32,5 +32,5 @@ Then I should see generated Total API Traffic pie chart and the line graph
 
 
 Examples:
-| usertype|
-|LOGOUT   |
+| usertype|fromDate|toDate|operator|serviceProvider|application|API|
+|LOGOUT   |2015-11-18|2015-12-23|DIALOG|admin|All|All|
