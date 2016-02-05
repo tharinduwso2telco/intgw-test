@@ -46,17 +46,19 @@ public class APIsSteps extends BasicTestObject {
 		Assert.assertTrue("Application name is on the drop down", apiPage.isApplicationNameNotVisible(arg1));
 	}
 	
-	@Then("^I should see \"([^\"]*)\" Application$")
-	public void i_should_see_Application(String arg1) throws Throwable {
+	@Then("^I should see \"([^\"]*)\" Application for \"([^\"]*)\"$")
+	public void i_should_see_Application_for(String arg1, String arg2) throws Throwable {
 		APIsPage apiPage = new APIsPage(driver);
-		Assert.assertTrue("Application name is not on the drop down", apiPage.isApplicationNameVisible(arg1));
+		String appName = config.getValue(getEnvironment() + arg2 + "user") + "_" + arg1;
+		Assert.assertTrue("Application name is not on the drop down", apiPage.isApplicationNameVisible(appName));
 		Thread.sleep(sleepTime);
 	}
 
-	@When("^I select \"([^\"]*)\"$")
-	public void i_select(String arg1) throws Throwable {
+	@When("^I select \"([^\"]*)\" for \"([^\"]*)\"$")
+	public void i_select_for(String arg1, String arg2) throws Throwable {
 		APIsPage apiPage = new APIsPage(driver);
-		apiPage.clickAppName(arg1);
+		String appName = config.getValue(getEnvironment() + arg2 + "user") + "_" + arg1;
+		apiPage.clickAppName(appName);
 		Thread.sleep(sleepTime);
 	}
 	

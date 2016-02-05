@@ -11,16 +11,18 @@ import cucumber.api.java.en.When;
 
 public class IDServerServiceProvider extends BasicTestObject  {
 
-	@Then("^I should see \"([^\"]*)\" Application in Service Providers table$")
-	public void i_should_see_Application_in_Service_Providers_table(String arg1) throws Throwable {
+	@Then("^I should see \"([^\"]*)\" Application in Service Providers table for \"([^\"]*)\"$")
+	public void i_should_see_Application_in_Service_Providers_table_for(String arg1, String arg2) throws Throwable {
 		CarbonServiceProvider csp = new CarbonServiceProvider(driver);
-		Assert.assertTrue("Application did not include in SP table",csp.isAppinSPTable(arg1));	
+		String appName = config.getValue(getEnvironment() + arg2 + "user") + "_" + arg1;
+		Assert.assertTrue("Application did not include in SP table",csp.isAppinSPTable(appName));	
 	}
 	
-	@When("^I click on \"([^\"]*)\" edit link$")
-	public void i_click_on_edit_link(String arg1) throws Throwable {
+	@When("^I click on \"([^\"]*)\" edit link for \"([^\"]*)\"$")
+	public void i_click_on_edit_link_for(String arg1, String arg2) throws Throwable {
 		CarbonServiceProvider csp = new CarbonServiceProvider(driver);
-		csp.clickAppEdit(arg1);
+		String appName = config.getValue(getEnvironment() + arg2 + "user") + "_" + arg1;
+		csp.clickAppEdit(appName);
 		Thread.sleep(sleepTime);
 	}
 	
@@ -60,10 +62,11 @@ public class IDServerServiceProvider extends BasicTestObject  {
 		csp.clickAddConfig(); 
 	}
 	
-	@Then("^I should see Advanced Authentication Configuration for \"([^\"]*)\" page$")
-	public void i_should_see_Advanced_Authentication_Configuration_for_page(String arg1) throws Throwable {
+	@Then("^I should see Advanced Authentication Configuration for \"([^\"]*)\" page for \"([^\"]*)\"$")
+	public void i_should_see_Advanced_Authentication_Configuration_for_page_for(String arg1, String arg2) throws Throwable {
 		CarbonServiceProvider csp = new CarbonServiceProvider(driver);
-		Assert.assertTrue("Advanced Authentication Configuration page did not load properly",csp.isAddConfigPageDisplyed(arg1));
+		String appName = config.getValue(getEnvironment() + arg2 + "user") + "_" + arg1;
+		Assert.assertTrue("Advanced Authentication Configuration page did not load properly", csp.isAddConfigPageDisplyed(appName));
 	}
 	
 	@When("^I click on Add Authentication Step$")

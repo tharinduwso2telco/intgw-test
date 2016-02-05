@@ -19,8 +19,7 @@ public class APIManageSteps extends BasicTestObject {
 			driver.switchTo().window(winHandle);
 		}
 		ManagerPage managerpage = new ManagerPage(driver);
-		Assert.assertTrue("Manager page did not load properly",
-				managerpage.isManagerPage(arg1));
+		Assert.assertTrue("Manager page did not load properly", managerpage.isManagerPage(arg1));
 	}
 
 	@When("^I enter apimanager Manager page username and password for \"([^\"]*)\"$")
@@ -153,49 +152,49 @@ public class APIManageSteps extends BasicTestObject {
 		managerpage.clickApplicationCreation();
 	}
 
-	@Then("^I should see created application \"([^\"]*)\" at the top of the Approval Tasks table$")
-	public void i_should_see_created_application_at_the_top_of_the_Approval_Tasks_table(
-			String arg1) throws Throwable {
+	@Then("^I should see created application \"([^\"]*)\" at the top of the Approval Tasks table for \"([^\"]*)\"$")
+	public void i_should_see_created_application_at_the_top_of_the_Approval_Tasks_table_for(String arg1, String arg2) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		Assert.assertTrue("App name is not visible in the area", managerpage.isApplicationNameVisible(arg1));
+		String appName = config.getValue(getEnvironment() + arg2 + "user") + "_" + arg1;
+		Assert.assertTrue("App name is not visible in the area", managerpage.isApplicationNameVisible(appName));
 	}
 
-	@When("^I click on Application Details drop box for \"([^\"]*)\" row$")
-	public void i_click_on_Application_Details_drop_box_for_row(String arg1)
-			throws Throwable {
+	@When("^I click on Application Details drop box for \"([^\"]*)\" row for \"([^\"]*)\"$")
+	public void i_click_on_Application_Details_drop_box_for_row_for(String arg1, String arg2) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		managerpage.clickApplicationDetails(arg1);
+		String appName = config.getValue(getEnvironment() + arg2 + "user") + "_" + arg1;
+		managerpage.clickApplicationDetails(appName);
 	}
 
-	@When("^I select \"([^\"]*)\" for \"([^\"]*)\" Application Details row$")
-	public void i_select_for_Application_Details_row(String arg1, String arg2)
-			throws Throwable {
+	@When("^I select \"([^\"]*)\" for \"([^\"]*)\" Application Details row for \"([^\"]*)\"$")
+	public void i_select_for_Application_Details_row_for(String arg1, String arg2, String arg3) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		managerpage.selectTier(arg1, arg2);
+		String appName = config.getValue(getEnvironment() + arg3 + "user") + "_" + arg2;
+		managerpage.selectTier(arg1, appName);
 	}
 
-	@When("^I click Assign To Me button for \"([^\"]*)\" Application Details row$")
-	public void i_click_Assign_To_Me_button_for_Application_Details_row(
-			String arg1) throws Throwable {
+	@When("^I click Assign To Me button for \"([^\"]*)\" Application Details row for \"([^\"]*)\"$")
+	public void i_click_Assign_To_Me_button_for_Application_Details_row_for(String arg1, String arg2) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		managerpage.clickAssignMe(arg1);
+		String appName = config.getValue(getEnvironment() + arg2 + "user") + "_" + arg1;
+		managerpage.clickAssignMe(appName);
 		Thread.sleep(sleepTime);
 	}
 
-	@When("^I click on Start button for \"([^\"]*)\" Application Details row$")
-	public void i_click_on_Start_button_for_Application_Details_row(String arg1)
-			throws Throwable {
+	@When("^I click on Start button for \"([^\"]*)\" Application Details row for \"([^\"]*)\"$")
+	public void i_click_on_Start_button_for_Application_Details_row_for(String arg1, String arg2) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		managerpage.clickStart(arg1);
+		String appName = config.getValue(getEnvironment() + arg2 + "user") + "_" + arg1;
+		managerpage.clickStart(appName);
 		Thread.sleep(sleepTime);
 	}
 
-	@When("^I select \"([^\"]*)\" and click complete button for \"([^\"]*)\" Application Details row$")
-	public void i_select_and_click_complete_button_for_Application_Details_row(
-			String arg1, String arg2) throws Throwable {
+	@When("^I select \"([^\"]*)\" and click complete button for \"([^\"]*)\" Application Details row for \"([^\"]*)\"$")
+	public void i_select_and_click_complete_button_for_Application_Details_row_for(String arg1, String arg2, String arg3) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		managerpage.selectCondition(arg1, arg2);
-		managerpage.clickComplete(arg2);
+		String appName = config.getValue(getEnvironment() + arg3 + "user") + "_" + arg2;
+		managerpage.selectCondition(arg1, appName);
+		managerpage.clickComplete(appName);
 		Thread.sleep(sleepTime);
 	}
 
@@ -213,11 +212,11 @@ public class APIManageSteps extends BasicTestObject {
 		Thread.sleep(sleepTime);
 	}
 
-	@Then("^I should not see the created application in Approval Tasks table as \"([^\"]*)\"$")
-	public void i_should_not_see_the_created_application_in_Approval_Tasks_table_as(
-			String arg1) throws Throwable {
+	@Then("^I should not see the created application in Approval Tasks table as \"([^\"]*)\" for \"([^\"]*)\"$")
+	public void i_should_not_see_the_created_application_in_Approval_Tasks_table_as_for(String arg1, String arg2) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		Assert.assertTrue("App name is visible after approving", managerpage.isApplicationNameNotVisible(arg1));
+		String appName = config.getValue(getEnvironment() + arg2 + "user") + "_" + arg1;
+		Assert.assertTrue("App name is visible after approving", managerpage.isApplicationNameNotVisible(appName));
 		Thread.sleep(sleepTime);
 	}
 

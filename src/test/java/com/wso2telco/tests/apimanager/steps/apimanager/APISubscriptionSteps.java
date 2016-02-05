@@ -11,12 +11,13 @@ import cucumber.api.java.en.When;
 public class APISubscriptionSteps extends BasicTestObject {
 
 	
-	@Then("^I should see \"([^\"]*)\" under Applications with Subscriptions$")
-	public void i_should_see_under_Applications_with_Subscriptions(String arg1) throws Throwable {
+	@Then("^I should see \"([^\"]*)\" under Applications with Subscriptions for \"([^\"]*)\"$")
+	public void i_should_see_under_Applications_with_Subscriptions_for(String arg1, String arg2) throws Throwable {
 	   SubscriptionsPage subpage = new SubscriptionsPage(driver);
 	   //subpage.clickSelectAppDD();
 	   //subpage.selectApp();
-	   Assert.assertTrue("Apps with subscription did not load properly", subpage.isAppsWithSubscriptions(arg1));  
+	   String appName = config.getValue(getEnvironment() + arg2 + "user") + "_" + arg1;
+	   Assert.assertTrue("Apps with subscription did not load properly", subpage.isAppsWithSubscriptions(appName));  
 	}
 
 	@When("^I enter token validity of production as \"([^\"]*)\"$")
