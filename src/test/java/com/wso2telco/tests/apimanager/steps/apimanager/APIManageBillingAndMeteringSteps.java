@@ -335,4 +335,59 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 	public void i_should_see_the_generated_Customer_Care_Report() throws Throwable {
 	    //enter code here
 	}
+	
+	@When("^I click on API Response Times menu item$")
+	public void i_click_on_API_Response_Times_menu_item() throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.clickOnAPIResponseTime();
+	}
+	
+	@Then("^I should see apimanager Manager API Response Times page header as \"([^\"]*)\"$")
+	public void i_should_see_apimanager_Manager_API_Response_Times_page_header_as(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("API Response time page did not appear",
+				managerpage.isAPIResponseTimePageDisplayed(arg1));
+	}
+	
+	@When("^I enter \"([^\"]*)\" as API Response Times from date$")
+	public void i_enter_as_API_Response_Times_from_date(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.enterAPIResponseTimeFromDate(arg1);
+	}
+	
+	@When("^I enter \"([^\"]*)\" as API Response Times to date$")
+	public void i_enter_as_API_Response_Times_to_date(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.enterAPIResponseTimeToDate(arg1);
+	}
+	
+	@When("^I select \"([^\"]*)\" as API Response Times operator$")
+	public void i_select_as_API_Response_Times_operator(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.selectAPIResponseTimesOperator(arg1);
+	}
+	
+	@When("^I select \"([^\"]*)\" as the API Response Times service provider$")
+	public void i_select_as_the_API_Response_Times_service_provider(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.selectAPIResponseTimesServiceProvider(arg1);
+	}
+	
+	@When("^I select \"([^\"]*)\" as API Response Times Application$")
+	public void i_select_as_API_Response_Times_Application(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.selectAPIResponseTimesApplication(arg1);
+	}
+
+	@When("^I click on API Response Times generate button$")
+	public void i_click_on_API_Response_Times_generate_button() throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.clickOnAPIResponseTimeGenerate();
+	}
+	
+	@Then("^I should see the generated API Response Times graphs$")
+	public void i_should_see_the_generated_API_Response_Times_graphs() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	}
+
 }
