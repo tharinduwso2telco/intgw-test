@@ -274,4 +274,65 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 	public void i_should_see_the_generated_pie_chart_of_Revenue_Breakdown() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
 	}
+	
+	@When("^I click on Customer Care Reports menu item$")
+	public void i_click_on_Customer_Care_Reports_menu_item() throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.clickOnCustomerCare();
+	}
+
+	@Then("^I should see apimanager Manager Customer Care Reports page header as \"([^\"]*)\"$")
+	public void i_should_see_apimanager_Manager_Customer_Care_Reports_page_header_as(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Customer care page did not appear",
+				managerpage.isCustomerCarePageDisplayed(arg1));
+	}
+	
+
+	@When("^I enter \"([^\"]*)\" as Customer Care Reports from date$")
+	public void i_enter_as_Customer_Care_Reports_from_date(String arg1)
+			throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.enterCustomerCareFromDate(arg1);
+	}
+
+	@When("^I enter \"([^\"]*)\" as Customer Care Reports to date$")
+	public void i_enter_as_Customer_Care_Reports_to_date(String arg1)
+			throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.enterCustomerCareToDate(arg1);
+	}
+
+	@When("^I enter \"([^\"]*)\" as Customer Care Reports MSISDN$")
+	public void i_enter_as_Customer_Care_Reports_MSISDN(String arg1)
+			throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.enterCustomerCareMSISDN(arg1);
+	}
+
+	@When("^I select \"([^\"]*)\" as Customer Care Reports operator$")
+	public void i_select_as_Customer_Care_Reports_operator(String arg1)
+			throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.selectCustomerCareOperator(arg1);
+	}
+
+	@When("^I select \"([^\"]*)\" as the Customer Care Reports service provider$")
+	public void i_select_as_the_Customer_Care_Reports_service_provider(
+			String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.selectCustomerCareServiceProvider(arg1);
+	}
+
+	@When("^I select \"([^\"]*)\" as Customer Care Reports Application$")
+	public void i_select_as_Customer_Care_Reports_Application(String arg1)
+			throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.selectCustomerCareApplication(arg1);
+	}
+
+	@Then("^I should see the generated Customer Care Report$")
+	public void i_should_see_the_generated_Customer_Care_Report() throws Throwable {
+	    //enter code here
+	}
 }
