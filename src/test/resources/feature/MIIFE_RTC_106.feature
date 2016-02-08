@@ -15,18 +15,13 @@ And I click on apimanager Manager page login button
 Then I should see the apimanager Manager Home page header as "Home"
 And I should see apimanager Manager Home Billing Workflow Blacklist Whitelist tabs
 When I click on apimanager Manager page Billing and Metering tab
-Then I should see apimanager Manager Total API Traffic page header as "<apiiTrafficPageHeader>"
+Then I should see apimanager Manager Total API Traffic page header as "<apiTrafficPageHeader>"
 When I click on Revenue Breakdown menu item
 Then I should see apimanager Manager Revenue Breakdown page header as "<revenueBreakdownPageHeader>"
-When I click on Monthly Invoice Year drop down
-And I select "<year>" as Monthly Invoice Year
-And I click on Monthly Invoice Month drop down
-And I select "<month>" as Monthly Invoice Month
-And I click on Revenue Breakdown operator drop down
+When I select "<year>" as Revenue Breakdown Year
+And I select "<month>" as Revenue Breakdown Month
 And I select "<operator>" as Revenue Breakdown operator
-And I click on Revenue Breakdown service provider drop down
 And I select "<serviceProvider>" as the Revenue Breakdown service provider
-And I click on Revenue Breakdown Application drop down
 And I select "<application>" as Revenue Breakdown Application
 And I click on generate button
 #validate graphs
@@ -34,5 +29,5 @@ Then I should see the generated pie chart of Revenue Breakdown
 
 
 Examples:
-| usertype|
-|LOGOUT   |
+| usertype|year|month|serviceProvider|operator|application|apiTrafficPageHeader|revenueBreakdownPageHeader|
+|LOGOUT   |2015|November|admin|DIALOG|All|Total API Traffic|Revenue Breakdown|

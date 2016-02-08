@@ -18,19 +18,15 @@ When I click on apimanager Manager page Billing and Metering tab
 Then I should see apimanager Manager Total API Traffic page header as "<apiTrafficPageHeader>"
 When I enter "<fromDate>" as Total API Traffic from date
 And I enter "<toDate>" as Total API Traffic to date
-And I click on Total API Traffic operator drop down
 And I select "<operator>" as Total API Traffic operator
-And I click on Total API Traffic service provider drop down
 And I select "<serviceProvider>" as the Total API Traffic service provider
-And I click on Total API Traffic Application drop down
 And I select "<application>" as Total API Traffic application
-And I click on Total API Traffic API drop down
 And I select "<API>" as Total API Traffic API
 And I click on generate button
-#validate graph
+#validate generated graphs
 Then I should see generated Total API Traffic pie chart and the line graph
 
 
 Examples:
-| usertype|fromDate|toDate|operator|serviceProvider|application|API|
-|LOGOUT   |2015-11-18|2015-12-23|DIALOG|admin|All|All|
+| usertype|apiTrafficPageHeader|fromDate|toDate|operator|serviceProvider|application|API|
+|LOGOUT   |Total API Traffic|2015-11-18|2015-12-23|DIALOG|admin|All|All|

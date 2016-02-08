@@ -263,18 +263,11 @@ public class APIManageSteps extends BasicTestObject {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.clearBlacklistNumber(arg1);
 	}
-	
-/*	@When("^I click on API dropbox$")
-	public void i_click_on_API_dropbox() throws Throwable {
-		ManagerPage managerpage = new ManagerPage(driver);
-		managerpage.clickAPIDropDown();
-		Thread.sleep(sleepTime);
-	}*/
 
 	@When("^I select \"([^\"]*)\" as blacklist API$")
 	public void i_select_as_blacklist_API(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		managerpage.selectAPI(arg1);//selectUSSD();
+		managerpage.selectAPI(arg1);
 	}
 
 	@When("^I click on Blacklisted subscribers Add New button$")

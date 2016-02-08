@@ -15,23 +15,19 @@ And I click on apimanager Manager page login button
 Then I should see the apimanager Manager Home page header as "Home"
 And I should see apimanager Manager Home Billing Workflow Blacklist Whitelist tabs
 When I click on apimanager Manager page Billing and Metering tab
-Then I should see apimanager Manager Total API Traffic page header as "<apiiTrafficPageHeader>"
+Then I should see apimanager Manager Total API Traffic page header as "<apiTrafficPageHeader>"
 When I click on Performance Error Rates menu item
 Then I should see apimanager Manager Performance Error Rates page header as "<performanceErrorRatesPageHeader>"
 When I enter "<fromDate>" as Performance Error Rates from date
 And I enter "<toDate>" as Performance Error Rates to date
-And I click on Performance Error Rates operator drop down
 And I select "<operator>" as Performance Error Rates operator
-And I click on Performance Error Rates service provider drop down
 And I select "<serviceProvider>" as the Performance Error Rates service provider
-And I click on Performance Error Rates Application drop down
 And I select "<application>" as Performance Error Rates Application
-And I click on Performance Error Rates API drop down
 And I select "<API>" as Performance Error Rates API
 And I click on generate button
 Then I should see generated Performance Error Rates graphs
 
 
 Examples:
-| usertype|
-|LOGOUT   |
+| usertype|apiTrafficPageHeader|performanceErrorRatesPageHeader|fromDate|toDate|operator|serviceProvider|application|API|
+|LOGOUT   |Total API Traffic|Performance Error Rates|2015-11-18|2015-12-23|DIALOG|admin|All|All|

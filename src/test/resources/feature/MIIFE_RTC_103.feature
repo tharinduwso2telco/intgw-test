@@ -15,20 +15,17 @@ And I click on apimanager Manager page login button
 Then I should see the apimanager Manager Home page header as "Home"
 And I should see apimanager Manager Home Billing Workflow Blacklist Whitelist tabs
 When I click on apimanager Manager page Billing and Metering tab
-Then I should see apimanager Manager Total API Traffic page header as "<apiiTrafficPageHeader>"
+Then I should see apimanager Manager Total API Traffic page header as "<apiTrafficPageHeader>"
 When I click on Operator API Traffic menu item
 Then I should see apimanager Manager Opertor API Traffic page header as "<opertorAPITrafficPageHeader>"
 When I enter "<fromDate>" as Operator API Traffic from date
 And I enter "<toDate>" as Operator API Traffic to date
-And I click on Operator API Traffic service provider drop down
 And I select "<serviceProvider>" as the Operator API Traffic service provider
-And I click on Operator API Traffic Application drop down
 And I select "<application>" as Operator API Traffic application
-And I click on Operator API Traffic API drop down
 And I select "<API>" as Operator API Traffic API
 And I click on generate button
 #validate graph
 Then I should see the generated Operator API Traffic pie chart
 Examples:
-| usertype|
-|LOGOUT   |
+| usertype|apiTrafficPageHeader|opertorAPITrafficPageHeader|fromDate|toDate|serviceProvider|application|API|
+|LOGOUT   |Total API Traffic|Operator Wise Traffic|2015-11-18|2015-12-23|admin|All|All|
