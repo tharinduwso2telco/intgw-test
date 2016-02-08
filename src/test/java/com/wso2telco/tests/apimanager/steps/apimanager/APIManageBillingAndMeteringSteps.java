@@ -136,5 +136,53 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 	public void i_should_see_downloaded_excel_sheet() throws Throwable {
        //enter code here
 	}
+	
+	@When("^I click on Operator API Traffic menu item$")
+	public void i_click_on_Operator_API_Traffic_menu_item() throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.clickOperatorAPITraffic();
+	}
+	
+	@Then("^I should see apimanager Manager Opertor API Traffic page header as \"([^\"]*)\"$")
+	public void i_should_see_apimanager_Manager_Opertor_API_Traffic_page_header_as(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Operator wise API Traffic page did not appear",
+				managerpage.isOperatorAPITrafficPageDisplayed(arg1));
+	}
 
+	@When("^I enter \"([^\"]*)\" as Operator API Traffic from date$")
+	public void i_enter_as_Operator_API_Traffic_from_date(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.enterOperatorAPITrafficFromDate(arg1);
+	}
+	
+	@When("^I enter \"([^\"]*)\" as Operator API Traffic to date$")
+	public void i_enter_as_Operator_API_Traffic_to_date(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.enterOperatorAPITrafficToDate(arg1);
+	}
+	
+	@When("^I select \"([^\"]*)\" as the Operator API Traffic service provider$")
+	public void i_select_as_the_Operator_API_Traffic_service_provider(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.selectOperatorAPITrafficServiceProvider(arg1);
+	}
+
+	@When("^I select \"([^\"]*)\" as Operator API Traffic application$")
+	public void i_select_as_Operator_API_Traffic_application(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.selectOperatorAPITrafficApplication(arg1);
+	}
+
+	@When("^I select \"([^\"]*)\" as Operator API Traffic API$")
+	public void i_select_as_Operator_API_Traffic_API(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.selectOperatorAPITrafficAPI(arg1);
+	}
+	
+	@Then("^I should see the generated Operator API Traffic pie chart$")
+	public void i_should_see_the_generated_Operator_API_Traffic_pie_chart() throws Throwable {
+	    // Write code here to validate the graph 
+	    
+	}
 }
