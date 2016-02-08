@@ -22,13 +22,9 @@ When I click on Transaction log menu item
 Then I should see apimanager Manager Transaction Log page header as "<transactionLogPageHeader>"
 When I enter "<fromDate>" as Transaction Log from date
 And I enter "<toDate>" as Transaction Log to date
-And I click on Transaction Log operator drop down
 And I select "<operator>" as Transaction Log operator
-And I click on Transaction Log service provider drop down
 And I select "<serviceProvider>" as the Transaction Log service provider
-And I click on Transaction Log API drop down
 And I select "<API>" as Transaction Log API
-And I click on Transaction Log Status drop down
 And I select "<status>" as Transaction Log Status
 And I click on Download report button
 #validate downloaded excel sheet
@@ -36,5 +32,5 @@ Then I should see downloaded excel sheet
 
 
 Examples:
-| usertype|
-|LOGOUT   |
+| usertype|apiiTrafficPageHeader|transactionLogPageHeader|fromDate|toDate|operator|serviceProvider|API|status|
+|LOGOUT   |Total API Traffic|Transaction Log|2015-11-18|2015-12-23|DIALOG|AuxLogoutUser|AuxAppTest|Successful|
