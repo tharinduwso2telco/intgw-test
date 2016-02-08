@@ -93,7 +93,7 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 	public void i_click_on_generate_button() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.clickOnGenerate();
-	}
+	} 
 
 	@Then("^I should see generated Total API Traffic pie chart and the line graph$")
 	public void i_should_see_generated_Total_API_Traffic_pie_chart_and_the_line_graph() throws Throwable {
