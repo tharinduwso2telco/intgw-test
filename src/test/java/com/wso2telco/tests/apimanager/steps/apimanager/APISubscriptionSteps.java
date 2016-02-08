@@ -4,6 +4,7 @@ import org.junit.Assert;
 
 import com.wso2telco.apimanager.pageobjects.apihome.subscriptions.SubscriptionsPage;
 import com.wso2telco.tests.apimanager.base.BasicTestObject;
+import com.wso2telco.tests.util.data.DataAuthenticationKeys;
 
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -14,10 +15,15 @@ public class APISubscriptionSteps extends BasicTestObject {
 	@Then("^I should see \"([^\"]*)\" under Applications with Subscriptions for \"([^\"]*)\"$")
 	public void i_should_see_under_Applications_with_Subscriptions_for(String arg1, String arg2) throws Throwable {
 	   SubscriptionsPage subpage = new SubscriptionsPage(driver);
-	   //subpage.clickSelectAppDD();
-	   //subpage.selectApp();
 	   String appName = config.getValue(getEnvironment() + arg2 + "user") + "_" + arg1;
 	   Assert.assertTrue("Apps with subscription did not load properly", subpage.isAppsWithSubscriptions(appName));  
+	}
+	
+	@When("^I select created application \"([^\"]*)\" from the dropdown for \"([^\"]*)\"$")
+	public void i_select_created_application_from_the_dropdown_for(String arg1, String arg2) throws Throwable {
+		SubscriptionsPage subpage = new SubscriptionsPage(driver);
+		String appName = config.getValue(getEnvironment() + arg2 + "user") + "_" + arg1;
+		subpage.clickSelectAppDD(appName);
 	}
 
 	@When("^I enter token validity of production as \"([^\"]*)\"$")
@@ -66,6 +72,8 @@ public class APISubscriptionSteps extends BasicTestObject {
 	public String i_should_see_consumer_Key_of_sandbox() throws Throwable {
 		SubscriptionsPage subpage = new SubscriptionsPage(driver);
 		String conKeySand = subpage.getConsKeySand();
+		DataAuthenticationKeys auth = new DataAuthenticationKeys();
+		auth.setSandboxConsumerKey(conKeySand);
 		Assert.assertTrue("Sandbox consumer key is not displayed", subpage.isSandboxConsumerKey());
 		return conKeySand;
 	}
@@ -74,6 +82,8 @@ public class APISubscriptionSteps extends BasicTestObject {
 	public String i_should_see_consumer_Secret_of_sandbox() throws Throwable {
 		SubscriptionsPage subpage = new SubscriptionsPage(driver);
 		String secKeySand = subpage.getSecKeySand();
+		DataAuthenticationKeys auth = new DataAuthenticationKeys();
+		auth.setSandboxConsumerSecretKey(secKeySand);
 		Assert.assertTrue("Sandbox consumer secrect key is not displayed", subpage.isSandboxSecrectKey());
 		return secKeySand;
 	}

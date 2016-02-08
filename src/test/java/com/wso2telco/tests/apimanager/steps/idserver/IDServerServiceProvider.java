@@ -4,7 +4,7 @@ import org.junit.Assert;
 
 import com.wso2telco.identityserver.pageobjects.carbon.CarbonServiceProvider;
 import com.wso2telco.tests.apimanager.base.BasicTestObject;
-import com.wso2telco.tests.apimanager.steps.apimanager.APISubscriptionSteps;
+import com.wso2telco.tests.util.data.DataAuthenticationKeys;
 
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -75,11 +75,11 @@ public class IDServerServiceProvider extends BasicTestObject  {
 		csp.clickAddAuthStep();
 	}
 	
-	@When("^I select LOA under Local Authenticators$")
-	public void i_select_LOA_under_Local_Authenticators() throws Throwable {
+	@When("^I select \"([^\"]*)\" under Local Authenticators$")
+	public void i_select_under_Local_Authenticators(String arg1) throws Throwable {
 		CarbonServiceProvider csp = new CarbonServiceProvider(driver);
-		csp.clickAuthenticators();
-		csp.selectLOA();
+		csp.selectAuthenticator(arg1);
+		csp.clickAddAuthentication();
 	}
 	
 	@When("^I click update$")
@@ -156,16 +156,16 @@ public class IDServerServiceProvider extends BasicTestObject  {
 	
 	@Then("^I should see OAth client key$")
 	public void i_should_see_OAth_client_key() throws Throwable {
-		APISubscriptionSteps apiSubscriptionSteps = new APISubscriptionSteps();
-		String conKeyProd = apiSubscriptionSteps.i_should_see_consumer_Key_of_production();
+		DataAuthenticationKeys auth = new DataAuthenticationKeys();
+		String conKeyProd = auth.getSandboxConsumerKey();
 		CarbonServiceProvider csp = new CarbonServiceProvider(driver);
 		Assert.assertTrue("OAth client key did not match",csp.isClientKeyDisplyed(conKeyProd));
 	}
 	
 	@Then("^I should see OAth client secret$")
 	public void i_should_see_oath_client_secret() throws Throwable {
-		APISubscriptionSteps apiSubscriptionSteps = new APISubscriptionSteps();
-		String secKeyProd = apiSubscriptionSteps.i_should_see_consumer_Secret_of_production();
+		DataAuthenticationKeys auth = new DataAuthenticationKeys();
+		String secKeyProd = auth.getSandboxConsumerSecretKey();
 		CarbonServiceProvider csp = new CarbonServiceProvider(driver);
 		Assert.assertTrue("OAth client secret did not match",csp.isClientSecretDisplyed(secKeyProd));
 	}

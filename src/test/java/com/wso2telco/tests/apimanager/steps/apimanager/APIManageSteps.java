@@ -115,11 +115,10 @@ public class APIManageSteps extends BasicTestObject {
 	}
 
 	@Then("^I should see apimanager Manager Home Billing Workflow Blacklist Whitelist tabs$")
-	public void i_should_see_apimanager_Manager_Home_Billing_Workflow_Blacklist_Whitelist_tabs()
-			throws Throwable {
+	public void i_should_see_apimanager_Manager_Home_Billing_Workflow_Blacklist_Whitelist_tabs() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		Assert.assertTrue("All the tabs are not visible",
-				managerpage.isAllTabsAccessible());
+		Thread.sleep(sleepTime);
+		Assert.assertTrue("All the tabs are not visible", managerpage.isAllTabsAccessible());
 	}
 
 	@Then("^I should see apimanager Manager Home Billing Workflow$")
@@ -131,9 +130,9 @@ public class APIManageSteps extends BasicTestObject {
 	}
 
 	@When("^I click on apimanager Manager page Workflow tab$")
-	public void i_click_on_apimanager_Manager_page_Workflow_tab()
-			throws Throwable {
+	public void i_click_on_apimanager_Manager_page_Workflow_tab() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
+		Thread.sleep(sleepTime);
 		managerpage.clickWorkflow();
 		Thread.sleep(sleepTime);
 	}
@@ -228,11 +227,9 @@ public class APIManageSteps extends BasicTestObject {
 	}
 
 	@Then("^I should see apimanager Manager Approval Tasks page header as \"([^\"]*)\"$")
-	public void i_should_see_apimanager_Manager_Approval_Tasks_page_header_as(
-			String arg1) throws Throwable {
+	public void i_should_see_apimanager_Manager_Approval_Tasks_page_header_as(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		Assert.assertTrue("Approval Tasks page did not load properly",
-				managerpage.isApprovalTaskDisplayed(arg1));
+		Assert.assertTrue("Approval Tasks page did not load properly", managerpage.isApprovalTaskDisplayed(arg1));
 	}
 
 	@Then("^I should see Enter aprrove/reject reasons pop up header as \"([^\"]*)\"$")
