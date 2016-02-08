@@ -390,4 +390,59 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 	    // Write code here that turns the phrase above into concrete actions
 	}
 
+	@When("^I click on Performance Error Rates menu item$")
+	public void i_click_on_Performance_Error_Rates_menu_item() throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.clickOnPerformanceErrorRates();
+	}
+
+	@Then("^I should see apimanager Manager Performance Error Rates page header as \"([^\"]*)\"$")
+	public void i_should_see_apimanager_Manager_Performance_Error_Rates_page_header_as(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Performance Error Rates page did not appear",
+				managerpage.isPerformanceErrorRatesPageDisplayed(arg1));
+	}
+	
+	@When("^I enter \"([^\"]*)\" as Performance Error Rates from date$")
+	public void i_enter_as_Performance_Error_Rates_from_date(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.enterPerformanceErrorRatesFromDate(arg1);
+	}
+	
+	@When("^I enter \"([^\"]*)\" as Performance Error Rates to date$")
+	public void i_enter_as_Performance_Error_Rates_to_date(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.enterPerformanceErrorRatesToDate(arg1);
+	}
+	
+	@When("^I select \"([^\"]*)\" as Performance Error Rates operator$")
+	public void i_select_as_Performance_Error_Rates_operator(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.selectPerformanceErrorOperator(arg1);
+	}
+	
+	@When("^I select \"([^\"]*)\" as the Performance Error Rates service provider$")
+	public void i_select_as_the_Performance_Error_Rates_service_provider(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.selectPerformanceErrorServiceProvider(arg1);
+	}
+	
+
+	@When("^I select \"([^\"]*)\" as Performance Error Rates Application$")
+	public void i_select_as_Performance_Error_Rates_Application(String arg1)
+			throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.selectPerformanceErrorApplication(arg1);
+	}
+	
+	@When("^I select \"([^\"]*)\" as Performance Error Rates API$")
+	public void i_select_as_Performance_Error_Rates_API(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.selectPerformanceErrorAPI(arg1);
+	}
+
+	@Then("^I should see generated Performance Error Rates graphs$")
+	public void i_should_see_generated_Performance_Error_Rates_graphs() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	}
 }
