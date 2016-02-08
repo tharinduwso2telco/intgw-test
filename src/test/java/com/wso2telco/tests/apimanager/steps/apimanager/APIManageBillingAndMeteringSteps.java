@@ -445,4 +445,15 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 	public void i_should_see_generated_Performance_Error_Rates_graphs() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
 	}
+	
+	@When("^I click on Monthly Invoice Download report button$")
+	public void i_click_on_Monthly_Invoice_Download_report_button() throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.clickOnMonthlyInvoiceDownloadReport();
+	}
+
+	@Then("^I should see the downloaded report of Monthly Invoice$")
+	public void i_should_see_the_downloaded_report_of_Monthly_Invoice() throws Throwable {
+	    //validate report code
+	}
 }
