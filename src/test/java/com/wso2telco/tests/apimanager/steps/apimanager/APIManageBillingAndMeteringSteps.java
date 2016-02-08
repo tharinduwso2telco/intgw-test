@@ -199,5 +199,79 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 				managerpage.isMonthlyInvoicePageDisplayed(arg1));
 	}
 	
+	@When("^I select \"([^\"]*)\" as Monthly Invoice Year$")
+	public void i_select_as_Monthly_Invoice_Year(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.selectMonthlyInvoiceYear(arg1);
+	}
 	
+	@When("^I select \"([^\"]*)\" as Monthly Invoice Month$")
+	public void i_select_as_Monthly_Invoice_Month(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.selectMonthlyInvoiceMonth(arg1);
+	}
+	
+
+	@When("^I select \"([^\"]*)\" as the Monthly Invoice service provider$")
+	public void i_select_as_the_Monthly_Invoice_service_provider(String arg1)
+			throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.selectMonthlyInvoiceServiceProvider(arg1);
+	}
+	
+	@Then("^I should see the generated Billing Summary of Monthly Invoice$")
+	public void i_should_see_the_generated_Billing_Summary_of_Monthly_Invoice() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	}
+	
+
+	@When("^I click on Revenue Breakdown menu item$")
+	public void i_click_on_Revenue_Breakdown_menu_item() throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.clickOnRvenueBreakdown();
+	}
+	
+	@Then("^I should see apimanager Manager Revenue Breakdown page header as \"([^\"]*)\"$")
+	public void i_should_see_apimanager_Manager_Revenue_Breakdown_page_header_as(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Revenue breakdown page did not appear",
+				managerpage.isRevenueBreakdownPageDisplayed(arg1));
+	}
+	
+	@When("^I select \"([^\"]*)\" as Revenue Breakdown Year$")
+	public void i_select_as_Revenue_Breakdown_Year(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.selectRevenueBreakdownYear(arg1);
+	}
+	
+	@When("^I select \"([^\"]*)\" as Revenue Breakdown Month$")
+	public void i_select_as_Revenue_Breakdown_Month(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.selectRevenueBreakdownMonth(arg1);
+	}
+	
+
+	@When("^I select \"([^\"]*)\" as Revenue Breakdown operator$")
+	public void i_select_as_Revenue_Breakdown_operator(String arg1)
+			throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.selectRevenueBreakdownOperator(arg1);
+	}
+	
+	@When("^I select \"([^\"]*)\" as the Revenue Breakdown service provider$")
+	public void i_select_as_the_Revenue_Breakdown_service_provider(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.selectRevenueBreakdownServiceProvider(arg1);
+	}
+	
+	@When("^I select \"([^\"]*)\" as Revenue Breakdown Application$")
+	public void i_select_as_Revenue_Breakdown_Application(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.selectRevenueBreakdownApplication(arg1);
+	}
+	
+	@Then("^I should see the generated pie chart of Revenue Breakdown$")
+	public void i_should_see_the_generated_pie_chart_of_Revenue_Breakdown() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	}
 }
