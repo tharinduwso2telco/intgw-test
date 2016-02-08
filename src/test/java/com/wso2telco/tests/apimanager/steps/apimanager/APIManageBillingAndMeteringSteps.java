@@ -456,4 +456,9 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 	public void i_should_see_the_downloaded_report_of_Monthly_Invoice() throws Throwable {
 	    //validate report code
 	}
+	
+	@Then("^I should see the refunds are accurately reflected on reports of Monthly Invoice$")
+	public void i_should_see_the_refunds_are_accurately_reflected_on_reports_of_Monthly_Invoice() throws Throwable {
+	    // validate refunds on reports
+	}
 }
