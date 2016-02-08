@@ -185,4 +185,19 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 	    // Write code here to validate the graph 
 	    
 	}
+	
+	@When("^I click on Monthly Invoice menu item$")
+	public void i_click_on_Monthly_Invoice_menu_item() throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.clickMonthlyInvoice();
+	}
+	
+	@Then("^I should see apimanager Manager Monthly Invoice page header as \"([^\"]*)\"$")
+	public void i_should_see_apimanager_Manager_Monthly_Invoice_page_header_as(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Monthly Invoice page did not appear",
+				managerpage.isMonthlyInvoicePageDisplayed(arg1));
+	}
+	
+	
 }

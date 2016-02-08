@@ -49,21 +49,18 @@ And I click on apimanager Manager page login button
 Then I should see the apimanager Manager Home page header as "Home"
 And I should see apimanager Manager Home Billing Workflow Blacklist Whitelist tabs
 When I click on apimanager Manager page Billing and Metering tab
-Then I should see apimanager Manager Total API Traffic page header as "<apiiTrafficPageHeader>"
+Then I should see apimanager Manager Total API Traffic page header as "<apiTrafficPageHeader>"
 When I click on Monthly Invoice menu item
 Then I should see apimanager Manager Monthly Invoice page header as "<monthlyInvoicePageHeader>"
-When I click on Monthly Invoice Year drop down
-And I select "<year>" as Monthly Invoice Year
-And I click on Monthly Invoice Month drop down
+When I select "<year>" as Monthly Invoice Year
 And I select "<month>" as Monthly Invoice Month
-And I click on Monthly Invoice service provider drop down
 And I select "<serviceProvider>" as the Monthly Invoice service provider
-And I click on generate 
+And I click on generate button
 Then I should see the generated Billing Summary of Monthly Invoice
 
 
 Examples:
-| usertype|
-|LOGOUT   |
+| usertype|apiTrafficPageHeader|monthlyInvoicePageHeader|year|month|serviceProvider|
+|LOGOUT   |Total API Traffic|Monthly Invoice|2012|January|admin|
 
 
