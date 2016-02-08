@@ -65,8 +65,7 @@ Then I should see "Subscription Successful" on Subscription Successful pop up
 When I click Go to My Subscription button
 Then I should see the apimanager Subscriptions page header as "Subscriptions"
 And I should see "<appName>" under Applications with Subscriptions for "<usertype>"
-When I click on apimanager Manage 
-#need check for below
+When I click on apimanager Manage
 Then I should see the apimanager Manager page header as "Manager"
 When I enter apimanager Manager page admin username credentials
 And I click on apimanager Manager page login button
@@ -93,8 +92,7 @@ When I click on apimanager Manager page Workflow tab
 Then I should see apimanager Manager Approval Tasks page header as "Approval Tasks"
 When I click on subscriptions creation under tasks
 Then I should see created application "<appName>" at the top of the Approval Tasks table for "<usertype>"
-When I click Assign To Me button for "<appName>" Application Details row for "<usertype>"
-And I click on Start button for "<appName>" Application Details row for "<usertype>"
+When I click on Start button for "<appName>" Application Details row for "<usertype>"
 And I select "<Action>" and click complete button for "<appName>" Application Details row for "<usertype>"
 Then I should see Enter aprrove/reject reasons pop up header as "Enter approve/reject reasons"
 When I enter aprrove/reject reason as "Approved"
@@ -107,7 +105,8 @@ When I click on close window
 Then I am in apimanager
 When I click on apimanager My Subscriptions
 Then I should see the apimanager Subscriptions page header as "Subscriptions"
-When I enter token validity of production as "<validity>"
+When I select created application "<appName>" from the dropdown for "<usertype>"
+And I enter token validity of production as "<validity>"
 And I click generate under apimanager Subscriptions page production
 Then I should see consumer Key of production
 And I should see consumer Secret of production
@@ -135,13 +134,13 @@ When I click on Local and Outbound Authentication Configuration
 And I select Advanced Configuration
 Then I should see Advanced Authentication Configuration for "<appName>" page for "<usertype>"
 When I click on Add Authentication Step
-And I select LOA under Local Authenticators
+And I select "LOA" under Local Authenticators
 And I click update
-Then I should see ids Service providers page header as "Service providers"
+Then I should see ids Service providers page header as "Service Providers"
 When I click on Inbound Authentication Configuration
 And I click on OAuth/OpenID Connect Configuration
 And I click edit in Actions 
-Then I should see View/Update application settings page header as "View/Update application"
+Then I should see View/Update application settings page header as "View/Update application settings"
 When I click on Code
 Then I should see "<Callback URL>" as call back url
 When I click on Implicit
