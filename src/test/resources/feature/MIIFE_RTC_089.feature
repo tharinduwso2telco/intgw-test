@@ -8,6 +8,13 @@ Then I should see the apimanager "Login" pop up
 When I enter apimanager Login username and password for "<usertype>" 
 And I click on apimanager Login pop up login button
 Then I should see apimanager "<usertype>" at the top right corner of the page
+When I click on apimanager My Applications
+Then I should see the apimanager Application page header as "Applications"
+And I should see the apimanager Application page Add New Application form header as "Add New Application"
+When I clear existing "<name>" for "<usertype>"
+And I enter "<name>" as name "<Callback URL>" as Callback URL and "<Description>" as Description
+And I click on Add button
+Then I should see the added Application name as "<usertype>" _ "<name>" Tier as "<Tier>" Status as "<status>" and Description as "<Description>"
 When I click on apimanager Manage 
 Then I should see the apimanager Manager page header as "Manager"
 When I enter apimanager Manager page admin username credentials
@@ -17,16 +24,16 @@ And I should see apimanager Manager Home Billing Workflow Blacklist Whitelist ta
 When I click on apimanager Manager page Workflow tab
 Then I should see apimanager Manager Approval Tasks page header as "Approval Tasks"
 When I click on Application creation link
-Then I should see created application "<AppName>" at the top of the Approval Tasks table
-When I click on Application Details drop box for "<AppName>" row
-And I select "<ApplicationDetails>" for "<AppName>" Application Details row
-And I click Assign To Me button for "<AppName>" Application Details row
-And I click on Start button for "<AppName>" Application Details row
-And I select "<Action>" and click complete button for "<AppName>" Application Details row
+Then I should see created application "<appname>" at the top of the Approval Tasks table for "<usertype>"
+When I click on Application Details drop box for "<appname>" row for "<usertype>"
+And I select "<Application Details>" for "<appname>" Application Details row for "<usertype>"
+And I click Assign To Me button for "<appname>" Application Details row for "<usertype>"
+And I click on Start button for "<appname>" Application Details row for "<usertype>"
+And I select "<Action>" and click complete button for "<appname>" Application Details row for "<usertype>"
 Then I should see Enter aprrove/reject reasons pop up header as "Enter approve/reject reasons"
 When I enter aprrove/reject reason as "Approved"
 And click aprrove/reject reason ok button
-Then I should not see the created application in Approval Tasks table as "<AppName>"
+Then I should not see the created application in Approval Tasks table as "<appname>" for "<usertype>"
 When I click on apimanager Manager admin
 And I click on apimanager Manager logout button
 Then I should see the apimanager Manager page header as "Manager"
@@ -37,13 +44,13 @@ And I should see apimanager Manager Home Billing Workflow
 When I click on apimanager Manager page Workflow tab
 Then I should see apimanager Manager Approval Tasks page header as "Approval Tasks"
 When I click on Application creation link
-Then I should see created application "<AppName>" at the top of the Approval Tasks table
-When I click on Start button for "<AppName>" Application Details row
-And I select "<Action>" and click complete button for "<AppName>" Application Details row
+Then I should see created application "<appname>" at the top of the Approval Tasks table for "<usertype>"
+When I click on Start button for "<appname>" Application Details row for "<usertype>"
+And I select "<Action>" and click complete button for "<appname>" Application Details row for "<usertype>"
 Then I should see Enter aprrove/reject reasons pop up header as "Enter approve/reject reasons"
 When I enter aprrove/reject reason as "Approved"
 And click aprrove/reject reason ok button
-Then I should not see the created application in Approval Tasks table as "<AppName>"
+Then I should not see the created application in Approval Tasks table as "<appname>" for "<usertype>"
 When I click on apimanager Manager dialogAdmin
 And I click on apimanager Manager logout button
 Then I should see the apimanager Manager page header as "Manager"
@@ -51,10 +58,10 @@ When I click on close window
 Then I am in apimanager
 When I click on apimanager My Applications
 Then I should see the apimanager Application page header as "Applications"
-And I should see the added Application Name as "<usertype>" _ "<Name>" and the "<New Status>" as status
+And I should see the added Application name as "<usertype>" _ "<name>" and the "<newStatus>" as status
 
 
 
 Examples:
-|usertype|AppName                      |ApplicationDetails |Action |status|New Status|Name|
-|LOGOUT  |AuxLogoutUser_AusTestingApp03|Unlimited          |Approve|READY |ACTIVE    |AusTestingApp03|
+|usertype|appname            |ApplicationDetails |Action |status|newStatus|name|Callback URL|Description|Tier|status|
+|LOGOUT  |AuxTestingAppRTC_011|Unlimited          |Approve|READY |ACTIVE    |AuxTestingAppRTC_011|https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|AuxTestingAppRTC_011|Default|INACTIVE|
