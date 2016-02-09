@@ -326,23 +326,11 @@ public class APIManageSteps extends BasicTestObject {
 				managerpage.isAPIwiseWhitelistPageDisplayed(arg1));
 	}
 
-	@When("^I click on whitelist subscriber drop box$")
-	public void i_click_on_whitelist_subscriber_drop_box() throws Throwable {
-		ManagerPage managerpage = new ManagerPage(driver);
-		managerpage.clickSubscriberDropBox();
-	}
-
 	@When("^I select \"([^\"]*)\" as subscriber$")
 	public void i_select_as_subscriber(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		String username = config.getValue(getEnvironment() + arg1 + "user");
 		managerpage.selectSubscriber(username);
-	}
-
-	@When("^I click on whitelist application drop box$")
-	public void i_click_on_whitelist_application_drop_box() throws Throwable {
-		ManagerPage managerpage = new ManagerPage(driver);
-		managerpage.clickApplicationDropBox();
 	}
 
 	@When("^I select \"([^\"]*)\" as Application$")
@@ -351,16 +339,10 @@ public class APIManageSteps extends BasicTestObject {
 		managerpage.selectApplication(arg1);
 	}
 
-	@When("^I click on whitelist API drop box$")
-	public void i_click_on_whitelist_API_drop_box() throws Throwable {
-		ManagerPage managerpage = new ManagerPage(driver);
-		managerpage.clickAPIDropBox();
-	}
-	
 	@When("^I select \"([^\"]*)\" as whitelist API$")
 	public void i_select_as_whitelist_API(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		managerpage.selectWhiteListAPI();
+		managerpage.selectWhiteListAPI(arg1);
 	}
 	
 	@When("^I select Upload number Manually radio button$")

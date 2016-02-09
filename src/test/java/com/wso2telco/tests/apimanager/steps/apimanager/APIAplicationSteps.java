@@ -54,11 +54,12 @@ public class APIAplicationSteps extends BasicTestObject {
 	@Then("^I should see the added Application Name as \"([^\"]*)\" _ \"([^\"]*)\" Tier as \"([^\"]*)\" Status as \"([^\"]*)\" and Description as \"([^\"]*)\"$")
 	public void i_should_see_the_added_Application_Name_as___Tier_as_Status_as_and_Description_as(String arg1, String arg2, String arg3, String arg4, String arg5) throws Throwable {
 		ApplicationsPage apppage = new ApplicationsPage(driver);
-		Assert.assertTrue("Application name mismatched", apppage.isApplicationName(arg1, arg2));
+		String username = config.getValue(getEnvironment() + arg1 + "user");
+		Assert.assertTrue("Application name mismatched", apppage.isApplicationName(username, arg2));
 		Thread.sleep(sleepTime);
-		Assert.assertTrue("Application tier mismatched", apppage.isTeirname(arg3));
-		Assert.assertTrue("Application status mismatched", apppage.isApplicationStatus(arg4));
-		Assert.assertTrue("Application descripion mismatched", apppage.validateDescription(arg5));
+		Assert.assertTrue("Application tier mismatched", apppage.isTeirname(username,arg2,arg3));
+		Assert.assertTrue("Application status mismatched", apppage.isApplicationStatus(username,arg2,arg4));
+		Assert.assertTrue("Application descripion mismatched", apppage.validateDescription(username,arg2,arg5));
 	}
 
 	@Then("^I should see the added Application Name as \"([^\"]*)\" _ \"([^\"]*)\" and the \"([^\"]*)\" as status$")
@@ -66,7 +67,7 @@ public class APIAplicationSteps extends BasicTestObject {
 		ApplicationsPage apppage = new ApplicationsPage(driver);
 		String username = config.getValue(getEnvironment() + arg1 + "user");
 		Assert.assertTrue("Application name mismatched", apppage.isApplicationName(username, arg2));
-		Assert.assertTrue("Application status mismatched", apppage.isApplicationStatus(arg3));
+		Assert.assertTrue("Application status mismatched", apppage.isApplicationStatus(username, arg2,arg3));
 	}
 
 }
