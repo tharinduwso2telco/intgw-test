@@ -63,5 +63,5 @@ And I should see the added Application name as "<usertype>" _ "<name>" and the "
 
 
 Examples:
-|usertype|appname            |ApplicationDetails |Action |status|newStatus|name|Callback URL|Description|Tier|status|
-|LOGOUT  |AuxTestingAppRTC_011|Unlimited          |Approve|READY |ACTIVE    |AuxTestingAppRTC_011|https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|AuxTestingAppRTC_011|Default|INACTIVE|
+|usertype|appname             |ApplicationDetails |Action |newStatus|name|Callback URL|Description|Tier                                                                                  |status|
+|LOGOUT  |AuxTestingAppRTC_011|Unlimited          |Approve|ACTIVE    |AuxTestingAppRTC_011|https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|AuxTestingAppRTC_011|Default|INACTIVE|
