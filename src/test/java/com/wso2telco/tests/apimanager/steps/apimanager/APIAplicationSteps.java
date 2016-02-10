@@ -33,7 +33,7 @@ public class APIAplicationSteps extends BasicTestObject {
 		Thread.sleep(sleepTime);
 	}
 	
-	@When("^I enter \"([^\"]*)\" as Name \"([^\"]*)\" as Callback URL and \"([^\"]*)\" as Description$")
+	@When("^I enter \"([^\"]*)\" as name \"([^\"]*)\" as Callback URL and \"([^\"]*)\" as Description$")
 	public void i_enter_as_Name_as_Callback_URL_and_as_Description(String arg1, String arg2, String arg3) throws Throwable {
 		ApplicationsPage apppage = new ApplicationsPage(driver);
 		apppage.enterAppllicationName(arg1);
@@ -51,7 +51,7 @@ public class APIAplicationSteps extends BasicTestObject {
 		Thread.sleep(sleepTime);
 	}
 	
-	@Then("^I should see the added Application Name as \"([^\"]*)\" _ \"([^\"]*)\" Tier as \"([^\"]*)\" Status as \"([^\"]*)\" and Description as \"([^\"]*)\"$")
+	@Then("^I should see the added Application name as \"([^\"]*)\" _ \"([^\"]*)\" Tier as \"([^\"]*)\" Status as \"([^\"]*)\" and Description as \"([^\"]*)\"$")
 	public void i_should_see_the_added_Application_Name_as___Tier_as_Status_as_and_Description_as(String arg1, String arg2, String arg3, String arg4, String arg5) throws Throwable {
 		ApplicationsPage apppage = new ApplicationsPage(driver);
 		String username = config.getValue(getEnvironment() + arg1 + "user");
@@ -62,7 +62,7 @@ public class APIAplicationSteps extends BasicTestObject {
 		Assert.assertTrue("Application descripion mismatched", apppage.validateDescription(username,arg2,arg5));
 	}
 
-	@Then("^I should see the added Application Name as \"([^\"]*)\" _ \"([^\"]*)\" and the \"([^\"]*)\" as status$")
+	@Then("^I should see the added Application name as \"([^\"]*)\" _ \"([^\"]*)\" and the \"([^\"]*)\" as status$")
 	public void i_should_see_the_added_Application_Name_as___and_the_as_status(String arg1, String arg2, String arg3) throws Throwable {
 		ApplicationsPage apppage = new ApplicationsPage(driver);
 		String username = config.getValue(getEnvironment() + arg1 + "user");
