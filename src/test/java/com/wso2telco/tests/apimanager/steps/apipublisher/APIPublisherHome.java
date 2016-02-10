@@ -83,6 +83,11 @@ public class APIPublisherHome extends BasicTestObject {
 		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
 		publisherHome.setUrlType(arg1);
 	}
+	@When("^I provide apipublisher Design Provide Resource name as \"([^\"]*)\"$")
+	public void i_provide_apipublisher_Design_Provide_Resource_name_as(String arg1) throws Throwable {
+		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
+		publisherHome.enterResourceName(arg1);
+	}
 	
 	@When("^I click on apipublisher Design Add New Resources link$")
 	public void i_click_on_apipublisher_Design_Add_New_Resources_link() throws Throwable {
