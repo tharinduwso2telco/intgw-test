@@ -40,12 +40,13 @@ Then I should see apipublisher username "<usertype>" at the top right corner of 
 When I search existing API "<apiName>" and delete it
 When I click on apipublisher Add link
 And I provide apipublisher Design name as "<apiName>"
-And I provide apipublisher Design Context as "APIa"
+And I provide apipublisher Design Context as "APICreation"
 And I provide apipublisher Design Version as "1.0.0.1"
-And I provide apipublisher Design Provide URL pattern as "/aux/wso2tel"
+And I provide apipublisher Design Provide URL pattern as "/aux/wso2tel/"
 And I click on apipublisher Design "Get" checkbox
+And I provide apipublisher Design Provide Resource name as "apiCreation"
 And I click on apipublisher Design Add New Resources link
-And I click on apipublisher Design new resources link "/aux/wso2tel"
+And I click on apipublisher Design new resources link "/aux/wso2tel/"
 And I provide apipublisher Design parameter name "auth"
 And I click on apipublisher Design "Add Parameter" button
 And I click on apipublisher Design Description +Empty link
@@ -80,5 +81,5 @@ When I click on the apimanager "<apiName>" api
 Then I should see the apimanager APIs "<apiName>" status as "Published"
 
 Examples:
-| usertype|apiName    |prodEndpoint  |sandEndpoint |roleType		   |
-|PUBLISHER|AuxTestAPIa|auxProd		 |auxSand	   |Internal/publisher |
+| usertype|apiName  		 |prodEndpoint   |sandEndpoint |roleType		   |
+|PUBLISHER|AuxTestAPICreation|auxProd		 |auxSand	   |Internal/publisher |
