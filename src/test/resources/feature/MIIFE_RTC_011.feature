@@ -10,7 +10,7 @@ And I click on apimanager Login pop up login button
 Then I should see apimanager "<usertype>" at the top right corner of the page
 When I click on apimanager My Applications
 And I clear existing "<appName>" for "<usertype>"
-And I enter "<appName>" as Name "<CallbackURL>" as Callback URL and "<Description>" as Description
+And I enter "<appName>" as name "<CallbackURL>" as Callback URL and "<Description>" as Description
 And I click on Add button
 When I click on apimanager Manage 
 Then I should see the apimanager Manager page header as "Manager"
