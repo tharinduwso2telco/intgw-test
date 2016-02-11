@@ -32,7 +32,7 @@ When I checked the ids List of roles "<roleType>" check box
 And I click on ids List of roles finish button
 Then ids List of roles Role update success message should pop up "successfully."
 When I click on List of roles Role update success message ok button
-When I close the browser and reopen the browsers and navigate to apipublisher page
+And I close the browser and reopen the browsers and navigate to apipublisher page
 Given I am in apipublisher
 When I provide apipublisher username and password for "<usertype>"
 And I click on apipublisher login button
