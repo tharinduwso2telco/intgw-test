@@ -11,6 +11,13 @@ import cucumber.api.java.en.When;
 
 public class APISubscriptionSteps extends BasicTestObject {
 
+	String existingAccessTokenProd;
+	
+	String regenAccessTokenProd;
+	
+    String existingAccessTokenSand;
+	
+	String regenAccessTokenSand;
 	
 	@Then("^I should see \"([^\"]*)\" under Applications with Subscriptions for \"([^\"]*)\"$")
 	public void i_should_see_under_Applications_with_Subscriptions_for(String arg1, String arg2) throws Throwable {
@@ -112,4 +119,58 @@ public class APISubscriptionSteps extends BasicTestObject {
 		SubscriptionsPage subpage = new SubscriptionsPage(driver);
 		Assert.assertTrue(subpage.isTokenValiditySand(arg1));
 	}
+	
+	@Then("^I should see the excisting Access Token of Production$")
+	public String i_should_see_the_excisting_Access_Token_of_Production() throws Throwable {
+		SubscriptionsPage subpage = new SubscriptionsPage(driver);
+		String accessTokenProd = subpage.getAccessTokenProd();
+		existingAccessTokenProd = accessTokenProd;
+		return accessTokenProd;
+	}
+	
+	@Then("^I should see the excisting Access Token of Sandbox$")
+	public String i_should_see_the_excisting_Access_Token_of_Sandbox() throws Throwable {
+		SubscriptionsPage subpage = new SubscriptionsPage(driver);
+		String accessTokenSand = subpage.getAccessTokenSand();
+		existingAccessTokenSand = accessTokenSand;
+		return accessTokenSand;
+	}
+	
+	@Then("^I should see the regenerated Access Token of Production$")
+	public String i_should_see_the_regenerated_Access_Token_of_Production() throws Throwable {
+		SubscriptionsPage subpage = new SubscriptionsPage(driver);
+		String regeneratedAccessTokenProd = subpage.getAccessTokenProd();
+		regenAccessTokenProd = regeneratedAccessTokenProd;
+		return regenAccessTokenProd;
+	}
+	
+	@Then("^I should see the regenerated Access Token of production is different from the previous Access Token of production$")
+	public void i_should_see_the_regenerated_Access_Token_of_production_is_different_from_the_previous_Access_Token_of_production() throws Throwable {
+		if (existingAccessTokenProd!=regenAccessTokenProd) {
+			System.out.println("Regenerated Access Token of production is different from the previous Access Token of production");
+		} else {
+			System.out.println("regenerated Access Token of production is not different from the previous Access Token of production");
+		}
+	}
+	
+
+	@Then("^I should see the regenerated Access Token of Sandbox$")
+	public String i_should_see_the_regenerated_Access_Token_of_Sandbox()
+			throws Throwable {
+		SubscriptionsPage subpage = new SubscriptionsPage(driver);
+		String regeratedAccessTokenSand = subpage.getAccessTokenSand();
+		regenAccessTokenSand = regeratedAccessTokenSand;
+		return regenAccessTokenSand;
+	}
+
+	@Then("^I should see the regenerated Access Token of sandbox is different from the previous Access Token of sandbox$")
+	public void i_should_see_the_regenerated_Access_Token_of_sandbox_is_different_from_the_previous_Access_Token_of_sandbox()
+			throws Throwable {
+		if (existingAccessTokenSand!=regenAccessTokenSand) {
+			System.out.println("Regenerated Access Token of sandbox is different from the previous Access Token of sandbox");
+		} else {
+			System.out.println("regenerated Access Token of sandbox is not different from the previous Access Token of sandbox");
+		}
+	}
+
 }
