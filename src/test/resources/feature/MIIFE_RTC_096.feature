@@ -36,4 +36,4 @@ Then I should see error message as "<errorMessage>"
 
 Examples:
 | usertype|API |WhiteListNumber |whitelistPageHeader |appname|message|errorMessage|
-|LOGOUT   |AuxAppTest|94123496898     |APIwise Whitelist   |AuxLogoutUserApp|Whitelist Numbers Successfully Added to the system  |Whitelist Numbers could not be added to the system |
+|LOGOUT   |AuxAppTest|94123496789     |APIwise Whitelist   |AuxLogoutUser_AuxLogoutUserApp|Whitelist Numbers Successfully Added to the system  |Whitelist Numbers could not be added to the system |

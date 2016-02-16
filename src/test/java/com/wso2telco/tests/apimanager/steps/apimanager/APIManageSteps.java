@@ -367,7 +367,7 @@ public class APIManageSteps extends BasicTestObject {
 	@Then("^I should see success pop up message as \"([^\"]*)\"$")
 	public void i_should_see_success_pop_up_message_as(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		Assert.assertTrue("APIwise Whitelist page did not appear",
+		Assert.assertTrue("APIwise Whitelist success pop up did not appear",
 				managerpage.isWhiteListAddedSuccessfullyPopupDisplayed(arg1));
 	}
 	
@@ -432,8 +432,11 @@ public class APIManageSteps extends BasicTestObject {
 		managerpage.enterWhiteListNumberList(arg1);
 	}
 	
-	@Then("^I should see error message$")
-	public void i_should_see_error_message() throws Throwable {
-	    // enter code here once after whitelist error is fixed
+	@Then("^I should see error message as \"([^\"]*)\"$")
+	public void i_should_see_error_message_as(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Error message did not appear",
+				managerpage.isWhiteListErrorPopupDisplayed(arg1));
 	}
+
 }
