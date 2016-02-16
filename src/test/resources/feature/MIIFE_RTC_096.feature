@@ -22,7 +22,8 @@ And I select "<API>" as whitelist API
 And I select Upload number Manually radio button
 And I enter the "<WhiteListNumber>" as the number to whitelist
 And I click whitelist page Upload Number button
-Then I should see success pop up
+Then I should see success pop up message as "<message>"
+And I click on success pop up ok button
 When I click on apimanager Manager page Whitelist tab
 And I select "<usertype>" as subscriber
 And I select "<appname>" as Application
@@ -30,9 +31,9 @@ And I select "<API>" as whitelist API
 And I select Upload number Manually radio button
 And I enter the "<WhiteListNumber>" as the number to whitelist
 And I click whitelist page Upload Number button
-Then I should see error message
+Then I should see error message as "<errorMessage>"
 
 
 Examples:
-| usertype|API |WhiteListNumber |whitelistPageHeader |appname|
-|LOGOUT   |AuxAppTest|94123496898     |APIwise Whitelist   |AuxLogoutUserApp|
+| usertype|API |WhiteListNumber |whitelistPageHeader |appname|message|errorMessage|
+|LOGOUT   |AuxAppTest|94123496789     |APIwise Whitelist   |AuxLogoutUser_AuxLogoutUserApp|Whitelist Numbers Successfully Added to the system  |Whitelist Numbers could not be added to the system |

@@ -364,9 +364,17 @@ public class APIManageSteps extends BasicTestObject {
 		managerpage.clickUploadNumberButton();
 	}
 	
-	@Then("^I should see success pop up$")
-	public void i_should_see_success_pop_up() throws Throwable {
-	    //write the code after fixing the system error
+	@Then("^I should see success pop up message as \"([^\"]*)\"$")
+	public void i_should_see_success_pop_up_message_as(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("APIwise Whitelist success pop up did not appear",
+				managerpage.isWhiteListAddedSuccessfullyPopupDisplayed(arg1));
+	}
+	
+	@Then("^I click on success pop up ok button$")
+	public void i_click_on_success_pop_up_ok_button() throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.clickOK();
 	}
 	
 	@When("^I select Whitelist numbers range radio button$")
@@ -424,8 +432,11 @@ public class APIManageSteps extends BasicTestObject {
 		managerpage.enterWhiteListNumberList(arg1);
 	}
 	
-	@Then("^I should see error message$")
-	public void i_should_see_error_message() throws Throwable {
-	    // enter code here once after whitelist error is fixed
+	@Then("^I should see error message as \"([^\"]*)\"$")
+	public void i_should_see_error_message_as(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Error message did not appear",
+				managerpage.isWhiteListErrorPopupDisplayed(arg1));
 	}
+
 }
