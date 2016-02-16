@@ -21,7 +21,50 @@ public class DataAuthenticationKeys implements Serializable {
 	
 	/** The sandbox consumer secret key. */
 	private static String sandboxConsumerSecretKey;
+	
+	private static String productionAccessToken;  
 
+	private static String producionRegenerateAcessToken;
+	
+	private static String sandboxAccessToken;
+	
+	private static String sandboxRegenerateAccessToken;
+	
+	
+	
+	
+	public String getSandboxAccessToken() {
+		return sandboxAccessToken;
+	}
+
+	public void setSandboxAccessToken(String sandboxAccessToken) {
+		DataAuthenticationKeys.sandboxAccessToken = sandboxAccessToken;
+	}
+
+	public String getSandboxRegenerateAccessToken() {
+		return sandboxRegenerateAccessToken;
+	}
+
+	public void setSandboxRegenerateAccessToken(String sandboxRegenerateAccessToken) {
+		DataAuthenticationKeys.sandboxRegenerateAccessToken = sandboxRegenerateAccessToken;
+	}
+
+	public String getProductionAccessToken() {
+		return productionAccessToken;
+	}
+
+	public void setProductionAccessToken(String productionAccessToken) {
+		DataAuthenticationKeys.productionAccessToken = productionAccessToken;
+	}
+
+	public String getProducionRegenerateAcessToken() {
+		return producionRegenerateAcessToken;
+	}
+
+	public void setProducionRegenerateAcessToken(String producionRegenerateAcessToken) {
+		DataAuthenticationKeys.producionRegenerateAcessToken = producionRegenerateAcessToken;
+	}
+	
 	/**
 	 * Gets the production consumer key.
 	 *

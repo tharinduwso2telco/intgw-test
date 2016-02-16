@@ -11,9 +11,6 @@ import cucumber.api.java.en.When;
 
 public class APISubscriptionSteps extends BasicTestObject {
 
-	String existingAccessTokenProd;
-	
-	String regenAccessTokenProd;
 	
     String existingAccessTokenSand;
 	
@@ -123,54 +120,56 @@ public class APISubscriptionSteps extends BasicTestObject {
 	@Then("^I should see the excisting Access Token of Production$")
 	public String i_should_see_the_excisting_Access_Token_of_Production() throws Throwable {
 		SubscriptionsPage subpage = new SubscriptionsPage(driver);
+		DataAuthenticationKeys authKeys = new DataAuthenticationKeys();
 		String accessTokenProd = subpage.getAccessTokenProd();
-		existingAccessTokenProd = accessTokenProd;
+		authKeys.setProductionAccessToken(accessTokenProd);
 		return accessTokenProd;
 	}
 	
 	@Then("^I should see the excisting Access Token of Sandbox$")
 	public String i_should_see_the_excisting_Access_Token_of_Sandbox() throws Throwable {
 		SubscriptionsPage subpage = new SubscriptionsPage(driver);
+		DataAuthenticationKeys authKeys = new DataAuthenticationKeys();
 		String accessTokenSand = subpage.getAccessTokenSand();
-		existingAccessTokenSand = accessTokenSand;
+		authKeys.setSandboxAccessToken(accessTokenSand);
 		return accessTokenSand;
 	}
 	
 	@Then("^I should see the regenerated Access Token of Production$")
-	public String i_should_see_the_regenerated_Access_Token_of_Production() throws Throwable {
+	public void i_should_see_the_regenerated_Access_Token_of_Production() throws Throwable {
 		SubscriptionsPage subpage = new SubscriptionsPage(driver);
+		DataAuthenticationKeys authKeys = new DataAuthenticationKeys();
 		String regeneratedAccessTokenProd = subpage.getAccessTokenProd();
-		regenAccessTokenProd = regeneratedAccessTokenProd;
-		return regenAccessTokenProd;
+		authKeys.setProducionRegenerateAcessToken(regeneratedAccessTokenProd);
 	}
 	
 	@Then("^I should see the regenerated Access Token of production is different from the previous Access Token of production$")
 	public void i_should_see_the_regenerated_Access_Token_of_production_is_different_from_the_previous_Access_Token_of_production() throws Throwable {
-		if (existingAccessTokenProd!=regenAccessTokenProd) {
-			System.out.println("Regenerated Access Token of production is different from the previous Access Token of production");
-		} else {
-			System.out.println("regenerated Access Token of production is not different from the previous Access Token of production");
-		}
+		DataAuthenticationKeys authKeys = new DataAuthenticationKeys();
+		SubscriptionsPage subpage = new SubscriptionsPage(driver);
+		String productionAccessToken = authKeys.getProductionAccessToken();
+		String producionRegenerateAcessToken = authKeys.getProducionRegenerateAcessToken();
+		Assert.assertTrue("Access token is not regenerated", subpage.isAccessKeyRegenerated(productionAccessToken, producionRegenerateAcessToken));
 	}
 	
 
 	@Then("^I should see the regenerated Access Token of Sandbox$")
-	public String i_should_see_the_regenerated_Access_Token_of_Sandbox()
+	public void i_should_see_the_regenerated_Access_Token_of_Sandbox()
 			throws Throwable {
 		SubscriptionsPage subpage = new SubscriptionsPage(driver);
+		DataAuthenticationKeys authKeys = new DataAuthenticationKeys();
 		String regeratedAccessTokenSand = subpage.getAccessTokenSand();
-		regenAccessTokenSand = regeratedAccessTokenSand;
-		return regenAccessTokenSand;
+		authKeys.setSandboxRegenerateAccessToken(regeratedAccessTokenSand);
 	}
 
 	@Then("^I should see the regenerated Access Token of sandbox is different from the previous Access Token of sandbox$")
 	public void i_should_see_the_regenerated_Access_Token_of_sandbox_is_different_from_the_previous_Access_Token_of_sandbox()
 			throws Throwable {
-		if (existingAccessTokenSand!=regenAccessTokenSand) {
-			System.out.println("Regenerated Access Token of sandbox is different from the previous Access Token of sandbox");
-		} else {
-			System.out.println("regenerated Access Token of sandbox is not different from the previous Access Token of sandbox");
-		}
+		DataAuthenticationKeys authKeys = new DataAuthenticationKeys();
+		SubscriptionsPage subpage = new SubscriptionsPage(driver);
+		String sandboxAccessToken = authKeys.getSandboxAccessToken();
+		String sandboxRegenerateAccessToken = authKeys.getSandboxRegenerateAccessToken();
+		Assert.assertTrue("Access token is not regenerated", subpage.isAccessKeyRegenerated(sandboxAccessToken, sandboxRegenerateAccessToken));
 	}
 
 }
