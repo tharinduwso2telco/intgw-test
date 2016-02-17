@@ -1,7 +1,7 @@
-Feature: Validate if apps are saved after the token generation and API invocation completed
+Feature: Validate invoking API if subscription is approved only by the HUB Admin
 
 @Smoke
-Scenario Outline: Check if apps are saved as SP in identity server after the token generation and API invocation are completed
+Scenario Outline: Check if the API can be invoked if subscription is approved only by the HUB Admin
 Given I am in apimanager
 When I click on apimanager login
 Then I should see the apimanager "Login" pop up
