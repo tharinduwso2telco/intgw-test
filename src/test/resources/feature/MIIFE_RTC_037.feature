@@ -21,7 +21,7 @@ And I select "<API>" as blacklist API
 And I click on Blacklisted subscribers Add New button
 Then I should see add nember alert header as "<AddNumberAlert>"
 When I enter the "<BlackListNumber>" to blacklist
-And I click add blacklist number alert ok button
+Then I click add blacklist number alert ok button
 
 Examples:
 | usertype|API |BlackListNumber |blacklistPageHeader |AddNumberAlert               |
