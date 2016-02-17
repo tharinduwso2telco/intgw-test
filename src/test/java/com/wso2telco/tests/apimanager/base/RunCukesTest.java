@@ -9,7 +9,7 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(plugin = { "pretty","html:target/cucumber-html-report","json:target/cucumber-report.json" },
 		 features = {
 
-		"src/test/resources/feature/MIIFE_RTC_102.feature"
+		"src/test/resources/feature/MIIFE_RTC_002.feature"
 		//"src/test/resources/feature/publisher.feature"
 				
 },
