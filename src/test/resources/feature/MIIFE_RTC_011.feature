@@ -23,7 +23,7 @@ Then I should see apimanager Manager Approval Tasks page header as "Approval Tas
 When I click on Application creation link
 Then I should see created application "<appName>" at the top of the Approval Tasks table for "<usertype>"
 When I click on Application Details drop box for "<appName>" row for "<usertype>"
-And I select "<Application Details>" for "<appName>" Application Details row for "<usertype>"
+And I select "<ApplicationDetails>" for "<appName>" Application Details row for "<usertype>"
 And I click Assign To Me button for "<appName>" Application Details row for "<usertype>"
 And I click on Start button for "<appName>" Application Details row for "<usertype>"
 And I select "<Action>" and click complete button for "<appName>" Application Details row for "<usertype>"
