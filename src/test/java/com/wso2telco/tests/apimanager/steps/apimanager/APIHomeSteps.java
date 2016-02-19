@@ -171,7 +171,7 @@ public class APIHomeSteps extends BasicTestObject {
 	public void i_click_on_apimanager_Manage() throws Throwable {
 		HomePage homepage = new HomePage(driver);
 	    homepage.clickManageLink();
-	    Thread.sleep(sleepTime);
+	    
 	}
 
 

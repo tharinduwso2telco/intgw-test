@@ -1,5 +1,8 @@
 package com.wso2telco.tests.apimanager.steps.apimanager;
 
+import java.util.ArrayList;
+import java.util.Set;
+
 import org.junit.Assert;
 
 import com.wso2telco.apimanager.pageobjects.apihome.manager.ManagerPage;
@@ -10,8 +13,9 @@ import cucumber.api.java.en.When;
 
 public class APIManageSteps extends BasicTestObject {
 
-	String winHandleBefore = driver.getWindowHandle();
-
+	//winHandleBefore <String> = driver.getWindowHandles();
+    //Set<String> winHandleBefore = driver.getWindowHandles();
+	
 	@Then("^I should see the apimanager Manager page header as \"([^\"]*)\"$")
 	public void i_should_see_the_apimanager_Manager_page_header_as(String arg1)
 			throws Throwable {
@@ -93,8 +97,28 @@ public class APIManageSteps extends BasicTestObject {
 
 	@When("^I click on close window$")
 	public void i_click_on_close_window() throws Throwable {
+		Set<String> winHandleBefore = driver.getWindowHandles();
+		String currentWindow = driver.getWindowHandle();
+		ArrayList<String> elements = new ArrayList<>();
+		for (String winNum : winHandleBefore) {
+			elements.add(winNum);
+		}
+		driver.switchTo().window(currentWindow);
 		driver.close();
-		driver.switchTo().window(winHandleBefore);
+		Thread.sleep(sleepTime);
+		elements.remove(currentWindow);
+		String mainWindow = null;
+		if (elements.size() == 1){
+			mainWindow = elements.get(0);
+		}
+		driver.switchTo().window(mainWindow);
+		//String currentWindow = driver.getWindowHandle();
+/*		
+		Thread.sleep(sleepTime);
+		driver.switchTo().window(currentWindow);
+
+		Thread.sleep(sleepTime);*/
+		
 	}
 
 	@Then("^I should see apimanager Manager Home and Billing tabs$")
@@ -355,6 +379,7 @@ public class APIManageSteps extends BasicTestObject {
 	public void i_enter_the_as_the_number_to_whitelist(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.enterManualNumber(arg1);
+		Thread.sleep(6000);
 	}
 	
 
