@@ -73,7 +73,7 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 	@Then("^I should see the generated Total API Traffic pie chart for \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" parameters$")
 	public void i_should_see_the_generated_Total_API_Traffic_pie_chart_for_parameters(String arg1, String arg2, String arg3, String arg4) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		Assert.assertTrue("Pie chart numbers mismatched with DB values", managerpage.isPieGraph(arg1, arg2, arg3, arg4));
+		Assert.assertTrue("Pie chart numbers mismatched with DB values", managerpage.isPieGraphTotalAPITraffic(arg1, arg2, arg3, arg4));
 	}
 	
 	@When("^I click on Transaction log menu item$")
@@ -179,10 +179,10 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 		managerpage.selectOperatorAPITrafficAPI(arg1);
 	}
 	
-	@Then("^I should see the generated Operator API Traffic pie chart$")
-	public void i_should_see_the_generated_Operator_API_Traffic_pie_chart() throws Throwable {
-	    // Write code here to validate the graph 
-	    
+	@Then("^I should see the generated Operator API Traffic pie chart for \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" parameters$")
+	public void i_should_see_the_generated_Operator_API_Traffic_pie_chart_for_parameters(String arg1, String arg2, String arg3) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Pie chart numbers mismatched with DB values", managerpage.isPieChartOperatorAPITraffic(arg1, arg2, arg3));
 	}
 	
 	@When("^I click on Monthly Invoice menu item$")
