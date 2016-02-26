@@ -69,11 +69,11 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.clickOnGenerate();
 	} 
-
-	@Then("^I should see generated Total API Traffic pie chart and the line graph$")
-	public void i_should_see_generated_Total_API_Traffic_pie_chart_and_the_line_graph() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    
+	
+	@Then("^I should see the generated Total API Traffic pie chart for \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" parameters$")
+	public void i_should_see_the_generated_Total_API_Traffic_pie_chart_for_parameters(String arg1, String arg2, String arg3, String arg4) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Pie chart numbers mismatched with DB values", managerpage.isPieGraph(arg1, arg2, arg3, arg4));
 	}
 	
 	@When("^I click on Transaction log menu item$")
@@ -85,8 +85,7 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 	@Then("^I should see apimanager Manager Transaction Log page header as \"([^\"]*)\"$")
 	public void i_should_see_apimanager_Manager_Transaction_Log_page_header_as(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		Assert.assertTrue("Transaction Log page did not appear",
-				managerpage.isTransactionLogPageDisplayed(arg1));
+		Assert.assertTrue("Transaction Log page did not appear", managerpage.isTransactionLogPageDisplayed(arg1));
 	}
 	
 	@When("^I enter \"([^\"]*)\" as Transaction Log from date$")
