@@ -464,4 +464,10 @@ public class APIManageSteps extends BasicTestObject {
 				managerpage.isWhiteListErrorPopupDisplayed(arg1));
 	}
 
+	@Then("^I should see the apimanager Manager page username and password text boxes$")
+	public void i_should_see_the_apimanager_Manager_page_username_and_password_text_boxes() throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Manager page user name and password text boxs did not appear",
+				managerpage.isManagerPageUsenamePasswordTextBoxesDisplayed());
+	}
 }

@@ -390,6 +390,7 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 	
 	@Then("^I should see the generated API Response Times graphs$")
 	public void i_should_see_the_generated_API_Response_Times_graphs() throws Throwable {
+		Thread.sleep(sleepTime);
 	    // Write code here that turns the phrase above into concrete actions
 	}
 
@@ -464,4 +465,13 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 	public void i_should_see_the_refunds_are_accurately_reflected_on_reports_of_Monthly_Invoice() throws Throwable {
 	    // validate refunds on reports
 	}
+	
+	@When("^I copy the current URL and access it from a new browser$")
+	public void i_copy_the_current_URL_and_access_it_from_a_new_browser() throws Throwable {
+	    String currentUrl = driver.getCurrentUrl();
+	    driver.close();
+	    launchBrowser();
+	    driver.get(currentUrl);
+	}
+
 }
