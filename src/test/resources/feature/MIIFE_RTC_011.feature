@@ -1,5 +1,7 @@
 Feature: Validate if apps are saved after the token generation and API invocation completed
 
+#MIIFE_RTC_88 is covered by this test 
+
 @Smoke
 Scenario Outline: Check if apps are saved as SP in identity server after the token generation and API invocation are completed
 Given I am in apimanager
