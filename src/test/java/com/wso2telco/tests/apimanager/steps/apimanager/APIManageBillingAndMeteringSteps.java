@@ -332,7 +332,11 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 
 	@Then("^I should see the generated Customer Care Report$")
 	public void i_should_see_the_generated_Customer_Care_Report() throws Throwable {
-	    //enter code here
+		ManagerPage managerpage = new ManagerPage(driver);
+		// TODO : need to give correct DB column headers
+		Assert.assertTrue("Customer care 'Date' column mismatched", managerpage.isCustomerCareReport("Date", "Date"));
+		Assert.assertTrue("Customer care 'Json Body' column mismatched", managerpage.isCustomerCareReport("Json Body", "Date"));
+		Assert.assertTrue("Customer care 'API' column mismatched", managerpage.isCustomerCareReport("API", "Date"));
 	}
 	
 	@When("^I click on API Response Times menu item$")

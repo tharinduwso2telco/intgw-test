@@ -30,4 +30,4 @@ Then I should see the generated Customer Care Report
 
 Examples:
 | usertype|apiTrafficPageHeader|customerCareReportsPageHeader|fromDate|toDate|msisdn|operator|serviceProvider|application|
-|LOGOUT   |Total API Traffic|Customer Care Reports|2015-11-18|2015-12-23|94771234567|DIALOG|admin|All|
+|LOGOUT   |Total API Traffic|Customer Care Reports|2015-11-18|2015-11-23|94771234567|DIALOG|admin|All|
