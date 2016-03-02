@@ -29,7 +29,7 @@ And I select "<usertype>" as subscriber
 And I select "<appname>" as Application
 And I select "<API>" as whitelist API
 And I select Upload number Manually radio button
-And I enter the "<WhiteListNumber>" as the number to whitelist
+And I enter the same "<WhiteListNumber>" as the number to whitelist
 And I click whitelist page Upload Number button
 Then I should see error message as "<errorMessage>"
 

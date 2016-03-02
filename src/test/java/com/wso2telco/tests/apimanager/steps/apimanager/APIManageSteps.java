@@ -7,6 +7,7 @@ import org.junit.Assert;
 
 import com.wso2telco.apimanager.pageobjects.apihome.manager.ManagerPage;
 import com.wso2telco.tests.apimanager.base.BasicTestObject;
+import com.wso2telco.tests.util.data.WhiteListData;
 
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -61,6 +62,7 @@ public class APIManageSteps extends BasicTestObject {
 			throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.clickLogin();
+		Thread.sleep(8000);
 	}
 
 	@Then("^I should see the apimanager Manager Home page header as \"([^\"]*)\"$")
@@ -375,10 +377,24 @@ public class APIManageSteps extends BasicTestObject {
 		managerpage.clickUploadManually();
 	}
 	
+	@When("^I enter the same \"([^\"]*)\" as the number to whitelist$")
+	public void i_enter_the_same_as_the_number_to_whitelist(String arg1) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    //throw new PendingException();
+		ManagerPage managerpage = new ManagerPage(driver);
+		WhiteListData data = new WhiteListData();
+		String sameValue =data.getRedundentValue();
+		managerpage.enterRedundentValue(sameValue);
+		
+	}
+	
 	@When("^I enter the \"([^\"]*)\" as the number to whitelist$")
 	public void i_enter_the_as_the_number_to_whitelist(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		managerpage.enterManualNumber(arg1);
+		WhiteListData data = new WhiteListData();
+		String whiteListNumber = managerpage.GenWhileListNum();
+		data.setRedundentValue(whiteListNumber);
+		managerpage.enterManualNumber(whiteListNumber);
 		Thread.sleep(6000);
 	}
 	
@@ -411,13 +427,19 @@ public class APIManageSteps extends BasicTestObject {
 	@When("^I enter \"([^\"]*)\" as Min Number$")
 	public void i_enter_as_Min_Number(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		managerpage.enterMinNumber(arg1);
+		WhiteListData data = new WhiteListData();
+		String minNumber = managerpage.GenMinNum();
+		data.setMinNumberofNumberRange(minNumber);
+		managerpage.enterMinNumber(minNumber);
 	}
 	
 	@When("^I enter \"([^\"]*)\" as Max Number$")
 	public void i_enter_as_Max_Number(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		managerpage.enterMaxNumber(arg1);
+		WhiteListData data = new WhiteListData();
+		String minNumber = data.getMinNumberofNumberRange();
+		String maxNumber = managerpage.GenMaxNum(minNumber);
+		managerpage.enterMaxNumber(maxNumber);
 	}
 	
 	@When("^I click on whitelist Upload Number List button$")

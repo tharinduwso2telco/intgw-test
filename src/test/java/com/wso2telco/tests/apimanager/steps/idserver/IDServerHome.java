@@ -1,7 +1,8 @@
 package com.wso2telco.tests.apimanager.steps.idserver;
 
-import org.junit.Assert;
 
+
+import org.junit.Assert;
 import com.wso2telco.identityserver.pageobjects.carbon.CarbonHomePage;
 import com.wso2telco.identityserver.pageobjects.carbon.CarbonLoginPage;
 import com.wso2telco.identityserver.pageobjects.carbon.CarbonUserRoles;
@@ -19,7 +20,7 @@ public class IDServerHome extends BasicTestObject {
 			initialize();
 			launchBrowser();
 			driver.get(config.getValue(getEnvironment() + "CarbonSiteName"));
-		}
+		}	
 	}
 
 	@When("^I enter identity server username credentials$")
