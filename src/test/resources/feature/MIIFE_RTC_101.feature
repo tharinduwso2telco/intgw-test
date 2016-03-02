@@ -23,8 +23,7 @@ And I select "<serviceProvider>" as the Total API Traffic service provider
 And I select "<application>" as Total API Traffic application
 And I select "<API>" as Total API Traffic API
 And I click on generate button
-#validate generated graphs
-Then I should see generated Total API Traffic pie chart and the line graph
+Then I should see the generated Total API Traffic pie chart for "<fromDate>" "<toDate>" "<operator>" "<serviceProvider>" parameters
 
 
 Examples:

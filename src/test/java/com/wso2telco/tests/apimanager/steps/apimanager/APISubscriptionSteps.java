@@ -10,11 +10,6 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class APISubscriptionSteps extends BasicTestObject {
-
-	
-    String existingAccessTokenSand;
-	
-	String regenAccessTokenSand;
 	
 	@Then("^I should see \"([^\"]*)\" under Applications with Subscriptions for \"([^\"]*)\"$")
 	public void i_should_see_under_Applications_with_Subscriptions_for(String arg1, String arg2) throws Throwable {
@@ -171,5 +166,4 @@ public class APISubscriptionSteps extends BasicTestObject {
 		String sandboxRegenerateAccessToken = authKeys.getSandboxRegenerateAccessToken();
 		Assert.assertTrue("Access token is not regenerated", subpage.isAccessKeyRegenerated(sandboxAccessToken, sandboxRegenerateAccessToken));
 	}
-
 }

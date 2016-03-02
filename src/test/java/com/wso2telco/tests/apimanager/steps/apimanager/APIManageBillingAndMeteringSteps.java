@@ -69,11 +69,11 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.clickOnGenerate();
 	} 
-
-	@Then("^I should see generated Total API Traffic pie chart and the line graph$")
-	public void i_should_see_generated_Total_API_Traffic_pie_chart_and_the_line_graph() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    
+	
+	@Then("^I should see the generated Total API Traffic pie chart for \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" parameters$")
+	public void i_should_see_the_generated_Total_API_Traffic_pie_chart_for_parameters(String arg1, String arg2, String arg3, String arg4) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Pie chart numbers mismatched with DB values", managerpage.isPieGraphTotalAPITraffic(arg1, arg2, arg3, arg4));
 	}
 	
 	@When("^I click on Transaction log menu item$")
@@ -85,8 +85,7 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 	@Then("^I should see apimanager Manager Transaction Log page header as \"([^\"]*)\"$")
 	public void i_should_see_apimanager_Manager_Transaction_Log_page_header_as(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		Assert.assertTrue("Transaction Log page did not appear",
-				managerpage.isTransactionLogPageDisplayed(arg1));
+		Assert.assertTrue("Transaction Log page did not appear", managerpage.isTransactionLogPageDisplayed(arg1));
 	}
 	
 	@When("^I enter \"([^\"]*)\" as Transaction Log from date$")
@@ -180,10 +179,10 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 		managerpage.selectOperatorAPITrafficAPI(arg1);
 	}
 	
-	@Then("^I should see the generated Operator API Traffic pie chart$")
-	public void i_should_see_the_generated_Operator_API_Traffic_pie_chart() throws Throwable {
-	    // Write code here to validate the graph 
-	    
+	@Then("^I should see the generated Operator API Traffic pie chart for \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" parameters$")
+	public void i_should_see_the_generated_Operator_API_Traffic_pie_chart_for_parameters(String arg1, String arg2, String arg3) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Pie chart numbers mismatched with DB values", managerpage.isPieChartOperatorAPITraffic(arg1, arg2, arg3));
 	}
 	
 	@When("^I click on Monthly Invoice menu item$")
@@ -333,7 +332,11 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 
 	@Then("^I should see the generated Customer Care Report$")
 	public void i_should_see_the_generated_Customer_Care_Report() throws Throwable {
-	    //enter code here
+		ManagerPage managerpage = new ManagerPage(driver);
+		// TODO : need to give correct DB column headers
+		Assert.assertTrue("Customer care 'Date' column mismatched", managerpage.isCustomerCareReport("Date", "Date"));
+		Assert.assertTrue("Customer care 'Json Body' column mismatched", managerpage.isCustomerCareReport("Json Body", "Date"));
+		Assert.assertTrue("Customer care 'API' column mismatched", managerpage.isCustomerCareReport("API", "Date"));
 	}
 	
 	@When("^I click on API Response Times menu item$")
@@ -387,6 +390,7 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 	
 	@Then("^I should see the generated API Response Times graphs$")
 	public void i_should_see_the_generated_API_Response_Times_graphs() throws Throwable {
+		Thread.sleep(sleepTime);
 	    // Write code here that turns the phrase above into concrete actions
 	}
 
@@ -461,4 +465,13 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 	public void i_should_see_the_refunds_are_accurately_reflected_on_reports_of_Monthly_Invoice() throws Throwable {
 	    // validate refunds on reports
 	}
+	
+	@When("^I copy the current URL and access it from a new browser$")
+	public void i_copy_the_current_URL_and_access_it_from_a_new_browser() throws Throwable {
+	    String currentUrl = driver.getCurrentUrl();
+	    driver.close();
+	    launchBrowser();
+	    driver.get(currentUrl);
+	}
+
 }
