@@ -1,6 +1,9 @@
 package com.wso2telco.tests.apimanager.steps.apimanager;
 
-import org.junit.Assert;
+
+
+import org.junit.*;
+
 
 import com.wso2telco.apimanager.pageobjects.apihome.sandbox.SandBoxPage;
 import com.wso2telco.tests.apimanager.base.BasicTestObject;
@@ -26,6 +29,7 @@ public class APISandBoxSteps extends BasicTestObject {
 		sandbox.enterPassword(config.getValue(getEnvironment() + arg1 + "pwd"));
 	}
 
+	
 	@When("^I click on apimanager Sandbox page login button$")
 	public void i_click_on_apimanager_Sandbox_page_login_button() throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);

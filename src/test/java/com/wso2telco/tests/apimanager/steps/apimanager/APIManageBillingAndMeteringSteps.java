@@ -136,7 +136,8 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 	
 	@Then("^I should see downloaded excel sheet$")
 	public void i_should_see_downloaded_excel_sheet() throws Throwable {
-       //enter code here
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.validateData("C:/Users/Auxenta/Downloads/2015-11-18-2015-12-23-AuxLogoutUser-DIALOG-AuxAppTest (1).csv","","");
 	}
 	
 	@When("^I click on Operator API Traffic menu item$")
