@@ -121,7 +121,7 @@ And I am in identity server page
 And I enter identity server username credentials
 And I click on identity server sign in
 Then I should see the ids Home page header as "WSO2 Identity Server Home"
-When I click on ids Main tab
+When I click on identity server Main tab
 Then I should see ids Main menu "Service Providers" as the first item
 When I click on ids Main List link
 Then I should see "<appName>" Application in Service Providers table for "<usertype>"

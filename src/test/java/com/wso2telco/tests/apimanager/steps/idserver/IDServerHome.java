@@ -21,6 +21,15 @@ public class IDServerHome extends BasicTestObject {
 			driver.get(config.getValue(getEnvironment() + "CarbonSiteName"));
 		}
 	}
+	
+	@Given("^I am in apimanger carbon login page$")
+	public void i_am_in_apimanger_carbon_login_page() throws Throwable {
+		if (driver==null){
+			initialize();
+			launchBrowser();
+			driver.get(config.getValue(getEnvironment() + "ApiManagerCarbon"));
+		}
+	}
 
 	@When("^I enter identity server username credentials$")
 	public void i_enter_identity_server_username_credentials() throws Throwable {
@@ -46,6 +55,12 @@ public class IDServerHome extends BasicTestObject {
 		CarbonHomePage carbonHome = new CarbonHomePage(driver);
 		carbonHome.clickConfigure();
 	}
+	
+	@When("^I click on identity server Main tab$")
+	public void i_click_on_identity_server_Main_tab() throws Throwable {
+		CarbonHomePage carbonHome = new CarbonHomePage(driver);
+		carbonHome.clickMain();
+	}
 
 	@Then("^I should see ids Configuration menu with first item as \"([^\"]*)\"$")
 	public void i_should_see_ids_Configuration_menu_with_first_item_as(String arg1) throws Throwable {
@@ -57,12 +72,6 @@ public class IDServerHome extends BasicTestObject {
 	public void i_click_on_identity_server_Configuration_Users_and_Roles_link() throws Throwable {
 		CarbonUserRoles carbonUserRolePage = new CarbonUserRoles(driver);
 		carbonUserRolePage.clickUserRoles();
-	}
-
-	@When("^I click on ids Main tab$")
-	public void i_click_on_ids_Main_tab() throws Throwable {
-		CarbonHomePage carbonHome = new CarbonHomePage(driver);
-		carbonHome.clickMain();
 	}
 	
 	@Then("^I should see ids Main menu \"([^\"]*)\" as the first item$")
@@ -76,6 +85,12 @@ public class IDServerHome extends BasicTestObject {
 		CarbonHomePage carbonHome = new CarbonHomePage(driver);
 		carbonHome.clickList();
 	}
+	
+	@When("^I click on identity server Resources Browse link$")
+	public void i_click_on_identity_server_Resources_Browse_link() throws Throwable {
+		CarbonHomePage carbonHome = new CarbonHomePage(driver);
+		carbonHome.clickBrowse();
+	}
 	       
-	   }
+}
 
