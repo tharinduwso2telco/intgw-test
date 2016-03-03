@@ -29,9 +29,9 @@ And I select "<API>" as Transaction Log API
 And I select "<status>" as Transaction Log Status
 And I click on Download report button
 #validate downloaded excel sheet
-Then I should see downloaded excel sheet
+Then I should see downloaded csv sheet with the "<path>" as path , "<fileName>" as the file name and "<excelFileName>" as the excel file name
 
 
 Examples:
-| usertype|apiiTrafficPageHeader|transactionLogPageHeader|fromDate  |toDate    |operator|serviceProvider|API       |status    |
-|LOGOUT   |Total API Traffic	|Transaction Log		 |2015-11-18|2015-12-23|DIALOG  |AuxLogoutUser  |AuxAppTest|Successful|
+| usertype|apiiTrafficPageHeader|transactionLogPageHeader|fromDate  |toDate    |operator|serviceProvider|API       |status    |path|fileName|excelFileName|
+|LOGOUT   |Total API Traffic	|Transaction Log		 |2015-11-18|2015-12-23|DIALOG  |AuxLogoutUser  |AuxAppTest|Successful|C:/Users/Auxenta/Downloads/|2015-11-18-2015-12-23-AuxLogoutUser-DIALOG-AuxAppTest.csv|AuxLogoutUser-DIALOG-AuxAppTest.xlsx|

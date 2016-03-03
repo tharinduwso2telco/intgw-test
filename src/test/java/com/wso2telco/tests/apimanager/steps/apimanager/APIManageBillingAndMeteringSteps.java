@@ -134,11 +134,12 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 		managerpage.clickDownloadFile();
 	}
 	
-	@Then("^I should see downloaded excel sheet$")
-	public void i_should_see_downloaded_excel_sheet() throws Throwable {
+	@Then("^I should see downloaded csv sheet with the \"([^\"]*)\" as path , \"([^\"]*)\" as the file name and \"([^\"]*)\" as the excel file name$")
+	public void i_should_see_downloaded_csv_sheet_with_the_as_path_as_the_file_name_and_as_the_excel_file_name(String arg1, String arg2, String arg3) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		managerpage.validateData("C:/Users/Auxenta/Downloads/2015-11-18-2015-12-23-AuxLogoutUser-DIALOG-AuxAppTest (1).csv","","");
+		managerpage.validateData(arg1, arg2, arg3,"");
 	}
+
 	
 	@When("^I click on Operator API Traffic menu item$")
 	public void i_click_on_Operator_API_Traffic_menu_item() throws Throwable {
