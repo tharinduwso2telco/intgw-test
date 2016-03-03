@@ -4,6 +4,7 @@ import org.junit.Assert;
 
 import com.wso2telco.apimanager.pageobjects.apihome.manager.ManagerPage;
 import com.wso2telco.tests.apimanager.base.BasicTestObject;
+import com.wso2telco.tests.util.data.RateCardXML;
 
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -67,6 +68,8 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 	@When("^I click on generate button$")
 	public void i_click_on_generate_button() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
+		RateCardXML rateCard = new RateCardXML();
+		rateCard.getRateCardXMl();
 		managerpage.clickOnGenerate();
 	} 
 	
@@ -133,7 +136,8 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 	
 	@Then("^I should see downloaded excel sheet$")
 	public void i_should_see_downloaded_excel_sheet() throws Throwable {
-       //enter code here
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.validateData("C:/Users/Auxenta/Downloads/2015-11-18-2015-12-23-AuxLogoutUser-DIALOG-AuxAppTest (1).csv","","");
 	}
 	
 	@When("^I click on Operator API Traffic menu item$")
