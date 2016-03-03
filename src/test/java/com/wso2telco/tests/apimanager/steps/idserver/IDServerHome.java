@@ -34,6 +34,7 @@ public class IDServerHome extends BasicTestObject {
 	public void i_click_on_identity_server_sign_in() throws Throwable {
 		CarbonLoginPage carbonLogin = new CarbonLoginPage(driver);
 		carbonLogin.clickCarbonLogin();
+		Thread.sleep(5000);
 	}
 
 	@Then("^I should see the ids Home page header as \"([^\"]*)\"$")
