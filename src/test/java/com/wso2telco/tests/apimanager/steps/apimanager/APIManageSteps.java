@@ -62,7 +62,7 @@ public class APIManageSteps extends BasicTestObject {
 			throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.clickLogin();
-		Thread.sleep(8000);
+		Thread.sleep(28000);
 	}
 
 	@Then("^I should see the apimanager Manager Home page header as \"([^\"]*)\"$")
