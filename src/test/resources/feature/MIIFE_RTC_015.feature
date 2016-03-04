@@ -11,6 +11,7 @@ And I click on apimanager Login pop up login button
 Then I should see apimanager "<usertype>" at the top right corner of the page
 When I click on apimanager My Subscriptions
 Then I should see the apimanager Subscriptions page header as "Subscriptions"
+When I select created application "<appName>" from the dropdown for "<usertype>"
 And I should see the excisting Access Token of Production
 And I should see the excisting Access Token of Sandbox
 When I enter token validity of production as "<validity>"
@@ -27,5 +28,5 @@ And I should see the regenerated Access Token of sandbox is different from the p
 
 
 Examples:
-|validity|usertype     |
-|3600    |SUBSCRIBERAPP|
+|validity|usertype     |appName|
+|3600    |SUBSCRIBERAPP|AuxTestingAppRTC_011|

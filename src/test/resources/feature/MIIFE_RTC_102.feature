@@ -5,7 +5,6 @@ Feature: Validate Transaction Log
 @Smoke
 Scenario Outline: Check if Transaction Log is loaded accurately
 Given I am in apimanager
-#Then I should see downloaded excel sheet
 When I click on apimanager login
 Then I should see the apimanager "Login" pop up
 When I enter apimanager Login username and password for "<usertype>" 
@@ -34,4 +33,4 @@ Then I should see downloaded csv sheet with the "<path>" as path , "<fileName>" 
 
 Examples:
 | usertype|apiiTrafficPageHeader|transactionLogPageHeader|fromDate  |toDate    |operator|serviceProvider|API       |status    |path|fileName|excelFileName|
-|LOGOUT   |Total API Traffic	|Transaction Log		 |2015-11-18|2015-12-23|DIALOG  |AuxLogoutUser  |AuxAppTest|Successful|C:/Users/Auxenta/Downloads/|2015-11-18-2015-12-23-AuxLogoutUser-DIALOG-AuxAppTest.csv|AuxLogoutUser-DIALOG-AuxAppTest.xlsx|
+|LOGOUT   |Total API Traffic	|Transaction Log		 |2015-03-01|2016-03-04|All  |All  |ussd|Successful|C:/Users/Auxenta/Downloads/|2015-11-18-2015-12-23-AuxLogoutUser-DIALOG-AuxAppTest.csv|AuxLogoutUser-DIALOG-AuxAppTest.xlsx|
