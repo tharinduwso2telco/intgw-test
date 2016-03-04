@@ -448,9 +448,10 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 		managerpage.selectPerformanceErrorAPI(arg1);
 	}
 
-	@Then("^I should see generated Performance Error Rates graphs$")
-	public void i_should_see_generated_Performance_Error_Rates_graphs() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
+	@Then("^I should see generated Performance Error Rates graph for \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" parameters$")
+	public void i_should_see_generated_Performance_Error_Rates_graph_for_parameters(String arg1, String arg2, String arg3, String arg4) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Pie chart numbers mismatched with DB values", managerpage.isPieGraphPerformanceErrorRates(arg1, arg2, arg3, arg4));
 	}
 	
 	@When("^I click on Monthly Invoice Download report button$")

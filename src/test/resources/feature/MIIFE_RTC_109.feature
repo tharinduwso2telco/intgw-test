@@ -25,7 +25,7 @@ And I select "<serviceProvider>" as the Performance Error Rates service provider
 And I select "<application>" as Performance Error Rates Application
 And I select "<API>" as Performance Error Rates API
 And I click on generate button
-Then I should see generated Performance Error Rates graphs
+Then I should see generated Performance Error Rates graph for "<fromDate>" "<toDate>" "<operator>" "<serviceProvider>" parameters
 
 
 Examples:
