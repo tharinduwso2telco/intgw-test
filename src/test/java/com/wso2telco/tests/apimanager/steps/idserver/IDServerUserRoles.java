@@ -314,7 +314,7 @@ public class IDServerUserRoles extends BasicTestObject {
 		carbonRoles.clickSearch();
 
 		if (carbonRoles.isUserNameToAssignVisible(username)) {
-			carbonRoles.selectUserToAssign();
+			carbonRoles.selectUserToAssign(username);
 			carbonRoles.clickFinish();
 		}else{
 			carbonRoles.clickOK();
