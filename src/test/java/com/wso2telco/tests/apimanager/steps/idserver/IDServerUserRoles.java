@@ -296,4 +296,28 @@ public class IDServerUserRoles extends BasicTestObject {
 		 carbonRoles.clickOK();
 	}
    }
+   
+   @Then("^I search \"([^\"]*)\" from the roles list$")
+   public void i_search_from_the_roles_list(String arg1) throws Throwable {
+	   CarbonRolesPage carbonRoles = new CarbonRolesPage(driver);
+       carbonRoles.enterRoleNameToSearch(arg1);
+       carbonRoles.clickSearch();
+   }
+   
+	@Then("^I assign the \"([^\"]*)\" for the \"([^\"]*)\" role$")
+	public void i_assign_the_for_the_role(String arg1, String arg2)
+			throws Throwable {
+		String username=config.getValue(getEnvironment() + arg1 + "user");
+		CarbonRolesPage carbonRoles = new CarbonRolesPage(driver);
+		carbonRoles.clickOnAssignUsers();
+		carbonRoles.enterUsernamePattern(username);
+		carbonRoles.clickSearch();
+
+		if (carbonRoles.isUserNameToAssignVisible(username)) {
+			carbonRoles.selectUserToAssign();
+			carbonRoles.clickFinish();
+		}else{
+			carbonRoles.clickOK();
+		}
+	}
 }
