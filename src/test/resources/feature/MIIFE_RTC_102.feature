@@ -5,7 +5,7 @@ Feature: Validate Transaction Log
 @Smoke
 Scenario Outline: Check if Transaction Log is loaded accurately
 Given I am in apimanager
-Then I should see downloaded excel sheet
+#Then I should see downloaded excel sheet
 When I click on apimanager login
 Then I should see the apimanager "Login" pop up
 When I enter apimanager Login username and password for "<usertype>" 

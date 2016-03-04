@@ -68,8 +68,6 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 	@When("^I click on generate button$")
 	public void i_click_on_generate_button() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		RateCardXML rateCard = new RateCardXML();
-		rateCard.getRateCardXMl();
 		managerpage.clickOnGenerate();
 	} 
 	
