@@ -5,8 +5,6 @@ import org.junit.Assert;
 import com.wso2telco.apimanager.pageobjects.apihome.manager.ManagerPage;
 import com.wso2telco.apimanager.pageobjects.db.queries.SQLQuery;
 import com.wso2telco.tests.apimanager.base.BasicTestObject;
-//import com.wso2telco.tests.util.data.RateCardXML;
-
 
 import com.wso2telco.tests.util.data.RuntimeQuery;
 
@@ -498,5 +496,72 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 	    launchBrowser();
 	    driver.get(currentUrl);
 	}
+
+	@Then("^I should see Total API Traffic as \"([^\"]*)\" under apimanager Manager Usage Reports$")
+	public void i_should_see_Total_API_Traffic_as_under_apimanager_Manager_Usage_Reports(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Total API Trsffic is not showed.", managerpage.isReportAccessing(arg1));
+	}
+	
+	@Then("^I should see Transaction Log as \"([^\"]*)\" under apimanager Manager Usage Reports$")
+	public void i_should_see_Transaction_Log_as_under_apimanager_Manager_Usage_Reports(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Transaction Log is not showed.", managerpage.isReportAccessing(arg1));
+	}
+	
+	@Then("^I should see Operator API Traffic as \"([^\"]*)\" under apimanager Manager Usage Reports$")
+	public void i_should_see_Operator_API_Traffic_as_under_apimanager_Manager_Usage_Reports(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Operator API Traffic is not showed.", managerpage.isReportAccessing(arg1));
+	}
+	
+	@Then("^I should see Monthly Invoice as \"([^\"]*)\" under apimanager Manager Usage Reports$")
+	public void i_should_see_Monthly_Invoice_as_under_apimanager_Manager_Usage_Reports(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Monthly Invoice is not showed.", managerpage.isReportAccessing(arg1));
+	}
+	
+	@Then("^I should see Cost Breakdown as \"([^\"]*)\" under apimanager Manager Usage Reports$")
+	public void i_should_see_Cost_Breakdown_as_under_apimanager_Manager_Usage_Reports(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Cost Breakdown is not showed.", managerpage.isReportAccessing(arg1));
+	}
+	
+	@Then("^I should see API Response Times as \"([^\"]*)\" under apimanager Manager Performance Reports$")
+	public void i_should_see_API_Response_Times_as_under_apimanager_Manager_Performance_Reports(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("API Response Times is not showed.", managerpage.isReportAccessing(arg1));
+	}
+	
+	@Then("^I should see Customer care reports as \"([^\"]*)\" under apimanager Manager Usage Reports$")
+	public void i_should_see_Customer_care_reports_as_under_apimanager_Manager_Usage_Reports(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Customer care reports is not showed.", managerpage.isReportAccessing(arg1));
+	}
+	
+	@Then("^I should see Revenue Breakdown as \"([^\"]*)\" under apimanager Manager Usage Reports$")
+	public void i_should_see_Revenue_Breakdown_as_under_apimanager_Manager_Usage_Reports(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Revenue Breakdown is not showed.", managerpage.isReportAccessing(arg1));
+	}
+
+	@Then("^I should see Customer Care as \"([^\"]*)\" under apimanager Manager Usage Reports$")
+	public void i_should_see_Customer_Care_as_under_apimanager_Manager_Usage_Reports(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Customer Care is not showed.", managerpage.isReportAccessing(arg1));
+	}
+
+	@Then("^I should see Performance Error Rates as \"([^\"]*)\" under apimanager Manager Performance Reports$")
+	public void i_should_see_Performance_Error_Rates_as_under_apimanager_Manager_Performance_Reports(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Performance Error Rates is not showed.", managerpage.isReportAccessing(arg1));
+	}
+
+	@Then("^I should see TPS Summary as \"([^\"]*)\" under apimanager Manager Performance Reports$")
+	public void i_should_see_TPS_Summary_as_under_apimanager_Manager_Performance_Reports(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("TPS Summary is not showed.", managerpage.isReportAccessing(arg1));
+	}
+
 
 }

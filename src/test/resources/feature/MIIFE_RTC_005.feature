@@ -13,7 +13,7 @@ Then I should see the apimanager Manager page header as "Manager"
 When I enter apimanager Manager page username and password for "<usertype>"
 And I click on apimanager Manager page login button
 Then I should see the apimanager Manager Home page header as "Home"
-When I click on apimanager Manager 
+When I click on apimanager Manager username
 And I click on apimanager Manager logout button
 Then I should see the apimanager Manager page header as "Manager"
 When I click on close window
@@ -22,7 +22,7 @@ Then I should see the Login in apimanager Sandbox page header as "Login"
 When I enter apimanager Sandbox page username and password for "<usertype>"
 And I click on apimanager Sandbox page login button
 Then I should see the apimanager sandbox index page header as "Welcome"
-When I click on apimanager Sandbox page
+When I click on apimanager Sandbox page username
 And I click on apimanager Sandbox logout button
 Then I should see the Login in apimanager Sandbox page header as "Login"
 When I click on close window

@@ -73,8 +73,8 @@ public class APIManageSteps extends BasicTestObject {
 				managerpage.isHomePage(arg1));
 	}
 
-	@When("^I click on apimanager Manager$")
-	public void i_click_on_apimanager_Manager() throws Throwable {
+	@When("^I click on apimanager Manager username$")
+	public void i_click_on_apimanager_Manager_username() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.clickUserName();
 	}
@@ -83,6 +83,7 @@ public class APIManageSteps extends BasicTestObject {
 	public void i_click_on_apimanager_Manager_logout_button() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.clickLogout();
+		Thread.sleep(sleepTime);
 	}
 
 	@When("^I click on apimanager Manager admin$")
@@ -491,5 +492,12 @@ public class APIManageSteps extends BasicTestObject {
 		ManagerPage managerpage = new ManagerPage(driver);
 		Assert.assertTrue("Manager page user name and password text boxs did not appear",
 				managerpage.isManagerPageUsenamePasswordTextBoxesDisplayed());
+	}
+	
+	@When("^I enter apimanager Manager page login username and password for \"([^\"]*)\"$")
+	public void i_enter_apimanager_Manager_page_login_username_and_password_for(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.enterUserName(config.getValue(getEnvironment() + arg1 + "user"));
+		managerpage.enterPassword(config.getValue(getEnvironment() + arg1 + "pwd"));
 	}
 }
