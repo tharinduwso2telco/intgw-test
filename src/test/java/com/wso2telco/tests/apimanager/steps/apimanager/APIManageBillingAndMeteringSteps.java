@@ -91,6 +91,13 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 		Assert.assertTrue("Transaction Log page did not appear", managerpage.isTransactionLogPageDisplayed(arg1));
 	}
 	
+	@Then("^I should check transaction log is existing in \"([^\"]*)\" named as \"([^\"]*)\" and delete$")
+	public void i_should_check_transaction_log_is_existing_in_named_as_and_delete(String arg1, String arg2) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		String csvFilePath = arg1 + arg2;
+		Assert.assertTrue("Checking CSV file exists", managerpage.isCSVFileExists(csvFilePath));
+	}
+	
 	@When("^I enter \"([^\"]*)\" as Transaction Log from date$")
 	public void i_enter_as_Transaction_Log_from_date(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
@@ -142,13 +149,13 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 		String transactionLogQuery = runtimeQuery.getRuntimeQuery();
 		managerpage.converCSVToXlsx(arg1, arg2, arg3);
 		Assert.assertTrue("Transaction log time column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "time", "Date & Time"));
-		Assert.assertTrue("Transaction log time column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "userId", " Identifier - Service Provider"));
-		Assert.assertTrue("Transaction log time column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "operatorId", " Operator Identifier"));
-		Assert.assertTrue("Transaction log time column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "requestId", " MIFE Reference Code"));
-		Assert.assertTrue("Transaction log time column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "msisdn", " MSISDN"));
-		Assert.assertTrue("Transaction log time column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "chargeAmount", " Amount"));
-		Assert.assertTrue("Transaction log time column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "responseCode", " Response Code"));
-		Assert.assertTrue("Transaction log time column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "purchaseCategoryCode", " Purchase Category Code"));
+		Assert.assertTrue("Transaction log userId column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "userId", " Identifier - Service Provider"));
+		Assert.assertTrue("Transaction log operatorId column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "operatorId", " Operator Identifier"));
+		Assert.assertTrue("Transaction log requestId column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "requestId", " MIFE Reference Code"));
+		Assert.assertTrue("Transaction log msisdn column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "msisdn", " MSISDN"));
+		Assert.assertTrue("Transaction log chargeAmount column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "chargeAmount", " Amount"));
+		Assert.assertTrue("Transaction log responseCode column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "responseCode", " Response Code"));
+		Assert.assertTrue("Transaction log purchaseCategoryCode column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "purchaseCategoryCode", " Purchase Category Code"));
 	}
 	
 	@When("^I prepare the transaction log query using \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" and \"([^\"]*)\" parameters$")

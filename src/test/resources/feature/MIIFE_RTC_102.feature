@@ -20,6 +20,7 @@ When I click on apimanager Manager page Billing and Metering tab
 Then I should see apimanager Manager Total API Traffic page header as "<apiiTrafficPageHeader>"
 When I click on Transaction log menu item
 Then I should see apimanager Manager Transaction Log page header as "<transactionLogPageHeader>"
+And I should check transaction log is existing in "<path>" named as "<fileName>" and delete
 When I enter "<fromDate>" as Transaction Log from date
 And I enter "<toDate>" as Transaction Log to date
 And I select "<operator>" as Transaction Log operator
@@ -32,5 +33,5 @@ Then I should see downloaded csv sheet with the "<path>" as path , "<fileName>" 
 
 
 Examples:
-| usertype|apiiTrafficPageHeader|transactionLogPageHeader|fromDate  |toDate    |operator   |serviceProvider  |API     |status    |path                       |fileName                                       |excelFileName						  |
-|LOGOUT   |Total API Traffic	|Transaction Log		 |2015-12-08|2016-03-04| DIALOG    |admin            |payment |Successful|C:/Users/Lenovo/Downloads/ |2015-12-08-2016-03-04-admin-DIALOG-payment.csv |AuxLogoutUser-DIALOG-AuxAppTest.xlsx|
+| usertype|apiiTrafficPageHeader|transactionLogPageHeader|fromDate  |toDate    |operator   |serviceProvider  |API     |status    |path                        |fileName                                       |excelFileName					   |
+|LOGOUT   |Total API Traffic	|Transaction Log		 |2015-12-08|2016-03-04| DIALOG    |admin            |payment |Successful|C:/Users/AUX-026/Downloads/ |2015-12-08-2016-03-04-admin-DIALOG-payment.csv |AuxLogoutUser-DIALOG-AuxAppTest.xlsx|
