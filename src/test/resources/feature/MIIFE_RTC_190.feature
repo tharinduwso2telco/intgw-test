@@ -5,9 +5,9 @@ Scenario Outline: Check if a user can regenerate a token of an application after
 Given I am in apimanager
 When I click on apimanager login
 Then I should see the apimanager "Login" pop up
-When I enter apimanager Login username and password for "<usertype>" 
+When I enter apimanager Login username and password for admin "<usertype>" 
 And I click on apimanager Login pop up login button
-Then I should see apimanager "<usertype>" at the top right corner of the page
+Then I should see apimanager admin "<usertype>" at the top right corner of the page
 When I click on apimanager Manage 
 Then I should see the apimanager Manager page header as "Manager"
 When I enter apimanager Manager page admin username credentials
@@ -26,7 +26,7 @@ Then I should see the SP Blacklist success message
 When I click on close window
 When I click on apimanager My Subscriptions
 Then I should see the apimanager Subscriptions page header as "Subscriptions"
-When I select created application "<appName>" from the dropdown for "<usertype>"
+When I select created application "<appName>" from the dropdown for admin "<usertype>"
 And I enter token validity of production as "<validity>"
 And I click regenerate under apimanager Subscriptions page production
 Then I should see "<validity>" as Token Validity of production
@@ -38,8 +38,8 @@ And I should see the regenerated Access Token of Sandbox
 
 
 Examples:
-| usertype|blacklistPageHeader |AddNumberAlert                |SPBlacklistPageHeader|appName                         |validity|
-|LOGOUT   |APIwise Blacklist   |Please enter subscriber number|SP Blacklist         |admin_Aux_SPBlacklistApplication|-1      |
+| usertype|blacklistPageHeader |AddNumberAlert                |SPBlacklistPageHeader|appName                  |validity|
+|Admin   |APIwise Blacklist   |Please enter subscriber number|SP Blacklist         |Aux_SPBlacklistApplication|-1      |
 
 
 
