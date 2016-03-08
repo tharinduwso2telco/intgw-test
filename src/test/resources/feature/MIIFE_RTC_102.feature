@@ -27,10 +27,10 @@ And I select "<serviceProvider>" as the Transaction Log service provider
 And I select "<API>" as Transaction Log API
 And I select "<status>" as Transaction Log Status
 And I click on Download report button
-#validate downloaded excel sheet
+And I prepare the transaction log query using "<fromDate>" "<toDate>" "<operator>" and "<API>" parameters
 Then I should see downloaded csv sheet with the "<path>" as path , "<fileName>" as the file name and "<excelFileName>" as the excel file name
 
 
 Examples:
-| usertype|apiiTrafficPageHeader|transactionLogPageHeader|fromDate  |toDate    |operator|serviceProvider|API       |status    |path|fileName|excelFileName|
-|LOGOUT   |Total API Traffic	|Transaction Log		 |2015-03-01|2016-03-04|All  |All  |ussd|Successful|C:/Users/Auxenta/Downloads/|2015-11-18-2015-12-23-AuxLogoutUser-DIALOG-AuxAppTest.csv|AuxLogoutUser-DIALOG-AuxAppTest.xlsx|
+| usertype|apiiTrafficPageHeader|transactionLogPageHeader|fromDate  |toDate    |operator   |serviceProvider  |API     |status    |path                       |fileName                                       |excelFileName						  |
+|LOGOUT   |Total API Traffic	|Transaction Log		 |2015-12-08|2016-03-04| DIALOG    |admin            |payment |Successful|C:/Users/Lenovo/Downloads/ |2015-12-08-2016-03-04-admin-DIALOG-payment.csv |AuxLogoutUser-DIALOG-AuxAppTest.xlsx|

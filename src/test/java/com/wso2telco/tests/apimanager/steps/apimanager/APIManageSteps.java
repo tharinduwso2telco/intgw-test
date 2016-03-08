@@ -73,8 +73,8 @@ public class APIManageSteps extends BasicTestObject {
 				managerpage.isHomePage(arg1));
 	}
 
-	@When("^I click on apimanager Manager$")
-	public void i_click_on_apimanager_Manager() throws Throwable {
+	@When("^I click on apimanager Manager username$")
+	public void i_click_on_apimanager_Manager_username() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.clickUserName();
 	}
@@ -83,6 +83,7 @@ public class APIManageSteps extends BasicTestObject {
 	public void i_click_on_apimanager_Manager_logout_button() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.clickLogout();
+		Thread.sleep(sleepTime);
 	}
 
 	@When("^I click on apimanager Manager admin$")
@@ -492,4 +493,56 @@ public class APIManageSteps extends BasicTestObject {
 		Assert.assertTrue("Manager page user name and password text boxs did not appear",
 				managerpage.isManagerPageUsenamePasswordTextBoxesDisplayed());
 	}
+	
+	@When("^I enter apimanager Manager page login username and password for \"([^\"]*)\"$")
+	public void i_enter_apimanager_Manager_page_login_username_and_password_for(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.enterUserName(config.getValue(getEnvironment() + arg1 + "user"));
+		managerpage.enterPassword(config.getValue(getEnvironment() + arg1 + "pwd"));
+	}
+	
+	@When("^I click on SP Blacklist under Lists$")
+	public void i_click_on_SP_Blacklist_under_Lists() throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.clickOnSPBlackList();
+	}
+	
+	@Then("^I should see apimanager Manager SP Blacklist page header as \"([^\"]*)\"$")
+	public void i_should_see_apimanager_Manager_SP_Blacklist_page_header_as(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("SP Blacklist page did not appear",
+				managerpage.isSPBlacklistPageDisplayed(arg1));
+	}
+	
+	@When("^I select \"([^\"]*)\" as application to blacklist$")
+	public void i_select_as_application_to_blacklist(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.selectSPBlacklistApplication(arg1);
+	}
+	
+
+	@When("^I click on SP Blacklist Blacklist button$")
+	public void i_click_on_SP_Blacklist_Blacklist_button() throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.clickOnSPBlackListButton();
+	}
+	
+	@Then("^I should see API Admin Module pop up header as \"([^\"]*)\"$")
+	public void i_should_see_API_Admin_Module_pop_up_header_as(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("API admin module page did not appear",
+				managerpage.isSPBlacklistAPIAdminModulePageDisplayed(arg1));
+	}
+
+	@Then("^I click on API Admin Module pop up ok button$")
+	public void i_click_on_API_Admin_Module_pop_up_ok_button() throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.clickAdminModuleYes();
+	}
+
+	@Then("^I should see the SP Blacklist success message$")
+	public void i_should_see_the_SP_Blacklist_success_message()throws Throwable {
+		//enter code here 
+	}
+
 }

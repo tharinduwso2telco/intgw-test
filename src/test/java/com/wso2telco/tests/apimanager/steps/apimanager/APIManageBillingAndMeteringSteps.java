@@ -3,8 +3,10 @@ package com.wso2telco.tests.apimanager.steps.apimanager;
 import org.junit.Assert;
 
 import com.wso2telco.apimanager.pageobjects.apihome.manager.ManagerPage;
+import com.wso2telco.apimanager.pageobjects.db.queries.SQLQuery;
 import com.wso2telco.tests.apimanager.base.BasicTestObject;
-import com.wso2telco.tests.util.data.RateCardXML;
+
+import com.wso2telco.tests.util.data.RuntimeQuery;
 
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -135,7 +137,25 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 	@Then("^I should see downloaded csv sheet with the \"([^\"]*)\" as path , \"([^\"]*)\" as the file name and \"([^\"]*)\" as the excel file name$")
 	public void i_should_see_downloaded_csv_sheet_with_the_as_path_as_the_file_name_and_as_the_excel_file_name(String arg1, String arg2, String arg3) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		managerpage.validateData(arg1, arg2, arg3,"");
+		String excelFileName = arg1 + arg3;
+		RuntimeQuery runtimeQuery = new RuntimeQuery();
+		String transactionLogQuery = runtimeQuery.getRuntimeQuery();
+		managerpage.converCSVToXlsx(arg1, arg2, arg3);
+		Assert.assertTrue("Transaction log time column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "time", "Date & Time"));
+		Assert.assertTrue("Transaction log time column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "userId", " Identifier - Service Provider"));
+		Assert.assertTrue("Transaction log time column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "operatorId", " Operator Identifier"));
+		Assert.assertTrue("Transaction log time column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "requestId", " MIFE Reference Code"));
+		Assert.assertTrue("Transaction log time column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "msisdn", " MSISDN"));
+		Assert.assertTrue("Transaction log time column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "chargeAmount", " Amount"));
+		Assert.assertTrue("Transaction log time column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "responseCode", " Response Code"));
+		Assert.assertTrue("Transaction log time column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "purchaseCategoryCode", " Purchase Category Code"));
+	}
+	
+	@When("^I prepare the transaction log query using \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" and \"([^\"]*)\" parameters$")
+	public void i_prepare_the_transaction_log_query_using_and_parameters(String arg1, String arg2, String arg3, String arg4) throws Throwable {
+		String transactionQuery = String.format(SQLQuery.TRANSACTION_LOG, arg1, arg2, arg3, arg4);
+		RuntimeQuery runtimeQuery = new RuntimeQuery();
+		runtimeQuery.setRuntimeQuery(transactionQuery);
 	}
 
 	
@@ -336,10 +356,9 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 	@Then("^I should see the generated Customer Care Report$")
 	public void i_should_see_the_generated_Customer_Care_Report() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		// TODO : need to give correct DB column headers
-		Assert.assertTrue("Customer care 'Date' column mismatched", managerpage.isCustomerCareReport("Date", "Date"));
-		Assert.assertTrue("Customer care 'Json Body' column mismatched", managerpage.isCustomerCareReport("Json Body", "Date"));
-		Assert.assertTrue("Customer care 'API' column mismatched", managerpage.isCustomerCareReport("API", "Date"));
+		Assert.assertTrue("Customer care 'Date' column mismatched", managerpage.isCustomerCareReport("Date", "time"));
+		Assert.assertTrue("Customer care 'Json Body' column mismatched", managerpage.isCustomerCareReport("Json Body", "jsonBody"));
+		Assert.assertTrue("Customer care 'API' column mismatched", managerpage.isCustomerCareReport("API", "api"));
 	}
 	
 	@When("^I click on API Response Times menu item$")
@@ -448,9 +467,10 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 		managerpage.selectPerformanceErrorAPI(arg1);
 	}
 
-	@Then("^I should see generated Performance Error Rates graphs$")
-	public void i_should_see_generated_Performance_Error_Rates_graphs() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
+	@Then("^I should see generated Performance Error Rates graph for \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" parameters$")
+	public void i_should_see_generated_Performance_Error_Rates_graph_for_parameters(String arg1, String arg2, String arg3, String arg4) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Pie chart numbers mismatched with DB values", managerpage.isPieGraphPerformanceErrorRates(arg1, arg2, arg3, arg4));
 	}
 	
 	@When("^I click on Monthly Invoice Download report button$")
@@ -476,5 +496,72 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 	    launchBrowser();
 	    driver.get(currentUrl);
 	}
+
+	@Then("^I should see Total API Traffic as \"([^\"]*)\" under apimanager Manager Usage Reports$")
+	public void i_should_see_Total_API_Traffic_as_under_apimanager_Manager_Usage_Reports(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Total API Trsffic is not showed.", managerpage.isReportAccessing(arg1));
+	}
+	
+	@Then("^I should see Transaction Log as \"([^\"]*)\" under apimanager Manager Usage Reports$")
+	public void i_should_see_Transaction_Log_as_under_apimanager_Manager_Usage_Reports(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Transaction Log is not showed.", managerpage.isReportAccessing(arg1));
+	}
+	
+	@Then("^I should see Operator API Traffic as \"([^\"]*)\" under apimanager Manager Usage Reports$")
+	public void i_should_see_Operator_API_Traffic_as_under_apimanager_Manager_Usage_Reports(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Operator API Traffic is not showed.", managerpage.isReportAccessing(arg1));
+	}
+	
+	@Then("^I should see Monthly Invoice as \"([^\"]*)\" under apimanager Manager Usage Reports$")
+	public void i_should_see_Monthly_Invoice_as_under_apimanager_Manager_Usage_Reports(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Monthly Invoice is not showed.", managerpage.isReportAccessing(arg1));
+	}
+	
+	@Then("^I should see Cost Breakdown as \"([^\"]*)\" under apimanager Manager Usage Reports$")
+	public void i_should_see_Cost_Breakdown_as_under_apimanager_Manager_Usage_Reports(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Cost Breakdown is not showed.", managerpage.isReportAccessing(arg1));
+	}
+	
+	@Then("^I should see API Response Times as \"([^\"]*)\" under apimanager Manager Performance Reports$")
+	public void i_should_see_API_Response_Times_as_under_apimanager_Manager_Performance_Reports(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("API Response Times is not showed.", managerpage.isReportAccessing(arg1));
+	}
+	
+	@Then("^I should see Customer care reports as \"([^\"]*)\" under apimanager Manager Usage Reports$")
+	public void i_should_see_Customer_care_reports_as_under_apimanager_Manager_Usage_Reports(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Customer care reports is not showed.", managerpage.isReportAccessing(arg1));
+	}
+	
+	@Then("^I should see Revenue Breakdown as \"([^\"]*)\" under apimanager Manager Usage Reports$")
+	public void i_should_see_Revenue_Breakdown_as_under_apimanager_Manager_Usage_Reports(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Revenue Breakdown is not showed.", managerpage.isReportAccessing(arg1));
+	}
+
+	@Then("^I should see Customer Care as \"([^\"]*)\" under apimanager Manager Usage Reports$")
+	public void i_should_see_Customer_Care_as_under_apimanager_Manager_Usage_Reports(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Customer Care is not showed.", managerpage.isReportAccessing(arg1));
+	}
+
+	@Then("^I should see Performance Error Rates as \"([^\"]*)\" under apimanager Manager Performance Reports$")
+	public void i_should_see_Performance_Error_Rates_as_under_apimanager_Manager_Performance_Reports(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Performance Error Rates is not showed.", managerpage.isReportAccessing(arg1));
+	}
+
+	@Then("^I should see TPS Summary as \"([^\"]*)\" under apimanager Manager Performance Reports$")
+	public void i_should_see_TPS_Summary_as_under_apimanager_Manager_Performance_Reports(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("TPS Summary is not showed.", managerpage.isReportAccessing(arg1));
+	}
+
 
 }

@@ -44,8 +44,8 @@ public class APISandBoxSteps extends BasicTestObject {
 	    Assert.assertTrue("Sandbox Welcome page did not load properly", sandbox.isSandboxWelcome(arg1));
 	}
 
-	@When("^I click on apimanager Sandbox page$")
-	public void i_click_on_apimanager_Sandbox_page() throws Throwable {
+	@When("^I click on apimanager Sandbox page username$")
+	public void i_click_on_apimanager_Sandbox_page_username() throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
 		sandbox.clickUserName();
 	}

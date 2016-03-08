@@ -174,7 +174,6 @@ public class APIHomeSteps extends BasicTestObject {
 	    
 	}
 
-
 	@When("^I click on apimanager Sandbox$")
 	public void i_click_on_apimanager_Sandbox() throws Throwable {
 		HomePage homepage = new HomePage(driver);
@@ -187,4 +186,25 @@ public class APIHomeSteps extends BasicTestObject {
 		Assert.assertTrue("No subscription mismatched", subscroptionpage.isNoSubscriptionMsg(arg1));
 	}
 	
+	@When("^I enter apimanager Login username and password for admin \"([^\"]*)\"$")
+	public void i_enter_apimanager_Login_username_and_password_for_admin(String arg1) throws Throwable {
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.enterLoginUserName(config.getValue(getEnvironment() + arg1 + "UserName"));
+		loginPage.enterLoginPassword(config.getValue(getEnvironment() + arg1 + "Password"));
+	}
+	
+	@Then("^I should see apimanager admin \"([^\"]*)\" at the top right corner of the page$")
+	public void i_should_see_apimanager_admin_at_the_top_right_corner_of_the_page(String arg1) throws Throwable {
+		LoginPage loginPage = new LoginPage(driver);
+	    Thread.sleep(sleepTime);
+		Assert.assertTrue("User Name did not show properly",loginPage.isUserName(config.getValue(getEnvironment() + arg1 + "UserName")));
+	}
+
+	@When("^I select created application \"([^\"]*)\" from the dropdown for admin \"([^\"]*)\"$")
+	public void i_select_created_application_from_the_dropdown_for_admin(String arg1, String arg2) throws Throwable {
+		SubscriptionsPage subpage = new SubscriptionsPage(driver);
+		String appName = config.getValue(getEnvironment() + arg2 + "UserName") + "_" + arg1;
+		subpage.clickSelectAppDD(appName);
+	}
+
 }
