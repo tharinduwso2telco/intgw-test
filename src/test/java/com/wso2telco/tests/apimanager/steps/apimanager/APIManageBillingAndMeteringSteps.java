@@ -3,7 +3,10 @@ package com.wso2telco.tests.apimanager.steps.apimanager;
 import org.junit.Assert;
 
 import com.wso2telco.apimanager.pageobjects.apihome.manager.ManagerPage;
+import com.wso2telco.apimanager.pageobjects.db.queries.SQLQuery;
 import com.wso2telco.tests.apimanager.base.BasicTestObject;
+
+import com.wso2telco.tests.util.data.RuntimeQuery;
 
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -134,7 +137,25 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 	@Then("^I should see downloaded csv sheet with the \"([^\"]*)\" as path , \"([^\"]*)\" as the file name and \"([^\"]*)\" as the excel file name$")
 	public void i_should_see_downloaded_csv_sheet_with_the_as_path_as_the_file_name_and_as_the_excel_file_name(String arg1, String arg2, String arg3) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		managerpage.validateData(arg1, arg2, arg3,"");
+		String excelFileName = arg1 + arg3;
+		RuntimeQuery runtimeQuery = new RuntimeQuery();
+		String transactionLogQuery = runtimeQuery.getRuntimeQuery();
+		managerpage.converCSVToXlsx(arg1, arg2, arg3);
+		Assert.assertTrue("Transaction log time column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "time", "Date & Time"));
+		Assert.assertTrue("Transaction log time column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "userId", " Identifier - Service Provider"));
+		Assert.assertTrue("Transaction log time column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "operatorId", " Operator Identifier"));
+		Assert.assertTrue("Transaction log time column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "requestId", " MIFE Reference Code"));
+		Assert.assertTrue("Transaction log time column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "msisdn", " MSISDN"));
+		Assert.assertTrue("Transaction log time column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "chargeAmount", " Amount"));
+		Assert.assertTrue("Transaction log time column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "responseCode", " Response Code"));
+		Assert.assertTrue("Transaction log time column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "purchaseCategoryCode", " Purchase Category Code"));
+	}
+	
+	@When("^I prepare the transaction log query using \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" and \"([^\"]*)\" parameters$")
+	public void i_prepare_the_transaction_log_query_using_and_parameters(String arg1, String arg2, String arg3, String arg4) throws Throwable {
+		String transactionQuery = String.format(SQLQuery.TRANSACTION_LOG, arg1, arg2, arg3, arg4);
+		RuntimeQuery runtimeQuery = new RuntimeQuery();
+		runtimeQuery.setRuntimeQuery(transactionQuery);
 	}
 
 	
@@ -335,10 +356,9 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 	@Then("^I should see the generated Customer Care Report$")
 	public void i_should_see_the_generated_Customer_Care_Report() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		// TODO : need to give correct DB column headers
-		Assert.assertTrue("Customer care 'Date' column mismatched", managerpage.isCustomerCareReport("Date", "Date"));
-		Assert.assertTrue("Customer care 'Json Body' column mismatched", managerpage.isCustomerCareReport("Json Body", "Date"));
-		Assert.assertTrue("Customer care 'API' column mismatched", managerpage.isCustomerCareReport("API", "Date"));
+		Assert.assertTrue("Customer care 'Date' column mismatched", managerpage.isCustomerCareReport("Date", "time"));
+		Assert.assertTrue("Customer care 'Json Body' column mismatched", managerpage.isCustomerCareReport("Json Body", "jsonBody"));
+		Assert.assertTrue("Customer care 'API' column mismatched", managerpage.isCustomerCareReport("API", "api"));
 	}
 	
 	@When("^I click on API Response Times menu item$")
