@@ -500,4 +500,49 @@ public class APIManageSteps extends BasicTestObject {
 		managerpage.enterUserName(config.getValue(getEnvironment() + arg1 + "user"));
 		managerpage.enterPassword(config.getValue(getEnvironment() + arg1 + "pwd"));
 	}
+	
+	@When("^I click on SP Blacklist under Lists$")
+	public void i_click_on_SP_Blacklist_under_Lists() throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.clickOnSPBlackList();
+	}
+	
+	@Then("^I should see apimanager Manager SP Blacklist page header as \"([^\"]*)\"$")
+	public void i_should_see_apimanager_Manager_SP_Blacklist_page_header_as(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("SP Blacklist page did not appear",
+				managerpage.isSPBlacklistPageDisplayed(arg1));
+	}
+	
+	@When("^I select \"([^\"]*)\" as application to blacklist$")
+	public void i_select_as_application_to_blacklist(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.selectSPBlacklistApplication(arg1);
+	}
+	
+
+	@When("^I click on SP Blacklist Blacklist button$")
+	public void i_click_on_SP_Blacklist_Blacklist_button() throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.clickOnSPBlackListButton();
+	}
+	
+	@Then("^I should see API Admin Module pop up header as \"([^\"]*)\"$")
+	public void i_should_see_API_Admin_Module_pop_up_header_as(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("API admin module page did not appear",
+				managerpage.isSPBlacklistAPIAdminModulePageDisplayed(arg1));
+	}
+
+	@Then("^I click on API Admin Module pop up ok button$")
+	public void i_click_on_API_Admin_Module_pop_up_ok_button() throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.clickAdminModuleYes();
+	}
+
+	@Then("^I should see the SP Blacklist success message$")
+	public void i_should_see_the_SP_Blacklist_success_message()throws Throwable {
+		//enter code here 
+	}
+
 }
