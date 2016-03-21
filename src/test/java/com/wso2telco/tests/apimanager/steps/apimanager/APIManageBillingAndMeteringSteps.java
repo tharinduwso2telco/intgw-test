@@ -359,13 +359,24 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.selectCustomerCareApplication(arg1);
 	}
-
+	
+	@When("^I prepare the OPERATOR_API_TRAFFIC query using \"([^\"]*)\" \"([^\"]*)\" and \"([^\"]*)\" parameters$")
+	public void i_prepare_the_OPERATOR_API_TRAFFIC_query_using_and_parameters(String arg1, String arg2, String arg3) throws Throwable {
+		String fromdate = arg1 + " 00:00:00";
+		String toDate = arg2 + " 23:59:59";
+		String operatorApiTraffic = String.format(SQLQuery.OPERATOR_API_TRAFFIC, fromdate, toDate, arg3);
+		RuntimeQuery runtimeQuery = new RuntimeQuery();
+		runtimeQuery.setRuntimeQuery(operatorApiTraffic);  
+	}
+	
 	@Then("^I should see the generated Customer Care Report$")
 	public void i_should_see_the_generated_Customer_Care_Report() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		Assert.assertTrue("Customer care 'Date' column mismatched", managerpage.isCustomerCareReport("Date", "time"));
-		Assert.assertTrue("Customer care 'Json Body' column mismatched", managerpage.isCustomerCareReport("Json Body", "jsonBody"));
-		Assert.assertTrue("Customer care 'API' column mismatched", managerpage.isCustomerCareReport("API", "api"));
+		RuntimeQuery runTimeQuery = new RuntimeQuery();
+		String queryRes = runTimeQuery.getRuntimeQuery();
+		Assert.assertTrue("Customer care 'Date' column mismatched", managerpage.isCustomerCareReport(queryRes, "Date", "time"));
+		Assert.assertTrue("Customer care 'Json Body' column mismatched", managerpage.isCustomerCareReport(queryRes, "Json Body", "jsonBody"));
+		Assert.assertTrue("Customer care 'API' column mismatched", managerpage.isCustomerCareReport(queryRes, "API", "api"));
 	}
 	
 	@When("^I click on API Response Times menu item$")

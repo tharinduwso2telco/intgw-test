@@ -1,22 +1,25 @@
 package com.wso2telco.tests.apimanager.steps.apipublisher;
 
-import org.junit.Assert;
 
+
+import org.junit.Assert;
 import com.wso2telco.apimanager.pageobjects.apipublisher.APIPublisherHomePage;
 import com.wso2telco.apimanager.pageobjects.apipublisher.APIPublisherLoginPage;
+import com.wso2telco.apimanager.pageobjects.publisher.PublisherHomePage;
 import com.wso2telco.tests.apimanager.base.BasicTestObject;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class APIPublisherHome extends BasicTestObject {
+public class APIPublisherHome extends BasicTestObject{
 	
 	@Given("^I am in apipublisher$")
 	public void i_am_in_apipublisher() throws Throwable {
 		if (driver==null){
+			initialize();
 			launchBrowser();
-			driver.get(config.getValue("apiManagerPublisher"));
+			driver.get(config.getValue(getEnvironment() + "ApiManagerPublisher"));
 		}
 	}
 	
@@ -246,4 +249,44 @@ public class APIPublisherHome extends BasicTestObject {
 		publisherHome.selectEndpointType(arg1);
 	}
 	
+	@When("^I enter the credentials to login \"([^\"]*)\"$")
+	public void i_enter_the_credentials_to_login_and(String arg1) throws Throwable {
+		APIPublisherLoginPage publisherLogin = new APIPublisherLoginPage(driver);
+		publisherLogin.enterUsername(config.getValue(getEnvironment() + arg1 + "user"));
+		publisherLogin.enterPassword(config.getValue(getEnvironment() + arg1 + "pwd"));
+	}
+	
+	@Then("^I should see the apipublisher page \"([^\"]*)\" label$")
+	public void i_should_see_the_apipublisher_page_label(String arg1) throws Throwable {
+		PublisherHomePage publisherHome = new PublisherHomePage(driver);
+		//publisherHome.getURL();
+		Assert.assertTrue("API Publisher label is not displayed",publisherHome.isPublisherLoginPageLabelDisplayed(arg1));   
+	}
+	
+	@Then("^I should see the apipublisher \"([^\"]*)\" label$")
+	public void i_should_see_the_apipublisher_label(String arg1) throws Throwable {
+		PublisherHomePage publisherHome = new PublisherHomePage(driver);
+		Assert.assertTrue("Subscription label is not displayed",publisherHome.isPublisherPageLabelDisplayed(arg1));
+	    
+	}
+	
+	@Then("^I click on MyApis Subscriptions link$")
+	public void i_click_on_MyApis_Subscriptions_link() throws Throwable {
+		PublisherHomePage publisherHome = new PublisherHomePage(driver);
+		publisherHome.clickSubscritionLink();
+	}
+	
+	@Then("^I should see the apipublisher_subscription page \"([^\"]*)\" label$")
+	public void i_should_see_the_apipublisher_subscription_page_label(String arg1) throws Throwable {
+		PublisherHomePage publisherHome = new PublisherHomePage(driver);
+		publisherHome.isSubscriptionLabelDisplayed(arg1);
+	    
+	}
+	
+	@Given("^I validate the table content for \"([^\"]*)\",\"([^\"]*)\" and \"([^\"]*)\"$")
+	public void i_validate_the_table_content_for_and(String arg1, String arg2, String arg3) throws Throwable {
+		PublisherHomePage publisherHome = new PublisherHomePage(driver);
+		String username = config.getValue(getEnvironment() + arg1 + "user");
+		Assert.assertTrue("The application nor the apis relevant to your search is listed in the table", publisherHome.validateTableSubscriptions(username, arg2, arg3));
+	}
 }
