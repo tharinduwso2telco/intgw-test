@@ -1,17 +1,19 @@
 <RateCard>
 	<Operators>
 		<API name="SMS">
-			<!-- SUBSCRIPTION default -->
+			<!-- SUBSCRIPTION NONdefault -->
 			<Operation name="200">
-				<Rate default="true">
+				<Rate>
 					<Name>SM1</Name>
 					<Currency>Rs</Currency>
 					<Value>20</Value>
 					<Type>SUBSCRIPTION</Type>
-					<Taxes>
-						<Tax>VAT</Tax>
-						<Tax>ABC</Tax>
-					</Taxes>
+					<CategoryBase>true</CategoryBase>
+					<Category name="Game" rate="10">
+						<SubCategory name="Game01" rate="10" />
+						<SubCategory name="Game02" rate="20" />
+						<SubCategory name="Game03" rate="30" />
+					</Category>
 				</Rate>
 			</Operation>
 			<!-- CONSTANTnon-default categoryANDsubcategory -->
@@ -54,39 +56,28 @@
 			</Operation>
 		</API>
 		<API name="USSD">
-			<!-- QUOTA default -->
+			<!-- PER_REQUEST default -->
 			<Operation name="400">
 				<Rate default="true">
 					<Name>ul</Name>
 					<Currency>Rs</Currency>
-					<Value>20</Value>
-					<Type>QUOTA</Type>
-					<Attributes>
-						<MaxCount>500</MaxCount>
-						<ExcessRate>10</ExcessRate>
-						<DefaultRate>10</DefaultRate>
-					</Attributes>
-					<Taxes>
-						<Tax>VAT</Tax>
-						<Tax>ABC</Tax>
-					</Taxes>
+					<Value>120</Value>
+					<Type>PER_REQUEST</Type>
 				</Rate>
 			</Operation>
 		</API>
 		<API name="location">
-			<!-- SUBSCRIPTION non-default categoryANDsubcategory -->
+			<!-- SUBSCRIPTION default -->
 			<Operation name="300">
-				<Rate>
+				<Rate default="true">
 					<Name>lbs</Name>
 					<Currency>Rs</Currency>
 					<Value>20</Value>
 					<Type>SUBSCRIPTION</Type>
-					<CategoryBase>true</CategoryBase>
-					<Category name="Game" rate="10">
-						<SubCategory name="Game01" rate="10" />
-						<SubCategory name="Game02" rate="20" />
-						<SubCategory name="Game03" rate="30" />
-					</Category>
+					<Taxes>
+						<Tax>VAT</Tax>
+						<Tax>ABC</Tax>
+					</Taxes>
 				</Rate>
 			</Operation>
 		</API>
