@@ -253,9 +253,8 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 	    // Write code here that turns the phrase above into concrete actions
 	}
 	
-
-	@When("^I click on Revenue Breakdown menu item$")
-	public void i_click_on_Revenue_Breakdown_menu_item() throws Throwable {
+	@When("^I click on Revenue Breakdown SB menu item$")
+	public void i_click_on_Revenue_Breakdown_SB_menu_item() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.clickOnRvenueBreakdown();
 	}
@@ -299,9 +298,10 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 		managerpage.selectRevenueBreakdownApplication(arg1);
 	}
 	
-	@Then("^I should see the generated pie chart of Revenue Breakdown$")
-	public void i_should_see_the_generated_pie_chart_of_Revenue_Breakdown() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
+	@Then("^I should see the generated pie chart of Revenue Breakdown for \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" parameters$")
+	public void i_should_see_the_generated_pie_chart_of_Revenue_Breakdown_for_parameters(String arg1, String arg2, String arg3, String arg4) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Pie chart numbers mismatched with DB values", managerpage.isPieGraphTotalAPITraffic(arg1, arg2, arg3, arg4));
 	}
 	
 	@When("^I click on Customer Care Reports menu item$")
