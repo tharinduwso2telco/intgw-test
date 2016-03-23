@@ -1,0 +1,1 @@
+7555|a9b02f2f9d84dd184c8c3e2493d1a7a8|{"outboundSMSMessageRequest": {"address": ["tel:+94773852147"],"senderAddress": "tel:7555","outboundSMSTextMessage": {"message": "Test1"},"clientCorrelator": "123456","receiptRequest": {"notifyURL": "http://application.example.com/notifications/DeliveryInfoNotification","callbackData": "some-data-useful-to-the-requester"},"senderName": ""}}
