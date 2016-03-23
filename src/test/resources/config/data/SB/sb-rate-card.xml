@@ -2,23 +2,10 @@
 	<Operators>
 		<Operator name="DIALOG">
 			<API name="SMS">
-				<!-- CONSTANTdefault -->
-				<Operation name="200">
-					<Rate default="true">
-						<Name>SM1</Name>
-						<Currency>Rs</Currency>
-						<Value>10</Value>
-						<Type>CONSTANT</Type>
-						<Taxes>
-							<Tax>VAT</Tax>
-							<Tax>ABC</Tax>
-						</Taxes>
-					</Rate>
-				</Operation>
 				<!-- CONSTANTnon-default categoryANDsubcategory -->
-				<Operation name="201">
+				<Operation name="200">
 					<Rate>
-						<Name>SM2</Name>
+						<Name>DSM1</Name>
 						<Currency>Rs</Currency>
 						<Value>10</Value>
 						<Type>CONSTANT</Type>
@@ -34,45 +21,10 @@
 						</Taxes>
 					</Rate>
 				</Operation>
-				<!-- PER_REQUEST default -->
-				<Operation name="202">
-					<Rate default="true">
-						<Name>SM3</Name>
-						<Currency>Rs</Currency>
-						<Value>10</Value>
-						<Type>PER_REQUEST</Type>
-						<Taxes>
-							<Tax>VAT</Tax>
-							<Tax>ABC</Tax>
-						</Taxes>
-					</Rate>
-				</Operation>
-			</API>
-			<API name="USSD">
-				<!-- QUOTA default -->
-				<Operation name="400">
-					<Rate default="true">
-						<Name>ul</Name>
-						<Currency>Rs</Currency>
-						<Value>20</Value>
-						<Type>QUOTA</Type>
-						<Attributes>
-							<MaxCount>500</MaxCount>
-							<ExcessRate>10</ExcessRate>
-							<DefaultRate>10</DefaultRate>
-						</Attributes>
-						<Taxes>
-							<Tax>VAT</Tax>
-							<Tax>ABC</Tax>
-						</Taxes>
-					</Rate>
-				</Operation>
-			</API>
-			<API name="location">
 				<!-- QUOTA non-default categoryANDsubcategory -->
-				<Operation name="300">
+				<Operation name="201">
 					<Rate>
-						<Name>lbs</Name>
+						<Name>DSM2</Name>
 						<Currency>Rs</Currency>
 						<Value>20</Value>
 						<Type>QUOTA</Type>
@@ -112,77 +64,10 @@
 						</Category>
 					</Rate>
 				</Operation>
-			</API>
-			<API name="payment">
-				<!-- PERCENTAGE categoryBaseFalse -->
-				<Operation name="100">
-					<Rate default="true">
-						<Name>p1</Name>
-						<Currency>Rs</Currency>
-						<Value>20</Value>
-						<Commission>
-							<Sp>80</Sp>
-							<Ads>15</Ads>
-							<Opco>5</Opco>
-						</Commission>
-						<Type>PERCENTAGE</Type>
-					</Rate>
-				</Operation>
-				<!-- PER_REQUEST withSurCharge non-default categoryANDsubcategory -->
-				<Operation name="101">
-					<Rate>
-						<Name>RF2</Name>
-						<Currency>Rs</Currency>
-						<Value>120</Value>
-						<Surcharge value="100" Ads="90" Opco="10" />
-						<Type>PER_REQUEST</Type>
-						<Category name="Game" rate="10">
-							<SubCategory name="Game01" rate="100" />
-							<SubCategory name="Game02" rate="200" />
-							<SubCategory name="Game03" rate="300" />
-						</Category>
-					</Rate>
-				</Operation>
-			</API>
-		</Operator>
-		<Operator name="CELCOM">
-			<API name="SMS">
-				<!-- SUBSCRIPTION default -->
-				<Operation name="200">
-					<Rate default="true">
-						<Name>SM1</Name>
-						<Currency>Rs</Currency>
-						<Value>20</Value>
-						<Type>SUBSCRIPTION</Type>
-						<Taxes>
-							<Tax>VAT</Tax>
-							<Tax>ABC</Tax>
-						</Taxes>
-					</Rate>
-				</Operation>
-				<!-- CONSTANTnon-default categoryANDsubcategory -->
-				<Operation name="201">
-					<Rate>
-						<Name>SM2</Name>
-						<Currency>Rs</Currency>
-						<Value>10</Value>
-						<Type>CONSTANT</Type>
-						<CategoryBase>true</CategoryBase>
-						<Category name="349" rate="12">
-							<SubCategory name="651" rate="100" />
-							<SubCategory name="652" rate="200" />
-							<SubCategory name="653" rate="300" />
-						</Category>
-						<Taxes>
-							<Tax>VAT</Tax>
-							<Tax>ABC</Tax>
-						</Taxes>
-					</Rate>
-				</Operation>
 				<!-- PER_REQUESTnon-default categoryANDsubcategory -->
 				<Operation name="202">
 					<Rate>
-						<Name>SM3</Name>
+						<Name>DSM3</Name>
 						<Currency>Rs</Currency>
 						<Value>10</Value>
 						<Type>PER_REQUEST</Type>
@@ -203,7 +88,7 @@
 				<!-- QUOTA default -->
 				<Operation name="400">
 					<Rate default="true">
-						<Name>ul</Name>
+						<Name>Dul</Name>
 						<Currency>Rs</Currency>
 						<Value>20</Value>
 						<Type>QUOTA</Type>
@@ -220,10 +105,58 @@
 				</Operation>
 			</API>
 			<API name="location">
-				<!-- SUBSCRIPTION non-default categoryANDsubcategory -->
+				<!-- CONSTANTdefault -->
 				<Operation name="300">
+					<Rate default="true">
+						<Name>Dlbs</Name>
+						<Currency>Rs</Currency>
+						<Value>10</Value>
+						<Type>CONSTANT</Type>
+						<Taxes>
+							<Tax>VAT</Tax>
+							<Tax>ABC</Tax>
+						</Taxes>
+					</Rate>
+				</Operation>
+			</API>
+			<API name="payment">
+				<!-- PERCENTAGE default -->
+				<Operation name="100">
+					<Rate default="true">
+						<Name>Dp1</Name>
+						<Currency>Rs</Currency>
+						<Value>20</Value>
+						<Commission>
+							<Sp>80</Sp>
+							<Ads>15</Ads>
+							<Opco>5</Opco>
+						</Commission>
+						<Type>PERCENTAGE</Type>
+					</Rate>
+				</Operation>
+				<!-- PER_REQUEST withSurCharge non-default categoryANDsubcategory -->
+				<Operation name="101">
 					<Rate>
-						<Name>lbs</Name>
+						<Name>DRF2</Name>
+						<Currency>Rs</Currency>
+						<Value>120</Value>
+						<Surcharge value="100" Ads="90" Opco="10" />
+						<Type>PER_REQUEST</Type>
+						<Category name="Game" rate="10">
+							<SubCategory name="Game01" rate="100" />
+							<SubCategory name="Game02" rate="200" />
+							<SubCategory name="Game03" rate="300" />
+						</Category>
+					</Rate>
+				</Operation>
+			</API>
+		</Operator>
+		<Operator name="CELCOM">
+			<API name="SMS">
+				<!-- SUBSCRIPTION NONdefault -->
+				<Operation name="200">
+					<Rate>
+						<Name>CSM1</Name>
 						<Currency>Rs</Currency>
 						<Value>20</Value>
 						<Type>SUBSCRIPTION</Type>
@@ -235,12 +168,76 @@
 						</Category>
 					</Rate>
 				</Operation>
+				<!-- CONSTANTnon-default categoryANDsubcategory -->
+				<Operation name="201">
+					<Rate>
+						<Name>CSM2</Name>
+						<Currency>Rs</Currency>
+						<Value>10</Value>
+						<Type>CONSTANT</Type>
+						<CategoryBase>true</CategoryBase>
+						<Category name="349" rate="12">
+							<SubCategory name="651" rate="100" />
+							<SubCategory name="652" rate="200" />
+							<SubCategory name="653" rate="300" />
+						</Category>
+						<Taxes>
+							<Tax>VAT</Tax>
+							<Tax>ABC</Tax>
+						</Taxes>
+					</Rate>
+				</Operation>
+				<!-- PER_REQUESTnon-default categoryANDsubcategory -->
+				<Operation name="202">
+					<Rate>
+						<Name>CSM3</Name>
+						<Currency>Rs</Currency>
+						<Value>10</Value>
+						<Type>PER_REQUEST</Type>
+						<CategoryBase>true</CategoryBase>
+						<Category name="349" rate="12">
+							<SubCategory name="651" rate="100" />
+							<SubCategory name="652" rate="200" />
+							<SubCategory name="653" rate="300" />
+						</Category>
+						<Taxes>
+							<Tax>VAT</Tax>
+							<Tax>ABC</Tax>
+						</Taxes>
+					</Rate>
+				</Operation>
+			</API>
+			<API name="USSD">
+				<!-- PER_REQUEST default -->
+				<Operation name="400">
+					<Rate default="true">
+						<Name>Cul</Name>
+						<Currency>Rs</Currency>
+						<Value>120</Value>
+						<Type>PER_REQUEST</Type>
+					</Rate>
+				</Operation>
+			</API>
+			<API name="location">
+				<!-- SUBSCRIPTION default -->
+				<Operation name="300">
+					<Rate default="true">
+						<Name>Clbs</Name>
+						<Currency>Rs</Currency>
+						<Value>20</Value>
+						<Type>SUBSCRIPTION</Type>
+						<Taxes>
+							<Tax>VAT</Tax>
+							<Tax>ABC</Tax>
+						</Taxes>
+					</Rate>
+				</Operation>
 			</API>
 			<API name="payment">
 				<!-- PERCENTAGE categoryBaseTrue CategoryANDSubCategory -->
 				<Operation name="100">
 					<Rate>
-						<Name>p1</Name>
+						<Name>Cp1</Name>
 						<Currency>Rs</Currency>
 						<Value>20</Value>
 						<CategoryBase>true</CategoryBase>
@@ -311,7 +308,7 @@
 				<!-- PER_REQUEST non-default categoryANDsubcategory withoutSurCharge -->
 				<Operation name="101">
 					<Rate>
-						<Name>RF2</Name>
+						<Name>CRF2</Name>
 						<Currency>Rs</Currency>
 						<Value>120</Value>
 						<Type>PER_REQUEST</Type>
