@@ -59,7 +59,7 @@ public class BasicTestObject extends TestBase {
 				
 				//Setting environment
 				//setEnvironment(System.getProperty("env"));
-				setEnvironment("staging");
+				setEnvironment("qa17");
 				logInstruction("Initializing Config Completed");
 				isInitialized = true;
 			}

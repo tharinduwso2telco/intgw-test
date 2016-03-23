@@ -41,10 +41,8 @@ public class APIManageSteps extends BasicTestObject {
 	public void i_enter_apimanager_Manager_page_admin_username_credentials()
 			throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		managerpage.enterUserName(config.getValue(getEnvironment()
-				+ "AdminUserName"));
-		managerpage.enterPassword(config.getValue(getEnvironment()
-				+ "AdminPassword"));
+		managerpage.enterUserName(config.getValue(getEnvironment() + "AdminUserName"));
+		managerpage.enterPassword(config.getValue(getEnvironment() + "AdminPassword"));
 	}
 
 	@When("^I enter apimanager Manager page operator username credentials$")
