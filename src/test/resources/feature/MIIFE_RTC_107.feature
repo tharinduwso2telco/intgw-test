@@ -25,7 +25,7 @@ And I select "<operator>" as Customer Care Reports operator
 And I select "<serviceProvider>" as the Customer Care Reports service provider
 And I select "<application>" as Customer Care Reports Application
 And I click on generate button
-When I prepare the OPERATOR_API_TRAFFIC query using "<fromDate>" "<toDate>" and "<operator>" parameters
+When I prepare the OPERATOR_API_TRAFFIC query using "<fromDate>" "<toDate>" "<operator>" "<serviceProvider>" and "<application>" parameters
 Then I should see the generated Customer Care Report
 
 

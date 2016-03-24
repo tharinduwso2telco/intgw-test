@@ -360,11 +360,11 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 		managerpage.selectCustomerCareApplication(arg1);
 	}
 	
-	@When("^I prepare the OPERATOR_API_TRAFFIC query using \"([^\"]*)\" \"([^\"]*)\" and \"([^\"]*)\" parameters$")
-	public void i_prepare_the_OPERATOR_API_TRAFFIC_query_using_and_parameters(String arg1, String arg2, String arg3) throws Throwable {
+	@When("^I prepare the OPERATOR_API_TRAFFIC query using \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" and \"([^\"]*)\" parameters$")
+	public void i_prepare_the_OPERATOR_API_TRAFFIC_query_using_and_parameters(String arg1, String arg2, String arg3, String arg4, String arg5) throws Throwable {
 		String fromdate = arg1 + " 00:00:00";
 		String toDate = arg2 + " 23:59:59";
-		String operatorApiTraffic = String.format(SQLQuery.OPERATOR_API_TRAFFIC, fromdate, toDate, arg3);
+		String operatorApiTraffic = String.format(SQLQuery.OPERATOR_API_TRAFFIC, fromdate, toDate, arg3, arg4, arg5);
 		RuntimeQuery runtimeQuery = new RuntimeQuery();
 		runtimeQuery.setRuntimeQuery(operatorApiTraffic);  
 	}
