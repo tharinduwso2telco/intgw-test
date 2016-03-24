@@ -28,4 +28,4 @@ Then I should see the generated Total API Traffic pie chart for "<fromDate>" "<t
 
 Examples:
 | usertype|apiTrafficPageHeader|fromDate  |toDate    |operator|serviceProvider|application|API|
-|QA17LOG  |Total API Traffic   |2015-11-18|2015-12-23|DIALOG  |admin          |All        |All|
+|QA17LOG  |Total API Traffic   |2015-12-23|2016-03-02|DIALOG  |admin          |All        |All|
