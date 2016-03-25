@@ -25,10 +25,10 @@ And I select "<operator>" as Customer Care Reports operator
 And I select "<serviceProvider>" as the Customer Care Reports service provider
 And I select "<application>" as Customer Care Reports Application
 And I click on generate button
-When I prepare the OPERATOR_API_TRAFFIC query using "<fromDate>" "<toDate>" and "<operator>" parameters
+When I prepare the OPERATOR_API_TRAFFIC query using "<fromDate>" "<toDate>" "<operator>" "<serviceProvider>" and "<application>" parameters
 Then I should see the generated Customer Care Report
 
 
 Examples:
 | usertype|apiTrafficPageHeader |customerCareReportsPageHeader|fromDate  |toDate	|msisdn |operator|serviceProvider|application|
-|LOGOUT   |Total API Traffic	|Customer Care Reports		  |2015-12-26|2015-12-30|		|DIALOG	 |admin			 |All		 |
+|QA17LOG   |Total API Traffic	|Customer Care Reports		  |2016-03-09|2016-03-10|		|DIALOG	 |admin			 |admin_kiri_pani		 |
