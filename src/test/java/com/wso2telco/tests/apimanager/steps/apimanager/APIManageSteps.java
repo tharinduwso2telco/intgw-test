@@ -13,9 +13,6 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class APIManageSteps extends BasicTestObject {
-
-	//winHandleBefore <String> = driver.getWindowHandles();
-    //Set<String> winHandleBefore = driver.getWindowHandles();
 	
 	@Then("^I should see the apimanager Manager page header as \"([^\"]*)\"$")
 	public void i_should_see_the_apimanager_Manager_page_header_as(String arg1)
@@ -38,8 +35,7 @@ public class APIManageSteps extends BasicTestObject {
 	}
 
 	@When("^I enter apimanager Manager page admin username credentials$")
-	public void i_enter_apimanager_Manager_page_admin_username_credentials()
-			throws Throwable {
+	public void i_enter_apimanager_Manager_page_admin_username_credentials() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.enterUserName(config.getValue(getEnvironment() + "AdminUserName"));
 		managerpage.enterPassword(config.getValue(getEnvironment() + "AdminPassword"));
@@ -537,10 +533,19 @@ public class APIManageSteps extends BasicTestObject {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.clickAdminModuleYes();
 	}
+	
+	@Then("^I validate \"([^\"]*)\" \"([^\"]*)\" and \"([^\"]*)\" for \"([^\"]*)\" value as \"([^\"]*)\"$")
+	public void i_validate_and_for_value_as(String arg1, String arg2, String arg3, String arg4, String arg5) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		String valueUI = managerpage.getValueInvoice(arg1, arg2, arg3, arg4);
+		Assert.assertTrue("", managerpage.compareString(valueUI, arg5));
+	}
 
-	@Then("^I should see the SP Blacklist success message$")
-	public void i_should_see_the_SP_Blacklist_success_message()throws Throwable {
-		//enter code here 
+	@Then("^I validate total amount \"([^\"]*)\" application for \"([^\"]*)\" column value as \"([^\"]*)\"$")
+	public void i_validate_total_amount_application_for_column_value_as(String arg1, String arg2, String arg3) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		String valueUI = managerpage.getTotalAmount(arg1, arg2);
+		Assert.assertTrue("", managerpage.compareString(valueUI, arg3));
 	}
 
 }

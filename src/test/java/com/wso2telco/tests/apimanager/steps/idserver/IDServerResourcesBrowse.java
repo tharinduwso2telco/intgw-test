@@ -44,5 +44,12 @@ public class IDServerResourcesBrowse extends BasicTestObject {
 		RateCardReader rateCardReader = new RateCardReader();
 		rateCardReader.checkXML(doc);
 	}
+	
+	@When("^I upload \"([^\"]*)\" rate card file from \"([^\"]*)\" location$")
+	public void i_upload_rate_card_file_from_location(String arg1, String arg2) throws Throwable {
+		String rateCardFilePath = config.getValue("uploadRateCard") + arg2 + arg1;
+		CarbonResourceBrowse browsePage = new CarbonResourceBrowse(driver);
+		browsePage.uploadRateCard(rateCardFilePath);
+	}
 
 }

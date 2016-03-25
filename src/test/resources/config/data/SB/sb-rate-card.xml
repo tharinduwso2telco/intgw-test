@@ -5,7 +5,7 @@
 				<!-- CONSTANTnon-default categoryANDsubcategory -->
 				<Operation name="200">
 					<Rate>
-						<Name>DSM1</Name>
+						<Name>SM1</Name>
 						<Currency>Rs</Currency>
 						<Value>10</Value>
 						<Type>CONSTANT</Type>
@@ -24,7 +24,7 @@
 				<!-- QUOTA non-default categoryANDsubcategory -->
 				<Operation name="201">
 					<Rate>
-						<Name>DSM2</Name>
+						<Name>SM2</Name>
 						<Currency>Rs</Currency>
 						<Value>20</Value>
 						<Type>QUOTA</Type>
@@ -67,7 +67,7 @@
 				<!-- PER_REQUESTnon-default categoryANDsubcategory -->
 				<Operation name="202">
 					<Rate>
-						<Name>DSM3</Name>
+						<Name>SM3</Name>
 						<Currency>Rs</Currency>
 						<Value>10</Value>
 						<Type>PER_REQUEST</Type>
@@ -88,7 +88,7 @@
 				<!-- QUOTA default -->
 				<Operation name="400">
 					<Rate default="true">
-						<Name>Dul</Name>
+						<Name>u1</Name>
 						<Currency>Rs</Currency>
 						<Value>20</Value>
 						<Type>QUOTA</Type>
@@ -108,7 +108,7 @@
 				<!-- CONSTANTdefault -->
 				<Operation name="300">
 					<Rate default="true">
-						<Name>Dlbs</Name>
+						<Name>lb1</Name>
 						<Currency>Rs</Currency>
 						<Value>10</Value>
 						<Type>CONSTANT</Type>
@@ -123,7 +123,7 @@
 				<!-- PERCENTAGE default -->
 				<Operation name="100">
 					<Rate default="true">
-						<Name>Dp1</Name>
+						<Name>p1</Name>
 						<Currency>Rs</Currency>
 						<Value>20</Value>
 						<Commission>
@@ -137,7 +137,7 @@
 				<!-- PER_REQUEST withSurCharge non-default categoryANDsubcategory -->
 				<Operation name="101">
 					<Rate>
-						<Name>DRF2</Name>
+						<Name>RF2</Name>
 						<Currency>Rs</Currency>
 						<Value>120</Value>
 						<Surcharge value="100" Ads="90" Opco="10" />
@@ -156,7 +156,7 @@
 				<!-- SUBSCRIPTION NONdefault -->
 				<Operation name="200">
 					<Rate>
-						<Name>CSM1</Name>
+						<Name>SM1</Name>
 						<Currency>Rs</Currency>
 						<Value>20</Value>
 						<Type>SUBSCRIPTION</Type>
@@ -171,7 +171,7 @@
 				<!-- CONSTANTnon-default categoryANDsubcategory -->
 				<Operation name="201">
 					<Rate>
-						<Name>CSM2</Name>
+						<Name>SM2</Name>
 						<Currency>Rs</Currency>
 						<Value>10</Value>
 						<Type>CONSTANT</Type>
@@ -190,7 +190,7 @@
 				<!-- PER_REQUESTnon-default categoryANDsubcategory -->
 				<Operation name="202">
 					<Rate>
-						<Name>CSM3</Name>
+						<Name>SM3</Name>
 						<Currency>Rs</Currency>
 						<Value>10</Value>
 						<Type>PER_REQUEST</Type>
@@ -211,7 +211,7 @@
 				<!-- PER_REQUEST default -->
 				<Operation name="400">
 					<Rate default="true">
-						<Name>Cul</Name>
+						<Name>u1</Name>
 						<Currency>Rs</Currency>
 						<Value>120</Value>
 						<Type>PER_REQUEST</Type>
@@ -222,7 +222,7 @@
 				<!-- SUBSCRIPTION default -->
 				<Operation name="300">
 					<Rate default="true">
-						<Name>Clbs</Name>
+						<Name>lb1</Name>
 						<Currency>Rs</Currency>
 						<Value>20</Value>
 						<Type>SUBSCRIPTION</Type>
@@ -237,7 +237,7 @@
 				<!-- PERCENTAGE categoryBaseTrue CategoryANDSubCategory -->
 				<Operation name="100">
 					<Rate>
-						<Name>Cp1</Name>
+						<Name>p1</Name>
 						<Currency>Rs</Currency>
 						<Value>20</Value>
 						<CategoryBase>true</CategoryBase>
@@ -308,7 +308,7 @@
 				<!-- PER_REQUEST non-default categoryANDsubcategory withoutSurCharge -->
 				<Operation name="101">
 					<Rate>
-						<Name>CRF2</Name>
+						<Name>RF2</Name>
 						<Currency>Rs</Currency>
 						<Value>120</Value>
 						<Type>PER_REQUEST</Type>

@@ -87,7 +87,7 @@
 			<!-- QUOTA default -->
 			<Operation name="400">
 				<Rate default="true">
-					<Name>ul</Name>
+					<Name>u1</Name>
 					<Currency>Rs</Currency>
 					<Value>20</Value>
 					<Type>QUOTA</Type>
@@ -107,7 +107,7 @@
 			<!-- CONSTANTdefault -->
 			<Operation name="300">
 				<Rate default="true">
-					<Name>lbs</Name>
+					<Name>lb1</Name>
 					<Currency>Rs</Currency>
 					<Value>10</Value>
 					<Type>CONSTANT</Type>

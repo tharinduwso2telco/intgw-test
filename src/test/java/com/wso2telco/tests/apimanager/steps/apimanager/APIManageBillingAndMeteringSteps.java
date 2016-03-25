@@ -215,17 +215,16 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 		Assert.assertTrue("Pie chart numbers mismatched with DB values", managerpage.isPieChartOperatorAPITraffic(arg1, arg2, arg3));
 	}
 	
-	@When("^I click on Monthly Invoice menu item$")
-	public void i_click_on_Monthly_Invoice_menu_item() throws Throwable {
+	@When("^I click on Monthly Invoice NB menu item$")
+	public void i_click_on_Monthly_Invoice_NB_menu_item() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		managerpage.clickMonthlyInvoice();
+		managerpage.clickMonthlyInvoiceNB();
 	}
 	
 	@Then("^I should see apimanager Manager Monthly Invoice page header as \"([^\"]*)\"$")
 	public void i_should_see_apimanager_Manager_Monthly_Invoice_page_header_as(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		Assert.assertTrue("Monthly Invoice page did not appear",
-				managerpage.isMonthlyInvoicePageDisplayed(arg1));
+		Assert.assertTrue("Monthly Invoice page did not appear", managerpage.isMonthlyInvoicePageDisplayed(arg1));
 	}
 	
 	@When("^I select \"([^\"]*)\" as Monthly Invoice Year$")
@@ -242,8 +241,7 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 	
 
 	@When("^I select \"([^\"]*)\" as the Monthly Invoice service provider$")
-	public void i_select_as_the_Monthly_Invoice_service_provider(String arg1)
-			throws Throwable {
+	public void i_select_as_the_Monthly_Invoice_service_provider(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.selectMonthlyInvoiceServiceProvider(arg1);
 	}
