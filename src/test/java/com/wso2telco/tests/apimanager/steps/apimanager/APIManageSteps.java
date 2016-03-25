@@ -537,14 +537,14 @@ public class APIManageSteps extends BasicTestObject {
 	@Then("^I validate \"([^\"]*)\" \"([^\"]*)\" and \"([^\"]*)\" for \"([^\"]*)\" value as \"([^\"]*)\"$")
 	public void i_validate_and_for_value_as(String arg1, String arg2, String arg3, String arg4, String arg5) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		String valueUI = managerpage.getValueInvoice(arg1, arg2, arg3, arg4);
+		String valueUI = managerpage.getNbValueInvoice(arg1, arg2, arg3, arg4);
 		Assert.assertTrue("", managerpage.compareString(valueUI, arg5));
 	}
 
 	@Then("^I validate total amount \"([^\"]*)\" application for \"([^\"]*)\" column value as \"([^\"]*)\"$")
 	public void i_validate_total_amount_application_for_column_value_as(String arg1, String arg2, String arg3) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		String valueUI = managerpage.getTotalAmount(arg1, arg2);
+		String valueUI = managerpage.getNbTotalAmount(arg1, arg2);
 		Assert.assertTrue("", managerpage.compareString(valueUI, arg3));
 	}
 

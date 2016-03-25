@@ -237,6 +237,12 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 		managerpage.clickMonthlyInvoiceNB();
 	}
 	
+	@When("^I click on Monthly Invoice SB menu item$")
+	public void i_click_on_Monthly_Invoice_SB_menu_item() throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.clickMonthlyInvoiceSB();
+	}
+	
 	@Then("^I should see apimanager Manager Monthly Invoice page header as \"([^\"]*)\"$")
 	public void i_should_see_apimanager_Manager_Monthly_Invoice_page_header_as(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
