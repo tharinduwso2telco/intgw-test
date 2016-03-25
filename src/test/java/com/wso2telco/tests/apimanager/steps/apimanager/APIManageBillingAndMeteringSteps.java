@@ -225,10 +225,10 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 		managerpage.selectOperatorAPITrafficAPI(arg1);
 	}
 	
-	@Then("^I should see the generated Operator API Traffic pie chart for \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" parameters$")
-	public void i_should_see_the_generated_Operator_API_Traffic_pie_chart_for_parameters(String arg1, String arg2, String arg3) throws Throwable {
+	@Then("^I should see the generated Operator API Traffic pie chart for \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" parameters$")
+	public void i_should_see_the_generated_Operator_API_Traffic_pie_chart_for_parameters(String arg1, String arg2, String arg3, String arg4, String arg5) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		Assert.assertTrue("Pie chart numbers mismatched with DB values", managerpage.isPieChartOperatorAPITraffic(arg1, arg2, arg3));
+		Assert.assertTrue("Pie chart numbers mismatched with DB values", managerpage.isPieChartOperatorAPITraffic(arg1, arg2, arg3, arg4, arg5));
 	}
 	
 	@When("^I click on Monthly Invoice menu item$")
@@ -269,9 +269,8 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 	    // Write code here that turns the phrase above into concrete actions
 	}
 	
-
-	@When("^I click on Revenue Breakdown menu item$")
-	public void i_click_on_Revenue_Breakdown_menu_item() throws Throwable {
+	@When("^I click on Revenue Breakdown SB menu item$")
+	public void i_click_on_Revenue_Breakdown_SB_menu_item() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.clickOnRvenueBreakdown();
 	}
@@ -315,9 +314,10 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 		managerpage.selectRevenueBreakdownApplication(arg1);
 	}
 	
-	@Then("^I should see the generated pie chart of Revenue Breakdown$")
-	public void i_should_see_the_generated_pie_chart_of_Revenue_Breakdown() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
+	@Then("^I should see the generated pie chart of Revenue Breakdown for \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" parameters$")
+	public void i_should_see_the_generated_pie_chart_of_Revenue_Breakdown_for_parameters(String arg1, String arg2, String arg3, String arg4) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Pie chart numbers mismatched with DB values", managerpage.isPieGraphTotalAPITraffic(arg1, arg2, arg3, arg4));
 	}
 	
 	@When("^I click on Customer Care Reports menu item$")
@@ -376,11 +376,11 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 		managerpage.selectCustomerCareApplication(arg1);
 	}
 	
-	@When("^I prepare the OPERATOR_API_TRAFFIC query using \"([^\"]*)\" \"([^\"]*)\" and \"([^\"]*)\" parameters$")
-	public void i_prepare_the_OPERATOR_API_TRAFFIC_query_using_and_parameters(String arg1, String arg2, String arg3) throws Throwable {
+	@When("^I prepare the OPERATOR_API_TRAFFIC query using \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" and \"([^\"]*)\" parameters$")
+	public void i_prepare_the_OPERATOR_API_TRAFFIC_query_using_and_parameters(String arg1, String arg2, String arg3, String arg4, String arg5) throws Throwable {
 		String fromdate = arg1 + " 00:00:00";
 		String toDate = arg2 + " 23:59:59";
-		String operatorApiTraffic = String.format(SQLQuery.OPERATOR_API_TRAFFIC, fromdate, toDate, arg3);
+		String operatorApiTraffic = String.format(SQLQuery.CUSTOMER_CARE, fromdate, toDate, arg3, arg4, arg5);
 		RuntimeQuery runtimeQuery = new RuntimeQuery();
 		runtimeQuery.setRuntimeQuery(operatorApiTraffic);  
 	}

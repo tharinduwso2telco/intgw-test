@@ -24,7 +24,7 @@ And I select "<serviceProvider>" as the Operator API Traffic service provider
 And I select "<application>" as Operator API Traffic application
 And I select "<API>" as Operator API Traffic API
 And I click on generate button
-Then I should see the generated Operator API Traffic pie chart for "<fromDate>" "<toDate>" "<serviceProvider>" parameters
+Then I should see the generated Operator API Traffic pie chart for "<fromDate>" "<toDate>" "<serviceProvider>" "<application>" "<API>" parameters
 Examples:
-| usertype|apiTrafficPageHeader|opertorAPITrafficPageHeader|fromDate|toDate|serviceProvider|application|API|
-|LOGOUT   |Total API Traffic|Operator Wise Traffic|2015-11-18|2015-12-23|admin|All|All|
+| usertype|apiTrafficPageHeader|opertorAPITrafficPageHeader|fromDate  |toDate    |serviceProvider|application|API|
+|QA17LOG  |Total API Traffic   |Operator Wise Traffic      |2016-03-01|2016-03-25|AutInvSP1      |AutInvSP1_AutInvSP1_app1|smsmessaging|
