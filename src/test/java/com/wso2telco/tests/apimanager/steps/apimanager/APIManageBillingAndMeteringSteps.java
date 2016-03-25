@@ -364,7 +364,7 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 	public void i_prepare_the_OPERATOR_API_TRAFFIC_query_using_and_parameters(String arg1, String arg2, String arg3, String arg4, String arg5) throws Throwable {
 		String fromdate = arg1 + " 00:00:00";
 		String toDate = arg2 + " 23:59:59";
-		String operatorApiTraffic = String.format(SQLQuery.OPERATOR_API_TRAFFIC, fromdate, toDate, arg3, arg4, arg5);
+		String operatorApiTraffic = String.format(SQLQuery.CUSTOMER_CARE, fromdate, toDate, arg3, arg4, arg5);
 		RuntimeQuery runtimeQuery = new RuntimeQuery();
 		runtimeQuery.setRuntimeQuery(operatorApiTraffic);  
 	}
