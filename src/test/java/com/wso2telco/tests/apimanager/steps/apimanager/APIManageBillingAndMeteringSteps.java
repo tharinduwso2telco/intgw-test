@@ -79,14 +79,21 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 		Assert.assertTrue("Pie chart numbers mismatched with DB values", managerpage.isPieGraphTotalAPITraffic(arg1, arg2, arg3, arg4));
 	}
 	
-	@When("^I click on Transaction log menu item$")
-	public void i_click_on_Transaction_log_menu_item() throws Throwable {
+	
+	@When("^I click on Transaction log SB menu item$")
+	public void i_click_on_Transaction_log_SB_menu_item() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.clickOnTransactionLog();
 	}
 	
-	@Then("^I should see apimanager Manager Transaction Log page header as \"([^\"]*)\"$")
-	public void i_should_see_apimanager_Manager_Transaction_Log_page_header_as(String arg1) throws Throwable {
+	@Then("^I should see apimanager Manager Transaction LogSB page header as \"([^\"]*)\"$")
+	public void i_should_see_apimanager_Manager_Transaction_LogSB_page_header_as(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Transaction Log page did not appear", managerpage.isTransactionLogPageDisplayed(arg1));
+	}
+	
+	@Then("^I should see apimanager Manager Transaction LogNB page header as \"([^\"]*)\"$")
+	public void i_should_see_apimanager_Manager_Transaction_LogNB_page_header_as(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		Assert.assertTrue("Transaction Log page did not appear", managerpage.isTransactionLogPageDisplayed(arg1));
 	}
@@ -98,11 +105,13 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 		Assert.assertTrue("Checking CSV file exists", managerpage.isCSVFileExists(csvFilePath));
 	}
 	
+	
 	@When("^I enter \"([^\"]*)\" as Transaction Log from date$")
 	public void i_enter_as_Transaction_Log_from_date(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.enterTransactionLogFromDate(arg1);
 	}
+	
 	
 	@When("^I enter \"([^\"]*)\" as Transaction Log to date$")
 	public void i_enter_as_Transaction_Log_to_date(String arg1) throws Throwable {
@@ -110,6 +119,7 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 		managerpage.enterTransactionLogToDate(arg1);
 	}
 
+	
 	@When("^I select \"([^\"]*)\" as Transaction Log operator$")
 	public void i_select_as_Transaction_Log_operator(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
@@ -122,17 +132,17 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 		managerpage.selectTransactionLogServiceProvider(arg1);
 	}
 	
-
-	@When("^I select \"([^\"]*)\" as Transaction Log API$")
-	public void i_select_as_Transaction_Log_API(String arg1) throws Throwable {
+	
+	@When("^I select \"([^\"]*)\" as Transaction Log Operation Type$")
+	public void i_select_as_Transaction_Log_Operation_Type(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		managerpage.selectTransactionLogAPI(arg1);
+		managerpage.selectTransactionLogOperationType(arg1);
 	}
 	
-	@When("^I select \"([^\"]*)\" as Transaction Log Status$")
-	public void i_select_as_Transaction_Log_Status(String arg1) throws Throwable {
+	@When("^I select \"([^\"]*)\" as Transaction Log Records Type$")
+	public void i_select_as_Transaction_Log_Records_Type(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		managerpage.selectTransactionLogStatus(arg1);
+		managerpage.selectTransactionLogRecordsType(arg1);
 	}
 
 	@When("^I click on Download report button$")
@@ -156,6 +166,12 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 		Assert.assertTrue("Transaction log chargeAmount column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "chargeAmount", " Amount"));
 		Assert.assertTrue("Transaction log responseCode column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "responseCode", " Response Code"));
 		Assert.assertTrue("Transaction log purchaseCategoryCode column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "purchaseCategoryCode", " Purchase Category Code"));
+	}
+	
+	@When("^I click on Transaction log NB menu item$")
+	public void i_click_on_Transaction_log_NB_menu_item() throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.clickOnTransactionLogNB();
 	}
 	
 	@When("^I prepare the transaction log query using \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" and \"([^\"]*)\" parameters$")
