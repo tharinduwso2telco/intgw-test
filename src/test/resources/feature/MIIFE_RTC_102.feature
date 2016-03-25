@@ -18,20 +18,30 @@ Then I should see the apimanager Manager Home page header as "Home"
 And I should see apimanager Manager Home Billing Workflow Blacklist Whitelist tabs
 When I click on apimanager Manager page Billing and Metering tab
 Then I should see apimanager Manager Total API Traffic page header as "<apiiTrafficPageHeader>"
-When I click on Transaction log menu item
-Then I should see apimanager Manager Transaction Log page header as "<transactionLogPageHeader>"
+When I click on Transaction log SB menu item
+Then I should see apimanager Manager Transaction LogSB page header as "<transactionLogPageHeader>"
 And I should check transaction log is existing in "<path>" named as "<fileName>" and delete
 When I enter "<fromDate>" as Transaction Log from date
 And I enter "<toDate>" as Transaction Log to date
 And I select "<operator>" as Transaction Log operator
 And I select "<serviceProvider>" as the Transaction Log service provider
-And I select "<API>" as Transaction Log API
-And I select "<status>" as Transaction Log Status
+And I select "<operationType>" as Transaction Log Operation Type
+And I select "<recordsType>" as Transaction Log Records Type
 And I click on Download report button
-And I prepare the transaction log query using "<fromDate>" "<toDate>" "<operator>" and "<API>" parameters
+And I prepare the transaction log query using "<fromDate>" "<toDate>" "<operator>" and "<recordsType>" parameters
 Then I should see downloaded csv sheet with the "<path>" as path , "<fileName>" as the file name and "<excelFileName>" as the excel file name
-
+When I click on Transaction log NB menu item
+Then I should see apimanager Manager Transaction LogNB page header as "<transactionLogPageHeaderNB>"
+And I should check transaction log is existing in "<path>" named as "<nbCSVFileName>" and delete
+When I enter "<fromDate>" as Transaction Log from date
+And I enter "<toDate>" as Transaction Log to date
+And I select "<serviceProvider>" as the Transaction Log service provider
+And I select "<operationType>" as Transaction Log Operation Type
+And I select "<recordsType>" as Transaction Log Records Type
+And I click on Download report button
+And I prepare the transaction log query using "<fromDate>" "<toDate>" "<operator>" and "<recordsType>" parameters
+Then I should see downloaded csv sheet with the "<path>" as path , "<nbCSVFileName>" as the file name and "<excelFileNameNB>" as the excel file name
 
 Examples:
-| usertype|apiiTrafficPageHeader|transactionLogPageHeader|fromDate  |toDate    |operator   |serviceProvider  |API     |status    |path                        |fileName                                       |excelFileName					   |
-|LOGOUT   |Total API Traffic	|Transaction Log		 |2015-12-08|2016-03-04| DIALOG    |admin            |payment |Successful|C:/Users/AUX-026/Downloads/ |2015-12-08-2016-03-04-admin-DIALOG-payment.csv |AuxLogoutUser-DIALOG-AuxAppTest.xlsx|
+| usertype|apiiTrafficPageHeader|transactionLogPageHeader|transactionLogPageHeaderNB|fromDate  |toDate    |operator   |serviceProvider  |operationType     |recordsType    |path                        |fileName                                       |excelFileName					   |nbCSVFileName|excelFileNameNB|
+|QA17LOG|Total API Traffic	|Transaction Log		 |Transaction Log - Northbound|2015-12-08|2016-03-04| DIALOG    |admin                |Charge           |Success Responses|C:/Users/Suji/Downloads/ |2015-12-08-2016-03-04-admin-DIALOG-100.csv |AuxLogoutUser-DIALOG-AuxAppTest.xlsx|2015-12-08-2016-03-04-admin-__ALL__-100.csv|asd.xlsx|
