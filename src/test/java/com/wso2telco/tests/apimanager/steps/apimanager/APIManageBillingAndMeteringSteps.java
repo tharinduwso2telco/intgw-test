@@ -4,9 +4,9 @@ import org.junit.Assert;
 
 import com.wso2telco.apimanager.pageobjects.apihome.manager.ManagerPage;
 import com.wso2telco.apimanager.pageobjects.db.queries.SQLQuery;
+import com.wso2telco.test.framework.tools.excelfile.ExcelFileReader;
 import com.wso2telco.tests.apimanager.base.BasicTestObject;
-
-import com.wso2telco.tests.util.data.RuntimeQuery;
+import com.wso2telco.tests.util.data.RuntimeData;
 
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -105,6 +105,15 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 		Assert.assertTrue("Checking CSV file exists", managerpage.isCSVFileExists(csvFilePath));
 	}
 	
+	@Then("^I should check Monthly invoice is existing in \"([^\"]*)\" named as \"([^\"]*)\" and \"([^\"]*)\" and delete$")
+	public void i_should_check_Monthly_invoice_is_existing_in_named_as_and_and_delete(String arg1, String arg2, String arg3) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		String csvFilelPath = arg1 + arg2;
+		String xlsxFilelPath = arg1 + arg3;
+		Assert.assertTrue("Checking and deleting existing CSV file", managerpage.isCSVFileExists(csvFilelPath));
+		Assert.assertTrue("Checking and deleting existing xlsx file", managerpage.isCSVFileExists(xlsxFilelPath));
+	}
+	
 	
 	@When("^I enter \"([^\"]*)\" as Transaction Log from date$")
 	public void i_enter_as_Transaction_Log_from_date(String arg1) throws Throwable {
@@ -154,10 +163,10 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 	@Then("^I should see downloaded csv sheet with the \"([^\"]*)\" as path , \"([^\"]*)\" as the file name and \"([^\"]*)\" as the excel file name$")
 	public void i_should_see_downloaded_csv_sheet_with_the_as_path_as_the_file_name_and_as_the_excel_file_name(String arg1, String arg2, String arg3) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		String excelFileName = arg1 + arg3;
-		RuntimeQuery runtimeQuery = new RuntimeQuery();
-		String transactionLogQuery = runtimeQuery.getRuntimeQuery();
 		managerpage.converCSVToXlsx(arg1, arg2, arg3);
+		String excelFileName = arg1 + arg3;
+		RuntimeData runtimeQuery = new RuntimeData();
+		String transactionLogQuery = runtimeQuery.getRuntimeQuery();
 		Assert.assertTrue("Transaction log time column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "time", "Date & Time"));
 		Assert.assertTrue("Transaction log userId column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "userId", " Identifier - Service Provider"));
 		Assert.assertTrue("Transaction log operatorId column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "operatorId", " Operator Identifier"));
@@ -177,7 +186,7 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 	@When("^I prepare the transaction log query using \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" and \"([^\"]*)\" parameters$")
 	public void i_prepare_the_transaction_log_query_using_and_parameters(String arg1, String arg2, String arg3, String arg4) throws Throwable {
 		String transactionQuery = String.format(SQLQuery.TRANSACTION_LOG, arg1, arg2, arg3, arg4);
-		RuntimeQuery runtimeQuery = new RuntimeQuery();
+		RuntimeData runtimeQuery = new RuntimeData();
 		runtimeQuery.setRuntimeQuery(transactionQuery);
 	}
 
@@ -385,14 +394,14 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 		String fromdate = arg1 + " 00:00:00";
 		String toDate = arg2 + " 23:59:59";
 		String operatorApiTraffic = String.format(SQLQuery.CUSTOMER_CARE, fromdate, toDate, arg3, arg4, arg5);
-		RuntimeQuery runtimeQuery = new RuntimeQuery();
+		RuntimeData runtimeQuery = new RuntimeData();
 		runtimeQuery.setRuntimeQuery(operatorApiTraffic);  
 	}
 	
 	@Then("^I should see the generated Customer Care Report$")
 	public void i_should_see_the_generated_Customer_Care_Report() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		RuntimeQuery runTimeQuery = new RuntimeQuery();
+		RuntimeData runTimeQuery = new RuntimeData();
 		String queryRes = runTimeQuery.getRuntimeQuery();
 		Assert.assertTrue("Customer care 'Date' column mismatched", managerpage.isCustomerCareReport(queryRes, "Date", "time"));
 		Assert.assertTrue("Customer care 'Json Body' column mismatched", managerpage.isCustomerCareReport(queryRes, "Json Body", "jsonBody"));
@@ -515,11 +524,30 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 	public void i_click_on_Monthly_Invoice_Download_report_button() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.clickOnMonthlyInvoiceDownloadReport();
+		Thread.sleep(sleepTime);
+	}
+	
+	@When("^I convert \"([^\"]*)\" to \"([^\"]*)\" from \"([^\"]*)\" location$")
+	public void i_convert_to_from_location(String arg1, String arg2, String arg3) throws Throwable {
+		String excelPath = arg3 + arg2;
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.converCSVToXlsx(arg3, arg1, arg2);
+		Thread.sleep(sleepTime);
+		ExcelFileReader excelFileReader = new ExcelFileReader(excelPath, "sheet1");
+		excelFileReader.removeEmptyRow("sheet1");
+		RuntimeData runtimedata = new RuntimeData();
+		runtimedata.setNbDownloadExcel(excelPath);
 	}
 
-	@Then("^I should see the downloaded report of Monthly Invoice$")
-	public void i_should_see_the_downloaded_report_of_Monthly_Invoice() throws Throwable {
-	    //validate report code
+	@Then("^I validate \"([^\"]*)\" \"([^\"]*)\" and \"([^\"]*)\" for \"([^\"]*)\" column with the repective value from downloaded file$")
+	public void i_validate_and_for_column_with_the_repective_value_from_downloaded_file(String arg1, String arg2, String arg3, String arg4) throws Throwable {
+		RuntimeData runtimedata = new RuntimeData();
+		String excelFile = runtimedata.getNbDownloadExcel();
+		ManagerPage managerpage = new ManagerPage(driver);
+		String valueUI = managerpage.getNbValueInvoice(arg1, arg2, arg3, arg4);
+		String excelColumnName = runtimedata.convertNBExcelColumnName(arg4);
+		String excelValue = managerpage.getValueFromNBExcel(arg1, arg2, arg3, excelColumnName, excelFile);
+		Assert.assertTrue(arg4 + " column Generated UI value - " + valueUI + " , Excel sheet value - " + excelValue, managerpage.compareString(valueUI, excelValue));
 	}
 	
 	@Then("^I should see the refunds are accurately reflected on reports of Monthly Invoice$")

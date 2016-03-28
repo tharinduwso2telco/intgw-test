@@ -34,6 +34,16 @@ And I select "<serviceProvider>" as the Monthly Invoice service provider
 And I click on generate button
 Then I validate "AutInvSP3_AutInvSP3_app1" "payment" and "Charge" for "Usage Charge" value as "Rs 32.00"
 And I validate total amount "AutInvSP3_AutInvSP3_app1" application for "Usage Charge" column value as "Rs 62.00"
+And I validate "AutInvSP3_AutInvSP3_app2" "smsmessaging" and "Retrive SMS" for "Usage Charge" value as "Rs 0.00"
+And I validate total amount "AutInvSP3_AutInvSP3_app2" application for "Usage Charge" column value as "Rs 10.00"
+And I validate "AutInvSP3_AutInvSP3_app2" "smsmessaging" and "Query SMS Delivery" for "Credit" value as "Rs 0.00"
+And I validate total amount "AutInvSP3_AutInvSP3_app2" application for "Credit" column value as "Rs 0.00"
+And I validate "AutInvSP3_AutInvSP3_app2" "payment" and "Charge" for "Usage Charge" value as "Rs 32.00"
+And I validate total amount "AutInvSP3_AutInvSP3_app2" application for "Usage Charge" column value as "Rs 62.00"
+And I validate "AutInvSP3_AutInvSP3_app2" "payment" and "Refund" for "Usage Charge" value as "Rs 0.00"
+And I validate total amount "AutInvSP3_AutInvSP3_app2" application for "Usage Charge" column value as "Rs 62.00"
+And I validate "AutInvSP3_AutInvSP3_app2" "ussd" and "Send USSD    " for "Usage Charge" value as "Rs 10.00    "
+And I validate total amount "AutInvSP3_AutInvSP3_app2" application for "Usage Charge" column value as "Rs 62.00"
 
 
 Examples:
