@@ -6,7 +6,9 @@ import java.util.Set;
 import org.junit.Assert;
 
 import com.wso2telco.apimanager.pageobjects.apihome.manager.ManagerPage;
+import com.wso2telco.apimanager.pageobjects.db.queries.SQLQuery;
 import com.wso2telco.tests.apimanager.base.BasicTestObject;
+import com.wso2telco.tests.util.data.RuntimeQuery;
 import com.wso2telco.tests.util.data.WhiteListData;
 
 import cucumber.api.java.en.Then;
@@ -566,4 +568,24 @@ public class APIManageSteps extends BasicTestObject {
 		Assert.assertTrue("", managerpage.compareString(valueUI, arg2));
 	}
 
+	@Then("^I should see the updated record in subscription_rates_nb table for \"([^\"]*)\"$")
+	public void i_should_see_the_updated_record_in_subscription_rates_nb_table_for(String arg1) throws Throwable {
+		String subscription_rates_nbQuery = String.format(SQLQuery.SUBSCRIPTION_RATES_NB, arg1);
+		RuntimeQuery runtimeQuery = new RuntimeQuery();
+		ManagerPage managerpage = new ManagerPage(driver);
+		runtimeQuery.setRuntimeQuery(subscription_rates_nbQuery);
+		Assert.assertTrue("subscription_rates_nb table is not updated", managerpage.issubscription_ratestablesUpdated(subscription_rates_nbQuery));
+		
+	}
+
+	@Then("^I should see the updated record in subscription_rates table for \"([^\"]*)\"$")
+	public void i_should_see_the_updated_record_in_subscription_rates_table_for(String arg1) throws Throwable {
+		String subscription_ratesQuery = String.format(SQLQuery.SUBSCRIPTION_RATES, arg1);
+		RuntimeQuery runtimeQuery = new RuntimeQuery();
+		ManagerPage managerpage = new ManagerPage(driver);
+		runtimeQuery.setRuntimeQuery(subscription_ratesQuery);
+		Assert.assertTrue("subscription_rates table is not updated", managerpage.issubscription_ratestablesUpdated(subscription_ratesQuery));
+	}
+
+	
 }
