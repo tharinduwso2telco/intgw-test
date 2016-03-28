@@ -31,4 +31,4 @@ Then I should see the apimanager Manager page username and password text boxes
 
 Examples:
 | usertype|apiTrafficPageHeader|apiResponseTimesPageHeader|fromDate|toDate|operator|serviceProvider|application|
-|LOGOUT   |Total API Traffic|API Response Times|2015-11-18|2015-12-23|DIALOG|admin|All|
+|QA17LOG   |Total API Traffic|API Response Times|2015-11-18|2015-12-23|DIALOG|admin|All|
