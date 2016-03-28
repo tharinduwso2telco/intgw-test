@@ -538,6 +538,7 @@ public class APIManageSteps extends BasicTestObject {
 	public void i_validate_and_for_value_as(String arg1, String arg2, String arg3, String arg4, String arg5) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		String valueUI = managerpage.getNbValueInvoice(arg1, arg2, arg3, arg4);
+		//TODO:need to add a comment
 		Assert.assertTrue("", managerpage.compareString(valueUI, arg5));
 	}
 
@@ -545,7 +546,24 @@ public class APIManageSteps extends BasicTestObject {
 	public void i_validate_total_amount_application_for_column_value_as(String arg1, String arg2, String arg3) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		String valueUI = managerpage.getNbTotalAmount(arg1, arg2);
+		//TODO:need to add a comment
 		Assert.assertTrue("", managerpage.compareString(valueUI, arg3));
+	}
+	
+	@Then("^I validate \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" and \"([^\"]*)\" for \"([^\"]*)\" value as \"([^\"]*)\"$")
+	public void i_validate_and_for_value_as(String arg1, String arg2, String arg3, String arg4, String arg5, String arg6) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		String valueUI = managerpage.getSouthboundInvoicValue(arg1, arg2, arg3, arg4, arg5);
+		//TODO:need to add a comment
+		Assert.assertTrue("", managerpage.compareString(valueUI, arg6));
+	}
+
+	@Then("^I validate total amount for \"([^\"]*)\" column value as \"([^\"]*)\"$")
+	public void i_validate_total_amount_for_column_value_as(String arg1, String arg2) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		String valueUI = managerpage.getSouthboundTotalAmount(arg1);
+		//TODO:need to add a comment
+		Assert.assertTrue("", managerpage.compareString(valueUI, arg2));
 	}
 
 }
