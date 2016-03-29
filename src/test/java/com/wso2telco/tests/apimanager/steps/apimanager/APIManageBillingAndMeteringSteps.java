@@ -276,7 +276,13 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 	@When("^I click on Revenue Breakdown SB menu item$")
 	public void i_click_on_Revenue_Breakdown_SB_menu_item() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		managerpage.clickOnRvenueBreakdown();
+		managerpage.clickOnRvenueBreakdownSB();
+	}
+	
+	@When("^I click on Revenue Breakdown NB menu item$")
+	public void i_click_on_Revenue_Breakdown_NB_menu_item() throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.clickOnRvenueBreakdownNB();
 	}
 	
 	@Then("^I should see apimanager Manager Revenue Breakdown page header as \"([^\"]*)\"$")
@@ -318,10 +324,10 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 		managerpage.selectRevenueBreakdownApplication(arg1);
 	}
 	
-	@Then("^I should see the generated pie chart of Revenue Breakdown for \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" parameters$")
-	public void i_should_see_the_generated_pie_chart_of_Revenue_Breakdown_for_parameters(String arg1, String arg2, String arg3, String arg4) throws Throwable {
+	@Then("^I should see the generated pie chart of Revenue Breakdown for \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" parameters$")
+	public void i_should_see_the_generated_pie_chart_of_Revenue_Breakdown_for_parameters(String arg1, String arg2, String arg3, String arg4, String arg5) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		Assert.assertTrue("Pie chart numbers mismatched with DB values", managerpage.isPieGraphTotalAPITraffic(arg1, arg2, arg3, arg4));
+		Assert.assertTrue("Pie chart numbers mismatched with DB values", managerpage.isPieGraphRevenueBreakdownSB(arg1, arg2, arg3, arg4, arg5));
 	}
 	
 	@When("^I click on Customer Care Reports menu item$")
