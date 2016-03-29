@@ -2,7 +2,7 @@ Feature: Validate Monthly Invoice
 
 
 @Smoke
-Scenario Outline: Check if Monthly Invoice is loaded with data accurately based on different charge type
+Scenario Outline: Check if the data on the downloaded report and the report loaded on the UI are same on Monthly Invoice NB
 Given I am in apimanager
 When I click on apimanager login
 Then I should see the apimanager "Login" pop up
@@ -17,21 +17,17 @@ Then I should see the apimanager Manager Home page header as "Home"
 And I should see apimanager Manager Home Billing Workflow Blacklist Whitelist tabs
 When I click on apimanager Manager page Billing and Metering tab
 Then I should see apimanager Manager Total API Traffic page header as "<apiTrafficPageHeader>"
-When I click on Monthly Invoice menu item
+When I click on Monthly Invoice NB menu item
 Then I should see apimanager Manager Monthly Invoice page header as "<monthlyInvoicePageHeader>"
+And I should check Monthly invoice is existing in "<filePath>" named as "<csvFile>" and "<excelFileName>" and delete
 When I select "<year>" as Monthly Invoice Year
 And I select "<month>" as Monthly Invoice Month
 And I select "<serviceProvider>" as the Monthly Invoice service provider
 And I click on generate button
-#validate graphs
-Then I should see the generated Billing Summary of Monthly Invoice
 When I click on Monthly Invoice Download report button
-#validate downloaded report
-Then I should see the downloaded report of Monthly Invoice
-#validate report and graph
-
-
+And I convert "<csvFile>" to "<excelFileName>" from "<filePath>" location
+Then I validate "AutInvSP3_AutInvSP3_app1" "payment" and "Charge" for "Usage Charge" column with the repective value from downloaded file
 
 Examples:
-| usertype|apiTrafficPageHeader|monthlyInvoicePageHeader|year|month|serviceProvider|
-|LOGOUT   |Total API Traffic|Monthly Invoice|2015|November|admin|
+| usertype|apiTrafficPageHeader|monthlyInvoicePageHeader    |year|month|serviceProvider|csvFile				 |excelFileName				|filePath				 	 |
+|QA17LOG  |Total API Traffic   |Monthly Invoice - Northbound|2016|March|AutInvSP3      |AutInvSP3-2016-3.csv |AutInvSP3-2016-3CVT.xlsx  |C:/Users/AUX-026/Downloads/ |
