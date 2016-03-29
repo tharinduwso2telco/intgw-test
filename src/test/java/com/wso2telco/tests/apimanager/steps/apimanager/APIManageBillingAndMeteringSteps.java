@@ -634,5 +634,10 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 		Assert.assertTrue("TPS Summary is not showed.", managerpage.isReportAccessing(arg1));
 	}
 
-
+	@Then("^I should see Monthly Invoice menu item only for SB$")
+	public void i_should_see_Monthly_Invoice_menu_item_only_for_SB() throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Monthly invoice SB is not showed",managerpage.isMonthlyInvoiceSBShowed());
+		Assert.assertTrue("Monthly invoice NB is showed",managerpage.isMonthlyInvoiceNBShowed());
+	}
 }
