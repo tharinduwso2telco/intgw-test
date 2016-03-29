@@ -26,7 +26,7 @@ And I select "<serviceProvider>" as the Monthly Invoice service provider
 And I click on generate button
 When I click on Monthly Invoice Download report button
 And I convert "<csvFile>" to "<excelFileName>" from "<filePath>" location
-Then I validate "AutInvSP3_AutInvSP3_app1" "payment" and "Charge" for "Usage Charge" column with the repective value from downloaded file
+Then I validate "AutInvSP3_AutInvSP3_app2" "smsmessaging" and "Send SMS" for "Usage Charge" column with the repective value from downloaded file
 
 Examples:
 | usertype|apiTrafficPageHeader|monthlyInvoicePageHeader    |year|month|serviceProvider|csvFile				 |excelFileName				|filePath				 	 |

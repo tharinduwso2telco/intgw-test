@@ -574,7 +574,7 @@ public class APIManageSteps extends BasicTestObject {
 		RuntimeData runtimeQuery = new RuntimeData();
 		ManagerPage managerpage = new ManagerPage(driver);
 		runtimeQuery.setRuntimeQuery(subscription_rates_nbQuery);
-		Assert.assertTrue("subscription_rates_nb table is not updated", managerpage.issubscription_ratestablesUpdated(subscription_rates_nbQuery));
+		Assert.assertTrue("subscription_rates_nb table is not updated", managerpage.isSubscriptionRatesTablesUpdated(subscription_rates_nbQuery));
 		
 	}
 
@@ -584,7 +584,7 @@ public class APIManageSteps extends BasicTestObject {
 		RuntimeData runtimeQuery = new RuntimeData();
 		ManagerPage managerpage = new ManagerPage(driver);
 		runtimeQuery.setRuntimeQuery(subscription_ratesQuery);
-		Assert.assertTrue("subscription_rates table is not updated", managerpage.issubscription_ratestablesUpdated(subscription_ratesQuery));
+		Assert.assertTrue("subscription_rates table is not updated", managerpage.isSubscriptionRatesTablesUpdated(subscription_ratesQuery));
 	}
 
 	

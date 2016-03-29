@@ -535,6 +535,7 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 		Thread.sleep(sleepTime);
 		ExcelFileReader excelFileReader = new ExcelFileReader(excelPath, "sheet1");
 		excelFileReader.removeEmptyRow("sheet1");
+		Thread.sleep(sleepTime);
 		RuntimeData runtimedata = new RuntimeData();
 		runtimedata.setNbDownloadExcel(excelPath);
 	}
@@ -545,9 +546,12 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 		String excelFile = runtimedata.getNbDownloadExcel();
 		ManagerPage managerpage = new ManagerPage(driver);
 		String valueUI = managerpage.getNbValueInvoice(arg1, arg2, arg3, arg4);
+		Thread.sleep(sleepTime);
 		String excelColumnName = runtimedata.convertNBExcelColumnName(arg4);
 		String excelValue = managerpage.getValueFromNBExcel(arg1, arg2, arg3, excelColumnName, excelFile);
-		Assert.assertTrue(arg4 + " column Generated UI value - " + valueUI + " , Excel sheet value - " + excelValue, managerpage.compareString(valueUI, excelValue));
+		String uiValueOnlyString = managerpage.removeCurrencyType(valueUI);
+		Thread.sleep(sleepTime);
+		Assert.assertTrue(arg4 + " column Generated UI value - " + valueUI + " , Excel sheet value - " + excelValue, managerpage.isValidateNumbers(uiValueOnlyString, excelValue));
 	}
 	
 	@Then("^I should see the refunds are accurately reflected on reports of Monthly Invoice$")
