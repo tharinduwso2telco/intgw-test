@@ -21,11 +21,9 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 	}
 
 	@Then("^I should see apimanager Manager Total API Traffic page header as \"([^\"]*)\"$")
-	public void i_should_see_apimanager_Manager_Total_API_Traffic_page_header_as(
-			String arg1) throws Throwable {
+	public void i_should_see_apimanager_Manager_Total_API_Traffic_page_header_as(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		Assert.assertTrue("Total API traffic page did not appear",
-				managerpage.isTotalAPITrafficPageDisplayed(arg1));
+		Assert.assertTrue("Total API traffic page did not appear", managerpage.isTotalAPITrafficPageDisplayed(arg1));
 	}
 
 	@When("^I enter \"([^\"]*)\" as Total API Traffic from date$")
@@ -348,28 +346,24 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 	@Then("^I should see apimanager Manager Customer Care Reports page header as \"([^\"]*)\"$")
 	public void i_should_see_apimanager_Manager_Customer_Care_Reports_page_header_as(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		Assert.assertTrue("Customer care page did not appear",
-				managerpage.isCustomerCarePageDisplayed(arg1));
+		Assert.assertTrue("Customer care page did not appear", managerpage.isCustomerCarePageDisplayed(arg1));
 	}
 	
 
 	@When("^I enter \"([^\"]*)\" as Customer Care Reports from date$")
-	public void i_enter_as_Customer_Care_Reports_from_date(String arg1)
-			throws Throwable {
+	public void i_enter_as_Customer_Care_Reports_from_date(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.enterCustomerCareFromDate(arg1);
 	}
 
 	@When("^I enter \"([^\"]*)\" as Customer Care Reports to date$")
-	public void i_enter_as_Customer_Care_Reports_to_date(String arg1)
-			throws Throwable {
+	public void i_enter_as_Customer_Care_Reports_to_date(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.enterCustomerCareToDate(arg1);
 	}
 
 	@When("^I enter \"([^\"]*)\" as Customer Care Reports MSISDN$")
-	public void i_enter_as_Customer_Care_Reports_MSISDN(String arg1)
-			throws Throwable {
+	public void i_enter_as_Customer_Care_Reports_MSISDN(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.enterCustomerCareMSISDN(arg1);
 	}
@@ -423,8 +417,7 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 	@Then("^I should see apimanager Manager API Response Times page header as \"([^\"]*)\"$")
 	public void i_should_see_apimanager_Manager_API_Response_Times_page_header_as(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		Assert.assertTrue("API Response time page did not appear",
-				managerpage.isAPIResponseTimePageDisplayed(arg1));
+		Assert.assertTrue("API Response time page did not appear", managerpage.isAPIResponseTimePageDisplayed(arg1));
 	}
 	
 	@When("^I enter \"([^\"]*)\" as API Response Times from date$")
@@ -461,12 +454,6 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 	public void i_click_on_API_Response_Times_generate_button() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.clickOnAPIResponseTimeGenerate();
-	}
-	
-	@Then("^I should see the generated API Response Times graphs$")
-	public void i_should_see_the_generated_API_Response_Times_graphs() throws Throwable {
-		Thread.sleep(sleepTime);
-	    // Write code here that turns the phrase above into concrete actions
 	}
 
 	@When("^I click on Performance Error Rates menu item$")
@@ -543,26 +530,34 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 		excelFileReader.removeEmptyRow("sheet1");
 		Thread.sleep(sleepTime);
 		RuntimeData runtimedata = new RuntimeData();
-		runtimedata.setNbDownloadExcel(excelPath);
+		runtimedata.setDownloadExcel(excelPath);
 	}
 
 	@Then("^I validate \"([^\"]*)\" \"([^\"]*)\" and \"([^\"]*)\" for \"([^\"]*)\" column with the repective value from downloaded file$")
 	public void i_validate_and_for_column_with_the_repective_value_from_downloaded_file(String arg1, String arg2, String arg3, String arg4) throws Throwable {
 		RuntimeData runtimedata = new RuntimeData();
-		String excelFile = runtimedata.getNbDownloadExcel();
+		String excelFile = runtimedata.getDownloadExcel();
 		ManagerPage managerpage = new ManagerPage(driver);
 		String valueUI = managerpage.getNbValueInvoice(arg1, arg2, arg3, arg4);
 		Thread.sleep(sleepTime);
-		String excelColumnName = runtimedata.convertNBExcelColumnName(arg4);
+		String excelColumnName = runtimedata.convertExcelColumnName(arg4);
 		String excelValue = managerpage.getValueFromNBExcel(arg1, arg2, arg3, excelColumnName, excelFile);
 		String uiValueOnlyString = managerpage.removeCurrencyType(valueUI);
 		Thread.sleep(sleepTime);
 		Assert.assertTrue(arg4 + " column Generated UI value - " + valueUI + " , Excel sheet value - " + excelValue, managerpage.isValidateNumbers(uiValueOnlyString, excelValue));
 	}
 	
-	@Then("^I should see the refunds are accurately reflected on reports of Monthly Invoice$")
-	public void i_should_see_the_refunds_are_accurately_reflected_on_reports_of_Monthly_Invoice() throws Throwable {
-	    // validate refunds on reports
+	@Then("^I validate \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" and \"([^\"]*)\" for \"([^\"]*)\" column with the repective value from downloaded file$")
+	public void i_validate_and_for_column_with_the_repective_value_from_downloaded_file(String arg1, String arg2, String arg3, String arg4, String arg5) throws Throwable {
+		RuntimeData runtimedata = new RuntimeData();
+		String excelFile = runtimedata.getDownloadExcel();
+		ManagerPage managerpage = new ManagerPage(driver);
+		String valueUI = managerpage.getSouthboundInvoicValue(arg1, arg2, arg3, arg4, arg5);
+		Thread.sleep(sleepTime);
+		String excelColumnName = runtimedata.convertExcelColumnName(arg5);
+		String excelValue = managerpage.getValueFromSBExcel(arg1, arg2, arg3, arg4, excelColumnName, excelFile);
+		String uiValueOnlyString = managerpage.removeCurrencyType(valueUI);
+		Assert.assertTrue(arg4 + " column Generated UI value - " + valueUI + " , Excel sheet value - " + excelValue, managerpage.isValidateNumbers(uiValueOnlyString, excelValue));
 	}
 	
 	@When("^I copy the current URL and access it from a new browser$")
