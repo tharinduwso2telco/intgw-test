@@ -29,9 +29,9 @@ Then I should see apimanager Manager Total API Traffic page header as "<apiTraff
 And I should see Monthly Invoice menu item only for SB
 When I click on Monthly Invoice SB menu item
 Then I should see apimanager Manager Monthly Invoice page header as "<monthlyInvoicePageHeader>"
-When I select "<year>" as Monthly Invoice Year
-And I select "<month>" as Monthly Invoice Month
-And I select "<serviceProvider>" as the Monthly Invoice service provider
+#When I select "<year>" as Monthly Invoice Year
+#And I select "<month>" as Monthly Invoice Month
+#And I select "<serviceProvider>" as the Monthly Invoice service provider
 When I click on generate button
 Then I validate "admin_payment_test1" "payment" "DIALOG" and "Charge" for "Usage Charge" value as "Rs 213.60"
 And I validate total amount for "Usage Charge" column value as "Rs 243.60"
