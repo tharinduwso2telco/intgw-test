@@ -1,23 +1,19 @@
 <RateCard>
 	<Operators>
 		<API name="SMS">
-			<!-- CONSTANTnon-default categoryANDsubcategory -->
+			<!-- SUBSCRIPTION - non-default categoryANDsubcategory -->
 			<Operation name="200">
 				<Rate>
 					<Name>SM1</Name>
 					<Currency>Rs</Currency>
-					<Value>10</Value>
-					<Type>CONSTANT</Type>
+					<Value>20</Value>
+					<Type>SUBSCRIPTION</Type>
 					<CategoryBase>true</CategoryBase>
-					<Category name="349" rate="12">
-						<SubCategory name="651" rate="100" />
-						<SubCategory name="652" rate="200" />
-						<SubCategory name="653" rate="300" />
+					<Category name="Game" rate="10">
+						<SubCategory name="Game01" rate="10" />
+						<SubCategory name="Game02" rate="20" />
+						<SubCategory name="Game03" rate="30" />
 					</Category>
-					<Taxes>
-						<Tax>VAT</Tax>
-						<Tax>ABC</Tax>
-					</Taxes>
 				</Rate>
 			</Operation>
 			<!-- CONSTANT-default -->

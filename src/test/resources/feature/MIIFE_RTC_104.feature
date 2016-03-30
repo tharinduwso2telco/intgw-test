@@ -1,5 +1,7 @@
 Feature: Validate Monthly Invoice
 
+# TC covering by this TC - MIIFE_RTC_105, MIIFE_RTC_116, MIIFE_RTC_117, MIIFE_RTC_118, MIIFE_RTC_119, MIIFE_RTC_122, MIIFE_RTC_144, MIIFE_RTC_145, MIIFE_RTC_146
+
 @Smoke
 Scenario Outline: Check if Monthly Invoice Northbound is loaded with data accurately based on different charge type
 Given I am in apimanger carbon login page
