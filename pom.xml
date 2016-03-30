@@ -110,8 +110,8 @@
 </dependency>
 
     <dependency>
-        <groupId>com.wso2telco.mobileconnect.pageobjects</groupId>
-        <artifactId>mobile-connect-pageobjects</artifactId>
+        <groupId>com.wso2telco.apimanager.pageobjects</groupId>
+        <artifactId>api-manager-pageobjects</artifactId>
         <version>1.0-SNAPSHOT</version>
     </dependency>
     
