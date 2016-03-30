@@ -55,6 +55,3 @@ Examples:
 |usertype  |
 |AGGRIGATOR|
 
-
-#H line 53 please check error message, ideally user should be able to logged in.
-#J cannot login to sandbox
