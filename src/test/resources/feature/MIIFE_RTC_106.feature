@@ -1,5 +1,7 @@
 Feature: Validate Revenue Breakdown
 
+# TC covering by this TC - MIIFE_RTC_122
+
 @Smoke
 Scenario Outline: Check if Revenue Breakdown SB is loaded with data accurately
 Given I am in apimanager
