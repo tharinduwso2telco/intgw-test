@@ -24,12 +24,14 @@ And I select "<operator>" as Revenue Breakdown operator
 And I select "<serviceProvider>" as the Revenue Breakdown service provider
 And I select "<application>" as Revenue Breakdown Application
 And I click on generate button
-Then I should see the generated pie chart of Revenue Breakdown for "<year>" "<month>" "<operator>" "<serviceProvider>" "<application>" parameters
+Then I should see "smsmessaging" api count as "30.0" 
+And I should see "location" api count as "0.0"
+And I should see "payment" api count as "213.6"
 
 
 Examples:
-| usertype|year|month|serviceProvider|operator|application|apiTrafficPageHeader|revenueBreakdownSBPageHeader|
-|QA17LOG   |2016|March|admin|DIALOG|All|Total API Traffic|Revenue Breakdown - Southbound|
+| usertype |year|month  |serviceProvider|operator|application|apiTrafficPageHeader|revenueBreakdownSBPageHeader|
+|QA17LOG   |2016|January|All          |DIALOG|All|Total API Traffic|Revenue Breakdown - Southbound|
 
 
 @Smoke
@@ -56,7 +58,9 @@ And I select "<operator>" as Revenue Breakdown operator
 And I select "<serviceProvider>" as the Revenue Breakdown service provider
 And I select "<application>" as Revenue Breakdown Application
 And I click on generate button
-Then I should see the generated pie chart of Revenue Breakdown for "<year>" "<month>" "<operator>" "<serviceProvider>" "<application>" parameters
+Then I should see "smsmessaging" api count as "30.0" 
+And I should see "location" api count as "0.0"
+And I should see "payment" api count as "213.6"
 
 
 Examples:
