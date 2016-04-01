@@ -209,6 +209,8 @@ public class APISandBoxSteps extends BasicTestObject {
 	public void i_enter_as_tax_amount(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
 		sandbox.enterTaxAmount(arg1);
+		SandBoxValues sandboxValues = new SandBoxValues();
+		sandboxValues.setTaxAmount(arg1);
 	}
 	
 	@When("^I click on send request button in payment parameters page$")
@@ -221,7 +223,7 @@ public class APISandBoxSteps extends BasicTestObject {
 	public void i_get_the_request_payload() throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
 		SandBoxValues sandboxValues = new SandBoxValues();
-		sandboxValues.setRequestPayload(sandbox.getRequestPayload());
+		sandboxValues.setRequestPayload(sandbox.getRequestPayloadUI());
 	}
 
 	@When("^I get the response payload$")
@@ -251,4 +253,64 @@ public class APISandBoxSteps extends BasicTestObject {
 		Assert.assertTrue("Amount is not loaded in response", sandbox.isAmountAvailableInResponse(amount));
 	}
 
+
+	@When("^I should see the \"([^\"]*)\" value as the total of amount and tax amount in response payload$")
+	public void i_should_see_the_value_as_the_total_of_amount_and_tax_amount_in_response_payload(String arg1) throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues sandboxValues = new SandBoxValues();
+		double amount = Double.parseDouble(sandboxValues.getAmount());
+		double tax = Double.parseDouble(sandboxValues.getTaxAmount());
+		double total = amount + tax;
+		System.out.println(total);
+		String responsePayload = sandboxValues.getResponsePayload();
+		sandbox.getValueFromJson(arg1, responsePayload);
+		// valiadate
+	}
+	
+	@When("^I select refund the user menu item$")
+	public void i_select_refund_the_user_menu_item() throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		sandbox.clickOnRefundUser();
+	}
+	
+	@Then("^I should see refund page header as \"([^\"]*)\"$")
+	public void i_should_see_refund_page_header_as(String arg1) throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		Assert.assertTrue("Refund the user page did not load properly", sandbox.isRefundUser(arg1));
+	}
+	
+	@When("^I enter \"([^\"]*)\" as call back data$")
+	public void i_enter_as_call_back_data(String arg1) throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		sandbox.enterCallBackData(arg1);
+	}
+	
+	@When("^I enter \"([^\"]*)\" as request code$")
+	public void i_enter_as_request_code(String arg1) throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		sandbox.enterCode(arg1);
+	}
+	
+	@When("^I enter \"([^\"]*)\" as mandateID$")
+	public void i_enter_as_mandateID(String arg1) throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		sandbox.enterMandateId(arg1);
+	}
+	
+	@When("^I enter \"([^\"]*)\" as notification format$")
+	public void i_enter_as_notification_format(String arg1) throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		sandbox.enterNotificationFormat(arg1);
+	}
+	
+	@When("^I enter \"([^\"]*)\" as on behalf of$")
+	public void i_enter_as_on_behalf_of(String arg1) throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		sandbox.enterOnBehalfOf(arg1);
+	}
+	
+	@When("^I enter original server reference code$")
+	public void i_enter_original_server_reference_code() throws Throwable {
+	    
+	}
 }

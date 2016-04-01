@@ -14,9 +14,19 @@ public class SandBoxValues implements Serializable {
 	
 	private static String amount;
 	
+	private static String taxAmount;
+
 	private static String requestPayload;
 	
 	private static String responsePayload;
+	
+	public String getTaxAmount() {
+		return taxAmount;
+	}
+
+	public void setTaxAmount(String taxAmount) {
+		SandBoxValues.taxAmount = taxAmount;
+	}
 
 	public String getResponsePayload() {
 		return responsePayload;
