@@ -1,6 +1,5 @@
 Feature: Sign Up Validation 
 
-#Background:
 @Smoke
 Scenario Outline: Check if users can self register on the API Store
 Given I am in identity server page
@@ -25,7 +24,6 @@ And I enter apimanager Sign-up for a new account Email as "<Email>"
 And I click on apimanager Sign-up for a new account submit button 
 Then I should see the apimanager Sign-up for a new account success pop up with "User added successfully. You can now sign into the API store using the new user account".
 When I click on apimanager Sign-up for a new account success pop up ok button
-#And I click on apimanager login
 Then I should see the apimanager "Login" pop up
 When I enter apimanager Login username and password for "<usertype>" 
 And I click on apimanager Login pop up login button

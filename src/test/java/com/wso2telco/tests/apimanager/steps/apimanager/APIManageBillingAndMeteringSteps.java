@@ -330,13 +330,7 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.selectRevenueBreakdownApplication(arg1);
 	}
-	
-	@Then("^I should see the generated pie chart of Revenue Breakdown for \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" parameters$")
-	public void i_should_see_the_generated_pie_chart_of_Revenue_Breakdown_for_parameters(String arg1, String arg2, String arg3, String arg4, String arg5) throws Throwable {
-		ManagerPage managerpage = new ManagerPage(driver);
-		Assert.assertTrue("Pie chart numbers mismatched with DB values", managerpage.isPieGraphRevenueBreakdownSB(arg1, arg2, arg3, arg4, arg5));
-	}
-	
+
 	@When("^I click on Customer Care Reports menu item$")
 	public void i_click_on_Customer_Care_Reports_menu_item() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
@@ -638,6 +632,19 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 	public void i_should_see_Monthly_Invoice_menu_item_only_for_SB() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		Assert.assertTrue("Monthly invoice SB is not showed",managerpage.isMonthlyInvoiceSBShowed());
+		Assert.assertTrue("Monthly invoice NB is showed",managerpage.isMonthlyInvoiceNBNotShowed());
+	}
+	
+	@Then("^I should see Monthly Invoice menu item only for NB$")
+	public void i_should_see_Monthly_Invoice_menu_item_only_for_NB() throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Monthly invoice SB is not showed",managerpage.isMonthlyInvoiceSBNotShowed());
 		Assert.assertTrue("Monthly invoice NB is showed",managerpage.isMonthlyInvoiceNBShowed());
+	}
+	
+	@Then("^I should see \"([^\"]*)\" api count as \"([^\"]*)\"$")
+	public void i_should_see_api_count_as(String arg1, String arg2) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Revenue Break down data not loaded accurately",managerpage.isPieGraphRevenueBreakdownSB(arg1, arg2));
 	}
 }

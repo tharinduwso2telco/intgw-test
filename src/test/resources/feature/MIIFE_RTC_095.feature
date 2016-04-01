@@ -23,7 +23,6 @@ And I select Whitelist numbers range radio button
 And I enter "<MinNumber>" as Min Number
 And I enter "<MaxNumber>" as Max Number
 And I click on whitelist Upload Number List button
-#System throwing an error, might need to re-write below step
 Then I should see success pop up message as "<message>"
 And I click on success pop up ok button
 When I click on apimanager Manager page Whitelist tab
