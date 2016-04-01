@@ -40,8 +40,8 @@ And I enter "<taxAmount>" as tax amount
 And I click on send request button in payment parameters page
 And I get the request payload
 And I get the response payload
-Then I should see the request payload containing "amount" as amount
-And I should see the response payload containing "<amount>" as amount
+Then I should see the request payload containing "amount" 
+And I should see the response payload containing "amount"
 
 Examples:
 | usertype|number     |description|balance|transactionStatus|transactionOperationStatus|referenceCode|requestDescription |currency|amount|clientCorrelator|notifyURL                                       |purchaseCategoryCode|channel|taxAmount|

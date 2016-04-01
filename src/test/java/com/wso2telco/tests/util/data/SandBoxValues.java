@@ -15,6 +15,16 @@ public class SandBoxValues implements Serializable {
 	private static String amount;
 	
 	private static String requestPayload;
+	
+	private static String responsePayload;
+
+	public String getResponsePayload() {
+		return responsePayload;
+	}
+
+	public void setResponsePayload(String responsePayload) {
+		SandBoxValues.responsePayload = responsePayload;
+	}
 
 	public String getAmount() {
 		return amount;

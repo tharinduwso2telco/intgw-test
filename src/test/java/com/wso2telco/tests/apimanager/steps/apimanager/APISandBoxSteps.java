@@ -226,9 +226,12 @@ public class APISandBoxSteps extends BasicTestObject {
 
 	@When("^I get the response payload$")
 	public void i_get_the_response_payload() throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues sandboxValues = new SandBoxValues();
+		sandboxValues.setResponsePayload(sandbox.getRsponsePayload());
 	}
 	
-	@Then("^I should see the request payload containing \"([^\"]*)\" as amount$")
+	@Then("^I should see the request payload containing \"([^\"]*)\"")
 	public void i_should_see_the_request_payload_containing_as_amount(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
 		SandBoxValues sandboxValues = new SandBoxValues();
@@ -238,11 +241,14 @@ public class APISandBoxSteps extends BasicTestObject {
 		Assert.assertTrue("Amount is not loaded in request", sandbox.isAmountAvailableInRequest(amount));
 	}
 
-	@Then("^I should see the response payload containing \"([^\"]*)\" as amount$")
+	@Then("^I should see the response payload containing \"([^\"]*)\"")
 	public void i_should_see_the_response_payload_containing_as_amount(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
 		SandBoxValues sandboxValues = new SandBoxValues();
 		String amount = sandboxValues.getAmount();
+		String responsePayload = sandboxValues.getResponsePayload();
+		sandbox.getValueFromJson(arg1, responsePayload);
 		Assert.assertTrue("Amount is not loaded in response", sandbox.isAmountAvailableInResponse(amount));
 	}
+
 }
