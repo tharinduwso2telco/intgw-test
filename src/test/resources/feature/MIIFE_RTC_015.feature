@@ -29,4 +29,4 @@ And I should see the regenerated Access Token of sandbox is different from the p
 
 Examples:
 |validity|usertype     |appName|
-|3600    |SUBSCRIBERAPP|AuxTestingAppRTC_011|
+|-1      |SUBSCRIPTION|Aux_AppKey_Regenerate|

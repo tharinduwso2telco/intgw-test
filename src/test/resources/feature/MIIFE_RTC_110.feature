@@ -10,7 +10,7 @@ And I click on apimanager Login pop up login button
 Then I should see apimanager "<usertype>" at the top right corner of the page
 When I click on apimanager Manage 
 Then I should see the apimanager Manager page header as "Manager"
-When I enter apimanager Manager page login username and password for "<Aggregatoruser>"
+When I enter apimanager Manager page login username and password for "<usertype>"
 And I click on apimanager Manager page login button
 Then I should see the apimanager Manager Home page header as "Home"
 When I click on apimanager Manager page Billing and Metering tab
@@ -61,4 +61,4 @@ And I should see TPS Summary as "TPS Summary" under apimanager Manager Performan
 
 Examples:
 |usertype| Aggregatoruser|CustomerCareuser|
-|AGGRIGATOR|AGGRIGATOR|CUSTOMERCARE|
+|QA17LOG|AGGRIGATOR|CUSTOMERCARE|
