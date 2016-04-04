@@ -6,6 +6,7 @@ import org.junit.*;
 
 import com.wso2telco.apimanager.pageobjects.apihome.sandbox.SandBoxPage;
 import com.wso2telco.tests.apimanager.base.BasicTestObject;
+import com.wso2telco.tests.util.data.DataValidation;
 import com.wso2telco.tests.util.data.SandBoxValues;
 
 import cucumber.api.java.en.Then;
@@ -151,32 +152,40 @@ public class APISandBoxSteps extends BasicTestObject {
 	@When("^I select \"([^\"]*)\" as transaction operation status$")
 	public void i_select_as_transactio_operation_status(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues sandboxValues = new SandBoxValues();
 		sandbox.enterTransactionOperationStatus(arg1);
+		sandboxValues.setTransactionOperationStatus(arg1);
 	}
 	
 	@When("^I enter \"([^\"]*)\" as reference code$")
 	public void i_enter_as_reference_code(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues sandboxValues = new SandBoxValues();
 		sandbox.enterReferenceCode(arg1);
+		sandboxValues.setReferenceCode(arg1);
 	}
 	
 	@When("^I enter \"([^\"]*)\" as the request description$")
 	public void i_enter_as_the_request_description(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues sandboxValues = new SandBoxValues();
 		sandbox.enterRequestDescription(arg1);
+		sandboxValues.setRequestDescription(arg1);
 	}
 	
 	@When("^I enter \"([^\"]*)\" as currency$")
 	public void i_enter_as_currency(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues sandboxValues = new SandBoxValues();
 		sandbox.enterCurrency(arg1);
+		sandboxValues.setCurrency(arg1);
 	}
 	
 	@When("^I enter \"([^\"]*)\" as request amount$")
 	public void i_enter_as_request_amount(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
-		sandbox.enterAmount(arg1);
 		SandBoxValues sandboxValues = new SandBoxValues();
+		sandbox.enterAmount(arg1);
 		sandboxValues.setAmount(arg1);
 	}
 	
@@ -184,13 +193,25 @@ public class APISandBoxSteps extends BasicTestObject {
 	@When("^I enter \"([^\"]*)\" as request client correlator$")
 	public void i_enter_as_request_client_correlator(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues sandboxValues = new SandBoxValues();
 		sandbox.enterClientCorrelator(arg1);
+		sandboxValues.setClientCorrelation(arg1);
+	}
+	
+	@When("^I enter \"([^\"]*)\" as refund request client correlator$")
+	public void i_enter_as_refund_request_client_correlator(String arg1) throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues sandboxValues = new SandBoxValues();
+		sandbox.enterClientCorrelator(arg1);
+		sandboxValues.setClientCorrelation(arg1);
 	}
 	
 	@When("^I enter \"([^\"]*)\" as notify URL$")
 	public void i_enter_as_notify_URL(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues sandboxValues = new SandBoxValues();
 		sandbox.enterNotifyURL(arg1);
+		sandboxValues.setNotifyURL(arg1);
 	}
 	
 	@When("^I enter \"([^\"]*)\" as refund notify URL$")
@@ -202,13 +223,17 @@ public class APISandBoxSteps extends BasicTestObject {
 	@When("^I enter \"([^\"]*)\" as purchase category code$")
 	public void i_enter_as_purchase_category_code(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues sandboxValues = new SandBoxValues();
 		sandbox.enterPurchaseCategoryCode(arg1);
+		sandboxValues.setPurchaseCategoryCode(arg1);
 	}
 	
 	@When("^I enter \"([^\"]*)\" as channel$")
 	public void i_enter_as_channel(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues sandboxValues = new SandBoxValues();
 		sandbox.enterChannel(arg1);
+		sandboxValues.setChannel(arg1);
 	}
 	
 	@When("^I enter \"([^\"]*)\" as tax amount$")
@@ -236,44 +261,35 @@ public class APISandBoxSteps extends BasicTestObject {
 	public void i_get_the_response_payload() throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
 		SandBoxValues sandboxValues = new SandBoxValues();
-		sandboxValues.setResponsePayload(sandbox.getRsponsePayload());
+		sandboxValues.setResponsePayload(sandbox.getRsponsePayloadUI());
 	}
 	
-	@Then("^I should see the request payload containing \"([^\"]*)\"")
-	public void i_should_see_the_request_payload_containing_as_amount(String arg1) throws Throwable {
-		SandBoxPage sandbox = new SandBoxPage(driver);
+	@Then("^I validate the request payload$")
+	public void i_validate_the_request_payload() throws Throwable {
 		SandBoxValues sandboxValues = new SandBoxValues();
-		String amount = sandboxValues.getAmount();
-		//String requestPayload = sandboxValues.getRequestPayload();
-		//String payloadAmount = sandbox.getValueFromJson(arg1, requestPayload);
-		//Assert.assertTrue("", amount.equalsIgnoreCase(payloadAmount));
-		Assert.assertTrue("Amount is not loaded in request", sandbox.isAmountAvailableInRequest(amount));
+		DataValidation data = new DataValidation();
+		String requestPayload = sandboxValues.getRequestPayload();
+		Thread.sleep(sleepTime);
+		Assert.assertTrue("Request payload data mismatched",data.isRequestPayload(requestPayload));
 	}
 
-	@Then("^I should see the response payload containing \"([^\"]*)\"")
-	public void i_should_see_the_response_payload_containing_as_amount(String arg1) throws Throwable {
-		SandBoxPage sandbox = new SandBoxPage(driver);
+	@Then("^I validate the response payload$")
+	public void i_validate_the_response_payload() throws Throwable {
 		SandBoxValues sandboxValues = new SandBoxValues();
-		String amount = sandboxValues.getAmount();
+		DataValidation data = new DataValidation();
 		String responsePayload = sandboxValues.getResponsePayload();
-		sandbox.getValueFromJson(arg1, responsePayload);
-		Assert.assertTrue("Amount is not loaded in response", sandbox.isAmountAvailableInResponse(amount));
-	}
-
-
-	@When("^I should see the \"([^\"]*)\" value as the total of amount and tax amount in response payload$")
-	public void i_should_see_the_value_as_the_total_of_amount_and_tax_amount_in_response_payload(String arg1) throws Throwable {
-		SandBoxPage sandbox = new SandBoxPage(driver);
-		SandBoxValues sandboxValues = new SandBoxValues();
-		double amount = Double.parseDouble(sandboxValues.getAmount());
-		double tax = Double.parseDouble(sandboxValues.getTaxAmount());
-		double total = amount + tax;
-		System.out.println(total);
-		String responsePayload = sandboxValues.getResponsePayload();
-		sandbox.getValueFromJson(arg1, responsePayload);
-		// valiadate
+		Thread.sleep(sleepTime);
+		Assert.assertTrue("Response payload data mismatched", data.isResponsePayload(responsePayload));
 	}
 	
+	@Then("^I validate the total amount$")
+	public void i_validate_the_total_amount() throws Throwable {
+		SandBoxValues sandboxValues = new SandBoxValues();
+		DataValidation data = new DataValidation();
+		String responsePayload = sandboxValues.getResponsePayload();
+		Assert.assertTrue("Request payload data mismatched", data.isTotalAmount(responsePayload));
+	}
+
 	@When("^I select refund the user menu item$")
 	public void i_select_refund_the_user_menu_item() throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
@@ -289,53 +305,80 @@ public class APISandBoxSteps extends BasicTestObject {
 	@When("^I enter \"([^\"]*)\" as call back data$")
 	public void i_enter_as_call_back_data(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues values = new SandBoxValues();
 		sandbox.enterCallBackData(arg1);
+		values.setCallBackData(arg1);
 	}
 	
 	@When("^I enter \"([^\"]*)\" as request code$")
 	public void i_enter_as_request_code(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues values = new SandBoxValues();
 		sandbox.enterCode(arg1);
+		values.setCode(arg1);
 	}
 	
 	@When("^I enter \"([^\"]*)\" as mandateID$")
 	public void i_enter_as_mandateID(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues values = new SandBoxValues();
 		sandbox.enterMandateId(arg1);
+		values.setMandateID(arg1);
 	}
 	
 	@When("^I enter \"([^\"]*)\" as notification format$")
 	public void i_enter_as_notification_format(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues values = new SandBoxValues();
 		sandbox.enterNotificationFormat(arg1);
+		values.setNotificationFormat(arg1);
 	}
 	
 	@When("^I enter \"([^\"]*)\" as on behalf of$")
 	public void i_enter_as_on_behalf_of(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues values = new SandBoxValues();
 		sandbox.enterOnBehalfOf(arg1);
+		values.setOnBehalfOf(arg1);
+	}
+	
+	@Then("^I get the server reference code$")
+	public void i_get_the_server_reference_code() throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues values = new SandBoxValues();
+		String responsePayload = values.getResponsePayload();
+		Thread.sleep(sleepTime);
+		String refCode = sandbox.getValueFromJson("serverReferenceCode", responsePayload);
+		values.setServerReferenceCode(refCode);
 	}
 	
 	@When("^I enter original server reference code$")
 	public void i_enter_original_server_reference_code() throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
 		SandBoxValues values = new SandBoxValues();
-		//TODO change user id to ref code
-		String refCode = values.getSmsUserId().toString();
+		String refCode = values.getServerReferenceCode();
 		sandbox.enterServerReferenceCode(refCode);
 	}
 	
 	@When("^I enter \"([^\"]*)\" as product id$")
 	public void i_enter_as_product_id(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues values = new SandBoxValues();
 		sandbox.enterProductId(arg1);
+		values.setProductId(arg1);
 	}
 
 	@When("^I enter \"([^\"]*)\" as service id$")
 	public void i_enter_as_service_id(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues values = new SandBoxValues();
 		sandbox.enterServiceId(arg1);
+		values.setServiceId(arg1);
 	}
 
-
+	@When("^I enter \"([^\"]*)\" as max payment amount$")
+	public void i_enter_as_max_payment_amount(String arg1) throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		sandbox.enterMaxPaymentAmount(arg1);
+	}
 }
