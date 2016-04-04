@@ -1,13 +1,13 @@
 <RateCard>
 	<Operators>
 		<API name="SMS">
-			<!-- CONSTANTnon-default categoryANDsubcategory -->
+			<!-- PER_REQUEST - non-default categoryANDsubcategory -->
 			<Operation name="200">
 				<Rate>
-					<Name>SM1</Name>
+					<Name>SM3</Name>
 					<Currency>Rs</Currency>
 					<Value>10</Value>
-					<Type>CONSTANT</Type>
+					<Type>PER_REQUEST</Type>
 					<CategoryBase>true</CategoryBase>
 					<Category name="349" rate="12">
 						<SubCategory name="651" rate="100" />

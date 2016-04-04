@@ -31,5 +31,3 @@ Then I should see the apimanager sandbox index page header as "Welcome"
 Examples:
 | usertype        |
 |WITHOUTAGGRIGATOR|
-
-#H Line 19 please revice step

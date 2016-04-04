@@ -1,6 +1,7 @@
 package com.wso2telco.tests.apimanager.steps.apimanager;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 import org.junit.Assert;
@@ -30,10 +31,8 @@ public class APIManageSteps extends BasicTestObject {
 	public void i_enter_apimanager_Manager_page_username_and_password_for(
 			String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		managerpage.enterUserName(config.getValue(getEnvironment() + arg1
-				+ "user"));
-		managerpage.enterPassword(config.getValue(getEnvironment() + arg1
-				+ "pwd"));
+		managerpage.enterUserName(config.getValue(getEnvironment() + arg1 + "user"));
+		managerpage.enterPassword(config.getValue(getEnvironment() + arg1 + "pwd"));
 	}
 
 	@When("^I enter apimanager Manager page admin username credentials$")
@@ -536,6 +535,22 @@ public class APIManageSteps extends BasicTestObject {
 		managerpage.clickAdminModuleYes();
 	}
 	
+	@When("^I write the UI table into a \"([^\"]*)\" excel file in \"([^\"]*)\" location$")
+	public void i_write_the_UI_table_into_a_excel_file_in_location(String arg1, String arg2) throws Throwable {
+		String nbUITableFilePath = config.getValue("uploadRateCard") + arg2 + arg1;
+		ManagerPage managerpage = new ManagerPage(driver);
+		List<List<String>> nbUiData = managerpage.getNbUITableData();
+		managerpage.writeStringAryToXlsx(nbUITableFilePath, nbUiData);
+	}
+	
+	@When("^I write the SB UI table into a \"([^\"]*)\" excel file in \"([^\"]*)\" location$")
+	public void i_write_the_SB_UI_table_into_a_excel_file_in_location(String arg1, String arg2) throws Throwable {
+		String sbUITableFilePath = config.getValue("uploadRateCard") + arg2 + arg1;
+		ManagerPage managerpage = new ManagerPage(driver);
+		List<List<String>> sbUiData = managerpage.getSbUITableData();
+		managerpage.writeStringAryToXlsx(sbUITableFilePath, sbUiData);
+	}
+	
 	@Then("^I validate \"([^\"]*)\" \"([^\"]*)\" and \"([^\"]*)\" for \"([^\"]*)\" value as \"([^\"]*)\"$")
 	public void i_validate_and_for_value_as(String arg1, String arg2, String arg3, String arg4, String arg5) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
@@ -574,7 +589,7 @@ public class APIManageSteps extends BasicTestObject {
 		RuntimeData runtimeQuery = new RuntimeData();
 		ManagerPage managerpage = new ManagerPage(driver);
 		runtimeQuery.setRuntimeQuery(subscription_rates_nbQuery);
-		Assert.assertTrue("subscription_rates_nb table is not updated", managerpage.issubscription_ratestablesUpdated(subscription_rates_nbQuery));
+		Assert.assertTrue("subscription_rates_nb table is not updated", managerpage.isSubscriptionRatesTablesUpdated(subscription_rates_nbQuery));
 		
 	}
 
@@ -584,7 +599,7 @@ public class APIManageSteps extends BasicTestObject {
 		RuntimeData runtimeQuery = new RuntimeData();
 		ManagerPage managerpage = new ManagerPage(driver);
 		runtimeQuery.setRuntimeQuery(subscription_ratesQuery);
-		Assert.assertTrue("subscription_rates table is not updated", managerpage.issubscription_ratestablesUpdated(subscription_ratesQuery));
+		Assert.assertTrue("subscription_rates table is not updated", managerpage.isSubscriptionRatesTablesUpdated(subscription_ratesQuery));
 	}
 
 	

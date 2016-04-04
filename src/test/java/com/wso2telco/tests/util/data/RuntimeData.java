@@ -8,7 +8,7 @@ public class RuntimeData implements Serializable {
 	
 	private static String runtimeQuery;
 	
-	private static String nbDownloadExcel;
+	private static String downloadExcel;
 
 	public String getRuntimeQuery() {
 		return runtimeQuery;
@@ -18,12 +18,12 @@ public class RuntimeData implements Serializable {
 		RuntimeData.runtimeQuery = runtimeQuery;
 	}
 
-	public String getNbDownloadExcel() {
-		return nbDownloadExcel;
+	public String getDownloadExcel() {
+		return downloadExcel;
 	}
 
-	public void setNbDownloadExcel(String nbDownloadExcel) {
-		RuntimeData.nbDownloadExcel = nbDownloadExcel;
+	public void setDownloadExcel(String nbDownloadExcel) {
+		RuntimeData.downloadExcel = nbDownloadExcel;
 	}	
 	
 	/**
@@ -33,7 +33,7 @@ public class RuntimeData implements Serializable {
 	 * @param columnName the column name
 	 * @return the string
 	 */
-	public String convertNBExcelColumnName(String columnName){
+	public String convertExcelColumnName(String columnName){
 		String returnName = null;
 		if (!(columnName.isEmpty())) {
 			switch (columnName) {
