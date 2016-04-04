@@ -55,9 +55,9 @@ And I enter "<code>" as request code
 And I enter "<currency>" as currency
 And I enter "<mandateID>" as mandateID
 And I enter "<notificationFormat>" as notification format
-And I enter "<notifyURL>" as notify URL
+And I enter "<notifyURL>" as refund notify URL
 And I enter "<onBehalfOf>" as on behalf of
-And I enter original server reference code
+#And I enter original server reference code
 And I enter "<productID>" as product id
 And I enter "<purchaseCategoryCode>" as purchase category code
 And I enter "<serviceID>" as service id
@@ -68,5 +68,5 @@ And I should see the request payload containing "amount"
 
 
 Examples:
-| usertype|number     |description|balance|transactionStatus|transactionOperationStatus|referenceCode|requestDescription |currency|amount|clientCorrelator|notifyURL                                       |purchaseCategoryCode|channel|taxAmount|refundTransactionStatus|
-|QA17LOG  |94123123123|testAuxenta|1000.00|Charged          |Charged                   |REF-12345    |Alien Invaders Game|USD     |10.0  |543219          |http://localhost:8080/mifeapiserver/callback.jsp|Game                |SMS    |0.15     |Refunded               |
+| usertype|number     |description|balance|transactionStatus|transactionOperationStatus|referenceCode|requestDescription |currency|amount|clientCorrelator|notifyURL                                       |purchaseCategoryCode|channel|taxAmount|refundTransactionStatus|callBackData|code|mandateID|notificationFormat|onBehalfOf       |productID|serviceID|
+|QA17LOG  |94123123123|testAuxenta|1000.00|Charged          |Charged                   |REF-12345    |Alien Invaders Game|USD     |10.0  |543219          |http://localhost:8080/mifeapiserver/callback.jsp|Game                |SMS    |0.15     |Refunded               |54321       |ABC |0000     |54321             |Example Games Inc|0000     |0000     |

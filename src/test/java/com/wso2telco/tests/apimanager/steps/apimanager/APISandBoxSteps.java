@@ -193,6 +193,12 @@ public class APISandBoxSteps extends BasicTestObject {
 		sandbox.enterNotifyURL(arg1);
 	}
 	
+	@When("^I enter \"([^\"]*)\" as refund notify URL$")
+	public void i_enter_as_refund_notify_URL(String arg1) throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		sandbox.enterRefundNotifyURL(arg1);
+	}
+	
 	@When("^I enter \"([^\"]*)\" as purchase category code$")
 	public void i_enter_as_purchase_category_code(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
@@ -238,8 +244,9 @@ public class APISandBoxSteps extends BasicTestObject {
 		SandBoxPage sandbox = new SandBoxPage(driver);
 		SandBoxValues sandboxValues = new SandBoxValues();
 		String amount = sandboxValues.getAmount();
-		String requestPayload = sandboxValues.getRequestPayload();
-		sandbox.getValueFromJson(arg1, requestPayload);
+		//String requestPayload = sandboxValues.getRequestPayload();
+		//String payloadAmount = sandbox.getValueFromJson(arg1, requestPayload);
+		//Assert.assertTrue("", amount.equalsIgnoreCase(payloadAmount));
 		Assert.assertTrue("Amount is not loaded in request", sandbox.isAmountAvailableInRequest(amount));
 	}
 
@@ -311,6 +318,24 @@ public class APISandBoxSteps extends BasicTestObject {
 	
 	@When("^I enter original server reference code$")
 	public void i_enter_original_server_reference_code() throws Throwable {
-	    
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues values = new SandBoxValues();
+		//TODO change user id to ref code
+		String refCode = values.getSmsUserId().toString();
+		sandbox.enterServerReferenceCode(refCode);
 	}
+	
+	@When("^I enter \"([^\"]*)\" as product id$")
+	public void i_enter_as_product_id(String arg1) throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		sandbox.enterProductId(arg1);
+	}
+
+	@When("^I enter \"([^\"]*)\" as service id$")
+	public void i_enter_as_service_id(String arg1) throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		sandbox.enterServiceId(arg1);
+	}
+
+
 }
