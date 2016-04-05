@@ -34,7 +34,7 @@ When I select "<year>" as Monthly Invoice Year
 And I select "<month>" as Monthly Invoice Month
 And I select "<serviceProvider>" as the Monthly Invoice service provider
 And I click on generate button
-And I write the UI table into a "nb1UITable.xlsx" excel file in "/NB/1/" location
+And I write the UI table into a "nb1UITableBefore.xlsx" excel file in "/NB/1/" location
 
 
 Examples:
@@ -72,6 +72,9 @@ When I select "<year>" as Monthly Invoice Year
 And I select "<month>" as Monthly Invoice Month
 And I select "<serviceProvider>" as the Monthly Invoice service provider
 And I click on generate button
+And I write the UI table into a "nb1UITableAfter.xlsx" excel file in "/NB/1/" location
+And I calculate the difference between "nb1UITableBefore.xlsx" and "nb1UITableAfter.xlsx" excel file from "/NB/1/" location and write it to "nb1BeforeAfterDif.xlsx"
+Then I validate "nb1BeforeAfterDif.xlsx" records against "manuallyCalcDif.xlsx" from "/NB/1/" location
 
 Examples:
 | usertype|apiTrafficPageHeader|monthlyInvoicePageHeader     |year|month|serviceProvider|
