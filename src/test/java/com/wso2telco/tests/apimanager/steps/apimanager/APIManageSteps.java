@@ -8,6 +8,7 @@ import org.junit.Assert;
 
 import com.wso2telco.apimanager.pageobjects.apihome.manager.ManagerPage;
 import com.wso2telco.apimanager.pageobjects.db.queries.SQLQuery;
+import com.wso2telco.test.framework.tools.excelfile.ExcelFileReader;
 import com.wso2telco.tests.apimanager.base.BasicTestObject;
 import com.wso2telco.tests.util.data.RuntimeData;
 import com.wso2telco.tests.util.data.WhiteListData;
@@ -541,6 +542,58 @@ public class APIManageSteps extends BasicTestObject {
 		ManagerPage managerpage = new ManagerPage(driver);
 		List<List<String>> nbUiData = managerpage.getNbUITableData();
 		managerpage.writeStringAryToXlsx(nbUITableFilePath, nbUiData);
+	}
+	
+	@When("^I calculate the difference between \"([^\"]*)\" and \"([^\"]*)\" excel file from \"([^\"]*)\" location and write it to \"([^\"]*)\"$")
+	public void i_calculate_the_difference_between_and_excel_file_from_location_and_write_it_to(String arg1, String arg2, String arg3, String arg4) throws Throwable {
+		String beforeFile = config.getValue("uploadRateCard") + arg3 + arg1;
+		String afterFile = config.getValue("uploadRateCard") + arg3 + arg2;
+		String difFile = config.getValue("uploadRateCard") + arg3 + arg4;
+		ExcelFileReader excelFileReaderBefore = new ExcelFileReader(beforeFile, "Sheet1");
+		List<List<String>> exceldataBefore = excelFileReaderBefore.readExcelFile("Sheet1");
+		ExcelFileReader excelFileReaderAfter = new ExcelFileReader(afterFile, "Sheet1");
+		List<List<String>> exceldataAfter = excelFileReaderAfter.readExcelFile("Sheet1");
+		ManagerPage managerpage = new ManagerPage(driver);
+		List<List<String>> excelDifAfterBefore = managerpage.nbMonthlyInvoiceDifference(exceldataBefore, exceldataAfter);
+		managerpage.writeStringAryToXlsx(difFile, excelDifAfterBefore);
+	}
+	
+	@When("^I calculate the difference between SB \"([^\"]*)\" and \"([^\"]*)\" excel file from \"([^\"]*)\" location and write it to \"([^\"]*)\"$")
+	public void i_calculate_the_difference_between_SB_and_excel_file_from_location_and_write_it_to(String arg1, String arg2, String arg3, String arg4) throws Throwable {
+		String beforeFile = config.getValue("uploadRateCard") + arg3 + arg1;
+		String afterFile = config.getValue("uploadRateCard") + arg3 + arg2;
+		String difFile = config.getValue("uploadRateCard") + arg3 + arg4;
+		ExcelFileReader excelFileReaderBefore = new ExcelFileReader(beforeFile, "Sheet1");
+		List<List<String>> exceldataBefore = excelFileReaderBefore.readExcelFile("Sheet1");
+		ExcelFileReader excelFileReaderAfter = new ExcelFileReader(afterFile, "Sheet1");
+		List<List<String>> exceldataAfter = excelFileReaderAfter.readExcelFile("Sheet1");
+		ManagerPage managerpage = new ManagerPage(driver);
+		List<List<String>> excelDifAfterBefore = managerpage.sbMonthlyInvoiceDifference(exceldataBefore, exceldataAfter);
+		managerpage.writeStringAryToXlsx(difFile, excelDifAfterBefore);
+	}
+	
+	@Then("^I validate \"([^\"]*)\" records against \"([^\"]*)\" from \"([^\"]*)\" location$")
+	public void i_validate_records_against_from_location(String arg1, String arg2, String arg3) throws Throwable {
+		String difFileUi = config.getValue("uploadRateCard") + arg3 + arg1;
+		String difFileDifManual = config.getValue("uploadRateCard") + arg3 + arg2;
+		ExcelFileReader excelFileDiffUi = new ExcelFileReader(difFileUi, "Sheet1");
+		List<List<String>> exceldataDiffUi = excelFileDiffUi.readExcelFile("Sheet1");
+		ExcelFileReader excelFileDifManual = new ExcelFileReader(difFileDifManual, "Sheet1");
+		List<List<String>> exceldataDifManual = excelFileDifManual.readExcelFile("Sheet1");
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Price difference mismatched", managerpage.isDifferenceMatch(exceldataDiffUi, exceldataDifManual));
+	}
+	
+	@Then("^I validate SB invoice \"([^\"]*)\" records against \"([^\"]*)\" from \"([^\"]*)\" location$")
+	public void i_validate_SB_invoice_records_against_from_location(String arg1, String arg2, String arg3) throws Throwable {
+		String difFileUi = config.getValue("uploadRateCard") + arg3 + arg1;
+		String difFileDifManual = config.getValue("uploadRateCard") + arg3 + arg2;
+		ExcelFileReader excelFileDiffUi = new ExcelFileReader(difFileUi, "Sheet1");
+		List<List<String>> exceldataDiffUi = excelFileDiffUi.readExcelFile("Sheet1");
+		ExcelFileReader excelFileDifManual = new ExcelFileReader(difFileDifManual, "Sheet1");
+		List<List<String>> exceldataDifManual = excelFileDifManual.readExcelFile("Sheet1");
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Price difference mismatched", managerpage.isSbDifferenceMatch(exceldataDiffUi, exceldataDifManual));
 	}
 	
 	@When("^I write the SB UI table into a \"([^\"]*)\" excel file in \"([^\"]*)\" location$")
