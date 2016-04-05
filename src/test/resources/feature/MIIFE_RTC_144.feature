@@ -32,7 +32,7 @@ And I enter "<referenceCode>" as reference code
 And I enter "<requestDescription>" as the request description
 And I enter "<currency>" as currency
 And I enter "<amount>" as request amount
-And I enter "<clientCorrelator>" as request client correlator
+And I enter request client correlator
 And I enter "<notifyURL>" as notify URL
 And I enter "<purchaseCategoryCode>" as purchase category code
 And I enter "<channel>" as channel
@@ -44,5 +44,5 @@ Then I validate the request payload
 And I validate the response payload
 
 Examples:
-| usertype|number     |description|balance|transactionStatus|transactionOperationStatus|referenceCode|requestDescription |currency|amount|clientCorrelator|notifyURL                                       |purchaseCategoryCode|channel|taxAmount|
-|QA17LOG  |94123123123|testAuxenta|1000.00|Charged          |Charged                   |REF-12345    |Alien Invaders Game|USD     |10.0  |749219          |http://localhost:8080/mifeapiserver/callback.jsp|Game                |SMS    |0.15     |
+| usertype|number     |description|balance|transactionStatus|transactionOperationStatus|referenceCode|requestDescription |currency|amount|notifyURL                                       |purchaseCategoryCode|channel|taxAmount|
+|QA17LOG  |94123123123|testAuxenta|1000.00|Charged          |Charged                   |REF-12345    |Alien Invaders Game|USD     |10.0  |http://localhost:8080/mifeapiserver/callback.jsp|Game                |SMS    |0.15     |

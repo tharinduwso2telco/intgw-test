@@ -32,7 +32,7 @@ And I enter "<referenceCode>" as reference code
 And I enter "<requestDescription>" as the request description
 And I enter "<currency>" as currency
 And I enter "<amount>" as request amount
-And I enter "<clientCorrelator>" as request client correlator
+And I enter request client correlator
 And I enter "<notifyURL>" as notify URL
 And I enter "<purchaseCategoryCode>" as purchase category code
 And I enter "<channel>" as channel
@@ -51,7 +51,7 @@ And I select "<transactionOperationStatusRefund>" as transaction operation statu
 And I enter "<amount>" as request amount
 And I enter "<callBackData>" as call back data
 And I enter "<channel>" as channel
-And I enter "<clientCorrelatorRefund>" as refund request client correlator
+And I enter request client correlator
 And I enter "<code>" as request code
 And I enter "<currency>" as currency
 And I enter "<mandateID>" as mandateID
@@ -64,10 +64,12 @@ And I enter "<purchaseCategoryCode>" as purchase category code
 And I enter "<serviceID>" as service id
 And I enter "<taxAmount>" as tax amount
 And I click on send request button in payment parameters page
-Then I get the response payload
-And I validate the response payload
+Then I get the refund request payload
+And I get the refund response payload
+And I validate the refund request payload
+And I validate the refund response payload
 
 
 Examples:
-| usertype|number     |description|balance|transactionStatus|transactionOperationStatus|referenceCode|requestDescription |currency|amount|clientCorrelator|notifyURL                                       |purchaseCategoryCode|channel|taxAmount|refundTransactionStatus|callBackData|code|mandateID|notificationFormat|onBehalfOf       |productID|serviceID|clientCorrelatorRefund|transactionOperationStatusRefund|
-|QA17LOG  |94123123123|testAuxenta|1000.00|Charged          |Charged                   |REF-12345    |Alien Invaders Game|USD     |10.0  |548789          |http://localhost:8080/mifeapiserver/callback.jsp|Game                |SMS    |0.15     |Refunded               |54321       |ABC |0000     |54321             |Example Games Inc|0000     |0000     |12345|Refunded|
+| usertype|number     |description|balance|transactionStatus|transactionOperationStatus|referenceCode|requestDescription |currency|amount|notifyURL                                       |purchaseCategoryCode|channel|taxAmount|refundTransactionStatus|callBackData|code|mandateID|notificationFormat|onBehalfOf       |productID|serviceID|transactionOperationStatusRefund|
+|QA17LOG  |94123123123|testAuxenta|1000.00|Charged          |Charged                   |REF-12345    |Alien Invaders Game|USD     |10.0  |http://localhost:8080/mifeapiserver/callback.jsp|Game                |SMS    |0.15     |Refunded               |54321       |ABC |0000     |54321             |Example Games Inc|0000     |0000     |Refunded|

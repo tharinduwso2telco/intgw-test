@@ -1,13 +1,12 @@
 package com.wso2telco.tests.apimanager.steps.apimanager;
 
-
-
 import org.junit.*;
 
 import com.wso2telco.apimanager.pageobjects.apihome.sandbox.SandBoxPage;
 import com.wso2telco.tests.apimanager.base.BasicTestObject;
 import com.wso2telco.tests.util.data.DataValidation;
 import com.wso2telco.tests.util.data.SandBoxValues;
+import com.wso2telco.test.framework.tools.data.DataGenerator;
 
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -190,20 +189,14 @@ public class APISandBoxSteps extends BasicTestObject {
 	}
 	
 
-	@When("^I enter \"([^\"]*)\" as request client correlator$")
+	@When("^I enter request client correlator$")
 	public void i_enter_as_request_client_correlator(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
 		SandBoxValues sandboxValues = new SandBoxValues();
-		sandbox.enterClientCorrelator(arg1);
-		sandboxValues.setClientCorrelation(arg1);
-	}
-	
-	@When("^I enter \"([^\"]*)\" as refund request client correlator$")
-	public void i_enter_as_refund_request_client_correlator(String arg1) throws Throwable {
-		SandBoxPage sandbox = new SandBoxPage(driver);
-		SandBoxValues sandboxValues = new SandBoxValues();
-		sandbox.enterClientCorrelator(arg1);
-		sandboxValues.setClientCorrelation(arg1);
+		DataGenerator data = new DataGenerator();
+		String correlator = data.generateRandomNumber(7);
+		sandbox.enterClientCorrelator(correlator);
+		sandboxValues.setClientCorrelation(correlator);
 	}
 	
 	@When("^I enter \"([^\"]*)\" as notify URL$")
@@ -380,5 +373,37 @@ public class APISandBoxSteps extends BasicTestObject {
 	public void i_enter_as_max_payment_amount(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
 		sandbox.enterMaxPaymentAmount(arg1);
+	}
+	
+	@When("^I get the refund request payload$")
+	public void i_get_the_refund_request_payload() throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues sandboxValues = new SandBoxValues();
+		sandboxValues.setRequestPayload(sandbox.getRequestPayloadUI());
+	}
+
+	@When("^I get the refund response payload$")
+	public void i_get_the_refund_response_payload() throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues sandboxValues = new SandBoxValues();
+		sandboxValues.setResponsePayload(sandbox.getRsponsePayloadUI());
+	}
+	
+	@Then("^I validate the refund request payload$")
+	public void i_validate_the_refund_request_payload() throws Throwable {
+		SandBoxValues sandboxValues = new SandBoxValues();
+		DataValidation data = new DataValidation();
+		String requestPayload = sandboxValues.getRequestPayload();
+		Thread.sleep(sleepTime);
+		Assert.assertTrue("Request payload data mismatched",data.isRefundRequestPayload(requestPayload));
+	}
+	
+	@Then("^I validate the refund response payload$")
+	public void i_validate_the_refund_response_payload() throws Throwable {
+		SandBoxValues sandboxValues = new SandBoxValues();
+		DataValidation data = new DataValidation();
+		String responsePayload = sandboxValues.getResponsePayload();
+		Thread.sleep(sleepTime);
+		Assert.assertTrue("Response payload data mismatched",data.isRefundResponsePayload(responsePayload));
 	}
 }
