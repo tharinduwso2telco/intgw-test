@@ -50,6 +50,8 @@ public class SandBoxValues implements Serializable {
 	
 	private static String serviceId;
 	
+	private static String balance;
+	
 	private static String requestPayload;
 	
 	private static String responsePayload;
@@ -229,6 +231,14 @@ public class SandBoxValues implements Serializable {
 
 	public void setServiceId(String serviceId) {
 		SandBoxValues.serviceId = serviceId;
+	}
+
+	public String getBalance() {
+		return balance;
+	}
+
+	public void setBalance(String balance) {
+		SandBoxValues.balance = balance;
 	}
 
 	

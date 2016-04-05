@@ -378,4 +378,42 @@ public class DataValidation extends BasicTestObject {
 		return true;
 	}
 
+	/**
+	 * Checks if is balance.
+	 *
+	 * @author JayaniP
+	 * @param number the number
+	 * @return true, if is balance
+	 * @throws Exception the exception
+	 */
+	public boolean isBalance(String number) throws Exception{
+		SandBoxValues sandboxValues = new SandBoxValues();
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		
+		if (!sandbox.getBalanceofTheNumber(number).equalsIgnoreCase(sandboxValues.getBalance())) {
+			return false;
+		}
+		return true;
+		
+	}
+	
+	/**
+	 * Checks if is error response payload.
+	 *
+	 * @author JayaniP
+	 * @param json the json
+	 * @return true, if is error response payload
+	 */
+	public boolean isErrorResponsePayload(String message){
+		
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues sandboxValues = new SandBoxValues();
+		String responsePayload = sandboxValues.getResponsePayload();
+		String errorText = sandbox.getValueFromJson("text", responsePayload);
+		
+		if (!errorText.equalsIgnoreCase(message)) {
+			return false;
+		}
+		return true;
 }
+	}

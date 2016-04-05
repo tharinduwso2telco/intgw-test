@@ -97,7 +97,9 @@ public class APISandBoxSteps extends BasicTestObject {
 	@When("^I enter \"([^\"]*)\" as balance$")
 	public void i_enter_as_balance(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues sandboxValues = new SandBoxValues();
 		sandbox.enterBalance(arg1);
+		sandboxValues.setBalance(arg1);
 	}
 	
 	@When("^I click on save button in under actions column$")
@@ -190,7 +192,7 @@ public class APISandBoxSteps extends BasicTestObject {
 	
 
 	@When("^I enter request client correlator$")
-	public void i_enter_as_request_client_correlator(String arg1) throws Throwable {
+	public void i_enter_as_request_client_correlator() throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
 		SandBoxValues sandboxValues = new SandBoxValues();
 		DataGenerator data = new DataGenerator();
@@ -405,5 +407,49 @@ public class APISandBoxSteps extends BasicTestObject {
 		String responsePayload = sandboxValues.getResponsePayload();
 		Thread.sleep(sleepTime);
 		Assert.assertTrue("Response payload data mismatched",data.isRefundResponsePayload(responsePayload));
+	}
+	
+	@When("^I get the balance of the \"([^\"]*)\"$")
+	public void i_get_the_balance_of_the(String arg1) throws Throwable {
+	    SandBoxPage sandbox = new SandBoxPage(driver);
+	    SandBoxValues sandboxValues = new SandBoxValues();
+	    String balance = sandbox.getBalanceofTheNumber(arg1);
+	    sandboxValues.setBalance(balance);
+	}
+
+	@When("^I enter same client correlator$")
+	public void i_enter_same_client_correlator() throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+	    SandBoxValues sandboxValues = new SandBoxValues();
+	    String clientCorrelator = sandboxValues.getClientCorrelation();
+	    sandbox.enterClientCorrelator(clientCorrelator);
+	}
+
+	@Then("^I validate the balance of the \"([^\"]*)\"$")
+	public void i_validate_the_balance_of_the(String arg1) throws Throwable {
+		  DataValidation data =  new DataValidation();
+		  Assert.assertTrue("Response payload data mismatched",data.isBalance(arg1));
+	}
+	
+	@When("^I get the error response payload$")
+	public void i_get_the_error_response_payload() throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues sandboxValues = new SandBoxValues();
+		sandboxValues.setResponsePayload(sandbox.getRsponsePayloadUI());
+	}
+	
+	@Then("^I validate the error response payload$")
+	public void i_validate_the_error_response_payload() throws Throwable {
+		SandBoxValues sandboxValues = new SandBoxValues();
+		DataValidation data = new DataValidation();
+		String responsePayload = sandboxValues.getResponsePayload();
+		Thread.sleep(sleepTime);
+		Assert.assertTrue("Response payload data mismatched", data.isErrorResponsePayload(responsePayload));
+	}
+	
+	@Then("^I validate the error response payload containing \"([^\"]*)\"$")
+	public void i_validate_the_error_response_payload_containing(String arg1) throws Throwable {
+		DataValidation data = new DataValidation();
+		Assert.assertTrue("Response payload data mismatched", data.isErrorResponsePayload(arg1));
 	}
 }

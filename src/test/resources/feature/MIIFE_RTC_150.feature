@@ -33,15 +33,15 @@ And I enter "<referenceCode>" as reference code
 And I enter "<requestDescription>" as the request description
 And I enter "<currency>" as currency
 And I enter "<amount>" as request amount
-And I enter "<clientCorrelator>" as request client correlator
+And I enter request client correlator
 And I enter "<notifyURL>" as notify URL
 And I enter "<purchaseCategoryCode>" as purchase category code
 And I enter "<channel>" as channel
 And I enter "<taxAmount>" as tax amount
 And I click on send request button in payment parameters page
-And I get the response payload
-And I should see the response payload containing "text"
+And I get the error response payload
+And I validate the error response payload containing "The %1 operator charging limit for this user has been exceeded"
 
 Examples:
-| usertype|number     |description|balance|transactionStatus|transactionOperationStatus|referenceCode|requestDescription |currency|amount|clientCorrelator|notifyURL                                       |purchaseCategoryCode|channel|taxAmount|maxPaymentAmount|
-|QA17LOG  |94123123123|testAuxenta|1000.00|Charged          |Charged                   |REF-12345    |Alien Invaders Game|USD     |10.0  |548219          |http://localhost:8080/mifeapiserver/callback.jsp|Game                |SMS    |0.15     |10.00           |
+| usertype|number     |description|balance|transactionStatus|transactionOperationStatus|referenceCode|requestDescription |currency|amount|notifyURL                                       |purchaseCategoryCode|channel|taxAmount|maxPaymentAmount|
+|QA17LOG  |94123123123|testAuxenta|1000.00|Charged          |Charged                   |REF-12345    |Alien Invaders Game|USD     |10.0  |http://localhost:8080/mifeapiserver/callback.jsp|Game                |SMS    |0.15     |10.00           |
