@@ -287,6 +287,6 @@ public class APIPublisherHome extends BasicTestObject{
 	public void i_validate_the_table_content_for_and(String arg1, String arg2, String arg3) throws Throwable {
 		PublisherHomePage publisherHome = new PublisherHomePage(driver);
 		String username = config.getValue(getEnvironment() + arg1 + "user");
-		Assert.assertTrue("The application nor the apis relevant to your search is listed in the table", publisherHome.validateTableSubscriptions(username, arg2, arg3));
+		Assert.assertTrue("The application nor the apis relevant to your search is listed in the table", publisherHome.isTableSubscriptions(username, arg2, arg3));
 	}
 }
