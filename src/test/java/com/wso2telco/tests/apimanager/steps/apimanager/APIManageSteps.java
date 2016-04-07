@@ -180,6 +180,7 @@ public class APIManageSteps extends BasicTestObject {
 	public void i_should_see_created_application_at_the_top_of_the_Approval_Tasks_table_for(String arg1, String arg2) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		String appName = config.getValue(getEnvironment() + arg2 + "user") + "_" + arg1;
+		Thread.sleep(sleepTime);
 		Assert.assertTrue("App name is not visible in the area", managerpage.isApplicationNameVisible(appName));
 	}
 
