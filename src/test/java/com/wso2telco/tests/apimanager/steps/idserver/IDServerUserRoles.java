@@ -104,6 +104,7 @@ public class IDServerUserRoles extends BasicTestObject {
 	@When("^I click identity server User Management Users link$")
 	public void i_click_identity_server_User_Management_Users_link() throws Throwable {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
+		Thread.sleep(sleepTime);
 		carbonUserRolesPage.clickUsersLink();
 	}
 
@@ -116,12 +117,14 @@ public class IDServerUserRoles extends BasicTestObject {
 	@When("^I enter identity server Search Users to Enter user name pattern as \"([^\"]*)\"$")
 	public void i_enter_identity_server_Search_Users_to_Enter_user_name_pattern_as(String arg1) throws Throwable {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
+		Thread.sleep(sleepTime);
 		carbonUserRolesPage.setSearchCriteria(config.getValue(getEnvironment() + arg1 + "user"));
 	}
 
 	@When("^I click on identity server Users search button$")
 	public void i_click_on_identity_server_Users_search_button() throws Throwable {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
+		Thread.sleep(sleepTime);
 		carbonUserRolesPage.clickUserSearchButton();
 	}
 	
@@ -285,17 +288,20 @@ public class IDServerUserRoles extends BasicTestObject {
 	}
    
    @When("^I click delete existing username as \"([^\"]*)\"$")
-   public void i_click_delete_existing_username_as(String arg1) throws Throwable {
-	   CarbonRolesPage carbonRoles = new CarbonRolesPage(driver);
-	   
-       if (carbonRoles.isUserNameVisible()) {
-    	   carbonRoles.clickDeleteUser(config.getValue(getEnvironment() + arg1 + "user"));
-    	   carbonRoles.clickYes();
-    	   carbonRoles.clickOK();
-	} else {
-		 carbonRoles.clickOK();
+	public void i_click_delete_existing_username_as(String arg1) throws Throwable {
+		CarbonRolesPage carbonRoles = new CarbonRolesPage(driver);
+		Thread.sleep(sleepTime);
+		if (carbonRoles.isUserNameVisible()) {
+			carbonRoles.clickDeleteUser(config.getValue(getEnvironment() + arg1 + "user"));
+			Thread.sleep(sleepTime);
+			carbonRoles.clickYes();
+			Thread.sleep(sleepTime);
+			carbonRoles.clickOK();
+		} else {
+			Thread.sleep(sleepTime);
+			carbonRoles.clickOK();
+		}
 	}
-   }
    
    @Then("^I search \"([^\"]*)\" from the roles list$")
    public void i_search_from_the_roles_list(String arg1) throws Throwable {
