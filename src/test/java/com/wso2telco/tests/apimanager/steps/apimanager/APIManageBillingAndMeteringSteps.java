@@ -392,6 +392,15 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 		runtimeQuery.setRuntimeQuery(operatorApiTraffic);  
 	}
 	
+	@When("^I prepare the OPERATOR_API_TRAFFIC query using \"([^\"]*)\" \"([^\"]*)\" and \"([^\"]*)\" parameters$")
+	public void i_prepare_the_OPERATOR_API_TRAFFIC_query_using_and_parameters(String arg1, String arg2, String arg3) throws Throwable {
+		String fromdate = arg1 + " 00:00:00";
+		String toDate = arg2 + " 23:59:59";
+		String operatorApiTraffic = String.format(SQLQuery.CUSTOMER_CARE_FOR_CUSTOMERCARE_ROLE, fromdate, toDate, arg3);
+		RuntimeData runtimeQuery = new RuntimeData();
+		runtimeQuery.setRuntimeQuery(operatorApiTraffic);  
+	}
+	
 	@Then("^I should see the generated Customer Care Report$")
 	public void i_should_see_the_generated_Customer_Care_Report() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
