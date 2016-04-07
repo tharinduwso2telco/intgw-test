@@ -61,4 +61,4 @@ And I should see TPS Summary as "TPS Summary" under apimanager Manager Performan
 
 Examples:
 |usertype| Aggregatoruser|CustomerCareuser|
-|QA17LOG|AGGRIGATOR|CUSTOMERCARE|
+|LOGOUT|AGGRIGATOR|CUSTOMERCARE|
