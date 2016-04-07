@@ -19,20 +19,22 @@ import cucumber.api.java.en.When;
 public class APIManageSteps extends BasicTestObject {
 	
 	@Then("^I should see the apimanager Manager page header as \"([^\"]*)\"$")
-	public void i_should_see_the_apimanager_Manager_page_header_as(String arg1)
-			throws Throwable {
+	public void i_should_see_the_apimanager_Manager_page_header_as(String arg1) throws Throwable {
+		Thread.sleep(sleepTime);
 		for (String winHandle : driver.getWindowHandles()) {
 			driver.switchTo().window(winHandle);
 		}
+		Thread.sleep(sleepTime);
 		ManagerPage managerpage = new ManagerPage(driver);
 		Assert.assertTrue("Manager page did not load properly", managerpage.isManagerPage(arg1));
 	}
 
 	@When("^I enter apimanager Manager page username and password for \"([^\"]*)\"$")
-	public void i_enter_apimanager_Manager_page_username_and_password_for(
-			String arg1) throws Throwable {
+	public void i_enter_apimanager_Manager_page_username_and_password_for(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
+		Thread.sleep(sleepTime);
 		managerpage.enterUserName(config.getValue(getEnvironment() + arg1 + "user"));
+		Thread.sleep(sleepTime);
 		managerpage.enterPassword(config.getValue(getEnvironment() + arg1 + "pwd"));
 	}
 
