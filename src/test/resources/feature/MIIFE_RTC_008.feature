@@ -66,7 +66,8 @@ Then I should see "Subscription Successful" on Subscription Successful pop up
 When I click Go to My Subscription button
 Then I should see the apimanager Subscriptions page header as "Subscriptions"
 And I should see "<appName>" under Applications with Subscriptions for "<usertype>"
-And I should see the "<apiNameWithVersion>" under Subscribed APIs
+When I select created application "<appName>" from the dropdown for "<usertype>"
+Then I should see the "<apiNameWithVersion>" under Subscribed APIs
 
 Examples:
 |usertype|ApplicationDetails |Action |status|apiName	  |operator|CallbackURL                                                      |Description |appName				 |apiNameWithVersion|

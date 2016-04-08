@@ -15,10 +15,12 @@ public class APISandBoxSteps extends BasicTestObject {
 
 	@Then("^I should see the Login in apimanager Sandbox page header as \"([^\"]*)\"$")
 	public void i_should_see_the_Login_in_apimanager_Sandbox_page_header_as(String arg1) throws Throwable {
+		Thread.sleep(sleepTime);
 		for(String winHandle : driver.getWindowHandles()){
 		    driver.switchTo().window(winHandle);
 		}
 		SandBoxPage sandbox = new SandBoxPage(driver);
+		Thread.sleep(sleepTime);
 	    Assert.assertTrue("Sandbox page did not load properly", sandbox.isSandboxLoginPage(arg1));
 	}
 
@@ -26,6 +28,7 @@ public class APISandBoxSteps extends BasicTestObject {
 	public void i_enter_apimanager_Sandbox_page_username_and_password_for(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
 		sandbox.enterUserName(config.getValue(getEnvironment() + arg1 + "user"));
+		Thread.sleep(sleepTime);
 		sandbox.enterPassword(config.getValue(getEnvironment() + arg1 + "pwd"));
 	}
 

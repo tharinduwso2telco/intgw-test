@@ -59,6 +59,7 @@ public class APIsSteps extends BasicTestObject {
 	public void i_select_for(String arg1, String arg2) throws Throwable {
 		APIsPage apiPage = new APIsPage(driver);
 		String appName = config.getValue(getEnvironment() + arg2 + "user") + "_" + arg1;
+		Thread.sleep(sleepTime);
 		apiPage.clickAppName(appName);
 		Thread.sleep(sleepTime);
 	}
@@ -66,18 +67,21 @@ public class APIsSteps extends BasicTestObject {
 	@When("^I select operator as \"([^\"]*)\"$")
 	public void i_select_operator_as(String arg1) throws Throwable {
 		APIsPage apiPage = new APIsPage(driver);
+		Thread.sleep(sleepTime);
 		apiPage.clickOperator(arg1);
 	}
 
 	@When("^I click apimanager \"([^\"]*)\" API page subscribe button$")
 	public void i_click_apimanager_API_page_subscribe_button(String arg1) throws Throwable {
 		APIsPage apiPage = new APIsPage(driver);
+		Thread.sleep(sleepTime);
 		apiPage.clickSubscribe();
 	}
 
 	@Then("^I should see \"([^\"]*)\" on Subscription Successful pop up$")
 	public void i_should_see_on_Subscription_Successful_pop_up(String arg1) throws Throwable {
 		APIsPage apiPage = new APIsPage(driver);
+		Thread.sleep(sleepTime);
 		Assert.assertTrue("Subscription success popup is not loaded", apiPage.isSubscriptionSuccessPopup(arg1));
 	}
 

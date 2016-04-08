@@ -3,6 +3,7 @@ package com.wso2telco.tests.apimanager.steps.apipublisher;
 
 
 import org.junit.Assert;
+
 import com.wso2telco.apimanager.pageobjects.apipublisher.APIPublisherHomePage;
 import com.wso2telco.apimanager.pageobjects.apipublisher.APIPublisherLoginPage;
 import com.wso2telco.apimanager.pageobjects.publisher.PublisherHomePage;
@@ -45,8 +46,11 @@ public class APIPublisherHome extends BasicTestObject{
 	@When("^I search existing API \"([^\"]*)\" and delete it$")
 	public void i_search_existing_API_and_delete_it(String arg1) throws Throwable {
 		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
+		Thread.sleep(sleepTime);
 		publisherHome.enterAPINameSearch(arg1);
+		Thread.sleep(sleepTime);
 		publisherHome.clickSearch();
+		Thread.sleep(sleepTime);
 		publisherHome.deleteExistingAPI(arg1);
 		Thread.sleep(sleepTime);
 	}
@@ -84,11 +88,13 @@ public class APIPublisherHome extends BasicTestObject{
 	@When("^I click on apipublisher Design \"([^\"]*)\" checkbox$")
 	public void i_click_on_apipublisher_Design_checkbox(String arg1) throws Throwable {
 		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
+		Thread.sleep(sleepTime);
 		publisherHome.setUrlType(arg1);
 	}
 	@When("^I provide apipublisher Design Provide Resource name as \"([^\"]*)\"$")
 	public void i_provide_apipublisher_Design_Provide_Resource_name_as(String arg1) throws Throwable {
 		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
+		Thread.sleep(sleepTime);
 		publisherHome.enterResourceName(arg1);
 	}
 	
@@ -101,6 +107,7 @@ public class APIPublisherHome extends BasicTestObject{
 	@When("^I click on apipublisher Design new resources link \"([^\"]*)\"$")
 	public void i_click_on_apipublisher_Design_new_resources_link(String arg1) throws Throwable {
 		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
+		Thread.sleep(sleepTime);
 		publisherHome.clickResource();
 	}
 	
