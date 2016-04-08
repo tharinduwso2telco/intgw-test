@@ -1,6 +1,6 @@
 <RateCard>
 	<Operators>
-		<API name="SMS">
+		<API name="smsmessaging">
 			<!-- CONSTANTnon-default categoryANDsubcategory -->
 			<Operation name="200">
 				<Rate>
@@ -14,40 +14,111 @@
 						<SubCategory name="652" rate="200" />
 						<SubCategory name="653" rate="300" />
 					</Category>
-					<Taxes>
+					<Category name="345" rate="12">
+						<SubCategory name="651" rate="100" />
+						<SubCategory name="652" rate="200" />
+						<SubCategory name="678" rate="300" />
+						
+					</Category>
+					<!--<Taxes>
 						<Tax>VAT</Tax>
 						<Tax>ABC</Tax>
-					</Taxes>
+					</Taxes>-->
 				</Rate>
 			</Operation>
 			<!-- CONSTANT-default -->
 			<Operation name="201">
 				<Rate default="true">
-					<Name>lb1</Name>
+					<Name>SM2</Name>
 					<Currency>Rs</Currency>
 					<Value>10</Value>
 					<Type>CONSTANT</Type>
-					<Taxes>
+					<!--<Taxes>
 						<Tax>VAT</Tax>
 						<Tax>ABC</Tax>
-					</Taxes>
+					</Taxes>-->
 				</Rate>
 			</Operation>
 			<!-- SUBSCRIPTION-default -->
 			<Operation name="202">
 				<Rate default="true">
-					<Name>lb1</Name>
+					<Name>SM2</Name>
 					<Currency>Rs</Currency>
 					<Value>20</Value>
 					<Type>SUBSCRIPTION</Type>
-					<Taxes>
+					<!--<Taxes>
 						<Tax>VAT</Tax>
 						<Tax>ABC</Tax>
-					</Taxes>
+					</Taxes>-->
 				</Rate>
 			</Operation>
+			<Operation name="203">
+					<Rate>
+						<Name>SM2</Name>
+						<Currency>Rs</Currency>
+						<Value>20</Value>
+						<Type>PER_REQUEST</Type>
+						<Category name="Game" rate="10">
+							<SubCategory name="Game01" rate="100"/>
+							<SubCategory name="Game02" rate="200"/>
+							<SubCategory name="Game03" rate="300"/>
+						</Category>
+					</Rate>
+				</Operation>
+				<Operation name="204">
+					<Rate>
+						<Name>SM2</Name>
+						<Currency>Rs</Currency>
+						<Value>20</Value>
+						<Type>PER_REQUEST</Type>
+						<Category name="Game" rate="10">
+							<SubCategory name="Game01" rate="100"/>
+							<SubCategory name="Game02" rate="200"/>
+							<SubCategory name="Game03" rate="300"/>
+						</Category>
+					</Rate>
+				</Operation>
+				<Operation name="205">
+					<Rate>
+						<Name>SM2</Name>
+						<Currency>Rs</Currency>
+						<Value>20</Value>
+						<Type>PER_REQUEST</Type>
+						<Category name="Game" rate="10">
+							<SubCategory name="Game01" rate="100"/>
+							<SubCategory name="Game02" rate="200"/>
+							<SubCategory name="Game03" rate="300"/>
+						</Category>
+					</Rate>
+				</Operation>
+				<Operation name="206">
+					<Rate>
+						<Name>SM2</Name>
+						<Currency>Rs</Currency>
+						<Value>20</Value>
+						<Type>PER_REQUEST</Type>
+						<Category name="Game" rate="10">
+							<SubCategory name="Game01" rate="100"/>
+							<SubCategory name="Game02" rate="200"/>
+							<SubCategory name="Game03" rate="300"/>
+						</Category>
+					</Rate>
+				</Operation>
+				<Operation name="207">
+					<Rate>
+						<Name>SM2</Name>
+						<Currency>Rs</Currency>
+						<Value>20</Value>
+						<Type>PER_REQUEST</Type>
+						<Category name="Game" rate="10">
+							<SubCategory name="Game01" rate="100"/>
+							<SubCategory name="Game02" rate="200"/>
+							<SubCategory name="Game03" rate="300"/>
+						</Category>
+					</Rate>
+				</Operation>
 		</API>
-		<API name="USSD">
+		<API name="ussd">
 			<!-- QUOTA default -->
 			<Operation name="400">
 				<Rate default="true">
@@ -60,10 +131,10 @@
 						<ExcessRate>10</ExcessRate>
 						<DefaultRate>10</DefaultRate>
 					</Attributes>
-					<Taxes>
+					<!--<Taxes>
 						<Tax>VAT</Tax>
 						<Tax>ABC</Tax>
-					</Taxes>
+					</Taxes>-->
 				</Rate>
 			</Operation>
 		</API>
@@ -75,10 +146,10 @@
 					<Currency>Rs</Currency>
 					<Value>10</Value>
 					<Type>CONSTANT</Type>
-					<Taxes>
+					<!--<<Taxes>
 						<Tax>VAT</Tax>
 						<Tax>ABC</Tax>
-					</Taxes>
+					</Taxes>-->
 				</Rate>
 			</Operation>
 		</API>
@@ -95,6 +166,16 @@
 						<Opco>5</Opco>
 					</Commission>
 					<Type>PERCENTAGE</Type>
+					<CategoryBase>true</CategoryBase>
+					<Category name="Game" rate="10">
+						<SubCategory name="Game01">
+						<Commission>
+						<Sp>80</Sp>
+						<Ads>15</Ads>
+						<Opco>5</Opco>
+					</Commission>
+					</SubCategory>
+					</Category>
 				</Rate>
 			</Operation>
 			<!-- PER_REQUEST withSurCharge non-default categoryANDsubcategory -->

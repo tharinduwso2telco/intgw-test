@@ -1,10 +1,10 @@
 <RateCard>
 	<Operators>
-		<API name="SMS">
+		<API name="smsmessaging">
 			<!-- QUOTA - non-default categoryANDsubcategory -->
 			<Operation name="200">
 				<Rate>
-					<Name>SM2</Name>
+					<Name>SM1</Name>
 					<Currency>Rs</Currency>
 					<Value>20</Value>
 					<Type>QUOTA</Type>
@@ -42,12 +42,40 @@
 							</Attributes>
 						</SubCategory>
 					</Category>
+					<Category name="349">
+						<Attributes>
+							<MaxCount>500</MaxCount>
+							<ExcessRate>10</ExcessRate>
+							<DefaultRate>10</DefaultRate>
+						</Attributes>
+						<SubCategory name="651">
+							<Attributes>
+								<MaxCount>500</MaxCount>
+								<ExcessRate>10</ExcessRate>
+								<DefaultRate>10</DefaultRate>
+							</Attributes>
+						</SubCategory>
+					</Category>
+					<Category name="345">
+						<Attributes>
+							<MaxCount>500</MaxCount>
+							<ExcessRate>10</ExcessRate>
+							<DefaultRate>10</DefaultRate>
+						</Attributes>
+						<SubCategory name="678">
+							<Attributes>
+								<MaxCount>500</MaxCount>
+								<ExcessRate>10</ExcessRate>
+								<DefaultRate>10</DefaultRate>
+							</Attributes>
+						</SubCategory>
+					</Category>
 				</Rate>
 			</Operation>
 			<!-- CONSTANT-default -->
 			<Operation name="201">
 				<Rate default="true">
-					<Name>lb1</Name>
+					<Name>SM2</Name>
 					<Currency>Rs</Currency>
 					<Value>10</Value>
 					<Type>CONSTANT</Type>
@@ -60,7 +88,7 @@
 			<!-- SUBSCRIPTION-default -->
 			<Operation name="202">
 				<Rate default="true">
-					<Name>lb1</Name>
+					<Name>SM2</Name>
 					<Currency>Rs</Currency>
 					<Value>20</Value>
 					<Type>SUBSCRIPTION</Type>
@@ -70,8 +98,79 @@
 					</Taxes>
 				</Rate>
 			</Operation>
+			<Operation name="203">
+					<Rate>
+						<Name>SM2</Name>
+						<Currency>Rs</Currency>
+						<Value>20</Value>
+						<Type>PER_REQUEST</Type>
+						<Category name="Game" rate="10">
+							<SubCategory name="Game01" rate="100"/>
+							<SubCategory name="Game02" rate="200"/>
+							<SubCategory name="Game03" rate="300"/>
+						</Category>
+					</Rate>
+				</Operation>
+				<Operation name="204">
+					<Rate>
+						<Name>SM2</Name>
+						<Currency>Rs</Currency>
+						<Value>20</Value>
+						<Type>PER_REQUEST</Type>
+						<Category name="349" rate="12">
+						<SubCategory name="651" rate="100" />
+						<SubCategory name="652" rate="200" />
+						<SubCategory name="653" rate="300" />
+					</Category>
+					<Category name="345" rate="12">
+						<SubCategory name="651" rate="100" />
+						<SubCategory name="652" rate="200" />
+						<SubCategory name="678" rate="300" />
+						
+					</Category>
+					</Rate>
+				</Operation>
+				<Operation name="205">
+					<Rate>
+						<Name>SM2</Name>
+						<Currency>Rs</Currency>
+						<Value>20</Value>
+						<Type>PER_REQUEST</Type>
+						<Category name="Game" rate="10">
+							<SubCategory name="Game01" rate="100"/>
+							<SubCategory name="Game02" rate="200"/>
+							<SubCategory name="Game03" rate="300"/>
+						</Category>
+					</Rate>
+				</Operation>
+				<Operation name="206">
+					<Rate>
+						<Name>SM2</Name>
+						<Currency>Rs</Currency>
+						<Value>20</Value>
+						<Type>PER_REQUEST</Type>
+						<Category name="Game" rate="10">
+							<SubCategory name="Game01" rate="100"/>
+							<SubCategory name="Game02" rate="200"/>
+							<SubCategory name="Game03" rate="300"/>
+						</Category>
+					</Rate>
+				</Operation>
+				<Operation name="207">
+					<Rate>
+						<Name>SM2</Name>
+						<Currency>Rs</Currency>
+						<Value>20</Value>
+						<Type>PER_REQUEST</Type>
+						<Category name="Game" rate="10">
+							<SubCategory name="Game01" rate="100"/>
+							<SubCategory name="Game02" rate="200"/>
+							<SubCategory name="Game03" rate="300"/>
+						</Category>
+					</Rate>
+				</Operation>
 		</API>
-		<API name="USSD">
+		<API name="ussd">
 			<!-- QUOTA default -->
 			<Operation name="400">
 				<Rate default="true">
