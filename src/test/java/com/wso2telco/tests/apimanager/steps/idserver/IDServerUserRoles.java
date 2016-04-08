@@ -284,6 +284,14 @@ public class IDServerUserRoles extends BasicTestObject {
 		Thread.sleep(sleepTime);
 		driver.get(config.getValue(getEnvironment() + "ApiManagerPublisher"));
 	}
+	
+	@When("^I close the browser and navigate to activity manager$")
+	public void i_close_the_browser_and_navigate_to_activity_manager() throws Throwable {
+		driver.close();
+		launchBrowser();
+		Thread.sleep(sleepTime);
+		driver.get(config.getValue(getEnvironment() + "ActivityMonitor"));
+	}
 
    @When("^I clear existing aggrigator role$")
 	public void I_clear_existing_aggrigator_role() throws Throwable {
