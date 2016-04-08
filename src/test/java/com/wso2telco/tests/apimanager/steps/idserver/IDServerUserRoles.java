@@ -92,57 +92,70 @@ public class IDServerUserRoles extends BasicTestObject {
 	@Then("^I should see ids Add Role Success pop up message as \"([^\"]*)\"$")
 	public void i_should_see_ids_Add_Role_Success_pop_up_message_as(String arg1) throws Throwable {
 		CarbonRolesPage carbonRoles = new CarbonRolesPage(driver);
+		Thread.sleep(sleepTime);
 		Assert.assertTrue("Success message loaded properly", carbonRoles.isSuccessPopup(arg1));
 	}
 
 	@Then("^I should see identity server User Management page header as \"([^\"]*)\"$")
 	public void i_should_see_identity_server_User_Management_page_header_as(String arg1) throws Throwable {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
+		Thread.sleep(sleepTime);
 		Assert.assertTrue("Users page did not load properly",carbonUserRolesPage.isSystemUserStore(arg1));
 	}
 	
 	@When("^I click identity server User Management Users link$")
 	public void i_click_identity_server_User_Management_Users_link() throws Throwable {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
+		Thread.sleep(sleepTime);
 		carbonUserRolesPage.clickUsersLink();
 	}
 
 	@Then("^I should see ids User Management Users page header as \"([^\"]*)\"$")
 	public void i_should_see_ids_User_Management_Users_page_header_as(String arg1) throws Throwable {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
+		Thread.sleep(sleepTime);
 		Assert.assertTrue("User page did not load properly", carbonUserRolesPage.isUserPage(arg1));
 	}
 
 	@When("^I enter identity server Search Users to Enter user name pattern as \"([^\"]*)\"$")
 	public void i_enter_identity_server_Search_Users_to_Enter_user_name_pattern_as(String arg1) throws Throwable {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
+		Thread.sleep(sleepTime);
 		carbonUserRolesPage.setSearchCriteria(config.getValue(getEnvironment() + arg1 + "user"));
 	}
 
 	@When("^I click on identity server Users search button$")
 	public void i_click_on_identity_server_Users_search_button() throws Throwable {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
+		Thread.sleep(sleepTime);
 		carbonUserRolesPage.clickUserSearchButton();
 	}
 	
 	@Then("^I should see the \"([^\"]*)\" on ids Users search area$")
 	public void i_should_see_the_on_ids_Users_search_area(String arg1) throws Throwable {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
+		Thread.sleep(sleepTime);
 		Assert.assertTrue("Username is not there on the search result area",carbonUserRolesPage.isUserSearch(config.getValue(getEnvironment() + arg1 + "user")));
 	}
 	
 	@When("^I click on ids Users view roles link and delete existing Publisher role from the user$")
 	public void i_click_on_ids_Users_view_roles_link_and_delete_existing_Publisher_role_from_the_user() throws Throwable {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
+		Thread.sleep(sleepTime);
 		carbonUserRolesPage.clickUsersViewRoles();
+		Thread.sleep(sleepTime);
 		if (carbonUserRolesPage.isPublisherRole()){
+			Thread.sleep(sleepTime);
 			carbonUserRolesPage.untickInternalPublisher();
 			/*if (carbonUserRolesPage.isInternalSubscriber()){
 				carbonUserRolesPage.untickInternalSubscriber();
 			}*/
+			Thread.sleep(sleepTime);
 			carbonUserRolesPage.clickEditRolesFinish();
+			Thread.sleep(sleepTime);
 			carbonUserRolesPage.clickEditRolesSuccessMsgOk();
 		} else {
+			Thread.sleep(sleepTime);
 			carbonUserRolesPage.clickEditRolesCancel();
 		}
 	}
@@ -150,12 +163,14 @@ public class IDServerUserRoles extends BasicTestObject {
 	@When("^I click on ids Users assign roles link under \"([^\"]*)\"$")
 	public void i_click_on_ids_Users_assign_roles_link_under(String arg1) throws Throwable {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
+		Thread.sleep(sleepTime);
 		carbonUserRolesPage.clickAssignRoles(config.getValue(getEnvironment() + arg1 + "user"));		
 	}
 
 	@Then("^I should see the ids List of roles page table header as \"([^\"]*)\"$")
 	public void i_should_see_the_ids_List_of_roles_page_table_header_as(String arg1) throws Throwable {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
+		Thread.sleep(sleepTime);
 		Assert.assertTrue("Assign role page did not load properly", carbonUserRolesPage.isAssignRolesPage(arg1));	
 	}
 	
@@ -168,30 +183,35 @@ public class IDServerUserRoles extends BasicTestObject {
 	@When("^I click on ids List of roles search button$")
 	public void i_click_on_ids_List_of_roles_search_button() throws Throwable {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
-		carbonUserRolesPage.clickRoleSearch();		
+		carbonUserRolesPage.clickRoleSearch();	
+		Thread.sleep(sleepTime);
 	}
 	
 	@Then("^I should see ids List of roles search area as \"([^\"]*)\"$")
 	public void i_should_see_ids_List_of_roles_search_area_as(String arg1) throws Throwable {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
+		Thread.sleep(sleepTime);
 		Assert.assertTrue(arg1 + " Role did not appear in the search area",carbonUserRolesPage.isRolesSearchArea(arg1));
 	}
 	
 	@When("^I click on ids List of roles \"([^\"]*)\" permissions link$")
 	public void i_click_on_ids_List_of_roles_permissions_link(String arg1) throws Throwable {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
+		Thread.sleep(sleepTime);
 		carbonUserRolesPage.clickRolesPermission(arg1);
 	}
 
 	@Then("^I should see the ids permissions of the role page header as \"([^\"]*)\"$")
 	public void i_should_see_the_ids_permissions_of_the_role_page_header_as(String arg1) throws Throwable {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
+		Thread.sleep(sleepTime);
 		Assert.assertTrue("Role permission page did not load properly",carbonUserRolesPage.isRolePermissionPage(arg1));
 	}
 	
 	@Then("^ids permissions of the role page Publish check box should be checked$")
 	public void ids_permissions_of_the_role_page_Publish_check_box_should_be_checked() throws Throwable {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
+		Thread.sleep(sleepTime);
 		Assert.assertTrue("Publisher role did not selected bydefault",carbonUserRolesPage.isPublisherRoleChecked());
 	}
 	
@@ -264,6 +284,14 @@ public class IDServerUserRoles extends BasicTestObject {
 		Thread.sleep(sleepTime);
 		driver.get(config.getValue(getEnvironment() + "ApiManagerPublisher"));
 	}
+	
+	@When("^I close the browser and navigate to activity manager$")
+	public void i_close_the_browser_and_navigate_to_activity_manager() throws Throwable {
+		driver.close();
+		launchBrowser();
+		Thread.sleep(sleepTime);
+		driver.get(config.getValue(getEnvironment() + "ActivityMonitor"));
+	}
 
    @When("^I clear existing aggrigator role$")
 	public void I_clear_existing_aggrigator_role() throws Throwable {
@@ -285,17 +313,20 @@ public class IDServerUserRoles extends BasicTestObject {
 	}
    
    @When("^I click delete existing username as \"([^\"]*)\"$")
-   public void i_click_delete_existing_username_as(String arg1) throws Throwable {
-	   CarbonRolesPage carbonRoles = new CarbonRolesPage(driver);
-	   
-       if (carbonRoles.isUserNameVisible()) {
-    	   carbonRoles.clickDeleteUser(config.getValue(getEnvironment() + arg1 + "user"));
-    	   carbonRoles.clickYes();
-    	   carbonRoles.clickOK();
-	} else {
-		 carbonRoles.clickOK();
+	public void i_click_delete_existing_username_as(String arg1) throws Throwable {
+		CarbonRolesPage carbonRoles = new CarbonRolesPage(driver);
+		Thread.sleep(sleepTime);
+		if (carbonRoles.isUserNameVisible()) {
+			carbonRoles.clickDeleteUser(config.getValue(getEnvironment() + arg1 + "user"));
+			Thread.sleep(sleepTime);
+			carbonRoles.clickYes();
+			Thread.sleep(sleepTime);
+			carbonRoles.clickOK();
+		} else {
+			Thread.sleep(sleepTime);
+			carbonRoles.clickOK();
+		}
 	}
-   }
    
    @Then("^I search \"([^\"]*)\" from the roles list$")
    public void i_search_from_the_roles_list(String arg1) throws Throwable {

@@ -165,14 +165,14 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 		String excelFileName = arg1 + arg3;
 		RuntimeData runtimeQuery = new RuntimeData();
 		String transactionLogQuery = runtimeQuery.getRuntimeQuery();
-		Assert.assertTrue("Transaction log time column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "time", "Date & Time"));
-		Assert.assertTrue("Transaction log userId column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "userId", " Identifier - Service Provider"));
-		Assert.assertTrue("Transaction log operatorId column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "operatorId", " Operator Identifier"));
-		Assert.assertTrue("Transaction log requestId column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "requestId", " MIFE Reference Code"));
+		Assert.assertTrue("Transaction log time column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "time", "Transaction_Timestamp"));
+		Assert.assertTrue("Transaction log userId column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "userId", "ServiceProviderID"));
+		Assert.assertTrue("Transaction log operatorId column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "operatorId", "OperatorID"));
+		Assert.assertTrue("Transaction log requestId column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "requestId", "MIFE_ReferenceCode"));
 		Assert.assertTrue("Transaction log msisdn column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "msisdn", " MSISDN"));
-		Assert.assertTrue("Transaction log chargeAmount column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "chargeAmount", " Amount"));
-		Assert.assertTrue("Transaction log responseCode column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "responseCode", " Response Code"));
-		Assert.assertTrue("Transaction log purchaseCategoryCode column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "purchaseCategoryCode", " Purchase Category Code"));
+		Assert.assertTrue("Transaction log chargeAmount column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "chargeAmount", "Amount"));
+		Assert.assertTrue("Transaction log responseCode column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "responseCode", "ResponseCode"));
+		//Assert.assertTrue("Transaction log purchaseCategoryCode column validation failed", managerpage.isTransactionLogData(transactionLogQuery, excelFileName, "purchaseCategoryCode", " Purchase Category Code"));
 	}
 	
 	@When("^I click on Transaction log NB menu item$")
@@ -388,6 +388,15 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 		String fromdate = arg1 + " 00:00:00";
 		String toDate = arg2 + " 23:59:59";
 		String operatorApiTraffic = String.format(SQLQuery.CUSTOMER_CARE, fromdate, toDate, arg3, arg4, arg5);
+		RuntimeData runtimeQuery = new RuntimeData();
+		runtimeQuery.setRuntimeQuery(operatorApiTraffic);  
+	}
+	
+	@When("^I prepare the OPERATOR_API_TRAFFIC query using \"([^\"]*)\" \"([^\"]*)\" and \"([^\"]*)\" parameters$")
+	public void i_prepare_the_OPERATOR_API_TRAFFIC_query_using_and_parameters(String arg1, String arg2, String arg3) throws Throwable {
+		String fromdate = arg1 + " 00:00:00";
+		String toDate = arg2 + " 23:59:59";
+		String operatorApiTraffic = String.format(SQLQuery.CUSTOMER_CARE_FOR_CUSTOMERCARE_ROLE, fromdate, toDate, arg3);
 		RuntimeData runtimeQuery = new RuntimeData();
 		runtimeQuery.setRuntimeQuery(operatorApiTraffic);  
 	}

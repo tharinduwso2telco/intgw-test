@@ -3,6 +3,7 @@ package com.wso2telco.tests.apimanager.steps.apipublisher;
 
 
 import org.junit.Assert;
+
 import com.wso2telco.apimanager.pageobjects.apipublisher.APIPublisherHomePage;
 import com.wso2telco.apimanager.pageobjects.apipublisher.APIPublisherLoginPage;
 import com.wso2telco.apimanager.pageobjects.publisher.PublisherHomePage;
@@ -45,8 +46,11 @@ public class APIPublisherHome extends BasicTestObject{
 	@When("^I search existing API \"([^\"]*)\" and delete it$")
 	public void i_search_existing_API_and_delete_it(String arg1) throws Throwable {
 		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
+		Thread.sleep(sleepTime);
 		publisherHome.enterAPINameSearch(arg1);
+		Thread.sleep(sleepTime);
 		publisherHome.clickSearch();
+		Thread.sleep(sleepTime);
 		publisherHome.deleteExistingAPI(arg1);
 		Thread.sleep(sleepTime);
 	}
@@ -84,11 +88,13 @@ public class APIPublisherHome extends BasicTestObject{
 	@When("^I click on apipublisher Design \"([^\"]*)\" checkbox$")
 	public void i_click_on_apipublisher_Design_checkbox(String arg1) throws Throwable {
 		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
+		Thread.sleep(sleepTime);
 		publisherHome.setUrlType(arg1);
 	}
 	@When("^I provide apipublisher Design Provide Resource name as \"([^\"]*)\"$")
 	public void i_provide_apipublisher_Design_Provide_Resource_name_as(String arg1) throws Throwable {
 		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
+		Thread.sleep(sleepTime);
 		publisherHome.enterResourceName(arg1);
 	}
 	
@@ -101,6 +107,7 @@ public class APIPublisherHome extends BasicTestObject{
 	@When("^I click on apipublisher Design new resources link \"([^\"]*)\"$")
 	public void i_click_on_apipublisher_Design_new_resources_link(String arg1) throws Throwable {
 		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
+		Thread.sleep(sleepTime);
 		publisherHome.clickResource();
 	}
 	
@@ -287,6 +294,6 @@ public class APIPublisherHome extends BasicTestObject{
 	public void i_validate_the_table_content_for_and(String arg1, String arg2, String arg3) throws Throwable {
 		PublisherHomePage publisherHome = new PublisherHomePage(driver);
 		String username = config.getValue(getEnvironment() + arg1 + "user");
-		Assert.assertTrue("The application nor the apis relevant to your search is listed in the table", publisherHome.validateTableSubscriptions(username, arg2, arg3));
+		Assert.assertTrue("The application nor the apis relevant to your search is listed in the table", publisherHome.isTableSubscriptions(username, arg2, arg3));
 	}
 }

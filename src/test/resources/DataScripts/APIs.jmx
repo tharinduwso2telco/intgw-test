@@ -22,8 +22,9 @@
         <longProp name="ThreadGroup.start_time">1458552644000</longProp>
         <longProp name="ThreadGroup.end_time">1458552644000</longProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
-        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.duration">10</stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
+        <stringProp name="TestPlan.comments">working</stringProp>
       </ThreadGroup>
       <hashTree>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
@@ -76,6 +77,10 @@
               </elementProp>
             </collectionProp>
           </HeaderManager>
+          <hashTree/>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+            <stringProp name="ConstantTimer.delay">1000</stringProp>
+          </ConstantTimer>
           <hashTree/>
         </hashTree>
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
@@ -191,6 +196,7 @@
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
+        <stringProp name="TestPlan.comments">Working</stringProp>
       </ThreadGroup>
       <hashTree>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
@@ -201,8 +207,17 @@
           <boolProp name="recycle">true</boolProp>
           <stringProp name="shareMode">shareMode.all</stringProp>
           <boolProp name="stopThread">false</boolProp>
-          <stringProp name="variableNames">mobileNum,bearer,payload</stringProp>
+          <stringProp name="variableNames">mobileNum,bearer</stringProp>
         </CSVDataSet>
+        <hashTree/>
+        <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable_clientCorrelator" enabled="true">
+          <stringProp name="maximumValue">999999</stringProp>
+          <stringProp name="minimumValue">1</stringProp>
+          <stringProp name="outputFormat">0000000</stringProp>
+          <boolProp name="perThread">false</boolProp>
+          <stringProp name="randomSeed"></stringProp>
+          <stringProp name="variableName">clientCorrelator1</stringProp>
+        </RandomVariableConfig>
         <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
@@ -210,7 +225,20 @@
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">${payload}</stringProp>
+                <stringProp name="Argument.value">{&#xd;
+	&quot;outboundUSSDMessageRequest&quot;: {&#xd;
+		&quot;address&quot;: &quot;tel:+${mobileNum}&quot;,&#xd;
+		&quot;shortCode&quot;: &quot;1234&quot;,&#xd;
+		&quot;keyword&quot;: &quot;1234&quot;,&#xd;
+		&quot;outboundUSSDMessage&quot;: &quot;Streaming video of the big fight&quot;,&#xd;
+		&quot;clientCorrelator&quot;: &quot;${clientCorrelator1}&quot;,&#xd;
+		&quot;responseRequest&quot;: {&#xd;
+			&quot;notifyURL&quot;: &quot;http://localhost:8080/mifeapiserver/callback.jsp&quot;,&#xd;
+			&quot;callbackData&quot;: &quot;some-data-useful-to-the-requester&quot;&#xd;
+		},&#xd;
+		&quot;ussdAction&quot;: &quot;mtinit&quot;&#xd;
+	}&#xd;
+}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -289,8 +317,8 @@
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <stringProp name="LoopController.loops">1</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">4</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">40</stringProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">4</stringProp>
         <longProp name="ThreadGroup.start_time">1458552644000</longProp>
         <longProp name="ThreadGroup.end_time">1458552644000</longProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
@@ -400,16 +428,17 @@
               <stringProp name="Assertion.scope">all</stringProp>
             </ResponseAssertion>
             <hashTree/>
-            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="ORDER_ID_BeanShell_PostProcessor" enabled="true">
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell_PostProcessor" enabled="true">
               <stringProp name="TestPlan.comments">need to change the file location</stringProp>
               <stringProp name="filename"></stringProp>
               <stringProp name="parameters"></stringProp>
               <boolProp name="resetInterpreter">false</boolProp>
               <stringProp name="script">order = vars.get(&quot;core&quot;); 
-f = new FileOutputStream(&quot;C://WSO2Telco_Automation//api-manager-tests//src//test//resources//DataScripts//CSV//sms//smsCoreID.csv&quot;,true); 
+apibearer = vars.get(&quot;bearer&quot;);
+f = new FileOutputStream(&quot;D://WSO2Telco_Automation//api-manager-tests//src//test//resources//DataScripts//CSV//sms//smsCoreID.csv&quot;,true); 
 p = new PrintStream(f); 
 this.interpreter.setOut(p); 
-print(order); 
+print(order+&quot;,&quot;+apibearer); 
 f.close();</stringProp>
             </BeanShellPostProcessor>
             <hashTree/>
@@ -488,8 +517,8 @@ f.close();</stringProp>
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <stringProp name="LoopController.loops">1</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">3</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">20</stringProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <longProp name="ThreadGroup.start_time">1458552644000</longProp>
         <longProp name="ThreadGroup.end_time">1458552644000</longProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
@@ -498,26 +527,15 @@ f.close();</stringProp>
         <stringProp name="TestPlan.comments">Need to execute Thread Group_SMS</stringProp>
       </ThreadGroup>
       <hashTree>
-        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Send_SMS_DataSet_Config" enabled="true">
-          <stringProp name="delimiter">|</stringProp>
-          <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">D:\WSO2Telco_Automation\api-manager-tests\src\test\resources\DataScripts\CSV\sms\smsData.csv</stringProp>
-          <boolProp name="quotedData">false</boolProp>
-          <boolProp name="recycle">true</boolProp>
-          <stringProp name="shareMode">shareMode.all</stringProp>
-          <boolProp name="stopThread">false</boolProp>
-          <stringProp name="variableNames">bearer,clientCorrelator,senderName</stringProp>
-        </CSVDataSet>
-        <hashTree/>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Send_SMS_DataSet_CoreID" enabled="true">
-          <stringProp name="delimiter">|</stringProp>
+          <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
           <stringProp name="filename">D:\WSO2Telco_Automation\api-manager-tests\src\test\resources\DataScripts\CSV\sms\smsCoreID.csv</stringProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
           <stringProp name="shareMode">shareMode.all</stringProp>
           <boolProp name="stopThread">false</boolProp>
-          <stringProp name="variableNames">coreID</stringProp>
+          <stringProp name="variableNames">coreID,bearer</stringProp>
         </CSVDataSet>
         <hashTree/>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Deliver" enabled="true">
@@ -793,13 +811,42 @@ f.close();</stringProp>
           <stringProp name="variableNames">mobileNum,bearer,payload</stringProp>
         </CSVDataSet>
         <hashTree/>
+        <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable_clientCorrelator" enabled="true">
+          <stringProp name="maximumValue">999999</stringProp>
+          <stringProp name="minimumValue">1</stringProp>
+          <stringProp name="outputFormat">0000000</stringProp>
+          <boolProp name="perThread">false</boolProp>
+          <stringProp name="randomSeed"></stringProp>
+          <stringProp name="variableName">clientCorrelator1</stringProp>
+        </RandomVariableConfig>
+        <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">${payload}</stringProp>
+                <stringProp name="Argument.value">{&#xd;
+	&quot;amountTransaction&quot;: {&#xd;
+		&quot;paymentAmount&quot;: {&#xd;
+			&quot;chargingMetaData&quot;: {&#xd;
+				&quot;taxAmount&quot;: &quot;0.15&quot;,&#xd;
+				&quot;purchaseCategoryCode&quot;: &quot;Game&quot;,&#xd;
+				&quot;channel&quot;: &quot;SMS&quot;,&#xd;
+				&quot;onBehalfOf&quot;: null&#xd;
+			},&#xd;
+			&quot;chargingInformation&quot;: {&#xd;
+				&quot;amount&quot;: &quot;10.0&quot;,&#xd;
+				&quot;description&quot;: &quot;Alien Invaders Game&quot;,&#xd;
+				&quot;currency&quot;: &quot;USD&quot;&#xd;
+			}&#xd;
+		},&#xd;
+		&quot;endUserId&quot;: &quot;tel:+${mobileNum}&quot;,&#xd;
+		&quot;transactionOperationStatus&quot;: &quot;Charged&quot;,&#xd;
+		&quot;clientCorrelator&quot;: &quot;${clientCorrelator1}&quot;,&#xd;
+		&quot;referenceCode&quot;: &quot;REF-12345&quot;&#xd;
+	}&#xd;
+}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>

@@ -1,12 +1,12 @@
 package com.wso2telco.tests.apimanager.steps.apimanager;
 
-
-
 import org.junit.*;
 
 import com.wso2telco.apimanager.pageobjects.apihome.sandbox.SandBoxPage;
 import com.wso2telco.tests.apimanager.base.BasicTestObject;
+import com.wso2telco.tests.util.data.DataValidation;
 import com.wso2telco.tests.util.data.SandBoxValues;
+import com.wso2telco.test.framework.tools.data.DataGenerator;
 
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -15,10 +15,12 @@ public class APISandBoxSteps extends BasicTestObject {
 
 	@Then("^I should see the Login in apimanager Sandbox page header as \"([^\"]*)\"$")
 	public void i_should_see_the_Login_in_apimanager_Sandbox_page_header_as(String arg1) throws Throwable {
+		Thread.sleep(sleepTime);
 		for(String winHandle : driver.getWindowHandles()){
 		    driver.switchTo().window(winHandle);
 		}
 		SandBoxPage sandbox = new SandBoxPage(driver);
+		Thread.sleep(sleepTime);
 	    Assert.assertTrue("Sandbox page did not load properly", sandbox.isSandboxLoginPage(arg1));
 	}
 
@@ -26,6 +28,7 @@ public class APISandBoxSteps extends BasicTestObject {
 	public void i_enter_apimanager_Sandbox_page_username_and_password_for(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
 		sandbox.enterUserName(config.getValue(getEnvironment() + arg1 + "user"));
+		Thread.sleep(sleepTime);
 		sandbox.enterPassword(config.getValue(getEnvironment() + arg1 + "pwd"));
 	}
 
@@ -97,7 +100,9 @@ public class APISandBoxSteps extends BasicTestObject {
 	@When("^I enter \"([^\"]*)\" as balance$")
 	public void i_enter_as_balance(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues sandboxValues = new SandBoxValues();
 		sandbox.enterBalance(arg1);
+		sandboxValues.setBalance(arg1);
 	}
 	
 	@When("^I click on save button in under actions column$")
@@ -151,64 +156,90 @@ public class APISandBoxSteps extends BasicTestObject {
 	@When("^I select \"([^\"]*)\" as transaction operation status$")
 	public void i_select_as_transactio_operation_status(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues sandboxValues = new SandBoxValues();
 		sandbox.enterTransactionOperationStatus(arg1);
+		sandboxValues.setTransactionOperationStatus(arg1);
 	}
 	
 	@When("^I enter \"([^\"]*)\" as reference code$")
 	public void i_enter_as_reference_code(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues sandboxValues = new SandBoxValues();
 		sandbox.enterReferenceCode(arg1);
+		sandboxValues.setReferenceCode(arg1);
 	}
 	
 	@When("^I enter \"([^\"]*)\" as the request description$")
 	public void i_enter_as_the_request_description(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues sandboxValues = new SandBoxValues();
 		sandbox.enterRequestDescription(arg1);
+		sandboxValues.setRequestDescription(arg1);
 	}
 	
 	@When("^I enter \"([^\"]*)\" as currency$")
 	public void i_enter_as_currency(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues sandboxValues = new SandBoxValues();
 		sandbox.enterCurrency(arg1);
+		sandboxValues.setCurrency(arg1);
 	}
 	
 	@When("^I enter \"([^\"]*)\" as request amount$")
 	public void i_enter_as_request_amount(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
-		sandbox.enterAmount(arg1);
 		SandBoxValues sandboxValues = new SandBoxValues();
+		sandbox.enterAmount(arg1);
 		sandboxValues.setAmount(arg1);
 	}
 	
 
-	@When("^I enter \"([^\"]*)\" as request client correlator$")
-	public void i_enter_as_request_client_correlator(String arg1) throws Throwable {
+	@When("^I enter request client correlator$")
+	public void i_enter_as_request_client_correlator() throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
-		sandbox.enterClientCorrelator(arg1);
+		SandBoxValues sandboxValues = new SandBoxValues();
+		DataGenerator data = new DataGenerator();
+		String correlator = data.generateRandomNumber(7);
+		sandbox.enterClientCorrelator(correlator);
+		sandboxValues.setClientCorrelation(correlator);
 	}
 	
 	@When("^I enter \"([^\"]*)\" as notify URL$")
 	public void i_enter_as_notify_URL(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues sandboxValues = new SandBoxValues();
 		sandbox.enterNotifyURL(arg1);
+		sandboxValues.setNotifyURL(arg1);
+	}
+	
+	@When("^I enter \"([^\"]*)\" as refund notify URL$")
+	public void i_enter_as_refund_notify_URL(String arg1) throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		sandbox.enterRefundNotifyURL(arg1);
 	}
 	
 	@When("^I enter \"([^\"]*)\" as purchase category code$")
 	public void i_enter_as_purchase_category_code(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues sandboxValues = new SandBoxValues();
 		sandbox.enterPurchaseCategoryCode(arg1);
+		sandboxValues.setPurchaseCategoryCode(arg1);
 	}
 	
 	@When("^I enter \"([^\"]*)\" as channel$")
 	public void i_enter_as_channel(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues sandboxValues = new SandBoxValues();
 		sandbox.enterChannel(arg1);
+		sandboxValues.setChannel(arg1);
 	}
 	
 	@When("^I enter \"([^\"]*)\" as tax amount$")
 	public void i_enter_as_tax_amount(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
 		sandbox.enterTaxAmount(arg1);
+		SandBoxValues sandboxValues = new SandBoxValues();
+		sandboxValues.setTaxAmount(arg1);
 	}
 	
 	@When("^I click on send request button in payment parameters page$")
@@ -221,34 +252,207 @@ public class APISandBoxSteps extends BasicTestObject {
 	public void i_get_the_request_payload() throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
 		SandBoxValues sandboxValues = new SandBoxValues();
-		sandboxValues.setRequestPayload(sandbox.getRequestPayload());
+		sandboxValues.setRequestPayload(sandbox.getRequestPayloadUI());
 	}
 
 	@When("^I get the response payload$")
 	public void i_get_the_response_payload() throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
 		SandBoxValues sandboxValues = new SandBoxValues();
-		sandboxValues.setResponsePayload(sandbox.getRsponsePayload());
+		sandboxValues.setResponsePayload(sandbox.getRsponsePayloadUI());
 	}
 	
-	@Then("^I should see the request payload containing \"([^\"]*)\"")
-	public void i_should_see_the_request_payload_containing_as_amount(String arg1) throws Throwable {
-		SandBoxPage sandbox = new SandBoxPage(driver);
+	@Then("^I validate the request payload$")
+	public void i_validate_the_request_payload() throws Throwable {
 		SandBoxValues sandboxValues = new SandBoxValues();
-		String amount = sandboxValues.getAmount();
+		DataValidation data = new DataValidation();
 		String requestPayload = sandboxValues.getRequestPayload();
-		sandbox.getValueFromJson(arg1, requestPayload);
-		Assert.assertTrue("Amount is not loaded in request", sandbox.isAmountAvailableInRequest(amount));
+		Thread.sleep(sleepTime);
+		Assert.assertTrue("Request payload data mismatched",data.isRequestPayload(requestPayload));
 	}
 
-	@Then("^I should see the response payload containing \"([^\"]*)\"")
-	public void i_should_see_the_response_payload_containing_as_amount(String arg1) throws Throwable {
+	@Then("^I validate the response payload$")
+	public void i_validate_the_response_payload() throws Throwable {
+		SandBoxValues sandboxValues = new SandBoxValues();
+		DataValidation data = new DataValidation();
+		String responsePayload = sandboxValues.getResponsePayload();
+		Thread.sleep(sleepTime);
+		Assert.assertTrue("Response payload data mismatched", data.isResponsePayload(responsePayload));
+	}
+	
+	@Then("^I validate the total amount$")
+	public void i_validate_the_total_amount() throws Throwable {
+		SandBoxValues sandboxValues = new SandBoxValues();
+		DataValidation data = new DataValidation();
+		String responsePayload = sandboxValues.getResponsePayload();
+		Assert.assertTrue("Request payload data mismatched", data.isTotalAmount(responsePayload));
+	}
+
+	@When("^I select refund the user menu item$")
+	public void i_select_refund_the_user_menu_item() throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		sandbox.clickOnRefundUser();
+	}
+	
+	@Then("^I should see refund page header as \"([^\"]*)\"$")
+	public void i_should_see_refund_page_header_as(String arg1) throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		Assert.assertTrue("Refund the user page did not load properly", sandbox.isRefundUser(arg1));
+	}
+	
+	@When("^I enter \"([^\"]*)\" as call back data$")
+	public void i_enter_as_call_back_data(String arg1) throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues values = new SandBoxValues();
+		sandbox.enterCallBackData(arg1);
+		values.setCallBackData(arg1);
+	}
+	
+	@When("^I enter \"([^\"]*)\" as request code$")
+	public void i_enter_as_request_code(String arg1) throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues values = new SandBoxValues();
+		sandbox.enterCode(arg1);
+		values.setCode(arg1);
+	}
+	
+	@When("^I enter \"([^\"]*)\" as mandateID$")
+	public void i_enter_as_mandateID(String arg1) throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues values = new SandBoxValues();
+		sandbox.enterMandateId(arg1);
+		values.setMandateID(arg1);
+	}
+	
+	@When("^I enter \"([^\"]*)\" as notification format$")
+	public void i_enter_as_notification_format(String arg1) throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues values = new SandBoxValues();
+		sandbox.enterNotificationFormat(arg1);
+		values.setNotificationFormat(arg1);
+	}
+	
+	@When("^I enter \"([^\"]*)\" as on behalf of$")
+	public void i_enter_as_on_behalf_of(String arg1) throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues values = new SandBoxValues();
+		sandbox.enterOnBehalfOf(arg1);
+		values.setOnBehalfOf(arg1);
+	}
+	
+	@Then("^I get the server reference code$")
+	public void i_get_the_server_reference_code() throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues values = new SandBoxValues();
+		String responsePayload = values.getResponsePayload();
+		Thread.sleep(sleepTime);
+		String refCode = sandbox.getValueFromJson("serverReferenceCode", responsePayload);
+		values.setServerReferenceCode(refCode);
+	}
+	
+	@When("^I enter original server reference code$")
+	public void i_enter_original_server_reference_code() throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues values = new SandBoxValues();
+		String refCode = values.getServerReferenceCode();
+		sandbox.enterServerReferenceCode(refCode);
+	}
+	
+	@When("^I enter \"([^\"]*)\" as product id$")
+	public void i_enter_as_product_id(String arg1) throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues values = new SandBoxValues();
+		sandbox.enterProductId(arg1);
+		values.setProductId(arg1);
+	}
+
+	@When("^I enter \"([^\"]*)\" as service id$")
+	public void i_enter_as_service_id(String arg1) throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues values = new SandBoxValues();
+		sandbox.enterServiceId(arg1);
+		values.setServiceId(arg1);
+	}
+
+	@When("^I enter \"([^\"]*)\" as max payment amount$")
+	public void i_enter_as_max_payment_amount(String arg1) throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		sandbox.enterMaxPaymentAmount(arg1);
+	}
+	
+	@When("^I get the refund request payload$")
+	public void i_get_the_refund_request_payload() throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
 		SandBoxValues sandboxValues = new SandBoxValues();
-		String amount = sandboxValues.getAmount();
-		String responsePayload = sandboxValues.getResponsePayload();
-		sandbox.getValueFromJson(arg1, responsePayload);
-		Assert.assertTrue("Amount is not loaded in response", sandbox.isAmountAvailableInResponse(amount));
+		sandboxValues.setRequestPayload(sandbox.getRequestPayloadUI());
 	}
 
+	@When("^I get the refund response payload$")
+	public void i_get_the_refund_response_payload() throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues sandboxValues = new SandBoxValues();
+		sandboxValues.setResponsePayload(sandbox.getRsponsePayloadUI());
+	}
+	
+	@Then("^I validate the refund request payload$")
+	public void i_validate_the_refund_request_payload() throws Throwable {
+		SandBoxValues sandboxValues = new SandBoxValues();
+		DataValidation data = new DataValidation();
+		String requestPayload = sandboxValues.getRequestPayload();
+		Thread.sleep(sleepTime);
+		Assert.assertTrue("Request payload data mismatched",data.isRefundRequestPayload(requestPayload));
+	}
+	
+	@Then("^I validate the refund response payload$")
+	public void i_validate_the_refund_response_payload() throws Throwable {
+		SandBoxValues sandboxValues = new SandBoxValues();
+		DataValidation data = new DataValidation();
+		String responsePayload = sandboxValues.getResponsePayload();
+		Thread.sleep(sleepTime);
+		Assert.assertTrue("Response payload data mismatched",data.isRefundResponsePayload(responsePayload));
+	}
+	
+	@When("^I get the balance of the \"([^\"]*)\"$")
+	public void i_get_the_balance_of_the(String arg1) throws Throwable {
+	    SandBoxPage sandbox = new SandBoxPage(driver);
+	    SandBoxValues sandboxValues = new SandBoxValues();
+	    String balance = sandbox.getBalanceofTheNumber(arg1);
+	    sandboxValues.setBalance(balance);
+	}
+
+	@When("^I enter same client correlator$")
+	public void i_enter_same_client_correlator() throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+	    SandBoxValues sandboxValues = new SandBoxValues();
+	    String clientCorrelator = sandboxValues.getClientCorrelation();
+	    sandbox.enterClientCorrelator(clientCorrelator);
+	}
+
+	@Then("^I validate the balance of the \"([^\"]*)\"$")
+	public void i_validate_the_balance_of_the(String arg1) throws Throwable {
+		  DataValidation data =  new DataValidation();
+		  Assert.assertTrue("Response payload data mismatched",data.isBalance(arg1));
+	}
+	
+	@When("^I get the error response payload$")
+	public void i_get_the_error_response_payload() throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues sandboxValues = new SandBoxValues();
+		sandboxValues.setResponsePayload(sandbox.getRsponsePayloadUI());
+	}
+	
+	@Then("^I validate the error response payload$")
+	public void i_validate_the_error_response_payload() throws Throwable {
+		SandBoxValues sandboxValues = new SandBoxValues();
+		DataValidation data = new DataValidation();
+		String responsePayload = sandboxValues.getResponsePayload();
+		Thread.sleep(sleepTime);
+		Assert.assertTrue("Response payload data mismatched", data.isErrorResponsePayload(responsePayload));
+	}
+	
+	@Then("^I validate the error response payload containing \"([^\"]*)\"$")
+	public void i_validate_the_error_response_payload_containing(String arg1) throws Throwable {
+		DataValidation data = new DataValidation();
+		Assert.assertTrue("Response payload data mismatched", data.isErrorResponsePayload(arg1));
+	}
 }

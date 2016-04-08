@@ -1,7 +1,7 @@
-Feature: Check the total tax in payment api
+Feature: Check the payment max level
 
 @Smoke
-Scenario Outline: Check if the tax amount is correctly added to the total amount
+Scenario Outline: Check if the payments are restricted to the max level set
 Given I am in apimanager
 When I click on apimanager login
 Then I should see the apimanager "Login" pop up
@@ -25,6 +25,7 @@ Then I should see the "<number>" as added number in the numbers table
 When I click on API dropdown and select payment
 Then I should see payment page header as "Payment Parameters"
 When I select "<transactionStatus>" as transaction status
+And I enter "<maxPaymentAmount>" as max payment amount
 And I click save button in payment parameters page
 And I enter "<number>" as end user id
 And I select "<transactionOperationStatus>" as transaction operation status
@@ -32,17 +33,15 @@ And I enter "<referenceCode>" as reference code
 And I enter "<requestDescription>" as the request description
 And I enter "<currency>" as currency
 And I enter "<amount>" as request amount
-And I enter "<clientCorrelator>" as request client correlator
+And I enter request client correlator
 And I enter "<notifyURL>" as notify URL
 And I enter "<purchaseCategoryCode>" as purchase category code
 And I enter "<channel>" as channel
 And I enter "<taxAmount>" as tax amount
 And I click on send request button in payment parameters page
-And I get the request payload
-And I get the response payload
-And I validate the total amount
-
+And I get the error response payload
+And I validate the error response payload containing "The %1 operator charging limit for this user has been exceeded"
 
 Examples:
-| usertype|number     |description|balance|transactionStatus|transactionOperationStatus|referenceCode|requestDescription |currency|amount|clientCorrelator|notifyURL                                       |purchaseCategoryCode|channel|taxAmount|
-|QA17LOG  |94123123123|testAuxenta|1000.00|Charged          |Charged                   |REF-12345    |Alien Invaders Game|USD     |10.0  |543223          |http://localhost:8080/mifeapiserver/callback.jsp|Game                |SMS    |0.15     |
+| usertype|number     |description|balance|transactionStatus|transactionOperationStatus|referenceCode|requestDescription |currency|amount|notifyURL                                       |purchaseCategoryCode|channel|taxAmount|maxPaymentAmount|
+|QA17LOG  |94123123123|testAuxenta|1000.00|Charged          |Charged                   |REF-12345    |Alien Invaders Game|USD     |10.0  |http://localhost:8080/mifeapiserver/callback.jsp|Game                |SMS    |0.15     |10.00           |

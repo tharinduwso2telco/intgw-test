@@ -92,10 +92,19 @@ Then I should see Enter aprrove/reject reasons pop up header as "Enter approve/r
 When I enter aprrove/reject reason as "Approved"
 And click aprrove/reject reason ok button
 Then I should not see the created application in Approval Tasks table as "<appName>" for "<usertype>"
+And I close the browser and navigate to activity manager
+And I am in apimanger actvity manager login page
+When I enter apimanger actvity manager admin username credentials
+And I click on apimanger actvity manager sign in
+Then I should see the apimanger actvity manager Home page header as "WSO2 Business Activity Monitor Home"
+When I click on apimanger actvity manager Main tab
+And I click on the apimanger actvity manager Analytics List llink
+Then I should see apimanger actvity manager List page header as "Available Scripts"
+And I click on the apimanger actvity manager Available scripts execute button
 And I should see the updated record in subscription_rates_nb table for "<appNameInDB>"
-When I click on apimanager Manager admin
-And I click on apimanager Manager logout button
-Then I should see the apimanager Manager page header as "Manager"
+When I close the browser
+Then I click on apimanager Manage
+And I should see the apimanager Manager page header as "Manager"
 When I enter apimanager Manager page operator username credentials
 And I click on apimanager Manager page login button
 Then I should see the apimanager Manager Home page header as "Home"
@@ -110,6 +119,15 @@ Then I should see Enter aprrove/reject reasons pop up header as "Enter approve/r
 When I enter aprrove/reject reason as "Approved"
 And click aprrove/reject reason ok button
 Then I should not see the created application in Approval Tasks table as "<AppName>" for "<usertype>"
+And I am in apimanger actvity manager login page
+When I enter apimanger actvity manager admin username credentials
+And I click on apimanger actvity manager sign in
+Then I should see the apimanger actvity manager Home page header as "WSO2 Business Activity Monitor Home"
+When I click on apimanger actvity manager Main tab
+And I click on the apimanger actvity manager Analytics List llink
+Then I should see apimanger actvity manager List page header as "Available Scripts"
+When I click on the apimanger actvity manager Available scripts execute button
+Then I close the browser
 And I should see the updated record in subscription_rates table for "<appNameInDB>"
 
 

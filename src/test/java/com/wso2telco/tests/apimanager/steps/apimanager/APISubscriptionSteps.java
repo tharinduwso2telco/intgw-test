@@ -166,4 +166,12 @@ public class APISubscriptionSteps extends BasicTestObject {
 		String sandboxRegenerateAccessToken = authKeys.getSandboxRegenerateAccessToken();
 		Assert.assertTrue("Access token is not regenerated", subpage.isAccessKeyRegenerated(sandboxAccessToken, sandboxRegenerateAccessToken));
 	}
+	
+	@Then("^I should see the \"([^\"]*)\" under Subscribed APIs$")
+	public void i_should_see_the_under_Subscribed_APIs(String arg1) throws Throwable {
+		SubscriptionsPage subpage = new SubscriptionsPage(driver);
+		Thread.sleep(sleepTime);
+		Assert.assertTrue("Subscribed APIs not showed", subpage.isSubscribedAPIs(arg1));
+	}
+
 }

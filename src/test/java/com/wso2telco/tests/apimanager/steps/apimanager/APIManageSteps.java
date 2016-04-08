@@ -1,12 +1,14 @@
 package com.wso2telco.tests.apimanager.steps.apimanager;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 import org.junit.Assert;
 
 import com.wso2telco.apimanager.pageobjects.apihome.manager.ManagerPage;
 import com.wso2telco.apimanager.pageobjects.db.queries.SQLQuery;
+import com.wso2telco.test.framework.tools.excelfile.ExcelFileReader;
 import com.wso2telco.tests.apimanager.base.BasicTestObject;
 import com.wso2telco.tests.util.data.RuntimeData;
 import com.wso2telco.tests.util.data.WhiteListData;
@@ -17,23 +19,23 @@ import cucumber.api.java.en.When;
 public class APIManageSteps extends BasicTestObject {
 	
 	@Then("^I should see the apimanager Manager page header as \"([^\"]*)\"$")
-	public void i_should_see_the_apimanager_Manager_page_header_as(String arg1)
-			throws Throwable {
+	public void i_should_see_the_apimanager_Manager_page_header_as(String arg1) throws Throwable {
+		Thread.sleep(sleepTime);
 		for (String winHandle : driver.getWindowHandles()) {
 			driver.switchTo().window(winHandle);
 		}
+		Thread.sleep(sleepTime);
 		ManagerPage managerpage = new ManagerPage(driver);
 		Assert.assertTrue("Manager page did not load properly", managerpage.isManagerPage(arg1));
 	}
 
 	@When("^I enter apimanager Manager page username and password for \"([^\"]*)\"$")
-	public void i_enter_apimanager_Manager_page_username_and_password_for(
-			String arg1) throws Throwable {
+	public void i_enter_apimanager_Manager_page_username_and_password_for(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		managerpage.enterUserName(config.getValue(getEnvironment() + arg1
-				+ "user"));
-		managerpage.enterPassword(config.getValue(getEnvironment() + arg1
-				+ "pwd"));
+		Thread.sleep(sleepTime);
+		managerpage.enterUserName(config.getValue(getEnvironment() + arg1 + "user"));
+		Thread.sleep(sleepTime);
+		managerpage.enterPassword(config.getValue(getEnvironment() + arg1 + "pwd"));
 	}
 
 	@When("^I enter apimanager Manager page admin username credentials$")
@@ -178,6 +180,7 @@ public class APIManageSteps extends BasicTestObject {
 	public void i_should_see_created_application_at_the_top_of_the_Approval_Tasks_table_for(String arg1, String arg2) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		String appName = config.getValue(getEnvironment() + arg2 + "user") + "_" + arg1;
+		Thread.sleep(sleepTime);
 		Assert.assertTrue("App name is not visible in the area", managerpage.isApplicationNameVisible(appName));
 	}
 
@@ -534,6 +537,74 @@ public class APIManageSteps extends BasicTestObject {
 	public void i_click_on_API_Admin_Module_pop_up_ok_button() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.clickAdminModuleYes();
+	}
+	
+	@When("^I write the UI table into a \"([^\"]*)\" excel file in \"([^\"]*)\" location$")
+	public void i_write_the_UI_table_into_a_excel_file_in_location(String arg1, String arg2) throws Throwable {
+		String nbUITableFilePath = config.getValue("uploadRateCard") + arg2 + arg1;
+		ManagerPage managerpage = new ManagerPage(driver);
+		List<List<String>> nbUiData = managerpage.getNbUITableData();
+		managerpage.writeStringAryToXlsx(nbUITableFilePath, nbUiData);
+	}
+	
+	@When("^I calculate the difference between \"([^\"]*)\" and \"([^\"]*)\" excel file from \"([^\"]*)\" location and write it to \"([^\"]*)\"$")
+	public void i_calculate_the_difference_between_and_excel_file_from_location_and_write_it_to(String arg1, String arg2, String arg3, String arg4) throws Throwable {
+		String beforeFile = config.getValue("uploadRateCard") + arg3 + arg1;
+		String afterFile = config.getValue("uploadRateCard") + arg3 + arg2;
+		String difFile = config.getValue("uploadRateCard") + arg3 + arg4;
+		ExcelFileReader excelFileReaderBefore = new ExcelFileReader(beforeFile, "Sheet1");
+		List<List<String>> exceldataBefore = excelFileReaderBefore.readExcelFile("Sheet1");
+		ExcelFileReader excelFileReaderAfter = new ExcelFileReader(afterFile, "Sheet1");
+		List<List<String>> exceldataAfter = excelFileReaderAfter.readExcelFile("Sheet1");
+		ManagerPage managerpage = new ManagerPage(driver);
+		List<List<String>> excelDifAfterBefore = managerpage.nbMonthlyInvoiceDifference(exceldataBefore, exceldataAfter);
+		managerpage.writeStringAryToXlsx(difFile, excelDifAfterBefore);
+	}
+	
+	@When("^I calculate the difference between SB \"([^\"]*)\" and \"([^\"]*)\" excel file from \"([^\"]*)\" location and write it to \"([^\"]*)\"$")
+	public void i_calculate_the_difference_between_SB_and_excel_file_from_location_and_write_it_to(String arg1, String arg2, String arg3, String arg4) throws Throwable {
+		String beforeFile = config.getValue("uploadRateCard") + arg3 + arg1;
+		String afterFile = config.getValue("uploadRateCard") + arg3 + arg2;
+		String difFile = config.getValue("uploadRateCard") + arg3 + arg4;
+		ExcelFileReader excelFileReaderBefore = new ExcelFileReader(beforeFile, "Sheet1");
+		List<List<String>> exceldataBefore = excelFileReaderBefore.readExcelFile("Sheet1");
+		ExcelFileReader excelFileReaderAfter = new ExcelFileReader(afterFile, "Sheet1");
+		List<List<String>> exceldataAfter = excelFileReaderAfter.readExcelFile("Sheet1");
+		ManagerPage managerpage = new ManagerPage(driver);
+		List<List<String>> excelDifAfterBefore = managerpage.sbMonthlyInvoiceDifference(exceldataBefore, exceldataAfter);
+		managerpage.writeStringAryToXlsx(difFile, excelDifAfterBefore);
+	}
+	
+	@Then("^I validate \"([^\"]*)\" records against \"([^\"]*)\" from \"([^\"]*)\" location$")
+	public void i_validate_records_against_from_location(String arg1, String arg2, String arg3) throws Throwable {
+		String difFileUi = config.getValue("uploadRateCard") + arg3 + arg1;
+		String difFileDifManual = config.getValue("uploadRateCard") + arg3 + arg2;
+		ExcelFileReader excelFileDiffUi = new ExcelFileReader(difFileUi, "Sheet1");
+		List<List<String>> exceldataDiffUi = excelFileDiffUi.readExcelFile("Sheet1");
+		ExcelFileReader excelFileDifManual = new ExcelFileReader(difFileDifManual, "Sheet1");
+		List<List<String>> exceldataDifManual = excelFileDifManual.readExcelFile("Sheet1");
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Price difference mismatched", managerpage.isDifferenceMatch(exceldataDiffUi, exceldataDifManual));
+	}
+	
+	@Then("^I validate SB invoice \"([^\"]*)\" records against \"([^\"]*)\" from \"([^\"]*)\" location$")
+	public void i_validate_SB_invoice_records_against_from_location(String arg1, String arg2, String arg3) throws Throwable {
+		String difFileUi = config.getValue("uploadRateCard") + arg3 + arg1;
+		String difFileDifManual = config.getValue("uploadRateCard") + arg3 + arg2;
+		ExcelFileReader excelFileDiffUi = new ExcelFileReader(difFileUi, "Sheet1");
+		List<List<String>> exceldataDiffUi = excelFileDiffUi.readExcelFile("Sheet1");
+		ExcelFileReader excelFileDifManual = new ExcelFileReader(difFileDifManual, "Sheet1");
+		List<List<String>> exceldataDifManual = excelFileDifManual.readExcelFile("Sheet1");
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Price difference mismatched", managerpage.isSbDifferenceMatch(exceldataDiffUi, exceldataDifManual));
+	}
+	
+	@When("^I write the SB UI table into a \"([^\"]*)\" excel file in \"([^\"]*)\" location$")
+	public void i_write_the_SB_UI_table_into_a_excel_file_in_location(String arg1, String arg2) throws Throwable {
+		String sbUITableFilePath = config.getValue("uploadRateCard") + arg2 + arg1;
+		ManagerPage managerpage = new ManagerPage(driver);
+		List<List<String>> sbUiData = managerpage.getSbUITableData();
+		managerpage.writeStringAryToXlsx(sbUITableFilePath, sbUiData);
 	}
 	
 	@Then("^I validate \"([^\"]*)\" \"([^\"]*)\" and \"([^\"]*)\" for \"([^\"]*)\" value as \"([^\"]*)\"$")

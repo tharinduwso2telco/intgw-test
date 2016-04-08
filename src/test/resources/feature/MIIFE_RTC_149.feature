@@ -1,7 +1,7 @@
-Feature: Check the amount in payment api
+Feature: Validate response with same client CorrelationID
 
 @Smoke
-Scenario Outline: Check if the amount is added correctly on the request and responses
+Scenario Outline: Check if the system will charge if the same client CorrelationID is sent multiple times
 Given I am in apimanager
 When I click on apimanager login
 Then I should see the apimanager "Login" pop up
@@ -42,6 +42,33 @@ And I get the request payload
 And I get the response payload
 Then I validate the request payload
 And I validate the response payload
+When I click on numbers dropdown and select manage numbers
+Then I should see the manage numbers page header as "Manage Numbers"
+And I get the balance of the "<number>"
+When I click on API dropdown and select payment
+Then I should see payment page header as "Payment Parameters"
+When I select "<transactionStatus>" as transaction status
+And I click save button in payment parameters page
+And I enter "<number>" as end user id
+And I select "<transactionOperationStatus>" as transaction operation status
+And I enter "<referenceCode>" as reference code
+And I enter "<requestDescription>" as the request description
+And I enter "<currency>" as currency
+And I enter "<amount>" as request amount
+And I enter same client correlator
+And I enter "<notifyURL>" as notify URL
+And I enter "<purchaseCategoryCode>" as purchase category code
+And I enter "<channel>" as channel
+And I enter "<taxAmount>" as tax amount
+And I click on send request button in payment parameters page
+And I get the request payload
+And I get the response payload
+Then I validate the request payload
+And I validate the response payload
+When I click on numbers dropdown and select manage numbers
+Then I should see the manage numbers page header as "Manage Numbers"
+And I validate the balance of the "<number>"
+
 
 Examples:
 | usertype|number     |description|balance|transactionStatus|transactionOperationStatus|referenceCode|requestDescription |currency|amount|notifyURL                                       |purchaseCategoryCode|channel|taxAmount|
