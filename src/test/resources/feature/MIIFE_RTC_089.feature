@@ -1,4 +1,4 @@
-Feature: Validate application status after the workflow is approved
+Feature: Validate application status after the workflow is approved by user
 
 @Smoke
 Scenario Outline: Check if application status changed to ACTIVE once the workflow is approved
@@ -14,7 +14,7 @@ And I should see the apimanager Application page Add New Application form header
 When I clear existing "<name>" for "<usertype>"
 And I enter "<name>" as name "<Callback URL>" as Callback URL and "<Description>" as Description
 And I click on Add button
-Then I should see the added Application name as "<usertype>" _ "<name>" Tier as "<Tier>" Status as "<status>" and Description as "<Description>"
+Then I should see the added Application name as "<usertype>" _ "<name>" Tier as "<Tier>" Status as "<Status>" and Description as "<Description>"
 When I click on apimanager Manage 
 Then I should see the apimanager Manager page header as "Manager"
 When I enter apimanager Manager page admin username credentials
@@ -63,5 +63,5 @@ And I should see the added Application name as "<usertype>" _ "<name>" and the "
 
 
 Examples:
-|usertype|appname             |ApplicationDetails |Action |newStatus |name				  |Callback URL														|Description		 |Tier   |Status  |                                                                                 |status|
-|LOGOUT  |AuxTestingAppRTC_012|Unlimited          |Approve|ACTIVE    |AuxTestingAppRTC_012|https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|AuxTestingAppRTC_011|Default|INACTIVE|
+|usertype|appname             |Action |newStatus |name				  |Callback URL														|Description		 |Tier   |Status  |
+|LOGOUT  |AuxTestingAppRTC_012|Approve|ACTIVE    |AuxTestingAppRTC_012|https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|AuxTestingAppRTC_011|Default|INACTIVE|
