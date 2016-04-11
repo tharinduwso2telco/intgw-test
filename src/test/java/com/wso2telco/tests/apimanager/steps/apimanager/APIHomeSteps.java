@@ -20,6 +20,11 @@ public class APIHomeSteps extends BasicTestObject {
 			initialize();
 			launchBrowser();
 			driver.get(config.getValue(getEnvironment() + "ApiManagerSiteName"));
+		} else {
+			driver.close();
+			initialize();
+			launchBrowser();
+			driver.get(config.getValue(getEnvironment() + "ApiManagerSiteName"));
 		}
 	}
 

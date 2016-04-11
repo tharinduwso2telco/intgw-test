@@ -19,6 +19,11 @@ public class ActivityMonitorHomeSteps extends BasicTestObject {
 			initialize();
 			launchBrowser();
 			driver.get(config.getValue(getEnvironment() + "ActivityMonitor"));
+		} else {
+			driver.close();
+			initialize();
+			launchBrowser();
+			driver.get(config.getValue(getEnvironment() + "ActivityMonitor"));
 		}
 	}
 
