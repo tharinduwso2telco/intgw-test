@@ -56,6 +56,11 @@ And I click on apimanager Manager logout button
 Then I should see the apimanager Manager page header as "Manager"
 When I click on close window
 Then I am in apimanager
+When I click on apimanager login
+Then I should see the apimanager "Login" pop up
+When I enter apimanager Login username and password for "<usertype>" 
+And I click on apimanager Login pop up login button
+Then I should see apimanager "<usertype>" at the top right corner of the page
 When I click on apimanager My Applications
 Then I should see the apimanager Application page header as "Applications"
 And I should see the added Application name as "<usertype>" _ "<name>" and the "<newStatus>" as status
