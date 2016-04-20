@@ -1,6 +1,7 @@
 package com.wso2telco.tests.apimanager.steps.apimanager;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -545,6 +546,13 @@ public class APIManageSteps extends BasicTestObject {
 		ManagerPage managerpage = new ManagerPage(driver);
 		List<List<String>> nbUiData = managerpage.getNbUITableData();
 		managerpage.writeStringAryToXlsx(nbUITableFilePath, nbUiData);
+		
+		Iterator<String> wh =driver.getWindowHandles().iterator();
+		while (wh.hasNext()) {
+			driver.switchTo().window(wh.next()).close();
+			
+		}
+		driver=null;
 	}
 	
 	@When("^I calculate the difference between \"([^\"]*)\" and \"([^\"]*)\" excel file from \"([^\"]*)\" location and write it to \"([^\"]*)\"$")
@@ -605,13 +613,21 @@ public class APIManageSteps extends BasicTestObject {
 		ManagerPage managerpage = new ManagerPage(driver);
 		List<List<String>> sbUiData = managerpage.getSbUITableData();
 		managerpage.writeStringAryToXlsx(sbUITableFilePath, sbUiData);
+		
+		Iterator<String> wh =driver.getWindowHandles().iterator();
+		while (wh.hasNext()) {
+			driver.switchTo().window(wh.next()).close();
+			
+		}
+		driver=null;
+		
 	}
 	
 	@Then("^I validate \"([^\"]*)\" \"([^\"]*)\" and \"([^\"]*)\" for \"([^\"]*)\" value as \"([^\"]*)\"$")
 	public void i_validate_and_for_value_as(String arg1, String arg2, String arg3, String arg4, String arg5) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		String valueUI = managerpage.getNbValueInvoice(arg1, arg2, arg3, arg4);
-		//TODO:need to add a comment
+		//TODO:need t who add a comment
 		Assert.assertTrue("", managerpage.compareString(valueUI, arg5));
 	}
 
