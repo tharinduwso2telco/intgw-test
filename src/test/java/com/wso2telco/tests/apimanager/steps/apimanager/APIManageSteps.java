@@ -132,11 +132,10 @@ public class APIManageSteps extends BasicTestObject {
 	}
 
 	@When("^I close the browser and reopen the browsers and navigate to apimanager page$")
-	public void i_close_the_browser_and_reopen_the_browsers_and_navigate_to_apimanager_page()
-			throws Throwable {
+	public void i_close_the_browser_and_reopen_the_browsers_and_navigate_to_apimanager_page() throws Throwable {
 		driver.close();
 		initialize();
-		launchBrowser();
+		openBrowser();
 		driver.get(config.getValue(getEnvironment() + "ApiManagerSiteName"));
 	}
 
