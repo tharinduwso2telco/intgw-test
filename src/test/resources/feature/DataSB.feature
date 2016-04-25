@@ -37,7 +37,7 @@ And I write the SB UI table into a "sb1UITableBefore.xlsx" excel file in "/SB/1/
 
 Examples:
 | usertype|apiTrafficPageHeader|monthlyInvoicePageHeader     |year|month|serviceProvider|
-|QA17LOG  |Total API Traffic   |Monthly Invoice - Southbound |2016|April|AutInvSP3     |
+|QA17LOG  |Total API Traffic   |Monthly Invoice - Southbound |2016|April|AutInvSP1     |
 
 @Smoke
 Scenario Outline: executing jmeter data script
@@ -56,7 +56,7 @@ Then I should see the apimanger actvity manager Home page header as "WSO2 Busine
 When I click on apimanger actvity manager Main tab
 And I click on the apimanger actvity manager Analytics List llink
 Then I should see apimanger actvity manager List page header as "Available Scripts"
-When I click on the apimanger actvity manager Available scripts execute button
+#When I click on the apimanger actvity manager Available scripts execute button
 When I close the browser
 And I am in apimanager
 When I click on apimanager login
@@ -84,4 +84,4 @@ Then I validate SB invoice "sb1BeforeAfterDif.xlsx" records against "manuallyCal
 
 Examples:
 | usertype|apiTrafficPageHeader|monthlyInvoicePageHeader     |year|month|serviceProvider|
-|QA17LOG  |Total API Traffic   |Monthly Invoice - Southbound |2016|April|AutInvSP3    |
+|QA17LOG  |Total API Traffic   |Monthly Invoice - Southbound |2016|April|AutInvSP1    |

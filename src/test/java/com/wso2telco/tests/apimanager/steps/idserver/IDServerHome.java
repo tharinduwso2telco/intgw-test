@@ -18,7 +18,7 @@ public class IDServerHome extends BasicTestObject {
 	public void i_am_in_identity_server_page() throws Throwable {
 		if (driver==null){
 			initialize();
-			launchBrowser();
+			openBrowser();
 			driver.get(config.getValue(getEnvironment() + "CarbonSiteName"));
 		}	
 	}
@@ -27,7 +27,7 @@ public class IDServerHome extends BasicTestObject {
 	public void i_am_in_apimanger_carbon_login_page() throws Throwable {
 		if (driver==null){
 			initialize();
-			launchBrowser();
+			openBrowser();
 			driver.get(config.getValue(getEnvironment() + "ApiManagerCarbon"));
 		}
 	}

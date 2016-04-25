@@ -567,7 +567,7 @@ public class APIManageBillingAndMeteringSteps extends BasicTestObject {
 	public void i_copy_the_current_URL_and_access_it_from_a_new_browser() throws Throwable {
 	    String currentUrl = driver.getCurrentUrl();
 	    driver.close();
-	    launchBrowser();
+	    openBrowser();
 	    driver.get(currentUrl);
 	}
 

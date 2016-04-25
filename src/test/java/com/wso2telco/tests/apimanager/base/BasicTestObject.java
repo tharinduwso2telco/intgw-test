@@ -14,7 +14,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -45,82 +45,65 @@ public class BasicTestObject extends TestBase {
 			if (!isInitialized) {
 				// Initialize Logs
 				logInstruction("Initializing Logs");
-				String log4jConfigFile = System.getProperty("user.dir")
-						+ File.separator + "log4j.xml";
+				String log4jConfigFile = System.getProperty("user.dir") + File.separator + "log4j.xml";
 				DOMConfigurator.configure(log4jConfigFile);
 				logInstruction("Initializing Logs Completed");
 				// Initialize config
 				logInstruction("Initializing Config");
 				CONFIG = new Properties();
-				FileInputStream ip = new FileInputStream(
-						System.getProperty("user.dir")
-								+ "\\src\\test\\resources\\config\\config.properties");
+				FileInputStream ip = new FileInputStream(System.getProperty("user.dir") + "\\src\\test\\resources\\config\\config.properties");
 				CONFIG.load(ip);
 				
 				//Setting environment
 				//setEnvironment(System.getProperty("env"));
+				//setEnvironment("staging");
 				setEnvironment("qa17");
 				logInstruction("Initializing Config Completed");
 				isInitialized = true;
 			}
 		} catch (IOException e) {
-			logInstruction("Exception While Initializing config file and log file 'initialize()'"
-					+ e.getMessage());
+			logInstruction("Exception While Initializing config file and log file 'initialize()'" + e.getMessage());
 			throw new Exception(
-					"Exception While Initializing config file and log file 'initialize()'"
-							+ e.getMessage());
+					"Exception While Initializing config file and log file 'initialize()'" + e.getMessage());
 
 		}
 	}
 	
 	public void openBrowser() throws Exception {
+		DesiredCapabilities capabilities = new DesiredCapabilities();
 		try {
-			if (!isBrowserOpened) {
-				if (CONFIG.getProperty("browserType").equals("MOZILLA"))
-					if (getHeaderName()!=null){
-						FirefoxProfile profile = new FirefoxProfile();
-						  File modifyHeaders = new File(System.getProperty("user.dir") + "\\src\\test\\resources\\modify_headers-0.7.1.1-fx.xpi");
-						  profile.setEnableNativeEvents(false); 
-						  try {
-						    profile.addExtension(modifyHeaders); 
-						  } catch (IOException e) {
-						    e.printStackTrace(); 
-						  }
-
-						   profile.setPreference("modifyheaders.headers.count", 1);
-						   profile.setPreference("modifyheaders.headers.action0", "Add");
-						   profile.setPreference("modifyheaders.headers.name0", getHeaderName());
-						   profile.setPreference("modifyheaders.headers.value0", getHeaderValue());
-						   profile.setPreference("modifyheaders.headers.enabled0", true);
-						   profile.setPreference("modifyheaders.config.active", true);
-						   profile.setPreference("modifyheaders.config.alwaysOn", true);
-
-						   DesiredCapabilities capabilities = new DesiredCapabilities();
-						   capabilities.setBrowserName("firefox");
-						   capabilities.setPlatform(org.openqa.selenium.Platform.ANY);
-						   capabilities.setCapability(FirefoxDriver.PROFILE, profile);
-						    driver =  new FirefoxDriver(capabilities);
-					}
-					else
-					driver =  new FirefoxDriver();
-				else if (CONFIG.getProperty("browserType").equals("IE"))
-					driver =  new InternetExplorerDriver();
-				else if (CONFIG.getProperty("browserType").equals("CHROME"))
-					driver =  new ChromeDriver();
-				isBrowserOpened = true;
-				String waitTime = CONFIG.getProperty("default_implicitWait");
-				driver.manage()
-						.timeouts()
-						.implicitlyWait(Long.parseLong(waitTime),
-								TimeUnit.SECONDS);
-
+			if (CONFIG.getProperty("browser").equals("FIREFOX")) {
+				FirefoxProfile profile = new FirefoxProfile();
+				profile.setPreference("browser.download.folderList", 2);
+				profile.setPreference("browser.download.manager.showWhenStarting", false);
+				profile.setPreference("browser.helperApps.neverAsk.saveToDisk", "application/xls,text/csv,application/vnd.ms-excel");
+				capabilities.setBrowserName("FIREFOX");
+				capabilities.setPlatform(org.openqa.selenium.Platform.ANY);
+				capabilities.setCapability(FirefoxDriver.PROFILE, profile);
+				launchBrowser(capabilities);
+			} else if (CONFIG.getProperty("browser").equals("INTERNETEXPLORER")){
+				capabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, false);
+				capabilities.setCapability("ignoreProtectedModeSettings", true);
+				capabilities.setCapability("ignoreZoomSetting", true);
+				capabilities.setCapability("ie.ensureCleanSession", true);
+				capabilities.setCapability("requireWindowFocus",true);
+				capabilities.setCapability("IntroduceInstabilityByIgnoringProtectedModeSettings",true);
+				launchBrowser(capabilities);
 			}
+			else if (CONFIG.getProperty("browser").equals("CHROME")){
+				capabilities = DesiredCapabilities.chrome();
+				ChromeOptions chromeOptions = new ChromeOptions();
+				chromeOptions.addArguments("test-type");
+				capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
+				launchBrowser(capabilities);
+			}
+			isBrowserOpened = true;
+			String waitTime = CONFIG.getProperty("default_implicitWait");
+			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(Long.parseLong(waitTime), TimeUnit.SECONDS);
 		} catch (Exception e) {
-			logInstruction("Exception While Initializing browser 'openBrowser()'"
-					+ e.getMessage());
-			throw new Exception(
-					"Exception While Initializing browser 'openBrowser()'"
-							+ e.getMessage());
+			logInstruction("Exception While Initializing browser 'openBrowser()'" + e.getMessage());
+			throw new Exception("Exception While Initializing browser 'openBrowser()'" + e.getMessage());
 
 		}
 	}

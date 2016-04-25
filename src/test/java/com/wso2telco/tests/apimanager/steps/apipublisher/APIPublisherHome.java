@@ -19,7 +19,7 @@ public class APIPublisherHome extends BasicTestObject{
 	public void i_am_in_apipublisher() throws Throwable {
 		if (driver==null){
 			initialize();
-			launchBrowser();
+			openBrowser();
 			driver.get(config.getValue(getEnvironment() + "ApiManagerPublisher"));
 		}
 	}

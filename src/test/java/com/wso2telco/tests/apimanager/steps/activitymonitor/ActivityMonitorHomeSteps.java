@@ -17,12 +17,12 @@ public class ActivityMonitorHomeSteps extends BasicTestObject {
 	public void i_am_in_apimanger_actvity_manager_login_page() throws Throwable {
 		if (driver==null){
 			initialize();
-			launchBrowser();
+			openBrowser();
 			driver.get(config.getValue(getEnvironment() + "ActivityMonitor"));
 		} else {
 			driver.close();
 			initialize();
-			launchBrowser();
+			openBrowser();
 			driver.get(config.getValue(getEnvironment() + "ActivityMonitor"));
 		}
 	}
