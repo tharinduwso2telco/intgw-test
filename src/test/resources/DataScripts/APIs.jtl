@@ -1,0 +1,811 @@
+1461314176801,4949,ussdRequest,200,OK,USSD 1-1,text,true,182,1,1,4949
+1461314181812,4891,ussdRequest,200,OK,USSD 1-1,text,true,182,1,1,4891
+1461314186705,4869,ussdRequest,200,OK,USSD 1-1,text,true,182,1,1,4869
+1461314191580,4412,ussdRequest,200,OK,USSD 1-1,text,true,182,1,1,4412
+1461314195994,4432,ussdRequest,200,OK,USSD 1-1,text,true,182,1,1,4432
+1461315564871,7569,ussdRequest,200,OK,USSD 1-1,text,true,182,1,1,7569
+1461315572460,4422,ussdRequest,200,OK,USSD 1-1,text,true,182,1,1,4421
+1461315576884,4398,ussdRequest,200,OK,USSD 1-1,text,true,182,1,1,4398
+1461315581285,4406,ussdRequest,200,OK,USSD 1-1,text,true,182,1,1,4405
+1461315585693,4412,ussdRequest,200,OK,USSD 1-1,text,true,182,1,1,4412
+1461317266408,29861,ussdRequest,200,OK,USSD 1-1,text,true,182,1,1,29860
+1461317296288,8357,ussdRequest,200,OK,USSD 1-1,text,true,182,1,1,8357
+1461317304647,7321,ussdRequest,200,OK,USSD 1-1,text,true,182,1,1,7321
+1461317311974,6872,ussdRequest,200,OK,USSD 1-1,text,true,182,1,1,6872
+1461317318848,7121,ussdRequest,200,OK,USSD 1-1,text,true,182,1,1,7121
+1461320584918,6293,ussdRequest,200,OK,USSD 1-1,text,true,182,1,1,6293
+1461320591246,4954,ussdRequest,200,OK,USSD 1-1,text,true,182,1,1,4954
+1461320596203,4511,ussdRequest,200,OK,USSD 1-1,text,true,182,1,1,4510
+1461320600688,4498,ussdRequest,200,OK,USSD 1-1,text,true,182,1,1,4498
+1461320605215,4503,ussdRequest,200,OK,USSD 1-1,text,true,182,1,1,4503
+1461322807296,2882,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 2-1,,true,509,1,2,0
+1461322810583,1117,Deliver,502,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 2-1,,false,346,1,2,0
+1461322807679,4112,ussdRequest,200,OK,USSD 1-1,text,true,562,1,2,4112
+1461322811701,432,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 2-1,,true,735,1,2,0
+1461322811794,414,ussdRequest,200,OK,USSD 1-1,text,true,562,1,2,414
+1461322812211,1337,ussdRequest,200,OK,USSD 1-1,text,true,562,1,2,1337
+1461322812135,1506,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 2-1,,true,509,1,2,0
+1461322813549,438,ussdRequest,200,OK,USSD 1-1,text,true,562,1,2,438
+1461322813643,449,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 2-1,,true,509,1,2,0
+1461322813990,437,ussdRequest,200,OK,USSD 1-1,text,true,562,1,1,437
+1461323778119,2035,ussdRequest,200,OK,USSD 1-1,text,true,562,1,2,2035
+1461323777726,2127,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 2-1,,true,509,1,2,0
+1461323780248,1393,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 2-1,,true,509,1,2,0
+1461323780164,1488,ussdRequest,200,OK,USSD 1-1,text,true,562,1,2,1488
+1461323781644,418,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 2-1,,true,278,1,2,0
+1461323781655,442,ussdRequest,200,OK,USSD 1-1,text,true,562,1,2,442
+1461323782065,440,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 2-1,,true,509,1,2,0
+1461323782100,425,ussdRequest,200,OK,USSD 1-1,text,true,562,1,2,425
+1461323782507,421,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 2-1,,true,509,1,2,0
+1461323782528,417,ussdRequest,200,OK,USSD 1-1,text,true,562,1,1,417
+1461324599762,2710,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1056,1,2,0
+1461324602892,2266,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1053,1,2,0
+1461324605166,552,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1050,1,2,0
+1461324600141,5874,ussdRequest,200,OK,USSD 1-1,text,true,562,1,2,5874
+1461324606017,1473,ussdRequest,200,OK,USSD 1-1,text,true,562,1,2,1473
+1461324605726,1829,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1056,1,2,0
+1461324607493,1507,ussdRequest,200,OK,USSD 1-1,text,true,562,1,2,1507
+1461324609002,462,ussdRequest,200,OK,USSD 1-1,text,true,562,1,2,462
+1461324607562,2212,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1056,1,2,0
+1461324609467,443,ussdRequest,200,OK,USSD 1-1,text,true,562,1,1,443
+1461325288403,1900,ussdRequest,200,OK,USSD 1-1,text,true,562,1,2,1899
+1461325288029,1900,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1743,1,2,0
+1461325290328,452,ussdRequest,200,OK,USSD 1-1,text,true,562,1,2,452
+1461325290335,450,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1056,1,2,0
+1461325290783,408,ussdRequest,200,OK,USSD 1-1,text,true,562,1,2,408
+1461325291193,1073,ussdRequest,200,OK,USSD 1-1,text,true,562,1,2,1072
+1461325290795,1486,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1056,1,2,0
+1461325292268,457,ussdRequest,200,OK,USSD 1-1,text,true,562,1,2,457
+1461325292289,448,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1056,1,1,0
+1461325292744,444,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1056,1,1,0
+1461326294147,2045,ussdRequest,200,OK,USSD 1-1,text,true,562,1,2,2045
+1461326293782,2045,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1056,1,2,0
+1461326296218,447,ussdRequest,200,OK,USSD 1-1,text,true,562,1,2,447
+1461326296228,452,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1056,1,2,0
+1461326296668,422,ussdRequest,200,OK,USSD 1-1,text,true,562,1,2,422
+1461326297093,1523,ussdRequest,200,OK,USSD 1-1,text,true,562,1,2,1523
+1461326296722,1912,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1056,1,2,0
+1461326298619,429,ussdRequest,200,OK,USSD 1-1,text,true,562,1,2,429
+1461326298641,443,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1056,1,1,0
+1461326299087,429,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1056,1,1,0
+1461327619976,1928,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,3,0
+1461327620340,1930,ussdRequest,200,OK,USSD 1-1,text,true,562,1,3,1929
+1461327619976,1928,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1056,1,3,0
+1461327622288,433,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,3,0
+1461327622290,436,ussdRequest,200,OK,USSD 1-1,text,true,562,1,3,436
+1461327622299,444,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1056,1,3,0
+1461327622722,425,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,3,0
+1461327622728,434,ussdRequest,200,OK,USSD 1-1,text,true,562,1,3,434
+1461327622750,432,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1056,1,3,0
+1461327623150,428,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,3,0
+1461327623165,417,ussdRequest,200,OK,USSD 1-1,text,true,562,1,3,417
+1461327623187,440,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1056,1,3,0
+1461327623581,417,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,735,1,3,0
+1461327623584,432,ussdRequest,200,OK,USSD 1-1,text,true,562,1,2,432
+1461327623635,434,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1056,1,1,0
+1461557648639,2190,ussdRequest,200,OK,USSD 1-1,text,true,562,1,3,2190
+1461557648218,2189,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,3,0
+1461557648218,2189,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1056,1,3,0
+1461557650846,440,ussdRequest,200,OK,USSD 1-1,text,true,562,1,3,440
+1461557650863,428,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,3,0
+1461557650878,431,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1056,1,3,0
+1461557651294,430,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,3,0
+1461557651289,449,ussdRequest,200,OK,USSD 1-1,text,true,562,1,3,449
+1461557651318,443,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1056,1,3,0
+1461557651727,424,Deliver,502,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-1,,false,346,1,3,0
+1461557651740,451,ussdRequest,200,OK,USSD 1-1,text,true,562,1,3,451
+1461557651768,435,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1056,1,3,0
+1461557652153,426,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,3,0
+1461557652193,446,ussdRequest,200,OK,USSD 1-1,text,true,562,1,2,446
+1461557652211,445,SMS,201,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-1,,false,362,1,1,0
+1461568867182,3332,ussdRequest,200,OK,USSD 1-1,text,true,562,1,4,3332
+1461568866643,3343,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,4,0
+1461568866644,3346,SMS,502,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-1,,false,346,1,4,0
+1461568866644,3411,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,956,1,4,0
+1461568870537,461,ussdRequest,200,OK,USSD 1-1,text,true,562,1,4,461
+1461568870538,464,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,735,1,4,0
+1461568870551,480,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1056,1,4,0
+1461568870594,548,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,956,1,4,0
+1461568871002,454,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,4,0
+1461568870999,466,ussdRequest,200,OK,USSD 1-1,text,true,562,1,4,466
+1461568871036,463,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1056,1,4,0
+1461568871143,547,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,956,1,4,0
+1461568871459,442,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,4,0
+1461568871467,451,ussdRequest,200,OK,USSD 1-1,text,true,562,1,4,451
+1461568871509,452,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1056,1,4,0
+1461568871693,519,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,956,1,4,0
+1461568871905,431,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,735,1,4,0
+1461568871921,442,ussdRequest,200,OK,USSD 1-1,text,true,562,1,3,442
+1461568871966,437,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1056,1,2,0
+1461568872214,502,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,956,1,1,0
+1461570144911,5806,ussdRequest,200,OK,USSD 1-1,text,true,562,1,4,5806
+1461570144516,5819,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,4,0
+1461570144517,5833,SMS,502,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-1,,false,346,1,4,0
+1461570144516,5878,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,956,1,4,0
+1461570150731,583,ussdRequest,200,OK,USSD 1-1,text,true,562,1,4,583
+1461570150732,587,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,4,0
+1461570150763,614,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1056,1,4,0
+1461570150790,667,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,956,1,4,0
+1461570151315,922,ussdRequest,200,OK,USSD 1-1,text,true,562,1,4,922
+1461570151319,923,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,4,0
+1461570151387,1016,SMS,201,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-1,,false,362,1,4,0
+1461570151458,1167,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,956,1,4,0
+1461570152239,1727,ussdRequest,200,OK,USSD 1-1,text,true,562,1,4,1727
+1461570152245,1753,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,4,0
+1461570152411,1740,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1056,1,4,0
+1461570152628,1826,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,956,1,4,0
+1461570153969,1982,ussdRequest,200,OK,USSD 1-1,text,true,562,1,4,1982
+1461570154000,1966,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,3,0
+1461570154158,2026,SMS,502,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-1,,false,346,1,2,0
+1461570154458,2205,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,956,1,1,0
+1461579897736,2234,ussdRequest,200,OK,USSD 1-1,text,true,562,1,5,2234
+1461579897358,2235,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,5,0
+1461579897736,2253,charge,200,OK,Payment_Charge 5-1,text,true,686,1,5,2253
+1461579897359,2234,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1060,1,4,0
+1461579897358,2294,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,957,1,4,0
+1461579899996,498,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,4,0
+1461579899996,500,ussdRequest,200,OK,USSD 1-1,text,true,562,1,4,499
+1461579900004,503,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1060,1,4,0
+1461579900031,510,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,957,1,4,0
+1461579900498,432,ussdRequest,200,OK,USSD 1-1,text,true,562,1,4,432
+1461579900496,441,Deliver,502,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-1,,false,346,1,4,0
+1461579900515,438,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1060,1,4,0
+1461579900544,471,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,957,1,4,0
+1461579900932,442,ussdRequest,200,OK,USSD 1-1,text,true,562,1,4,442
+1461579900939,436,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,735,1,4,0
+1461579900958,440,SMS,201,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-1,,false,363,1,4,0
+1461579901018,476,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,957,1,4,0
+1461579901378,416,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,735,1,4,0
+1461579901377,429,ussdRequest,200,OK,USSD 1-1,text,true,562,1,3,429
+1461579901405,425,SMS,502,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-1,,false,346,1,2,0
+1461579901497,471,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,957,1,1,0
+1461580575093,4323,ussdRequest,200,OK,USSD 1-1,text,true,562,1,5,4323
+1461580574712,4343,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,957,1,5,0
+1461580574712,4330,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,5,0
+1461580575093,4333,charge,200,OK,Payment_Charge 5-1,text,true,686,1,5,4333
+1461580574712,4335,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1060,1,5,0
+1461580579449,798,ussdRequest,200,OK,USSD 1-1,text,true,562,1,5,798
+1461580579447,801,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,5,0
+1461580579451,816,charge,200,OK,Payment_Charge 5-1,text,true,686,1,5,815
+1461580579459,812,SMS,502,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-1,,false,346,1,5,0
+1461580579445,897,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,957,1,5,0
+1461580580249,805,ussdRequest,200,OK,USSD 1-1,text,true,562,1,5,805
+1461580580251,805,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,5,0
+1461580580278,785,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1060,1,5,0
+1461580580269,810,charge,200,OK,Payment_Charge 5-1,text,true,686,1,5,810
+1461580580345,740,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,957,1,5,0
+1461580581058,1341,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,5,0
+1461580581057,1346,ussdRequest,200,OK,USSD 1-1,text,true,562,1,5,1345
+1461580581081,1329,charge,200,OK,Payment_Charge 5-1,text,true,686,1,5,1329
+1461580581071,1344,SMS,201,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-1,,false,363,1,5,0
+1461580581087,1365,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,957,1,5,0
+1461580582423,3177,SMS,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-1,,false,516,1,5,0
+1461580582407,4072,ussdRequest,200,OK,USSD 1-1,text,true,182,1,4,4072
+1461580582413,7385,charge,400,Bad Request,Payment_Charge 5-1,text,false,360,1,3,7384
+1461580582402,7398,Deliver,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-1,,false,491,1,2,0
+1461580582454,8094,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,521,1,1,0
+1461581425165,4114,charge,400,Bad Request,Payment_Charge 5-1,text,false,360,1,5,4114
+1461581425171,5090,ussdRequest,200,OK,USSD 1-1,text,true,182,1,5,5090
+1461581424795,6105,SMS,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-1,,false,516,1,5,0
+1461581429293,2434,charge,400,Bad Request,Payment_Charge 5-1,text,false,360,1,5,2434
+1461581424795,7112,Deliver,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-1,,false,491,1,5,0
+1461581430269,2419,ussdRequest,200,OK,USSD 1-1,text,true,182,1,5,2419
+1461581431730,2414,charge,400,Bad Request,Payment_Charge 5-1,text,false,360,1,5,2414
+1461581424794,9144,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,521,1,5,0
+1461581431320,4454,SMS,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-1,,false,516,1,5,0
+1461581434146,2423,charge,400,Bad Request,Payment_Charge 5-1,text,false,360,1,5,2423
+1461581432690,4443,ussdRequest,200,OK,USSD 1-1,text,true,182,1,5,4443
+1461581432280,5429,Deliver,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-1,,false,491,1,5,0
+1461581436572,2432,charge,400,Bad Request,Payment_Charge 5-1,text,false,360,1,5,2432
+1461581435782,4429,SMS,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-1,,false,516,1,4,0
+1461581437135,4413,ussdRequest,200,OK,USSD 1-1,text,true,182,1,4,4413
+1461581434316,7500,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,521,1,4,0
+1461581440219,3448,SMS,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-1,,false,516,1,4,0
+1461581437710,6436,Deliver,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-1,,false,491,1,4,0
+1461581441550,4427,ussdRequest,200,OK,USSD 1-1,text,true,182,1,4,4426
+1461581443675,4420,SMS,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-1,,false,516,1,3,0
+1461581441820,7481,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,521,1,2,0
+1461581444149,5421,Deliver,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-1,,false,491,1,2,0
+1461581449572,5431,Deliver,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-1,,false,491,1,2,0
+1461581449302,7483,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,521,1,1,0
+1461581456786,7495,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,521,1,1,0
+1461582514734,2486,ussdRequest,200,OK,USSD 1-1,text,true,562,1,5,2486
+1461582514349,2487,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,5,0
+1461582514349,2481,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,956,1,5,0
+1461582514736,2488,charge,200,OK,Payment_Charge 5-1,text,true,686,1,5,2488
+1461582514349,2488,SMS,201,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-1,,false,362,1,5,0
+1461582517238,786,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,735,1,5,0
+1461582517241,785,ussdRequest,200,OK,USSD 1-1,text,true,562,1,5,785
+1461582517241,808,charge,200,OK,Payment_Charge 5-1,text,true,686,1,5,808
+1461582517239,837,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,956,1,5,0
+1461582517254,858,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1056,1,5,0
+1461582518029,665,ussdRequest,200,OK,USSD 1-1,text,true,562,1,5,665
+1461582518027,668,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,5,0
+1461582518051,718,charge,200,OK,Payment_Charge 5-1,text,true,686,1,5,718
+1461582518122,662,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1056,1,5,0
+1461582518078,718,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,956,1,5,0
+1461582518697,832,ussdRequest,200,OK,USSD 1-1,text,true,562,1,5,832
+1461582518697,832,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,5,0
+1461582518771,794,charge,200,OK,Payment_Charge 5-1,text,true,686,1,5,794
+1461582518792,811,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1056,1,5,0
+1461582518799,862,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,956,1,5,0
+1461582519530,604,ussdRequest,200,OK,USSD 1-1,text,true,562,1,5,604
+1461582519532,606,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,278,1,4,0
+1461582519567,586,charge,200,OK,Payment_Charge 5-1,text,true,686,1,3,585
+1461582519611,605,SMS,502,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-1,,false,346,1,2,0
+1461582519664,568,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,956,1,1,0
+1461583812180,4102,ussdRequest,200,OK,USSD 1-1,text,true,562,1,5,4102
+1461583811684,4149,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,735,1,5,0
+1461583811683,4151,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1056,1,5,0
+1461583812180,4174,charge,200,OK,Payment_Charge 5-1,text,true,686,1,5,4174
+1461583811685,4176,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,956,1,5,0
+1461583816329,670,Deliver,502,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-1,,false,346,1,5,0
+1461583816293,736,ussdRequest,200,OK,USSD 1-1,text,true,562,1,5,736
+1461583816346,742,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1056,1,5,0
+1461583816355,749,charge,200,OK,Payment_Charge 5-1,text,true,686,1,5,749
+1461583816357,756,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,956,1,5,0
+1461583817030,620,ussdRequest,200,OK,USSD 1-1,text,true,562,1,5,620
+1461583816999,712,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,5,0
+1461583817091,871,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1056,1,5,0
+1461583817105,861,charge,200,OK,Payment_Charge 5-1,text,true,686,1,5,861
+1461583817113,863,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,956,1,5,0
+1461583817651,838,ussdRequest,200,OK,USSD 1-1,text,true,562,1,5,838
+1461583817713,780,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,5,0
+1461583817970,863,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1056,1,5,0
+1461583817971,866,charge,200,OK,Payment_Charge 5-1,text,true,686,1,5,866
+1461583817978,872,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,956,1,5,0
+1461583818490,704,ussdRequest,200,OK,USSD 1-1,text,true,562,1,5,704
+1461583818494,739,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,4,0
+1461583818836,561,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1056,1,3,0
+1461583818838,574,charge,200,OK,Payment_Charge 5-1,text,true,686,1,2,574
+1461583818850,588,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,956,1,1,0
+1461584716006,2079,ussdRequest,200,OK,USSD 1-1,text,true,562,1,5,2079
+1461584715625,2104,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,5,0
+1461584715626,2124,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1737,1,5,0
+1461584716005,2149,charge,200,OK,Payment_Charge 5-1,text,true,686,1,5,2149
+1461584715626,2219,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,956,1,5,0
+1461584718102,451,ussdRequest,200,OK,USSD 1-1,text,true,562,1,5,451
+1461584718111,487,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,5,0
+1461584718152,504,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1050,1,5,0
+1461584718155,548,charge,200,OK,Payment_Charge 5-1,text,true,686,1,5,548
+1461584718226,577,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,956,1,5,0
+1461584718555,459,ussdRequest,200,OK,USSD 1-1,text,true,562,1,5,459
+1461584718600,488,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,5,0
+1461584718706,578,charge,200,OK,Payment_Charge 5-1,text,true,686,1,5,578
+1461584718806,592,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,956,1,5,0
+1461584719015,429,ussdRequest,200,OK,USSD 1-1,text,true,562,1,5,429
+1461584719091,482,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,5,0
+1461584719286,479,charge,200,OK,Payment_Charge 5-1,text,true,686,1,5,479
+1461584719446,489,ussdRequest,200,OK,USSD 1-1,text,true,562,1,5,489
+1461584719399,625,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,956,1,4,0
+1461584719576,457,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,4,0
+1461584719767,471,charge,200,OK,Payment_Charge 5-1,text,true,686,1,3,471
+1461584720027,535,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,956,1,2,0
+1461584718664,60629,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1743,1,1,0
+1461584779301,540,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1743,1,1,0
+1461584779850,439,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1053,1,1,0
+1461643609800,3119,charge,400,Bad Request,Payment_Charge 5-1,text,false,360,1,5,3118
+1461643609345,4090,SMS,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-1,,false,516,1,5,0
+1461643609800,5095,ussdRequest,200,OK,USSD 1-1,text,true,182,1,8,5095
+1461643612944,2417,charge,400,Bad Request,Payment_Charge 5-1,text,false,360,1,8,2417
+1461643609406,7099,Deliver,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-1,,false,491,2,8,0
+1461643615363,2422,charge,400,Bad Request,Payment_Charge 5-1,text,false,360,1,8,2422
+1461643614897,3407,ussdRequest,200,OK,USSD 1-1,text,true,182,1,8,3407
+1461643613939,4411,SMS,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-1,,false,516,2,8,0
+1461643614360,4612,SMS,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-2,,false,516,2,8,0
+1461643609411,10147,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,521,3,13,0
+1461643617787,2426,charge,400,Bad Request,Payment_Charge 5-1,text,false,360,2,13,2426
+1461643618357,3410,SMS,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-1,,false,516,3,13,0
+1461643614405,7484,Deliver,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-2,,false,491,3,13,0
+1461643619004,3428,SMS,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-2,,false,516,3,13,0
+1461643620219,2417,charge,400,Bad Request,Payment_Charge 5-1,text,false,360,2,13,2417
+1461643618306,4415,ussdRequest,200,OK,USSD 1-1,text,true,182,2,12,4415
+1461643619427,3573,charge,400,Bad Request,Payment_Charge 5-2,text,false,360,1,12,3573
+1461643614410,8602,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-2,,true,521,3,12,0
+1461643616903,6412,Deliver,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-1,,false,491,3,12,0
+1461643619352,5494,ussdRequest,200,OK,USSD 1-2,text,true,182,2,15,5494
+1461643619375,5518,SMS,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-3,,false,516,4,15,0
+1461643621774,3451,SMS,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-1,,false,516,4,15,0
+1461643623003,2426,charge,400,Bad Request,Payment_Charge 5-2,text,false,360,1,15,2426
+1461643622723,3396,ussdRequest,200,OK,USSD 1-1,text,true,182,2,15,3396
+1461643622439,4411,SMS,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-2,,false,516,4,15,0
+1461643619406,7594,Deliver,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-3,,false,491,4,15,0
+1461643621899,5400,Deliver,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-2,,false,491,4,15,0
+1461643619950,7515,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,521,4,15,0
+1461643625431,2430,charge,400,Bad Request,Payment_Charge 5-2,text,false,360,1,15,2430
+1461643619411,8528,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-3,,true,521,4,15,0
+1461643624848,3411,ussdRequest,200,OK,USSD 1-2,text,true,182,2,15,3411
+1461643625232,3425,SMS,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-1,,false,516,4,15,0
+1461643623318,5430,Deliver,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-1,,false,491,4,14,0
+1461643624405,4542,SMS,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-4,,false,516,3,14,0
+1461643624905,4404,SMS,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-3,,false,516,3,14,0
+1461643626121,3419,ussdRequest,200,OK,USSD 1-1,text,true,182,2,14,3419
+1461643627862,2408,charge,400,Bad Request,Payment_Charge 5-2,text,false,360,1,13,2408
+1461643626860,4435,SMS,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-2,,false,516,3,13,0
+1461643623024,8452,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-2,,true,521,4,13,0
+1461643628260,3391,ussdRequest,200,OK,USSD 1-2,text,true,182,1,13,3391
+1461643624410,7519,Deliver,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-4,,false,491,4,13,0
+1461643630272,2407,charge,400,Bad Request,Payment_Charge 5-2,text,false,360,1,13,2406
+1461643624442,8655,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-4,,true,521,4,12,0
+1461643628972,4433,SMS,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-4,,false,516,3,12,0
+1461643627008,6411,Deliver,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-3,,false,491,4,12,0
+1461643627301,6409,Deliver,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-2,,false,491,4,12,0
+1461643629311,4412,SMS,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-3,,false,516,3,12,0
+1461643628749,5429,Deliver,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-1,,false,491,4,12,0
+1461643627466,7482,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,521,4,12,0
+1461643627946,7445,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-3,,true,521,4,12,0
+1461643631302,4428,SMS,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-2,,false,516,3,12,0
+1461643631653,4432,ussdRequest,200,OK,USSD 1-2,text,true,182,1,11,4431
+1461643633730,3410,SMS,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-3,,false,516,2,11,0
+1461643631949,5432,Deliver,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-4,,false,491,4,11,0
+1461643633411,4452,SMS,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-4,,false,516,2,11,0
+1461643633421,6423,Deliver,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-3,,false,491,4,11,0
+1461643631477,8444,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-2,,true,521,4,11,0
+1461643633714,6410,Deliver,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-2,,false,491,4,11,0
+1461643636087,4394,ussdRequest,200,OK,USSD 1-2,text,true,182,1,11,4394
+1461643634179,6409,Deliver,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-1,,false,491,4,10,0
+1461643633107,8486,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-4,,true,521,4,9,0
+1461643637150,4460,SMS,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-3,,false,516,2,9,0
+1461643637871,4410,SMS,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-4,,false,516,1,8,0
+1461643637385,5424,Deliver,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-4,,false,491,3,8,0
+1461643635394,7453,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-3,,true,521,4,8,0
+1461643634951,8458,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,521,4,8,0
+1461643640127,5418,Deliver,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-2,,false,491,3,8,0
+1461643639848,6417,Deliver,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-3,,false,491,2,7,0
+1461643642289,4436,SMS,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-4,,false,516,1,7,0
+1461643639924,8447,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-2,,true,521,4,6,0
+1461643641596,7478,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-4,,true,521,4,6,0
+1461643642812,6428,Deliver,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-4,,false,491,2,6,0
+1461643642848,7445,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-3,,true,521,4,6,0
+1461643643411,7464,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,521,4,6,0
+1461643646268,5420,Deliver,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-3,,false,491,2,5,0
+1461643649243,6774,Deliver,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-4,,false,491,1,4,0
+1461643648373,8586,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-2,,true,521,3,3,0
+1461643649076,8907,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-4,,true,521,2,2,0
+1461643650297,8600,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-3,,true,521,2,2,0
+1461643657985,8472,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-4,,true,521,1,1,0
+1461645585868,6312,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,2,8,0
+1461645586221,6317,charge,200,OK,Payment_Charge 5-1,text,true,686,1,8,6317
+1461645586221,6311,ussdRequest,200,OK,USSD 1-1,text,true,562,1,8,6311
+1461645585876,6312,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,956,2,8,0
+1461645585825,6311,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1056,2,8,0
+1461645592553,2659,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,2,8,0
+1461645592555,2756,ussdRequest,200,OK,USSD 1-1,text,true,562,1,8,2756
+1461645592554,2774,charge,200,OK,Payment_Charge 5-1,text,true,686,1,8,2774
+1461645592562,2765,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1053,2,8,0
+1461645592556,2779,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,956,2,8,0
+1461645595214,2331,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,3,13,0
+1461645595330,2268,charge,400,Bad Request,Payment_Charge 5-1,text,false,451,2,13,2268
+1461645595313,2286,ussdRequest,200,OK,USSD 1-1,text,true,562,2,13,2286
+1461645595337,2286,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,956,3,13,0
+1461645595334,2288,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1050,3,13,0
+1461645590828,7552,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-2,,true,1050,3,13,0
+1461645590871,7576,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-2,,true,509,3,13,0
+1461645597547,1122,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,3,13,0
+1461645590883,8054,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-2,,true,956,3,13,0
+1461645597601,1420,ussdRequest,200,OK,USSD 1-1,text,true,562,2,13,1419
+1461645597600,1737,charge,200,OK,Payment_Charge 5-1,text,true,686,2,13,1737
+1461645597625,1911,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1056,3,13,0
+1461645597623,2073,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,956,3,13,0
+1461645598424,1597,SMS,201,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-2,,false,362,3,13,0
+1461645598457,1683,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-2,,true,278,3,13,0
+1461645598672,1770,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,3,13,0
+1461645599022,1428,ussdRequest,200,OK,USSD 1-1,text,true,562,2,12,1428
+1461645598953,1497,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-2,,true,956,3,12,0
+1461645599337,1488,charge,400,Bad Request,Payment_Charge 5-1,text,false,305,2,11,1488
+1461645599538,1335,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1050,4,11,0
+1461645599698,1189,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,956,3,10,0
+1461645600032,856,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-2,,true,1056,3,9,0
+1461645600143,750,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-2,,true,735,2,9,0
+1461645600454,940,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-2,,true,956,3,11,0
+1461645595871,6244,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-3,,true,509,3,11,0
+1461645595833,6315,ussdRequest,200,OK,USSD 1-2,text,true,562,1,11,6315
+1461645595895,6260,charge,400,Bad Request,Payment_Charge 5-2,text,false,305,1,11,6260
+1461645600892,1265,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-2,,true,1056,3,11,0
+1461645600895,1265,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-2,,true,735,3,11,0
+1461645595851,6297,SMS,201,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-3,,false,362,3,11,0
+1461645595878,6277,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-3,,true,956,3,11,0
+1461645601396,778,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-2,,true,956,3,11,0
+1461645602149,1444,ussdRequest,200,OK,USSD 1-2,text,true,562,1,11,1444
+1461645602123,1469,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-3,,true,509,3,11,0
+1461645602162,1436,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-2,,true,509,3,11,0
+1461645602157,1444,charge,200,OK,Payment_Charge 5-2,text,true,686,1,10,1444
+1461645602161,1437,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-2,,true,1050,3,10,0
+1461645602163,1447,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-3,,true,956,3,9,0
+1461645602163,1443,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-3,,true,1056,2,9,0
+1461645602176,1438,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-2,,true,956,3,9,0
+1461645603595,1522,ussdRequest,200,OK,USSD 1-2,text,true,562,1,8,1522
+1461645603596,1535,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-3,,true,509,2,8,0
+1461645603603,1536,charge,400,Bad Request,Payment_Charge 5-2,text,false,305,1,8,1536
+1461645603612,1530,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-3,,true,1056,2,8,0
+1461645603611,1654,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-3,,true,956,2,8,0
+1461645605119,1746,ussdRequest,200,OK,USSD 1-2,text,true,562,1,8,1746
+1461645605133,1732,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-3,,true,735,2,8,0
+1461645605141,1842,charge,200,OK,Payment_Charge 5-2,text,true,686,1,8,1842
+1461645605149,1849,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-3,,true,1056,2,8,0
+1461645605268,1960,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-3,,true,956,2,8,0
+1461645600868,6913,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-4,,true,1050,2,8,0
+1461645600897,7417,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-4,,true,956,2,8,0
+1461645600897,7804,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-4,,true,509,2,8,0
+1461645606868,2616,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-3,,true,509,2,8,0
+1461645606867,2630,ussdRequest,200,OK,USSD 1-2,text,true,562,1,7,2630
+1461645606986,2512,charge,400,Bad Request,Payment_Charge 5-2,text,false,305,1,7,2511
+1461645607004,2495,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-3,,true,1050,2,5,0
+1461645607230,2312,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-3,,true,956,2,4,0
+1461645607814,2224,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-4,,true,1056,1,3,0
+1461645608323,1975,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-4,,true,956,1,3,0
+1461645608708,1872,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-4,,true,735,1,3,0
+1461645610043,1965,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-4,,true,1050,1,3,0
+1461645610300,2121,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-4,,true,956,1,3,0
+1461645610582,1875,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-4,,true,509,1,3,0
+1461645612014,707,SMS,201,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-4,,false,362,1,3,0
+1461645612459,1258,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-4,,true,509,1,3,0
+1461645612423,1295,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-4,,true,956,1,3,0
+1461645612727,1021,SMS,201,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-4,,false,362,1,3,0
+1461645613720,748,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-4,,true,278,1,2,0
+1461645613720,753,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-4,,true,956,1,1,0
+1461646424779,60,ussdRequest,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: apimanager.qa17.wso2telco.com,USSD 1-1,text,false,1838,1,5,0
+1461646424779,60,charge,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: apimanager.qa17.wso2telco.com,Payment_Charge 5-1,text,false,2034,1,5,0
+1461646424402,60,Retrive,Non HTTP response code: java.net.UnknownHostException,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Retrive 4-1,,false,1838,1,5,0
+1461646424857,1,ussdRequest,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: apimanager.qa17.wso2telco.com,USSD 1-1,text,false,1838,1,5,0
+1461646424857,1,charge,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: apimanager.qa17.wso2telco.com,Payment_Charge 5-1,text,false,1838,1,5,0
+1461646424857,1,Retrive,Non HTTP response code: java.net.UnknownHostException,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Retrive 4-1,,false,1838,1,5,0
+1461646424394,60,Deliver,Non HTTP response code: java.net.UnknownHostException,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-1,,false,1838,1,5,0
+1461646424859,1,ussdRequest,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: apimanager.qa17.wso2telco.com,USSD 1-1,text,false,1838,1,5,0
+1461646424859,1,Retrive,Non HTTP response code: java.net.UnknownHostException,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Retrive 4-1,,false,1838,1,5,0
+1461646424859,0,Deliver,Non HTTP response code: java.net.UnknownHostException,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-1,,false,1838,1,5,0
+1461646424861,1,Retrive,Non HTTP response code: java.net.UnknownHostException,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Retrive 4-1,,false,1838,1,5,0
+1461646424863,0,Retrive,Non HTTP response code: java.net.UnknownHostException,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Retrive 4-1,,false,1838,1,5,0
+1461646424861,0,ussdRequest,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: apimanager.qa17.wso2telco.com,USSD 1-1,text,false,1838,1,4,0
+1461646424866,1,ussdRequest,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: apimanager.qa17.wso2telco.com,USSD 1-1,text,false,1838,1,4,0
+1461646424866,0,Deliver,Non HTTP response code: java.net.UnknownHostException,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-1,,false,1838,1,4,0
+1461646424347,60,SMS,Non HTTP response code: java.net.UnknownHostException,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-1,,false,1838,1,3,0
+1461646424868,1,Deliver,Non HTTP response code: java.net.UnknownHostException,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-1,,false,1838,1,3,0
+1461646424861,1,charge,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: apimanager.qa17.wso2telco.com,Payment_Charge 5-1,text,false,1838,1,5,0
+1461646424871,0,charge,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: apimanager.qa17.wso2telco.com,Payment_Charge 5-1,text,false,1838,1,3,0
+1461646424870,0,Deliver,Non HTTP response code: java.net.UnknownHostException,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-1,,false,1838,1,3,0
+1461646424869,1,SMS,Non HTTP response code: java.net.UnknownHostException,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-1,,false,1838,1,2,0
+1461646424873,0,charge,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: apimanager.qa17.wso2telco.com,Payment_Charge 5-1,text,false,1838,1,2,0
+1461646424873,0,SMS,Non HTTP response code: java.net.UnknownHostException,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-1,,false,1838,1,1,0
+1461646424877,0,SMS,Non HTTP response code: java.net.UnknownHostException,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-1,,false,1838,1,1,0
+1461646424880,0,SMS,Non HTTP response code: java.net.UnknownHostException,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-1,,false,1838,1,1,0
+1461646429351,0,SMS,Non HTTP response code: java.net.UnknownHostException,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-2,,false,1838,1,1,0
+1461646429367,0,SMS,Non HTTP response code: java.net.UnknownHostException,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-2,,false,1838,1,1,0
+1461646429371,0,SMS,Non HTTP response code: java.net.UnknownHostException,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-2,,false,1838,1,1,0
+1461646429378,0,SMS,Non HTTP response code: java.net.UnknownHostException,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-2,,false,1838,1,1,0
+1461646429381,1,SMS,Non HTTP response code: java.net.UnknownHostException,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-2,,false,1838,1,1,0
+1461646429395,0,Deliver,Non HTTP response code: java.net.UnknownHostException,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-2,,false,1838,1,2,0
+1461646429403,0,Deliver,Non HTTP response code: java.net.UnknownHostException,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-2,,false,1838,1,2,0
+1461646429404,0,Deliver,Non HTTP response code: java.net.UnknownHostException,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-2,,false,1838,1,2,0
+1461646429405,1,Deliver,Non HTTP response code: java.net.UnknownHostException,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-2,,false,1838,1,2,0
+1461646429406,0,Deliver,Non HTTP response code: java.net.UnknownHostException,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-2,,false,1838,1,2,0
+1461646429402,1,Retrive,Non HTTP response code: java.net.UnknownHostException,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Retrive 4-2,,false,1838,1,1,0
+1461646429410,1,Retrive,Non HTTP response code: java.net.UnknownHostException,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Retrive 4-2,,false,1838,1,1,0
+1461646429412,0,Retrive,Non HTTP response code: java.net.UnknownHostException,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Retrive 4-2,,false,1838,1,1,0
+1461646429413,0,Retrive,Non HTTP response code: java.net.UnknownHostException,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Retrive 4-2,,false,1838,1,1,0
+1461646429415,1,Retrive,Non HTTP response code: java.net.UnknownHostException,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Retrive 4-2,,false,1838,1,1,0
+1461646434360,2,ussdRequest,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: apimanager.qa17.wso2telco.com,USSD 1-2,text,false,1838,1,1,0
+1461646434367,1,ussdRequest,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: apimanager.qa17.wso2telco.com,USSD 1-2,text,false,1838,1,1,0
+1461646434372,4,ussdRequest,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: apimanager.qa17.wso2telco.com,USSD 1-2,text,false,1838,1,1,0
+1461646434380,1,ussdRequest,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: apimanager.qa17.wso2telco.com,USSD 1-2,text,false,1838,1,1,0
+1461646434385,0,ussdRequest,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: apimanager.qa17.wso2telco.com,USSD 1-2,text,false,1838,1,2,0
+1461646434390,0,SMS,Non HTTP response code: java.net.UnknownHostException,"Number of samples in transaction : 1, number of failing sample1461647599335,2127,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,5,0
+1461647599690,2127,ussdRequest,200,OK,USSD 1-1,text,true,562,1,5,2127
+1461647599690,2157,charge,200,OK,Payment_Charge 5-1,text,true,686,1,5,2157
+1461647599292,2129,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1060,1,5,0
+1461647599341,2163,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,956,1,5,0
+1461647601845,428,ussdRequest,200,OK,USSD 1-1,text,true,562,1,5,428
+1461647601852,447,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1054,1,5,0
+1461647601848,469,charge,400,Bad Request,Payment_Charge 5-1,text,false,305,1,5,469
+1461647601842,476,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,5,0
+1461647601854,526,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,957,1,5,0
+1461647602275,423,ussdRequest,200,OK,USSD 1-1,text,true,562,1,5,423
+1461647602306,413,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1060,1,5,0
+1461647602320,423,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,5,0
+1461647602319,441,charge,200,OK,Payment_Charge 5-1,text,true,686,1,5,440
+1461647602382,485,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,957,1,5,0
+1461647602700,402,ussdRequest,200,OK,USSD 1-1,text,true,562,1,5,402
+1461647602726,411,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1054,1,5,0
+1461647602746,436,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,5,0
+1461647602761,430,charge,400,Bad Request,Payment_Charge 5-1,text,false,305,1,5,430
+1461647602869,511,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,957,1,5,0
+1461647603105,421,ussdRequest,200,OK,USSD 1-1,text,true,562,1,5,421
+1461647603144,435,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1060,1,4,0
+1461647603185,450,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,3,0
+1461647603193,452,charge,200,OK,Payment_Charge 5-1,text,true,686,1,2,452
+1461647603383,485,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,957,1,1,0
+1461647604336,1525,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-2,,true,509,1,3,0
+1461647604296,1590,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-2,,true,1054,1,3,0
+1461647604342,1585,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-2,,true,957,1,3,0
+1461647605873,411,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-2,,true,509,1,3,0
+1461647605917,439,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-2,,true,1060,1,3,0
+1461647605939,482,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-2,,true,957,1,3,0
+1461647606364,425,SMS,201,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-2,,false,363,1,3,0
+1461647606424,484,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-2,,true,957,1,3,0
+1461647606798,420,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-2,,true,1060,1,3,0
+1461647606910,511,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-2,,true,957,1,3,0
+1461647607225,456,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-2,,true,1054,1,3,0
+1461647607423,510,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-2,,true,957,1,2,0
+1461647609355,1561,charge,400,Bad Request,Payment_Charge 5-2,text,false,305,1,6,1561
+1461647609316,1592,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-3,,true,1060,1,6,0
+1461647609347,1578,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-3,,true,957,1,6,0
+1461647609300,1651,ussdRequest,200,OK,USSD 1-2,text,true,562,1,6,1651
+1461647609336,1617,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-3,,true,509,2,6,0
+1461647610952,439,ussdRequest,200,OK,USSD 1-2,text,true,562,1,6,439
+1461647610963,447,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-3,,true,509,2,6,0
+1461647610931,480,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-3,,true,1054,1,6,0
+1461647610922,513,charge,200,OK,Payment_Charge 5-2,text,true,686,1,6,513
+1461647610941,513,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-3,,true,957,1,6,0
+1461647611392,448,ussdRequest,200,OK,USSD 1-2,text,true,562,1,6,448
+1461647611413,436,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-3,,true,735,2,6,0
+1461647611418,433,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-3,,true,1060,1,6,0
+1461647611437,444,charge,400,Bad Request,Payment_Charge 5-2,text,false,305,1,6,444
+1461647611457,481,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-3,,true,957,1,6,0
+1461647611842,483,ussdRequest,200,OK,USSD 1-2,text,true,562,1,6,483
+1461647611851,475,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-3,,true,735,2,6,0
+1461647611858,471,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-3,,true,1054,1,6,0
+1461647611883,490,charge,200,OK,Payment_Charge 5-2,text,true,686,1,6,490
+1461647611939,487,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-3,,true,957,1,6,0
+1461647612326,444,ussdRequest,200,OK,USSD 1-2,text,true,562,1,6,444
+1461647612328,451,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-3,,true,509,2,5,0
+1461647612335,446,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-3,,true,1060,1,4,0
+1461647612374,427,charge,400,Bad Request,Payment_Charge 5-2,text,false,305,1,3,426
+1461647612428,474,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-3,,true,957,1,2,0
+1461647614341,1536,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-4,,true,735,2,4,0
+1461647614333,1587,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-4,,true,1054,1,4,0
+1461647614370,1637,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-4,,true,957,1,4,0
+1461647615898,443,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-4,,true,509,2,4,0
+1461647615941,444,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-4,,true,1060,1,4,0
+1461647616017,487,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-4,,true,957,1,4,0
+1461647616343,411,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-4,,true,278,2,4,0
+1461647616391,415,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-4,,true,1054,1,4,0
+1461647616506,469,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-4,,true,957,1,4,0
+1461647616757,419,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-4,,true,509,2,4,0
+1461647616812,459,SMS,201,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-4,,false,363,1,4,0
+1461647616977,474,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-4,,true,957,1,4,0
+1461647617178,431,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-4,,true,278,2,4,0
+1461647617278,452,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-4,,true,1054,1,3,0
+1461647617452,470,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-4,,true,957,1,2,0
+1461647606288,61380,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-2,,true,735,1,1,0
+1461647667671,417,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-2,,true,509,1,1,0
+1461647668090,413,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-2,,true,278,1,1,0
+1461651367829,2144,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,5,0
+1461651368190,2170,charge,200,OK,Payment_Charge 5-1,text,true,686,1,5,2170
+1461651368190,2143,ussdRequest,200,OK,USSD 1-1,text,true,562,1,5,2142
+1461651367785,2156,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1750,1,5,0
+1461651367836,2199,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,957,1,5,0
+1461651370357,449,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,5,0
+1461651370363,482,ussdRequest,200,OK,USSD 1-1,text,true,562,1,5,482
+1461651370361,485,charge,400,Bad Request,Payment_Charge 5-1,text,false,305,1,5,485
+1461651370374,485,SMS,201,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-1,,false,363,1,5,0
+1461651370391,499,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,957,1,5,0
+1461651370808,438,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,5,0
+1461651370847,412,ussdRequest,200,OK,USSD 1-1,text,true,562,1,5,412
+1461651370848,458,charge,200,OK,Payment_Charge 5-1,text,true,686,1,5,458
+1461651370866,438,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1060,1,5,0
+1461651370892,505,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,957,1,5,0
+1461651371248,429,Deliver,502,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-1,,false,346,1,5,0
+1461651371260,429,ussdRequest,200,OK,USSD 1-1,text,true,562,1,5,429
+1461651371317,442,charge,400,Bad Request,Payment_Charge 5-1,text,false,305,1,5,442
+1461651371327,444,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1054,1,5,0
+1461651371399,561,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,957,1,5,0
+1461651371679,423,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,5,0
+1461651371691,421,ussdRequest,200,OK,USSD 1-1,text,true,562,1,4,421
+1461651371762,443,charge,200,OK,Payment_Charge 5-1,text,true,686,1,3,443
+1461651371777,426,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1060,1,2,0
+1461651371962,486,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,957,1,1,0
+1461651372830,1567,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-2,,true,735,1,3,0
+1461651372787,1615,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-2,,true,1054,1,3,0
+1461651372836,1621,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-2,,true,957,1,3,0
+1461651374449,418,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-2,,true,1060,1,3,0
+1461651374466,482,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-2,,true,957,1,3,0
+1461651374876,447,SMS,502,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-2,,false,346,1,3,0
+1461651374949,479,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-2,,true,957,1,3,0
+1461651375333,429,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-2,,true,1060,1,3,0
+1461651375431,496,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-2,,true,957,1,3,0
+1461651375769,453,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-2,,true,1054,1,3,0
+1461651375929,459,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-2,,true,957,1,2,0
+1461651377793,1560,ussdRequest,200,OK,USSD 1-2,text,true,562,1,6,1560
+1461651377832,1538,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-3,,true,509,2,6,0
+1461651377810,1596,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-3,,true,1060,1,6,0
+1461651377864,1574,charge,400,Bad Request,Payment_Charge 5-2,text,false,305,1,6,1574
+1461651377841,1664,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-3,,true,957,1,6,0
+1461651379356,426,ussdRequest,200,OK,USSD 1-2,text,true,562,1,6,426
+1461651379432,435,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-3,,true,1054,1,6,0
+1461651379440,478,charge,200,OK,Payment_Charge 5-2,text,true,686,1,6,478
+1461651379514,504,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-3,,true,957,1,6,0
+1461651379783,449,ussdRequest,200,OK,USSD 1-2,text,true,562,1,6,449
+1461651379874,433,SMS,502,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-3,,false,346,1,6,0
+1461651379920,469,charge,400,Bad Request,Payment_Charge 5-2,text,false,305,1,6,469
+1461651380020,492,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-3,,true,957,1,6,0
+1461651380234,435,ussdRequest,200,OK,USSD 1-2,text,true,562,1,6,435
+1461651380314,414,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-3,,true,1054,1,6,0
+1461651380391,443,charge,200,OK,Payment_Charge 5-2,text,true,686,1,6,443
+1461651380514,468,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-3,,true,957,1,6,0
+1461651380670,434,ussdRequest,200,OK,USSD 1-2,text,true,562,1,6,434
+1461651380737,422,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-3,,true,1060,1,5,0
+1461651380835,415,charge,400,Bad Request,Payment_Charge 5-2,text,false,305,1,4,414
+1461651380984,484,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-3,,true,957,1,3,0
+1461651382835,1553,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-4,,true,278,3,5,0
+1461651382828,1582,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-4,,true,1054,1,5,0
+1461651382862,1670,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-4,,true,957,1,5,0
+1461651384408,416,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-4,,true,278,3,5,0
+1461651384439,415,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-4,,true,1060,1,5,0
+1461651384543,485,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-4,,true,957,1,5,0
+1461651384826,434,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-4,,true,509,3,5,0
+1461651384864,415,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-4,,true,1054,1,5,0
+1461651385030,523,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-4,,true,957,1,5,0
+1461651385261,431,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-4,,true,509,3,5,0
+1461651385285,428,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-4,,true,1060,1,5,0
+1461651385554,489,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-4,,true,957,1,5,0
+1461651385694,1475,Deliver,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-4,,false,514,3,5,0
+1461651385718,1451,SMS,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-4,,false,517,1,4,0
+1461651386045,8458,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-4,,true,521,1,3,0
+1461651374410,60794,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-2,,true,735,2,2,0
+1461651379389,60821,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-3,,true,735,2,2,0
+1461651435210,6441,Deliver,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-2,,false,492,2,2,0
+1461651440214,6417,Deliver,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-3,,false,492,2,2,0
+1461651441652,5403,Deliver,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-2,,false,492,2,2,0
+1461651447058,5444,Deliver,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-2,,false,492,2,2,0
+1461651446633,6413,Deliver,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-3,,false,492,1,1,0
+1461651453049,6446,Deliver,400,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-3,,false,492,1,1,0
+1461654769691,2074,ussdRequest,200,OK,USSD 1-1,text,true,562,1,5,2074
+1461654769329,2074,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,735,1,5,0
+1461654769286,2082,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1060,1,5,0
+1461654769691,2111,charge,200,OK,Payment_Charge 5-1,text,true,686,1,5,2111
+1461654769335,2148,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,957,1,5,0
+1461654771785,468,ussdRequest,200,OK,USSD 1-1,text,true,562,1,5,468
+1461654771803,474,charge,400,Bad Request,Payment_Charge 5-1,text,false,305,1,5,474
+1461654771790,507,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,5,0
+1461654771798,528,SMS,201,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-1,,false,363,1,5,0
+1461654771840,512,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,957,1,5,0
+1461654772258,431,ussdRequest,200,OK,USSD 1-1,text,true,562,1,5,430
+1461654772279,451,charge,200,OK,Payment_Charge 5-1,text,true,686,1,5,450
+1461654772298,450,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,5,0
+1461654772335,432,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1060,1,5,0
+1461654772354,510,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,957,1,5,0
+1461654772690,441,ussdRequest,200,OK,USSD 1-1,text,true,562,1,5,441
+1461654772731,406,charge,400,Bad Request,Payment_Charge 5-1,text,false,305,1,5,406
+1461654772750,486,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,5,0
+1461654772771,465,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1054,1,5,0
+1461654772866,466,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,957,1,5,0
+1461654773133,480,ussdRequest,200,OK,USSD 1-1,text,true,562,1,5,480
+1461654773139,508,charge,200,OK,Payment_Charge 5-1,text,true,686,1,4,508
+1461654773239,468,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,3,0
+1461654773243,463,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1060,1,2,0
+1461654773335,472,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,957,1,1,0
+1461654774330,1700,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-2,,true,735,1,3,0
+1461654774291,1727,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-2,,true,1054,1,3,0
+1461654774336,1755,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-2,,true,957,1,3,0
+1461654776039,419,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-2,,true,509,1,3,0
+1461654776051,426,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-2,,true,1750,1,3,0
+1461654776104,487,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-2,,true,957,1,3,0
+1461654776471,429,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-2,,true,509,1,3,0
+1461654776483,435,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-2,,true,1054,1,3,0
+1461654776594,472,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-2,,true,957,1,3,0
+1461654776903,490,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-2,,true,509,1,3,0
+1461654776929,489,SMS,201,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-2,,false,363,1,3,0
+1461654777068,530,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-2,,true,957,1,3,0
+1461654777395,466,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-2,,true,278,1,3,0
+1461654777425,442,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-2,,true,1054,1,2,0
+1461654777600,472,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-2,,true,957,1,1,0
+1461654779355,1651,charge,400,Bad Request,Payment_Charge 5-2,text,false,305,1,5,1651
+1461654779330,1711,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-3,,true,509,1,5,0
+1461654779297,1757,ussdRequest,200,OK,USSD 1-2,text,true,562,1,5,1756
+1461654779336,1749,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-3,,true,957,1,5,0
+1461654779312,1764,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-3,,true,1060,1,5,0
+1461654781013,442,charge,200,OK,Payment_Charge 5-2,text,true,686,1,5,441
+1461654781048,434,Deliver,502,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-3,,false,346,1,5,0
+1461654781054,435,ussdRequest,200,OK,USSD 1-2,text,true,562,1,5,435
+1461654781094,461,SMS,201,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-3,,false,363,1,5,0
+1461654781093,513,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-3,,true,957,1,5,0
+1461654781456,426,charge,400,Bad Request,Payment_Charge 5-2,text,false,305,1,5,426
+1461654781491,425,ussdRequest,200,OK,USSD 1-2,text,true,562,1,5,425
+1461654781484,437,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-3,,true,509,1,5,0
+1461654781564,462,SMS,502,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-3,,false,346,1,5,0
+1461654781607,487,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-3,,true,957,1,5,0
+1461654781884,441,charge,200,OK,Payment_Charge 5-2,text,true,686,1,5,440
+1461654781918,431,ussdRequest,200,OK,USSD 1-2,text,true,562,1,5,431
+1461654782032,464,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-3,,true,1054,1,5,0
+1461654782096,470,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-3,,true,957,1,5,0
+1461654782326,420,charge,400,Bad Request,Payment_Charge 5-2,text,false,305,1,5,420
+1461654782350,430,ussdRequest,200,OK,USSD 1-2,text,true,562,1,4,430
+1461654782503,467,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-3,,true,1060,1,3,0
+1461654782567,494,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-3,,true,957,1,2,0
+1461654784328,1541,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-4,,true,1054,1,4,0
+1461654784335,1566,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-4,,true,509,2,4,0
+1461654784367,1555,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-4,,true,957,1,4,0
+1461654785898,468,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-4,,true,1060,1,4,0
+1461654785918,486,Deliver,502,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-4,,false,346,2,4,0
+1461654785932,524,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-4,,true,957,1,4,0
+1461654786407,434,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-4,,true,735,2,4,0
+1461654786373,468,SMS,502,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-4,,false,346,1,4,0
+1461654786458,488,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-4,,true,957,1,4,0
+1461654786842,434,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-4,,true,509,2,4,0
+1461654786851,434,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-4,,true,1060,1,4,0
+1461654786948,498,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-4,,true,957,1,4,0
+1461654787277,413,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-4,,true,278,2,4,0
+1461654787287,502,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-4,,true,1054,1,3,0
+1461654787447,495,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-4,,true,957,1,2,0
+1461654781924,60923,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-3,,true,735,1,1,0
+1461654842855,457,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-3,,true,735,1,1,0
+1461658880182,2004,ussdRequest,200,OK,USSD 1-1,text,true,562,1,5,2003
+1461658879836,2004,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,5,0
+1461658880182,2031,charge,200,OK,Payment_Charge 5-1,text,true,686,1,5,2031
+1461658879781,2018,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1056,1,5,0
+1461658879843,2082,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,956,1,5,0
+1461658882201,423,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,5,0
+1461658882202,431,ussdRequest,200,OK,USSD 1-1,text,true,562,1,5,431
+1461658882218,458,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1050,1,5,0
+1461658882214,475,charge,200,OK,Payment_Charge 5-1,text,true,686,1,5,474
+1461658882265,515,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,956,1,5,0
+1461658882634,425,ussdRequest,200,OK,USSD 1-1,text,true,562,1,5,425
+1461658882625,433,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,5,0
+1461658882684,456,SMS,502,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-1,,false,346,1,5,0
+1461658882691,463,charge,200,OK,Payment_Charge 5-1,text,true,686,1,5,463
+1461658882781,491,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,956,1,5,0
+1461658883063,425,ussdRequest,200,OK,USSD 1-1,text,true,562,1,5,425
+1461658883147,465,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1050,1,5,0
+1461658883155,480,charge,200,OK,Payment_Charge 5-1,text,true,686,1,5,480
+1461658883275,503,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,956,1,5,0
+1461658883489,514,ussdRequest,200,OK,USSD 1-1,text,true,562,1,5,514
+1461658883617,458,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-1,,true,1056,1,4,0
+1461658883636,493,charge,200,OK,Payment_Charge 5-1,text,true,686,1,3,493
+1461658883780,503,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-1,,true,956,1,2,0
+1461658884837,1701,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-2,,true,509,2,4,0
+1461658884803,1728,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-2,,true,1731,1,4,0
+1461658884857,1748,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-2,,true,956,1,4,0
+1461658886544,443,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-2,,true,509,2,4,0
+1461658886547,454,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-2,,true,1056,1,4,0
+1461658886613,537,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-2,,true,956,1,4,0
+1461658886987,429,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-2,,true,735,2,4,0
+1461658887005,438,SMS,201,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Send_SMS 2-2,,false,362,1,4,0
+1461658887154,516,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-2,,true,956,1,4,0
+1461658887418,525,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-2,,true,509,2,4,0
+1461658887446,517,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-2,,true,1056,1,4,0
+1461658887672,516,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-2,,true,956,1,4,0
+1461658887945,463,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-2,,true,509,2,4,0
+1461658887969,470,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-2,,true,1050,1,3,0
+1461658888190,499,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-2,,true,956,1,2,0
+1461658889793,1566,ussdRequest,200,OK,USSD 1-2,text,true,562,1,6,1566
+1461658889840,1708,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-3,,true,509,2,6,0
+1461658889816,1755,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-3,,true,1056,1,6,0
+1461658889860,1738,charge,200,OK,Payment_Charge 5-2,text,true,686,1,6,1738
+1461658889846,1767,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-3,,true,956,1,6,0
+1461658891364,417,ussdRequest,200,OK,USSD 1-2,text,true,562,1,6,417
+1461658891556,456,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-3,,true,735,2,6,0
+1461658891588,448,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-3,,true,1050,1,6,0
+1461658891601,453,charge,200,OK,Payment_Charge 5-2,text,true,686,1,6,453
+1461658891619,531,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-3,,true,956,1,6,0
+1461658891783,429,ussdRequest,200,OK,USSD 1-2,text,true,562,1,6,429
+1461658892014,433,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-3,,true,509,2,6,0
+1461658892044,439,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-3,,true,1056,1,6,0
+1461658892056,450,charge,200,OK,Payment_Charge 5-2,text,true,686,1,6,450
+1461658892214,425,ussdRequest,200,OK,USSD 1-2,text,true,562,1,6,425
+1461658892153,498,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-3,,true,956,1,6,0
+1461658892450,436,Deliver,502,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-3,,false,346,2,6,0
+1461658892490,443,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-3,,true,1050,1,6,0
+1461658892508,468,charge,200,OK,Payment_Charge 5-2,text,true,686,1,6,468
+1461658892641,442,ussdRequest,200,OK,USSD 1-2,text,true,562,1,6,442
+1461658892654,489,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-3,,true,956,1,5,0
+1461658892889,443,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-3,,true,509,2,5,0
+1461658892940,433,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-3,,true,1056,1,4,0
+1461658892977,444,charge,200,OK,Payment_Charge 5-2,text,true,686,1,3,444
+1461658893144,526,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-3,,true,956,1,2,0
+1461658894833,1511,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-4,,true,1050,1,4,0
+1461658894842,1695,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-4,,true,509,2,4,0
+1461658894879,1746,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-4,,true,956,1,4,0
+1461658896374,420,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-4,,true,1056,1,4,0
+1461658896559,417,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-4,,true,735,2,4,0
+1461658896633,481,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-4,,true,956,1,4,0
+1461658896800,493,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-4,,true,1050,1,4,0
+1461658896978,440,Deliver,502,"Number of samples in transaction : 1, number of failing samples : 1",SMS_Deliver 3-4,,false,346,2,4,0
+1461658897116,503,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-4,,true,956,1,4,0
+1461658897300,444,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-4,,true,1056,1,4,0
+1461658897421,413,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-4,,true,509,2,4,0
+1461658897621,508,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-4,,true,956,1,4,0
+1461658897751,453,SMS,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Send_SMS 2-4,,true,1050,1,4,0
+1461658897835,427,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-4,,true,509,2,3,0
+1461658898130,482,Retrive,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Retrive 4-4,,true,956,1,2,0
+1461658883061,61202,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,735,1,1,0
+1461658944266,467,Deliver,200,"Number of samples in transaction : 1, number of failing samples : 0",SMS_Deliver 3-1,,true,509,1,1,0
