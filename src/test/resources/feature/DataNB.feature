@@ -41,6 +41,15 @@ Examples:
 | usertype|apiTrafficPageHeader|monthlyInvoicePageHeader     |year|month|serviceProvider|
 |QA17LOG  |Total API Traffic   |Monthly Invoice - Northbound |2016|March|AutInvSP3      |
 
+
+@Smoke
+Scenario Outline: executing jmeter data script
+Given I execute the "<batchFile>" to send jmeter scripted API requests
+
+Examples:
+|batchFile|
+|run.bat|
+
 @Smoke
 Scenario Outline: Check if Monthly Invoice Northbound is loaded with data accurately based on different charge type by uploading NB rate card1
 Given I am in apimanger actvity manager login page
