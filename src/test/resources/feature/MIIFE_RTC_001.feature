@@ -5,8 +5,8 @@ Scenario Outline: Check if users can self register on the API Store
 Given I am in identity server page
 When I enter identity server username credentials
 And I click on identity server sign in
-And I click on identity server Configuration tab
-And I click on identity server Configuration Users and Roles link
+And I click on identity server Main tab
+And I click on identity server Configuration Users and Roles List link
 And I click identity server User Management Users link
 And I enter identity server Search Users to Enter user name pattern as "<usertype>" 
 And I click on identity server Users search button
