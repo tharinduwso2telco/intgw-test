@@ -61,6 +61,18 @@ public class APIPublisherHome extends BasicTestObject{
 		publisherHome.clickApiAdd();
 	}
 	
+	@When("^I click Design new API radio button$")
+	public void i_click_Design_new_API_radio_button() throws Throwable {
+		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
+		publisherHome.clickDesignAPI();		
+	}
+	
+	@When("^I click Start Creating button$")
+	public void i_click_Start_Creating_button() throws Throwable {
+		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
+		publisherHome.clickStartCreating();
+	}
+	
 	@When("^I provide apipublisher Design name as \"([^\"]*)\"$")
 	public void i_provide_apipublisher_Design_name_as(String arg1) throws Throwable {
 		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
@@ -91,6 +103,13 @@ public class APIPublisherHome extends BasicTestObject{
 		Thread.sleep(sleepTime);
 		publisherHome.setUrlType(arg1);
 	}
+	
+	@When("^I click on Resource Add button$")
+	public void i_click_on_Resource_Add_button() throws Throwable {
+		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
+		publisherHome.clickResourceAdd();
+	}
+	
 	@When("^I provide apipublisher Design Provide Resource name as \"([^\"]*)\"$")
 	public void i_provide_apipublisher_Design_Provide_Resource_name_as(String arg1) throws Throwable {
 		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
@@ -201,6 +220,12 @@ public class APIPublisherHome extends BasicTestObject{
 		publisherHome.clickImplement();
 	}
 	
+	@When("^I click on Manage API link$")
+	public void i_click_on_Manage_API_link() throws Throwable {
+		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
+		publisherHome.clickMangeAPI();
+	}
+	
 	@When("^I provide apipublisher Implement production endpoint as \"([^\"]*)\"$")
 	public void i_provide_apipublisher_Implement_production_endpoint_as(String arg1) throws Throwable {
 		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
@@ -230,6 +255,12 @@ public class APIPublisherHome extends BasicTestObject{
 		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
 		publisherHome.clickSavePublish();
 		Thread.sleep(sleepTime);
+	}
+	
+	@When("^I click on Go to Overview$")
+	public void i_click_on_Go_to_Overview() throws Throwable {
+		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
+		publisherHome.clickGotoOverview();
 	}
 	
 	@Then("^I should see apipublisher production URL as \"([^\"]*)\"$")

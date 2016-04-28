@@ -11,7 +11,6 @@ And I click on identity server Configuration Users and Roles List link
 Then I should see ids Configuration menu with first item as "Users and Roles"
 When I click identity server User Management Roles link
 Then I should see ids User Management Roles page header as "Roles"
-Then I should see ids User Management Roles page header as "Roles"
 When I clear existing aggrigator role
 And I click on ids User Management Roles add new role link
 Then I should see ids User Management Add Role page header as "Step 1 : Enter role details"
