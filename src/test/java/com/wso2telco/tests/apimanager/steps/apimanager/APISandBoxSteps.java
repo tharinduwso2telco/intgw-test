@@ -262,6 +262,20 @@ public class APISandBoxSteps extends BasicTestObject {
 		sandboxValues.setResponsePayload(sandbox.getRsponsePayloadUI());
 	}
 	
+	@Then("^I should see the request payload containing \"([^\"]*)\"$")
+	public void i_should_see_the_request_payload_containing(String arg1) throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues sandboxValues = new SandBoxValues();
+		Assert.assertTrue("Request payload tax amount mismatched", sandbox.isRequestPayloadTaxAmount(arg1, sandboxValues.getRequestPayload()));
+	}
+
+	@Then("^I should see the response payload containing \"([^\"]*)\"$")
+	public void i_should_see_the_response_payload_containing(String arg1) throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues sandboxValues = new SandBoxValues();
+		Assert.assertTrue("Response payload tax amount mismatched", sandbox.isResponsePayloadTaxAmount(arg1, sandboxValues.getResponsePayload()));
+	}
+	
 	@Then("^I validate the request payload$")
 	public void i_validate_the_request_payload() throws Throwable {
 		SandBoxValues sandboxValues = new SandBoxValues();
