@@ -76,7 +76,7 @@ And I should see apimanager Manager Home Billing Workflow Blacklist Whitelist ta
 When I click on apimanager Manager page Workflow tab
 And I click on subscriptions creation under tasks
 Then I should see created application "<appName>" at the top of the Approval Tasks table for "<usertype>"
-When I click Assign To Me button for "<appName>" Application Details row for "<usertype>"
+#When I click Assign To Me button for "<appName>" Application Details row for "<usertype>"
 And I click on Start button for "<appName>" Application Details row for "<usertype>"
 And I select "<Action>" and click complete button for "<appName>" Application Details row for "<usertype>"
 Then I should see Enter aprrove/reject reasons pop up header as "Enter approve/reject reasons"
@@ -117,43 +117,43 @@ And I click generate under apimanager Subscriptions page sandbox
 Then I should see consumer Key of sandbox
 And I should see consumer Secret of sandbox
 When I close the api manager 
-And I am in identity server page
-And I enter identity server username credentials
-And I click on identity server sign in
-Then I should see the ids Home page header as "WSO2 Identity Server Home"
-When I click on identity server Main tab
-Then I should see ids Main menu "Service Providers" as the first item
-When I click on ids Main List link
-Then I should see "<appName>" Application in Service Providers table for "<usertype>"
-When I click on "<appName>" edit link for "<usertype>"
-Then I should see ids Service providers page header as "Service Providers"
-When I click on Inbound Authentication Configuration
-And I click on OAuth/OpenID Connect Configuration
-And I click on OAth client secret show button
-Then I should see OAth client key
-And I should see OAth client secret
-When I click on Local and Outbound Authentication Configuration 
-And I select Advanced Configuration
-Then I should see Advanced Authentication Configuration for "<appName>" page for "<usertype>"
-When I click on Add Authentication Step
-And I select "LOA" under Local Authenticators
-And I click update
-Then I should see ids Service providers page header as "Service Providers"
-When I click on Inbound Authentication Configuration
-And I click on OAuth/OpenID Connect Configuration
-And I click edit in Actions 
-Then I should see View/Update application settings page header as "View/Update application settings"
-When I click on Code
-Then I should see "<Callback URL>" as call back url
-When I click on Implicit
-And I click on Password 
-And I click on Client Credential 
-And I click on Refresh Token 
-And I click on SAML 
-And I click on IWA-NTLM
-And I click on View/Update application settings page update
-Then I should see Application updated successfully pop up message as "Application updated successfully"
+#And I am in identity server page
+#And I enter identity server username credentials
+#And I click on identity server sign in
+#Then I should see the ids Home page header as "WSO2 Identity Server Home"
+#When I click on identity server Main tab
+#Then I should see ids Main menu "Service Providers" as the first item
+#When I click on ids Main List link
+#Then I should see "<appName>" Application in Service Providers table for "<usertype>"
+#When I click on "<appName>" edit link for "<usertype>"
+#Then I should see ids Service providers page header as "Service Providers"
+#When I click on Inbound Authentication Configuration
+#And I click on OAuth/OpenID Connect Configuration
+#And I click on OAth client secret show button
+#Then I should see OAth client key
+#And I should see OAth client secret
+#When I click on Local and Outbound Authentication Configuration 
+#And I select Advanced Configuration
+#Then I should see Advanced Authentication Configuration for "<appName>" page for "<usertype>"
+#When I click on Add Authentication Step
+#And I select "LOA" under Local Authenticators
+#And I click update
+#Then I should see ids Service providers page header as "Service Providers"
+#When I click on Inbound Authentication Configuration
+#And I click on OAuth/OpenID Connect Configuration
+#And I click edit in Actions 
+#Then I should see View/Update application settings page header as "View/Update application settings"
+#When I click on Code
+#Then I should see "<Callback URL>" as call back url
+#When I click on Implicit
+#And I click on Password 
+#And I click on Client Credential 
+#And I click on Refresh Token 
+#And I click on SAML 
+#And I click on IWA-NTLM
+#And I click on View/Update application settings page update
+#Then I should see Application updated successfully pop up message as "Application updated successfully"
 
 Examples:
 |usertype|ApplicationDetails |Action |status|apiName	  |operator|validity|CallbackURL                                                      |Description |appName				 |
-|LOGOUT  |Unlimited          |Approve|READY |AuxAppTest   |DIALOG  |-1      |https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|AuXTestAPI  |AuxTestingAppRTC_011 |
+|LOGOUT  |Unlimited          |Approve|READY |location     |DIALOG  |-1      |https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|AuXTestAPI  |AuxTestingAppRTC_011 |

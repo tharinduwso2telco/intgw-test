@@ -116,6 +116,6 @@ And I click generate under apimanager Subscriptions page sandbox
 Then I should see consumer Key of sandbox
 And I should see consumer Secret of sandbox
 Examples:
-|validity|usertype     |appName |apiName  |operator|Action|CallbackURL|Description|
-|-1      |SUBSCRIBERAPP|AuxSubTestingApp|AuxAppTest|DIALOG |Approve|https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|AuxSubTestAPP|
+|validity|usertype     |appName 		|apiName  |operator|Action|CallbackURL|Description|
+|-1      |SUBSCRIBERAPP|AuxSubTestingApp|location |DIALOG |Approve|https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|AuxSubTestAPP|
 

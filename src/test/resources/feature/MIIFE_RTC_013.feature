@@ -102,5 +102,5 @@ And click aprrove/reject reason ok button
 Then I should not see the created application in Approval Tasks table as "<appName>" for "<usertype>"
 
 Examples:
-| usertype   |appName                  |Action |apiName                       |operator|CallbackURL|Description|
-|SUBSCRIPTION|AuxSubscriptionTestingApp|Approve|AuxAppTest                    |DIALOG  |https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|AuxSubTestAPI|
+| usertype   |appName                  |Action |apiName   |operator|CallbackURL|Description|
+|SUBSCRIPTION|AuxSubscriptionTestingApp|Approve|location  |DIALOG  |https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|AuxSubTestAPI|

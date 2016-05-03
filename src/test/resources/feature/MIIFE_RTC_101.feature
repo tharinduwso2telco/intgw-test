@@ -3,11 +3,11 @@ Feature: Validate API traffic data
 @Smoke
 Scenario Outline: Check if all data are loaded for total API traffic
 Given I am in apimanager
-When I click on apimanager login
-Then I should see the apimanager "Login" pop up
-When I enter apimanager Login username and password for "<usertype>" 
-And I click on apimanager Login pop up login button
-Then I should see apimanager "<usertype>" at the top right corner of the page
+#When I click on apimanager login
+#Then I should see the apimanager "Login" pop up
+#When I enter apimanager Login username and password for "<usertype>" 
+#And I click on apimanager Login pop up login button
+#Then I should see apimanager "<usertype>" at the top right corner of the page
 When I click on apimanager Manage 
 Then I should see the apimanager Manager page header as "Manager"
 When I enter apimanager Manager page admin username credentials
@@ -28,4 +28,4 @@ Then I should see the generated Total API Traffic pie chart for "<fromDate>" "<t
 
 Examples:
 | usertype|apiTrafficPageHeader|fromDate  |toDate    |operator|serviceProvider|application|API|
-|QA17LOG  |Total API Traffic   |2015-12-23|2016-03-02|DIALOG  |admin          |All        |All|
+|REPORTLOG  |Total API Traffic   |2015-12-23|2016-03-02|DIALOG  |admin          |All        |All|
