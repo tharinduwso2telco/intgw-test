@@ -21,8 +21,8 @@ When I enter apimanager Login username and password for "<usertype>"
 And I click on apimanager Login pop up login button
 
 Examples:
-| usertype  |
-|LOGOUT		|
+| usertype  |LastName   |FirstName   |Email               |
+|LOGOUT		|AuxTestLast|AuxTestFirst|AuxTest123@gmail.com|
 
 @Smoke
 Scenario Outline: Check if apps are saved as SP in identity server after the token generation and API invocation are completed

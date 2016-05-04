@@ -19,8 +19,8 @@ When I enter apimanager Login username and password for "<usertype>"
 And I click on apimanager Login pop up login button
 
 Examples:
-| usertype|
-|PUBLISHER|
+| usertype|LastName   |FirstName   |Email               |
+|PUBLISHER|AuxTestLast|AuxTestFirst|AuxTest123@gmail.com|
 
 @Smoke
 Scenario Outline: Check if the user is able to create api with a user with publisher role
