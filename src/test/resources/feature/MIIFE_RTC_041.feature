@@ -86,5 +86,5 @@ And I click on apimanager Manager logout button
 Then I should see the apimanager Manager page header as "Manager"
 
 Examples:
-|usertype|ApplicationDetails |Action |status|apiName	  |operator|CallbackURL                                                      |Description |appName				 |
-|LOGOUT  |Unlimited          |Approve|READY |location   |DIALOG  |https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|AuXTestAPI  |AuxTestingAppRTC_011 |
+|usertype|ApplicationDetails |Action |status|apiName  |operator|CallbackURL                                                      |Description |appName				 |
+|LOGOUT  |Unlimited          |Approve|READY |location |DIALOG  |https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|AuXTestAPI  |AuxTestingAppRTC_011 |
