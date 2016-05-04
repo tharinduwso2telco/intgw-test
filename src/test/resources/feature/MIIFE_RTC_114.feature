@@ -33,4 +33,4 @@ Then I should see the refunds are accurately reflected on reports of Monthly Inv
 
 Examples:
 | usertype|apiTrafficPageHeader|monthlyInvoicePageHeader|year|month|serviceProvider|
-|LOGOUT   |Total API Traffic|Monthly Invoice|2015|November|admin|
+|REPORTLOGS  |Total API Traffic|Monthly Invoice|2015|November|admin|

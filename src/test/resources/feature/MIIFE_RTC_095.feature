@@ -39,4 +39,4 @@ Then I should see success pop up message as "<message>"
 
 Examples:
 | usertype|API |whitelistPageHeader|appname|MinNumber  |MaxNumber  |EnterNumberList                                    |NumberList             |message|
-|LOGOUT   |AuxAppTest|APIwise Whitelist  |AuxLogoutUser_AuxLogoutUserApp |94773253548|94773253559|Please enter whitelist numbers Separated with comma|94778123312,94778123314|Whitelist Numbers Successfully Added to the system  |
+|LOGOUT   |AuxAppTest|APIwise Whitelist  |AuxLogoutUserApp |94773253548|94773253559|Please enter whitelist numbers Separated with comma|94778123312,94778123314|Whitelist Numbers Successfully Added to the system  |

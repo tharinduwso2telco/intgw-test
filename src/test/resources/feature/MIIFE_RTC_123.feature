@@ -38,4 +38,4 @@ And I validate total amount "AutInvSP1_AutInvSP1_app2" application for "Usage Ch
 
 Examples:
 | usertype|apiTrafficPageHeader|monthlyInvoicePageHeader     |year|month|
-|QA17LOG  |Total API Traffic   |Monthly Invoice - Northbound |2016|March|
+|REPORTLOG |Total API Traffic   |Monthly Invoice - Northbound |2016|March|

@@ -133,4 +133,4 @@ And I should see the updated record in subscription_rates table for "<appNameInD
 
 Examples:
 |usertype|ApplicationDetails |Action |status|apiName	  |operator|validity|CallbackURL                                                      |Description |appName			|appNameInDB|
-|QA17LOG  |Unlimited          |Approve|READY |test   |DIALOG  |-1      |https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|AuXTestAPI  |AuxTestingAppRTC_025 |AutInvSP1_AuxTestingAppRTC_025|
+|REPORTLOG |Unlimited          |Approve|READY |test   |DIALOG  |-1      |https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|AuXTestAPI  |AuxTestingAppRTC_025 |AutInvSP1_AuxTestingAppRTC_025|

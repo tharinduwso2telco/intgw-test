@@ -39,5 +39,5 @@ And I validate total amount for "Usage Charge" column value as "Rs 243.60"
 
 Examples:
 | usertype|apiTrafficPageHeader|monthlyInvoicePageHeader     |year|month|serviceProvider|
-|QA17LOG  |Total API Traffic   |Monthly Invoice - Southbound |2016|March|AutInvSP3      |
+|REPORTLOG  |Total API Traffic   |Monthly Invoice - Southbound |2016|March|AutInvSP3      |
 
