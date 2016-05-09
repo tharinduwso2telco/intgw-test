@@ -44,4 +44,4 @@ Then I should see downloaded csv sheet with the "<path>" as path , "<nbCSVFileNa
 
 Examples:
 | usertype|apiiTrafficPageHeader|transactionLogPageHeader|transactionLogPageHeaderNB|fromDate  |toDate    |operator   |serviceProvider  |operationType     |recordsType    |path                        |fileName                                       |excelFileName					   |nbCSVFileName|excelFileNameNB|
-|QA17LOG|Total API Traffic	|Transaction Log		 |Transaction Log - Northbound|2015-12-08|2016-03-04| DIALOG    |admin                |Charge           |Success Responses|C:/Users/Auxenta/Downloads/ |2015-12-08-2016-03-04-admin-DIALOG-100.csv |AuxLogoutUser-DIALOG-AuxAppTest.xlsx|2015-12-08-2016-03-04-admin-__ALL__-100.csv|asd.xlsx|
+|REPORTLOG|Total API Traffic	|Transaction Log		 |Transaction Log - Northbound|2015-12-08|2016-03-04| DIALOG    |admin                |Charge           |Success Responses|C:/Users/Auxenta/Downloads/ |2015-12-08-2016-03-04-admin-DIALOG-100.csv |AuxLogoutUser-DIALOG-AuxAppTest.xlsx|2015-12-08-2016-03-04-admin-__ALL__-100.csv|asd.xlsx|

@@ -50,7 +50,7 @@ And I validate total amount "AutInvSP3_AutInvSP3_app2" application for "Usage Ch
 
 Examples:
 | usertype|apiTrafficPageHeader|monthlyInvoicePageHeader     |year|month|serviceProvider|
-|QA17LOG  |Total API Traffic   |Monthly Invoice - Northbound |2016|March|AutInvSP3      |
+|REPORTLOG  |Total API Traffic   |Monthly Invoice - Northbound |2016|March|AutInvSP3      |
 
 @Smoke
 Scenario Outline: Check if Monthly Invoice Northbound is loaded with data accurately based on different charge type by uploading NB rate card2
@@ -100,7 +100,7 @@ And I validate total amount "AutInvSP3_AutInvSP3_app2" application for "Usage Ch
 
 Examples:
 | usertype|apiTrafficPageHeader|monthlyInvoicePageHeader     |year|month|serviceProvider|
-|QA17LOG  |Total API Traffic   |Monthly Invoice - Northbound |2016|March|AutInvSP3      |
+|REPORTLOG  |Total API Traffic   |Monthly Invoice - Northbound |2016|March|AutInvSP3      |
 
 @Smoke
 Scenario Outline: Check if Monthly Invoice Northbound is loaded with data accurately based on different charge type by uploading NB rate card3
@@ -150,7 +150,7 @@ And I validate total amount "AutInvSP3_AutInvSP3_app2" application for "Usage Ch
 
 Examples:
 | usertype|apiTrafficPageHeader|monthlyInvoicePageHeader     |year|month|serviceProvider|
-|QA17LOG  |Total API Traffic   |Monthly Invoice - Northbound |2016|March|AutInvSP3      |
+|REPORTLOG  |Total API Traffic   |Monthly Invoice - Northbound |2016|March|AutInvSP3      |
 
 @Smoke
 Scenario Outline: Check if Monthly Invoice Northbound is loaded with data accurately based on different charge type by uploading NB rate card4
@@ -200,7 +200,7 @@ And I validate total amount "AutInvSP3_AutInvSP3_app2" application for "Usage Ch
 
 Examples:
 | usertype|apiTrafficPageHeader|monthlyInvoicePageHeader     |year|month|serviceProvider|
-|QA17LOG  |Total API Traffic   |Monthly Invoice - Northbound |2016|March|AutInvSP3      |
+|REPORTLOG  |Total API Traffic   |Monthly Invoice - Northbound |2016|March|AutInvSP3      |
 
 @Smoke
 Scenario Outline: Check if Monthly Invoice Southbound is loaded with data accurately based on different charge type by uploading SB rate card4
@@ -240,7 +240,7 @@ And I validate total amount for "Usage Charge" column value as "Rs 62.00"
 
 Examples:
 | usertype|apiTrafficPageHeader|monthlyInvoicePageHeader     |year|month|serviceProvider|
-|QA17LOG  |Total API Traffic   |Monthly Invoice - Southbound |2016|March|AutInvSP3      |
+|REPORTLOG  |Total API Traffic   |Monthly Invoice - Southbound |2016|March|AutInvSP3      |
 
 @Smoke
 Scenario Outline: Check if Monthly Invoice Southbound is loaded with data accurately based on different charge type by uploading SB rate card2
@@ -280,6 +280,6 @@ And I validate total amount for "Usage Charge" column value as "Rs 62.00"
 
 Examples:
 | usertype|apiTrafficPageHeader|monthlyInvoicePageHeader     |year|month|serviceProvider|
-|QA17LOG  |Total API Traffic   |Monthly Invoice - Southbound |2016|March|AutInvSP3      |
+|REPORTLOG  |Total API Traffic   |Monthly Invoice - Southbound |2016|March|AutInvSP3      |
 
 

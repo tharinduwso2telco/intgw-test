@@ -27,7 +27,7 @@ When I click on Application creation link
 Then I should see created application "<appname>" at the top of the Approval Tasks table for "<usertype>"
 When I click on Application Details drop box for "<appname>" row for "<usertype>"
 And I select "<Application Details>" for "<appname>" Application Details row for "<usertype>"
-And I click Assign To Me button for "<appname>" Application Details row for "<usertype>"
+#And I click Assign To Me button for "<appname>" Application Details row for "<usertype>"
 And I click on Start button for "<appname>" Application Details row for "<usertype>"
 And I select "<Action>" and click complete button for "<appname>" Application Details row for "<usertype>"
 Then I should see Enter aprrove/reject reasons pop up header as "Enter approve/reject reasons"

@@ -35,4 +35,4 @@ Then I should see "<WhiteListNumber>" in blacklisted subscribers table
 
 Examples:
 | usertype|BlackListAPI |WhiteListNumber |whitelistPageHeader |appname|AddNumberAlert                |blacklistPageHeader |message|API|
-|LOGOUT   |USSD|94123496679    |APIwise Whitelist   |AuxLogoutUser_AuxLogoutUserApp|Please enter subscriber number|APIwise Blacklist   |Whitelist Numbers Successfully Added to the system  |AuxAppTest|
+|LOGOUT   |USSD|94123496679    |APIwise Whitelist   |AuxLogoutUserApp|Please enter subscriber number|APIwise Blacklist   |Whitelist Numbers Successfully Added to the system  |AuxAppTest|

@@ -27,4 +27,4 @@ Then I should see success pop up message as "<message>"
 
 Examples:
 | usertype|API |WhiteListNumber|whitelistPageHeader|appname|message|
-|LOGOUT   |AuxAppTest|94123596898    |APIwise Whitelist  |AuxLogoutUser_AuxLogoutUserApp  |Whitelist Numbers Successfully Added to the system  |
+|LOGOUT   |location|94123596898    |APIwise Whitelist  |AuxLogoutUserApp  |Whitelist Numbers Successfully Added to the system  |

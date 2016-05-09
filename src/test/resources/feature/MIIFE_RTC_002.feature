@@ -5,11 +5,10 @@ Scenario Outline: Check if the users can login to all the modules in API Manager
 Given I am in identity server page
 When I enter identity server username credentials
 And I click on identity server sign in
-Then I should see the ids Home page header as "WSO2 Identity Server Home"
-When I click on identity server Configuration tab
+Then I should see the ids Home page header as "WSO2 API Manager Home"
+When I click on identity server Main tab
+And I click on identity server Configuration Users and Roles List link
 Then I should see ids Configuration menu with first item as "Users and Roles"
-When I click on identity server Configuration Users and Roles link
-Then I should see identity server User Management page header as "System User Store"
 When I click identity server User Management Roles link
 Then I should see ids User Management Roles page header as "Roles"
 When I clear existing aggrigator role

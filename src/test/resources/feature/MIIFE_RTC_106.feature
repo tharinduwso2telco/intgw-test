@@ -33,7 +33,7 @@ And I should see "payment" api count as "213.6"
 
 Examples:
 | usertype |year|month  |serviceProvider|operator|application|apiTrafficPageHeader|revenueBreakdownSBPageHeader|
-|QA17LOG   |2016|January|All          |DIALOG|All|Total API Traffic|Revenue Breakdown - Southbound|
+|REPORTLOG   |2016|January|All          |DIALOG|All|Total API Traffic|Revenue Breakdown - Southbound|
 
 
 @Smoke
@@ -67,4 +67,4 @@ And I should see "payment" api count as "213.6"
 
 Examples:
 | usertype|year|month|serviceProvider|operator|application|apiTrafficPageHeader|revenueBreakdownNBPageHeader|
-|QA17LOG   |2016|March|admin|DIALOG|All|Total API Traffic|Revenue Breakdown - Northbound|
+|REPORTLOG  |2016|March|admin|DIALOG|All|Total API Traffic|Revenue Breakdown - Northbound|

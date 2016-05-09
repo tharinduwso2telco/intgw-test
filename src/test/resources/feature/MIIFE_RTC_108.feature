@@ -30,4 +30,4 @@ Then I should see the generated API Response Times graphs
 
 Examples:
 | usertype|apiTrafficPageHeader|apiResponseTimesPageHeader|fromDate|toDate|operator|serviceProvider|application|
-|QA17LOG   |Total API Traffic|API Response Times|2015-11-18|2015-12-23|DIALOG|admin|All|
+|REPORTLOG   |Total API Traffic|API Response Times|2015-11-18|2015-12-23|DIALOG|admin|All|

@@ -30,4 +30,4 @@ Then I should see generated Performance Error Rates graph for "<fromDate>" "<toD
 
 Examples:
 | usertype|apiTrafficPageHeader|performanceErrorRatesPageHeader|fromDate|toDate|operator|serviceProvider|application|API|
-|QA17LOG   |Total API Traffic|Performance Error Rates|2015-12-04|2016-06-09|DIALOG|admin|All|All|
+|REPORTLOG  |Total API Traffic|Performance Error Rates|2015-12-04|2016-06-09|DIALOG|admin|All|All|

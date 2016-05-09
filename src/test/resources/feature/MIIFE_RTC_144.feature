@@ -45,4 +45,4 @@ And I validate the response payload
 
 Examples:
 | usertype|number     |description|balance|transactionStatus|transactionOperationStatus|referenceCode|requestDescription |currency|amount|notifyURL                                       |purchaseCategoryCode|channel|taxAmount|
-|QA17LOG  |94123123123|testAuxenta|1000.00|Charged          |Charged                   |REF-12345    |Alien Invaders Game|USD     |10.0  |http://localhost:8080/mifeapiserver/callback.jsp|Game                |SMS    |0.15     |
+|REPORTLOG  |94123123123|testAuxenta|1000.00|Charged          |Charged                   |REF-12345    |Alien Invaders Game|USD     |10.0  |http://localhost:8080/mifeapiserver/callback.jsp|Game                |SMS    |0.15     |

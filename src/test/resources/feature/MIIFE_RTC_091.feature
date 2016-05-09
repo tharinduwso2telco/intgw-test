@@ -24,7 +24,7 @@ When I click on Application creation link
 Then I should see created application "<appName>" at the top of the Approval Tasks table for "<usertype>"
 When I click on Application Details drop box for "<appName>" row for "<usertype>"
 And I select "<ApplicationDetails>" for "<appName>" Application Details row for "<usertype>"
-And I click Assign To Me button for "<appName>" Application Details row for "<usertype>"
+#And I click Assign To Me button for "<appName>" Application Details row for "<usertype>"
 And I click on Start button for "<appName>" Application Details row for "<usertype>"
 And I select "<Action>" and click complete button for "<appName>" Application Details row for "<usertype>"
 Then I should see Enter aprrove/reject reasons pop up header as "Enter approve/reject reasons"
@@ -79,4 +79,4 @@ And I should see consumer Secret of sandbox
 
 Examples:
 |usertype|ApplicationDetails |Action |status|apiName	  |operator|validity|CallbackURL                                                      |Description |appName				 |
-|LOGOUT  |Unlimited          |Approve|READY |AuxAppTest   |DIALOG  |-1      |https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|AuXTestAPI  |AuxTestingAppRTC_091 |
+|LOGOUT  |Unlimited          |Approve|READY |location   |DIALOG  |-1      |https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|AuXTestAPI  |AuxTestingAppRTC_091 |

@@ -16,6 +16,7 @@ And I enter "<name>" as name "<Callback URL>" as Callback URL and "<Description>
 And I click on Add button
 Then I should see the added Application name as "<usertype>" _ "<name>" Tier as "<Tier>" Status as "<status>" and Description as "<Description>"
 When I click on apimanager My Subscriptions
+And I select created application "<name>" from the dropdown for "<usertype>"
 Then I should see "<No subscriptions>" message
 When I click on apimanager APIs module
 Then I should see the apimanager APIs page header as "APIs"

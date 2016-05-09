@@ -3,6 +3,8 @@ package com.wso2telco.tests.apimanager.steps.idserver;
 
 
 import org.junit.Assert;
+
+import com.wso2telco.identityserver.pageobjects.CarbonLeftNav;
 import com.wso2telco.identityserver.pageobjects.carbon.CarbonHomePage;
 import com.wso2telco.identityserver.pageobjects.carbon.CarbonLoginPage;
 import com.wso2telco.identityserver.pageobjects.carbon.CarbonUserRoles;
@@ -62,6 +64,12 @@ public class IDServerHome extends BasicTestObject {
 	public void i_click_on_identity_server_Main_tab() throws Throwable {
 		CarbonHomePage carbonHome = new CarbonHomePage(driver);
 		carbonHome.clickMain();
+	}
+	
+	@When("^I click on identity server Configuration Users and Roles List link$")
+	public void i_click_on_identity_server_Configuration_Users_and_Roles_List_link() throws Throwable {
+		CarbonLeftNav leftNav = new CarbonLeftNav(driver);
+		leftNav.clickUserRolesList();
 	}
 
 	@Then("^I should see ids Configuration menu with first item as \"([^\"]*)\"$")

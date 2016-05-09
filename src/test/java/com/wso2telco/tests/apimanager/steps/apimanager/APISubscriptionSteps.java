@@ -21,7 +21,7 @@ public class APISubscriptionSteps extends BasicTestObject {
 	@When("^I select created application \"([^\"]*)\" from the dropdown for \"([^\"]*)\"$")
 	public void i_select_created_application_from_the_dropdown_for(String arg1, String arg2) throws Throwable {
 		SubscriptionsPage subpage = new SubscriptionsPage(driver);
-		String appName = config.getValue(getEnvironment() + arg2 + "user") + "_" + arg1;
+		String appName = arg1;
 		subpage.clickSelectAppDD(appName);
 	}
 

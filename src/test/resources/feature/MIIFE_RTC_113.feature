@@ -42,7 +42,7 @@ Then I validate "AutInvSP3_AutInvSP3_app2" "smsmessaging" and "Send SMS" for "Us
 
 Examples:
 | usertype|apiTrafficPageHeader|monthlyInvoicePageHeader    |year|month|serviceProvider|csvFile				 |excelFileName				|filePath				 	 |
-|QA17LOG  |Total API Traffic   |Monthly Invoice - Northbound|2016|March|AutInvSP3      |AutInvSP3-2016-3.csv |AutInvSP3-2016-3CVT.xlsx  |C:/Users/AUX-026/Downloads/ |
+|REPORTLOG |Total API Traffic   |Monthly Invoice - Northbound|2016|March|AutInvSP3      |AutInvSP3-2016-3.csv |AutInvSP3-2016-3CVT.xlsx  |C:/Users/AUX-026/Downloads/ |
 
 @Smoke
 Scenario Outline: Check if the data on the downloaded report and the report loaded on the UI are same on Monthly Invoice SB
@@ -83,4 +83,4 @@ Then I validate "admin_payment_test1" "payment" "DIALOG" and "Charge" for "Usage
 
 Examples:
 | usertype|apiTrafficPageHeader|monthlyInvoicePageHeader    |year|month  |serviceProvider |csvFile			  |excelFileName		|filePath				 	 |
-|QA17LOG  |Total API Traffic   |Monthly Invoice - Southbound|2016|January|All		      |__ALL__-2016-1.csv |__ALL__-2016-1.xlsx  |C:/Users/AUX-026/Downloads/ |
+|REPORTLOG  |Total API Traffic   |Monthly Invoice - Southbound|2016|January|All		      |__ALL__-2016-1.csv |__ALL__-2016-1.xlsx  |C:/Users/AUX-026/Downloads/ |

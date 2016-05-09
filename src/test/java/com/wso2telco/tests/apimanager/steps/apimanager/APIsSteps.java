@@ -49,7 +49,7 @@ public class APIsSteps extends BasicTestObject {
 	@Then("^I should see \"([^\"]*)\" Application for \"([^\"]*)\"$")
 	public void i_should_see_Application_for(String arg1, String arg2) throws Throwable {
 		APIsPage apiPage = new APIsPage(driver);
-		String appName = config.getValue(getEnvironment() + arg2 + "user") + "_" + arg1;
+		String appName = arg1;
 		Assert.assertTrue("Application name is not on the drop down", apiPage.isApplicationNameVisible(appName));
 		Thread.sleep(sleepTime);
 	}

@@ -2,6 +2,7 @@ package com.wso2telco.tests.apimanager.steps.idserver;
 
 import org.junit.Assert;
 
+import com.wso2telco.identityserver.pageobjects.CarbonLeftNav;
 import com.wso2telco.identityserver.pageobjects.carbon.CarbonRolesPage;
 import com.wso2telco.identityserver.pageobjects.carbon.CarbonUserRoles;
 import com.wso2telco.tests.apimanager.base.BasicTestObject;
@@ -25,6 +26,8 @@ public class IDServerUserRoles extends BasicTestObject {
 
 	@When("^I click on ids User Management Roles add new role link$")
 	public void i_click_on_ids_User_Management_Roles_add_new_role_link() throws Throwable {
+		 CarbonLeftNav leftNav = new CarbonLeftNav(driver);
+		 leftNav.clickUserRolesAdd();
 		 CarbonRolesPage carbonRoles = new CarbonRolesPage(driver);
 		 carbonRoles.clickAddNewRole();
 	}
@@ -74,7 +77,7 @@ public class IDServerUserRoles extends BasicTestObject {
 	@When("^I click on ids Select Users to Add Role search$")
 	public void i_click_on_ids_Select_Users_to_Add_Role_search() throws Throwable {
 		CarbonRolesPage carbonRoles = new CarbonRolesPage(driver);
-		carbonRoles.clickSearch();
+		carbonRoles.clickSearchUsers();
 	}
 
 	@When("^I select ids Select Users to Add Role \"([^\"]*)\" check box$")
