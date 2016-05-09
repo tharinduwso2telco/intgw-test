@@ -9,7 +9,7 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(plugin = { "pretty","html:target/cucumber-html-report","json:target/cucumber-report.json" },
 		 features = {
 
-		"src/test/resources/feature/DataSB.feature"
+		"src/test/resources/feature/"
 		//"src/test/resources/feature/publisher.feature"
 				
 },
@@ -22,7 +22,7 @@ glue={
 },
 tags = //"@smoke"
 {
-		"@Smoke" 
+		"@ASW"
 }
 )
 public class RunCukesTest {

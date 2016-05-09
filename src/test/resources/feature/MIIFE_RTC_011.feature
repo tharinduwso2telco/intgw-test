@@ -24,7 +24,7 @@ Examples:
 | usertype  |LastName   |FirstName   |Email               |
 |LOGOUT		|AuxTestLast|AuxTestFirst|AuxTest123@gmail.com|
 
-@Smoke
+@Smoke,@ASW
 Scenario Outline: Check if apps are saved as SP in identity server after the token generation and API invocation are completed
 Given I am in apimanager
 When I click on apimanager login
@@ -48,7 +48,7 @@ When I click on Application creation link
 Then I should see created application "<appName>" at the top of the Approval Tasks table for "<usertype>"
 When I click on Application Details drop box for "<appName>" row for "<usertype>"
 And I select "<ApplicationDetails>" for "<appName>" Application Details row for "<usertype>"
-#And I click Assign To Me button for "<appName>" Application Details row for "<usertype>"
+And I click Assign To Me button for "<appName>" Application Details row for "<usertype>"
 And I click on Start button for "<appName>" Application Details row for "<usertype>"
 And I select "<Action>" and click complete button for "<appName>" Application Details row for "<usertype>"
 Then I should see Enter aprrove/reject reasons pop up header as "Enter approve/reject reasons"
@@ -178,4 +178,4 @@ When I close the api manager
 
 Examples:
 |usertype|ApplicationDetails |Action |status|apiName	  |operator|validity|CallbackURL                                                      |Description |appName				 |
-|LOGOUT  |Unlimited          |Approve|READY |location     |DIALOG  |-1      |https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|AuXTestAPI  |AuxTestingAppRTC_011 |
+|LOGOUT  |Unlimited          |Approve|READY |location     |DIALOG  |-1      |https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|AuXTestAPI  |AuxTestingAppRTC_030 |
