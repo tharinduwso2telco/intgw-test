@@ -1,5 +1,19 @@
 Feature: Validate invoking Location API with a White list msisdn
 
+@dataCreation
+Scenario Outline: Data creation part for token generation
+Given I am in apimanager
+When I click on apimanager login
+And I enter apimanager Login username and password for "<usertype>" 
+And I click on apimanager Login pop up login button
+And I click on apimanager My Applications
+And I enter "<appName>" as name "<CallbackURL>" as Callback URL and "<Description>" as Description
+And I click on Add button
+
+Examples:
+|usertype |CallbackURL                                                      |Description |appName		  |
+|LOGOUT   |https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|AuXTestAPI  |AuxLogoutUserApp|
+
 @Smoke
 Scenario Outline: Check if Location API can be invoked with a White list msisdn
 Given I am in apimanager
@@ -26,5 +40,5 @@ And I click whitelist page Upload Number button
 Then I should see success pop up message as "<message>"
 
 Examples:
-| usertype|API |WhiteListNumber|whitelistPageHeader|appname|message|
+| usertype|API     |WhiteListNumber|whitelistPageHeader|appname           |message											   |
 |LOGOUT   |location|94123596898    |APIwise Whitelist  |AuxLogoutUserApp  |Whitelist Numbers Successfully Added to the system  |
