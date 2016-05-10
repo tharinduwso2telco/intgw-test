@@ -22,7 +22,7 @@ Examples:
 | usertype|LastName   |FirstName   |Email               |
 |PUBLISHER|AuxTestLast|AuxTestFirst|AuxTest123@gmail.com|
 
-@Smoke,@API
+@Smoke
 Scenario Outline: Check if the user is able to create api with a user with publisher role
 Given I am in identity server page
 When I enter identity server username credentials
@@ -112,9 +112,14 @@ And I click on apimanager login
 And I enter apimanager Login username and password for "<usertype>" 
 And I click on apimanager Login pop up login button
 Then I should see apimanager "<usertype>" at the top right corner of the page
-And I should see apimanager "<apiName>" api from the left pane
+When I click on apimanager APIs module
+Then I should see the apimanager APIs page header as "APIs"
+And I should see the created API on the page as "<apiName>"
 When I click on the apimanager "<apiName>" api
 Then I should see the apimanager APIs "<apiName>" status as "Published"
+#And I should see apimanager "<apiName>" api from the left pane
+#When I click on the apimanager "<apiName>" api
+#Then I should see the apimanager APIs "<apiName>" status as "Published"
 
 Examples:
 | usertype|apiName  		 |prodEndpoint   |sandEndpoint |roleType		   |
