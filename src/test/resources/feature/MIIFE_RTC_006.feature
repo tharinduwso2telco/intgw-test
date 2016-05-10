@@ -22,7 +22,7 @@ Examples:
 | usertype|LastName   |FirstName   |Email               |
 |PUBLISHER|AuxTestLast|AuxTestFirst|AuxTest123@gmail.com|
 
-@Smoke
+@Smoke,@API
 Scenario Outline: Check if the user is able to create api with a user with publisher role
 Given I am in identity server page
 When I enter identity server username credentials
@@ -52,6 +52,13 @@ When I click on ids Permissions of the role page create check box
 And I click on ids Permissions of the role page update button
 Then ids Role update success message should pop up "Role Internal/publisher updated successfully."
 And I click on ids Role update success message ok button
+And I click on ids List of roles finish button
+And I click on ids Role update success message ok button
+And I click on ids Users assign roles link under "<usertype>"
+Then I should see the ids List of roles page table header as "Unassigned Roles"
+When I enter ids Role list of users Enter role name pattern as "publisher"
+And I click on ids List of roles search button
+Then I should see ids List of roles search area as "<roleType>" 
 When I checked the ids List of roles "<roleType>" check box
 And I click on ids List of roles finish button
 Then ids List of roles Role update success message should pop up "successfully."
