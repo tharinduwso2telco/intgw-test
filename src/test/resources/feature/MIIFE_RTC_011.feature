@@ -24,7 +24,7 @@ Examples:
 | usertype  |LastName   |FirstName   |Email               |
 |LOGOUT		|AuxTestLast|AuxTestFirst|AuxTest123@gmail.com|
 
-@Smoke,@ASW
+@Smoke
 Scenario Outline: Check if apps are saved as SP in identity server after the token generation and API invocation are completed
 Given I am in apimanager
 When I click on apimanager login
@@ -178,4 +178,4 @@ When I close the api manager
 
 Examples:
 |usertype|ApplicationDetails |Action |status|apiName	  |operator|validity|CallbackURL                                                      |Description |appName				 |
-|LOGOUT  |Unlimited          |Approve|READY |location     |DIALOG  |-1      |https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|AuXTestAPI  |AuxTestingAppRTC_031 |
+|LOGOUT  |Unlimited          |Approve|READY |location     |DIALOG  |-1      |https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|AuXTestAPI  |AuxTestingAppRTC_033 |
