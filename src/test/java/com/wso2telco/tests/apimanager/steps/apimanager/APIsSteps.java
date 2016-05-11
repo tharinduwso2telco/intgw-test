@@ -64,7 +64,7 @@ public class APIsSteps extends BasicTestObject {
 	@When("^I select \"([^\"]*)\" for \"([^\"]*)\"$")
 	public void i_select_for(String arg1, String arg2) throws Throwable {
 		APIsPage apiPage = new APIsPage(driver);
-		String appName = config.getValue(getEnvironment() + arg2 + "user") + "_" + arg1;
+		String appName = arg1;
 		Thread.sleep(sleepTime);
 		apiPage.clickAppName(appName);
 		Thread.sleep(sleepTime);
