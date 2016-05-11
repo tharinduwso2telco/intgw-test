@@ -174,6 +174,7 @@ public class APIHomeSteps extends BasicTestObject {
 
 	@When("^I click on apimanager Manage$")
 	public void i_click_on_apimanager_Manage() throws Throwable {
+		Thread.sleep(sleepTime);
 		HomePage homepage = new HomePage(driver);
 	    homepage.clickManageLink();
 	    

@@ -16,6 +16,12 @@ public class APIsSteps extends BasicTestObject {
 	    Assert.assertTrue("API page header did not load", apispage.isAPIPage(arg1));
 	}
 	
+	@Then("^I should see the created API on the page as \"([^\"]*)\"$")
+	public void i_should_see_the_created_API_on_the_page_as(String arg1) throws Throwable {
+		APIsPage apispage = new APIsPage(driver);
+		Assert.assertTrue("Created API is not visible", apispage.isCreatedAPIOnAPIPage(arg1));
+	}
+	
 	@Then("^I should see apimanager \"([^\"]*)\" api from the left pane$")
 	public void i_should_see_apimanager_api_from_the_left_pane(String arg1) throws Throwable {
 		APIsPage apispage = new APIsPage(driver);

@@ -85,10 +85,10 @@ Then I should see "<appName>" Application for "<usertype>"
 When I select "<appName>" for "<usertype>"
 And I select operator as "<operator>"
 And I click apimanager "<APIName>" API page subscribe button
-Then I should see "Subscription Successful" on Subscription Successful pop up
+#Then I should see "Subscription Successful" on Subscription Successful pop up
 When I click Go to My Subscription button
-Then I should see the apimanager Subscriptions page header as "Subscriptions"
-And I should see "<appName>" under Applications with Subscriptions for "<usertype>"
+#Then I should see the apimanager Subscriptions page header as "Subscriptions"
+#And I should see "<appName>" under Applications with Subscriptions for "<usertype>"
 When I click on apimanager Manage
 Then I should see the apimanager Manager page header as "Manager"
 When I enter apimanager Manager page admin username credentials
@@ -98,7 +98,7 @@ And I should see apimanager Manager Home Billing Workflow Blacklist Whitelist ta
 When I click on apimanager Manager page Workflow tab
 And I click on subscriptions creation under tasks
 Then I should see created application "<appName>" at the top of the Approval Tasks table for "<usertype>"
-#When I click Assign To Me button for "<appName>" Application Details row for "<usertype>"
+When I click Assign To Me button for "<appName>" Application Details row for "<usertype>"
 And I click on Start button for "<appName>" Application Details row for "<usertype>"
 And I select "<Action>" and click complete button for "<appName>" Application Details row for "<usertype>"
 Then I should see Enter aprrove/reject reasons pop up header as "Enter approve/reject reasons"
@@ -126,7 +126,7 @@ When I click on apimanager Manager dialogAdmin
 And I click on apimanager Manager logout button
 Then I should see the apimanager Manager page header as "Manager"
 When I click on close window
-Then I am in apimanager
+#Then I am in apimanager
 When I click on apimanager My Subscriptions
 Then I should see the apimanager Subscriptions page header as "Subscriptions"
 When I select created application "<appName>" from the dropdown for "<usertype>"
@@ -179,3 +179,4 @@ When I close the api manager
 Examples:
 |usertype|ApplicationDetails |Action |status|apiName	  |operator|validity|CallbackURL                                                      |Description |appName				 |
 |LOGOUT  |Unlimited          |Approve|READY |location     |DIALOG  |-1      |https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|AuXTestAPI  |AuxTestingAppRTC_030 |
+
