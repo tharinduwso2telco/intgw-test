@@ -1,5 +1,19 @@
 Feature: Validate token regeneration
 
+@dataCreation
+Scenario Outline: Data creation part for token generation
+Given I am in apimanager
+When I click on apimanager login
+And I enter apimanager Login username and password for "<usertype>" 
+And I click on apimanager Login pop up login button
+And I click on apimanager My Applications
+And I enter "<appName>" as name "<CallbackURL>" as Callback URL and "<Description>" as Description
+And I click on Add button
+
+Examples:
+|usertype     |CallbackURL                                                      |Description |appName			   |
+|SUBSCRIPTION |https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|AuXTestAPI  |Aux_AppKey_Regenerate|
+
 @Smoke
 Scenario Outline: Check if tokens can be regenerated
 #prerequisites:#14 should be completed
