@@ -66,7 +66,8 @@ When I click on apimanager Manager page Workflow tab
 Then I should see apimanager Manager Approval Tasks page header as "Approval Tasks"
 When I click on Application creation link
 Then I should see created application "<appName>" at the top of the Approval Tasks table for "<usertype>"
-When I click on Start button for "<appName>" Application Details row for "<usertype>"
+When I click Assign To Me button for "<appName>" Application Details row for "<usertype>"
+And I click on Start button for "<appName>" Application Details row for "<usertype>"
 And I select "<Action>" and click complete button for "<appName>" Application Details row for "<usertype>"
 Then I should see Enter aprrove/reject reasons pop up header as "Enter approve/reject reasons"
 When I enter aprrove/reject reason as "Approved"
@@ -116,7 +117,8 @@ When I click on apimanager Manager page Workflow tab
 Then I should see apimanager Manager Approval Tasks page header as "Approval Tasks"
 When I click on subscriptions creation under tasks
 Then I should see created application "<appName>" at the top of the Approval Tasks table for "<usertype>"
-When I click on Start button for "<appName>" Application Details row for "<usertype>"
+When I click Assign To Me button for "<appName>" Application Details row for "<usertype>"
+And I click on Start button for "<appName>" Application Details row for "<usertype>"
 And I select "<Action>" and click complete button for "<appName>" Application Details row for "<usertype>"
 Then I should see Enter aprrove/reject reasons pop up header as "Enter approve/reject reasons"
 When I enter aprrove/reject reason as "Approved"
@@ -178,5 +180,5 @@ And I should see consumer Secret of sandbox
 
 Examples:
 |usertype|ApplicationDetails |Action |status|apiName	  |operator|validity|CallbackURL                                                      |Description |appName				 |
-|LOGOUT  |Unlimited          |Approve|READY |location     |DIALOG  |-1      |https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|AuXTestAPI  |AuxTestingAppRTC_039 |
+|LOGOUT  |Unlimited          |Approve|READY |location     |DIALOG  |-1      |https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|AuXTestAPI  |AuxTestingAppRTC_085 |
 
