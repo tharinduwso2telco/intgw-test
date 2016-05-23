@@ -14,7 +14,7 @@ public class APISubscriptionSteps extends BasicTestObject {
 	@Then("^I should see \"([^\"]*)\" under Applications with Subscriptions for \"([^\"]*)\"$")
 	public void i_should_see_under_Applications_with_Subscriptions_for(String arg1, String arg2) throws Throwable {
 	   SubscriptionsPage subpage = new SubscriptionsPage(driver);
-	   String appName = config.getValue(getEnvironment() + arg2 + "user") + "_" + arg1;
+	   String appName = arg1;
 	   Assert.assertTrue("Apps with subscription did not load properly", subpage.isAppsWithSubscriptions(appName));  
 	}
 	

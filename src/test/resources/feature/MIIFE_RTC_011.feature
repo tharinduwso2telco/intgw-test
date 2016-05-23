@@ -86,10 +86,10 @@ Then I should see "<appName>" Application for "<usertype>"
 When I select "<appName>" for "<usertype>"
 And I select operator as "<operator>"
 And I click apimanager "<APIName>" API page subscribe button
-#Then I should see "Subscription Successful" on Subscription Successful pop up
+Then I should see "Subscription Successful" on Subscription Successful pop up
 When I click Go to My Subscription button
-#Then I should see the apimanager Subscriptions page header as "Subscriptions"
-#And I should see "<appName>" under Applications with Subscriptions for "<usertype>"
+Then I should see the apimanager Subscriptions page header as "Subscriptions"
+And I should see "<appName>" under Applications with Subscriptions for "<usertype>"
 When I click on apimanager Manage
 Then I should see the apimanager Manager page header as "Manager"
 When I enter apimanager Manager page admin username credentials
@@ -180,5 +180,5 @@ And I should see consumer Secret of sandbox
 
 Examples:
 |usertype|ApplicationDetails |Action |status|apiName	  |operator|validity|CallbackURL                                                      |Description |appName				 |
-|LOGOUT  |Unlimited          |Approve|READY |location     |DIALOG  |-1      |https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|AuXTestAPI  |AuxTestingAppRTC_085 |
+|LOGOUT  |Unlimited          |Approve|READY |location     |DIALOG  |-1      |https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|AuXTestAPI  |AuxTestingAppRTC_086 |
 
