@@ -24,6 +24,7 @@ public class IDServerResourcesBrowse extends BasicTestObject {
 	public void i_search_rate_card_by_providing_location(String arg1) throws Throwable {
 		CarbonResourceBrowse browsePage = new CarbonResourceBrowse(driver);
 		browsePage.serachRateCard(arg1);
+		Thread.sleep(sleepTime);
 	}
 	
 	@Then("^I should be able to search rate card$")
@@ -49,6 +50,7 @@ public class IDServerResourcesBrowse extends BasicTestObject {
 	public void i_upload_rate_card_file_from_location(String arg1, String arg2) throws Throwable {
 		String rateCardFilePath = config.getValue("uploadRateCard") + arg2 + arg1;
 		CarbonResourceBrowse browsePage = new CarbonResourceBrowse(driver);
+		Thread.sleep(sleepTime);
 		browsePage.uploadRateCard(rateCardFilePath);
 	}
 

@@ -379,8 +379,6 @@ public class APIManageSteps extends BasicTestObject {
 	
 	@When("^I enter the same \"([^\"]*)\" as the number to whitelist$")
 	public void i_enter_the_same_as_the_number_to_whitelist(String arg1) throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    //throw new PendingException();
 		ManagerPage managerpage = new ManagerPage(driver);
 		WhiteListData data = new WhiteListData();
 		String sameValue =data.getRedundentValue();

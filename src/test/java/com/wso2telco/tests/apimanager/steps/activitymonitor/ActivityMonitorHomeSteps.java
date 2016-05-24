@@ -3,6 +3,7 @@ package com.wso2telco.tests.apimanager.steps.activitymonitor;
 import org.junit.Assert;
 
 import com.wso2telco.apimanager.pageobjects.activitymanager.ActivityManagerHomePage;
+import com.wso2telco.apimanager.pageobjects.activitymanager.ActivityManagerHumanTask;
 import com.wso2telco.apimanager.pageobjects.activitymanager.ActivityMangerAvailableScripts;
 import com.wso2telco.apimanager.pageobjects.activitymanager.ActivityMangerLoginPage;
 import com.wso2telco.tests.apimanager.base.BasicTestObject;
@@ -51,6 +52,12 @@ public class ActivityMonitorHomeSteps extends BasicTestObject {
 		ActivityManagerHomePage homepage = new ActivityManagerHomePage(driver);
 		homepage.clickMain();
 	}
+	
+	@When("^I click on the apimanger actvity manager Human Tasks Add link$")
+	public void i_click_on_the_apimanger_actvity_manager_Human_Tasks_Add_link() throws Throwable {
+		ActivityManagerHomePage homepage = new ActivityManagerHomePage(driver);
+		homepage.clickHumanTaskAdd();
+	}
 
 	@When("^I click on the apimanger actvity manager Analytics List llink$")
 	public void i_click_on_the_apimanger_actvity_manager_Analytics_List_llink() throws Throwable {
@@ -68,6 +75,25 @@ public class ActivityMonitorHomeSteps extends BasicTestObject {
 	public void i_click_on_the_apimanger_actvity_manager_Available_scripts_execute_button() throws Throwable {
 		ActivityMangerAvailableScripts availableScripts = new ActivityMangerAvailableScripts(driver);
 		availableScripts.clickSbAmStatsAnalyzerExecute();
+	}
+	
+	@Then("^I should see apimanger actvity manager Human Tasks Add page header as \"([^\"]*)\"$")
+	public void i_should_see_apimanger_actvity_manager_Human_Tasks_Add_page_header_as(String arg1) throws Throwable {
+	    ActivityManagerHumanTask humanTask = new ActivityManagerHumanTask(driver);
+		Assert.assertTrue("Human Package page header mismatched", humanTask.isAnalyticsPageHeader(arg1));
+	}
+	
+	@When("^I select the new human task package folder from \"([^\"]*)\" as \"([^\"]*)\"$")
+	public void i_select_the_new_human_task_package_folder_from_as(String arg1, String arg2) throws Throwable {
+		String zipFilePath = config.getValue("uploadRateCard") + arg1 + arg2;
+		ActivityManagerHumanTask humanTask = new ActivityManagerHumanTask(driver);
+		humanTask.selectFile(zipFilePath);
+	}
+
+	@When("^I click on new human task upload button$")
+	public void i_click_on_new_human_task_upload_button() throws Throwable {
+		ActivityManagerHumanTask humanTask = new ActivityManagerHumanTask(driver);
+		humanTask.clickUpload();
 	}
 	
 }

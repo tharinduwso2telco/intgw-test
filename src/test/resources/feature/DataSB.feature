@@ -10,7 +10,7 @@ When I click on identity server Main tab
 And I click on identity server Resources Browse link
 Then I should see the identity server Resources Browse page header as "Browse"
 When I search rate card by providing "/_system/governance/apimgt/applicationdata/sb-rate-card.xml" location
-And I upload "sb-rate-card.xml" rate card file from "/SB/1/" location
+And I upload "sb-rate-card.xml" rate card file from "SB/1/" location
 When I close the browser
 And I am in apimanager
 When I click on apimanager login
@@ -56,7 +56,7 @@ Then I should see the apimanger actvity manager Home page header as "WSO2 Busine
 When I click on apimanger actvity manager Main tab
 And I click on the apimanger actvity manager Analytics List llink
 Then I should see apimanger actvity manager List page header as "Available Scripts"
-#When I click on the apimanger actvity manager Available scripts execute button
+When I click on the apimanger actvity manager Available scripts execute button
 When I close the browser
 And I am in apimanager
 When I click on apimanager login
