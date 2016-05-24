@@ -27,6 +27,13 @@ public class ActivityMonitorHomeSteps extends BasicTestObject {
 			driver.get(config.getValue(getEnvironment() + "ActivityMonitor"));
 		}
 	}
+	
+	@When("^I close the browsers$")
+	public void i_close_the_browsers() throws Throwable {
+	    if (driver != null){
+			driver.close();	    	
+	    }
+	}
 
 	@When("^I enter apimanger actvity manager admin username credentials$")
 	public void i_enter_apimanger_actvity_manager_admin_username_credentials() throws Throwable {
@@ -94,6 +101,12 @@ public class ActivityMonitorHomeSteps extends BasicTestObject {
 	public void i_click_on_new_human_task_upload_button() throws Throwable {
 		ActivityManagerHumanTask humanTask = new ActivityManagerHumanTask(driver);
 		humanTask.clickUpload();
+	}
+	
+	@Then("^I validate success message as \"([^\"]*)\"$")
+	public void i_validate_success_message_as(String arg1) throws Throwable {
+		ActivityManagerHumanTask humanTask = new ActivityManagerHumanTask(driver);
+		Assert.assertTrue("File successfully uploaded", humanTask.isFileUploaded(arg1));
 	}
 	
 }

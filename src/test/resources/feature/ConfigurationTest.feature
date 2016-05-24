@@ -11,7 +11,7 @@ And I click on identity server Resources Browse link
 Then I should see the identity server Resources Browse page header as "Browse"
 When I search rate card by providing "/_system/governance/apimgt/applicationdata/nb-rate-card.xml" location
 And I upload "nb-rate-card.xml" rate card file from "/NB/1/" location
-When I close the browser
+When I close the browsers
 
 Examples:
 |PageHeader|
@@ -28,7 +28,7 @@ And I click on identity server Resources Browse link
 Then I should see the identity server Resources Browse page header as "Browse"
 When I search rate card by providing "/_system/governance/apimgt/applicationdata/sb-rate-card.xml" location
 And I upload "sb-rate-card.xml" rate card file from "/SB/1/" location
-When I close the browser
+When I close the browsers
 
 Examples:
 |PageHeader|
@@ -45,7 +45,7 @@ And I click on identity server Resources Browse link
 Then I should see the identity server Resources Browse page header as "Browse"
 When I search rate card by providing "/_system/governance/apimgt/applicationdata/workflow-extensions.xml" location
 And I upload "workflow-extensions.xml" rate card file from "/workflow/" location
-When I close the browser
+When I close the browsers
 
 Examples:
 |PageHeader|
@@ -60,10 +60,10 @@ Then I should see the apimanger actvity manager Home page header as "<PageHeader
 When I click on apimanger actvity manager Main tab
 And I click on the apimanger actvity manager Human Tasks Add link
 Then I should see apimanger actvity manager Human Tasks Add page header as "New HumanTask Package"
-When I select the new human task package folder from "" as "file.zip"
+When I select the new human task package folder from "zip/" as "ApplicationsApprovalTask.zip"
 And I click on new human task upload button
-#Then I validate the uploaded file
-When I close the browser
+Then I validate success message as "Your HumanTask package been uploaded successfully."
+When I close the browsers
 
 Examples:
 |PageHeader|
