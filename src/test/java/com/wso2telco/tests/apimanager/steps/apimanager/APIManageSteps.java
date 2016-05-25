@@ -236,6 +236,18 @@ public class APIManageSteps extends BasicTestObject {
 		managerpage.clickApproveOK();
 		Thread.sleep(sleepTime);
 	}
+	
+	@Then("^I should see a pop message \"([^\"]*)\"$")
+	public void i_should_see_a_pop_message(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Action comment warning popup is not visible", managerpage.isActionCommentRequired(arg1));
+	}
+
+	@When("^I click the ok button of warning message popup$")
+	public void i_click_the_ok_button_of_warning_message_popup() throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.clickRequiredOk();
+	}
 
 	@Then("^I should not see the created application in Approval Tasks table as \"([^\"]*)\" for \"([^\"]*)\"$")
 	public void i_should_not_see_the_created_application_in_Approval_Tasks_table_as_for(String arg1, String arg2) throws Throwable {
