@@ -24,7 +24,7 @@ Examples:
 | usertype  |LastName   |FirstName   |Email               |
 |LOGOUT		|AuxTestLast|AuxTestFirst|AuxTest123@gmail.com|
 
-@Smoke
+@Smoke,@ASW
 Scenario Outline: Check if apps are saved as SP in identity server after the token generation and API invocation are completed
 Given I am in apimanager
 When I click on apimanager login
