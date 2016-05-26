@@ -60,7 +60,7 @@ Then I should see the apimanger actvity manager Home page header as "<PageHeader
 When I click on apimanger actvity manager Main tab
 And I click on the apimanger actvity manager Human Tasks Add link
 Then I should see apimanger actvity manager Human Tasks Add page header as "New HumanTask Package"
-When I select the new human task package folder from "zip/" as "ApplicationsApprovalTask.zip"
+When I select the new human task Applications Approval Task package folder from "zip/" as "ApplicationsApprovalTask.zip"
 And I click on new human task upload button
 Then I validate success message as "Your HumanTask package been uploaded successfully."
 When I close the browsers
@@ -78,7 +78,7 @@ Then I should see the apimanger actvity manager Home page header as "<PageHeader
 When I click on apimanger actvity manager Main tab
 And I click on the apimanger actvity manager Human Tasks Add link
 Then I should see apimanger actvity manager Human Tasks Add page header as "New HumanTask Package"
-When I select the new human task package folder from "zip/" as "SubscriptionsApprovalTask.zip"
+When I select the new human task Subscriptions Approval Task package folder from "zip/" as "SubscriptionsApprovalTask.zip"
 And I click on new human task upload button
 Then I validate success message as "Your HumanTask package been uploaded successfully."
 When I close the browsers

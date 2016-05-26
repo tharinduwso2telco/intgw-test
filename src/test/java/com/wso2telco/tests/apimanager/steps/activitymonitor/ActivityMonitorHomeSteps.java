@@ -90,10 +90,22 @@ public class ActivityMonitorHomeSteps extends BasicTestObject {
 		Assert.assertTrue("Human Package page header mismatched", humanTask.isAnalyticsPageHeader(arg1));
 	}
 	
-	@When("^I select the new human task package folder from \"([^\"]*)\" as \"([^\"]*)\"$")
-	public void i_select_the_new_human_task_package_folder_from_as(String arg1, String arg2) throws Throwable {
+	@When("^I select the new human task Applications Approval Task package folder from \"([^\"]*)\" as \"([^\"]*)\"$")
+	public void i_select_the_new_human_task_Applications_Approval_Task_package_folder_from_as(String arg1, String arg2) throws Throwable {
 		String zipFilePath = projectPath + config.getValue("uploadRateCard") + arg1 + arg2;
-		String zipFileGit = getZipFileDir();
+		String zipFileGit = getZipFileDir() + "/ApplicationsApprovalTask/target/" + arg2;
+		ActivityManagerHumanTask humanTask = new ActivityManagerHumanTask(driver);
+		if (isFileExists(zipFileGit)) {
+			humanTask.selectFile(zipFileGit);
+		} else {
+			humanTask.selectFile(zipFilePath);
+		}
+	}
+	
+	@When("^I select the new human task Subscriptions Approval Task package folder from \"([^\"]*)\" as \"([^\"]*)\"$")
+	public void i_select_the_new_human_task_Subscriptions_Approval_Task_package_folder_from_as(String arg1, String arg2) throws Throwable {
+		String zipFilePath = projectPath + config.getValue("uploadRateCard") + arg1 + arg2;
+		String zipFileGit = getZipFileDir() + "/SubscriptionsApprovalTask/target/" + arg2;
 		ActivityManagerHumanTask humanTask = new ActivityManagerHumanTask(driver);
 		if (isFileExists(zipFileGit)) {
 			humanTask.selectFile(zipFileGit);
