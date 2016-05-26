@@ -1,12 +1,10 @@
 package com.wso2telco.tests.apimanager.base;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
@@ -38,7 +36,11 @@ public class BasicTestObject extends TestBase {
 	
 	public static String environment;
 	
+	private String zipFileDir;
+	
 	public Long sleepTime = Long.parseLong(config.getValue("sleepTime"));
+	
+	public static String projectPath = System.getProperty("user.dir");
 	
 	public void initialize() throws Exception {
 		if (!isInitialized) {
@@ -53,10 +55,12 @@ public class BasicTestObject extends TestBase {
 			FileInputStream ip = new FileInputStream(System.getProperty("user.dir") + "\\src\\test\\resources\\config\\config.properties");
 			CONFIG.load(ip);
 			*/
-			//Setting environment
-			//setEnvironment(System.getProperty("env"));
-			//setEnvironment("staging");
-			setEnvironment(config.getValue("Enviromnment"));
+			if (System.getProperty("env") != null) {
+				setEnvironment(System.getProperty("env"));
+			} else {
+				setEnvironment(config.getValue("Environment"));
+			}
+			setZipFileDir(System.getProperty("zipfiledir"));
 			logInstruction("Initializing Config Completed");
 			isInitialized = true;
 		}
@@ -153,6 +157,26 @@ public class BasicTestObject extends TestBase {
 	@SuppressWarnings("static-access")
 	public void setEnvironment(String environment) {
 		this.environment = environment;
+	}
+
+	public String getZipFileDir() {
+		return zipFileDir;
+	}
+	
+	public boolean isFileExists(String filepath){
+		boolean flag = false;
+		if (filepath == null){
+			filepath = " ";
+		}
+		File file = new File(filepath);
+		if (file.exists() && !file.isDirectory()) {
+		    flag = true;
+		}
+		return flag;
+	}
+
+	public void setZipFileDir(String zipFileDir) {
+		this.zipFileDir = zipFileDir;
 	}
 
 }

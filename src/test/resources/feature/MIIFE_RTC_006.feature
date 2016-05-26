@@ -22,7 +22,7 @@ Examples:
 | usertype|LastName   |FirstName   |Email               |
 |PUBLISHER|AuxTestLast|AuxTestFirst|AuxTest123@gmail.com|
 
-@Smoke,@API
+@Smoke @apiCre
 Scenario Outline: Check if the user is able to create api with a user with publisher role
 Given I am in identity server page
 When I enter identity server username credentials

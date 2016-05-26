@@ -236,6 +236,18 @@ public class APIManageSteps extends BasicTestObject {
 		managerpage.clickApproveOK();
 		Thread.sleep(sleepTime);
 	}
+	
+	@Then("^I should see a pop message \"([^\"]*)\"$")
+	public void i_should_see_a_pop_message(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Action comment warning popup is not visible", managerpage.isActionCommentRequired(arg1));
+	}
+
+	@When("^I click the ok button of warning message popup$")
+	public void i_click_the_ok_button_of_warning_message_popup() throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.clickRequiredOk();
+	}
 
 	@Then("^I should not see the created application in Approval Tasks table as \"([^\"]*)\" for \"([^\"]*)\"$")
 	public void i_should_not_see_the_created_application_in_Approval_Tasks_table_as_for(String arg1, String arg2) throws Throwable {
@@ -539,7 +551,7 @@ public class APIManageSteps extends BasicTestObject {
 	
 	@When("^I write the UI table into a \"([^\"]*)\" excel file in \"([^\"]*)\" location$")
 	public void i_write_the_UI_table_into_a_excel_file_in_location(String arg1, String arg2) throws Throwable {
-		String nbUITableFilePath = config.getValue("uploadRateCard") + arg2 + arg1;
+		String nbUITableFilePath = projectPath + config.getValue("uploadRateCard") + arg2 + arg1;
 		ManagerPage managerpage = new ManagerPage(driver);
 		List<List<String>> nbUiData = managerpage.getNbUITableData();
 		managerpage.writeStringAryToXlsx(nbUITableFilePath, nbUiData);
@@ -554,9 +566,9 @@ public class APIManageSteps extends BasicTestObject {
 	
 	@When("^I calculate the difference between \"([^\"]*)\" and \"([^\"]*)\" excel file from \"([^\"]*)\" location and write it to \"([^\"]*)\"$")
 	public void i_calculate_the_difference_between_and_excel_file_from_location_and_write_it_to(String arg1, String arg2, String arg3, String arg4) throws Throwable {
-		String beforeFile = config.getValue("uploadRateCard") + arg3 + arg1;
-		String afterFile = config.getValue("uploadRateCard") + arg3 + arg2;
-		String difFile = config.getValue("uploadRateCard") + arg3 + arg4;
+		String beforeFile = projectPath + config.getValue("uploadRateCard") + arg3 + arg1;
+		String afterFile = projectPath + config.getValue("uploadRateCard") + arg3 + arg2;
+		String difFile = projectPath + config.getValue("uploadRateCard") + arg3 + arg4;
 		ExcelFileReader excelFileReaderBefore = new ExcelFileReader(beforeFile, "Sheet1");
 		List<List<String>> exceldataBefore = excelFileReaderBefore.readExcelFile("Sheet1");
 		ExcelFileReader excelFileReaderAfter = new ExcelFileReader(afterFile, "Sheet1");
@@ -568,9 +580,9 @@ public class APIManageSteps extends BasicTestObject {
 	
 	@When("^I calculate the difference between SB \"([^\"]*)\" and \"([^\"]*)\" excel file from \"([^\"]*)\" location and write it to \"([^\"]*)\"$")
 	public void i_calculate_the_difference_between_SB_and_excel_file_from_location_and_write_it_to(String arg1, String arg2, String arg3, String arg4) throws Throwable {
-		String beforeFile = config.getValue("uploadRateCard") + arg3 + arg1;
-		String afterFile = config.getValue("uploadRateCard") + arg3 + arg2;
-		String difFile = config.getValue("uploadRateCard") + arg3 + arg4;
+		String beforeFile = projectPath + config.getValue("uploadRateCard") + arg3 + arg1;
+		String afterFile = projectPath + config.getValue("uploadRateCard") + arg3 + arg2;
+		String difFile = projectPath + config.getValue("uploadRateCard") + arg3 + arg4;
 		ExcelFileReader excelFileReaderBefore = new ExcelFileReader(beforeFile, "Sheet1");
 		List<List<String>> exceldataBefore = excelFileReaderBefore.readExcelFile("Sheet1");
 		ExcelFileReader excelFileReaderAfter = new ExcelFileReader(afterFile, "Sheet1");
@@ -582,8 +594,8 @@ public class APIManageSteps extends BasicTestObject {
 	
 	@Then("^I validate \"([^\"]*)\" records against \"([^\"]*)\" from \"([^\"]*)\" location$")
 	public void i_validate_records_against_from_location(String arg1, String arg2, String arg3) throws Throwable {
-		String difFileUi = config.getValue("uploadRateCard") + arg3 + arg1;
-		String difFileDifManual = config.getValue("uploadRateCard") + arg3 + arg2;
+		String difFileUi = projectPath + config.getValue("uploadRateCard") + arg3 + arg1;
+		String difFileDifManual = projectPath + config.getValue("uploadRateCard") + arg3 + arg2;
 		ExcelFileReader excelFileDiffUi = new ExcelFileReader(difFileUi, "Sheet1");
 		List<List<String>> exceldataDiffUi = excelFileDiffUi.readExcelFile("Sheet1");
 		ExcelFileReader excelFileDifManual = new ExcelFileReader(difFileDifManual, "Sheet1");
@@ -594,8 +606,8 @@ public class APIManageSteps extends BasicTestObject {
 	
 	@Then("^I validate SB invoice \"([^\"]*)\" records against \"([^\"]*)\" from \"([^\"]*)\" location$")
 	public void i_validate_SB_invoice_records_against_from_location(String arg1, String arg2, String arg3) throws Throwable {
-		String difFileUi = config.getValue("uploadRateCard") + arg3 + arg1;
-		String difFileDifManual = config.getValue("uploadRateCard") + arg3 + arg2;
+		String difFileUi = projectPath + config.getValue("uploadRateCard") + arg3 + arg1;
+		String difFileDifManual = projectPath + config.getValue("uploadRateCard") + arg3 + arg2;
 		ExcelFileReader excelFileDiffUi = new ExcelFileReader(difFileUi, "Sheet1");
 		List<List<String>> exceldataDiffUi = excelFileDiffUi.readExcelFile("Sheet1");
 		ExcelFileReader excelFileDifManual = new ExcelFileReader(difFileDifManual, "Sheet1");
@@ -606,7 +618,7 @@ public class APIManageSteps extends BasicTestObject {
 	
 	@When("^I write the SB UI table into a \"([^\"]*)\" excel file in \"([^\"]*)\" location$")
 	public void i_write_the_SB_UI_table_into_a_excel_file_in_location(String arg1, String arg2) throws Throwable {
-		String sbUITableFilePath = config.getValue("uploadRateCard") + arg2 + arg1;
+		String sbUITableFilePath = projectPath + config.getValue("uploadRateCard") + arg2 + arg1;
 		ManagerPage managerpage = new ManagerPage(driver);
 		List<List<String>> sbUiData = managerpage.getSbUITableData();
 		managerpage.writeStringAryToXlsx(sbUITableFilePath, sbUiData);
