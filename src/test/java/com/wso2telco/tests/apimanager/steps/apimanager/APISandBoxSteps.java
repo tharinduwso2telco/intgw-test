@@ -469,4 +469,87 @@ public class APISandBoxSteps extends BasicTestObject {
 		DataValidation data = new DataValidation();
 		Assert.assertTrue("Response payload data mismatched", data.isErrorResponsePayload(arg1));
 	}
+	
+	@Then("^I should see the apimanager sandbox Sender Addresses page header as \"([^\"]*)\"$")
+	public void i_should_see_the_apimanager_sandbox_Sender_Addresses_page_header_as(String arg1) throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		Thread.sleep(sleepTime);
+	    Assert.assertTrue("Sandbox Manage Sender Addresses page did not load properly", sandbox.isSandboxWelcome(arg1));
+	   
+	}
+	
+	@When("^I click on numbers dropdown and select Sender Addresses$")
+	public void i_click_on_numbers_dropdown_and_select_Sender_Addresses() throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		sandbox.clickNumbers();
+		sandbox.selectSenderAddresses();
+	}
+	
+	@When("^I clear existing Short codes \"([^\"]*)\"$")
+	public void i_clear_existing_Short_codes(String arg1) throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		sandbox.clearExistingShortCodes(arg1);;
+		Thread.sleep(sleepTime);
+		
+	}
+	
+	@When("^I click on Add New button$")
+	public void i_click_on_Add_New_button() throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		sandbox.clickAddNewShortCodebtn();
+	}
+	
+	@When("^I enter new short code \"([^\"]*)\"$")
+	public void i_enter_new_short_code(String arg1) throws Throwable {
+	   SandBoxPage sandbox=new SandBoxPage(driver);
+	   sandbox.addNewShortCode(arg1);
+	    
+	}
+	
+	@When("^I enter description \"([^\"]*)\"$")
+	public void i_enter_description(String arg1) throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		sandbox.enterDescription(arg1);  
+	}
+	
+	@When("^I click edit button$")
+	public void i_click_edit_button() throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		sandbox.clickEditbtn();
+	  
+	}
+	
+
+	
+	@When("^I enter description after error msg \"([^\"]*)\"$")
+	public void i_enter_description_after_error_msg(String arg1) throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		sandbox.enterDisAfetrErrorMsg(arg1);
+	}
+	
+
+	@Then("^I should not see the \"([^\"]*)\" as added number in the numbers table$")
+	public void i_should_not_see_the_as_added_number_in_the_numbers_table(String arg1) throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		Assert.assertTrue("Number did not show properly", !sandbox.isNumberAvailable(arg1));
+	}
+
+	@Then("^I should see the error message \"([^\"]*)\"$")
+	public void i_should_see_the_error_message(String arg1) throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		Assert.assertTrue("Incorrect Error message", sandbox.isErrorMsg(arg1));
+	  
+	}
+
+
+	@When("^I click on Edit save button in under actions column$")
+	public void i_click_on_Edit_save_button_in_under_actions_column() throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		sandbox.clickEditSavebtn();
+		Thread.sleep(sleepTime);
+	}
+	
+
+	
+
 }
