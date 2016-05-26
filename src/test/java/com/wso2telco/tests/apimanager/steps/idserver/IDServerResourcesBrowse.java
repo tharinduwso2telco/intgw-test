@@ -41,14 +41,14 @@ public class IDServerResourcesBrowse extends BasicTestObject {
 		RateCardXML rateCard = new RateCardXML();
 		rateCard.setRateCardXMl(rateCardText);
 		XMLReader xmlreader = new XMLReader();
-		Document doc = xmlreader.readXMLFile(config.getValue("rateCardXML"));
+		Document doc = xmlreader.readXMLFile(projectPath + config.getValue("rateCardXML"));
 		RateCardReader rateCardReader = new RateCardReader();
 		rateCardReader.checkXML(doc);
 	}
 	
 	@When("^I upload \"([^\"]*)\" rate card file from \"([^\"]*)\" location$")
 	public void i_upload_rate_card_file_from_location(String arg1, String arg2) throws Throwable {
-		String rateCardFilePath = config.getValue("uploadRateCard") + arg2 + arg1;
+		String rateCardFilePath = projectPath + config.getValue("uploadRateCard") + arg2 + arg1;
 		CarbonResourceBrowse browsePage = new CarbonResourceBrowse(driver);
 		Thread.sleep(sleepTime);
 		browsePage.uploadRateCard(rateCardFilePath);

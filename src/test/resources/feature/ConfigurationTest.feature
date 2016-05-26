@@ -51,8 +51,8 @@ Examples:
 |PageHeader|
 |WSO2 API Manager Home|
 
-@Smoke
-Scenario Outline: Upload zip Files
+@config
+Scenario Outline: Upload zip Files Applications Approval Task
 Given I am in apimanger actvity manager login page
 When I enter apimanger actvity manager admin username credentials
 And I click on apimanger actvity manager sign in
@@ -61,6 +61,24 @@ When I click on apimanger actvity manager Main tab
 And I click on the apimanger actvity manager Human Tasks Add link
 Then I should see apimanger actvity manager Human Tasks Add page header as "New HumanTask Package"
 When I select the new human task package folder from "zip/" as "ApplicationsApprovalTask.zip"
+And I click on new human task upload button
+Then I validate success message as "Your HumanTask package been uploaded successfully."
+When I close the browsers
+
+Examples:
+|PageHeader|
+|WSO2 Business Process Server Home|
+
+@config
+Scenario Outline: Upload zip Files Subscriptions Approval Task
+Given I am in apimanger actvity manager login page
+When I enter apimanger actvity manager admin username credentials
+And I click on apimanger actvity manager sign in
+Then I should see the apimanger actvity manager Home page header as "<PageHeader>"
+When I click on apimanger actvity manager Main tab
+And I click on the apimanger actvity manager Human Tasks Add link
+Then I should see apimanger actvity manager Human Tasks Add page header as "New HumanTask Package"
+When I select the new human task package folder from "zip/" as "SubscriptionsApprovalTask.zip"
 And I click on new human task upload button
 Then I validate success message as "Your HumanTask package been uploaded successfully."
 When I close the browsers

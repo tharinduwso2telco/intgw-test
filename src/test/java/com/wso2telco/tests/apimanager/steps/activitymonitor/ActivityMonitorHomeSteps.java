@@ -92,9 +92,14 @@ public class ActivityMonitorHomeSteps extends BasicTestObject {
 	
 	@When("^I select the new human task package folder from \"([^\"]*)\" as \"([^\"]*)\"$")
 	public void i_select_the_new_human_task_package_folder_from_as(String arg1, String arg2) throws Throwable {
-		String zipFilePath = config.getValue("uploadRateCard") + arg1 + arg2;
+		String zipFilePath = projectPath + config.getValue("uploadRateCard") + arg1 + arg2;
+		String zipFileGit = getZipFileDir();
 		ActivityManagerHumanTask humanTask = new ActivityManagerHumanTask(driver);
-		humanTask.selectFile(zipFilePath);
+		if (isFileExists(zipFileGit)) {
+			humanTask.selectFile(zipFileGit);
+		} else {
+			humanTask.selectFile(zipFilePath);
+		}
 	}
 
 	@When("^I click on new human task upload button$")
@@ -106,6 +111,7 @@ public class ActivityMonitorHomeSteps extends BasicTestObject {
 	@Then("^I validate success message as \"([^\"]*)\"$")
 	public void i_validate_success_message_as(String arg1) throws Throwable {
 		ActivityManagerHumanTask humanTask = new ActivityManagerHumanTask(driver);
+		Thread.sleep(sleepTime);
 		Assert.assertTrue("File successfully uploaded", humanTask.isFileUploaded(arg1));
 	}
 	
