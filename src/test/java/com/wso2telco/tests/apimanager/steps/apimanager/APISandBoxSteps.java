@@ -91,6 +91,12 @@ public class APISandBoxSteps extends BasicTestObject {
 		sandbox.enterNumber(arg1);
 	}
 	
+	@When("^I edit \"([^\"]*)\" as number$")
+	public void i_edit_as_number(String arg1) throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		sandbox.editNumber(arg1);
+	}
+	
 	@When("^I enter \"([^\"]*)\" as number description$")
 	public void i_enter_as_number_description(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
@@ -102,6 +108,14 @@ public class APISandBoxSteps extends BasicTestObject {
 		SandBoxPage sandbox = new SandBoxPage(driver);
 		SandBoxValues sandboxValues = new SandBoxValues();
 		sandbox.enterBalance(arg1);
+		sandboxValues.setBalance(arg1);
+	}
+	
+	@When("^I enter \"([^\"]*)\" as balance after error msg$")
+	public void i_enter_as_balance_after_error_msg(String arg1) throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandBoxValues sandboxValues = new SandBoxValues();
+		sandbox.enterBalanceError(arg1);
 		sandboxValues.setBalance(arg1);
 	}
 	
@@ -485,6 +499,14 @@ public class APISandBoxSteps extends BasicTestObject {
 		sandbox.selectSenderAddresses();
 	}
 	
+	@Then("^I should see the apimanager sandbox Manage Numbers page header as \"([^\"]*)\"$")
+	public void i_should_see_the_apimanager_sandbox_Manage_Numbers_page_header_as(String arg1) throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		 Assert.assertTrue("Sandbox Manage numbers page did not load properly", sandbox.isSansboxManageNumberPage(arg1));
+		
+	}
+	
+	
 	@When("^I clear existing Short codes \"([^\"]*)\"$")
 	public void i_clear_existing_Short_codes(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
@@ -511,27 +533,36 @@ public class APISandBoxSteps extends BasicTestObject {
 		SandBoxPage sandbox = new SandBoxPage(driver);
 		sandbox.enterDescription(arg1);  
 	}
-	
-	@When("^I click edit button$")
-	public void i_click_edit_button() throws Throwable {
-		SandBoxPage sandbox = new SandBoxPage(driver);
-		sandbox.clickEditbtn();
-	  
+
+	@When("^I click \"([^\"]*)\" edit button$")
+	public void i_click_edit_button(String arg1) throws Throwable {
+	SandBoxPage sandbox = new SandBoxPage(driver);
+	sandbox.clickEditbtnShortCode(arg1);
 	}
 	
-
-	
+	@When("^I click \"([^\"]*)\" edit button to edit number$")
+	public void i_click_edit_button_to_edit_number(String arg1) throws Throwable {
+	SandBoxPage sandbox = new SandBoxPage(driver);
+	sandbox.clickEditbtnNumber(arg1);
+	}
+	 
 	@When("^I enter description after error msg \"([^\"]*)\"$")
 	public void i_enter_description_after_error_msg(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
 		sandbox.enterDisAfetrErrorMsg(arg1);
 	}
 	
-
+	
 	@Then("^I should not see the \"([^\"]*)\" as added number in the numbers table$")
 	public void i_should_not_see_the_as_added_number_in_the_numbers_table(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
 		Assert.assertTrue("Number did not show properly", !sandbox.isNumberAvailable(arg1));
+	}
+	
+	@When("^I clear the balance$")
+	public void i_clear_the_balance() throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		sandbox.clearBalance();
 	}
 
 	@Then("^I should see the error message \"([^\"]*)\"$")
@@ -541,15 +572,21 @@ public class APISandBoxSteps extends BasicTestObject {
 	  
 	}
 
-
-	@When("^I click on Edit save button in under actions column$")
-	public void i_click_on_Edit_save_button_in_under_actions_column() throws Throwable {
+	@When("^I click on Edit save button in under actions column and raw \"([^\"]*)\"$")
+	public void i_click_on_Edit_save_button_in_under_actions_column_and_raw(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
-		sandbox.clickEditSavebtn();
+		sandbox.clickEditSavebtn(arg1);
 		Thread.sleep(sleepTime);
 	}
 	
+	@When("^I click on Edit save button in under actions column and short code \"([^\"]*)\"$")
+	public void i_click_on_Edit_save_button_in_under_actions_column_and_short_code(String arg1) throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		sandbox.clickEditSavebtnShortCode(arg1);
+		Thread.sleep(sleepTime);
+	}
 
+	
 	
 
 }

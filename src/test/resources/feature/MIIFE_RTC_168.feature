@@ -1,4 +1,4 @@
-Feature: Sandbox-ShortCode
+Feature: Sandbox API-Numbers
 
 @dataCreation
 Scenario Outline: Data creation part for the Sandbox API-Numbers
@@ -22,7 +22,6 @@ Examples:
 |usertype    |LastName   		|FirstName   		|Email               |
 |SANDBOXNO	 |AuxTestLastsndbxno|AuxTestFirstsndbxno|AuxTest123@gmail.com|
 
-
 @Smoke
 Scenario Outline: 
 Given I am in apimanager
@@ -31,35 +30,44 @@ Then I should see the Login in apimanager Sandbox page header as "Login"
 When I enter apimanager Sandbox page username and password for "<usertype>"
 And I click on apimanager Sandbox page login button
 Then I should see the apimanager sandbox index page header as "Welcome"
-When I click on numbers dropdown and select Sender Addresses
-Then I should see the apimanager sandbox Sender Addresses page header as "Manage Sender Addresses"
-When I clear existing Short codes "<ShortCode1>"
-And I clear existing Short codes "<ShortCode2>"
-#MIIFE_RTC_173 Check if short-code can be added and
-#MIIFE_RTC_176 Check if required fields are validate
-And I click on Add New button
-And I enter new short code "<ShortCode1>"
+When I click on numbers dropdown and select manage numbers
+Then I should see the apimanager sandbox Manage Numbers page header as "Manage Numbers"
+When I clear existing "<Number1>" from the list
+When I clear existing "<Number2>" from the list
+#MIIFE_RTC_168 Check if number can be added and
+#MIIFE_RTC_171 Check if required fields are validate
+When I click on add new button in manage numbers page
+When I enter "<Number1>" as number
 And I click on save button in under actions column
 Then I should see the error message "Value is required!" 
 When I enter description after error msg "<Description1>"
+And I clear the balance
 And I click on save button in under actions column
-Then I should see the "<ShortCode1>" as added number in the numbers table 
-#MIIFE_RTC_174 Check if short-code can be edited
-When I click "<ShortCode1>" edit button
-And I enter new short code "<ShortCode2>"
-And I enter description "<Description2>"
-And I click on Edit save button in under actions column and short code "<ShortCode1>"
-Then I should see the "<ShortCode2>" as added number in the numbers table 
-#MIIFE_RTC_177 Check if duplicate shortcode are validated
-When I click on Add New button
-And I enter new short code "<ShortCode2>"
-And I enter description "<Description2>"
+Then I should see the error message "Value is required!"
+When I enter "<Balance1>" as balance after error msg
 And I click on save button in under actions column
-Then I should see the error message "Shortcode already exists!" 
-#MIIFE_RTC_175 Check if short-code can be deleted
-When I clear existing Short codes "<ShortCode2>"
-Then I should not see the "<ShortCode2>" as added number in the numbers table 
+Then I should see the "<Number1>" as added number in the numbers table 
+#MIIFE_RTC_169 Check if number can be edited
+When I click "<Number1>" edit button to edit number
+When I edit "<Number2>" as number 
+And I enter description "<Description2>" 
+When I enter "<Balance2>" as balance
+And I click on Edit save button in under actions column and raw "<Number1>" 
+Then I should see the "<Number2>" as added number in the numbers table 
+#MIIFE_RTC_172 Check if duplicate number are validated
+When I click on add new button in manage numbers page
+When I enter "<Number2>" as number
+And I enter description "<Description2>"
+When I enter "<Balance2>" as balance
+And I click on save button in under actions column
+Then I should see the error message "Number already exists!" 
+#MIIFE_RTC_170 Check if number can be deleted
+When I clear existing "<Number2>" from the list
+Then I should not see the "<Number2>" as added number in the numbers table 
+
+
 
 Examples:
-|usertype |ShortCode1|ShortCode2|Description1		|Description2	   |
-|SANDBOXNO|7755		 |7788		|Testing short code |TESTING SHORT CODE|
+|usertype |Number1	  |Number2    |Description1      |Description2      |Balance1|Balance2|
+|SANDBOXNO|94771799673|94776414986|Testing short code|TESTING SHORT CODE|1000    |2000    |
+
