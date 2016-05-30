@@ -3,8 +3,10 @@ package com.wso2telco.tests.apimanager.steps.apimanager;
 import org.junit.*;
 
 import com.wso2telco.apimanager.pageobjects.apihome.sandbox.SandBoxPage;
+import com.wso2telco.apimanager.pageobjects.apihome.sandbox.SandboxLBSPage;
 import com.wso2telco.tests.apimanager.base.BasicTestObject;
-import com.wso2telco.tests.util.data.DataValidation;
+import com.wso2telco.tests.util.data.LocationDataValidation;
+import com.wso2telco.tests.util.data.PaymentDataValidation;
 import com.wso2telco.tests.util.data.SandBoxValues;
 import com.wso2telco.test.framework.tools.data.DataGenerator;
 
@@ -137,6 +139,13 @@ public class APISandBoxSteps extends BasicTestObject {
 		SandBoxPage sandbox = new SandBoxPage(driver);
 		sandbox.clickOnApi();
 		sandbox.clickOnPayment();
+	}
+	
+	@When("^I click on API dropdown and select location api$")
+	public void i_click_on_API_dropdown_and_select_location_api() throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		sandbox.clickOnApi();
+		sandbox.clickOnLBS();
 	}
 	
 	@Then("^I should see payment page header as \"([^\"]*)\"$")
@@ -293,7 +302,7 @@ public class APISandBoxSteps extends BasicTestObject {
 	@Then("^I validate the request payload$")
 	public void i_validate_the_request_payload() throws Throwable {
 		SandBoxValues sandboxValues = new SandBoxValues();
-		DataValidation data = new DataValidation();
+		PaymentDataValidation data = new PaymentDataValidation();
 		String requestPayload = sandboxValues.getRequestPayload();
 		Thread.sleep(sleepTime);
 		Assert.assertTrue("Request payload data mismatched",data.isRequestPayload(requestPayload));
@@ -302,7 +311,7 @@ public class APISandBoxSteps extends BasicTestObject {
 	@Then("^I validate the response payload$")
 	public void i_validate_the_response_payload() throws Throwable {
 		SandBoxValues sandboxValues = new SandBoxValues();
-		DataValidation data = new DataValidation();
+		PaymentDataValidation data = new PaymentDataValidation();
 		String responsePayload = sandboxValues.getResponsePayload();
 		Thread.sleep(sleepTime);
 		Assert.assertTrue("Response payload data mismatched", data.isResponsePayload(responsePayload));
@@ -311,7 +320,7 @@ public class APISandBoxSteps extends BasicTestObject {
 	@Then("^I validate the total amount$")
 	public void i_validate_the_total_amount() throws Throwable {
 		SandBoxValues sandboxValues = new SandBoxValues();
-		DataValidation data = new DataValidation();
+		PaymentDataValidation data = new PaymentDataValidation();
 		String responsePayload = sandboxValues.getResponsePayload();
 		Assert.assertTrue("Request payload data mismatched", data.isTotalAmount(responsePayload));
 	}
@@ -370,11 +379,11 @@ public class APISandBoxSteps extends BasicTestObject {
 	
 	@Then("^I get the server reference code$")
 	public void i_get_the_server_reference_code() throws Throwable {
-		SandBoxPage sandbox = new SandBoxPage(driver);
+		PaymentDataValidation dataValidation = new PaymentDataValidation();
 		SandBoxValues values = new SandBoxValues();
 		String responsePayload = values.getResponsePayload();
 		Thread.sleep(sleepTime);
-		String refCode = sandbox.getValueFromJson("serverReferenceCode", responsePayload);
+		String refCode = dataValidation.getValueFromJson("serverReferenceCode", responsePayload);
 		values.setServerReferenceCode(refCode);
 	}
 	
@@ -425,7 +434,7 @@ public class APISandBoxSteps extends BasicTestObject {
 	@Then("^I validate the refund request payload$")
 	public void i_validate_the_refund_request_payload() throws Throwable {
 		SandBoxValues sandboxValues = new SandBoxValues();
-		DataValidation data = new DataValidation();
+		PaymentDataValidation data = new PaymentDataValidation();
 		String requestPayload = sandboxValues.getRequestPayload();
 		Thread.sleep(sleepTime);
 		Assert.assertTrue("Request payload data mismatched",data.isRefundRequestPayload(requestPayload));
@@ -434,7 +443,7 @@ public class APISandBoxSteps extends BasicTestObject {
 	@Then("^I validate the refund response payload$")
 	public void i_validate_the_refund_response_payload() throws Throwable {
 		SandBoxValues sandboxValues = new SandBoxValues();
-		DataValidation data = new DataValidation();
+		PaymentDataValidation data = new PaymentDataValidation();
 		String responsePayload = sandboxValues.getResponsePayload();
 		Thread.sleep(sleepTime);
 		Assert.assertTrue("Response payload data mismatched",data.isRefundResponsePayload(responsePayload));
@@ -458,7 +467,7 @@ public class APISandBoxSteps extends BasicTestObject {
 
 	@Then("^I validate the balance of the \"([^\"]*)\"$")
 	public void i_validate_the_balance_of_the(String arg1) throws Throwable {
-		  DataValidation data =  new DataValidation();
+		  PaymentDataValidation data =  new PaymentDataValidation();
 		  Assert.assertTrue("Response payload data mismatched",data.isBalance(arg1));
 	}
 	
@@ -472,7 +481,7 @@ public class APISandBoxSteps extends BasicTestObject {
 	@Then("^I validate the error response payload$")
 	public void i_validate_the_error_response_payload() throws Throwable {
 		SandBoxValues sandboxValues = new SandBoxValues();
-		DataValidation data = new DataValidation();
+		PaymentDataValidation data = new PaymentDataValidation();
 		String responsePayload = sandboxValues.getResponsePayload();
 		Thread.sleep(sleepTime);
 		Assert.assertTrue("Response payload data mismatched", data.isErrorResponsePayload(responsePayload));
@@ -480,7 +489,7 @@ public class APISandBoxSteps extends BasicTestObject {
 	
 	@Then("^I validate the error response payload containing \"([^\"]*)\"$")
 	public void i_validate_the_error_response_payload_containing(String arg1) throws Throwable {
-		DataValidation data = new DataValidation();
+		PaymentDataValidation data = new PaymentDataValidation();
 		Assert.assertTrue("Response payload data mismatched", data.isErrorResponsePayload(arg1));
 	}
 	
@@ -533,7 +542,7 @@ public class APISandBoxSteps extends BasicTestObject {
 		SandBoxPage sandbox = new SandBoxPage(driver);
 		sandbox.enterDescription(arg1);  
 	}
-
+	
 	@When("^I click \"([^\"]*)\" edit button$")
 	public void i_click_edit_button(String arg1) throws Throwable {
 	SandBoxPage sandbox = new SandBoxPage(driver);
@@ -545,14 +554,13 @@ public class APISandBoxSteps extends BasicTestObject {
 	SandBoxPage sandbox = new SandBoxPage(driver);
 	sandbox.clickEditbtnNumber(arg1);
 	}
-	 
+
 	@When("^I enter description after error msg \"([^\"]*)\"$")
 	public void i_enter_description_after_error_msg(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
 		sandbox.enterDisAfetrErrorMsg(arg1);
 	}
-	
-	
+
 	@Then("^I should not see the \"([^\"]*)\" as added number in the numbers table$")
 	public void i_should_not_see_the_as_added_number_in_the_numbers_table(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
@@ -569,7 +577,6 @@ public class APISandBoxSteps extends BasicTestObject {
 	public void i_should_see_the_error_message(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
 		Assert.assertTrue("Incorrect Error message", sandbox.isErrorMsg(arg1));
-	  
 	}
 
 	@When("^I click on Edit save button in under actions column and raw \"([^\"]*)\"$")
@@ -586,7 +593,97 @@ public class APISandBoxSteps extends BasicTestObject {
 		Thread.sleep(sleepTime);
 	}
 
+	@When("^I set Altitude as \"([^\"]*)\"$")
+	public void i_set_Altitude_as(String arg1) throws Throwable {
+	    SandboxLBSPage lbsPage = new SandboxLBSPage(driver);
+	    lbsPage.setAltitude(arg1);
+	    LocationDataValidation locationDataValidation = new LocationDataValidation();
+	    locationDataValidation.setAltitude(arg1);
+	}
 	
+	@When("^I set Latitude as \"([^\"]*)\"$")
+	public void i_set_Latitude_as(String arg1) throws Throwable {
+		SandboxLBSPage lbsPage = new SandboxLBSPage(driver);
+	    lbsPage.setLatitude(arg1);
+	    LocationDataValidation locationDataValidation = new LocationDataValidation();
+	    locationDataValidation.setLatitude(arg1);
+	}
 	
+	@When("^I set Longitude as \"([^\"]*)\"$")
+	public void i_set_Longitude_as(String arg1) throws Throwable {
+		SandboxLBSPage lbsPage = new SandboxLBSPage(driver);
+	    lbsPage.setLongitude(arg1);
+	    LocationDataValidation locationDataValidation = new LocationDataValidation();
+	    locationDataValidation.setLongitude(arg1);
+	}
+	
+	@When("^I select Location Retrieval Status \"([^\"]*)\"$")
+	public void i_select_Location_Retrieval_Status(String arg1) throws Throwable {
+		SandboxLBSPage lbsPage = new SandboxLBSPage(driver);
+	    lbsPage.setLocationRetrievalStatus(arg1);
+	    LocationDataValidation locationDataValidation = new LocationDataValidation();
+	    locationDataValidation.setLocationRetrievalStatus(arg1);
+	}
+	
+	@When("^I click save button$")
+	public void i_click_save_button() throws Throwable {
+		SandboxLBSPage lbsPage = new SandboxLBSPage(driver);
+	    lbsPage.clickSave();
+	}
+	
+	@Then("^I validate Altitude as \"([^\"]*)\"$")
+	public void i_validate_Altitude_as(String arg1) throws Throwable {
+		LocationDataValidation locationDataValidation = new LocationDataValidation();
+	    Assert.assertTrue("Location Altitude mismatch", locationDataValidation.isAltitude(arg1));
+	}
+	
+	@Then("^I validate Latitude as \"([^\"]*)\"$")
+	public void i_validate_Latitude_as(String arg1) throws Throwable {
+		LocationDataValidation locationDataValidation = new LocationDataValidation();
+	    Assert.assertTrue("Location Latitude mismatch", locationDataValidation.isLatitude(arg1));
+	}
+	
+	@Then("^I valdaite Longitude as \"([^\"]*)\"$")
+	public void i_valdaite_Longitude_as(String arg1) throws Throwable {
+		LocationDataValidation locationDataValidation = new LocationDataValidation();
+	    Assert.assertTrue("Location Latitude mismatch", locationDataValidation.isLongitude(arg1));
+	}
+	
+	@Then("^I Valdiate Location Retrieval Status \"([^\"]*)\"$")
+	public void i_Valdiate_Location_Retrieval_Status(String arg1) throws Throwable {
+		LocationDataValidation locationDataValidation = new LocationDataValidation();
+	    Assert.assertTrue("Location Latitude mismatch", locationDataValidation.isLocationRetrievalStatus(arg1));	    
+	}
+	
+	@When("^I set adress as \"([^\"]*)\"$")
+	public void i_set_adress_as(String arg1) throws Throwable {
+		String telAddress = "tel:+" + arg1;
+		LocationDataValidation locationDataValidation = new LocationDataValidation();
+		locationDataValidation.setAddress(telAddress);
+		SandboxLBSPage lbsPage = new SandboxLBSPage(driver);
+	    lbsPage.setTelAddress(telAddress);
+	}
+	
+	@When("^I set requested accuracy \"([^\"]*)\"$")
+	public void i_set_requested_accuracy(String arg1) throws Throwable {
+		LocationDataValidation locationDataValidation = new LocationDataValidation();
+		locationDataValidation.setRequestedAccuracy(arg1);
+		SandboxLBSPage lbsPage = new SandboxLBSPage(driver);
+	    lbsPage.setRequestedAccuracy(arg1);
+	}
+	
+	@When("^I click on Send Request button$")
+	public void i_click_on_Send_Request_button() throws Throwable {
+		SandboxLBSPage lbsPage = new SandboxLBSPage(driver);
+	    lbsPage.clickSendRequest();
+	}
+
+	@Then("^I validate the response payload for location api$")
+	public void i_validate_the_response_payload_for_location_api() throws Throwable {
+		SandboxLBSPage lbsPage = new SandboxLBSPage(driver);
+	    String locationResponsePayload = lbsPage.getLocationResponse();
+	    LocationDataValidation locationDataValidation = new LocationDataValidation();
+	    Assert.assertTrue("Location response payload mismatch", locationDataValidation.isLocationResponsePayload(locationResponsePayload));
+	}
 
 }

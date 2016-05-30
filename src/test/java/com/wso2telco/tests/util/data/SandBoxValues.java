@@ -539,7 +539,5 @@ public class SandBoxValues implements Serializable {
 	public void setBalance(String balance) {
 		SandBoxValues.balance = balance;
 	}
-
-	
 	
 }
