@@ -2,6 +2,9 @@ package com.wso2telco.tests.util.data;
 
 import org.apache.log4j.Logger;
 
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.wso2telco.tests.apimanager.base.BasicTestObject;
 
 public class LocationDataValidation extends BasicTestObject {
@@ -233,7 +236,7 @@ public class LocationDataValidation extends BasicTestObject {
 		boolean flag = false;
 		try {
 			logger.debug("Validating location Longitude");
-			if (LocationRetrievalStatusVal.equalsIgnoreCase(getAltitude())){
+			if (LocationRetrievalStatusVal.equalsIgnoreCase(getLocationRetrievalStatus())){
 				flag = true;
 				logger.debug("Location Retrieval Status matched");
 			} else {
@@ -246,8 +249,116 @@ public class LocationDataValidation extends BasicTestObject {
 		return flag;
 	}
 	
-	public boolean isLocationResponsePayload(String jason){
+	/**
+	 * Checks if is location response payload.
+	 *
+	 * @author SulakkhanaW
+	 * @param json the json
+	 * @return true, if is location response payload
+	 */
+	public boolean isLocationResponsePayload(String json){
+		if (!getAddress().isEmpty()){
+			String responseAddress = getValueFromJsonLocation("address", json);
+			if (!responseAddress.equalsIgnoreCase(getAddress())){
+				return false;
+			}
+		}
+		if (!getLocationRetrievalStatus().isEmpty()){
+			String responseLocationRetrievalStatus = getValueFromJsonLocation("locationRetrievalStatus", json);
+			if (!responseLocationRetrievalStatus.equalsIgnoreCase(getLocationRetrievalStatus())){
+				return false;
+			}
+		}
+		if (!getAltitude().isEmpty()){
+			String responseAltitude = getValueFromJsonLocation("altitude", json);
+			if (!responseAltitude.equalsIgnoreCase(getAltitude())){
+				return false;
+			}
+		}
+		if (!getLongitude().isEmpty()){
+			String responseLongitude = getValueFromJsonLocation("longitude", json);
+			if (!responseLongitude.equalsIgnoreCase(getLongitude())){
+				return false;
+			}
+		}
+		if (!getLatitude().isEmpty()){
+			String responseLatitude = getValueFromJsonLocation("latitude", json);
+			if (!responseLatitude.equalsIgnoreCase(getLatitude())){
+				return false;
+			}
+		}
+		if (!getRequestedAccuracy().isEmpty()){
+			String responseRequestedAccuracy = getValueFromJsonLocation("accuracy", json);
+			if (!responseRequestedAccuracy.equalsIgnoreCase(getRequestedAccuracy())){
+				return false;
+			}
+		}
 		return true;
+	}
+	
+	/**
+	 * Gets the value from json location.
+	 *
+	 * @author SulakkhanaW
+	 * @param tag the tag
+	 * @param json the json
+	 * @return the value from json location
+	 */
+	public String getValueFromJsonLocation(String tag, String json) {
+		JsonElement jsonElement = new JsonParser().parse(json);
+		JsonObject jsonObject = jsonElement.getAsJsonObject();
+		String returnValue = null;
+		switch (tag) {
+
+		case "address":	
+		case "locationRetrievalStatus":
+			returnValue = getValueTerminalLocation(tag, jsonObject);
+			break;
+			
+		case "altitude":
+		case "longitude":
+		case "latitude":
+		case "accuracy":
+			returnValue = getValueCurrentLocation(tag, jsonObject);
+			break;
+			
+		default:
+			break;
+		}
+		return returnValue;
+	}
+	
+	/**
+	 * Gets the value terminal location.
+	 *
+	 * @author SulakkhanaW
+	 * @param tag the tag
+	 * @param jsonObject the json object
+	 * @return the value terminal location
+	 */
+	private String getValueTerminalLocation(String tag, JsonObject jsonObject){
+		jsonObject = jsonObject.getAsJsonObject("terminalLocationList");
+		jsonObject = jsonObject.getAsJsonObject("terminalLocation");
+		String returnValue = jsonObject.get(tag).toString();
+		String firstCharacter = Character.toString(returnValue.charAt(0));
+		if (firstCharacter.equalsIgnoreCase("\"")){
+			returnValue = returnValue.substring(1, returnValue.length()-1);
+		}
+		return returnValue;
+	}
+	
+
+	
+	private String getValueCurrentLocation(String tag, JsonObject jsonObject){
+		jsonObject = jsonObject.getAsJsonObject("terminalLocationList");
+		jsonObject = jsonObject.getAsJsonObject("terminalLocation");
+		jsonObject = jsonObject.getAsJsonObject("currentLocation");
+		String returnValue = jsonObject.get(tag).toString();
+		String firstCharacter = Character.toString(returnValue.charAt(0));
+		if (firstCharacter.equalsIgnoreCase("\"")){
+			returnValue = returnValue.substring(1, returnValue.length()-1);
+		}
+		return returnValue;
 	}
 
 }
