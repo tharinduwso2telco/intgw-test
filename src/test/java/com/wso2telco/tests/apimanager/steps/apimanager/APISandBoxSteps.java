@@ -685,5 +685,12 @@ public class APISandBoxSteps extends BasicTestObject {
 	    LocationDataValidation locationDataValidation = new LocationDataValidation();
 	    Assert.assertTrue("Location response payload mismatch", locationDataValidation.isLocationResponsePayload(locationResponsePayload));
 	}
+	
+	@When("^I click on Api drop down and select USSD$")
+	public void i_click_on_Api_drop_down_and_select_USSD() throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		sandbox.clickOnApi();
+		sandbox.clickOnUSSD();  
+	}
 
 }
