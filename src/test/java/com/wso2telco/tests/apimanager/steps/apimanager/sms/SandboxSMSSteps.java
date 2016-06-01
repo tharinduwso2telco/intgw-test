@@ -190,6 +190,32 @@ public class SandboxSMSSteps extends BasicTestObject {
 		Thread.sleep(sleepTime);
 	}
 	
+	@Then("^I validate SMS request payload$")
+	public void i_validate_SMS_request_payload() throws Throwable {
+		Thread.sleep(sleepTime);
+		if (config.getValue("browser").equals("FIREFOX")){
+			SandboxSMSPage smsPage = new SandboxSMSPage(driver);
+			String smsRequestPayload = smsPage.getSmsRequestPayload();
+			SMSDataValidation smsDataValidation = new SMSDataValidation();
+			Assert.assertTrue("Request payload mismatched", smsDataValidation.isSMSRequestPayload(smsRequestPayload));
+		} else {
+			Assert.assertTrue("Chomre and IE browsers request payloads is null after loading the page", true);
+		}
+	}
+
+	@Then("^I validate SMS response payload$")
+	public void i_validate_SMS_response_payload() throws Throwable {
+		Thread.sleep(sleepTime);
+		if (config.getValue("browser").equals("FIREFOX")) {
+			SandboxSMSPage smsPage = new SandboxSMSPage(driver);
+			String smsResponsePayload = smsPage.getSmsResponsePayload();
+			SMSDataValidation smsDataValidation = new SMSDataValidation();
+			Assert.assertTrue("Request payload mismatched", smsDataValidation.isSMSResponsePayload(smsResponsePayload));
+		} else {
+			Assert.assertTrue("Chomre and IE browsers reponse payloads is null after loading the page", true);
+		}
+	}
+	
 	@Then("^I validate table contains a row with correct SMS send data$")
 	public void i_validate_table_contains_a_row_with_correct_SMS_send_data() throws Throwable {
 		SandboxSMSPage smsPage = new SandboxSMSPage(driver);

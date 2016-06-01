@@ -1,4 +1,4 @@
-Feature: Sandbox-ShortCode
+Feature: Sandbox API-SMS
 
 @dataCreation
 Scenario Outline: Data creation part for the Sandbox SMS user
@@ -86,7 +86,9 @@ And I set callback Data as "doSomething()"
 And I set random criteria
 And I set random clientCorrelator
 When I click on Send request in settings page
-Then I validate table contains a row with correct SMS send data
+Then I validate SMS request payload
+And I validate SMS response payload
+And I validate table contains a row with correct SMS send data
 When I close the browsers
 
 Examples:

@@ -5,6 +5,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
 /**
  * The Class SMSDataValidation.
  */
@@ -128,6 +132,158 @@ public class SMSDataValidation {
 			}
 		}
 		return true;
+	}
+	
+	/**
+	 * Checks if is SMS request payload.
+	 *
+	 * @author SulakkhanaW
+	 * @param json the json
+	 * @return true, if is SMS request payload
+	 */
+	public boolean isSMSRequestPayload(String json){
+		if (!getSmsClientCorrelator().isEmpty()){
+			String requestclientCorrelator = getValueFromJsonSMS("clientCorrelator", json);
+			if (!requestclientCorrelator.equalsIgnoreCase(getSmsClientCorrelator())){
+				return false;
+			}
+		} if (!getSmsCriteria().isEmpty()){
+			String criteria = getValueFromJsonSMS("criteria", json);
+			if (!criteria.equalsIgnoreCase(getSmsCriteria())){
+				return false;
+			}
+		} if (!getApplicationNumber().isEmpty()){
+			String destinationAddress = getValueFromJsonSMS("destinationAddress", json);
+			if (!destinationAddress.equalsIgnoreCase(getApplicationNumber())){
+				return false;
+			}
+		} if (!getNotifyURL().isEmpty()){
+			String notifyURL = getValueFromJsonSMS("notifyURL", json);
+			if (!notifyURL.equalsIgnoreCase(getNotifyURL())){
+				return false;
+			}
+		} if (!getCallbackData().isEmpty()){
+			String callbackData = getValueFromJsonSMS("callbackData", json);
+			if (!callbackData.equalsIgnoreCase(getCallbackData())){
+				return false;
+			}
+		}
+		String notificationFormat = getValueFromJsonSMS("notificationFormat", json);
+		if (!"JSON".equalsIgnoreCase(notificationFormat)){
+			return false;
+		}
+		return true;
+	}
+	
+	/**
+	 * Checks if is SMS response payload.
+	 *
+	 * @author SulakkhanaW
+	 * @param json the json
+	 * @return true, if is SMS response payload
+	 */
+	public boolean isSMSResponsePayload(String json){
+		if (!getSmsClientCorrelator().isEmpty()){
+			String requestclientCorrelator = getValueFromJsonSMS("clientCorrelator", json);
+			if (!requestclientCorrelator.equalsIgnoreCase(getSmsClientCorrelator())){
+				return false;
+			}
+		} if (!getSmsCriteria().isEmpty()){
+			String criteria = getValueFromJsonSMS("criteria", json);
+			if (!criteria.equalsIgnoreCase(getSmsCriteria())){
+				return false;
+			}
+		} if (!getApplicationNumber().isEmpty()){
+			String destinationAddress = getValueFromJsonSMS("destinationAddress", json);
+			if (!destinationAddress.equalsIgnoreCase(getApplicationNumber())){
+				return false;
+			}
+		} if (!getNotifyURL().isEmpty()){
+			String notifyURL = getValueFromJsonSMS("notifyURL", json);
+			if (!notifyURL.equalsIgnoreCase(getNotifyURL())){
+				return false;
+			}
+		} if (!getCallbackData().isEmpty()){
+			String callbackData = getValueFromJsonSMS("callbackData", json);
+			if (!callbackData.equalsIgnoreCase(getCallbackData())){
+				return false;
+			}
+		}
+		String notificationFormat = getValueFromJsonSMS("notificationFormat", json);
+		if (!"JSON".equalsIgnoreCase(notificationFormat)){
+			return false;
+		}
+		return true;
+	}
+	
+	/**
+	 * Gets the value from json sms.
+	 *
+	 * @author SulakkhanaW
+	 * @param tag the tag
+	 * @param json the json
+	 * @return the value from json sms
+	 */
+	public String getValueFromJsonSMS(String tag, String json) {
+		JsonElement jsonElement = new JsonParser().parse(json);
+		JsonObject jsonObject = jsonElement.getAsJsonObject();
+		String returnValue = null;
+		switch (tag) {
+
+		case "clientCorrelator":	
+		case "criteria":	
+		case "destinationAddress":	
+		case "notificationFormat":	
+		case "resourceURL":
+			returnValue = getValueTerminalsubscription(tag, jsonObject);
+			break;
+			
+		case "notifyURL":
+		case "callbackData":
+			returnValue = getValueTerminalCallbackReference(tag, jsonObject);
+			break;
+			
+		default:
+			break;
+		}
+		return returnValue;
+	}
+	
+	/**
+	 * Gets the value terminalsubscription.
+	 *
+	 * @author SulakkhanaW
+	 * @param tag the tag
+	 * @param jsonObject the json object
+	 * @return the value terminalsubscription
+	 */
+	private String getValueTerminalsubscription(String tag, JsonObject jsonObject){
+		jsonObject = jsonObject.getAsJsonObject("subscription");
+		String returnValue = jsonObject.get(tag).toString();
+		String firstCharacter = Character.toString(returnValue.charAt(0));
+		if (firstCharacter.equalsIgnoreCase("\"")){
+			returnValue = returnValue.substring(1, returnValue.length()-1);
+		}
+		return returnValue;
+	}
+	
+	/**
+	 * Gets the value terminal callback reference.
+	 *
+	 * @author SulakkhanaW
+	 * @param tag the tag
+	 * @param jsonObject the json object
+	 * @return the value terminal callback reference
+	 */
+	private String getValueTerminalCallbackReference(String tag, JsonObject jsonObject){
+		jsonObject = jsonObject.getAsJsonObject("subscription");
+		jsonObject = jsonObject.getAsJsonObject("callbackReference");
+		String returnValue = jsonObject.get(tag).toString();
+		String firstCharacter = Character.toString(returnValue.charAt(0));
+		if (firstCharacter.equalsIgnoreCase("\"")){
+			returnValue = returnValue.substring(1, returnValue.length()-1);
+		}
+		return returnValue;
 	}
 
 	/**
