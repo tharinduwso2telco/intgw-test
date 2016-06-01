@@ -148,6 +148,13 @@ public class APISandBoxSteps extends BasicTestObject {
 		sandbox.clickOnLBS();
 	}
 	
+	@When("^I click on API dropdown and select SMS api$")
+	public void i_click_on_API_dropdown_and_select_SMS_api() throws Throwable {
+		SandBoxPage sandbox = new SandBoxPage(driver);
+		sandbox.clickOnApi();
+		sandbox.clickOnSMS();
+	}
+	
 	@Then("^I should see payment page header as \"([^\"]*)\"$")
 	public void i_should_see_payment_page_header_as(String arg1) throws Throwable {
 		SandBoxPage sandbox = new SandBoxPage(driver);
