@@ -33,11 +33,11 @@ Then I should see the apimanager sandbox index page header as "Welcome"
 When I click on numbers dropdown and select manage numbers
 Then I should see the apimanager sandbox Manage Numbers page header as "Manage Numbers"
 When I clear existing "<Number1>" from the list
-When I clear existing "<Number2>" from the list
+And I clear existing "<Number2>" from the list
 #MIIFE_RTC_168 Check if number can be added and
 #MIIFE_RTC_171 Check if required fields are validate
-When I click on add new button in manage numbers page
-When I enter "<Number1>" as number
+And I click on add new button in manage numbers page
+And I enter "<Number1>" as number
 And I click on save button in under actions column
 Then I should see the error message "Value is required!" 
 When I enter description after error msg "<Description1>"
@@ -49,16 +49,16 @@ And I click on save button in under actions column
 Then I should see the "<Number1>" as added number in the numbers table 
 #MIIFE_RTC_169 Check if number can be edited
 When I click "<Number1>" edit button to edit number
-When I edit "<Number2>" as number 
+And I edit "<Number2>" as number 
 And I enter description "<Description2>" 
-When I enter "<Balance2>" as balance
+And I enter "<Balance2>" as balance
 And I click on Edit save button in under actions column and raw "<Number1>" 
 Then I should see the "<Number2>" as added number in the numbers table 
 #MIIFE_RTC_172 Check if duplicate number are validated
 When I click on add new button in manage numbers page
-When I enter "<Number2>" as number
+And I enter "<Number2>" as number
 And I enter description "<Description2>"
-When I enter "<Balance2>" as balance
+And I enter "<Balance2>" as balance
 And I click on save button in under actions column
 Then I should see the error message "Number already exists!" 
 #MIIFE_RTC_170 Check if number can be deleted
