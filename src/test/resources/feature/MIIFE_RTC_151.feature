@@ -94,3 +94,55 @@ When I close the browsers
 Examples:
 |usertype  |ShortCode 	 |Number	  |deliveryStatus		|
 |SANDBOXSMS|8899		 |94771111111 |DeliveredToTerminal  |
+
+@Smoke1
+Scenario Outline: Check if an SMS can be retrieved
+Given I am in apimanager
+When I click on apimanager Sandbox
+Then I should see the Login in apimanager Sandbox page header as "Login"
+When I enter apimanager Sandbox page username and password for "<usertype>"
+And I click on apimanager Sandbox page login button
+Then I should see the apimanager sandbox index page header as "Welcome"
+When I click on API dropdown and select SMS api
+Then I should see payment page header as "Send SMS to Application"
+When I click on Send SMS link
+And I click on retrive SMS
+Then I should see the retrive SMS page header as "SMS Retrieve"
+When I Select registraionID as "<ShortCode>"
+And I enter max Batch Size as "2"
+And I click on Send Request button for retrive SMS
+Then I validate the SMS retrive response payload
+And I validate the SMS retrive response table
+When I close the browsers
+
+Examples:
+|usertype  |ShortCode 	 |
+|SANDBOXSMS|8899		 |
+
+@Smoke2
+Scenario Outline: Check if an SMS can be Delivery Subscriptions
+Given I am in apimanager
+When I click on apimanager Sandbox
+Then I should see the Login in apimanager Sandbox page header as "Login"
+When I enter apimanager Sandbox page username and password for "<usertype>"
+And I click on apimanager Sandbox page login button
+Then I should see the apimanager sandbox index page header as "Welcome"
+When I click on API dropdown and select SMS api
+Then I should see payment page header as "Send SMS to Application"
+When I click on Delivery Subscriptions link
+Then I should see the page delivery subscription page header as "Delivery Subscriptions"
+When I enter filter criteria as "some-meaningful-filter-string"
+And I enter notify URL as "http://www.yoururl.here/notifications/DeliveryInfoNotification"
+And I enter callback data as "some-data-useful-to-the-requester"
+And I enter random client correlator
+And I click on delivery subscription send request button
+Then I validate delivery subscription request payload
+And I validate delivery subscription response payload
+And I validate delivery subscription table
+When I unsubscribe the delivery subscrption
+Then I should not see the delivery subscribe on the subcription table
+When I close the browsers
+
+Examples:
+|usertype  |ShortCode 	 |
+|SANDBOXSMS|8899		 |
