@@ -1,7 +1,7 @@
 Feature: Sandbox-ShortCode
 
 @dataCreation
-Scenario Outline: Data creation part for the Sandbox API-Numbers
+Scenario Outline: Data creation part for the Sandbox API-ShortCode
 Given I am in apimanager
 When I click on apimanager sign-up button
 Then I should see the apimanager sign-up for a new account form as "Sign - Up for a New Account"
