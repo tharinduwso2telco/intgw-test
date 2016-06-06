@@ -3,7 +3,7 @@ package com.wso2telco.tests.util.data;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.wso2telco.apimanager.pageobjects.apihome.sandbox.SandBoxPage;
+import com.wso2telco.apimanager.pageobjects.apihome.sandbox.SandboxNumbers;
 import com.wso2telco.tests.apimanager.base.BasicTestObject;
 
 public class PaymentDataValidation extends BasicTestObject {
@@ -541,7 +541,7 @@ public class PaymentDataValidation extends BasicTestObject {
 	 */
 	public boolean isBalance(String number) throws Exception{
 		SandBoxValues sandboxValues = new SandBoxValues();
-		SandBoxPage sandbox = new SandBoxPage(driver);
+		SandboxNumbers sandbox = new SandboxNumbers(driver);
 		
 		if (!sandbox.getBalanceofTheNumber(number).equalsIgnoreCase(sandboxValues.getBalance())) {
 			return false;
