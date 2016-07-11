@@ -88,6 +88,7 @@ public class APIManageSteps extends BasicTestObject {
 	@When("^I click on apimanager Manager admin$")
 	public void i_click_on_apimanager_Manager_admin() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
+		Thread.sleep(sleepTime);
 		managerpage.clickUserName();
 	}
 
@@ -672,6 +673,21 @@ public class APIManageSteps extends BasicTestObject {
 		runtimeQuery.setRuntimeQuery(subscription_ratesQuery);
 		Assert.assertTrue("subscription_rates table is not updated", managerpage.isSubscriptionRatesTablesUpdated(subscription_ratesQuery));
 	}
-
+	
+	@When("^I approve admin subscriptions for \"([^\"]*)\" of for \"([^\"]*)\" by giving \"([^\"]*)\" and \"([^\"]*)\" as comment$")
+	public void i_approve_admin_subscriptions_for_of_for_by_giving_and_as_comment(String arg1, String arg2, String arg3, String arg4) throws Throwable {
+		String appName = config.getValue(getEnvironment() + arg2 + "user") + "_" + arg1;
+		ManagerPage managerpage = new ManagerPage(driver);
+		Thread.sleep(sleepTime);
+		managerpage.subscriptionApprovalsByAdmin(appName, arg3, arg4);
+	}
+	
+	@When("^I approve operator subscriptions for \"([^\"]*)\" of for \"([^\"]*)\" by giving \"([^\"]*)\" and \"([^\"]*)\" as comment$")
+	public void i_approve_operator_subscriptions_for_of_for_by_giving_and_as_comment(String arg1, String arg2, String arg3, String arg4) throws Throwable {
+		String appName = config.getValue(getEnvironment() + arg2 + "user") + "_" + arg1;
+		ManagerPage managerpage = new ManagerPage(driver);
+		Thread.sleep(sleepTime);
+		managerpage.subscriptionApprovalsByOperatorAdmin(appName, arg3, arg4);
+	}
 	
 }

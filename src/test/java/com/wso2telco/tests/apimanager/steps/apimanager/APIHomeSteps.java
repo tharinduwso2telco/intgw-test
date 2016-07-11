@@ -1,5 +1,8 @@
 package com.wso2telco.tests.apimanager.steps.apimanager;
 
+import java.util.ArrayList;
+import java.util.Set;
+
 import org.junit.Assert;
 
 import com.wso2telco.apimanager.pageobjects.apihome.HomePage;
@@ -210,6 +213,23 @@ public class APIHomeSteps extends BasicTestObject {
 		SubscriptionsPage subpage = new SubscriptionsPage(driver);
 		String appName = config.getValue(getEnvironment() + arg2 + "UserName") + "_" + arg1;
 		subpage.clickSelectAppDD(appName);
+	}
+	
+	@When("^I close the browsers$")
+	public void i_close_the_browsers() throws Throwable {
+	    if (driver != null){
+		    Set<String> winHandleBefore = driver.getWindowHandles();
+			ArrayList<String> windows = new ArrayList<>();
+			for (String winNum : winHandleBefore) {
+				windows.add(winNum);
+			}
+			int numbOfWindows = windows.size();
+			for (int x = 0; x < numbOfWindows; x++){
+				driver.switchTo().window(windows.get(x));
+				driver.close();
+				Thread.sleep(1000);
+			}    	
+	    }
 	}
 
 }

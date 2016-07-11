@@ -57,7 +57,7 @@ public class BasicTestObject extends TestBase {
 				//Setting environment
 				//setEnvironment(System.getProperty("env"));
 				//setEnvironment("staging");
-				setEnvironment("qa17");
+				setEnvironment("staging");
 				logInstruction("Initializing Config Completed");
 				isInitialized = true;
 			}
@@ -72,7 +72,7 @@ public class BasicTestObject extends TestBase {
 	public void openBrowser() throws Exception {
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		try {
-			if (CONFIG.getProperty("browser").equals("FIREFOX")) {
+			if (config.getValue("browser").equals("FIREFOX")) {
 				FirefoxProfile profile = new FirefoxProfile();
 				profile.setPreference("browser.download.folderList", 2);
 				profile.setPreference("browser.download.manager.showWhenStarting", false);
@@ -81,7 +81,7 @@ public class BasicTestObject extends TestBase {
 				capabilities.setPlatform(org.openqa.selenium.Platform.ANY);
 				capabilities.setCapability(FirefoxDriver.PROFILE, profile);
 				launchBrowser(capabilities);
-			} else if (CONFIG.getProperty("browser").equals("INTERNETEXPLORER")){
+			} else if (config.getValue("browser").equals("INTERNETEXPLORER")){
 				capabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, false);
 				capabilities.setCapability("ignoreProtectedModeSettings", true);
 				capabilities.setCapability("ignoreZoomSetting", true);
@@ -90,7 +90,7 @@ public class BasicTestObject extends TestBase {
 				capabilities.setCapability("IntroduceInstabilityByIgnoringProtectedModeSettings",true);
 				launchBrowser(capabilities);
 			}
-			else if (CONFIG.getProperty("browser").equals("CHROME")){
+			else if (config.getValue("browser").equals("CHROME")){
 				capabilities = DesiredCapabilities.chrome();
 				ChromeOptions chromeOptions = new ChromeOptions();
 				chromeOptions.addArguments("test-type");
@@ -98,7 +98,7 @@ public class BasicTestObject extends TestBase {
 				launchBrowser(capabilities);
 			}
 			isBrowserOpened = true;
-			String waitTime = CONFIG.getProperty("default_implicitWait");
+			String waitTime = config.getValue("default_implicitWait");
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(Long.parseLong(waitTime), TimeUnit.SECONDS);
 		} catch (Exception e) {
