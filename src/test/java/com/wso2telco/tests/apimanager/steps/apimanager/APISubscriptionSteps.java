@@ -1,8 +1,12 @@
 package com.wso2telco.tests.apimanager.steps.apimanager;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Assert;
 
 import com.wso2telco.apimanager.pageobjects.apihome.subscriptions.SubscriptionsPage;
+import com.wso2telco.test.framework.tools.excelfile.ExcelFileWriter;
 import com.wso2telco.tests.apimanager.base.BasicTestObject;
 import com.wso2telco.tests.util.data.DataAuthenticationKeys;
 
@@ -172,6 +176,27 @@ public class APISubscriptionSteps extends BasicTestObject {
 		SubscriptionsPage subpage = new SubscriptionsPage(driver);
 		Thread.sleep(sleepTime);
 		Assert.assertTrue("Subscribed APIs not showed", subpage.isSubscribedAPIs(arg1));
+	}
+	
+	@When("^I write generated productions keys to the \"([^\"]*)\" and sheet name as \"([^\"]*)\" for \"([^\"]*)\" \"([^\"]*)\"$")
+	public void i_write_generated_productions_keys_to_the_and_sheet_name_as_for(String arg1, String arg2, String arg3, String arg4) throws Throwable {
+		String filePath = System.getProperty("user.dir") + arg1;
+		List<List<String>> keys = new ArrayList<List<String>>();
+		List<String> tempheader = new ArrayList<String>();
+		List<String> temp = new ArrayList<String>();
+		SubscriptionsPage subpage = new SubscriptionsPage(driver);
+		tempheader.add("applcationName");
+		tempheader.add("accessToken");
+		tempheader.add("consumerKey");
+		tempheader.add("consumerSecretKey");
+		temp.add(config.getValue(getEnvironment() + arg4 + "user") + "_" + arg3);
+		temp.add(subpage.getProductionAccessToken());
+		temp.add(subpage.getConsKeyProd());
+		temp.add(subpage.geteSecKeyProd());
+		keys.add(tempheader);
+		keys.add(temp);
+		ExcelFileWriter excelFileWriter = new ExcelFileWriter();
+		excelFileWriter.writeExistingFile(filePath, arg2, keys);
 	}
 
 }

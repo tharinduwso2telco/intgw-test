@@ -43,7 +43,7 @@ Feature: Create inidan node data
 #
 #Examples:
 #|usertype|ApplicationDetails |Action |CallbackURL                                                      |Description |appName			  |
-#|LOGOUT  |Unlimited          |Approve|https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|AuXTestAPI  |AuxTestingAppRTC_105 |
+#|LOGOUT  |Unlimited          |Approve|https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|AuXTestAPI  |AuxTestingAppRTC_106 |
 #
 #@Smoke
 #Scenario Outline: Subscribe APIs
@@ -63,10 +63,10 @@ Feature: Create inidan node data
 #
 #Examples:
 #|usertype|apiName	  |appName				 |operator|
-#|LOGOUT  |location	  |AuxTestingAppRTC_105  |DIALOG  |
-#|LOGOUT  |payment	  |AuxTestingAppRTC_105  |DIALOG  |
-#|LOGOUT  |smsmessaging|AuxTestingAppRTC_105  |DIALOG  |
-#
+#|LOGOUT  |location	  |AuxTestingAppRTC_106  |DIALOG  |
+#|LOGOUT  |payment	  |AuxTestingAppRTC_106  |DIALOG  |
+#|LOGOUT  |smsmessaging|AuxTestingAppRTC_106  |DIALOG  |
+
 @Smoke
 Scenario Outline: Subscribtion approval
 Given I am in apimanager
@@ -89,11 +89,11 @@ Given I am in apimanager
 #And I click on apimanager Manager logout button
 #When I click on close window
 #Then I am in apimanager
-#When I click on apimanager My Subscriptions
-#And I enter apimanager Login username and password for "<usertype>" 
-#And I click on apimanager Login pop up login button
-#Then I should see the apimanager Subscriptions page header as "Subscriptions"
-#When I select created application "<appName>" from the dropdown for "<usertype>"
+When I click on apimanager My Subscriptions
+And I enter apimanager Login username and password for "<usertype>" 
+And I click on apimanager Login pop up login button
+Then I should see the apimanager Subscriptions page header as "Subscriptions"
+When I select created application "<appName>" from the dropdown for "<usertype>"
 #And I enter token validity of production as "<validity>"
 #And I click generate under apimanager Subscriptions page production
 #Then I should see consumer Key of production
@@ -102,44 +102,45 @@ Given I am in apimanager
 #And I click generate under apimanager Subscriptions page sandbox
 #Then I should see consumer Key of sandbox
 #And I should see consumer Secret of sandbox
+When I write generated productions keys to the "<file>" and sheet name as "keys" for "<appName>" "<usertype>"
 
 Examples:
-|usertype|appName			   |ApplicationDetails |validity |
-|LOGOUT  |AuxTestingAppRTC_105 |Unlimited          |-1		 |
+|usertype|appName			   |ApplicationDetails |validity |file											|
+|LOGOUT  |AuxTestingAppRTC_106 |Unlimited          |-1		 |/src/test/resources/config/data/appKeys.xlsx	|
 
-@Smoke
-Scenario Outline: Carbon confi
-Given I am in identity server page
-When I enter identity server username credentials
-And I click on identity server sign in
-And I click on identity server Main tab
-And I click on ids Main List link
-And I click on "<appName>" edit link for "<usertype>"
-And I click on Inbound Authentication Configuration
-And I click on OAuth/OpenID Connect Configuration
-And I click on OAth client secret show button
-And I click on Local and Outbound Authentication Configuration 
-And I select Advanced Configuration
-Then I should see Advanced Authentication Configuration for "<appName>" page for "<usertype>"
-When I click on Add Authentication Step
-And I select "LOA" under Local Authenticators
-And I click update
-Then I should see ids Service providers page header as "Service Providers"
-When I click on Inbound Authentication Configuration
-And I click on OAuth/OpenID Connect Configuration
-And I click edit in Actions 
-Then I should see View/Update application settings page header as "View/Update application settings"
-When I click on Code
-Then I should see "<CallbackURL>" as call back url
-When I click on Implicit
-And I click on Password 
-And I click on Client Credential 
-And I click on Refresh Token 
-And I click on SAML 
-And I click on IWA-NTLM
-And I click on View/Update application settings page update
-Then I should see Application updated successfully pop up message as "Application updated successfully"
-
-Examples:
-|usertype|appName			   |CallbackURL                                                      |
-|LOGOUT  |AuxTestingAppRTC_105 |https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|
+#@Smoke
+#Scenario Outline: Carbon confi
+#Given I am in identity server page
+#When I enter identity server username credentials
+#And I click on identity server sign in
+#And I click on identity server Main tab
+#And I click on ids Main List link
+#And I click on "<appName>" edit link for "<usertype>"
+#And I click on Inbound Authentication Configuration
+#And I click on OAuth/OpenID Connect Configuration
+#And I click on OAth client secret show button
+#And I click on Local and Outbound Authentication Configuration 
+#And I select Advanced Configuration
+#Then I should see Advanced Authentication Configuration for "<appName>" page for "<usertype>"
+#When I click on Add Authentication Step
+#And I select "LOA" under Local Authenticators
+#And I click update
+#Then I should see ids Service providers page header as "Service Providers"
+#When I click on Inbound Authentication Configuration
+#And I click on OAuth/OpenID Connect Configuration
+#And I click edit in Actions 
+#Then I should see View/Update application settings page header as "View/Update application settings"
+#When I click on Code
+#Then I should see "<CallbackURL>" as call back url
+#When I click on Implicit
+#And I click on Password 
+#And I click on Client Credential 
+#And I click on Refresh Token 
+#And I click on SAML 
+#And I click on IWA-NTLM
+#And I click on View/Update application settings page update
+#Then I should see Application updated successfully pop up message as "Application updated successfully"
+#
+#Examples:
+#|usertype|appName			   |CallbackURL                                                      |
+#|LOGOUT  |AuxTestingAppRTC_106 |https://identity.qa.example.com/playground2/oauth2.jsp?reset=true|
