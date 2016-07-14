@@ -53,11 +53,11 @@ public class BasicTestObject extends TestBase {
 				CONFIG = new Properties();
 				FileInputStream ip = new FileInputStream(System.getProperty("user.dir") + "\\src\\test\\resources\\config\\config.properties");
 				CONFIG.load(ip);
-				
-				//Setting environment
-				//setEnvironment(System.getProperty("env"));
-				//setEnvironment("staging");
-				setEnvironment("staging");
+				if (System.getProperty("env") != null) {
+					setEnvironment(System.getProperty("env"));
+				} else {
+					setEnvironment(config.getValue("Environment"));
+				}
 				logInstruction("Initializing Config Completed");
 				isInitialized = true;
 			}
