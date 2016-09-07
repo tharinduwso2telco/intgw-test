@@ -15,15 +15,15 @@
    limitations under the License.
 -->
 
-<!--  Basic DTD for podlings.xml -->
-<!ELEMENT templates (template+)>
+        <!--  Basic DTD for podlings.xml -->
+        <!ELEMENT templates (template+)>
 
-<!ELEMENT template (name, fileName, description)>
-<!-- Whether the template is a complete test plan or not -->
-<!ATTLIST template isTestPlan (true|false) #REQUIRED>
+        <!ELEMENT template (name, fileName, description)>
+        <!-- Whether the template is a complete test plan or not -->
+        <!ATTLIST template isTestPlan (true|false) #REQUIRED>
 
-<!ELEMENT name  (#PCDATA)  >
+        <!ELEMENT name  (#PCDATA)  >
 
-<!ELEMENT fileName  (#PCDATA)  >
+        <!ELEMENT fileName  (#PCDATA)  >
 
-<!ELEMENT description  (#PCDATA)  >
+        <!ELEMENT description  (#PCDATA)  >

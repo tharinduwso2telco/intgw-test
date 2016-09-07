@@ -14,189 +14,189 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class APISubscriptionSteps extends BasicTestObject {
-	
-	@Then("^I should see \"([^\"]*)\" under Applications with Subscriptions for \"([^\"]*)\"$")
-	public void i_should_see_under_Applications_with_Subscriptions_for(String arg1, String arg2) throws Throwable {
-	   SubscriptionsPage subpage = new SubscriptionsPage(driver);
-	   String appName = config.getValue(getEnvironment() + arg2 + "user") + "_" + arg1;
-	   Assert.assertTrue("Apps with subscription did not load properly", subpage.isAppsWithSubscriptions(appName));  
-	}
-	
-	@When("^I select created application \"([^\"]*)\" from the dropdown for \"([^\"]*)\"$")
-	public void i_select_created_application_from_the_dropdown_for(String arg1, String arg2) throws Throwable {
-		SubscriptionsPage subpage = new SubscriptionsPage(driver);
-		String appName = config.getValue(getEnvironment() + arg2 + "user") + "_" + arg1;
-		subpage.clickSelectAppDD(appName);
-	}
 
-	@When("^I enter token validity of production as \"([^\"]*)\"$")
-	public void i_enter_token_validity_of_production_as(String arg1) throws Throwable {
-		SubscriptionsPage subpage = new SubscriptionsPage(driver);
-		subpage.enterTokenValidityProd(arg1);
-	}
-	
-	@When("^I click generate under apimanager Subscriptions page production$")
-	public void i_click_generate_under_apimanager_Subscriptions_page_production() throws Throwable {
-		SubscriptionsPage subpage = new SubscriptionsPage(driver);
-		subpage.clickProdGen();
-		Thread.sleep(sleepTime);
-	}
-	
-	@When("^I click generate under apimanager Subscriptions page sandbox$")
-	public void i_click_generate_under_apimanager_Subscriptions_page_sandbox() throws Throwable {
-		SubscriptionsPage subpage = new SubscriptionsPage(driver);
-		subpage.clickSandGen();
-		Thread.sleep(sleepTime);
-	}
-	
-	@When("^I enter token validity of sandbox as \"([^\"]*)\"$")
-	public void i_enter_token_validity_of_sandbox_as(String arg1) throws Throwable {
-		SubscriptionsPage subpage = new SubscriptionsPage(driver);
-		subpage.enterTokenValiditySand(arg1);
-	}
+    @Then("^I should see \"([^\"]*)\" under Applications with Subscriptions for \"([^\"]*)\"$")
+    public void i_should_see_under_Applications_with_Subscriptions_for(String arg1, String arg2) throws Throwable {
+        SubscriptionsPage subpage = new SubscriptionsPage(driver);
+        String appName = config.getValue(getEnvironment() + arg2 + "user") + "_" + arg1;
+        Assert.assertTrue("Apps with subscription did not load properly", subpage.isAppsWithSubscriptions(appName));
+    }
 
-	@Then("^I should see consumer Key of production$")
-	public String i_should_see_consumer_Key_of_production() throws Throwable {
-		SubscriptionsPage subpage = new SubscriptionsPage(driver);
-		String conKeyProd = subpage.getConsKeyProd();
-		Assert.assertTrue("Consumer key is not generated", subpage.isProductionConsumerKey());
-		return conKeyProd;
-	}
+    @When("^I select created application \"([^\"]*)\" from the dropdown for \"([^\"]*)\"$")
+    public void i_select_created_application_from_the_dropdown_for(String arg1, String arg2) throws Throwable {
+        SubscriptionsPage subpage = new SubscriptionsPage(driver);
+        String appName = config.getValue(getEnvironment() + arg2 + "user") + "_" + arg1;
+        subpage.clickSelectAppDD(appName);
+    }
 
-	@Then("^I should see consumer Secret of production$")
-	public String i_should_see_consumer_Secret_of_production() throws Throwable {
-		SubscriptionsPage subpage = new SubscriptionsPage(driver);
-		String secKeyProd = subpage.geteSecKeyProd();
-		Assert.assertTrue("Production consumer secrect key is not displayed", subpage.isProductionConsumerSecrectKey());
-		return secKeyProd;
-	}
+    @When("^I enter token validity of production as \"([^\"]*)\"$")
+    public void i_enter_token_validity_of_production_as(String arg1) throws Throwable {
+        SubscriptionsPage subpage = new SubscriptionsPage(driver);
+        subpage.enterTokenValidityProd(arg1);
+    }
 
-	@Then("^I should see consumer Key of sandbox$")
-	public String i_should_see_consumer_Key_of_sandbox() throws Throwable {
-		SubscriptionsPage subpage = new SubscriptionsPage(driver);
-		String conKeySand = subpage.getConsKeySand();
-		DataAuthenticationKeys auth = new DataAuthenticationKeys();
-		auth.setSandboxConsumerKey(conKeySand);
-		Assert.assertTrue("Sandbox consumer key is not displayed", subpage.isSandboxConsumerKey());
-		return conKeySand;
-	}
+    @When("^I click generate under apimanager Subscriptions page production$")
+    public void i_click_generate_under_apimanager_Subscriptions_page_production() throws Throwable {
+        SubscriptionsPage subpage = new SubscriptionsPage(driver);
+        subpage.clickProdGen();
+        Thread.sleep(sleepTime);
+    }
 
-	@Then("^I should see consumer Secret of sandbox$")
-	public String i_should_see_consumer_Secret_of_sandbox() throws Throwable {
-		SubscriptionsPage subpage = new SubscriptionsPage(driver);
-		String secKeySand = subpage.getSecKeySand();
-		DataAuthenticationKeys auth = new DataAuthenticationKeys();
-		auth.setSandboxConsumerSecretKey(secKeySand);
-		Assert.assertTrue("Sandbox consumer secrect key is not displayed", subpage.isSandboxSecrectKey());
-		return secKeySand;
-	}
+    @When("^I click generate under apimanager Subscriptions page sandbox$")
+    public void i_click_generate_under_apimanager_Subscriptions_page_sandbox() throws Throwable {
+        SubscriptionsPage subpage = new SubscriptionsPage(driver);
+        subpage.clickSandGen();
+        Thread.sleep(sleepTime);
+    }
+
+    @When("^I enter token validity of sandbox as \"([^\"]*)\"$")
+    public void i_enter_token_validity_of_sandbox_as(String arg1) throws Throwable {
+        SubscriptionsPage subpage = new SubscriptionsPage(driver);
+        subpage.enterTokenValiditySand(arg1);
+    }
+
+    @Then("^I should see consumer Key of production$")
+    public String i_should_see_consumer_Key_of_production() throws Throwable {
+        SubscriptionsPage subpage = new SubscriptionsPage(driver);
+        String conKeyProd = subpage.getConsKeyProd();
+        Assert.assertTrue("Consumer key is not generated", subpage.isProductionConsumerKey());
+        return conKeyProd;
+    }
+
+    @Then("^I should see consumer Secret of production$")
+    public String i_should_see_consumer_Secret_of_production() throws Throwable {
+        SubscriptionsPage subpage = new SubscriptionsPage(driver);
+        String secKeyProd = subpage.geteSecKeyProd();
+        Assert.assertTrue("Production consumer secrect key is not displayed", subpage.isProductionConsumerSecrectKey());
+        return secKeyProd;
+    }
+
+    @Then("^I should see consumer Key of sandbox$")
+    public String i_should_see_consumer_Key_of_sandbox() throws Throwable {
+        SubscriptionsPage subpage = new SubscriptionsPage(driver);
+        String conKeySand = subpage.getConsKeySand();
+        DataAuthenticationKeys auth = new DataAuthenticationKeys();
+        auth.setSandboxConsumerKey(conKeySand);
+        Assert.assertTrue("Sandbox consumer key is not displayed", subpage.isSandboxConsumerKey());
+        return conKeySand;
+    }
+
+    @Then("^I should see consumer Secret of sandbox$")
+    public String i_should_see_consumer_Secret_of_sandbox() throws Throwable {
+        SubscriptionsPage subpage = new SubscriptionsPage(driver);
+        String secKeySand = subpage.getSecKeySand();
+        DataAuthenticationKeys auth = new DataAuthenticationKeys();
+        auth.setSandboxConsumerSecretKey(secKeySand);
+        Assert.assertTrue("Sandbox consumer secrect key is not displayed", subpage.isSandboxSecrectKey());
+        return secKeySand;
+    }
 
 
-	@When("^I click regenerate under apimanager Subscriptions page production$")
-	public void i_click_regenerate_under_apimanager_Subscriptions_page_production() throws Throwable {
-		SubscriptionsPage subpage = new SubscriptionsPage(driver);
-		subpage.clickReGenProd();
-	}
+    @When("^I click regenerate under apimanager Subscriptions page production$")
+    public void i_click_regenerate_under_apimanager_Subscriptions_page_production() throws Throwable {
+        SubscriptionsPage subpage = new SubscriptionsPage(driver);
+        subpage.clickReGenProd();
+    }
 
-	@Then("^I should see \"([^\"]*)\" as Token Validity of production$")
-	public void i_should_see_as_Token_Validity_of_production(String arg1) throws Throwable {
-		SubscriptionsPage subpage = new SubscriptionsPage(driver);
-		Assert.assertTrue(subpage.isTokenValidityProd(arg1));
-	}
+    @Then("^I should see \"([^\"]*)\" as Token Validity of production$")
+    public void i_should_see_as_Token_Validity_of_production(String arg1) throws Throwable {
+        SubscriptionsPage subpage = new SubscriptionsPage(driver);
+        Assert.assertTrue(subpage.isTokenValidityProd(arg1));
+    }
 
-	@When("^I click regenerate under apimanager Subscriptions page sandbox$")
-	public void i_click_regenerate_under_apimanager_Subscriptions_page_sandbox() throws Throwable {
-		SubscriptionsPage subpage = new SubscriptionsPage(driver);
-		subpage.clickReGenSand();
-	}
+    @When("^I click regenerate under apimanager Subscriptions page sandbox$")
+    public void i_click_regenerate_under_apimanager_Subscriptions_page_sandbox() throws Throwable {
+        SubscriptionsPage subpage = new SubscriptionsPage(driver);
+        subpage.clickReGenSand();
+    }
 
-	@Then("^I should see \"([^\"]*)\" as Token Validity of sandbox$")
-	public void i_should_see_as_Token_Validity_of_sandbox(String arg1) throws Throwable {
-		SubscriptionsPage subpage = new SubscriptionsPage(driver);
-		Assert.assertTrue(subpage.isTokenValiditySand(arg1));
-	}
-	
-	@Then("^I should see the excisting Access Token of Production$")
-	public String i_should_see_the_excisting_Access_Token_of_Production() throws Throwable {
-		SubscriptionsPage subpage = new SubscriptionsPage(driver);
-		DataAuthenticationKeys authKeys = new DataAuthenticationKeys();
-		String accessTokenProd = subpage.getAccessTokenProd();
-		authKeys.setProductionAccessToken(accessTokenProd);
-		return accessTokenProd;
-	}
-	
-	@Then("^I should see the excisting Access Token of Sandbox$")
-	public String i_should_see_the_excisting_Access_Token_of_Sandbox() throws Throwable {
-		SubscriptionsPage subpage = new SubscriptionsPage(driver);
-		DataAuthenticationKeys authKeys = new DataAuthenticationKeys();
-		String accessTokenSand = subpage.getAccessTokenSand();
-		authKeys.setSandboxAccessToken(accessTokenSand);
-		return accessTokenSand;
-	}
-	
-	@Then("^I should see the regenerated Access Token of Production$")
-	public void i_should_see_the_regenerated_Access_Token_of_Production() throws Throwable {
-		SubscriptionsPage subpage = new SubscriptionsPage(driver);
-		DataAuthenticationKeys authKeys = new DataAuthenticationKeys();
-		String regeneratedAccessTokenProd = subpage.getAccessTokenProd();
-		authKeys.setProducionRegenerateAcessToken(regeneratedAccessTokenProd);
-	}
-	
-	@Then("^I should see the regenerated Access Token of production is different from the previous Access Token of production$")
-	public void i_should_see_the_regenerated_Access_Token_of_production_is_different_from_the_previous_Access_Token_of_production() throws Throwable {
-		DataAuthenticationKeys authKeys = new DataAuthenticationKeys();
-		SubscriptionsPage subpage = new SubscriptionsPage(driver);
-		String productionAccessToken = authKeys.getProductionAccessToken();
-		String producionRegenerateAcessToken = authKeys.getProducionRegenerateAcessToken();
-		Assert.assertTrue("Access token is not regenerated", subpage.isAccessKeyRegenerated(productionAccessToken, producionRegenerateAcessToken));
-	}
-	
+    @Then("^I should see \"([^\"]*)\" as Token Validity of sandbox$")
+    public void i_should_see_as_Token_Validity_of_sandbox(String arg1) throws Throwable {
+        SubscriptionsPage subpage = new SubscriptionsPage(driver);
+        Assert.assertTrue(subpage.isTokenValiditySand(arg1));
+    }
 
-	@Then("^I should see the regenerated Access Token of Sandbox$")
-	public void i_should_see_the_regenerated_Access_Token_of_Sandbox()
-			throws Throwable {
-		SubscriptionsPage subpage = new SubscriptionsPage(driver);
-		DataAuthenticationKeys authKeys = new DataAuthenticationKeys();
-		String regeratedAccessTokenSand = subpage.getAccessTokenSand();
-		authKeys.setSandboxRegenerateAccessToken(regeratedAccessTokenSand);
-	}
+    @Then("^I should see the excisting Access Token of Production$")
+    public String i_should_see_the_excisting_Access_Token_of_Production() throws Throwable {
+        SubscriptionsPage subpage = new SubscriptionsPage(driver);
+        DataAuthenticationKeys authKeys = new DataAuthenticationKeys();
+        String accessTokenProd = subpage.getAccessTokenProd();
+        authKeys.setProductionAccessToken(accessTokenProd);
+        return accessTokenProd;
+    }
 
-	@Then("^I should see the regenerated Access Token of sandbox is different from the previous Access Token of sandbox$")
-	public void i_should_see_the_regenerated_Access_Token_of_sandbox_is_different_from_the_previous_Access_Token_of_sandbox()
-			throws Throwable {
-		DataAuthenticationKeys authKeys = new DataAuthenticationKeys();
-		SubscriptionsPage subpage = new SubscriptionsPage(driver);
-		String sandboxAccessToken = authKeys.getSandboxAccessToken();
-		String sandboxRegenerateAccessToken = authKeys.getSandboxRegenerateAccessToken();
-		Assert.assertTrue("Access token is not regenerated", subpage.isAccessKeyRegenerated(sandboxAccessToken, sandboxRegenerateAccessToken));
-	}
-	
-	@Then("^I should see the \"([^\"]*)\" under Subscribed APIs$")
-	public void i_should_see_the_under_Subscribed_APIs(String arg1) throws Throwable {
-		SubscriptionsPage subpage = new SubscriptionsPage(driver);
-		Thread.sleep(sleepTime);
-		Assert.assertTrue("Subscribed APIs not showed", subpage.isSubscribedAPIs(arg1));
-	}
-	
-	@When("^I write generated productions keys to the \"([^\"]*)\" and sheet name as \"([^\"]*)\" for \"([^\"]*)\" \"([^\"]*)\"$")
-	public void i_write_generated_productions_keys_to_the_and_sheet_name_as_for(String arg1, String arg2, String arg3, String arg4) throws Throwable {
-		String filePath = System.getProperty("user.dir") + arg1;
-		List<List<String>> keys = new ArrayList<List<String>>();
-		List<String> tempheader = new ArrayList<String>();
-		List<String> temp = new ArrayList<String>();
-		SubscriptionsPage subpage = new SubscriptionsPage(driver);
-		tempheader.add("applcationName");
-		tempheader.add("accessToken");
-		tempheader.add("consumerKey");
-		tempheader.add("consumerSecretKey");
-		temp.add(config.getValue(getEnvironment() + arg4 + "user") + "_" + arg3);
-		temp.add(subpage.getProductionAccessToken());
-		temp.add(subpage.getConsKeyProd());
-		temp.add(subpage.geteSecKeyProd());
-		keys.add(tempheader);
-		keys.add(temp);
-		ExcelFileWriter excelFileWriter = new ExcelFileWriter();
-		excelFileWriter.writeExistingFile(filePath, arg2, keys);
-	}
+    @Then("^I should see the excisting Access Token of Sandbox$")
+    public String i_should_see_the_excisting_Access_Token_of_Sandbox() throws Throwable {
+        SubscriptionsPage subpage = new SubscriptionsPage(driver);
+        DataAuthenticationKeys authKeys = new DataAuthenticationKeys();
+        String accessTokenSand = subpage.getAccessTokenSand();
+        authKeys.setSandboxAccessToken(accessTokenSand);
+        return accessTokenSand;
+    }
+
+    @Then("^I should see the regenerated Access Token of Production$")
+    public void i_should_see_the_regenerated_Access_Token_of_Production() throws Throwable {
+        SubscriptionsPage subpage = new SubscriptionsPage(driver);
+        DataAuthenticationKeys authKeys = new DataAuthenticationKeys();
+        String regeneratedAccessTokenProd = subpage.getAccessTokenProd();
+        authKeys.setProducionRegenerateAcessToken(regeneratedAccessTokenProd);
+    }
+
+    @Then("^I should see the regenerated Access Token of production is different from the previous Access Token of production$")
+    public void i_should_see_the_regenerated_Access_Token_of_production_is_different_from_the_previous_Access_Token_of_production() throws Throwable {
+        DataAuthenticationKeys authKeys = new DataAuthenticationKeys();
+        SubscriptionsPage subpage = new SubscriptionsPage(driver);
+        String productionAccessToken = authKeys.getProductionAccessToken();
+        String producionRegenerateAcessToken = authKeys.getProducionRegenerateAcessToken();
+        Assert.assertTrue("Access token is not regenerated", subpage.isAccessKeyRegenerated(productionAccessToken, producionRegenerateAcessToken));
+    }
+
+
+    @Then("^I should see the regenerated Access Token of Sandbox$")
+    public void i_should_see_the_regenerated_Access_Token_of_Sandbox()
+            throws Throwable {
+        SubscriptionsPage subpage = new SubscriptionsPage(driver);
+        DataAuthenticationKeys authKeys = new DataAuthenticationKeys();
+        String regeratedAccessTokenSand = subpage.getAccessTokenSand();
+        authKeys.setSandboxRegenerateAccessToken(regeratedAccessTokenSand);
+    }
+
+    @Then("^I should see the regenerated Access Token of sandbox is different from the previous Access Token of sandbox$")
+    public void i_should_see_the_regenerated_Access_Token_of_sandbox_is_different_from_the_previous_Access_Token_of_sandbox()
+            throws Throwable {
+        DataAuthenticationKeys authKeys = new DataAuthenticationKeys();
+        SubscriptionsPage subpage = new SubscriptionsPage(driver);
+        String sandboxAccessToken = authKeys.getSandboxAccessToken();
+        String sandboxRegenerateAccessToken = authKeys.getSandboxRegenerateAccessToken();
+        Assert.assertTrue("Access token is not regenerated", subpage.isAccessKeyRegenerated(sandboxAccessToken, sandboxRegenerateAccessToken));
+    }
+
+    @Then("^I should see the \"([^\"]*)\" under Subscribed APIs$")
+    public void i_should_see_the_under_Subscribed_APIs(String arg1) throws Throwable {
+        SubscriptionsPage subpage = new SubscriptionsPage(driver);
+        Thread.sleep(sleepTime);
+        Assert.assertTrue("Subscribed APIs not showed", subpage.isSubscribedAPIs(arg1));
+    }
+
+    @When("^I write generated productions keys to the \"([^\"]*)\" and sheet name as \"([^\"]*)\" for \"([^\"]*)\" \"([^\"]*)\"$")
+    public void i_write_generated_productions_keys_to_the_and_sheet_name_as_for(String arg1, String arg2, String arg3, String arg4) throws Throwable {
+        String filePath = System.getProperty("user.dir") + arg1;
+        List<List<String>> keys = new ArrayList<List<String>>();
+        List<String> tempheader = new ArrayList<String>();
+        List<String> temp = new ArrayList<String>();
+        SubscriptionsPage subpage = new SubscriptionsPage(driver);
+        tempheader.add("applcationName");
+        tempheader.add("accessToken");
+        tempheader.add("consumerKey");
+        tempheader.add("consumerSecretKey");
+        temp.add(config.getValue(getEnvironment() + arg4 + "user") + "_" + arg3);
+        temp.add(subpage.getProductionAccessToken());
+        temp.add(subpage.getConsKeyProd());
+        temp.add(subpage.geteSecKeyProd());
+        keys.add(tempheader);
+        keys.add(temp);
+        ExcelFileWriter excelFileWriter = new ExcelFileWriter();
+        excelFileWriter.writeExistingFile(filePath, arg2, keys);
+    }
 
 }

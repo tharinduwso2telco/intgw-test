@@ -5,79 +5,87 @@ import java.io.Serializable;
 /**
  * The Class WhiteListData.
  */
-public class WhiteListData implements Serializable{
+public class WhiteListData implements Serializable {
 
-	/** The Constant serialVersionUID. */
-	private static final long serialVersionUID = -1230307494600088166L;
+    /**
+     * The Constant serialVersionUID.
+     */
+    private static final long serialVersionUID = -1230307494600088166L;
 
-	/** The min numberof number range. */
-	private static String minNumberofNumberRange; 
-	
-	/** The max numberof number range. */
-	private static String maxNumberofNumberRange;
-	
-	/** The Redundent value. */
-	private static String RedundentValue;
-	
-	/**
-	 * Gets the redundent value.
-	 *
-	 * @author IsuruM
-	 * @return the redundent value
-	 */
-	public  String getRedundentValue() {
-		return RedundentValue;
-	}
+    /**
+     * The min numberof number range.
+     */
+    private static String minNumberofNumberRange;
 
-	/**
-	 * Sets the redundent value.
-	 *
-	 * @author IsuruM
-	 * @param redval the new redundent value
-	 */
-	public  void setRedundentValue(String redval) {
-		WhiteListData.RedundentValue = redval;
-	}
-	
-	/**
-	 * Gets the min numberof number range.
-	 *
-	 * @author IsuruM
-	 * @return the min numberof number range
-	 */
-	public  String getMinNumberofNumberRange() {
-		return minNumberofNumberRange;
-	}
+    /**
+     * The max numberof number range.
+     */
+    private static String maxNumberofNumberRange;
 
-	/**
-	 * Sets the min numberof number range.
-	 *
-	 * @author IsuruM
-	 * @param minNumberofNumberRange the new min numberof number range
-	 */
-	public  void setMinNumberofNumberRange(String minNumberofNumberRange) {
-		WhiteListData.minNumberofNumberRange = minNumberofNumberRange;
-	}
+    /**
+     * The Redundent value.
+     */
+    private static String RedundentValue;
 
-	/**
-	 * Gets the max numberof number range.
-	 *
-	 * @author IsuruM
-	 * @return the max numberof number range
-	 */
-	public  String getMaxNumberofNumberRange() {
-		return maxNumberofNumberRange;
-	}
+    /**
+     * Gets the redundent value.
+     *
+     * @return the redundent value
+     * @author IsuruM
+     */
+    public String getRedundentValue() {
+        return RedundentValue;
+    }
 
-	/**
-	 * Sets the max numberof number range.
-	 *
-	 * @author IsuruM
-	 * @param maxNumberofNumberRange the new max numberof number range
-	 */
-	public  void setMaxNumberofNumberRange(String maxNumberofNumberRange) {
-		WhiteListData.maxNumberofNumberRange = maxNumberofNumberRange;
-	}
+    /**
+     * Sets the redundent value.
+     *
+     * @param redval the new redundent value
+     * @author IsuruM
+     */
+    public void setRedundentValue(String redval) {
+        WhiteListData.RedundentValue = redval;
+    }
 
-	
+    /**
+     * Gets the min numberof number range.
+     *
+     * @return the min numberof number range
+     * @author IsuruM
+     */
+    public String getMinNumberofNumberRange() {
+        return minNumberofNumberRange;
+    }
+
+    /**
+     * Sets the min numberof number range.
+     *
+     * @param minNumberofNumberRange the new min numberof number range
+     * @author IsuruM
+     */
+    public void setMinNumberofNumberRange(String minNumberofNumberRange) {
+        WhiteListData.minNumberofNumberRange = minNumberofNumberRange;
+    }
+
+    /**
+     * Gets the max numberof number range.
+     *
+     * @return the max numberof number range
+     * @author IsuruM
+     */
+    public String getMaxNumberofNumberRange() {
+        return maxNumberofNumberRange;
+    }
+
+    /**
+     * Sets the max numberof number range.
+     *
+     * @param maxNumberofNumberRange the new max numberof number range
+     * @author IsuruM
+     */
+    public void setMaxNumberofNumberRange(String maxNumberofNumberRange) {
+        WhiteListData.maxNumberofNumberRange = maxNumberofNumberRange;
+    }
+
+
 }

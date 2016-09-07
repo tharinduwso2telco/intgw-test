@@ -17,7 +17,7 @@
 -->
 <project name="schematic" default="all">
     <description>
-    To create the schematic report:
+        To create the schematic report:
         ant -Dtest=script
 
     </description>
@@ -29,10 +29,10 @@
 
     <target name="all">
         <xslt
-            force="true"
-            in="${testpath}/${test}.jmx"
-            out="${testpath}/${test}.html"
-            style="${basedir}/schematic.xsl">
+                force="true"
+                in="${testpath}/${test}.jmx"
+                out="${testpath}/${test}.html"
+                style="${basedir}/schematic.xsl">
         </xslt>
     </target>
 

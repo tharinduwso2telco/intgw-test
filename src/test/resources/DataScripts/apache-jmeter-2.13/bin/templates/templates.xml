@@ -47,7 +47,7 @@
         <name>JDBC Load Test</name>
         <fileName>jdbc.jmx</fileName>
         <description>
-        <![CDATA[<h1>Template showing how to Load Test an SQL query on Database</h1>
+            <![CDATA[<h1>Template showing how to Load Test an SQL query on Database</h1>
         <h2>JMeter Configuration</h2>
             <ul>
                 <li>Add the database driver to jmeter/lib folder</li>
@@ -79,7 +79,7 @@
         <name>MongoDB Load Test</name>
         <fileName>mongodb.jmx</fileName>
         <description>
-        <![CDATA[<h1>Template showing how to Load Test MongoDB code using MongoDB Java Driver</h1>
+            <![CDATA[<h1>Template showing how to Load Test MongoDB code using MongoDB Java Driver</h1>
         <h2>JMeter Configuration</h2>
             <ul>
                 <li>Download groovy from <a href="http://groovy.codehaus.org/Download" >Groovy Download</a></li>
@@ -145,7 +145,7 @@
         ]]></description>
     </template>
     <template isTestPlan="true">
-        <name>Building an FTP Test Plan </name>
+        <name>Building an FTP Test Plan</name>
         <fileName>/bin/templates/build-ftp-test-plan.jmx</fileName>
         <description><![CDATA[
         <h1>Test plan from Building an FTP Test Plan section in user's manual</h1>
