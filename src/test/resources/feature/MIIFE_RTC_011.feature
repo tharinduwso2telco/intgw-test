@@ -6,7 +6,7 @@ Feature: Validate if apps are saved after the token generation and API invocatio
 Scenario Outline: Data creation part for the apps are saved after the token generation and API invocation completed TC
 Given I am in apimanager
 When I click on apimanager sign-up button
-Then I should see the apimanager sign-up for a new account form as "Sign - Up for a New Account"
+Then I should see the apimanager sign-up for a new account form as "Create your Account"
 When I enter apimanager Sign-up for a new account username for "<usertype>" 
 And I enter apimanager Sign-up for a new account Password for "<usertype>"
 And I enter apimanager Sign-up for a new account Re-type password for "<usertype>"
@@ -22,9 +22,9 @@ And I click on apimanager Login pop up login button
 
 Examples:
 | usertype  |LastName   |FirstName   |Email               |
-|LOGOUT		|AuxTestLast|AuxTestFirst|AuxTest123@gmail.com|
+|LOGOUT	|AuxTestLast|AuxTestFirst|AuxTest123@gmail.com|
 
-@Smoke @appCre
+@Smoke @appCre @susantha
 Scenario Outline: Check if apps are saved as SP in identity server after the token generation and API invocation are completed
 Given I am in apimanager
 When I click on apimanager login
