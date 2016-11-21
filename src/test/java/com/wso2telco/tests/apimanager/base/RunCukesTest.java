@@ -22,7 +22,7 @@ glue={
 },
 tags = //"@smoke"
 {
-		"@ASW"
+		"@susantha"
 }
 )
 public class RunCukesTest {
