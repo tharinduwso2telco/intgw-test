@@ -27,12 +27,19 @@ public class APIsSteps extends BasicTestObject {
 		APIsPage apispage = new APIsPage(driver);
 		Assert.assertTrue("API is not properly created", apispage.isCreatedAPI(arg1));
 	}
-	
+/*	
 	@When("^I click on the apimanager \"([^\"]*)\" api$")
 	public void i_click_on_the_apimanager_api(String arg1) throws Throwable {
 		APIsPage apispage = new APIsPage(driver);
 		apispage.clickCreatedAPI(arg1);
 	}
+*/	
+	@When("^I click on the apimanager \"([^\"]*)\" \"([^\"]*)\" api$")
+	public void i_click_on_the_apimanager_api(String arg1, String arg2) throws Throwable {
+		APIsPage apispage = new APIsPage(driver);
+		apispage.clickCreatedAPI(arg1, arg2);
+	}
+
 
 	@Then("^I should see the apimanager APIs \"([^\"]*)\" status as \"([^\"]*)\"$")
 	public void i_should_see_the_apimanager_APIs_status_as(String arg1, String arg2) throws Throwable {

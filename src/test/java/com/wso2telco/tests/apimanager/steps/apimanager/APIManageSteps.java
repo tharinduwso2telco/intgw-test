@@ -14,10 +14,25 @@ import com.wso2telco.tests.apimanager.base.BasicTestObject;
 import com.wso2telco.tests.util.data.RuntimeData;
 import com.wso2telco.tests.util.data.WhiteListData;
 
+import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class APIManageSteps extends BasicTestObject {
+	
+	@Given("^I am in hubmanager$")
+	public void i_am_in_hubmanager() throws Throwable {
+		if (driver == null) {
+			initialize();
+			openBrowser();
+			driver.get(config.getValue(getEnvironment() + "ApiManagerManage"));
+		} else {
+			driver.close();
+			initialize();
+			openBrowser();
+			driver.get(config.getValue(getEnvironment() + "ApiManagerManage"));
+		}
+	}
 	
 	@Then("^I should see the apimanager Manager page header as \"([^\"]*)\"$")
 	public void i_should_see_the_apimanager_Manager_page_header_as(String arg1) throws Throwable {
@@ -683,5 +698,28 @@ public class APIManageSteps extends BasicTestObject {
 		Assert.assertTrue("subscription_rates table is not updated", managerpage.isSubscriptionRatesTablesUpdated(subscription_ratesQuery));
 	}
 
+	@Then("^I should see the status of the application \"([^\"]*)\" approval task as \"([^\"]*)\"$")
+	public void i_should_see_the_status_of_the_application_approval_task_as(String arg1, String arg2) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Approval Status mismatched", managerpage.isApprovalTaskStatus(arg1, arg2));
+	}
+
+	@Then("^I click on action dropdown of \"([^\"]*)\" task$")
+	public void i_click_on_action_dropdown_of_task(String arg1) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.clickDropdownActions(arg1);
+	}
+
+
+	@Then("^I should see Action \"([^\"]*)\" of the \"([^\"]*)\" task in the dropdown$")
+	public void i_should_see_Action_of_the_task_in_the_dropdown(String arg1, String arg2) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Action dropdown options not displayed", managerpage.isApprovalActionsDisplayed(arg1, arg2));
+	}
 	
+	@Then("^I should see the selected throttling layer as \"([^\"]*)\" for \"([^\"]*)\" Application$")
+	public void i_should_see_the_selected_throttling_layer_as_for_Application(String arg1, String arg2) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.isTierValueDisplayed(arg1, arg2);
+	}
 }
