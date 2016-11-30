@@ -46,6 +46,12 @@ public class APIHomeSteps extends BasicTestObject {
 	@When("^I enter apimanager Sign-up for a new account username for \"([^\"]*)\"$")
 	public void i_enter_apimanager_Sign_up_for_a_new_account_username_for(String arg1) throws Throwable {
 	    SignUpPage signupPage = new SignUpPage(driver);
+		signupPage.enterNewUName(config.getValue(getEnvironment() + arg1 + "user"));
+	}
+	
+	@When("^I enter apimanager Sign-up for a new account username with randomNumber for \"([^\"]*)\"$")
+	public void i_enter_apimanager_Sign_up_for_a_new_account_username_with_randomNumber_for(String arg1) throws Throwable {
+	    SignUpPage signupPage = new SignUpPage(driver);
 		signupPage.enterNewUName(config.getValue(getEnvironment() + arg1 + "user")+randomNumber);
 	}
 

@@ -5,7 +5,7 @@ Scenario Outline: HUB-41 : Service provider signs up with all mandatory informat
 Given I am in apimanager
 When I click on apimanager sign-up button
 Then I should see the apimanager sign-up for a new account form as "Create your Account"
-When I enter apimanager Sign-up for a new account username for "<usertype>"
+When I enter apimanager Sign-up for a new account username with randomNumber for "<usertype>"
 And I enter apimanager Sign-up for a new account Password for "<usertype>"
 And I enter apimanager Sign-up for a new account Re-type password for "<usertype>"
 And I enter apimanager Sign-up for a new account Last name as "<LastName>"
@@ -163,7 +163,7 @@ Scenario Outline: HUB-49 : Service provider is not able to sign up using existin
 Given I am in apimanager
 When I click on apimanager sign-up button
 Then I should see the apimanager sign-up for a new account form as "Create your Account"
-When I enter apimanager Sign-up for a new account username for "<usertype>"
+When I enter apimanager Sign-up for a new account username with randomNumber for "<usertype>"
 And I enter apimanager Sign-up for a new account Password for "<usertype>"
 And I enter apimanager Sign-up for a new account Re-type password for "<usertype>"
 And I enter apimanager Sign-up for a new account Last name as "<LastName>"
@@ -176,7 +176,7 @@ Then I should see the apimanager "Login" pop up
 Given I am in apimanager
 When I click on apimanager sign-up button
 Then I should see the apimanager sign-up for a new account form as "Create your Account"
-When I enter apimanager Sign-up for a new account username for "<usertype>"
+When I enter apimanager Sign-up for a new account username with randomNumber for "<usertype>"
 And I enter apimanager Sign-up for a new account Password for "<usertype>"
 And I enter apimanager Sign-up for a new account Re-type password for "<usertype>"
 And I enter apimanager Sign-up for a new account Last name as "<LastName>"
@@ -197,7 +197,7 @@ Scenario Outline: HUB-50 : Service provider signs up without providing optional 
 Given I am in apimanager
 When I click on apimanager sign-up button
 Then I should see the apimanager sign-up for a new account form as "Create your Account"
-When I enter apimanager Sign-up for a new account username for "<usertype>"
+When I enter apimanager Sign-up for a new account username with randomNumber for "<usertype>"
 And I enter apimanager Sign-up for a new account Password for "<usertype>"
 And I enter apimanager Sign-up for a new account Re-type password for "<usertype>"
 And I enter apimanager Sign-up for a new account Last name as "<LastName>"

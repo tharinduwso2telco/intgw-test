@@ -2,7 +2,7 @@ Feature: Create and Publish an API
 
 @HUB-195
 Scenario Outline: HUB-195 : Hub administrator creates custom API for production
-#Given I am in apipublisher
+Given I am in apipublisher
 When I provide apipublisher username and password for "<usertype>"
 And I click on apipublisher login button
 Then I should see apipublisher username "<usertype>" at the top right corner of the page

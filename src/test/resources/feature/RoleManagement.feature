@@ -9,6 +9,7 @@ Then I should see the ids Home page header as "WSO2 API Manager Home"
 When I click on identity server Main tab
 And I click on identity server Configuration Users and Roles List link
 Then I should see ids Configuration menu with first item as "Users and Roles"
+
 When I click identity server User Management Roles link
 Then I should see ids User Management Roles page header as "Roles"
 When I clear existing aggrigator role
@@ -22,5 +23,8 @@ Then I should see ids Add Role Select Users to Add Role page header as "Step 3 :
 When I enter ids Select Users to Add Role user name pattern as "<usertype>"
 And I click on ids Select Users to Add Role search
 And I select ids Select Users to Add Role "<usertype>" check box
-And I click on ids Select Users to Add Role Finish
+
 Then I should see ids Add Role Success pop up message as "Role PRIMARY/aggrigator is added successfully."
+Examples:
+| usertype  |LastName   |FirstName   |Email	|Country	|Land_Phone |
+|LOGOUT	|AuxTestLast|AuxTestFirst|AuxTest123@gmail.com|Srilanka|2324434|

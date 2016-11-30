@@ -333,7 +333,7 @@ Examples:
 |AdminUser|APPCREATE |AppThree |Reject  |REJECTED |Default |AuxTestAPI - v2| 
 
 
-@HUB-645  @malshi
+@HUB-645
 Scenario Outline: HUB-645 : SP unsubscribe API from application before approval
 Given I am in apimanager
 When I click on apimanager login

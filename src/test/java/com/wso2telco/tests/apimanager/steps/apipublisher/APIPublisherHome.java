@@ -225,7 +225,7 @@ public class APIPublisherHome extends BasicTestObject{
 	public void i_click_on_Manage_API_link() throws Throwable {
 		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
 		publisherHome.clickMangeAPI();
-		Thread.sleep(sleepTime);
+		Thread.sleep(5000);
 	}
 	
 	@When("^I provide apipublisher Implement production endpoint as \"([^\"]*)\"$")
