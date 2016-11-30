@@ -208,5 +208,12 @@ public class APISubscriptionSteps extends BasicTestObject {
 		Assert.assertTrue("Access Token is not generated", subpage.isProductionAccessToken());
 		return accessTokenProd;
 	}
+	
+	@Then("^I should see the API \"([^\"]*)\" status as \"([^\"]*)\" and Subscription Tier as \"([^\"]*)\"$")
+	public void i_should_see_the_API_status_as_and_Subscription_Tier_as(String arg1, String arg2, String arg3) throws Throwable {
+		SubscriptionsPage subpage = new SubscriptionsPage(driver);
+		subpage.validateSubscriptionStatus(arg1, arg2);
+		subpage.validateSubscriptionTier(arg1, arg3);
+	}
 
 }

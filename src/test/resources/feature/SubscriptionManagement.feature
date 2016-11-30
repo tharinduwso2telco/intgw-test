@@ -137,6 +137,6 @@ When I unsubscribe existing "<apiName>" with "<newerVersion>"
 Then I should see the confirm delete popup with "Confirm Delete"
 And I click on confirm delete popup Yes button
 Examples:
-| usertype |apiName |olderversion |newerVersion|appName       |status   |
-|APPCREATE |jenkins |v1           |v2          |AuxTestAPP1   |APPROVED |
+| usertype |apiName |olderversion |newerVersion|appName       |status    |
+|APPCREATE |jenkins |v1           |v2          |AuxTestAPP1   |UNBLOCKED |
 

@@ -722,4 +722,19 @@ public class APIManageSteps extends BasicTestObject {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.isTierValueDisplayed(arg1, arg2);
 	}
+/*	
+	@When("^I select \"([^\"]*)\" for \"([^\"]*)\" Subscription Details row for \"([^\"]*)\"$")
+	public void i_select_for_Subscription_Details_row_for(String arg1, String arg2, String arg3) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		String appName = arg2;
+		managerpage.selectTier(arg1, appName);
+	}
+	*/
+	
+	@When("^I click on Subscription Details drop box for \"([^\"]*)\" row for \"([^\"]*)\"$")
+	public void i_click_on_Subscription_Details_drop_box_for_row_for(String arg1, String arg2) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		String appName = arg1;
+		managerpage.clickSubscriptionDetails(appName);
+	}
 }
