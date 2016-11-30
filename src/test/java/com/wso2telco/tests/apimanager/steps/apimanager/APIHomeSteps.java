@@ -13,7 +13,10 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class APIHomeSteps extends BasicTestObject {
-
+	
+	SignUpPage signupPage = new SignUpPage(driver);
+	String randomNumber = signupPage.getRandomNumber(5);
+	
 	@Given("^I am in apimanager$")
 	public void i_am_in_apimanager() throws Throwable {
 		if (driver == null) {
@@ -42,8 +45,14 @@ public class APIHomeSteps extends BasicTestObject {
 
 	@When("^I enter apimanager Sign-up for a new account username for \"([^\"]*)\"$")
 	public void i_enter_apimanager_Sign_up_for_a_new_account_username_for(String arg1) throws Throwable {
-		SignUpPage signupPage = new SignUpPage(driver);
+	    SignUpPage signupPage = new SignUpPage(driver);
 		signupPage.enterNewUName(config.getValue(getEnvironment() + arg1 + "user"));
+	}
+	
+	@When("^I enter apimanager Sign-up for a new account username with randomNumber for \"([^\"]*)\"$")
+	public void i_enter_apimanager_Sign_up_for_a_new_account_username_with_randomNumber_for(String arg1) throws Throwable {
+	    SignUpPage signupPage = new SignUpPage(driver);
+		signupPage.enterNewUName(config.getValue(getEnvironment() + arg1 + "user")+randomNumber);
 	}
 
 	@When("^I enter apimanager Sign-up for a new account Password for \"([^\"]*)\"$")
@@ -154,7 +163,14 @@ public class APIHomeSteps extends BasicTestObject {
 	@When("^I enter apimanager Login username and password for \"([^\"]*)\"$")
 	public void i_enter_apimanager_Login_username_and_password_for(String arg1) throws Throwable {
 		LoginPage loginPage = new LoginPage(driver);
-		loginPage.enterLoginUserName(config.getValue(getEnvironment() + arg1 + "user"));
+	    loginPage.enterLoginUserName(config.getValue(getEnvironment() + arg1 + "user"));
+		loginPage.enterLoginPassword(config.getValue(getEnvironment() + arg1 + "pwd"));
+	}
+	
+	@When("^I enter username and password and Login for \"([^\"]*)\"$")
+	public void i_enter_username_and_password_and_Login_for(String arg1) throws Throwable {
+		LoginPage loginPage = new LoginPage(driver);
+	    loginPage.enterLoginUserName(config.getValue(getEnvironment() + arg1 + "user")+randomNumber);
 		loginPage.enterLoginPassword(config.getValue(getEnvironment() + arg1 + "pwd"));
 	}
 
@@ -170,6 +186,14 @@ public class APIHomeSteps extends BasicTestObject {
 		Thread.sleep(sleepTime);
 		Assert.assertTrue("User Name did not show properly",
 				loginPage.isUserName(config.getValue(getEnvironment() + arg1 + "user")));
+	}
+	
+	@Then("^I should see the logged apimanager \"([^\"]*)\" at the top right corner of the page$")
+	public void i_should_see_the_logged_apimanager_at_the_top_right_corner_of_the_page(String arg1) throws Throwable {
+		LoginPage loginPage = new LoginPage(driver);
+		Thread.sleep(sleepTime);
+		Assert.assertTrue("User Name did not show properly",
+				loginPage.isUserName(config.getValue(getEnvironment() + arg1 + "user")+randomNumber));
 	}
 
 	@When("^I click on arrow after the apimanager username$")
@@ -204,17 +228,18 @@ public class APIHomeSteps extends BasicTestObject {
 		HomePage homepage = new HomePage(driver);
 		homepage.clickMyApplicationsLink();
 	}
+	
+	@Then("^I click on apimanager Add Application$")
+	public void i_click_on_apimanager_Add_Application() throws Throwable {
+		Thread.sleep(1000);
+		HomePage homepage = new HomePage(driver);
+		homepage.clickAddApplicationLink();
+	}
 
 	@When("^I click on apimanager My Subscriptions$")
 	public void i_click_on_apimanager_My_Subscriptions() throws Throwable {
 		HomePage homepage = new HomePage(driver);
 		homepage.clickMySubscriptionsLink();
-	}
-
-	@Then("^I should see the apimanager Subscriptions page header as \"([^\"]*)\"$")
-	public void i_should_see_the_apimanager_Subscriptions_page_header_as(String arg1) throws Throwable {
-		SubscriptionsPage subpage = new SubscriptionsPage(driver);
-		Assert.assertTrue("Subscription page did not load properly", subpage.isSubscriptionHeaderDisplayed(arg1));
 	}
 
 	@When("^I click on apimanager Manage$")
@@ -258,5 +283,65 @@ public class APIHomeSteps extends BasicTestObject {
 		String appName = config.getValue(getEnvironment() + arg2 + "UserName") + "_" + arg1;
 		subpage.clickSelectAppDD(appName);
 	}
+	
+	@Then("^I should see the username validation failure prompt with \"([^\"]*)\"$")
+	public void i_should_see_the_username_validation_failure_prompt_with(String arg1) throws Throwable {
+		SignUpPage signupPage = new SignUpPage(driver);
+		Assert.assertTrue(signupPage.isUsernameEmpty(arg1));
+	}
 
+	@Then("^I should see the password validation failure prompt with \"([^\"]*)\"$")
+	public void i_should_see_the_password_validation_failure_prompt_with(String arg1) throws Throwable {
+		SignUpPage signupPage = new SignUpPage(driver);
+		Assert.assertTrue(signupPage.isPasswordEmpty(arg1));
+	}
+
+	@Then("^I should see the retype password validation failure prompt with \"([^\"]*)\"$")
+	public void i_should_see_the_retype_password_validation_failure_prompt_with(String arg1) throws Throwable {
+		SignUpPage signupPage = new SignUpPage(driver);
+		Assert.assertTrue(signupPage.isReTypePasswordEmpty(arg1));
+	}
+	
+	@Then("^I should see the lastname validation failure prompt with \"([^\"]*)\"$")
+	public void i_should_see_the_lastname_validation_failure_prompt_with(String arg1) throws Throwable {
+		SignUpPage signupPage = new SignUpPage(driver);
+		Assert.assertTrue(signupPage.isLastNameEmpty(arg1));
+	}
+	
+	@Then("^I should see the firstname validation failure prompt with \"([^\"]*)\"$")
+	public void i_should_see_the_firstname_validation_failure_prompt_with(String arg1) throws Throwable {
+		SignUpPage signupPage = new SignUpPage(driver);
+		Assert.assertTrue(signupPage.isFirstNameEmpty(arg1));
+	}
+	
+	@Then("^I should see the email validation failure prompt with \"([^\"]*)\"$")
+	public void i_should_see_the_email_validation_failure_prompt_with(String arg1) throws Throwable {
+		SignUpPage signupPage = new SignUpPage(driver);
+		Assert.assertTrue(signupPage.isEmailEmpty(arg1));	
+	}
+
+	@Then("^I should see the apistore error pop up with \"([^\"]*)\"$")
+	public void i_should_see_the_apistore_error_pop_up_with(String arg1) throws Throwable {
+		SignUpPage signupPage = new SignUpPage(driver);
+		Assert.assertTrue(signupPage.isUserAlreadyExists(arg1));	
+	}
+
+	@Then("^I click on apistore error pop up ok button$")
+	public void i_click_on_apistore_error_pop_up_ok_button() throws Throwable {
+		SignUpPage signupPage = new SignUpPage(driver);
+		signupPage.clickOk();
+		Thread.sleep(sleepTime);
+	}
+
+	@When("^I enter invalid value to apimanager Sign-up for a new account Password as \"([^\"]*)\"$")
+	public void i_enter_invalid_value_to_apimanager_Sign_up_for_a_new_account_Password_as(String arg1) throws Throwable {
+		SignUpPage signupPage = new SignUpPage(driver);
+		signupPage.enterPWord(arg1);
+	}
+	
+	@When("^I enter invalid value to apimanager Sign-up for a new account Re type Password as \"([^\"]*)\"$")
+	public void i_enter_invalid_value_to_apimanager_Sign_up_for_a_new_account_Re_type_Password_as(String arg1) throws Throwable {
+		SignUpPage signupPage = new SignUpPage(driver);
+		signupPage.reTypePWord(arg1);
+	}
 }

@@ -20,9 +20,9 @@ glue={
 		"com.wso2telco.tests.apimanager.steps.idserver",
 		"com.wso2telco.tests.apimanager.steps.activitymonitor"
 },
-tags = //"@smoke"
-{
-		"@susantha"
+tags = {//"@smoke"
+
+		"@malshi"
 }
 )
 public class RunCukesTest {

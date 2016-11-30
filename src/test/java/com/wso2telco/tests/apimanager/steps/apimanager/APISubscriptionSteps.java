@@ -166,12 +166,54 @@ public class APISubscriptionSteps extends BasicTestObject {
 		String sandboxRegenerateAccessToken = authKeys.getSandboxRegenerateAccessToken();
 		Assert.assertTrue("Access token is not regenerated", subpage.isAccessKeyRegenerated(sandboxAccessToken, sandboxRegenerateAccessToken));
 	}
-	
-	@Then("^I should see the \"([^\"]*)\" under Subscribed APIs$")
-	public void i_should_see_the_under_Subscribed_APIs(String arg1) throws Throwable {
+
+	@Then("^I should see the \"([^\"]*)\" and \"([^\"]*)\" under Subscribed APIs$")
+	public void i_should_see_the_and_under_Subscribed_APIs(String arg1, String arg2) throws Throwable {
 		SubscriptionsPage subpage = new SubscriptionsPage(driver);
 		Thread.sleep(sleepTime);
-		Assert.assertTrue("Subscribed APIs not showed", subpage.isSubscribedAPIs(arg1));
+		Assert.assertTrue("Subscribed APIs not showed", subpage.isSubscribedAPIs(arg1,arg2));
+	}
+	
+	@Then("^I should see the apimanager Application \"([^\"]*)\" Subscriptions page header as \"([^\"]*)\"$")
+	public void i_should_see_the_apimanager_Application_Subscriptions_page_header_as(String arg1, String arg2) throws Throwable {
+		SubscriptionsPage subpage = new SubscriptionsPage(driver);
+		Assert.assertTrue("Subscription page did not load properly", subpage.isSubscriptionHeaderDisplayed(arg1,arg2));
+	}
+
+	@Then("^I should see \"([^\"]*)\" of the same \"([^\"]*)\" is listed under Subscribed APIs$")
+	public void i_should_see_of_the_same_is_listed_under_Subscribed_APIs(String arg1, String arg2) throws Throwable {
+		SubscriptionsPage subpage = new SubscriptionsPage(driver);
+		Thread.sleep(sleepTime);
+		Assert.assertTrue("Subscribed APIs not showed", subpage.isSubscribedAPIs(arg1,arg2));
+	}
+
+	@When("^I click on Application \"([^\"]*)\" \"([^\"]*)\" tab$")
+	public void i_click_on_Application_tab(String arg1, String arg2) throws Throwable {
+		SubscriptionsPage subpage = new SubscriptionsPage(driver);
+		subpage.clickSubscriptionTab(arg1, arg2);
+		Thread.sleep(sleepTime);
+	}
+
+	@When("^I unsubscribe existing \"([^\"]*)\" with \"([^\"]*)\"$")
+	public void i_unsubscribe_existing_with(String arg1, String arg2) throws Throwable {
+		SubscriptionsPage subpage = new SubscriptionsPage(driver);
+		subpage.clickUnsubscribe(arg1, arg2);
+		Thread.sleep(sleepTime);
+	}
+
+	@Then("^I should see access token of production$")
+	public String i_should_see_access_token_of_production() throws Throwable {
+		SubscriptionsPage subpage = new SubscriptionsPage(driver);
+		String accessTokenProd = subpage.getAccessTokenProd();
+		Assert.assertTrue("Access Token is not generated", subpage.isProductionAccessToken());
+		return accessTokenProd;
+	}
+	
+	@Then("^I should see the API \"([^\"]*)\" status as \"([^\"]*)\" and Subscription Tier as \"([^\"]*)\"$")
+	public void i_should_see_the_API_status_as_and_Subscription_Tier_as(String arg1, String arg2, String arg3) throws Throwable {
+		SubscriptionsPage subpage = new SubscriptionsPage(driver);
+		subpage.validateSubscriptionStatus(arg1, arg2);
+		subpage.validateSubscriptionTier(arg1, arg3);
 	}
 
 }

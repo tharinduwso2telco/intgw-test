@@ -354,4 +354,58 @@ public class IDServerUserRoles extends BasicTestObject {
 			carbonRoles.clickOK();
 		}
 	}
+	
+	@Then("^I should see ids User Management Add User page header as \"([^\"]*)\"$")
+	public void i_should_see_ids_User_Management_Add_User_page_header_as(String arg1) throws Throwable {
+		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
+		Assert.assertTrue("Add User page did not load properly",carbonUserRolesPage.isAddUsersPage(arg1));
+	}
+	
+	@When("^I enter ids Add User name as \"([^\"]*)\"$")
+	public void i_enter_ids_Add_User_name_as(String arg1) throws Throwable {
+		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
+		carbonUserRolesPage.enterUserName(arg1);
+	}
+	
+	@When("^I enter ids Add User password as \"([^\"]*)\"$")
+	public void i_enter_ids_Add_User_password_as(String arg1) throws Throwable {
+		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
+		carbonUserRolesPage.enterPassword(arg1);
+	}
+
+	@When("^I enter ids Add User password repeat as \"([^\"]*)\"$")
+	public void i_enter_ids_Add_User_password_repeat_as(String arg1) throws Throwable {
+		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
+		carbonUserRolesPage.enterRepeatPassword(arg1);
+	}
+	
+	@When("^I click on ids Add User next button$")
+	public void i_click_on_ids_Add_User_next_button() throws Throwable {
+		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
+		carbonUserRolesPage.clickNext();
+	}
+	
+	@Then("^I should click on role \"([^\"]*)\" checkbox$")
+	public void i_should_click_on_role_checkbox(String arg1) throws Throwable {
+		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
+		carbonUserRolesPage.selectRolesForUser(arg1);
+	}
+	
+	@Then("^I should see ids User Management Select Role for user page header as \"([^\"]*)\"$")
+	public void i_should_see_ids_User_Management_Select_Role_for_user_page_header_as(String arg1) throws Throwable {
+		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
+	    Assert.assertTrue("Select Role to Add User page did not load properly",carbonUserRolesPage.isSelectRoles(arg1));
+	}
+
+	@Then("^I should see ids Add User Success pop up message as \"([^\"]*)\"$")
+	public void i_should_see_ids_Add_User_Success_pop_up_message_as(String arg1) throws Throwable {
+		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
+		Assert.assertTrue("User creation success message pop up not displayed",carbonUserRolesPage.isUserCreationSuccess(arg1));
+	}
+
+	@Then("^I click on Success pop up message Ok button$")
+	public void i_click_on_Success_pop_up_message_Ok_button() throws Throwable {
+		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
+		carbonUserRolesPage.clickOK();
+	}
 }

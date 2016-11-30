@@ -4,6 +4,7 @@ package com.wso2telco.tests.apimanager.steps.apipublisher;
 
 import org.junit.Assert;
 
+import com.wso2telco.apimanager.pageobjects.apihome.applications.ApplicationsPage;
 import com.wso2telco.apimanager.pageobjects.apipublisher.APIPublisherHomePage;
 import com.wso2telco.apimanager.pageobjects.apipublisher.APIPublisherLoginPage;
 import com.wso2telco.apimanager.pageobjects.publisher.PublisherHomePage;
@@ -43,15 +44,15 @@ public class APIPublisherHome extends BasicTestObject{
 		Assert.assertTrue("Incorrect user login", publisherHome.isUserLogin(config.getValue(getEnvironment() + arg1 + "user")));
 	}
 	
-	@When("^I search existing API \"([^\"]*)\" and delete it$")
-	public void i_search_existing_API_and_delete_it(String arg1) throws Throwable {
+	@When("^I search existing API \"([^\"]*)\" \"([^\"]*)\" and delete it$")
+	public void i_search_existing_API_and_delete_it(String arg1, String arg2) throws Throwable {
 		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
 		Thread.sleep(sleepTime);
 		publisherHome.enterAPINameSearch(arg1);
 		Thread.sleep(sleepTime);
 		publisherHome.clickSearch();
 		Thread.sleep(sleepTime);
-		publisherHome.deleteExistingAPI(arg1);
+		publisherHome.deleteExistingAPI(arg1, arg2);
 		Thread.sleep(sleepTime);
 	}
 
@@ -224,6 +225,7 @@ public class APIPublisherHome extends BasicTestObject{
 	public void i_click_on_Manage_API_link() throws Throwable {
 		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
 		publisherHome.clickMangeAPI();
+		Thread.sleep(5000);
 	}
 	
 	@When("^I provide apipublisher Implement production endpoint as \"([^\"]*)\"$")
@@ -261,6 +263,7 @@ public class APIPublisherHome extends BasicTestObject{
 	public void i_click_on_Go_to_Overview() throws Throwable {
 		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
 		publisherHome.clickGotoOverview();
+		Thread.sleep(sleepTime);
 	}
 	
 	@Then("^I should see apipublisher production URL as \"([^\"]*)\"$")
@@ -326,5 +329,121 @@ public class APIPublisherHome extends BasicTestObject{
 		PublisherHomePage publisherHome = new PublisherHomePage(driver);
 		String username = config.getValue(getEnvironment() + arg1 + "user");
 		Assert.assertTrue("The application nor the apis relevant to your search is listed in the table", publisherHome.isTableSubscriptions(username, arg2, arg3));
+	}
+	
+	@When("^I click on apipublisher Manage save button$")
+	public void i_click_on_apipublisher_Manage_save_button() throws Throwable {
+		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
+		publisherHome.clickSaveAPI();
+	}
+
+	@Then("^I should see the status as \"([^\"]*)\"$")
+	public void i_should_see_the_status_as(String arg1) throws Throwable {
+		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
+		Assert.assertTrue(publisherHome.isAPIStatusAvailable(arg1));
+	}
+	
+	@Then("^I should see api successfully published pop up with \"([^\"]*)\"$")
+	public void i_should_see_api_successfully_published_pop_up_with(String arg1) throws Throwable {
+		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
+		Assert.assertTrue(publisherHome.isPublishSuccess(arg1));
+	}
+
+	@When("^I click on pop up button Go to Overview$")
+	public void i_click_on_pop_up_button_Go_to_Overview() throws Throwable {
+		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
+		publisherHome.clickPopupGoToOverview();
+		Thread.sleep(sleepTime);
+	}
+	
+	@Then("^I click on apipublisher API \"([^\"]*)\" \"([^\"]*)\"$")
+	public void i_click_on_apipublisher_API(String arg1, String arg2) throws Throwable {
+		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
+		publisherHome.clickOnApi(arg1, arg2);
+	}
+	
+	@When("^I click on Lifecycle tab$")
+	public void i_click_on_Lifecycle_tab() throws Throwable {
+		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
+		publisherHome.clickLifecycle();
+	}
+	
+	@Then("^I should see the current state of the api as \"([^\"]*)\"$")
+	public void i_should_see_the_current_state_of_the_api_as(String arg1) throws Throwable {
+		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
+		Assert.assertTrue(publisherHome.checkCurrentState(arg1));
+	}
+	
+	@Then("^I click on \"([^\"]*)\" check box$")
+	public void i_click_on_check_box(String arg1) throws Throwable {
+		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
+	    publisherHome.clickApiPublishOption(arg1);
+	}
+	
+	@Then("^I click on Publish button$")
+	public void i_click_on_Publish_button() throws Throwable {
+		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
+		publisherHome.clickPublish();
+	}
+	
+	@When("^I click on create new version button$")
+	public void i_click_on_create_new_version_button() throws Throwable {
+		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
+		publisherHome.clickCreateNewVersion();
+	}
+	
+	@When("^I provide \"([^\"]*)\"$")
+	public void i_provide(String arg1) throws Throwable {
+		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
+		publisherHome.enterNewVersionNumber(arg1);
+	}
+	
+	@When("^I click on Done button$")
+	public void i_click_on_Done_button() throws Throwable {
+		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
+		publisherHome.clickDone();
+	}
+	
+	@Then("^I search API with \"([^\"]*)\"$")
+	public void i_search_API_with(String arg1) throws Throwable {
+		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
+		Thread.sleep(sleepTime);
+		publisherHome.enterAPINameSearch(arg1);
+		Thread.sleep(sleepTime);
+		publisherHome.clickSearch();
+		Thread.sleep(sleepTime);
+	}
+
+
+	@Then("^I delete API \"([^\"]*)\" \"([^\"]*)\"$")
+	public void i_delete_API(String arg1, String arg2) throws Throwable {
+		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
+		publisherHome.deleteExistingAPI(arg1, arg2);
+		Thread.sleep(sleepTime);
+	}
+	
+	@Then("^I should see API \"([^\"]*)\" \"([^\"]*)\" with \"([^\"]*)\" state$")
+	public void i_should_see_API_with_state(String arg1, String arg2, String arg3) throws Throwable {
+		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
+		Assert.assertTrue(publisherHome.checkApiState(arg1, arg2, arg3));
+	}
+
+	@Then("^I should see API \"([^\"]*)\" \"([^\"]*)\" with \"([^\"]*)\" Subscriptions$")
+	public void i_should_see_API_with_Subscriptions(String arg1, String arg2, String arg3) throws Throwable {
+		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
+		Assert.assertTrue(publisherHome.checkApiUsers(arg1, arg2, arg3));
+	}
+
+	@Then("^I should see the apipublisher error popup with \"([^\"]*)\"$")
+	public void i_should_see_the_apipublisher_error_popup_with(String arg1) throws Throwable {
+		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
+		Assert.assertTrue(publisherHome.isApiPublisherError(arg1));
+	}
+
+	@Then("^I click on apipublisher error popup ok button$")
+	public void i_click_on_apipublisher_error_popup_ok_button() throws Throwable {
+		ApplicationsPage apppage = new ApplicationsPage(driver);
+		apppage.clickOk();
+		Thread.sleep(sleepTime);
 	}
 }

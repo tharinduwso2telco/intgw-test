@@ -101,6 +101,17 @@ public class IDServerHome extends BasicTestObject {
 		CarbonHomePage carbonHome = new CarbonHomePage(driver);
 		carbonHome.clickBrowse();
 	}
-	       
+	  
+	@When("^I click on identity server Configuration Users and Roles Add link$")
+	public void i_click_on_identity_server_Configuration_Users_and_Roles_Add_link() throws Throwable {
+		CarbonLeftNav leftNav = new CarbonLeftNav(driver);
+		leftNav.clickUserRolesAdd();
+	}
+	
+	@When("^I click identity server User Management Add New User link$")
+	public void i_click_identity_server_User_Management_Add_New_User_link() throws Throwable {
+		CarbonUserRoles carbonUserRolePage = new CarbonUserRoles(driver);
+		carbonUserRolePage.clickAddNewUser();
+	}
 }
 
