@@ -737,4 +737,15 @@ public class APIManageSteps extends BasicTestObject {
 		String appName = arg1;
 		managerpage.clickSubscriptionDetails(appName);
 	}
+	
+
+	@Then("^I should see created application \"([^\"]*)\" is removed from the Approval Tasks table for \"([^\"]*)\"$")
+	public void i_should_see_created_application_is_removed_from_the_Approval_Tasks_table_for(String arg1, String arg2) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		String appName = arg1;
+		Thread.sleep(sleepTime);
+		Assert.assertTrue("App name is visible in the area", managerpage.isSubscriptionTaskRemoved(appName));
+		
+	}
+	
 }
