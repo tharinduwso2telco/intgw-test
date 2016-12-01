@@ -745,7 +745,12 @@ public class APIManageSteps extends BasicTestObject {
 		String appName = arg1;
 		Thread.sleep(sleepTime);
 		Assert.assertTrue("App name is visible in the area", managerpage.isSubscriptionTaskRemoved(appName));
-		
 	}
 	
+	@When("^I enter apimanager Manager page apipublisher username credentials$")
+	public void i_enter_apimanager_Manager_page_apipublisher_username_credentials() throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.enterUserName(config.getValue(getEnvironment() + "PUBLISHERuser"));
+		managerpage.enterPassword(config.getValue(getEnvironment() + "PUBLISHERpwd"));
+	}
 }
