@@ -1,6 +1,6 @@
 Feature: End to end flow of Internal Gateway
 
-@runner
+
 Scenario Outline: Internal Gateway flow
 #API Publisher Create and Publish an API
 Given I am in apipublisher
@@ -12,7 +12,7 @@ When I click on apipublisher Add link
 And I click Design new API radio button
 And I click Start Creating button
 And I provide apipublisher Design name as "<apiName>"
-And I provide apipublisher Design Context as "APIProdCreation"
+And I provide apipublisher Design Context as "<context>"
 And I provide apipublisher Design Version as "<version>"
 And I provide apipublisher Design Provide URL pattern as "/aux/wso2tel/"
 And I click on apipublisher Design "Get" checkbox
@@ -155,6 +155,6 @@ Then I click on Application "<appName>" "Subscriptions" tab
 Then I should see the API "<apiName&version>" status as "<subscriptionStatus>" and Subscription Tier as "<Subscriptiontiers>"
 
 Examples:
-|usertypePub|usertypeSP|usertypeAdmin|apiName   |version|prodEndpoint |roleType		      |ApiTier                                                               |LastName   |FirstName   |Email	           |appName         |Description  |AppStatusBeforeApprove|action |AppStatusAfterApprove|AppTier  |Subscriptiontiers|subscriptionStatus|apiName&version|
-|PUBLISHER  |APPCREATE |AdminUser    |AuxProdAPI|v1     |auxProd	  |Internal/publisher |Unlimited,Default,Requestbased,Silver,Subscription,Gold,Premium,Bronze|AuxTestLast|AuxTestFirst|AuxTest123@gmail.com|AuXTestAPPM1	|AuXTestingAPP|INACTIVE              |Approve|ACTIVE               |Unlimited|Premium          |UNBLOCKED         |AuxProdAPI - v1|
+|usertypePub|usertypeSP|usertypeAdmin|apiName   |version|context        |prodEndpoint |roleType		      |ApiTier                                                               |LastName   |FirstName   |Email	           |appName         |Description  |AppStatusBeforeApprove|action |AppStatusAfterApprove|AppTier  |Subscriptiontiers|subscriptionStatus|apiName&version|
+|PUBLISHER  |APPCREATE |AdminUser    |AuxProdAPI|v1     |APIProdCreation|auxProd	  |Internal/publisher |Unlimited,Default,Requestbased,Silver,Subscription,Gold,Premium,Bronze|AuxTestLast|AuxTestFirst|AuxTest123@gmail.com|AuXTestAPPM1	|AuXTestingAPP|INACTIVE              |Approve|ACTIVE               |Unlimited|Premium          |UNBLOCKED         |AuxProdAPI - v1|
 

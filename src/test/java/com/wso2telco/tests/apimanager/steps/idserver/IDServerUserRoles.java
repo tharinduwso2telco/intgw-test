@@ -412,6 +412,6 @@ public class IDServerUserRoles extends BasicTestObject {
 	@Then("^I select role \"([^\"]*)\" to Add Role$")
 	public void i_select_role_to_Add_Role(String arg1) throws Throwable {
 		CarbonRolesPage carbonRoles = new CarbonRolesPage(driver);
-		
+		carbonRoles.selectRolePermission(arg1);
 	}
 }
