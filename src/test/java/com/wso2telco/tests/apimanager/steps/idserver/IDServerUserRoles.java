@@ -414,4 +414,23 @@ public class IDServerUserRoles extends BasicTestObject {
 		CarbonRolesPage carbonRoles = new CarbonRolesPage(driver);
 		carbonRoles.selectRolePermission(arg1);
 	}
+	
+	@When("^I clear existing users \"([^\"]*)\"$")
+	public void i_clear_existing_users(String arg1) throws Throwable {
+		CarbonRolesPage carbonRoles = new CarbonRolesPage(driver);
+        carbonRoles.enterUsersName(arg1);
+		carbonRoles.clickSearchUsers();
+
+		if (carbonRoles.isUserNameVisible()) {
+			carbonRoles.clickDeleteUser(arg1);
+			carbonRoles.clickYes();
+			Thread.sleep(2000);
+			carbonRoles.clickOK();
+			Thread.sleep(2000);
+		} else {
+			Thread.sleep(2000);
+			carbonRoles.clickOK();
+			Thread.sleep(2000);
+		}
+	}
 }

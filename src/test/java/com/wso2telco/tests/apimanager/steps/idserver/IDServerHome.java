@@ -22,7 +22,12 @@ public class IDServerHome extends BasicTestObject {
 			initialize();
 			openBrowser();
 			driver.get(config.getValue(getEnvironment() + "CarbonSiteName"));
-		}	
+		}	else {
+			driver.close();
+			initialize();
+			openBrowser();
+			driver.get(config.getValue(getEnvironment() + "CarbonSiteName"));
+		}
 	}
 	
 	@Given("^I am in apimanger carbon login page$")
