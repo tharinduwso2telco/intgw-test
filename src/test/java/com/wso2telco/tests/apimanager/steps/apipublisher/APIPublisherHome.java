@@ -22,6 +22,11 @@ public class APIPublisherHome extends BasicTestObject{
 			initialize();
 			openBrowser();
 			driver.get(config.getValue(getEnvironment() + "ApiManagerPublisher"));
+		}else {
+			driver.close();
+			initialize();
+			openBrowser();
+			driver.get(config.getValue(getEnvironment() + "ApiManagerPublisher"));
 		}
 	}
 	
