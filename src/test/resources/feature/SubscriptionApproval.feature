@@ -18,7 +18,7 @@ Then I should see the status of the application "<appname>" approval task as "RE
 
 Examples:
 |usertype |appname   |
-|AdminUser|AppThree  |
+|AdminUser|AuXTestAPPC  |
 
 
 @HUB-349
@@ -41,7 +41,7 @@ Then I should see the status of the application "<appname>" approval task as "RE
 And I should see the selected throttling layer as "<tiers>" for "<appname>" Application
 Examples:
 |usertype |appname   |tiers    |
-|AdminUser|AppSix    |Unlimited|
+|AdminUser|AuXTestAPPA    |Unlimited|
 
 @HUB-350
 Scenario Outline: HUB-350 : Operator admin user starts assigned task without applying throttling layer
@@ -62,7 +62,7 @@ Then I click on action dropdown of "<appname>" task
 And I should see Action "<options>" of the "<appname>" task in the dropdown
 Examples:
 |usertype |appname |options        |
-|AdminUser|AppSix  |Approve,Reject |
+|AdminUser|AuXTestAPPA  |Approve,Reject |
 
 
 @HUB-351
@@ -87,7 +87,7 @@ Then I click on action dropdown of "<appname>" task
 And I should see Action "<options>" of the "<appname>" task in the dropdown
 Examples:
 |usertype |appname |options        |tiers    |
-|AdminUser|AppSix  |Approve,Reject |Unlimited|
+|AdminUser|AuXTestAPPA  |Approve,Reject |Unlimited|
 
 
 @HUB-352
@@ -114,7 +114,7 @@ Then I click on action dropdown of "<appname>" task
 And I should see Action "<options>" of the "<appname>" task in the dropdown
 Examples:
 |usertype |appname   |options        |tiers    |
-|AdminUser|AppSix    |Approve,Reject |Premium  |
+|AdminUser|AuXTestAPPB    |Approve,Reject |Premium  |
 
 
 @HUB-353
@@ -143,7 +143,7 @@ Then I click on action dropdown of "<appname>" task
 And I should see Action "<options>" of the "<appname>" task in the dropdown
 Examples:
 |usertype |appname   |options        |olderTiers   |newTiers |
-|AdminUser|AppSix    |Approve,Reject |Unlimited    |Premium  |
+|AdminUser|AuXTestAPPD   |Approve,Reject |Unlimited    |Premium  |
 
 
 @HUB-354
@@ -179,7 +179,7 @@ Then I click on Application "<appname>" "Subscriptions" tab
 Then I should see the API "<apiname>" status as "<status>" and Subscription Tier as "<tier>"
 Examples:
 |usertype |usertypeSP|appname |action  |status    |tier     |apiname        |
-|AdminUser|APPCREATE |AppFour |Approve |UNBLOCKED |Bronze   |AuxTestAPI - v2|    
+|AdminUser|APPCREATE |AuXTestAPPD |Approve |UNBLOCKED |Bronze   |ProductionAPI - v1|    
 
 
 @HUB-355
@@ -217,7 +217,7 @@ Then I click on Application "<appname>" "Subscriptions" tab
 Then I should see the API "<apiname>" status as "<status>" and Subscription Tier as "<tier>"
 Examples:
 |usertype |usertypeSP|appname |action  |status    |tier        |apiname        |
-|AdminUser|APPCREATE |AppFour |Approve |UNBLOCKED |Unlimited   |AuxTestAPI - v2|  
+|AdminUser|APPCREATE |AuXTestAPPB |Approve |UNBLOCKED |Unlimited   |AuxProdAPI - v1|  
 
 
 @HUB-356
@@ -255,7 +255,7 @@ Then I click on Application "<appname>" "Subscriptions" tab
 Then I should see the API "<apiname>" status as "<status>" and Subscription Tier as "<tier>"
 Examples:
 |usertype |usertypeSP|appname   |action  |status    |tier        |apiname        |
-|AdminUser|APPCREATE |AppFour   |Approve |UNBLOCKED |Unlimited   |AuxTestAPI - v2|  
+|AdminUser|APPCREATE |AuXTestAPPC   |Approve |UNBLOCKED |Unlimited   |NameProdAPI - v1|  
 
 
 @HUB-357
@@ -294,7 +294,7 @@ Then I click on Application "<appname>" "Subscriptions" tab
 Then I should see the API "<apiname>" status as "<status>" and Subscription Tier as "<tier>"
 Examples:
 |usertype |usertypeSP|appname   |action  |status    |olderTier   |newTier |apiname        |
-|AdminUser|APPCREATE |AppFour   |Approve |UNBLOCKED |Unlimited   |Gold    |AuxTestAPI - v2|  
+|AdminUser|APPCREATE |AuXTestAPPA   |Approve |UNBLOCKED |Unlimited   |Gold    |NameTestAPI - v2|  
 
 
 @HUB-358
@@ -330,7 +330,7 @@ Then I click on Application "<appname>" "Subscriptions" tab
 Then I should see the API "<apiname>" status as "<status>" and Subscription Tier as "<tier>"
 Examples:
 |usertype |usertypeSP|appname  |action  |status   |tier    |apiname        |
-|AdminUser|APPCREATE |AppThree |Reject  |REJECTED |Default |AuxTestAPI - v2| 
+|AdminUser|APPCREATE |DefaultApplication |Reject  |REJECTED |Default |NameTestAPI - v2| 
 
 
 @HUB-645
@@ -343,6 +343,7 @@ And I click on apimanager Login pop up login button
 Then I should see apimanager "<usertypeSP>" at the top right corner of the page
 And I click on apimanager APIs module
 Then I should see the apimanager APIs page header as "APIs"
+Then I should search apimanager API "<apiname>"
 When I click on the apimanager "<apiname>" "<version>" api
 Then I should see the apimanager APIs "<apiname>" status as "Published"
 When I click on Applications dropdown
@@ -374,7 +375,7 @@ When I click on apimanager My Applications
 Then I should see the apimanager Application page header as "Applications"
 When I click on apimanager Application "<appname>"
 When I click on Application "<appname>" "Subscriptions" tab
-Then I should see the "<version>" and "<apiname>" under Subscribed APIs
+Then I should see the "<apiname>" and "<version>" under Subscribed APIs
 When I unsubscribe existing "<apiname>" with "<version>"
 Then I should see the confirm delete popup with "Confirm Delete"
 And I click on confirm delete popup Yes button
@@ -391,4 +392,4 @@ Then I should see created application "<appname>" is removed from the Approval T
 
 Examples:
 |usertype |usertypeSP|appname  |status   |tier    |apiname   |version |apiname&version|
-|AdminUser|APPCREATE |AppThree |ON_HOLD  |Default |AuxTestAPI|v2      |AuxTestAPI - v2|
+|AdminUser|APPCREATE |AuXTestAPPA |ON_HOLD  |Default |NameProdAPI|v2      |NameProdAPI - v2|

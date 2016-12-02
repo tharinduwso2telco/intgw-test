@@ -1,4 +1,3 @@
-@runner
 Feature: Create and Publish an API
 
 @HUB-195
