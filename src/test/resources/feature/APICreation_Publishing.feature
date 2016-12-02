@@ -1,3 +1,4 @@
+@runner
 Feature: Create and Publish an API
 
 @HUB-195
@@ -11,7 +12,7 @@ When I click on apipublisher Add link
 And I click Design new API radio button
 And I click Start Creating button
 And I provide apipublisher Design name as "<apiName>"
-And I provide apipublisher Design Context as "ProdCreation"
+And I provide apipublisher Design Context as "ProductionAPI"
 And I provide apipublisher Design Version as "v1"
 And I provide apipublisher Design Provide URL pattern as "/aux/wso2tel/"
 And I click on apipublisher Design "Get" checkbox
@@ -41,7 +42,7 @@ When I click on apipublisher Add link
 And I click Design new API radio button
 And I click Start Creating button
 And I provide apipublisher Design name as "<apiName>"
-And I provide apipublisher Design Context as "TestCreation"
+And I provide apipublisher Design Context as "TestAPI"
 And I provide apipublisher Design Version as "v1"
 And I provide apipublisher Design Provide URL pattern as "/aux/wso2tel/"
 And I click on apipublisher Design "Get" checkbox
@@ -71,7 +72,7 @@ When I click on apipublisher Add link
 And I click Design new API radio button
 And I click Start Creating button
 And I provide apipublisher Design name as "<apiName>"
-And I provide apipublisher Design Context as "APIProdCreation"
+And I provide apipublisher Design Context as "NameProd"
 And I provide apipublisher Design Version as "<version>"
 And I provide apipublisher Design Provide URL pattern as "/aux/wso2tel/"
 And I click on apipublisher Design "Get" checkbox
@@ -111,7 +112,7 @@ When I click on apipublisher Add link
 And I click Design new API radio button
 And I click Start Creating button
 And I provide apipublisher Design name as "<apiName>"
-And I provide apipublisher Design Context as "APITestCreation"
+And I provide apipublisher Design Context as "NameTest"
 And I provide apipublisher Design Version as "<version>"
 And I provide apipublisher Design Provide URL pattern as "/aux/wso2tel/"
 And I click on apipublisher Design "Get" checkbox
