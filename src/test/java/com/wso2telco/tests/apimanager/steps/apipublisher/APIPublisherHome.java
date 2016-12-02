@@ -289,11 +289,12 @@ public class APIPublisherHome extends BasicTestObject{
 		Assert.assertTrue("Production URL mismatched", publisherHome.isTierAvailability(arg1));
 	}
 	
-	@When("^I provide  apipublisher Implement endpoint type as \"([^\"]*)\"$")
+	@When("^I provide apipublisher Implement endpoint type as \"([^\"]*)\"$")
 	public void i_provide_apipublisher_Implement_endpoint_type_as(String arg1) throws Throwable {
 		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
 		publisherHome.selectEndpointType(arg1);
 	}
+
 	
 	@When("^I enter the credentials to login \"([^\"]*)\"$")
 	public void i_enter_the_credentials_to_login_and(String arg1) throws Throwable {
