@@ -12,7 +12,7 @@ Then I should see API "<apiName>" "<version>" with "<numOfSubscriptions>" Subscr
 Then I delete API "<apiName>" "<version>"
 Examples:
 | usertype|apiName   |version |numOfSubscriptions|
-|PUBLISHER|Weather   |v1      |0 Users           |
+|PUBLISHER|TestAPI   |v1      |0 Users           |
 
 
 @HUB-217
@@ -59,7 +59,7 @@ Then I should see API "<apiName>" "<version>" with "<numOfSubscriptions>" Subscr
 Then I delete API "<apiName>" "<version>"
 Examples:
 | usertype|apiName      |version |numOfSubscriptions|
-|PUBLISHER|AuxTestAPI   |v2      |0 Users           |
+|PUBLISHER|TestAPI      |v2      |0 Users           |
 
 
 @HUB-220
@@ -74,7 +74,7 @@ Then I should see API "<apiName>" "<version>" with "<numOfSubscriptions>" Subscr
 Then I delete API "<apiName>" "<version>"
 Examples:
 | usertype|apiName      |version |numOfSubscriptions|
-|PUBLISHER|AuxTestAPI   |v2      |0 Users           |
+|PUBLISHER|ProdAPI      |v2      |0 Users           |
 
 
 @HUB-221

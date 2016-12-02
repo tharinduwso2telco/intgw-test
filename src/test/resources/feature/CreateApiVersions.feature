@@ -16,7 +16,7 @@ Then I click on apipublisher API "<apiName>" "<newVersion>"
 Then I should see the status as "CREATED"
 Examples:
 | usertype|apiName   |olderVersion|newVersion|
-|PUBLISHER|AuxProdAPI|v1          |v2        |
+|PUBLISHER|ProdAPI   |v1          |v2        |
 
 
 @HUB-215
@@ -50,4 +50,4 @@ When I click on the apimanager "<apiName>" "<newVersion>" api
 Then I should see the apimanager APIs "<apiName>" status as "Published"
 Examples:
 | usertype|usertypeSP|apiName   |olderVersion|newVersion|
-|PUBLISHER|APPCREATE |AuxProdAPI|v1          |v2        |
+|PUBLISHER|APPCREATE |TestAPI   |v1          |v2        |

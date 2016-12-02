@@ -11,7 +11,7 @@ When I click on apipublisher Add link
 And I click Design new API radio button
 And I click Start Creating button
 And I provide apipublisher Design name as "<apiName>"
-And I provide apipublisher Design Context as "APIProdCreation1"
+And I provide apipublisher Design Context as "ProdCreation"
 And I provide apipublisher Design Version as "v1"
 And I provide apipublisher Design Provide URL pattern as "/aux/wso2tel/"
 And I click on apipublisher Design "Get" checkbox
@@ -28,7 +28,7 @@ Then I should see the status as "CREATED"
 
 Examples:
 | usertype|apiName   		 |version|prodEndpoint   |roleType		   |tier|
-|PUBLISHER|AuxProdAPI        |v1     |auxProd		 |Internal/publisher |Unlimited,Default,Requestbased,Silver,Subscription,Gold,Premium,Bronze|
+|PUBLISHER|ProductionAPI     |v1     |auxProd		 |Internal/publisher |Unlimited,Default,Requestbased,Silver,Subscription,Gold,Premium,Bronze|
 
 @HUB-196
 Scenario Outline: HUB-196 : Hub administrator creates custom API for test purposes
@@ -41,7 +41,7 @@ When I click on apipublisher Add link
 And I click Design new API radio button
 And I click Start Creating button
 And I provide apipublisher Design name as "<apiName>"
-And I provide apipublisher Design Context as "APICreation"
+And I provide apipublisher Design Context as "TestCreation"
 And I provide apipublisher Design Version as "v1"
 And I provide apipublisher Design Provide URL pattern as "/aux/wso2tel/"
 And I click on apipublisher Design "Get" checkbox
@@ -97,8 +97,8 @@ Then I should see the apimanager APIs page header as "APIs"
 When I click on the apimanager "<apiName>" "<version>" api
 Then I should see the apimanager APIs "<apiName>" status as "Published"
 Examples:
-| usertype|usertypeSP|apiName   |version|prodEndpoint |roleType		   |tier|
-|PUBLISHER|APPCREATE |AuxProdAPI|v1     |auxProd	   |Internal/publisher |Unlimited,Default,Requestbased,Silver,Subscription,Gold,Premium,Bronze|
+| usertype|usertypeSP|apiName       |version|prodEndpoint |roleType		   |tier|
+|PUBLISHER|APPCREATE |NameProdAPI|v1     |auxProd	   |Internal/publisher |Unlimited,Default,Requestbased,Silver,Subscription,Gold,Premium,Bronze|
 
 @HUB-198
 Scenario Outline: HUB-198 : Hub administrator directly publishes custom API for testing
@@ -138,7 +138,7 @@ When I click on the apimanager "<apiName>" "<version>" api
 Then I should see the apimanager APIs "<apiName>" status as "Published"
 Examples:
 | usertype|usertypeSP|apiName   |version|sandEndpoint  |roleType		   |tier                                                                  |
-|PUBLISHER|APPCREATE |AuxTestAPI|v1     |auxSand	   |Internal/publisher |Unlimited,Default,Requestbased,Silver,Subscription,Gold,Premium,Bronze|
+|PUBLISHER|APPCREATE |NameTestAPI|v1     |auxSand	   |Internal/publisher |Unlimited,Default,Requestbased,Silver,Subscription,Gold,Premium,Bronze|
 
 @HUB-199
 Scenario Outline: HUB-199 : Hub administrator publishes already created custom API
@@ -164,5 +164,5 @@ When I click on the apimanager "<apiName>" "<version>" api
 Then I should see the apimanager APIs "<apiName>" status as "Published"
 
 Examples:
-| usertype|usertypeSP|apiName   |version|
-|PUBLISHER|APPCREATE |AuxProdAPI|v1     |
+| usertype|usertypeSP|apiName      |version|
+|PUBLISHER|APPCREATE |ProductionAPI|v1     |
