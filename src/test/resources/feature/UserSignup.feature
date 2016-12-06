@@ -1,11 +1,11 @@
 Feature: Validate if user successfully signup to store
 
-@HUB-41 
+@HUB-41
 Scenario Outline: HUB-41 : Service provider signs up with all mandatory information to consume APIs
 Given I am in apimanager
 When I click on apimanager sign-up button
 Then I should see the apimanager sign-up for a new account form as "Create your Account"
-When I enter apimanager Sign-up for a new account username with randomNumber for "<usertype>"
+When I enter apimanager Sign-up for a new account username for "<usertype>"
 And I enter apimanager Sign-up for a new account Password for "<usertype>"
 And I enter apimanager Sign-up for a new account Re-type password for "<usertype>"
 And I enter apimanager Sign-up for a new account Last name as "<LastName>"
@@ -18,14 +18,14 @@ And I click on apimanager Sign-up for a new account submit button
 Then I should see the apimanager Sign-up for a new account success pop up with "User added successfully. You can now sign into the API store using the new user account".
 When I click on apimanager Sign-up for a new account success pop up ok button
 Then I should see the apimanager "Login" pop up
-When I enter username and password and Login for "<usertype>"
+When I enter apimanager Login username and password for "<usertype>"
 And I click on apimanager Login pop up login button
-Then I should see the logged apimanager "<usertype>" at the top right corner of the page
+Then I should see apimanager "<usertype>" at the top right corner of the page
 Examples:
-| usertype  |LastName   |FirstName   |Email	|Country	|Land_Phone |
-|LOGOUT	|AuxTestLast|AuxTestFirst|AuxTest123@gmail.com|Srilanka|2324434|
+|usertype |LastName   |FirstName   |Email	            |Country |Land_Phone |
+|LOGOUT	  |AuxTestLast|AuxTestFirst|AuxTest123@gmail.com|Srilanka|2324434    |
 
-@HUB-42  
+@HUB-42 
 Scenario Outline: HUB-42 : Service provider is not able to sign up without username provided
 Given I am in apimanager
 When I click on apimanager sign-up button
@@ -41,11 +41,11 @@ And I Enter Land Phone as "<Land_Phone>"
 And I click on apimanager Sign-up for a new account submit button 
 Then I should see the username validation failure prompt with "Please enter at lease 5 characters"
 Examples:
-| usertype  |LastName   |FirstName   |Email	|Country	|Land_Phone |
-|LOGOUT	|AuxTestLast|AuxTestFirst|AuxTest123@gmail.com|Srilanka|2324434|
+|usertype |LastName   |FirstName   |Email	            |Country |Land_Phone|
+|LOGOUT	  |AuxTestLast|AuxTestFirst|AuxTest123@gmail.com|Srilanka|2324434   |
 
 
-@HUB-43 
+@HUB-43
 Scenario Outline: HUB-43 : Service provider is not able to sign up without password provided
 Given I am in apimanager
 When I click on apimanager sign-up button
@@ -61,10 +61,10 @@ And I click on apimanager Sign-up for a new account submit button
 Then I should see the password validation failure prompt with "Enter a more secure password"
 Then I should see the retype password validation failure prompt with "Confirm Password"
 Examples:
-| usertype  |LastName   |FirstName   |Email	|Country	|Land_Phone |
-|LOGOUT	|AuxTestLast|AuxTestFirst|AuxTest123@gmail.com|Srilanka|2324434|
+|usertype|LastName   |FirstName   |Email	           |Country	|Land_Phone |
+|LOGOUT	 |AuxTestLast|AuxTestFirst|AuxTest123@gmail.com|Srilanka|2324434    |
 
-@HUB-44 
+@HUB-44
 Scenario Outline: HUB-44 : Service provider is not able to sign up without lastname provided
 Given I am in apimanager
 When I click on apimanager sign-up button
@@ -80,10 +80,10 @@ And I Enter Land Phone as "<Land_Phone>"
 And I click on apimanager Sign-up for a new account submit button 
 Then I should see the lastname validation failure prompt with "This field is required."
 Examples:
-| usertype  |LastName   |Email	|Country	|Land_Phone |
-|LOGOUT	|AuxTestLast|AuxTest123@gmail.com|Srilanka|2324434|
+|usertype|LastName   |Email	              |Country |Land_Phone |
+|LOGOUT	 |AuxTestLast|AuxTest123@gmail.com|Srilanka|2324434    |
 
-@HUB-45 
+@HUB-45
 Scenario Outline: HUB-45 : Service provider is not able to sign up without firstname provided
 Given I am in apimanager
 When I click on apimanager sign-up button
@@ -99,10 +99,10 @@ And I Enter Land Phone as "<Land_Phone>"
 And I click on apimanager Sign-up for a new account submit button
 Then I should see the firstname validation failure prompt with "This field is required."
 Examples:
-| usertype  |FirstName   |Email	|Country	|Land_Phone |
-|LOGOUT	|AuxTestFirst|AuxTest123@gmail.com|Srilanka|2324434|
+|usertype |FirstName   |Email	            |Country |Land_Phone |
+|LOGOUT	  |AuxTestFirst|AuxTest123@gmail.com|Srilanka|2324434    |
 
-@HUB-46 
+@HUB-46
 Scenario Outline: HUB-46 : Service provider is not able to sign up without email provided
 Given I am in apimanager
 When I click on apimanager sign-up button
@@ -118,8 +118,8 @@ And I Enter Land Phone as "<Land_Phone>"
 And I click on apimanager Sign-up for a new account submit button
 Then I should see the email validation failure prompt with "This field is required."
 Examples:
-| usertype  |LastName   |FirstName   |Country	|Land_Phone |
-|LOGOUT	|AuxTestLast|AuxTestFirst|Srilanka|2324434|
+|usertype  |LastName   |FirstName   |Country	|Land_Phone |
+|LOGOUT	   |AuxTestLast|AuxTestFirst|Srilanka   |2324434    |
 
 @HUB-47 
 Scenario Outline: HUB-47 :: Version : 1 :: Service provider is not able to sign up using invalid email address
@@ -135,10 +135,10 @@ And I enter apimanager Sign-up for a new account Email as "<Email>"
 And I click on apimanager Sign-up for a new account submit button
 Then I should see the email validation failure prompt with "Invalid email address"
 Examples:
-| usertype  |LastName   |FirstName   |Email	|Country	|Land_Phone |
-|LOGOUT	|AuxTestLast|AuxTestFirst|AuxTest123|Srilanka|2324434|
+|usertype  |LastName   |FirstName   |Email	   |Country	|Land_Phone |
+|LOGOUT	   |AuxTestLast|AuxTestFirst|AuxTest123|Srilanka|2324434    |
 
-@HUB-48 
+@HUB-48
 Scenario Outline: HUB-48 : Service provider is not able to sign up using a password that doesn't match minimum requirements
 Given I am in apimanager
 When I click on apimanager sign-up button
@@ -155,15 +155,15 @@ And I Enter Land Phone as "<Land_Phone>"
 And I click on apimanager Sign-up for a new account submit button
 Then I should see the password validation failure prompt with "Enter a more secure password"
 Examples:
-| usertype  |Password   |LastName   |FirstName   |Email	|Country	|Land_Phone |
-|LOGOUT		|asd		|AuxTestLast|AuxTestFirst|AuxTest123@gmail.com|Srilanka|2324434|
+| usertype  |Password   |LastName   |FirstName   |Email	              |Country |Land_Phone |
+|LOGOUT		|asd		|AuxTestLast|AuxTestFirst|AuxTest123@gmail.com|Srilanka|2324434    |
 
-@HUB-49 
+@HUB-49
 Scenario Outline: HUB-49 : Service provider is not able to sign up using existing username
 Given I am in apimanager
 When I click on apimanager sign-up button
 Then I should see the apimanager sign-up for a new account form as "Create your Account"
-When I enter apimanager Sign-up for a new account username with randomNumber for "<usertype>"
+When I enter apimanager Sign-up for a new account username for "<usertype>"
 And I enter apimanager Sign-up for a new account Password for "<usertype>"
 And I enter apimanager Sign-up for a new account Re-type password for "<usertype>"
 And I enter apimanager Sign-up for a new account Last name as "<LastName>"
@@ -176,7 +176,7 @@ Then I should see the apimanager "Login" pop up
 Given I am in apimanager
 When I click on apimanager sign-up button
 Then I should see the apimanager sign-up for a new account form as "Create your Account"
-When I enter apimanager Sign-up for a new account username with randomNumber for "<usertype>"
+When I enter apimanager Sign-up for a new account username for "<usertype>"
 And I enter apimanager Sign-up for a new account Password for "<usertype>"
 And I enter apimanager Sign-up for a new account Re-type password for "<usertype>"
 And I enter apimanager Sign-up for a new account Last name as "<LastName>"
@@ -189,15 +189,15 @@ And I click on apimanager Sign-up for a new account submit button
 Then I should see the apistore error pop up with "User name already exists"
 And I click on apistore error pop up ok button
 Examples:
-| usertype  |LastName   |FirstName   |Email	|Country	|Land_Phone |
-|LOGOUT	|AuxTestLast|AuxTestFirst|AuxTest123@gmail.com|Srilanka|2324434|
+|usertype      |LastName   |FirstName   |Email	             |Country	|Land_Phone |
+|SUBSCRIBERAPP |AuxTestLast|AuxTestFirst|AuxTest123@gmail.com|Srilanka  |2324434    |
 
-@HUB-50 @malshaniP
+@HUB-50
 Scenario Outline: HUB-50 : Service provider signs up without providing optional information
 Given I am in apimanager
 When I click on apimanager sign-up button
 Then I should see the apimanager sign-up for a new account form as "Create your Account"
-When I enter apimanager Sign-up for a new account username with randomNumber for "<usertype>"
+When I enter apimanager Sign-up for a new account username for "<usertype>"
 And I enter apimanager Sign-up for a new account Password for "<usertype>"
 And I enter apimanager Sign-up for a new account Re-type password for "<usertype>"
 And I enter apimanager Sign-up for a new account Last name as "<LastName>"
@@ -207,9 +207,9 @@ And I click on apimanager Sign-up for a new account submit button
 Then I should see the apimanager Sign-up for a new account success pop up with "User added successfully. You can now sign into the API store using the new user account".
 When I click on apimanager Sign-up for a new account success pop up ok button
 Then I should see the apimanager "Login" pop up
-When I enter username and password and Login for "<usertype>"
+When I enter apimanager Login username and password for "<usertype>"
 And I click on apimanager Login pop up login button
-Then I should see the logged apimanager "<usertype>" at the top right corner of the page
+Then I should see apimanager "<usertype>" at the top right corner of the page
 Examples:
-| usertype  |LastName   |FirstName   |Email	|
-|SUBSCRIBERAPP	|AuxTestLast|AuxTestFirst|AuxTest123@gmail.com|
+|usertype       |LastName   |FirstName   |Email	              |
+|APPCREATE   	|AuxTestLast|AuxTestFirst|AuxTest123@gmail.com|

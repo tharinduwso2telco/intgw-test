@@ -16,8 +16,8 @@ And I should see the status of the application "<appname>" approval task as "REA
 And I click Assign To Me button for "<appname>" Application Details row for "<usertype>"
 Then I should see the status of the application "<appname>" approval task as "RESERVED" 
 Examples:
-|usertype |appname |
-|AdminUser|AppTwo  |
+|usertype |appname      |
+|AdminUser|AuXTestAPPB  |
 
 @HUB-337
 Scenario Outline: HUB-337 : Operator admin user assigns a application task to himself and applies throttling layer
@@ -38,8 +38,8 @@ And I click Assign To Me button for "<appname>" Application Details row for "<us
 Then I should see the status of the application "<appname>" approval task as "RESERVED"
 And I should see the selected throttling layer as "<tiers>" for "<appname>" Application
 Examples:
-|usertype |appname |tiers    |
-|AdminUser|AppSix  |Unlimited|
+|usertype |appname         |tiers    |
+|AdminUser|AuXTestAPPD  |Unlimited|
 
 
 @HUB-338
@@ -60,8 +60,8 @@ Then I should see the status of the application "<appname>" approval task as "IN
 Then I click on action dropdown of "<appname>" task
 And I should see Action "<options>" of the "<appname>" task in the dropdown
 Examples:
-|usertype |appname |options        |
-|AdminUser|AppTwo  |Approve,Reject |
+|usertype |appname      |options        |
+|AdminUser|AuXTestAPPB  |Approve,Reject |
 
 @HUB-339
 Scenario Outline: HUB-339 : Operator admin user starts assigned task and applies throttling layer
@@ -84,8 +84,8 @@ And I should see the selected throttling layer as "<tiers>" for "<appname>" Appl
 Then I click on action dropdown of "<appname>" task
 And I should see Action "<options>" of the "<appname>" task in the dropdown
 Examples:
-|usertype |appname |options        |tiers    |
-|AdminUser|AppTwo  |Approve,Reject |Unlimited|
+|usertype |appname      |options        |tiers    |
+|AdminUser|AuXTestAPPB  |Approve,Reject |Unlimited|
 
 
 @HUB-340
@@ -111,8 +111,8 @@ And I should see the selected throttling layer as "<tiers>" for "<appname>" Appl
 Then I click on action dropdown of "<appname>" task
 And I should see Action "<options>" of the "<appname>" task in the dropdown
 Examples:
-|usertype |appname   |options        |tiers    |
-|AdminUser|AppSeven  |Approve,Reject |Unlimited|
+|usertype |appname      |options        |tiers    |
+|AdminUser|AuXTestAPPA  |Approve,Reject |Unlimited|
 
 
 @HUB-341 
@@ -140,8 +140,8 @@ And I should see the selected throttling layer as "<newTiers>" for "<appname>" A
 Then I click on action dropdown of "<appname>" task
 And I should see Action "<options>" of the "<appname>" task in the dropdown
 Examples:
-|usertype |appname   |options        |olderTiers   |newTiers |
-|AdminUser|AppSeven  |Approve,Reject |Unlimited    |Medium   |
+|usertype |appname      |options        |olderTiers   |newTiers |
+|AdminUser|AuXTestAPPC  |Approve,Reject |Unlimited    |Medium   |
 
 
 @HUB-342
@@ -174,8 +174,8 @@ When I click on apimanager My Applications
 Then I should see the apimanager Application page header as "Applications"
 Then I should see the Application "<appname>" workflow status as "<status>" and Tier as "<tier>"
 Examples:
-|usertype |usertypeSP|appname |action  |status |tier    |
-|AdminUser|APPCREATE |AppFive |Approve |ACTIVE |Large   |
+|usertype |usertypeSP  |appname      |action  |status |tier    |
+|AdminUser|APPCREATE |AuXTestAPPA |Approve |ACTIVE |Large   |
 
 
 @HUB-343
@@ -210,8 +210,8 @@ When I click on apimanager My Applications
 Then I should see the apimanager Application page header as "Applications"
 Then I should see the Application "<appname>" workflow status as "<status>" and Tier as "<tier>"
 Examples:
-|usertype |usertypeSP|appname |action  |status |tier        |
-|AdminUser|APPCREATE |AppSix  |Approve |ACTIVE |Unlimited   |
+|usertype |usertypeSP  |appname      |action  |status |tier        |
+|AdminUser|APPCREATE |AuXTestAPPC  |Approve |ACTIVE |Unlimited   |
 
 
 @HUB-344
@@ -246,8 +246,8 @@ When I click on apimanager My Applications
 Then I should see the apimanager Application page header as "Applications"
 Then I should see the Application "<appname>" workflow status as "<status>" and Tier as "<tier>"
 Examples:
-|usertype |usertypeSP|appname   |action  |status |tier        |
-|AdminUser|APPCREATE |AppSeven  |Approve |ACTIVE |Unlimited   |
+|usertype |usertypeSP|appname         |action  |status |tier        |
+|AdminUser|APPCREATE |AuXTestAPPD     |Approve |ACTIVE |Unlimited   |
 
 @HUB-345
 Scenario Outline: HUB-345 : Operator admin user approves task and changes the previously applied throttling layer
@@ -282,8 +282,8 @@ When I click on apimanager My Applications
 Then I should see the apimanager Application page header as "Applications"
 Then I should see the Application "<appname>" workflow status as "<status>" and Tier as "<newTier>"
 Examples:
-|usertype |usertypeSP|appname   |action  |status |olderTier   |newTier |
-|AdminUser|APPCREATE |AppSix    |Approve |ACTIVE |Unlimited   |Small   |
+|usertype |usertypeSP|appname        |action  |status |olderTier   |newTier |
+|AdminUser|APPCREATE |AuXTestAPPB    |Approve |ACTIVE |Unlimited   |Small   |
 
 @HUB-346
 Scenario Outline: HUB-346 : Operator admin user rejects application approval task
@@ -315,5 +315,5 @@ When I click on apimanager My Applications
 Then I should see the apimanager Application page header as "Applications"
 Then I should see the Application "<appname>" workflow status as "<status>" and Tier as "<tier>"
 Examples:
-|usertype |usertypeSP|appname |action  |status   |tier    |
-|AdminUser|APPCREATE |AppFive |Reject  |REJECTED |Default |
+|usertype |usertypeSP|appname        |action  |status   |tier    |
+|AdminUser|APPCREATE |AuXTestAPPM984 |Reject  |REJECTED |Default |

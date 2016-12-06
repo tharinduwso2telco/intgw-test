@@ -11,12 +11,12 @@ Then I should see the status as "PUBLISHED"
 When I click on create new version button
 And I provide "<newVersion>"
 And I click on Done button
-Then I search new API version with "<apiName>"
+Then I search API with "<apiName>"
 Then I click on apipublisher API "<apiName>" "<newVersion>"
 Then I should see the status as "CREATED"
 Examples:
-| usertype|apiName   |olderVersion|newVersion|
-|PUBLISHER|AuxProdAPI|v1          |v2        |
+| usertype|apiName       |olderVersion|newVersion|
+|PUBLISHER|NameProdAPI   |v1          |v2        |
 
 
 @HUB-215
@@ -30,7 +30,7 @@ Then I should see the status as "PUBLISHED"
 When I click on create new version button
 And I provide "<newVersion>"
 And I click on Done button
-Then I search new API version with "<apiName>"
+Then I search API with "<apiName>"
 Then I click on apipublisher API "<apiName>" "<newVersion>"
 Then I should see the status as "CREATED"
 When I click on Lifecycle tab
@@ -49,5 +49,5 @@ Then I should see the apimanager APIs page header as "APIs"
 When I click on the apimanager "<apiName>" "<newVersion>" api
 Then I should see the apimanager APIs "<apiName>" status as "Published"
 Examples:
-| usertype|usertypeSP|apiName   |olderVersion|newVersion|
-|PUBLISHER|APPCREATE |AuxProdAPI|v1          |v2        |
+| usertype|usertypeSP|apiName       |olderVersion|newVersion|
+|PUBLISHER|APPCREATE |NameTestAPI   |v1          |v2        |

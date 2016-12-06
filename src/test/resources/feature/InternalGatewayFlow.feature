@@ -1,7 +1,7 @@
-Feature: End to end flow of External Gateway
+Feature: End to end flow of Internal Gateway
 
 
-Scenario Outline: External Gateway flow
+Scenario Outline: Internal Gateway flow
 #API Publisher Create and Publish an API
 Given I am in apipublisher
 When I provide apipublisher username and password for "<usertypePub>"
@@ -109,12 +109,9 @@ When I click on apimanager Manager page Workflow tab
 Then I should see apimanager Manager Approval Tasks page header as "Approval Tasks"
 And I click on subscriptions creation under tasks
 Then I should see created application "<appName>" at the top of the Approval Tasks table for "<usertypeAdmin>"
-When I click on Subscription Details drop box for "<appName>" row for "<usertypeAdmin>"
-And I select "<Subscriptiontiers>" for "<appName>" Application Details row for "<usertypeAdmin>"
 And I should see the status of the application "<appName>" approval task as "READY" 
 And I click Assign To Me button for "<appName>" Application Details row for "<usertypeAdmin>"
 Then I should see the status of the application "<appName>" approval task as "RESERVED"
-And I should see the selected throttling layer as "<Subscriptiontiers>" for "<appName>" Application
 And I click on Start button for "<appName>" Application Details row for "<usertypeAdmin>"
 Then I should see the status of the application "<appName>" approval task as "IN_PROGRESS"
 And I select "<action>" and click complete button for "<appName>" Application Details row for "<usertypeAdmin>"
@@ -122,6 +119,28 @@ Then I should see Enter aprrove/reject reasons pop up header as "Enter approve/r
 When I enter aprrove/reject reason as "Approve"
 And click aprrove/reject reason ok button
 Then I should not see the created application in Approval Tasks table as "<appName>" for "<usertypeAdmin>"
+#API Publisher Approves the created subscription
+Given I am in hubmanager
+Then I should see the apimanager Manager page header as "Manager"
+When I enter apimanager Manager page apipublisher username credentials
+And I click on apimanager Manager page login button
+Then I should see the apimanager Manager Home page header as "Home"
+And I should see apimanager Manager Home Billing Workflow Blacklist Whitelist tabs
+When I click on apimanager Manager page Workflow tab
+Then I should see apimanager Manager Approval Tasks page header as "Approval Tasks"
+And I click on subscriptions creation under tasks
+Then I should see created application "<appName>" at the top of the Approval Tasks table for "<usertypePub>"
+When I click on Subscription Details drop box for "<appName>" row for "<usertypePub>"
+And I select "<Subscriptiontiers>" for "<appName>" Application Details row for "<usertypePub>"
+Then I should see the status of the application "<appName>" approval task as "RESERVED"
+And I should see the selected throttling layer as "<Subscriptiontiers>" for "<appName>" Application
+And I click on Start button for "<appName>" Application Details row for "<usertypePub>"
+Then I should see the status of the application "<appName>" approval task as "IN_PROGRESS"
+And I select "<action>" and click complete button for "<appName>" Application Details row for "<usertypeAdmin>"
+Then I should see Enter aprrove/reject reasons pop up header as "Enter approve/reject reasons"
+When I enter aprrove/reject reason as "Approve"
+And click aprrove/reject reason ok button
+Then I should not see the created application in Approval Tasks table as "<appName>" for "<usertypePub>"
 #Login to store and check the status of the subscription
 Given I am in apimanager
 When I click on apimanager login
@@ -134,8 +153,8 @@ Then I should see the apimanager Application page header as "Applications"
 When I click on apimanager Application "<appName>"
 Then I click on Application "<appName>" "Subscriptions" tab
 Then I should see the API "<apiName&version>" status as "<subscriptionStatus>" and Subscription Tier as "<Subscriptiontiers>"
+
 Examples:
 |usertypePub|usertypeSP|usertypeAdmin|apiName   |version|context        |prodEndpoint |roleType		      |ApiTier                                                               |LastName   |FirstName   |Email	           |appName         |Description  |AppStatusBeforeApprove|action |AppStatusAfterApprove|AppTier  |Subscriptiontiers|subscriptionStatus|apiName&version|
-|PUBLISHER  |APPCREATE |AdminUser    |AuxProdAPI|v1     |APIProdCreation|auxProd	  |Internal/publisher |Unlimited,Default,Requestbased,Silver,Subscription,Gold,Premium,Bronze|AuxTestLast|AuxTestFirst|AuxTest123@gmail.com|AuXTestAPPM2	|AuXTestingAPP|INACTIVE              |Approve|ACTIVE               |Unlimited|Premium          |UNBLOCKED         |AuxProdAPI - v1|
-
+|PUBLISHER  |APPCREATE |AdminUser    |AuxProdAPI|v1     |APIProdCreation|auxProd	  |Internal/publisher |Unlimited,Default,Requestbased,Silver,Subscription,Gold,Premium,Bronze|AuxTestLast|AuxTestFirst|AuxTest123@gmail.com|AuXTestAPPM1	|AuXTestingAPP|INACTIVE              |Approve|ACTIVE               |Unlimited|Premium          |UNBLOCKED         |AuxProdAPI - v1|
 

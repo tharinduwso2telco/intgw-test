@@ -16,7 +16,7 @@ And I click on Add button
 Then I should see the added Application name as "<appName>" and the "<status>" as status
 Examples:
 |usertype |appName      |Description  |status  |
-|APPCREATE|AuXTestAPPM1	|AuXTestingAPP|INACTIVE|
+|APPCREATE|AuXTestAPPA	|AuXTestingAPP|INACTIVE|
 
 
 @HUB-60 
@@ -52,7 +52,7 @@ Then I should see the confirm delete popup with "Confirm Delete"
 And I click on confirm delete popup Yes button
 Examples:
 |usertype |appName      |Description  |status  |
-|APPCREATE|AuXTestAPPB	|AuXTestingAPP|INACTIVE|
+|APPCREATE|AuXTestAPPA	|AuXTestingAPP|INACTIVE|
 
 @HUB-65
 Scenario Outline: HUB-65 : User creates an application by the same name as previously deleted
@@ -74,7 +74,7 @@ And I click on Add button
 Then I should see the added Application name as "<appName>" and the "<status>" as status
 Examples:
 |usertype |appName      |Description  |status  |
-|APPCREATE|AuxTestAPPM4	|AuXTestingAPP|INACTIVE|
+|APPCREATE|AuxTestAPPA	|AuXTestingAPP|INACTIVE|
 
 @HUB-66
 Scenario Outline: HUB-66 : User is not able to create an application with the same name as previously created application
@@ -100,7 +100,7 @@ Then I should see the Duplicate Application error pop up with "API Store - Error
 And I click on Duplicate Application error pop up Ok button
 Examples:
 |usertype |appName      |Description  |status  |
-|APPCREATE|AuXTestAPPM5	|AuXTestingAPP|INACTIVE|
+|APPCREATE|AuXTestAPPB	|AuXTestingAPP|INACTIVE|
 
 
 @HUB-67

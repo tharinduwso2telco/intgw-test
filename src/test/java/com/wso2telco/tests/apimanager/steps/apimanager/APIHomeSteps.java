@@ -48,13 +48,13 @@ public class APIHomeSteps extends BasicTestObject {
 	    SignUpPage signupPage = new SignUpPage(driver);
 		signupPage.enterNewUName(config.getValue(getEnvironment() + arg1 + "user"));
 	}
-	
+/*	
 	@When("^I enter apimanager Sign-up for a new account username with randomNumber for \"([^\"]*)\"$")
 	public void i_enter_apimanager_Sign_up_for_a_new_account_username_with_randomNumber_for(String arg1) throws Throwable {
 	    SignUpPage signupPage = new SignUpPage(driver);
 		signupPage.enterNewUName(config.getValue(getEnvironment() + arg1 + "user")+randomNumber);
 	}
-
+*/
 	@When("^I enter apimanager Sign-up for a new account Password for \"([^\"]*)\"$")
 	public void i_enter_apimanager_Sign_up_for_a_new_account_Password_for(String arg1) throws Throwable {
 		SignUpPage signupPage = new SignUpPage(driver);
@@ -166,14 +166,14 @@ public class APIHomeSteps extends BasicTestObject {
 	    loginPage.enterLoginUserName(config.getValue(getEnvironment() + arg1 + "user"));
 		loginPage.enterLoginPassword(config.getValue(getEnvironment() + arg1 + "pwd"));
 	}
-	
+/*	
 	@When("^I enter username and password and Login for \"([^\"]*)\"$")
 	public void i_enter_username_and_password_and_Login_for(String arg1) throws Throwable {
 		LoginPage loginPage = new LoginPage(driver);
 	    loginPage.enterLoginUserName(config.getValue(getEnvironment() + arg1 + "user")+randomNumber);
 		loginPage.enterLoginPassword(config.getValue(getEnvironment() + arg1 + "pwd"));
 	}
-
+*/
 	@When("^I click on apimanager Login pop up login button$")
 	public void i_click_on_apimanager_Login_pop_up_login_button() throws Throwable {
 		LoginPage loginPage = new LoginPage(driver);
@@ -187,7 +187,7 @@ public class APIHomeSteps extends BasicTestObject {
 		Assert.assertTrue("User Name did not show properly",
 				loginPage.isUserName(config.getValue(getEnvironment() + arg1 + "user")));
 	}
-	
+/*	
 	@Then("^I should see the logged apimanager \"([^\"]*)\" at the top right corner of the page$")
 	public void i_should_see_the_logged_apimanager_at_the_top_right_corner_of_the_page(String arg1) throws Throwable {
 		LoginPage loginPage = new LoginPage(driver);
@@ -195,7 +195,7 @@ public class APIHomeSteps extends BasicTestObject {
 		Assert.assertTrue("User Name did not show properly",
 				loginPage.isUserName(config.getValue(getEnvironment() + arg1 + "user")+randomNumber));
 	}
-
+*/
 	@When("^I click on arrow after the apimanager username$")
 	public void i_click_on_arrow_after_the_apimanager_username() throws Throwable {
 		LoginPage loginPage = new LoginPage(driver);

@@ -296,10 +296,10 @@ public class IDServerUserRoles extends BasicTestObject {
 		driver.get(config.getValue(getEnvironment() + "ActivityMonitor"));
 	}
 
-   @When("^I clear existing aggrigator role$")
-	public void I_clear_existing_aggrigator_role() throws Throwable {
+	@When("^I clear existing aggrigator role \"([^\"]*)\"$")
+	public void i_clear_existing_aggrigator_role(String arg1) throws Throwable {
 		CarbonRolesPage carbonRoles = new CarbonRolesPage(driver);
-        carbonRoles.enterAggrigatorRoleName("aggrigator");
+        carbonRoles.enterAggrigatorRoleName(arg1);
 		carbonRoles.clickSearch();
 
 		if (carbonRoles.isRoleVisible()) {
@@ -407,5 +407,30 @@ public class IDServerUserRoles extends BasicTestObject {
 	public void i_click_on_Success_pop_up_message_Ok_button() throws Throwable {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
 		carbonUserRolesPage.clickOK();
+	}
+	
+	@Then("^I select role \"([^\"]*)\" to Add Role$")
+	public void i_select_role_to_Add_Role(String arg1) throws Throwable {
+		CarbonRolesPage carbonRoles = new CarbonRolesPage(driver);
+		carbonRoles.selectRolePermission(arg1);
+	}
+	
+	@When("^I clear existing users \"([^\"]*)\"$")
+	public void i_clear_existing_users(String arg1) throws Throwable {
+		CarbonRolesPage carbonRoles = new CarbonRolesPage(driver);
+        carbonRoles.enterUsersName(arg1);
+		carbonRoles.clickSearchUsers();
+
+		if (carbonRoles.isUserNameVisible()) {
+			carbonRoles.clickDeleteUser(arg1);
+			carbonRoles.clickYes();
+			Thread.sleep(2000);
+			carbonRoles.clickOK();
+			Thread.sleep(2000);
+		} else {
+			Thread.sleep(2000);
+			carbonRoles.clickOK();
+			Thread.sleep(2000);
+		}
 	}
 }

@@ -1,12 +1,17 @@
 Feature: User creation for API roles
 
-@HUB-55
+@HUB-55 
 Scenario Outline: HUB-55 : Hub administrator creates user with API Creator Role
 Given I am in identity server page
 When I enter identity server username credentials
 And I click on identity server sign in
 Then I should see the ids Home page header as "WSO2Telco Hub Home"
 When I click on identity server Main tab
+And I click on identity server Configuration Users and Roles List link
+Then I should see ids Configuration menu with first item as "Users and Roles"
+When I click identity server User Management Users link
+Then I should see ids User Management Users page header as "Users"
+When I clear existing users "<userName>"
 And I click on identity server Configuration Users and Roles Add link
 Then I should see ids Configuration menu with first item as "Add Users and Roles"
 When I click identity server User Management Add New User link
@@ -31,6 +36,11 @@ When I enter identity server username credentials
 And I click on identity server sign in
 Then I should see the ids Home page header as "WSO2Telco Hub Home"
 When I click on identity server Main tab
+And I click on identity server Configuration Users and Roles List link
+Then I should see ids Configuration menu with first item as "Users and Roles"
+When I click identity server User Management Users link
+Then I should see ids User Management Users page header as "Users"
+When I clear existing users "<userName>"
 And I click on identity server Configuration Users and Roles Add link
 Then I should see ids Configuration menu with first item as "Add Users and Roles"
 When I click identity server User Management Add New User link
@@ -55,6 +65,11 @@ When I enter identity server username credentials
 And I click on identity server sign in
 Then I should see the ids Home page header as "WSO2Telco Hub Home"
 When I click on identity server Main tab
+And I click on identity server Configuration Users and Roles List link
+Then I should see ids Configuration menu with first item as "Users and Roles"
+When I click identity server User Management Users link
+Then I should see ids User Management Users page header as "Users"
+When I clear existing users "<userName>"
 And I click on identity server Configuration Users and Roles Add link
 Then I should see ids Configuration menu with first item as "Add Users and Roles"
 When I click identity server User Management Add New User link
