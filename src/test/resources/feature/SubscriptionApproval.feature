@@ -15,10 +15,9 @@ Then I should see created application "<appname>" at the top of the Approval Tas
 And I should see the status of the application "<appname>" approval task as "READY" 
 And I click Assign To Me button for "<appname>" Application Details row for "<usertype>"
 Then I should see the status of the application "<appname>" approval task as "RESERVED" 
-
 Examples:
-|usertype |appname   |
-|AdminUser|AuXTestAPPC  |
+|usertype |appname    |
+|AdminUser|AuXTestAPPC|
 
 
 @HUB-349
@@ -33,15 +32,15 @@ When I click on apimanager Manager page Workflow tab
 Then I should see apimanager Manager Approval Tasks page header as "Approval Tasks"
 And I click on subscriptions creation under tasks
 Then I should see created application "<appname>" at the top of the Approval Tasks table for "<usertype>"
-When I click on Subscription Details drop box for "<appname>" row for "<usertype>"
-And I select "<tiers>" for "<appname>" Application Details row for "<usertype>"
 And I should see the status of the application "<appname>" approval task as "READY" 
 And I click Assign To Me button for "<appname>" Application Details row for "<usertype>"
+When I click on Subscription Details drop box for "<appname>" row for "<usertype>"
+And I select "<tiers>" for "<appname>" Application Details row for "<usertype>"
 Then I should see the status of the application "<appname>" approval task as "RESERVED"
 And I should see the selected throttling layer as "<tiers>" for "<appname>" Application
 Examples:
-|usertype |appname   |tiers    |
-|AdminUser|AuXTestAPPA    |Unlimited|
+|usertype |appname    |tiers    |
+|AdminUser|AuXTestAPPA|Unlimited|
 
 @HUB-350
 Scenario Outline: HUB-350 : Operator admin user starts assigned task without applying throttling layer
@@ -61,8 +60,8 @@ Then I should see the status of the application "<appname>" approval task as "IN
 Then I click on action dropdown of "<appname>" task
 And I should see Action "<options>" of the "<appname>" task in the dropdown
 Examples:
-|usertype |appname |options        |
-|AdminUser|AuXTestAPPA  |Approve,Reject |
+|usertype |appname    |options        |
+|AdminUser|AuXTestAPPA|Approve,Reject |
 
 
 @HUB-351
@@ -77,16 +76,16 @@ When I click on apimanager Manager page Workflow tab
 Then I should see apimanager Manager Approval Tasks page header as "Approval Tasks"
 And I click on subscriptions creation under tasks
 Then I should see created application "<appname>" at the top of the Approval Tasks table for "<usertype>"
+And I should see the status of the application "<appname>" approval task as "RESERVED" 
 When I click on Subscription Details drop box for "<appname>" row for "<usertype>"
 And I select "<tiers>" for "<appname>" Application Details row for "<usertype>"
-And I should see the status of the application "<appname>" approval task as "RESERVED" 
 And I click on Start button for "<appname>" Application Details row for "<usertype>"
 Then I should see the status of the application "<appname>" approval task as "IN_PROGRESS"
 And I should see the selected throttling layer as "<tiers>" for "<appname>" Application
 Then I click on action dropdown of "<appname>" task
 And I should see Action "<options>" of the "<appname>" task in the dropdown
 Examples:
-|usertype |appname |options        |tiers    |
+|usertype |appname      |options        |tiers    |
 |AdminUser|AuXTestAPPA  |Approve,Reject |Unlimited|
 
 
@@ -113,7 +112,7 @@ And I should see the selected throttling layer as "<tiers>" for "<appname>" Appl
 Then I click on action dropdown of "<appname>" task
 And I should see Action "<options>" of the "<appname>" task in the dropdown
 Examples:
-|usertype |appname   |options        |tiers    |
+|usertype |appname        |options        |tiers    |
 |AdminUser|AuXTestAPPB    |Approve,Reject |Premium  |
 
 
@@ -142,7 +141,7 @@ And I should see the selected throttling layer as "<newTiers>" for "<appname>" A
 Then I click on action dropdown of "<appname>" task
 And I should see Action "<options>" of the "<appname>" task in the dropdown
 Examples:
-|usertype |appname   |options        |olderTiers   |newTiers |
+|usertype |appname       |options        |olderTiers   |newTiers |
 |AdminUser|AuXTestAPPD   |Approve,Reject |Unlimited    |Premium  |
 
 
@@ -178,7 +177,7 @@ When I click on apimanager Application "<appname>"
 Then I click on Application "<appname>" "Subscriptions" tab
 Then I should see the API "<apiname>" status as "<status>" and Subscription Tier as "<tier>"
 Examples:
-|usertype |usertypeSP|appname |action  |status    |tier     |apiname        |
+|usertype |usertypeSP|appname     |action  |status    |tier     |apiname           |
 |AdminUser|APPCREATE |AuXTestAPPD |Approve |UNBLOCKED |Bronze   |ProductionAPI - v1|    
 
 
@@ -216,7 +215,7 @@ When I click on apimanager Application "<appname>"
 Then I click on Application "<appname>" "Subscriptions" tab
 Then I should see the API "<apiname>" status as "<status>" and Subscription Tier as "<tier>"
 Examples:
-|usertype |usertypeSP|appname |action  |status    |tier        |apiname        |
+|usertype |usertypeSP|appname     |action  |status    |tier        |apiname        |
 |AdminUser|APPCREATE |AuXTestAPPB |Approve |UNBLOCKED |Unlimited   |AuxProdAPI - v1|  
 
 
@@ -254,7 +253,7 @@ When I click on apimanager Application "<appname>"
 Then I click on Application "<appname>" "Subscriptions" tab
 Then I should see the API "<apiname>" status as "<status>" and Subscription Tier as "<tier>"
 Examples:
-|usertype |usertypeSP|appname   |action  |status    |tier        |apiname        |
+|usertype |usertypeSP|appname       |action  |status    |tier        |apiname         |
 |AdminUser|APPCREATE |AuXTestAPPC   |Approve |UNBLOCKED |Unlimited   |NameProdAPI - v1|  
 
 
@@ -293,7 +292,7 @@ When I click on apimanager Application "<appname>"
 Then I click on Application "<appname>" "Subscriptions" tab
 Then I should see the API "<apiname>" status as "<status>" and Subscription Tier as "<tier>"
 Examples:
-|usertype |usertypeSP|appname   |action  |status    |olderTier   |newTier |apiname        |
+|usertype |usertypeSP|appname       |action  |status    |olderTier   |newTier |apiname         |
 |AdminUser|APPCREATE |AuXTestAPPA   |Approve |UNBLOCKED |Unlimited   |Gold    |NameTestAPI - v2|  
 
 
@@ -329,7 +328,7 @@ When I click on apimanager Application "<appname>"
 Then I click on Application "<appname>" "Subscriptions" tab
 Then I should see the API "<apiname>" status as "<status>" and Subscription Tier as "<tier>"
 Examples:
-|usertype |usertypeSP|appname  |action  |status   |tier    |apiname        |
+|usertype |usertypeSP|appname            |action  |status   |tier    |apiname         |
 |AdminUser|APPCREATE |DefaultApplication |Reject  |REJECTED |Default |NameTestAPI - v2| 
 
 
@@ -391,5 +390,5 @@ And I click on subscriptions creation under tasks
 Then I should see created application "<appname>" is removed from the Approval Tasks table for "<usertype>"
 
 Examples:
-|usertype |usertypeSP|appname  |status   |tier    |apiname   |version |apiname&version|
+|usertype |usertypeSP|appname     |status   |tier    |apiname   |version |apiname&version  |
 |AdminUser|APPCREATE |AuXTestAPPA |ON_HOLD  |Default |NameProdAPI|v2      |NameProdAPI - v2|

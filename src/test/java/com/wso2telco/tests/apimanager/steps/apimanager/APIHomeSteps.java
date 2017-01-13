@@ -220,6 +220,7 @@ public class APIHomeSteps extends BasicTestObject {
 	@When("^I click on apimanager APIs module$")
 	public void i_click_on_apimanager_APIs_module() throws Throwable {
 		HomePage homepage = new HomePage(driver);
+		Thread.sleep(sleepTime);
 		homepage.clickApiLink();
 	}
 

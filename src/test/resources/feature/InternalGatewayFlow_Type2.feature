@@ -1,4 +1,4 @@
-Feature: End to end flow of Internal Gateway
+Feature: End to end flow of Internal Gateway Type 2
 
 
 Scenario Outline: Internal Gateway flow
@@ -98,27 +98,6 @@ Then I should see "Subscription Awaiting Approval" on Subscription Successful po
 When I click Go to My Subscription button
 Then I should see the apimanager Application "<appName>" Subscriptions page header as "Subscriptions"
 Then I should see the "<apiName>" and "<version>" under Subscribed APIs
-#Operator Admin Approves the created subscription
-Given I am in hubmanager
-Then I should see the apimanager Manager page header as "Manager"
-When I enter apimanager Manager page admin username credentials
-And I click on apimanager Manager page login button
-Then I should see the apimanager Manager Home page header as "Home"
-And I should see apimanager Manager Home Billing Workflow Blacklist Whitelist tabs
-When I click on apimanager Manager page Workflow tab
-Then I should see apimanager Manager Approval Tasks page header as "Approval Tasks"
-And I click on subscriptions creation under tasks
-Then I should see created subscription with "<appName>" and "<apiName&version>" at the top of the Approval Tasks table for "<usertypeAdmin>"
-And I should see the status of the application "<appName>" approval task as "READY" 
-And I click Assign To Me button for "<appName>" Application Details row for "<usertypeAdmin>"
-Then I should see the status of the application "<appName>" approval task as "RESERVED"
-And I click on Start button for "<appName>" Application Details row for "<usertypeAdmin>"
-Then I should see the status of the application "<appName>" approval task as "IN_PROGRESS"
-And I select "<action>" and click complete button for "<appName>" Application Details row for "<usertypeAdmin>"
-Then I should see Enter aprrove/reject reasons pop up header as "Enter approve/reject reasons"
-When I enter aprrove/reject reason as "Approve"
-And click aprrove/reject reason ok button
-Then I should not see the created application in Approval Tasks table as "<appName>" for "<usertypeAdmin>"
 #API Publisher Approves the created subscription
 Given I am in hubmanager
 Then I should see the apimanager Manager page header as "Manager"
@@ -130,13 +109,15 @@ When I click on apimanager Manager page Workflow tab
 Then I should see apimanager Manager Approval Tasks page header as "Approval Tasks"
 And I click on subscriptions creation under tasks
 Then I should see created subscription with "<appName>" and "<apiName&version>" at the top of the Approval Tasks table for "<usertypePub>"
+And I should see the status of the application "<appName>" approval task as "READY" 
+And I click Assign To Me button for "<appName>" Application Details row for "<usertypePub>"
 When I click on Subscription Details drop box for "<appName>" row for "<usertypePub>"
 And I select "<Subscriptiontiers>" for "<appName>" Application Details row for "<usertypePub>"
 Then I should see the status of the application "<appName>" approval task as "RESERVED"
 And I should see the selected throttling layer as "<Subscriptiontiers>" for "<appName>" Application
 And I click on Start button for "<appName>" Application Details row for "<usertypePub>"
 Then I should see the status of the application "<appName>" approval task as "IN_PROGRESS"
-And I select "<action>" and click complete button for "<appName>" Application Details row for "<usertypeAdmin>"
+And I select "<action>" and click complete button for "<appName>" Application Details row for "<usertypePub>"
 Then I should see Enter aprrove/reject reasons pop up header as "Enter approve/reject reasons"
 When I enter aprrove/reject reason as "Approve"
 And click aprrove/reject reason ok button

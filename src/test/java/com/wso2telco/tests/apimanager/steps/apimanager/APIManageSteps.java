@@ -36,11 +36,11 @@ public class APIManageSteps extends BasicTestObject {
 	
 	@Then("^I should see the apimanager Manager page header as \"([^\"]*)\"$")
 	public void i_should_see_the_apimanager_Manager_page_header_as(String arg1) throws Throwable {
-		Thread.sleep(sleepTime);
+//		Thread.sleep(sleepTime);
 		for (String winHandle : driver.getWindowHandles()) {
 			driver.switchTo().window(winHandle);
 		}
-		Thread.sleep(sleepTime);
+//		Thread.sleep(sleepTime);
 		ManagerPage managerpage = new ManagerPage(driver);
 		Assert.assertTrue("Manager page did not load properly", managerpage.isManagerPage(arg1));
 	}
@@ -50,7 +50,7 @@ public class APIManageSteps extends BasicTestObject {
 		ManagerPage managerpage = new ManagerPage(driver);
 		Thread.sleep(sleepTime);
 		managerpage.enterUserName(config.getValue(getEnvironment() + arg1 + "user"));
-		Thread.sleep(sleepTime);
+//		Thread.sleep(sleepTime);
 		managerpage.enterPassword(config.getValue(getEnvironment() + arg1 + "pwd"));
 	}
 
@@ -76,7 +76,8 @@ public class APIManageSteps extends BasicTestObject {
 			throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.clickLogin();
-		Thread.sleep(28000);
+//		Thread.sleep(28000);
+		Thread.sleep(sleepTime);
 	}
 
 	@Then("^I should see the apimanager Manager Home page header as \"([^\"]*)\"$")
@@ -157,7 +158,7 @@ public class APIManageSteps extends BasicTestObject {
 	@Then("^I should see apimanager Manager Home Billing Workflow Blacklist Whitelist tabs$")
 	public void i_should_see_apimanager_Manager_Home_Billing_Workflow_Blacklist_Whitelist_tabs() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		Thread.sleep(sleepTime);
+		//Thread.sleep(sleepTime);
 		Assert.assertTrue("All the tabs are not visible", managerpage.isAllTabsAccessible());
 	}
 
@@ -172,9 +173,9 @@ public class APIManageSteps extends BasicTestObject {
 	@When("^I click on apimanager Manager page Workflow tab$")
 	public void i_click_on_apimanager_Manager_page_Workflow_tab() throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		Thread.sleep(sleepTime);
+//		Thread.sleep(sleepTime);
 		managerpage.clickWorkflow();
-		Thread.sleep(sleepTime);
+//		Thread.sleep(sleepTime);
 	}
 
 	@Then("^I should see apimanager Manager Approval Tasks page$")
@@ -242,7 +243,7 @@ public class APIManageSteps extends BasicTestObject {
 	public void i_enter_aprrove_reject_reason_as(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.enterApproveRejectReason(arg1);
-		Thread.sleep(sleepTime);
+//		Thread.sleep(sleepTime);
 	}
 
 	@When("^click aprrove/reject reason ok button$")
@@ -722,6 +723,7 @@ public class APIManageSteps extends BasicTestObject {
 		ManagerPage managerpage = new ManagerPage(driver);
 		managerpage.isTierValueDisplayed(arg1, arg2);
 	}
+	
 /*	
 	@When("^I select \"([^\"]*)\" for \"([^\"]*)\" Subscription Details row for \"([^\"]*)\"$")
 	public void i_select_for_Subscription_Details_row_for(String arg1, String arg2, String arg3) throws Throwable {
@@ -747,10 +749,39 @@ public class APIManageSteps extends BasicTestObject {
 		Assert.assertTrue("App name is visible in the area", managerpage.isSubscriptionTaskRemoved(appName));
 	}
 	
-	@When("^I enter apimanager Manager page apipublisher username credentials$")
-	public void i_enter_apimanager_Manager_page_apipublisher_username_credentials() throws Throwable {
+	@When("^I enter apimanager Manager page \"([^\"]*)\" username credentials$")
+	public void i_enter_apimanager_Manager_page_username_credentials(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		managerpage.enterUserName(config.getValue(getEnvironment() + "PUBLISHERuser"));
-		managerpage.enterPassword(config.getValue(getEnvironment() + "PUBLISHERpwd"));
+		
+	    if(arg1.contains("apipublisherOne")){
+	    	managerpage.enterUserName(config.getValue(getEnvironment() + "PUBLISHERuser"));
+			managerpage.enterPassword(config.getValue(getEnvironment() + "PUBLISHERpwd"));
+	    }
+	    else if(arg1.contains("apipublisherTwo")){
+	    	managerpage.enterUserName(config.getValue(getEnvironment() + "PUBLISHERuserTwo"));
+			managerpage.enterPassword(config.getValue(getEnvironment() + "PUBLISHERpwdTwo"));
+	    }
+	    else{
+	    	managerpage.enterUserName(config.getValue(getEnvironment() + "PUBLISHERuserThree"));
+			managerpage.enterPassword(config.getValue(getEnvironment() + "PUBLISHERpwdThree"));
+	    }
+	}
+	
+	@Then("^I should see created subscription with \"([^\"]*)\" and \"([^\"]*)\" at the top of the Approval Tasks table for \"([^\"]*)\"$")
+	public void i_should_see_created_subscription_with_and_at_the_top_of_the_Approval_Tasks_table_for(String arg1, String arg2, String arg3) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		String appName = arg1;
+		String apiName = arg2;
+		Thread.sleep(sleepTime);
+		Assert.assertTrue("Subscription name is not visible in the area", managerpage.isSubscriptionVisible(appName,apiName));
+	}
+	
+	@Then("^I should not see created subscription with \"([^\"]*)\" and \"([^\"]*)\" in the Approval Tasks table$")
+	public void i_should_not_see_created_subscription_with_and_in_the_Approval_Tasks_table(String arg1, String arg2) throws Throwable{
+		ManagerPage managerpage = new ManagerPage(driver);
+		String appName = arg1;
+		String apiName = arg2;
+		Assert.assertTrue("Subscription name is visible in the area", managerpage.isSubscriptionNotVisible(appName,apiName));
+		Thread.sleep(sleepTime);
 	}
 }
