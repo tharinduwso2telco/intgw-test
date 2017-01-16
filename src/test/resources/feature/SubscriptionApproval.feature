@@ -1,6 +1,6 @@
 Feature: Operator Admin Approves created Subscriptions
 
-@HUB-347
+@ExternalGateway
 Scenario Outline: HUB-347 : Operator admin user assigns a subscription task to himself without throttling layer subscription
 Given I am in hubmanager
 Then I should see the apimanager Manager page header as "Manager"

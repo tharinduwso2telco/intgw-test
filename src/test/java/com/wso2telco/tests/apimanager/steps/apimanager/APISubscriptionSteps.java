@@ -2,6 +2,7 @@ package com.wso2telco.tests.apimanager.steps.apimanager;
 
 import org.junit.Assert;
 
+import com.wso2telco.apimanager.pageobjects.apihome.applications.ApplicationsPage;
 import com.wso2telco.apimanager.pageobjects.apihome.subscriptions.SubscriptionsPage;
 import com.wso2telco.tests.apimanager.base.BasicTestObject;
 import com.wso2telco.tests.util.data.DataAuthenticationKeys;
@@ -216,4 +217,16 @@ public class APISubscriptionSteps extends BasicTestObject {
 		subpage.validateSubscriptionTier(arg1, arg3);
 	}
 
+	@Then("^I unsubscribe existing \"([^\"]*)\" with \"([^\"]*)\" if subscription exist$")
+	public void i_unsubscribe_existing_with_if_subscription_exist(String arg1, String arg2) throws Throwable {
+		SubscriptionsPage subpage = new SubscriptionsPage(driver);
+		ApplicationsPage apppage = new ApplicationsPage(driver);
+		
+		//boolean subscriptionExist = subpage.isSubscribedAPIs(arg1,arg2);
+		if(subpage.isSubscribedAPIs(arg1,arg2)){
+			subpage.clickUnsubscribe(arg1, arg2);
+			Thread.sleep(sleepTime);
+			apppage.clickYes();
+		}
+	}
 }

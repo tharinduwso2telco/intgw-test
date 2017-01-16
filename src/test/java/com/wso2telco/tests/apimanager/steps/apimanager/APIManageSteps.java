@@ -732,14 +732,14 @@ public class APIManageSteps extends BasicTestObject {
 		managerpage.selectTier(arg1, appName);
 	}
 	*/
-	
+/*	
 	@When("^I click on Subscription Details drop box for \"([^\"]*)\" row for \"([^\"]*)\"$")
 	public void i_click_on_Subscription_Details_drop_box_for_row_for(String arg1, String arg2) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		String appName = arg1;
 		managerpage.clickSubscriptionDetails(appName);
 	}
-	
+*/	
 
 	@Then("^I should see created application \"([^\"]*)\" is removed from the Approval Tasks table for \"([^\"]*)\"$")
 	public void i_should_see_created_application_is_removed_from_the_Approval_Tasks_table_for(String arg1, String arg2) throws Throwable {
@@ -784,4 +784,74 @@ public class APIManageSteps extends BasicTestObject {
 		Assert.assertTrue("Subscription name is visible in the area", managerpage.isSubscriptionNotVisible(appName,apiName));
 		Thread.sleep(sleepTime);
 	}
+	
+	@Then("^I should see the status of the subscription \"([^\"]*)\" \"([^\"]*)\" approval task as \"([^\"]*)\"$")
+	public void i_should_see_the_status_of_the_subscription_approval_task_as(String arg1, String arg2, String arg3) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Approval Status mismatched", managerpage.isSubscriptionApprovalTaskStatus(arg1, arg2, arg3));
+	}
+	
+	@Then("^I click Assign To Me button for \"([^\"]*)\" \"([^\"]*)\" Subscription Details row for \"([^\"]*)\"$")
+	public void i_click_Assign_To_Me_button_for_Subscription_Details_row_for(String arg1, String arg2, String arg3) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		String appName = arg1;
+		String apiName = arg2;
+		managerpage.clickSubscriptionAssignMe(appName,apiName);
+		Thread.sleep(sleepTime);
+	}
+	
+	@Then("^I click on Start button for \"([^\"]*)\" \"([^\"]*)\" Subscription Details row for \"([^\"]*)\"$")
+	public void i_click_on_Start_button_for_Subscription_Details_row_for(String arg1, String arg2, String arg3) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		String appName = arg1;
+		String apiName = arg2;
+		managerpage.clickSubscriptionStart(appName, apiName);
+		Thread.sleep(sleepTime);
+	}
+	
+	@Then("^I select \"([^\"]*)\" and click complete button for \"([^\"]*)\" \"([^\"]*)\" Subscription Details row for \"([^\"]*)\"$")
+	public void i_select_and_click_complete_button_for_Subscription_Details_row_for(String arg1, String arg2, String arg3, String arg4) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		String condition = arg1;
+		String appName = arg2;
+		String apiName = arg3;
+		managerpage.selectSubscriptionActionCondition(condition, appName, apiName);
+		managerpage.clickSubscriptionComplete(appName, apiName);
+		Thread.sleep(sleepTime);
+	}
+	
+	@Then("^I click on action dropdown of \"([^\"]*)\" \"([^\"]*)\" task$")
+	public void i_click_on_action_dropdown_of_task(String arg1, String arg2) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.clickSubscriptionDropdownActions(arg1, arg2);
+	}
+	
+	@Then("^I should see Action \"([^\"]*)\" of the \"([^\"]*)\" \"([^\"]*)\" task in the dropdown$")
+	public void i_should_see_Action_of_the_task_in_the_dropdown(String arg1, String arg2, String arg3) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		Assert.assertTrue("Action dropdown options not displayed", managerpage.isSubscriptionApprovalActionsDisplayed(arg1, arg2, arg3));
+	}
+	
+	@When("^I click on Subscription Details drop box for \"([^\"]*)\" \"([^\"]*)\" row for \"([^\"]*)\"$")
+	public void i_click_on_Subscription_Details_drop_box_for_row_for(String arg1, String arg2, String arg3) throws Throwable {
+	    ManagerPage managerpage = new ManagerPage(driver);
+		String appName = arg1;
+		String apiName = arg2;
+		managerpage.clickSubscriptionDetails(appName, apiName);
+	}
+	
+	@When("^I select \"([^\"]*)\" for \"([^\"]*)\" \"([^\"]*)\" Subscription Details row for \"([^\"]*)\"$")
+	public void i_select_for_Subscription_Details_row_for(String arg1, String arg2, String arg3, String arg4) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		String appName = arg2;
+		String apiName = arg3;
+		managerpage.selectSubscriptionTier(arg1, appName, apiName);
+	}
+	
+	@When("^I should see the selected throttling layer as \"([^\"]*)\" for \"([^\"]*)\" \"([^\"]*)\" Subscription$")
+	public void i_should_see_the_selected_throttling_layer_as_for_Subscription(String arg1, String arg2, String arg3) throws Throwable {
+		ManagerPage managerpage = new ManagerPage(driver);
+		managerpage.isSubscriptionTierValueDisplayed(arg1, arg2, arg3);
+	}
+
 }

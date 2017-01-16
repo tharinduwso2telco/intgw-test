@@ -193,6 +193,5 @@ public class APIAplicationSteps extends BasicTestObject {
 		ApplicationsPage apppage = new ApplicationsPage(driver);
 		apppage.validateWorkflowStatus(arg1, arg2);
 		apppage.validateApplicationTier(arg1, arg3);
-		
 	}
 }
