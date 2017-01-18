@@ -1,7 +1,7 @@
 Feature: End to end flow of Internal Gateway
 
 
-Scenario Outline: Internal Gateway flow
+Scenario Outline: Internal Gateway flow 
 #API Publisher Create and Publish an API
 Given I am in apipublisher
 When I provide apipublisher username and password for "<usertypePub>"
@@ -21,6 +21,7 @@ And I click on apipublisher Design implement button
 And I click on Manage API link
 When I provide apipublisher Implement endpoint type as "HTTP/REST Endpoint"
 And I provide apipublisher Implement production endpoint as "<prodEndpoint>"
+And I provide apipublisher Implement sandbox endpoint as "<sandEndpoint>"
 And I click on apipublisher apipublisher manage button
 And I select "<ApiTier>" as apipublisher Manage tier availability
 And I click on apipublisher Manage save & publish button
@@ -87,7 +88,6 @@ Then I should see the apimanager Application page header as "Applications"
 Then I should see the Application "<appName>" workflow status as "<AppStatusAfterApprove>" and Tier as "<AppTier>"
 #Service Provider Subscribe an API
 And I click on apimanager APIs module
-Then I should see the apimanager APIs page header as "APIs"
 When I click on the apimanager "<apiName>" "<version>" api
 Then I should see the apimanager APIs "<apiName>" status as "Published"
 When I click on Applications dropdown
@@ -157,6 +157,6 @@ Then I click on Application "<appName>" "Subscriptions" tab
 Then I should see the API "<apiName&version>" status as "<subscriptionStatus>" and Subscription Tier as "<Subscriptiontiers>"
 
 Examples:
-|usertypePub|usertypeSP|usertypeAdmin|apiPublisherOne|apiName   |version|context        |prodEndpoint |roleType		      |ApiTier                                                               |LastName   |FirstName   |Email	           |appName         |Description  |AppStatusBeforeApprove|action |AppStatusAfterApprove|AppTier  |Subscriptiontiers|subscriptionStatus|apiName&version|
-|PUBLISHER  |APPCREATE |AdminUser    |apipublisherOne|AuxProdAPI|v1     |APIProdCreation|auxProd	  |Internal/publisher |Unlimited,Default,Requestbased,Silver,Subscription,Gold,Premium,Bronze|AuxTestLast|AuxTestFirst|AuxTest123@gmail.com|AuXTestAPPM1	|AuXTestingAPP|INACTIVE              |Approve|ACTIVE               |Unlimited|Premium          |UNBLOCKED         |AuxProdAPI - v1|
+|usertypePub|usertypeSP|usertypeAdmin|apiPublisherOne|apiName   |version|context        |prodEndpoint |sandEndpoint|roleType		      |ApiTier                                                               |LastName   |FirstName   |Email	           |appName         |Description  |AppStatusBeforeApprove|action |AppStatusAfterApprove|AppTier  |Subscriptiontiers|subscriptionStatus|apiName&version|
+|PUBLISHER  |APPCREATE |AdminUser    |apipublisherOne|TestAuxAPI|v1     |TestAuxAPI     |auxProd	  |auxSand	   |Internal/publisher |Unlimited,Default,Requestbased,Silver,Subscription,Gold,Premium,Bronze|AuxTestLast|AuxTestFirst|AuxTest123@gmail.com|AuXTestAPPM1	|AuXTestingAPP|INACTIVE              |Approve|ACTIVE               |Unlimited|Premium          |UNBLOCKED         |TestAuxAPI - v1|
 
