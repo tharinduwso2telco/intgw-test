@@ -173,7 +173,6 @@ public class APIAplicationSteps extends BasicTestObject {
 	@When("^I click on apimanager Application \"([^\"]*)\"$")
 	public void i_click_on_apimanager_Application(String arg1) throws Throwable {
 		ApplicationsPage apppage = new ApplicationsPage(driver);
-		Thread.sleep(sleepTime);
 		apppage.isAppAvailable(arg1);
 		apppage.clickAppName(arg1);
 	}

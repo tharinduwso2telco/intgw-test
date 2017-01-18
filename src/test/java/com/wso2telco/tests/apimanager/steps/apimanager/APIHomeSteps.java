@@ -228,6 +228,7 @@ public class APIHomeSteps extends BasicTestObject {
 	public void i_click_on_apimanager_My_Applications() throws Throwable {
 		HomePage homepage = new HomePage(driver);
 		homepage.clickMyApplicationsLink();
+		Thread.sleep(sleepTime);
 	}
 	
 	@Then("^I click on apimanager Add Application$")
