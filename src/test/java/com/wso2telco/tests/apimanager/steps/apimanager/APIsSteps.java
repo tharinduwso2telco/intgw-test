@@ -103,7 +103,6 @@ public class APIsSteps extends BasicTestObject {
 	public void i_click_Go_to_My_Subscription_button() throws Throwable {
 		APIsPage apiPage = new APIsPage(driver);
 		apiPage.clickGoToSubscriber();
-		Thread.sleep(sleepTime);
 	}
 	
 	@Then("^I should search apimanager API \"([^\"]*)\"$")
