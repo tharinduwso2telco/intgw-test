@@ -113,5 +113,9 @@ public class APIsSteps extends BasicTestObject {
 		apiPage.clickSearch();
 	}
 
-
+	@When("^I click on Stay on this page button$")
+	public void i_click_on_Stay_on_this_page_button() throws Throwable {
+		APIsPage apiPage = new APIsPage(driver);
+		apiPage.clickStayOnThisPage();
+	}
 }

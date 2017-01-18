@@ -20,7 +20,7 @@ Then I should see "<appNameOne>" Application for "<usertypeSP>"
 When I select "<appNameOne>" for "<usertypeSP>"
 And I click apimanager "<apinameOne>" API page subscribe button
 Then I should see "Subscription Awaiting Approval" on Subscription Successful pop up
-When I click Go to My Subscription button
+When I click on Stay on this page button
 When I click on apimanager My Applications
 When I click on apimanager Application "<appNameTwo>"
 When I click on Application "<appNameTwo>" "Subscriptions" tab
