@@ -532,7 +532,7 @@ Examples:
 |usertype |usertypeSP|apiPublisherOne|usertypeSP  |appName        |action  |status   |tier    |publisherOneApi|apiname   |version|
 |PUBLISHER|APPCREATE |apipublisherOne|APPCREATE   |AuXTestAPPE    |Reject  |REJECTED |Default |WeatherAPI - v1|WeatherAPI|v1     |
 
-@InternalGatewayTypeTwo
+@InternalGatewayTypeTwo 
 Scenario Outline: DEP-INTGW-1413:Task recreation for a resubscription
 Given I am in apimanager
 When I click on apimanager login
@@ -549,7 +549,6 @@ When I unsubscribe existing "<apiName>" with "<version>"
 Then I should see the confirm delete popup with "Confirm Delete"
 And I click on confirm delete popup Yes button
 When I click on apimanager APIs module
-Then I should see the apimanager APIs page header as "APIs"
 Then I should search apimanager API "<apiName>"
 When I click on the apimanager "<apiName>" "<version>" api
 Then I should see the apimanager APIs "<apiName>" status as "Published"
