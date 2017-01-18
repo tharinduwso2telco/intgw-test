@@ -87,7 +87,6 @@ Then I should see the apimanager Application page header as "Applications"
 Then I should see the Application "<appName>" workflow status as "<AppStatusAfterApprove>" and Tier as "<AppTier>"
 #Service Provider Subscribe an API
 And I click on apimanager APIs module
-Then I should see the apimanager APIs page header as "APIs"
 When I click on the apimanager "<apiName>" "<version>" api
 Then I should see the apimanager APIs "<apiName>" status as "Published"
 When I click on Applications dropdown
@@ -108,20 +107,20 @@ And I should see apimanager Manager Home Billing Workflow Blacklist Whitelist ta
 When I click on apimanager Manager page Workflow tab
 Then I should see apimanager Manager Approval Tasks page header as "Approval Tasks"
 And I click on subscriptions creation under tasks
-Then I should see created application "<appName>" at the top of the Approval Tasks table for "<usertypeAdmin>"
-When I click on Subscription Details drop box for "<appName>" row for "<usertypeAdmin>"
-And I select "<Subscriptiontiers>" for "<appName>" Application Details row for "<usertypeAdmin>"
-And I should see the status of the application "<appName>" approval task as "READY" 
-And I click Assign To Me button for "<appName>" Application Details row for "<usertypeAdmin>"
-Then I should see the status of the application "<appName>" approval task as "RESERVED"
-And I should see the selected throttling layer as "<Subscriptiontiers>" for "<appName>" Application
-And I click on Start button for "<appName>" Application Details row for "<usertypeAdmin>"
-Then I should see the status of the application "<appName>" approval task as "IN_PROGRESS"
-And I select "<action>" and click complete button for "<appName>" Application Details row for "<usertypeAdmin>"
+Then I should see created subscription with "<appName>" and "<apiName&version>" at the top of the Approval Tasks table for "<usertypeAdmin>"
+When I click on Subscription Details drop box for "<appName>" "<apiName&version>" row for "<usertypeAdmin>"
+And I select "<Subscriptiontiers>" for "<appName>" "<apiName&version>" Subscription Details row for "<usertypeAdmin>"
+And I should see the status of the subscription "<appName>" "<apiName&version>" approval task as "READY"
+And I click Assign To Me button for "<appName>" "<apiName&version>" Subscription Details row for "<usertypeAdmin>"
+And I should see the status of the subscription "<appName>" "<apiName&version>" approval task as "RESERVED" 
+And I should see the selected throttling layer as "<Subscriptiontiers>" for "<appName>" "<apiName&version>" Subscription
+And I click on Start button for "<appName>" "<apiName&version>" Subscription Details row for "<usertypeAdmin>"
+Then I should see the status of the subscription "<appName>" "<apiName&version>" approval task as "IN_PROGRESS" 
+And I select "<action>" and click complete button for "<appName>" "<apiName&version>" Subscription Details row for "<usertypeAdmin>"
 Then I should see Enter aprrove/reject reasons pop up header as "Enter approve/reject reasons"
 When I enter aprrove/reject reason as "Approve"
 And click aprrove/reject reason ok button
-Then I should not see the created application in Approval Tasks table as "<appName>" for "<usertypeAdmin>"
+Then I should not see created subscription with "<appName>" and "<apiName&version>" in the Approval Tasks table
 #Login to store and check the status of the subscription
 Given I am in apimanager
 When I click on apimanager login

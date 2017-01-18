@@ -11,7 +11,7 @@ When I enter apimanager Login username and password for "<usertype>"
 And I click on apimanager Login pop up login button
 Then I should see apimanager "<usertype>" at the top right corner of the page
 And I click on apimanager APIs module
-Then I should see the apimanager APIs page header as "APIs"
+#Then I should see the apimanager APIs page header as "APIs"
 Then I should search apimanager API "<apiName>"
 When I click on the apimanager "<apiName>" "<version>" api
 Then I should see the apimanager APIs "<apiName>" status as "Published"
@@ -36,7 +36,7 @@ When I enter apimanager Login username and password for "<usertype>"
 And I click on apimanager Login pop up login button
 Then I should see apimanager "<usertype>" at the top right corner of the page
 And I click on apimanager APIs module
-Then I should see the apimanager APIs page header as "APIs"
+#Then I should see the apimanager APIs page header as "APIs"
 Then I should search apimanager API "<apiName>"
 When I click on the apimanager "<apiName>" "<version>" api
 Then I should see the apimanager APIs "<apiName>" status as "Published"
@@ -62,7 +62,7 @@ When I enter apimanager Login username and password for "<usertype>"
 And I click on apimanager Login pop up login button
 Then I should see apimanager "<usertype>" at the top right corner of the page
 And I click on apimanager APIs module
-Then I should see the apimanager APIs page header as "APIs"
+#Then I should see the apimanager APIs page header as "APIs"
 Then I should search apimanager API "<apiName>"
 When I click on the apimanager "<apiName>" "<version>" api
 Then I should see the apimanager APIs "<apiName>" status as "Published"

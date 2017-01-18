@@ -509,7 +509,6 @@ When I enter apimanager Login username and password for "<usertypeSP>"
 And I click on apimanager Login pop up login button
 Then I should see apimanager "<usertypeSP>" at the top right corner of the page
 And I click on apimanager APIs module
-Then I should see the apimanager APIs page header as "APIs"
 Then I should search apimanager API "<apiname>"
 When I click on the apimanager "<apiname>" "<version>" api
 Then I should see the apimanager APIs "<apiname>" status as "Published"
@@ -594,7 +593,6 @@ When I click on apimanager Application "<appName>"
 When I click on Application "<appName>" "Subscriptions" tab
 Then I unsubscribe existing "<apiname>" with "<version>" if subscription exist
 And I click on apimanager APIs module
-Then I should see the apimanager APIs page header as "APIs"
 Then I should search apimanager API "<apiname>"
 When I click on the apimanager "<apiname>" "<version>" api
 Then I should see the apimanager APIs "<apiname>" status as "Published"
