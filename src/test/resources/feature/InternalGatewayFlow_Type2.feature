@@ -1,6 +1,6 @@
 Feature: End to end flow of Internal Gateway Type 2
 
-@Test
+
 Scenario Outline: Internal Gateway flow
 #API Publisher Create and Publish an API
 Given I am in apipublisher
@@ -136,6 +136,6 @@ Then I click on Application "<appName>" "Subscriptions" tab
 Then I should see the API "<apiName&version>" status as "<subscriptionStatus>" and Subscription Tier as "<Subscriptiontiers>"
 
 Examples:
-|usertypePub|usertypeSP|usertypeAdmin|apiPublisherOne|apiName   |version|context        |prodEndpoint |sandEndpoint|roleType		      |ApiTier                                                               |LastName   |FirstName   |Email	           |appName         |Description  |AppStatusBeforeApprove|action |AppStatusAfterApprove|AppTier  |Subscriptiontiers|subscriptionStatus|apiName&version|
-|PUBLISHER  |APPCREATE |AdminUser    |apipublisherOne|AuxProdAPI|v1     |APIProdCreation|auxProd	  |auxSand	   |Internal/publisher |Unlimited,Default,Requestbased,Silver,Subscription,Gold,Premium,Bronze|AuxTestLast|AuxTestFirst|AuxTest123@gmail.com|AuXTestAPPM1	|AuXTestingAPP|INACTIVE              |Approve|ACTIVE               |Unlimited|Premium          |UNBLOCKED         |AuxProdAPI - v1|
+|usertypePub|usertypeSP|usertypeAdmin|apiPublisherOne|apiName   |version|context  |prodEndpoint |sandEndpoint|roleType		      |ApiTier                                                               |LastName   |FirstName   |Email	           |appName         |Description  |AppStatusBeforeApprove|action |AppStatusAfterApprove|AppTier  |Subscriptiontiers|subscriptionStatus|apiName&version|
+|PUBLISHER  |APPCREATE |AdminUser    |apipublisherOne|AuxAPI    |v1     |auxapi   |auxProd	    |auxSand	 |Internal/publisher  |Unlimited,Default,Requestbased,Silver,Subscription,Gold,Premium,Bronze|AuxTestLast|AuxTestFirst|AuxTest123@gmail.com|AuXTestAPPM1	|AuXTestingAPP|INACTIVE              |Approve|ACTIVE               |Unlimited|Premium          |UNBLOCKED         |AuxAPI - v1    |
 

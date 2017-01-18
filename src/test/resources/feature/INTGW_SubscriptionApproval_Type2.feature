@@ -1,6 +1,6 @@
 Feature: API Publisher Approves created Subscriptions Type 2
 
-@InternalGatewayTypeTwo 
+@InternalGatewayTypeTwo @Test
 Scenario Outline: DEP-INTGW-1416:Listing unassigned subscription tasks for all Publishers belonging to the same API publisher group
 Given I am in apimanager
 When I click on apimanager login
