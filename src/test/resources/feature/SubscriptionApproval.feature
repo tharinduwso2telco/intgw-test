@@ -17,10 +17,9 @@ And I click Assign To Me button for "<appname>" "<subscribeAPI>" Subscription De
 And I should see the status of the subscription "<appname>" "<subscribeAPI>" approval task as "RESERVED" 
 Examples:
 |usertype |appname    |subscribeAPI   |
-|AdminUser|AuXTestAPPC|WeatherAPI - v1|
+|AdminUser|AuXTestAPPA|WeatherAPI - v1|
 
-
-@HUB-349
+@ExternalGateway
 Scenario Outline: HUB-349 : Operator admin user assigns a subscription task to himself and applies throttling layer 
 Given I am in hubmanager
 Then I should see the apimanager Manager page header as "Manager"
@@ -40,9 +39,9 @@ And I should see the status of the subscription "<appname>" "<subscribeAPI>" app
 And I should see the selected throttling layer as "<tiers>" for "<appname>" "<subscribeAPI>" Subscription
 Examples:
 |usertype |appname    |tiers    |subscribeAPI   |
-|AdminUser|AuXTestAPPA|Unlimited|WeatherAPI - v1|
+|AdminUser|AuXTestAPPB|Unlimited|WeatherAPI - v1|
 
-@HUB-350
+@ExternalGateway
 Scenario Outline: HUB-350 : Operator admin user starts assigned task without applying throttling layer
 Given I am in hubmanager
 Then I should see the apimanager Manager page header as "Manager"
@@ -64,7 +63,7 @@ Examples:
 |AdminUser|AuXTestAPPA|Approve,Reject |WeatherAPI - v1|
 
 
-@HUB-351
+@ExternalGateway
 Scenario Outline: HUB-351 : Operator admin user starts assigned task and applies throttling layer
 Given I am in hubmanager
 Then I should see the apimanager Manager page header as "Manager"
@@ -86,10 +85,10 @@ Then I click on action dropdown of "<appname>" "<subscribeAPI>" task
 And I should see Action "<options>" of the "<appname>" "<subscribeAPI>" task in the dropdown
 Examples:
 |usertype |appname      |options        |tiers    |subscribeAPI   |
-|AdminUser|AuXTestAPPA  |Approve,Reject |Unlimited|WeatherAPI - v1|
+|AdminUser|AuXTestAPPB  |Approve,Reject |Unlimited|WeatherAPI - v1|
 
 
-@HUB-352
+@ExternalGateway
 Scenario Outline: HUB-352 : Operator admin user starts assigned task without changing already applied throttling layer
 Given I am in hubmanager
 Then I should see the apimanager Manager page header as "Manager"
@@ -113,10 +112,10 @@ Then I click on action dropdown of "<appname>" "<subscribeAPI>" task
 And I should see Action "<options>" of the "<appname>" "<subscribeAPI>" task in the dropdown
 Examples:
 |usertype |appname        |options        |tiers    |subscribeAPI   |
-|AdminUser|AuXTestAPPB    |Approve,Reject |Premium  |WeatherAPI - v1|
+|AdminUser|AuXTestAPPC    |Approve,Reject |Premium  |WeatherAPI - v1|
 
 
-@HUB-353
+@ExternalGateway
 Scenario Outline: HUB-353 : Operator admin user starts assigned task and changes the existing throttling layer
 Given I am in hubmanager
 Then I should see the apimanager Manager page header as "Manager"
@@ -147,7 +146,7 @@ Examples:
 |AdminUser|AuXTestAPPD   |Approve,Reject |Unlimited    |Premium  |WeatherAPI - v1|
 
 
-@HUB-354
+@ExternalGateway
 Scenario Outline: HUB-354 : Operator admin user approves task without applying throttling layer
 Given I am in hubmanager
 Then I should see the apimanager Manager page header as "Manager"
@@ -180,10 +179,10 @@ Then I click on Application "<appname>" "Subscriptions" tab
 Then I should see the API "<apiname>" status as "<status>" and Subscription Tier as "<tier>"
 Examples:
 |usertype |usertypeSP|appname     |action  |status    |tier     |apiname           |
-|AdminUser|APPCREATE |AuXTestAPPD |Approve |UNBLOCKED |Bronze   |ProductionAPI - v1|    
+|AdminUser|APPCREATE |AuXTestAPPA |Approve |UNBLOCKED |Bronze   |WeatherAPI - v1   |    
 
 
-@HUB-355
+@ExternalGateway
 Scenario Outline: HUB-355 :  Operator admin user approves task while applying throttling layer
 Given I am in hubmanager
 Then I should see the apimanager Manager page header as "Manager"
@@ -218,10 +217,10 @@ Then I click on Application "<appname>" "Subscriptions" tab
 Then I should see the API "<apiname>" status as "<status>" and Subscription Tier as "<tier>"
 Examples:
 |usertype |usertypeSP|appname     |action  |status    |tier        |apiname        |
-|AdminUser|APPCREATE |AuXTestAPPB |Approve |UNBLOCKED |Unlimited   |AuxProdAPI - v1|  
+|AdminUser|APPCREATE |AuXTestAPPB |Approve |UNBLOCKED |Unlimited   |WeatherAPI - v1|  
 
 
-@HUB-356
+@ExternalGateway
 Scenario Outline: HUB-356 : Operator admin user approves task without changing already applied throttling layer
 Given I am in hubmanager
 Then I should see the apimanager Manager page header as "Manager"
@@ -256,10 +255,10 @@ Then I click on Application "<appname>" "Subscriptions" tab
 Then I should see the API "<apiname>" status as "<status>" and Subscription Tier as "<tier>"
 Examples:
 |usertype |usertypeSP|appname       |action  |status    |tier        |apiname         |
-|AdminUser|APPCREATE |AuXTestAPPC   |Approve |UNBLOCKED |Unlimited   |NameProdAPI - v1|  
+|AdminUser|APPCREATE |AuXTestAPPC   |Approve |UNBLOCKED |Unlimited   |WeatherAPI - v1 |  
 
 
-@HUB-357
+@ExternalGateway
 Scenario Outline: HUB-357 : Operator admin user approves task and changes the previously applied throttling layer
 Given I am in hubmanager
 Then I should see the apimanager Manager page header as "Manager"
@@ -295,10 +294,10 @@ Then I click on Application "<appname>" "Subscriptions" tab
 Then I should see the API "<apiname>" status as "<status>" and Subscription Tier as "<tier>"
 Examples:
 |usertype |usertypeSP|appname       |action  |status    |olderTier   |newTier |apiname         |
-|AdminUser|APPCREATE |AuXTestAPPA   |Approve |UNBLOCKED |Unlimited   |Gold    |NameTestAPI - v2|  
+|AdminUser|APPCREATE |AuXTestAPPD   |Approve |UNBLOCKED |Unlimited   |Gold    |WeatherAPI - v1 |  
 
 
-@HUB-358
+@ExternalGateway
 Scenario Outline: HUB-358 : Operator admin user rejects subscription approval task
 Given I am in hubmanager
 Then I should see the apimanager Manager page header as "Manager"
@@ -310,6 +309,8 @@ When I click on apimanager Manager page Workflow tab
 Then I should see apimanager Manager Approval Tasks page header as "Approval Tasks"
 And I click on subscriptions creation under tasks
 Then I should see created subscription with "<appname>" and "<apiname>" at the top of the Approval Tasks table for "<usertype>"
+And I should see the status of the subscription "<appname>" "<apiname>" approval task as "READY"
+And I click Assign To Me button for "<appname>" "<apiname>" Subscription Details row for "<usertype>"
 And I should see the status of the subscription "<appname>" "<apiname>" approval task as "RESERVED" 
 And I click on Start button for "<appname>" "<apiname>" Subscription Details row for "<usertype>"
 Then I should see the status of the subscription "<appname>" "<apiname>" approval task as "IN_PROGRESS"
@@ -330,11 +331,11 @@ When I click on apimanager Application "<appname>"
 Then I click on Application "<appname>" "Subscriptions" tab
 Then I should see the API "<apiname>" status as "<status>" and Subscription Tier as "<tier>"
 Examples:
-|usertype |usertypeSP|appname            |action  |status   |tier    |apiname         |
-|AdminUser|APPCREATE |DefaultApplication |Reject  |REJECTED |Default |NameTestAPI - v2| 
+|usertype |usertypeSP|appname     |action  |status   |tier    |apiname         |
+|AdminUser|APPCREATE |AuXTestAPPE |Reject  |REJECTED |Default |WeatherAPI - v1 | 
 
 
-@HUB-645
+@ExternalGateway
 Scenario Outline: HUB-645 : SP unsubscribe API from application before approval
 Given I am in apimanager
 When I click on apimanager login
@@ -342,6 +343,10 @@ Then I should see the apimanager "Login" pop up
 When I enter apimanager Login username and password for "<usertypeSP>" 
 And I click on apimanager Login pop up login button
 Then I should see apimanager "<usertypeSP>" at the top right corner of the page
+When I click on apimanager My Applications
+When I click on apimanager Application "<appname>"
+When I click on Application "<appname>" "Subscriptions" tab
+Then I unsubscribe existing "<apiname>" with "<version>" if subscription exist
 And I click on apimanager APIs module
 Then I should search apimanager API "<apiname>"
 When I click on the apimanager "<apiname>" "<version>" api
@@ -391,5 +396,5 @@ And I click on subscriptions creation under tasks
 Then I should see created application "<appname>" is removed from the Approval Tasks table for "<usertype>"
 
 Examples:
-|usertype |usertypeSP|appname     |status   |tier    |apiname   |version |apiname&version  |
-|AdminUser|APPCREATE |AuXTestAPPA |ON_HOLD  |Default |NameProdAPI|v2      |NameProdAPI - v2|
+|usertype |usertypeSP|appname     |status   |tier    |apiname    |version|apiname&version|
+|AdminUser|APPCREATE |AuXTestAPPA |ON_HOLD  |Default |NameProdAPI|v2     |WeatherAPI - v1|

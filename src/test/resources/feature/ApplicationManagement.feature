@@ -1,6 +1,6 @@
 Feature: Application Management of service provider
 
-@HUB-59 
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-59 : User creates an application by filling all mandatory information
 Given I am in apimanager
 When I click on apimanager login
@@ -19,7 +19,7 @@ Examples:
 |APPCREATE|AuXTestAPPA	|AuXTestingAPP|INACTIVE|
 
 
-@HUB-60 
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-60 : User is not able to create an application without providing application name
 Given I am in apimanager
 When I click on apimanager login
@@ -37,7 +37,7 @@ Examples:
 |usertype |appName      |Description  |status  |
 |APPCREATE|             |AuXTestingAPP|INACTIVE|
 
-@HUB-64
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-64 : User deletes created application
 Given I am in apimanager
 When I click on apimanager login
@@ -54,7 +54,7 @@ Examples:
 |usertype |appName      |Description  |status  |
 |APPCREATE|AuXTestAPPA	|AuXTestingAPP|INACTIVE|
 
-@HUB-65
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-65 : User creates an application by the same name as previously deleted
 Given I am in apimanager
 When I click on apimanager login
@@ -76,7 +76,7 @@ Examples:
 |usertype |appName      |Description  |status  |
 |APPCREATE|AuxTestAPPA	|AuXTestingAPP|INACTIVE|
 
-@HUB-66
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-66 : User is not able to create an application with the same name as previously created application
 Given I am in apimanager
 When I click on apimanager login
@@ -103,7 +103,7 @@ Examples:
 |APPCREATE|AuXTestAPPB	|AuXTestingAPP|INACTIVE|
 
 
-@HUB-67
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-67 : User is not able to edit application once created
 Given I am in apimanager
 When I click on apimanager login
@@ -123,4 +123,4 @@ When I enter "<appName>" with random number in search field
 Then I should see there is no editable field for "<appName>"
 Examples:
 |usertype |appName      |Description  |status  |
-|APPCREATE|AuXTestAPPM	|AuXTestingAPP|INACTIVE|
+|APPCREATE|AuXTestAPPC	|AuXTestingAPP|INACTIVE|

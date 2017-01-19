@@ -1,6 +1,6 @@
 Feature: Delete APIs 
 
-@HUB-216
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-216 : Hub administrator deletes an API in created state
 Given I am in apipublisher
 When I provide apipublisher username and password for "<usertype>"
@@ -15,7 +15,7 @@ Examples:
 |PUBLISHER|TestAPI   |v1      |0 Users           |
 
 
-@HUB-217
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-217 : Hub administrator deletes an API in published state without subscriptions
 Given I am in apipublisher
 When I provide apipublisher username and password for "<usertype>"
@@ -30,7 +30,7 @@ Examples:
 |PUBLISHER|AuxProdAPI   |v1      |0 Users           |
 
 
-@HUB-218
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-218 : Hub administrator deletes an API in published state with subscriptions
 Given I am in apipublisher
 When I provide apipublisher username and password for "<usertype>"
@@ -47,7 +47,7 @@ Examples:
 |PUBLISHER|AuxTestAPI   |v1      |1 User            |
 
 
-@HUB-219
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-219 : Hub administrator deletes a new version of an API in created state
 Given I am in apipublisher
 When I provide apipublisher username and password for "<usertype>"
@@ -62,7 +62,7 @@ Examples:
 |PUBLISHER|TestAPI      |v2      |0 Users           |
 
 
-@HUB-220
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-220 : Hub administrator deletes a new version of API in published state without subscriptions
 Given I am in apipublisher
 When I provide apipublisher username and password for "<usertype>"
@@ -77,7 +77,7 @@ Examples:
 |PUBLISHER|ProdAPI      |v2      |0 Users           |
 
 
-@HUB-221
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-221 : Hub administrator deletes a API version in published state with subscriptions
 Given I am in apipublisher
 When I provide apipublisher username and password for "<usertype>"

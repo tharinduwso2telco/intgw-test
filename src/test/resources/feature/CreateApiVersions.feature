@@ -1,6 +1,6 @@
 Feature: Create API Versions
 
-@HUB-214
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-214 : Hub administrator creates a new version of custom api
 Given I am in apipublisher
 When I provide apipublisher username and password for "<usertype>"
@@ -18,8 +18,7 @@ Examples:
 | usertype|apiName       |olderVersion|newVersion|
 |PUBLISHER|NameProdAPI   |v1          |v2        |
 
-
-@HUB-215
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-215 : Hub administrator publishes a new version of custom api
 Given I am in apipublisher
 When I provide apipublisher username and password for "<usertype>"
@@ -45,7 +44,6 @@ When I enter apimanager Login username and password for "<usertypeSP>"
 And I click on apimanager Login pop up login button
 Then I should see apimanager "<usertypeSP>" at the top right corner of the page
 And I click on apimanager APIs module
-#Then I should see the apimanager APIs page header as "APIs"
 When I click on the apimanager "<apiName>" "<newVersion>" api
 Then I should see the apimanager APIs "<apiName>" status as "Published"
 Examples:

@@ -1,6 +1,6 @@
 Feature: End to end flow of External Gateway
 
-
+@ExternalGatewayE2EFlow
 Scenario Outline: External Gateway flow
 #API Publisher Create and Publish an API
 Given I am in apipublisher

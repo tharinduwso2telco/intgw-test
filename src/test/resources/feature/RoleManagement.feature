@@ -1,6 +1,6 @@
 Feature: User Roles creation
 
-@HUB-52
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-52 : Hub administrator creates user role with API creating permission
 Given I am in identity server page
 When I enter identity server username credentials
@@ -27,8 +27,7 @@ Examples:
 |role   |permissions |
 |Creator|Login,Create|
 
-
-@HUB-53
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-53 : Hub administrator creates user role with API publishing permission
 Given I am in identity server page
 When I enter identity server username credentials
@@ -55,8 +54,7 @@ Examples:
 |role     |permissions         |
 |Publisher|Login,Create,Publish|
 
-
-@HUB-54
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-54 : Hub administrator creates user role with operator administrator permission
 Given I am in identity server page
 When I enter identity server username credentials

@@ -1,6 +1,6 @@
 Feature: Create and Publish an API
 
-@HUB-195
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-195 : Hub administrator creates custom API for production
 Given I am in apipublisher
 When I provide apipublisher username and password for "<usertype>"
@@ -25,12 +25,11 @@ And I select "<tier>" as apipublisher Manage tier availability
 And I click on apipublisher Manage save button
 When I click on Go to Overview
 Then I should see the status as "CREATED"
-
 Examples:
-| usertype|apiName   		 |version|prodEndpoint   |roleType		   |tier|
-|PUBLISHER|TestProd     |v1     |auxProd		 |Internal/publisher |Unlimited,Default,Requestbased,Silver,Subscription,Gold,Premium,Bronze|
+| usertype|apiName  |version|prodEndpoint   |roleType		    |tier                                                                  |
+|PUBLISHER|TestProd |v1     |auxProd		|Internal/publisher |Unlimited,Default,Requestbased,Silver,Subscription,Gold,Premium,Bronze|
 
-@HUB-196
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-196 : Hub administrator creates custom API for test purposes
 Given I am in apipublisher
 When I provide apipublisher username and password for "<usertype>"
@@ -55,12 +54,11 @@ And I select "<tier>" as apipublisher Manage tier availability
 And I click on apipublisher Manage save button
 When I click on Go to Overview
 Then I should see the status as "CREATED"
-
 Examples:
-| usertype|apiName   |sandEndpoint |roleType		   |tier|
+| usertype|apiName   |sandEndpoint |roleType		   |tier                                                                  |
 |PUBLISHER|AuxTestAPI|auxSand	   |Internal/publisher |Unlimited,Default,Requestbased,Silver,Subscription,Gold,Premium,Bronze|
 
-@HUB-197
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-197 : Hub administrator directly publishes custom API for production
 Given I am in apipublisher
 When I provide apipublisher username and password for "<usertype>"
@@ -93,14 +91,13 @@ When I enter apimanager Login username and password for "<usertypeSP>"
 And I click on apimanager Login pop up login button
 Then I should see apimanager "<usertypeSP>" at the top right corner of the page
 And I click on apimanager APIs module
-#Then I should see the apimanager APIs page header as "APIs"
 When I click on the apimanager "<apiName>" "<version>" api
 Then I should see the apimanager APIs "<apiName>" status as "Published"
 Examples:
-| usertype|usertypeSP|apiName       |version|prodEndpoint |roleType		   |tier|
+| usertype|usertypeSP|apiName    |version|prodEndpoint |roleType		   |tier                                                                  |
 |PUBLISHER|APPCREATE |NameProdAPI|v1     |auxProd	   |Internal/publisher |Unlimited,Default,Requestbased,Silver,Subscription,Gold,Premium,Bronze|
 
-@HUB-198
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-198 : Hub administrator directly publishes custom API for testing
 Given I am in apipublisher
 When I provide apipublisher username and password for "<usertype>"
@@ -133,14 +130,13 @@ When I enter apimanager Login username and password for "<usertypeSP>"
 And I click on apimanager Login pop up login button
 Then I should see apimanager "<usertypeSP>" at the top right corner of the page
 And I click on apimanager APIs module
-#Then I should see the apimanager APIs page header as "APIs"
 When I click on the apimanager "<apiName>" "<version>" api
 Then I should see the apimanager APIs "<apiName>" status as "Published"
 Examples:
-| usertype|usertypeSP|apiName   |version|sandEndpoint  |roleType		   |tier                                                                  |
+| usertype|usertypeSP|apiName    |version|sandEndpoint |roleType		   |tier                                                                  |
 |PUBLISHER|APPCREATE |NameTestAPI|v1     |auxSand	   |Internal/publisher |Unlimited,Default,Requestbased,Silver,Subscription,Gold,Premium,Bronze|
 
-@HUB-199
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-199 : Hub administrator publishes already created custom API
 Given I am in apipublisher
 When I provide apipublisher username and password for "<usertype>"
@@ -159,7 +155,6 @@ When I enter apimanager Login username and password for "<usertypeSP>"
 And I click on apimanager Login pop up login button
 Then I should see apimanager "<usertypeSP>" at the top right corner of the page
 And I click on apimanager APIs module
-#Then I should see the apimanager APIs page header as "APIs"
 When I click on the apimanager "<apiName>" "<version>" api
 Then I should see the apimanager APIs "<apiName>" status as "Published"
 

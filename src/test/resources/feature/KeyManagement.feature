@@ -1,6 +1,6 @@
 Feature: Validate Key Management for Applications
 
-@HUB-141
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-141 : User generates production keys for an application that has single subscription
 Given I am in apimanager
 When I click on apimanager login
@@ -21,9 +21,9 @@ And I should see access token of production
 Then I should see "<validity>" as Token Validity of production
 Examples:
 |usertype |appName    |status  |validity|
-|APPCREATE|AppThree   |APPROVED|3600    |
+|APPCREATE|AuXTestAPPA|APPROVED|3600    |
 
-@HUB-142
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-142 : User generates production keys for an application that has multiple subscriptions
 Given I am in apimanager
 When I click on apimanager login
@@ -44,9 +44,9 @@ And I should see access token of production
 Then I should see "<validity>" as Token Validity of production
 Examples:
 |usertype |appName    |status  |validity |
-|APPCREATE|AppFour	  |APPROVED|3600     |
+|APPCREATE|AuXTestAPPB|APPROVED|3600     |
 
-@HUB-143  
+@InternalGateway @ExternalGateway  
 Scenario Outline: HUB-143 : User generates production keys for app with multiple subscriptions of older and newer API versions
 Given I am in apimanager
 When I click on apimanager login
@@ -70,10 +70,9 @@ And I should see access token of production
 Then I should see "<validity>" as Token Validity of production
 Examples:
 |usertype |appName    |status  |apiName |olderversion|newerVersion|validity |
-|APPCREATE|AppThree   |APPROVED|Phone   |v1          |v2          |3600     |
+|APPCREATE|AuXTestAPPC|APPROVED|Phone   |v1          |v2          |3600     |
 
-
-@HUB-144
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-144 : User generates production keys for app with customized expiration time
 Given I am in apimanager
 When I click on apimanager login
@@ -95,9 +94,9 @@ And I should see access token of production
 Then I should see "<validity>" as Token Validity of production
 Examples:
 |usertype |appName    |status  |validity|
-|APPCREATE|AppOne     |APPROVED|5000    |
+|APPCREATE|AuXTestAPPD|APPROVED|5000    |
 
-@HUB-145
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-145 : User generates production keys for an application with infinite expiration time
 Given I am in apimanager
 When I click on apimanager login
@@ -119,5 +118,5 @@ And I should see access token of production
 Then I should see "<validity>" as Token Validity of production
 Examples:
 |usertype |appName    |status  |validity|
-|APPCREATE|AppTwo     |APPROVED|-1      |
+|APPCREATE|AuXTestAPPE|APPROVED|-1      |
 

@@ -1,6 +1,6 @@
 Feature: User creation for API roles
 
-@HUB-55 
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-55 : Hub administrator creates user with API Creator Role
 Given I am in identity server page
 When I enter identity server username credentials
@@ -29,7 +29,7 @@ Examples:
 |userName      |password   |role   |
 |AuxApiCreator |test123    |Creator| 
 
-@HUB-56
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-56 : Hub administrator creates user with API Publisher Role
 Given I am in identity server page
 When I enter identity server username credentials
@@ -58,7 +58,7 @@ Examples:
 |userName        |password   |role      |
 |AuxAPIPublisher |1qaz2WSX@  |Publisher |
 
- @HUB-57
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-57 : Hub administrator creates user who is an operator administrator
 Given I am in identity server page
 When I enter identity server username credentials

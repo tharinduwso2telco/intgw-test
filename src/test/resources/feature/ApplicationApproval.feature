@@ -1,6 +1,6 @@
 Feature: Operator Admin Approves created Applications
 
-@HUB-335
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-335 : Operator admin user assigns a application task to himself without throttling layer application
 Given I am in hubmanager
 Then I should see the apimanager Manager page header as "Manager"
@@ -17,9 +17,9 @@ And I click Assign To Me button for "<appname>" Application Details row for "<us
 Then I should see the status of the application "<appname>" approval task as "RESERVED" 
 Examples:
 |usertype |appname      |
-|AdminUser|AuXTestAPPB  |
+|AdminUser|AuXTestAPPA  |
 
-@HUB-337
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-337 : Operator admin user assigns a application task to himself and applies throttling layer
 Given I am in hubmanager
 Then I should see the apimanager Manager page header as "Manager"
@@ -38,11 +38,10 @@ And I click Assign To Me button for "<appname>" Application Details row for "<us
 Then I should see the status of the application "<appname>" approval task as "RESERVED"
 And I should see the selected throttling layer as "<tiers>" for "<appname>" Application
 Examples:
-|usertype |appname         |tiers    |
-|AdminUser|AuXTestAPPD  |Unlimited|
+|usertype |appname      |tiers    |
+|AdminUser|AuXTestAPPB  |Unlimited|
 
-
-@HUB-338
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-338 : Operator admin user starts assigned task without applying throttling layer
 Given I am in hubmanager
 Then I should see the apimanager Manager page header as "Manager"
@@ -61,9 +60,9 @@ Then I click on action dropdown of "<appname>" task
 And I should see Action "<options>" of the "<appname>" task in the dropdown
 Examples:
 |usertype |appname      |options        |
-|AdminUser|AuXTestAPPB  |Approve,Reject |
+|AdminUser|AuXTestAPPA  |Approve,Reject |
 
-@HUB-339
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-339 : Operator admin user starts assigned task and applies throttling layer
 Given I am in hubmanager
 Then I should see the apimanager Manager page header as "Manager"
@@ -87,8 +86,7 @@ Examples:
 |usertype |appname      |options        |tiers    |
 |AdminUser|AuXTestAPPB  |Approve,Reject |Unlimited|
 
-
-@HUB-340
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-340 : Operator admin user starts assigned task without changing already applied throttling layer
 Given I am in hubmanager
 Then I should see the apimanager Manager page header as "Manager"
@@ -112,10 +110,9 @@ Then I click on action dropdown of "<appname>" task
 And I should see Action "<options>" of the "<appname>" task in the dropdown
 Examples:
 |usertype |appname      |options        |tiers    |
-|AdminUser|AuXTestAPPA  |Approve,Reject |Unlimited|
+|AdminUser|AuXTestAPPC  |Approve,Reject |Unlimited|
 
-
-@HUB-341 
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-341 : Operator admin user starts assigned task and changes the existing throttling layer
 Given I am in hubmanager
 Then I should see the apimanager Manager page header as "Manager"
@@ -141,10 +138,9 @@ Then I click on action dropdown of "<appname>" task
 And I should see Action "<options>" of the "<appname>" task in the dropdown
 Examples:
 |usertype |appname      |options        |olderTiers   |newTiers |
-|AdminUser|AuXTestAPPC  |Approve,Reject |Unlimited    |Medium   |
+|AdminUser|AuXTestAPPD  |Approve,Reject |Unlimited    |Medium   |
 
-
-@HUB-342
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-342 : Operator admin user approves task without applying throttling layer
 Given I am in hubmanager
 Then I should see the apimanager Manager page header as "Manager"
@@ -175,10 +171,9 @@ Then I should see the apimanager Application page header as "Applications"
 Then I should see the Application "<appname>" workflow status as "<status>" and Tier as "<tier>"
 Examples:
 |usertype |usertypeSP  |appname      |action  |status |tier    |
-|AdminUser|APPCREATE |AuXTestAPPA |Approve |ACTIVE |Large   |
+|AdminUser|APPCREATE   |AuXTestAPPA  |Approve |ACTIVE |Large   |
 
-
-@HUB-343
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-343 : Operator admin user approves task while applying throttling layer
 Given I am in hubmanager
 Then I should see the apimanager Manager page header as "Manager"
@@ -211,10 +206,10 @@ Then I should see the apimanager Application page header as "Applications"
 Then I should see the Application "<appname>" workflow status as "<status>" and Tier as "<tier>"
 Examples:
 |usertype |usertypeSP  |appname      |action  |status |tier        |
-|AdminUser|APPCREATE |AuXTestAPPC  |Approve |ACTIVE |Unlimited   |
+|AdminUser|APPCREATE   |AuXTestAPPB  |Approve |ACTIVE |Unlimited   |
 
 
-@HUB-344
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-344 : Operator admin user approves task without changing already applied throttling layer
 Given I am in hubmanager
 Then I should see the apimanager Manager page header as "Manager"
@@ -247,9 +242,9 @@ Then I should see the apimanager Application page header as "Applications"
 Then I should see the Application "<appname>" workflow status as "<status>" and Tier as "<tier>"
 Examples:
 |usertype |usertypeSP|appname         |action  |status |tier        |
-|AdminUser|APPCREATE |AuXTestAPPD     |Approve |ACTIVE |Unlimited   |
+|AdminUser|APPCREATE |AuXTestAPPC     |Approve |ACTIVE |Unlimited   |
 
-@HUB-345
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-345 : Operator admin user approves task and changes the previously applied throttling layer
 Given I am in hubmanager
 Then I should see the apimanager Manager page header as "Manager"
@@ -283,9 +278,9 @@ Then I should see the apimanager Application page header as "Applications"
 Then I should see the Application "<appname>" workflow status as "<status>" and Tier as "<newTier>"
 Examples:
 |usertype |usertypeSP|appname        |action  |status |olderTier   |newTier |
-|AdminUser|APPCREATE |AuXTestAPPB    |Approve |ACTIVE |Unlimited   |Small   |
+|AdminUser|APPCREATE |AuXTestAPPD    |Approve |ACTIVE |Unlimited   |Small   |
 
-@HUB-346
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-346 : Operator admin user rejects application approval task
 Given I am in hubmanager
 Then I should see the apimanager Manager page header as "Manager"
@@ -297,6 +292,8 @@ When I click on apimanager Manager page Workflow tab
 Then I should see apimanager Manager Approval Tasks page header as "Approval Tasks"
 When I click on Application creation link
 Then I should see created application "<appname>" at the top of the Approval Tasks table for "<usertype>"
+And I should see the status of the application "<appname>" approval task as "READY" 
+And I click Assign To Me button for "<appname>" Application Details row for "<usertype>"
 And I should see the status of the application "<appname>" approval task as "RESERVED" 
 And I click on Start button for "<appname>" Application Details row for "<usertype>"
 Then I should see the status of the application "<appname>" approval task as "IN_PROGRESS" 
@@ -316,4 +313,4 @@ Then I should see the apimanager Application page header as "Applications"
 Then I should see the Application "<appname>" workflow status as "<status>" and Tier as "<tier>"
 Examples:
 |usertype |usertypeSP|appname        |action  |status   |tier    |
-|AdminUser|APPCREATE |AuXTestAPPM984 |Reject  |REJECTED |Default |
+|AdminUser|APPCREATE |AuXTestAPPE    |Reject  |REJECTED |Default |

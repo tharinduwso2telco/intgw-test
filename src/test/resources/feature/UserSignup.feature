@@ -1,6 +1,6 @@
 Feature: Validate if user successfully signup to store
 
-@HUB-41
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-41 : Service provider signs up with all mandatory information to consume APIs
 Given I am in apimanager
 When I click on apimanager sign-up button
@@ -25,7 +25,7 @@ Examples:
 |usertype |LastName   |FirstName   |Email	            |Country |Land_Phone |
 |LOGOUT	  |AuxTestLast|AuxTestFirst|AuxTest123@gmail.com|Srilanka|2324434    |
 
-@HUB-42 
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-42 : Service provider is not able to sign up without username provided
 Given I am in apimanager
 When I click on apimanager sign-up button
@@ -44,8 +44,7 @@ Examples:
 |usertype |LastName   |FirstName   |Email	            |Country |Land_Phone|
 |LOGOUT	  |AuxTestLast|AuxTestFirst|AuxTest123@gmail.com|Srilanka|2324434   |
 
-
-@HUB-43
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-43 : Service provider is not able to sign up without password provided
 Given I am in apimanager
 When I click on apimanager sign-up button
@@ -64,7 +63,7 @@ Examples:
 |usertype|LastName   |FirstName   |Email	           |Country	|Land_Phone |
 |LOGOUT	 |AuxTestLast|AuxTestFirst|AuxTest123@gmail.com|Srilanka|2324434    |
 
-@HUB-44
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-44 : Service provider is not able to sign up without lastname provided
 Given I am in apimanager
 When I click on apimanager sign-up button
@@ -83,7 +82,7 @@ Examples:
 |usertype|LastName   |Email	              |Country |Land_Phone |
 |LOGOUT	 |AuxTestLast|AuxTest123@gmail.com|Srilanka|2324434    |
 
-@HUB-45
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-45 : Service provider is not able to sign up without firstname provided
 Given I am in apimanager
 When I click on apimanager sign-up button
@@ -102,7 +101,7 @@ Examples:
 |usertype |FirstName   |Email	            |Country |Land_Phone |
 |LOGOUT	  |AuxTestFirst|AuxTest123@gmail.com|Srilanka|2324434    |
 
-@HUB-46
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-46 : Service provider is not able to sign up without email provided
 Given I am in apimanager
 When I click on apimanager sign-up button
@@ -121,7 +120,7 @@ Examples:
 |usertype  |LastName   |FirstName   |Country	|Land_Phone |
 |LOGOUT	   |AuxTestLast|AuxTestFirst|Srilanka   |2324434    |
 
-@HUB-47 
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-47 :: Version : 1 :: Service provider is not able to sign up using invalid email address
 Given I am in apimanager
 When I click on apimanager sign-up button
@@ -138,7 +137,7 @@ Examples:
 |usertype  |LastName   |FirstName   |Email	   |Country	|Land_Phone |
 |LOGOUT	   |AuxTestLast|AuxTestFirst|AuxTest123|Srilanka|2324434    |
 
-@HUB-48
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-48 : Service provider is not able to sign up using a password that doesn't match minimum requirements
 Given I am in apimanager
 When I click on apimanager sign-up button
@@ -158,7 +157,7 @@ Examples:
 | usertype  |Password   |LastName   |FirstName   |Email	              |Country |Land_Phone |
 |LOGOUT		|asd		|AuxTestLast|AuxTestFirst|AuxTest123@gmail.com|Srilanka|2324434    |
 
-@HUB-49
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-49 : Service provider is not able to sign up using existing username
 Given I am in apimanager
 When I click on apimanager sign-up button
@@ -192,7 +191,7 @@ Examples:
 |usertype      |LastName   |FirstName   |Email	             |Country	|Land_Phone |
 |SUBSCRIBERAPP |AuxTestLast|AuxTestFirst|AuxTest123@gmail.com|Srilanka  |2324434    |
 
-@HUB-50
+@InternalGateway @ExternalGateway
 Scenario Outline: HUB-50 : Service provider signs up without providing optional information
 Given I am in apimanager
 When I click on apimanager sign-up button

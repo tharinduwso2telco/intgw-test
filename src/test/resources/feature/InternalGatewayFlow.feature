@@ -1,6 +1,6 @@
 Feature: End to end flow of Internal Gateway
 
-
+@InternalGatewayTypeOneE2EFlow
 Scenario Outline: Internal Gateway flow 
 #API Publisher Create and Publish an API
 Given I am in apipublisher
