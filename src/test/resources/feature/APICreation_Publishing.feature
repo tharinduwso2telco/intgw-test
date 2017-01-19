@@ -14,7 +14,7 @@ And I provide apipublisher Design name as "<apiName>"
 And I provide apipublisher Design Context as "TestProd"
 And I provide apipublisher Design Version as "v1"
 And I provide apipublisher Design Provide URL pattern as "/aux/wso2tel/"
-And I click on apipublisher Design "Get" checkbox
+And I click on apipublisher Design "get" checkbox
 And I click on Resource Add button
 And I click on apipublisher Design implement button
 And I click on Manage API link
@@ -43,7 +43,7 @@ And I provide apipublisher Design name as "<apiName>"
 And I provide apipublisher Design Context as "TestAPI"
 And I provide apipublisher Design Version as "v1"
 And I provide apipublisher Design Provide URL pattern as "/aux/wso2tel/"
-And I click on apipublisher Design "Get" checkbox
+And I click on apipublisher Design "get" checkbox
 And I click on Resource Add button
 And I click on apipublisher Design implement button
 And I click on Manage API link
@@ -72,7 +72,7 @@ And I provide apipublisher Design name as "<apiName>"
 And I provide apipublisher Design Context as "NameProd"
 And I provide apipublisher Design Version as "<version>"
 And I provide apipublisher Design Provide URL pattern as "/aux/wso2tel/"
-And I click on apipublisher Design "Get" checkbox
+And I click on apipublisher Design "get" checkbox
 And I click on Resource Add button
 And I click on apipublisher Design implement button
 And I click on Manage API link
@@ -111,7 +111,7 @@ And I provide apipublisher Design name as "<apiName>"
 And I provide apipublisher Design Context as "NameTest"
 And I provide apipublisher Design Version as "<version>"
 And I provide apipublisher Design Provide URL pattern as "/aux/wso2tel/"
-And I click on apipublisher Design "Get" checkbox
+And I click on apipublisher Design "get" checkbox
 And I click on Resource Add button
 And I click on apipublisher Design implement button
 And I click on Manage API link
