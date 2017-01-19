@@ -3,7 +3,6 @@ package com.wso2telco.tests.apimanager.steps.apipublisher;
 
 
 import org.junit.Assert;
-
 import com.wso2telco.apimanager.pageobjects.apihome.applications.ApplicationsPage;
 import com.wso2telco.apimanager.pageobjects.apipublisher.APIPublisherHomePage;
 import com.wso2telco.apimanager.pageobjects.apipublisher.APIPublisherLoginPage;
