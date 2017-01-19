@@ -502,22 +502,6 @@ When I select "<appName>" for "<usertypeSP>"
 And I click apimanager "<apiname>" API page subscribe button
 Then I should see "Subscription Awaiting Approval" on Subscription Successful pop up
 When I click Go to My Subscription button
-Given I am in apimanager
-When I click on apimanager login
-Then I should see the apimanager "Login" pop up
-When I enter apimanager Login username and password for "<usertypeSP>" 
-And I click on apimanager Login pop up login button
-Then I should see apimanager "<usertypeSP>" at the top right corner of the page
-And I click on apimanager APIs module
-Then I should search apimanager API "<apiname>"
-When I click on the apimanager "<apiname>" "<version>" api
-Then I should see the apimanager APIs "<apiname>" status as "Published"
-When I click on Applications dropdown
-Then I should see "<appName>" Application for "<usertypeSP>"
-When I select "<appName>" for "<usertypeSP>"
-And I click apimanager "<apiname>" API page subscribe button
-Then I should see "Subscription Awaiting Approval" on Subscription Successful pop up
-When I click Go to My Subscription button
 Then I should see the apimanager Application "<appName>" Subscriptions page header as "Subscriptions"
 Then I should see the API "<subscribeAPI>" status as "<status>" and Subscription Tier as "<tier>"
 Given I am in hubmanager
