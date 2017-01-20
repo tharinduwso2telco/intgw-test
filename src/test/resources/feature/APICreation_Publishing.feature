@@ -56,7 +56,7 @@ When I click on Go to Overview
 Then I should see the status as "CREATED"
 Examples:
 | usertype|apiName   |sandEndpoint |roleType		   |tier                                                                  |
-|PUBLISHER|AuxTestAPI|auxSand	   |Internal/publisher |Unlimited,Default,Requestbased,Silver,Subscription,Gold,Premium,Bronze|
+|PUBLISHER|TestSand  |auxSand	   |Internal/publisher |Unlimited,Default,Requestbased,Silver,Subscription,Gold,Premium,Bronze|
 
 @InternalGateway @ExternalGateway
 Scenario Outline: HUB-197 : Hub administrator directly publishes custom API for production

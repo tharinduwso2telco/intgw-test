@@ -27,7 +27,7 @@ Then I should see ids Add User Success pop up message as "WSO2 Carbon"
 And I click on Success pop up message Ok button
 Examples:
 |userName      |password   |role   |
-|AuxApiCreator |test123    |Creator| 
+|AuxApiCreator |1qaz2WSX@  |Creator| 
 
 @InternalGateway @ExternalGateway
 Scenario Outline: HUB-56 : Hub administrator creates user with API Publisher Role
@@ -85,4 +85,4 @@ Then I should see ids Add User Success pop up message as "WSO2 Carbon"
 And I click on Success pop up message Ok button
 Examples:
 |userName         |password   |role                  |
-|AuxOperatorAdmin |1qaz2wsx@  |admin,manage-app-admin|
+|AuxOperatorAdmin |1qaz2WSX@  |admin,manage-app-admin|
