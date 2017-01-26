@@ -299,7 +299,7 @@ public class IDServerUserRoles extends BasicTestObject {
 	@When("^I clear existing aggrigator role \"([^\"]*)\"$")
 	public void i_clear_existing_aggrigator_role(String arg1) throws Throwable {
 		CarbonRolesPage carbonRoles = new CarbonRolesPage(driver);
-        carbonRoles.enterAggrigatorRoleName(arg1);
+		carbonRoles.enterAggrigatorRoleName(arg1);
 		carbonRoles.clickSearch();
 
 		if (carbonRoles.isRoleVisible()) {
@@ -364,19 +364,19 @@ public class IDServerUserRoles extends BasicTestObject {
 	@When("^I enter ids Add User name as \"([^\"]*)\"$")
 	public void i_enter_ids_Add_User_name_as(String arg1) throws Throwable {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
-		carbonUserRolesPage.enterUserName(arg1);
+		carbonUserRolesPage.enterUserName(config.getValue(getEnvironment() + arg1 + "user"));
 	}
 	
 	@When("^I enter ids Add User password as \"([^\"]*)\"$")
 	public void i_enter_ids_Add_User_password_as(String arg1) throws Throwable {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
-		carbonUserRolesPage.enterPassword(arg1);
+		carbonUserRolesPage.enterPassword(config.getValue(getEnvironment() + arg1 + "pwd"));
 	}
 
 	@When("^I enter ids Add User password repeat as \"([^\"]*)\"$")
 	public void i_enter_ids_Add_User_password_repeat_as(String arg1) throws Throwable {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
-		carbonUserRolesPage.enterRepeatPassword(arg1);
+		carbonUserRolesPage.enterRepeatPassword(config.getValue(getEnvironment() + arg1 + "pwd"));
 	}
 	
 	@When("^I click on ids Add User next button$")
@@ -418,7 +418,7 @@ public class IDServerUserRoles extends BasicTestObject {
 	@When("^I clear existing users \"([^\"]*)\"$")
 	public void i_clear_existing_users(String arg1) throws Throwable {
 		CarbonRolesPage carbonRoles = new CarbonRolesPage(driver);
-        carbonRoles.enterUsersName(arg1);
+        carbonRoles.enterUsersName(config.getValue(getEnvironment()) + arg1 + "user");
 		carbonRoles.clickSearchUsers();
 
 		if (carbonRoles.isUserNameVisible()) {

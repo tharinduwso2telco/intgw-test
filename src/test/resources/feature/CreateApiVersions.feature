@@ -1,11 +1,12 @@
 Feature: Create API Versions
 
-@InternalGateway @ExternalGateway
+@InternalGateway @ExternalGateway 
 Scenario Outline: HUB-214 : Hub administrator creates a new version of custom api
 Given I am in apipublisher
 When I provide apipublisher username and password for "<usertype>"
 And I click on apipublisher login button
 Then I should see apipublisher username "<usertype>" at the top right corner of the page
+Then I search API with "<apiName>"
 Then I click on apipublisher API "<apiName>" "<olderVersion>"
 Then I should see the status as "PUBLISHED"
 When I click on create new version button
@@ -24,6 +25,7 @@ Given I am in apipublisher
 When I provide apipublisher username and password for "<usertype>"
 And I click on apipublisher login button
 Then I should see apipublisher username "<usertype>" at the top right corner of the page
+Then I search API with "<apiName>"
 Then I click on apipublisher API "<apiName>" "<olderVersion>"
 Then I should see the status as "PUBLISHED"
 When I click on create new version button
@@ -49,3 +51,4 @@ Then I should see the apimanager APIs "<apiName>" status as "Published"
 Examples:
 | usertype|usertypeSP|apiName       |olderVersion|newVersion|
 |PUBLISHER|APPCREATE |NameTestAPI   |v1          |v2        |
+|PUBLISHER|APPCREATE |TestSand      |v1          |v2        |

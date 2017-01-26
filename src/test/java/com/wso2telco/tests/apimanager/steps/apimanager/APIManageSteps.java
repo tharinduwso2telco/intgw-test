@@ -195,7 +195,7 @@ public class APIManageSteps extends BasicTestObject {
 	@Then("^I should see created application \"([^\"]*)\" at the top of the Approval Tasks table for \"([^\"]*)\"$")
 	public void i_should_see_created_application_at_the_top_of_the_Approval_Tasks_table_for(String arg1, String arg2) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		String appName = arg1;
+		String appName = config.getValue(arg1);
 		Thread.sleep(sleepTime);
 		Assert.assertTrue("App name is not visible in the area", managerpage.isApplicationNameVisible(appName));
 	}
@@ -203,21 +203,21 @@ public class APIManageSteps extends BasicTestObject {
 	@When("^I click on Application Details drop box for \"([^\"]*)\" row for \"([^\"]*)\"$")
 	public void i_click_on_Application_Details_drop_box_for_row_for(String arg1, String arg2) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		String appName = arg1;
+		String appName = config.getValue(arg1);
 		managerpage.clickApplicationDetails(appName);
 	}
 
 	@When("^I select \"([^\"]*)\" for \"([^\"]*)\" Application Details row for \"([^\"]*)\"$")
 	public void i_select_for_Application_Details_row_for(String arg1, String arg2, String arg3) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		String appName = arg2;
+		String appName = config.getValue(arg2);
 		managerpage.selectTier(arg1, appName);
 	}
 
 	@When("^I click Assign To Me button for \"([^\"]*)\" Application Details row for \"([^\"]*)\"$")
 	public void i_click_Assign_To_Me_button_for_Application_Details_row_for(String arg1, String arg2) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		String appName = arg1;
+		String appName = config.getValue(arg1);
 		managerpage.clickAssignMe(appName);
 		Thread.sleep(sleepTime);
 	}
@@ -225,7 +225,7 @@ public class APIManageSteps extends BasicTestObject {
 	@When("^I click on Start button for \"([^\"]*)\" Application Details row for \"([^\"]*)\"$")
 	public void i_click_on_Start_button_for_Application_Details_row_for(String arg1, String arg2) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		String appName = arg1;
+		String appName = config.getValue(arg1);
 		managerpage.clickStart(appName);
 		Thread.sleep(sleepTime);
 	}
@@ -233,7 +233,7 @@ public class APIManageSteps extends BasicTestObject {
 	@When("^I select \"([^\"]*)\" and click complete button for \"([^\"]*)\" Application Details row for \"([^\"]*)\"$")
 	public void i_select_and_click_complete_button_for_Application_Details_row_for(String arg1, String arg2, String arg3) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		String appName = arg2;
+		String appName = config.getValue(arg2);
 		managerpage.selectCondition(arg1, appName);
 		managerpage.clickComplete(appName);
 		Thread.sleep(sleepTime);
@@ -268,7 +268,7 @@ public class APIManageSteps extends BasicTestObject {
 	@Then("^I should not see the created application in Approval Tasks table as \"([^\"]*)\" for \"([^\"]*)\"$")
 	public void i_should_not_see_the_created_application_in_Approval_Tasks_table_as_for(String arg1, String arg2) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		String appName = arg1;
+		String appName = config.getValue(arg1);
 		Assert.assertTrue("App name is visible after approving", managerpage.isApplicationNameNotVisible(appName));
 		Thread.sleep(sleepTime);
 	}
@@ -702,26 +702,26 @@ public class APIManageSteps extends BasicTestObject {
 	@Then("^I should see the status of the application \"([^\"]*)\" approval task as \"([^\"]*)\"$")
 	public void i_should_see_the_status_of_the_application_approval_task_as(String arg1, String arg2) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		Assert.assertTrue("Approval Status mismatched", managerpage.isApprovalTaskStatus(arg1, arg2));
+		Assert.assertTrue("Approval Status mismatched", managerpage.isApprovalTaskStatus(config.getValue(arg1), arg2));
 	}
 
 	@Then("^I click on action dropdown of \"([^\"]*)\" task$")
 	public void i_click_on_action_dropdown_of_task(String arg1) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		managerpage.clickDropdownActions(arg1);
+		managerpage.clickDropdownActions(config.getValue(arg1));
 	}
 
 
 	@Then("^I should see Action \"([^\"]*)\" of the \"([^\"]*)\" task in the dropdown$")
 	public void i_should_see_Action_of_the_task_in_the_dropdown(String arg1, String arg2) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		Assert.assertTrue("Action dropdown options not displayed", managerpage.isApprovalActionsDisplayed(arg1, arg2));
+		Assert.assertTrue("Action dropdown options not displayed", managerpage.isApprovalActionsDisplayed(arg1, config.getValue(arg2)));
 	}
 	
 	@Then("^I should see the selected throttling layer as \"([^\"]*)\" for \"([^\"]*)\" Application$")
 	public void i_should_see_the_selected_throttling_layer_as_for_Application(String arg1, String arg2) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		managerpage.isTierValueDisplayed(arg1, arg2);
+		managerpage.isTierValueDisplayed(arg1, config.getValue(arg2));
 	}
 	
 /*	
@@ -744,7 +744,7 @@ public class APIManageSteps extends BasicTestObject {
 	@Then("^I should see created application \"([^\"]*)\" is removed from the Approval Tasks table for \"([^\"]*)\"$")
 	public void i_should_see_created_application_is_removed_from_the_Approval_Tasks_table_for(String arg1, String arg2) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		String appName = arg1;
+		String appName = config.getValue(arg1);
 		Thread.sleep(sleepTime);
 		Assert.assertTrue("App name is visible in the area", managerpage.isSubscriptionTaskRemoved(appName));
 	}
@@ -767,91 +767,97 @@ public class APIManageSteps extends BasicTestObject {
 	    }
 	}
 	
-	@Then("^I should see created subscription with \"([^\"]*)\" and \"([^\"]*)\" at the top of the Approval Tasks table for \"([^\"]*)\"$")
-	public void i_should_see_created_subscription_with_and_at_the_top_of_the_Approval_Tasks_table_for(String arg1, String arg2, String arg3) throws Throwable {
+//	@Then("^I should see created subscription with \"([^\"]*)\" and \"([^\"]*)\" at the top of the Approval Tasks table for \"([^\"]*)\"$")
+//	public void i_should_see_created_subscription_with_and_at_the_top_of_the_Approval_Tasks_table_for(String arg1, String arg2, String arg3) throws Throwable {
+	@Then("^I should see created subscription with \"([^\"]*)\" and \"([^\"]*)\" \"([^\"]*)\" at the top of the Approval Tasks table for \"([^\"]*)\"$")
+	public void i_should_see_created_subscription_with_and_at_the_top_of_the_Approval_Tasks_table_for(String arg1, String arg2, String arg3, String arg4) throws Throwable {	
 		ManagerPage managerpage = new ManagerPage(driver);
-		String appName = arg1;
-		String apiName = arg2;
+		String appName = config.getValue(arg1);
+		String apiName = config.getValue(arg2+arg3);
 		Thread.sleep(sleepTime);
 		Assert.assertTrue("Subscription name is not visible in the area", managerpage.isSubscriptionVisible(appName,apiName));
 	}
 	
-	@Then("^I should not see created subscription with \"([^\"]*)\" and \"([^\"]*)\" in the Approval Tasks table$")
-	public void i_should_not_see_created_subscription_with_and_in_the_Approval_Tasks_table(String arg1, String arg2) throws Throwable{
+	@Then("^I should not see created subscription with \"([^\"]*)\" and \"([^\"]*)\" \"([^\"]*)\" in the Approval Tasks table$")
+	public void i_should_not_see_created_subscription_with_and_in_the_Approval_Tasks_table(String arg1, String arg2, String arg3) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		String appName = arg1;
-		String apiName = arg2;
+		String appName = config.getValue(arg1);
+		String apiName = config.getValue(arg2+arg3);
 		Assert.assertTrue("Subscription name is visible in the area", managerpage.isSubscriptionNotVisible(appName,apiName));
 		Thread.sleep(sleepTime);
 	}
 	
-	@Then("^I should see the status of the subscription \"([^\"]*)\" \"([^\"]*)\" approval task as \"([^\"]*)\"$")
-	public void i_should_see_the_status_of_the_subscription_approval_task_as(String arg1, String arg2, String arg3) throws Throwable {
+//	@Then("^I should see the status of the subscription \"([^\"]*)\" \"([^\"]*)\" approval task as \"([^\"]*)\"$")
+//	public void i_should_see_the_status_of_the_subscription_approval_task_as(String arg1, String arg2, String arg3) throws Throwable {
+	@Then("^I should see the status of the subscription \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" approval task as \"([^\"]*)\"$")
+	public void i_should_see_the_status_of_the_subscription_approval_task_as(String arg1, String arg2, String arg3, String arg4) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		Assert.assertTrue("Approval Status mismatched", managerpage.isSubscriptionApprovalTaskStatus(arg1, arg2, arg3));
+		Assert.assertTrue("Approval Status mismatched", managerpage.isSubscriptionApprovalTaskStatus(config.getValue(arg1), config.getValue(arg2+arg3), arg4));
 	}
 	
-	@Then("^I click Assign To Me button for \"([^\"]*)\" \"([^\"]*)\" Subscription Details row for \"([^\"]*)\"$")
-	public void i_click_Assign_To_Me_button_for_Subscription_Details_row_for(String arg1, String arg2, String arg3) throws Throwable {
+//	@Then("^I click Assign To Me button for \"([^\"]*)\" \"([^\"]*)\" Subscription Details row for \"([^\"]*)\"$")
+//	public void i_click_Assign_To_Me_button_for_Subscription_Details_row_for(String arg1, String arg2, String arg3) throws Throwable {
+	@Then("^I click Assign To Me button for \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" Subscription Details row for \"([^\"]*)\"$")
+	public void i_click_Assign_To_Me_button_for_Subscription_Details_row_for(String arg1, String arg2, String arg3, String arg4) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		String appName = arg1;
-		String apiName = arg2;
+		String appName = config.getValue(arg1);
+		String apiName = config.getValue(arg2+arg3);
 		managerpage.clickSubscriptionAssignMe(appName,apiName);
 		Thread.sleep(sleepTime);
 	}
 	
-	@Then("^I click on Start button for \"([^\"]*)\" \"([^\"]*)\" Subscription Details row for \"([^\"]*)\"$")
-	public void i_click_on_Start_button_for_Subscription_Details_row_for(String arg1, String arg2, String arg3) throws Throwable {
+	@Then("^I click on Start button for \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" Subscription Details row for \"([^\"]*)\"$")
+	public void i_click_on_Start_button_for_Subscription_Details_row_for(String arg1, String arg2, String arg3, String arg4) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		String appName = arg1;
-		String apiName = arg2;
+		String appName = config.getValue(arg1);
+		String apiName = config.getValue(arg2+arg3);
 		managerpage.clickSubscriptionStart(appName, apiName);
 		Thread.sleep(sleepTime);
 	}
 	
-	@Then("^I select \"([^\"]*)\" and click complete button for \"([^\"]*)\" \"([^\"]*)\" Subscription Details row for \"([^\"]*)\"$")
-	public void i_select_and_click_complete_button_for_Subscription_Details_row_for(String arg1, String arg2, String arg3, String arg4) throws Throwable {
+	@Then("^I select \"([^\"]*)\" and click complete button for \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" Subscription Details row for \"([^\"]*)\"$")
+	public void i_select_and_click_complete_button_for_Subscription_Details_row_for(String arg1, String arg2, String arg3, String arg4, String arg5) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
 		String condition = arg1;
-		String appName = arg2;
-		String apiName = arg3;
+		String appName = config.getValue(arg2);
+		String apiName = config.getValue(arg3+arg4);
 		managerpage.selectSubscriptionActionCondition(condition, appName, apiName);
 		managerpage.clickSubscriptionComplete(appName, apiName);
 		Thread.sleep(sleepTime);
 	}
 	
-	@Then("^I click on action dropdown of \"([^\"]*)\" \"([^\"]*)\" task$")
-	public void i_click_on_action_dropdown_of_task(String arg1, String arg2) throws Throwable {
+	@Then("^I click on action dropdown of \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" task$")
+	public void i_click_on_action_dropdown_of_task(String arg1, String arg2, String arg3) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		managerpage.clickSubscriptionDropdownActions(arg1, arg2);
+		managerpage.clickSubscriptionDropdownActions(config.getValue(arg1), config.getValue(arg2+arg3));
 	}
 	
-	@Then("^I should see Action \"([^\"]*)\" of the \"([^\"]*)\" \"([^\"]*)\" task in the dropdown$")
-	public void i_should_see_Action_of_the_task_in_the_dropdown(String arg1, String arg2, String arg3) throws Throwable {
+	@Then("^I should see Action \"([^\"]*)\" of the \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" task in the dropdown$")
+	public void i_should_see_Action_of_the_task_in_the_dropdown(String arg1, String arg2, String arg3, String arg4) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		Assert.assertTrue("Action dropdown options not displayed", managerpage.isSubscriptionApprovalActionsDisplayed(arg1, arg2, arg3));
+		Assert.assertTrue("Action dropdown options not displayed", managerpage.isSubscriptionApprovalActionsDisplayed(arg1, config.getValue(arg2), config.getValue(arg3+arg4)));
 	}
 	
-	@When("^I click on Subscription Details drop box for \"([^\"]*)\" \"([^\"]*)\" row for \"([^\"]*)\"$")
-	public void i_click_on_Subscription_Details_drop_box_for_row_for(String arg1, String arg2, String arg3) throws Throwable {
+	@When("^I click on Subscription Details drop box for \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" row for \"([^\"]*)\"$")
+	public void i_click_on_Subscription_Details_drop_box_for_row_for(String arg1, String arg2, String arg3, String arg4) throws Throwable {
 	    ManagerPage managerpage = new ManagerPage(driver);
-		String appName = arg1;
-		String apiName = arg2;
+		String appName = config.getValue(arg1);
+		String apiName = config.getValue(arg2+arg3);
 		managerpage.clickSubscriptionDetails(appName, apiName);
 	}
 	
-	@When("^I select \"([^\"]*)\" for \"([^\"]*)\" \"([^\"]*)\" Subscription Details row for \"([^\"]*)\"$")
-	public void i_select_for_Subscription_Details_row_for(String arg1, String arg2, String arg3, String arg4) throws Throwable {
+	@When("^I select \"([^\"]*)\" for \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" Subscription Details row for \"([^\"]*)\"$")
+	public void i_select_for_Subscription_Details_row_for(String arg1, String arg2, String arg3, String arg4, String arg5) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		String appName = arg2;
-		String apiName = arg3;
+		String appName = config.getValue(arg2);
+		String apiName = config.getValue(arg3+arg4);
 		managerpage.selectSubscriptionTier(arg1, appName, apiName);
 	}
 	
-	@When("^I should see the selected throttling layer as \"([^\"]*)\" for \"([^\"]*)\" \"([^\"]*)\" Subscription$")
-	public void i_should_see_the_selected_throttling_layer_as_for_Subscription(String arg1, String arg2, String arg3) throws Throwable {
+	@When("^I should see the selected throttling layer as \"([^\"]*)\" for \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" Subscription$")
+	public void i_should_see_the_selected_throttling_layer_as_for_Subscription(String arg1, String arg2, String arg3, String arg4) throws Throwable {
 		ManagerPage managerpage = new ManagerPage(driver);
-		managerpage.isSubscriptionTierValueDisplayed(arg1, arg2, arg3);
+		managerpage.isSubscriptionTierValueDisplayed(arg1, config.getValue(arg2), config.getValue(arg3+arg4));
 	}
 
 }

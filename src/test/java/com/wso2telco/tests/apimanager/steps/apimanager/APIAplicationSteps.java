@@ -39,8 +39,8 @@ public class APIAplicationSteps extends BasicTestObject {
 	@Then("^I delete existing \"([^\"]*)\"$")
 	public void i_delete_existing(String arg1) throws Throwable {
 		ApplicationsPage apppage = new ApplicationsPage(driver);
-		if (apppage.isAppAvailable(arg1)) {
-			apppage.clickDelete(arg1);
+		if (apppage.isAppAvailable(config.getValue(arg1))) {
+			apppage.clickDelete(config.getValue(arg1));
 		}
 		Thread.sleep(sleepTime);
 	}
@@ -60,7 +60,15 @@ public class APIAplicationSteps extends BasicTestObject {
 	@Then("^I enter \"([^\"]*)\" as name and \"([^\"]*)\" as Description$")
 	public void i_enter_as_name_and_as_Description(String arg1, String arg2) throws Throwable {
 		ApplicationsPage apppage = new ApplicationsPage(driver);
-		apppage.enterAppllicationName(arg1);
+		if(arg1.isEmpty()){
+			apppage.enterAppllicationName(arg1);
+		}
+		else{
+			String appName = arg1 + randomNumber;
+			apppage.enterAppllicationName(appName);
+			config.setValue(arg1, appName);
+		}
+	
 		Thread.sleep(sleepTime);
 		apppage.enterAppllicationDescription(arg2);
 		Thread.sleep(sleepTime);
@@ -87,8 +95,8 @@ public class APIAplicationSteps extends BasicTestObject {
 	@Then("^I should see the added Application name as \"([^\"]*)\" and the \"([^\"]*)\" as status$")
 	public void i_should_see_the_added_Application_name_as_and_the_as_status(String arg1, String arg2) throws Throwable{
 		ApplicationsPage apppage = new ApplicationsPage(driver);
-		Assert.assertTrue("Application name mismatched", apppage.isApplicationName(arg1));
-		Assert.assertTrue("Application status mismatched", apppage.isApplicationStatus(arg1,arg2));
+		Assert.assertTrue("Application name mismatched", apppage.isApplicationName(config.getValue(arg1)));
+		Assert.assertTrue("Application status mismatched", apppage.isApplicationStatus(config.getValue(arg1),arg2));
 	}
 
 	@Then("^I should see the Application Name validation failure prompt with \"([^\"]*)\"$")
@@ -147,40 +155,31 @@ public class APIAplicationSteps extends BasicTestObject {
 		Thread.sleep(sleepTime);
 	}
 	
-	@Then("^I enter \"([^\"]*)\" with random number as name and \"([^\"]*)\" as Description$")
-	public void i_enter_with_random_number_as_name_and_as_Description(String arg1, String arg2) throws Throwable {
+	@When("^I enter \"([^\"]*)\" in search field$")
+	public void i_enter_in_search_field(String arg1) throws Throwable {
 		ApplicationsPage apppage = new ApplicationsPage(driver);
-		apppage.enterAppllicationName(arg1 + randomNumber);
-		Thread.sleep(sleepTime);
-		apppage.enterAppllicationDescription(arg2);
-		Thread.sleep(sleepTime);
-	}
-
-	@When("^I enter \"([^\"]*)\" with random number in search field$")
-	public void i_enter_with_random_number_in_search_field(String arg1) throws Throwable {
-		ApplicationsPage apppage = new ApplicationsPage(driver);
-		apppage.enterSearchKey(arg1 + randomNumber);
+		apppage.enterSearchKey(config.getValue(arg1));
 		Thread.sleep(sleepTime);
 	}
 
 	@Then("^I should see there is no editable field for \"([^\"]*)\"$")
 	public void i_should_see_there_is_no_editable_field_for(String arg1) throws Throwable {
 		ApplicationsPage apppage = new ApplicationsPage(driver);
-		apppage.isAppAvailable(arg1 + randomNumber);
-		apppage.isAppEditable(arg1 + randomNumber);
+		apppage.isAppAvailable(config.getValue(arg1));
+		apppage.isAppEditable(config.getValue(arg1));
 	}
 		
 	@When("^I click on apimanager Application \"([^\"]*)\"$")
 	public void i_click_on_apimanager_Application(String arg1) throws Throwable {
 		ApplicationsPage apppage = new ApplicationsPage(driver);
-		apppage.isAppAvailable(arg1);
-		apppage.clickAppName(arg1);
+		apppage.isAppAvailable(config.getValue(arg1));
+		apppage.clickAppName(config.getValue(arg1));
 	}
 	
 	@Then("^I should see \"([^\"]*)\" Subscription for \"([^\"]*)\"$")
 	public void i_should_see_Subscription_for(String arg1, String arg2) throws Throwable {
 		ApplicationsPage apppage = new ApplicationsPage(driver);
-		apppage.isNumOfSubscriptions(arg2);
+		apppage.isNumOfSubscriptions(config.getValue(arg2));
 	}
 	
 	@When("^I click Production Keys tab$")
@@ -192,7 +191,7 @@ public class APIAplicationSteps extends BasicTestObject {
 	@Then("^I should see the Application \"([^\"]*)\" workflow status as \"([^\"]*)\" and Tier as \"([^\"]*)\"$")
 	public void i_should_see_the_Application_workflow_status_as_and_Tier_as(String arg1, String arg2, String arg3) throws Throwable {
 		ApplicationsPage apppage = new ApplicationsPage(driver);
-		apppage.validateWorkflowStatus(arg1, arg2);
-		apppage.validateApplicationTier(arg1, arg3);
+		apppage.validateWorkflowStatus(config.getValue(arg1), arg2);
+		apppage.validateApplicationTier(config.getValue(arg1), arg3);
 	}
 }

@@ -15,7 +15,7 @@ import cucumber.api.java.en.When;
 public class APIHomeSteps extends BasicTestObject {
 	
 	SignUpPage signupPage = new SignUpPage(driver);
-	String randomNumber = signupPage.getRandomNumber(5);
+	String randomNumber = signupPage.getRandomNumber(3);
 	
 	@Given("^I am in apimanager$")
 	public void i_am_in_apimanager() throws Throwable {

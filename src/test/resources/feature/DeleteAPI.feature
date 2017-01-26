@@ -12,7 +12,7 @@ Then I should see API "<apiName>" "<version>" with "<numOfSubscriptions>" Subscr
 Then I delete API "<apiName>" "<version>"
 Examples:
 | usertype|apiName   |version |numOfSubscriptions|
-|PUBLISHER|TestAPI   |v1      |0 Users           |
+|PUBLISHER|TestProd  |v1      |0 Users           |
 
 
 @InternalGateway @ExternalGateway
@@ -27,11 +27,27 @@ Then I should see API "<apiName>" "<version>" with "<numOfSubscriptions>" Subscr
 Then I delete API "<apiName>" "<version>"
 Examples:
 | usertype|apiName      |version |numOfSubscriptions|
-|PUBLISHER|AuxProdAPI   |v1      |0 Users           |
+|PUBLISHER|NameProdAPI  |v1      |0 Users           |
 
 
 @InternalGateway @ExternalGateway
 Scenario Outline: HUB-218 : Hub administrator deletes an API in published state with subscriptions
+Given I am in apimanager
+When I click on apimanager login
+Then I should see the apimanager "Login" pop up
+When I enter apimanager Login username and password for "<usertypeSP>" 
+And I click on apimanager Login pop up login button
+Then I should see apimanager "<usertypeSP>" at the top right corner of the page
+And I click on apimanager APIs module
+Then I should search apimanager API "<apiName>"
+When I click on the apimanager "<apiName>" "<version>" api
+Then I should see the apimanager APIs "<apiName>" status as "Published"
+When I click on Applications dropdown
+Then I should see "<appName>" Application for "<usertypeSP>"
+When I select "<appName>" for "<usertypeSP>"
+And I click apimanager "<apiName>" API page subscribe button
+Then I should see "Subscription Awaiting Approval" on Subscription Successful pop up
+And I click Go to My Subscription button
 Given I am in apipublisher
 When I provide apipublisher username and password for "<usertype>"
 And I click on apipublisher login button
@@ -43,8 +59,8 @@ Then I delete API "<apiName>" "<version>"
 Then I should see the apipublisher error popup with "API Publisher - Error"
 And I click on apipublisher error popup ok button
 Examples:
-| usertype|apiName      |version |numOfSubscriptions|
-|PUBLISHER|AuxTestAPI   |v1      |1 User            |
+| usertype|usertypeSP|apiName      |version |numOfSubscriptions|appName     |
+|PUBLISHER|APPCREATE |NameTestAPI  |v1      |1 User            |AuXTestAPPA |
 
 
 @InternalGateway @ExternalGateway
@@ -59,7 +75,7 @@ Then I should see API "<apiName>" "<version>" with "<numOfSubscriptions>" Subscr
 Then I delete API "<apiName>" "<version>"
 Examples:
 | usertype|apiName      |version |numOfSubscriptions|
-|PUBLISHER|TestAPI      |v2      |0 Users           |
+|PUBLISHER|NameProdAPI  |v2      |0 Users           |
 
 
 @InternalGateway @ExternalGateway
@@ -74,11 +90,27 @@ Then I should see API "<apiName>" "<version>" with "<numOfSubscriptions>" Subscr
 Then I delete API "<apiName>" "<version>"
 Examples:
 | usertype|apiName      |version |numOfSubscriptions|
-|PUBLISHER|ProdAPI      |v2      |0 Users           |
+|PUBLISHER|NameTestAPI  |v2      |0 Users           |
 
 
 @InternalGateway @ExternalGateway
 Scenario Outline: HUB-221 : Hub administrator deletes a API version in published state with subscriptions
+Given I am in apimanager
+When I click on apimanager login
+Then I should see the apimanager "Login" pop up
+When I enter apimanager Login username and password for "<usertypeSP>" 
+And I click on apimanager Login pop up login button
+Then I should see apimanager "<usertypeSP>" at the top right corner of the page
+And I click on apimanager APIs module
+Then I should search apimanager API "<apiName>"
+When I click on the apimanager "<apiName>" "<version>" api
+Then I should see the apimanager APIs "<apiName>" status as "Published"
+When I click on Applications dropdown
+Then I should see "<appName>" Application for "<usertypeSP>"
+When I select "<appName>" for "<usertypeSP>"
+And I click apimanager "<apiName>" API page subscribe button
+Then I should see "Subscription Awaiting Approval" on Subscription Successful pop up
+And I click Go to My Subscription button
 Given I am in apipublisher
 When I provide apipublisher username and password for "<usertype>"
 And I click on apipublisher login button
@@ -90,5 +122,5 @@ Then I delete API "<apiName>" "<version>"
 Then I should see the apipublisher error popup with "API Publisher - Error"
 And I click on apipublisher error popup ok button
 Examples:
-| usertype|apiName      |version |numOfSubscriptions|
-|PUBLISHER|AuxTestAPI   |v2      |1 User            |
+| usertype|usertypeSP|apiName      |version |numOfSubscriptions|appName     |
+|PUBLISHER|APPCREATE |TestSand     |v2      |1 User            |AuXTestAPPA |

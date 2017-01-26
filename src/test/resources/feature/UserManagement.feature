@@ -17,8 +17,8 @@ Then I should see ids Configuration menu with first item as "Add Users and Roles
 When I click identity server User Management Add New User link
 Then I should see ids User Management Add User page header as "Step 1 : Enter user name"
 When I enter ids Add User name as "<userName>"
-And I enter ids Add User password as "<password>"
-And I enter ids Add User password repeat as "<password>"
+And I enter ids Add User password as "<userName>"
+And I enter ids Add User password repeat as "<userName>"
 And I click on ids Add User next button
 Then I should see ids User Management Select Role for user page header as "Step 2 : Select roles of the user"
 Then I should click on role "<role>" checkbox
@@ -26,8 +26,8 @@ And I click on ids Select Users to Add Role Finish
 Then I should see ids Add User Success pop up message as "WSO2 Carbon"
 And I click on Success pop up message Ok button
 Examples:
-|userName      |password   |role   |
-|AuxApiCreator |1qaz2WSX@  |Creator| 
+|userName      |role   |
+|AuxApiCreator |Creator| 
 
 @InternalGateway @ExternalGateway
 Scenario Outline: HUB-56 : Hub administrator creates user with API Publisher Role
@@ -46,8 +46,8 @@ Then I should see ids Configuration menu with first item as "Add Users and Roles
 When I click identity server User Management Add New User link
 Then I should see ids User Management Add User page header as "Step 1 : Enter user name"
 When I enter ids Add User name as "<userName>"
-And I enter ids Add User password as "<password>"
-And I enter ids Add User password repeat as "<password>"
+And I enter ids Add User password as "<userName>"
+And I enter ids Add User password repeat as "<userName>"
 And I click on ids Add User next button
 Then I should see ids User Management Select Role for user page header as "Step 2 : Select roles of the user"
 Then I should click on role "<role>" checkbox
@@ -55,8 +55,10 @@ And I click on ids Select Users to Add Role Finish
 Then I should see ids Add User Success pop up message as "WSO2 Carbon"
 And I click on Success pop up message Ok button
 Examples:
-|userName        |password   |role      |
-|AuxAPIPublisher |1qaz2WSX@  |Publisher |
+|userName        |role      |
+|AuxAPIPublisher |hub-unit1-publisher,manage-app-admin |
+|PUBLISHERTwo    |hub-unit2-publisher,manage-app-admin |
+|PUBLISHERThree  |hub-unit2-publisher,manage-app-admin |
 
 @InternalGateway @ExternalGateway
 Scenario Outline: HUB-57 : Hub administrator creates user who is an operator administrator
@@ -75,8 +77,8 @@ Then I should see ids Configuration menu with first item as "Add Users and Roles
 When I click identity server User Management Add New User link
 Then I should see ids User Management Add User page header as "Step 1 : Enter user name"
 When I enter ids Add User name as "<userName>"
-And I enter ids Add User password as "<password>"
-And I enter ids Add User password repeat as "<password>"
+And I enter ids Add User password as "<userName>"
+And I enter ids Add User password repeat as "<userName>"
 And I click on ids Add User next button
 Then I should see ids User Management Select Role for user page header as "Step 2 : Select roles of the user"
 Then I should click on role "<role>" checkbox
@@ -84,5 +86,5 @@ And I click on ids Select Users to Add Role Finish
 Then I should see ids Add User Success pop up message as "WSO2 Carbon"
 And I click on Success pop up message Ok button
 Examples:
-|userName         |password   |role                  |
-|AuxOperatorAdmin |1qaz2WSX@  |admin,manage-app-admin|
+|userName         |role                  |
+|AuxOperatorAdmin |admin,manage-app-admin|

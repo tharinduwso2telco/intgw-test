@@ -51,8 +51,10 @@ And I click on ids Select Users to Add Role Finish
 Then I should see ids Add User Success pop up message as "WSO2 Carbon"
 And I click on Success pop up message Ok button
 Examples:
-|role     |permissions         |
-|Publisher|Login,Create,Publish|
+|role               |permissions                           |
+|hub-unit1-publisher|Login,Create,Publish,Govern,Governance|
+|hub-unit2-publisher|Login,Create,Publish,Govern,Governance|
+|hub-unit3-publisher|Login,Create,Publish,Govern,Governance|
 
 @InternalGateway @ExternalGateway
 Scenario Outline: HUB-54 : Hub administrator creates user role with operator administrator permission

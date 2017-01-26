@@ -38,7 +38,9 @@ public class APIsSteps extends BasicTestObject {
 	@When("^I click on the apimanager \"([^\"]*)\" \"([^\"]*)\" api$")
 	public void i_click_on_the_apimanager_api(String arg1, String arg2) throws Throwable {
 		APIsPage apispage = new APIsPage(driver);
-		apispage.clickCreatedAPI(arg1, arg2);
+		apispage.clickCreatedAPI(config.getValue(arg1), arg2);
+		config.setValue(arg1+arg2,config.getValue(arg1)+" - "+arg2);
+		System.out.println(config.getValue(arg1+arg2));
 	}
 
 
@@ -63,7 +65,7 @@ public class APIsSteps extends BasicTestObject {
 	@Then("^I should see \"([^\"]*)\" Application for \"([^\"]*)\"$")
 	public void i_should_see_Application_for(String arg1, String arg2) throws Throwable {
 		APIsPage apiPage = new APIsPage(driver);
-		String appName = arg1;
+		String appName = config.getValue(arg1);
 		Assert.assertTrue("Application name is not on the drop down", apiPage.isApplicationNameVisible(appName));
 		Thread.sleep(sleepTime);
 	}
@@ -72,7 +74,7 @@ public class APIsSteps extends BasicTestObject {
 	@When("^I select \"([^\"]*)\" for \"([^\"]*)\"$")
 	public void i_select_for(String arg1, String arg2) throws Throwable {
 		APIsPage apiPage = new APIsPage(driver);
-		String appName = arg1;
+		String appName = config.getValue(arg1);
 		Thread.sleep(sleepTime);
 		apiPage.clickAppName(appName);
 		Thread.sleep(sleepTime);
@@ -108,7 +110,7 @@ public class APIsSteps extends BasicTestObject {
 	@Then("^I should search apimanager API \"([^\"]*)\"$")
 	public void i_should_search_apimanager_API(String arg1) throws Throwable {
 		APIsPage apiPage = new APIsPage(driver);
-		apiPage.enterAPINameSearch(arg1);
+		apiPage.enterAPINameSearch(config.getValue(arg1));
 		Thread.sleep(1000);
 		apiPage.clickSearch();
 	}

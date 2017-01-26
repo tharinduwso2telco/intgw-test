@@ -1,12 +1,11 @@
 Feature: Create and Publish an API
 
-@InternalGateway @ExternalGateway
+@InternalGateway @ExternalGateway 
 Scenario Outline: HUB-195 : Hub administrator creates custom API for production
 Given I am in apipublisher
 When I provide apipublisher username and password for "<usertype>"
 And I click on apipublisher login button
 Then I should see apipublisher username "<usertype>" at the top right corner of the page
-When I search existing API "<apiName>" "<version>" and delete it
 When I click on apipublisher Add link
 And I click Design new API radio button
 And I click Start Creating button
@@ -35,7 +34,6 @@ Given I am in apipublisher
 When I provide apipublisher username and password for "<usertype>"
 And I click on apipublisher login button
 Then I should see apipublisher username "<usertype>" at the top right corner of the page
-When I search existing API "<apiName>" "<version>" and delete it
 When I click on apipublisher Add link
 And I click Design new API radio button
 And I click Start Creating button
@@ -58,13 +56,12 @@ Examples:
 | usertype|apiName   |sandEndpoint |roleType		   |tier                                                                  |
 |PUBLISHER|TestSand  |auxSand	   |Internal/publisher |Unlimited,Default,Requestbased,Silver,Subscription,Gold,Premium,Bronze|
 
-@InternalGateway @ExternalGateway
+@InternalGateway @ExternalGateway 
 Scenario Outline: HUB-197 : Hub administrator directly publishes custom API for production
 Given I am in apipublisher
 When I provide apipublisher username and password for "<usertype>"
 And I click on apipublisher login button
 Then I should see apipublisher username "<usertype>" at the top right corner of the page
-When I search existing API "<apiName>" "<version>" and delete it
 When I click on apipublisher Add link
 And I click Design new API radio button
 And I click Start Creating button
@@ -103,7 +100,6 @@ Given I am in apipublisher
 When I provide apipublisher username and password for "<usertype>"
 And I click on apipublisher login button
 Then I should see apipublisher username "<usertype>" at the top right corner of the page
-When I search existing API "<apiName>" "<version>" and delete it
 When I click on apipublisher Add link
 And I click Design new API radio button
 And I click Start Creating button
@@ -160,4 +156,4 @@ Then I should see the apimanager APIs "<apiName>" status as "Published"
 
 Examples:
 | usertype|usertypeSP|apiName      |version|
-|PUBLISHER|APPCREATE |ProductionAPI|v1     |
+|PUBLISHER|APPCREATE |TestSand     |v1     |

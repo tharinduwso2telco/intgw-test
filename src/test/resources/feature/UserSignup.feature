@@ -2,6 +2,16 @@ Feature: Validate if user successfully signup to store
 
 @InternalGateway @ExternalGateway 
 Scenario Outline: HUB-41 : Service provider signs up with all mandatory information to consume APIs
+Given I am in identity server page
+When I enter identity server username credentials
+And I click on identity server sign in
+Then I should see the ids Home page header as "WSO2Telco Hub Home"
+When I click on identity server Main tab
+And I click on identity server Configuration Users and Roles List link
+Then I should see ids Configuration menu with first item as "Users and Roles"
+When I click identity server User Management Users link
+Then I should see ids User Management Users page header as "Users"
+When I clear existing users "<usertype>"
 Given I am in apimanager
 When I click on apimanager sign-up button
 Then I should see the apimanager sign-up for a new account form as "Create your Account"
@@ -159,6 +169,16 @@ Examples:
 
 @InternalGateway @ExternalGateway 
 Scenario Outline: HUB-49 : Service provider is not able to sign up using existing username
+Given I am in identity server page
+When I enter identity server username credentials
+And I click on identity server sign in
+Then I should see the ids Home page header as "WSO2Telco Hub Home"
+When I click on identity server Main tab
+And I click on identity server Configuration Users and Roles List link
+Then I should see ids Configuration menu with first item as "Users and Roles"
+When I click identity server User Management Users link
+Then I should see ids User Management Users page header as "Users"
+When I clear existing users "<usertype>"
 Given I am in apimanager
 When I click on apimanager sign-up button
 Then I should see the apimanager sign-up for a new account form as "Create your Account"
@@ -193,6 +213,16 @@ Examples:
 
 @InternalGateway @ExternalGateway 
 Scenario Outline: HUB-50 : Service provider signs up without providing optional information
+Given I am in identity server page
+When I enter identity server username credentials
+And I click on identity server sign in
+Then I should see the ids Home page header as "WSO2Telco Hub Home"
+When I click on identity server Main tab
+And I click on identity server Configuration Users and Roles List link
+Then I should see ids Configuration menu with first item as "Users and Roles"
+When I click identity server User Management Users link
+Then I should see ids User Management Users page header as "Users"
+When I clear existing users "<usertype>"
 Given I am in apimanager
 When I click on apimanager sign-up button
 Then I should see the apimanager sign-up for a new account form as "Create your Account"
