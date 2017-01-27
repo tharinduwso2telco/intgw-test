@@ -1,6 +1,6 @@
 Feature: User creation for API roles
 
-@InternalGateway @ExternalGateway
+
 Scenario Outline: HUB-55 : Hub administrator creates user with API Creator Role
 Given I am in identity server page
 When I enter identity server username credentials
@@ -27,9 +27,9 @@ Then I should see ids Add User Success pop up message as "WSO2 Carbon"
 And I click on Success pop up message Ok button
 Examples:
 |userName      |role   |
-|AuxApiCreator |Creator| 
+|APICREATE     |Creator| 
 
-@InternalGateway @ExternalGateway
+
 Scenario Outline: HUB-56 : Hub administrator creates user with API Publisher Role
 Given I am in identity server page
 When I enter identity server username credentials
@@ -55,12 +55,12 @@ And I click on ids Select Users to Add Role Finish
 Then I should see ids Add User Success pop up message as "WSO2 Carbon"
 And I click on Success pop up message Ok button
 Examples:
-|userName        |role      |
-|AuxAPIPublisher |hub-unit1-publisher,manage-app-admin |
-|PUBLISHERTwo    |hub-unit2-publisher,manage-app-admin |
-|PUBLISHERThree  |hub-unit2-publisher,manage-app-admin |
+|userName        |role                                 |
+|PUBLISHER       |hub-unit1-publisher,manage-app-admin |
+|PUBLISHERTWO    |hub-unit1-publisher,manage-app-admin |
+|PUBLISHERTHREE  |hub-unit2-publisher,manage-app-admin |
 
-@InternalGateway @ExternalGateway
+
 Scenario Outline: HUB-57 : Hub administrator creates user who is an operator administrator
 Given I am in identity server page
 When I enter identity server username credentials
@@ -86,5 +86,5 @@ And I click on ids Select Users to Add Role Finish
 Then I should see ids Add User Success pop up message as "WSO2 Carbon"
 And I click on Success pop up message Ok button
 Examples:
-|userName         |role                  |
-|AuxOperatorAdmin |admin,manage-app-admin|
+|userName |role                          |
+|OPADMIN  |OperatorAdmin,manage-app-admin|

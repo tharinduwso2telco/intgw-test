@@ -3,7 +3,7 @@ Feature: Subscription Management for Custom API
 # @HUB-1272 and @HUB-1275 have the same steps
 
 ### Data Preparation for Subscription Management Scenarios ###
-@BeforeTest @InternalGateway @ExternalGateway
+@BeforeTest @InternalGateway @ExternalGateway 
 Scenario Outline: Create and Publish APIs needed for Subscription Management
 Given I am in apipublisher
 When I provide apipublisher username and password for "<usertype>"
@@ -43,7 +43,7 @@ Examples:
 |PUBLISHER|APPCREATE |APIProdTestA|v1     |auxProd	   |Internal/publisher |Unlimited,Default,Requestbased,Silver,Subscription,Gold,Premium,Bronze|
 |PUBLISHER|APPCREATE |APIProdTestB|v1     |auxProd	   |Internal/publisher |Unlimited,Default,Requestbased,Silver,Subscription,Gold,Premium,Bronze|
 
-@BeforeTest @InternalGateway @ExternalGateway
+@BeforeTest @InternalGateway @ExternalGateway 
 Scenario Outline: Create versions of APIs needed for Subscription Management
 Given I am in apipublisher
 When I provide apipublisher username and password for "<usertype>"
@@ -77,66 +77,6 @@ Examples:
 | usertype|usertypeSP|apiName       |olderVersion|newVersion|
 |PUBLISHER|APPCREATE |APIProdTestA  |v1          |v2        |
 |PUBLISHER|APPCREATE |APIProdTestB  |v1          |v2        |
-
-@BeforeTest @InternalGateway @ExternalGateway
-Scenario Outline: User creates an application 
-Given I am in apimanager
-When I click on apimanager login
-Then I should see the apimanager "Login" pop up
-When I enter apimanager Login username and password for "<usertype>" 
-And I click on apimanager Login pop up login button
-Then I should see apimanager "<usertype>" at the top right corner of the page
-When I click on apimanager My Applications
-Then I should see the apimanager Application page header as "Applications"
-Then I click on apimanager Add Application
-And I enter "<appName>" as name and "<Description>" as Description
-And I click on Add button
-Then I should see the added Application name as "<appName>" and the "<status>" as status
-Examples:
-|usertype |appName      |Description  |status  |
-|APPCREATE|AuXTestAPPA	|AuXTestingAPP|INACTIVE|
-|APPCREATE|AuXTestAPPB	|AuXTestingAPP|INACTIVE|
-|APPCREATE|AuXTestAPPC	|AuXTestingAPP|INACTIVE|
-|APPCREATE|AuXTestAPPD	|AuXTestingAPP|INACTIVE|
-
-@BeforeTest @InternalGateway @ExternalGateway
-Scenario Outline: Application Approval
-Given I am in hubmanager
-Then I should see the apimanager Manager page header as "Manager"
-When I enter apimanager Manager page admin username credentials
-And I click on apimanager Manager page login button
-Then I should see the apimanager Manager Home page header as "Home"
-And I should see apimanager Manager Home Billing Workflow Blacklist Whitelist tabs
-When I click on apimanager Manager page Workflow tab
-Then I should see apimanager Manager Approval Tasks page header as "Approval Tasks"
-When I click on Application creation link
-Then I should see created application "<appname>" at the top of the Approval Tasks table for "<usertype>"
-And I should see the status of the application "<appname>" approval task as "READY" 
-And I click Assign To Me button for "<appname>" Application Details row for "<usertype>"
-And I should see the status of the application "<appname>" approval task as "RESERVED" 
-And I click on Start button for "<appname>" Application Details row for "<usertype>"
-Then I should see the status of the application "<appname>" approval task as "IN_PROGRESS" 
-And I select "<action>" and click complete button for "<appname>" Application Details row for "<usertype>"
-Then I should see Enter aprrove/reject reasons pop up header as "Enter approve/reject reasons"
-When I enter aprrove/reject reason as "Approve"
-And click aprrove/reject reason ok button
-Then I should not see the created application in Approval Tasks table as "<appname>" for "<usertype>"
-Given I am in apimanager
-When I click on apimanager login
-Then I should see the apimanager "Login" pop up
-When I enter apimanager Login username and password for "<usertypeSP>" 
-And I click on apimanager Login pop up login button
-Then I should see apimanager "<usertypeSP>" at the top right corner of the page
-When I click on apimanager My Applications
-Then I should see the apimanager Application page header as "Applications"
-Then I should see the Application "<appname>" workflow status as "<status>" and Tier as "<tier>"
-Examples:
-|usertype |usertypeSP  |appname      |action  |status |tier    |
-|AdminUser|APPCREATE   |AuXTestAPPA  |Approve |ACTIVE |Large   |
-|AdminUser|APPCREATE   |AuXTestAPPB  |Approve |ACTIVE |Large   |
-|AdminUser|APPCREATE   |AuXTestAPPC  |Approve |ACTIVE |Large   |
-|AdminUser|APPCREATE   |AuXTestAPPD  |Approve |ACTIVE |Large   |
-
 
 
 ### Subscription Management for Custom API Scenarios ###

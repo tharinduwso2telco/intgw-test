@@ -17,6 +17,7 @@ Then I should see the added Application name as "<appName>" and the "<status>" a
 Examples:
 |usertype |appName      |Description  |status  |
 |APPCREATE|AuXTestAPPA	|AuXTestingAPP|INACTIVE|
+|APPCREATE|AuXTestAPPN	|AuXTestingAPP|INACTIVE|
 |APPCREATE|AuXTestAPPD	|AuXTestingAPP|INACTIVE|
 |APPCREATE|AuXTestAPPE	|AuXTestingAPP|INACTIVE|
 
@@ -54,7 +55,7 @@ Then I should see the confirm delete popup with "Confirm Delete"
 And I click on confirm delete popup Yes button
 Examples:
 |usertype |appName      |Description  |status  |
-|APPCREATE|AuXTestAPPA	|AuXTestingAPP|INACTIVE|
+|APPCREATE|AuXTestAPPN	|AuXTestingAPP|INACTIVE|
 
 @InternalGateway @ExternalGateway 
 Scenario Outline: HUB-65 : User creates an application by the same name as previously deleted
@@ -81,7 +82,7 @@ And I click on Add button
 Then I should see the added Application name as "<appName>" and the "<status>" as status
 Examples:
 |usertype |appName      |Description  |status  |
-|APPCREATE|AuxTestAPPA	|AuXTestingAPP|INACTIVE|
+|APPCREATE|AuxTestAPPN	|AuXTestingAPP|INACTIVE|
 
 @InternalGateway @ExternalGateway
 Scenario Outline: HUB-66 : User is not able to create an application with the same name as previously created application

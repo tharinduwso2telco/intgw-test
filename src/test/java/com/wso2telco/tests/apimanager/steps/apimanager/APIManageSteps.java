@@ -758,12 +758,12 @@ public class APIManageSteps extends BasicTestObject {
 			managerpage.enterPassword(config.getValue(getEnvironment() + "PUBLISHERpwd"));
 	    }
 	    else if(arg1.contains("apipublisherTwo")){
-	    	managerpage.enterUserName(config.getValue(getEnvironment() + "PUBLISHERuserTwo"));
-			managerpage.enterPassword(config.getValue(getEnvironment() + "PUBLISHERpwdTwo"));
+	    	managerpage.enterUserName(config.getValue(getEnvironment() + "PUBLISHERTWOuser"));
+			managerpage.enterPassword(config.getValue(getEnvironment() + "PUBLISHERTWOpwd"));
 	    }
 	    else{
-	    	managerpage.enterUserName(config.getValue(getEnvironment() + "PUBLISHERuserThree"));
-			managerpage.enterPassword(config.getValue(getEnvironment() + "PUBLISHERpwdThree"));
+	    	managerpage.enterUserName(config.getValue(getEnvironment() + "PUBLISHERTHREEuser"));
+			managerpage.enterPassword(config.getValue(getEnvironment() + "PUBLISHERTHREEpwd"));
 	    }
 	}
 	

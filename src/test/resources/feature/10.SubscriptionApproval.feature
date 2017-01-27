@@ -1,7 +1,7 @@
 Feature: Operator Admin Approves created Subscriptions
 
 ### Data Preparation for Subscription Approval Scenarios ###
-@BeforeTest @ExternalGateway 
+@BeforeTest @ExternalGatewaySubscriptonApproval 
 Scenario Outline: Create and Publish APIs needed for Subscription Management
 Given I am in apipublisher
 When I provide apipublisher username and password for "<usertype>"
@@ -40,7 +40,7 @@ Examples:
 | usertype|usertypeSP|apiName     |version|prodEndpoint |roleType		   |tier                                                                  |
 |PUBLISHER|APPCREATE |SubTestA    |v1     |auxProd	   |Internal/publisher |Unlimited,Default,Requestbased,Silver,Subscription,Gold,Premium,Bronze|
 
-@BeforeTest @ExternalGateway 
+@BeforeTest @ExternalGatewaySubscriptonApproval  
 Scenario Outline: User creates an application 
 Given I am in apimanager
 When I click on apimanager login
@@ -62,7 +62,7 @@ Examples:
 |APPCREATE|AuXTestAPPD	|AuXTestingAPP|INACTIVE|
 |APPCREATE|AuXTestAPPE	|AuXTestingAPP|INACTIVE|
 
-@BeforeTest @ExternalGateway 
+@BeforeTest @ExternalGatewaySubscriptonApproval  
 Scenario Outline: Application Approval
 Given I am in hubmanager
 Then I should see the apimanager Manager page header as "Manager"
@@ -101,7 +101,7 @@ Examples:
 |AdminUser|APPCREATE   |AuXTestAPPD  |Approve |ACTIVE |Large   |
 |AdminUser|APPCREATE   |AuXTestAPPE  |Approve |ACTIVE |Large   |
 
-@BeforeTest @ExternalGateway 
+@BeforeTest @ExternalGatewaySubscriptonApproval  
 Scenario Outline: User subscribes to Custom API
 Given I am in apimanager
 When I click on apimanager login
@@ -131,7 +131,7 @@ Examples:
 
 
 ### Subscription Approval Scenarios ### 
-@ExternalGateway 
+@ExternalGatewaySubscriptonApproval  
 Scenario Outline: HUB-347 : Operator admin user assigns a subscription task to himself without throttling layer subscription
 Given I am in hubmanager
 Then I should see the apimanager Manager page header as "Manager"
@@ -150,7 +150,7 @@ Examples:
 |usertype |appname    |subscribeAPI|version|
 |AdminUser|AuXTestAPPA|SubTestA    |v1     |
 
-@ExternalGateway 
+@ExternalGatewaySubscriptonApproval  
 Scenario Outline: HUB-349 : Operator admin user assigns a subscription task to himself and applies throttling layer 
 Given I am in hubmanager
 Then I should see the apimanager Manager page header as "Manager"
@@ -172,7 +172,7 @@ Examples:
 |usertype |appname    |tiers    |subscribeAPI |version|
 |AdminUser|AuXTestAPPB|Unlimited|SubTestA     |v1     |
 
-@ExternalGateway 
+@ExternalGatewaySubscriptonApproval  
 Scenario Outline: HUB-350 : Operator admin user starts assigned task without applying throttling layer
 Given I am in hubmanager
 Then I should see the apimanager Manager page header as "Manager"
@@ -194,7 +194,7 @@ Examples:
 |AdminUser|AuXTestAPPA|Approve,Reject |SubTestA     |v1     |
 
 
-@ExternalGateway
+@ExternalGatewaySubscriptonApproval 
 Scenario Outline: HUB-351 : Operator admin user starts assigned task and applies throttling layer
 Given I am in hubmanager
 Then I should see the apimanager Manager page header as "Manager"
@@ -219,7 +219,7 @@ Examples:
 |AdminUser|AuXTestAPPB  |Approve,Reject |Unlimited|SubTestA     |v1     |
 
 
-@ExternalGateway
+@ExternalGatewaySubscriptonApproval 
 Scenario Outline: HUB-352 : Operator admin user starts assigned task without changing already applied throttling layer
 Given I am in hubmanager
 Then I should see the apimanager Manager page header as "Manager"
@@ -246,7 +246,7 @@ Examples:
 |AdminUser|AuXTestAPPC    |Approve,Reject |Premium  |SubTestA     |v1     |
 
 
-@ExternalGateway
+@ExternalGatewaySubscriptonApproval 
 Scenario Outline: HUB-353 : Operator admin user starts assigned task and changes the existing throttling layer
 Given I am in hubmanager
 Then I should see the apimanager Manager page header as "Manager"
@@ -277,7 +277,7 @@ Examples:
 |AdminUser|AuXTestAPPD   |Approve,Reject |Unlimited    |Premium  |SubTestA     |v1     |
 
 
-@ExternalGateway 
+@ExternalGatewaySubscriptonApproval  
 Scenario Outline: HUB-354 : Operator admin user approves task without applying throttling layer
 Given I am in hubmanager
 Then I should see the apimanager Manager page header as "Manager"
@@ -313,7 +313,7 @@ Examples:
 |AdminUser|APPCREATE |AuXTestAPPA |Approve |UNBLOCKED |Bronze   |SubTestA     |v1     |  
 
 
-@ExternalGateway
+@ExternalGatewaySubscriptonApproval 
 Scenario Outline: HUB-355 :  Operator admin user approves task while applying throttling layer
 Given I am in hubmanager
 Then I should see the apimanager Manager page header as "Manager"
@@ -351,7 +351,7 @@ Examples:
 |AdminUser|APPCREATE |AuXTestAPPB |Approve |UNBLOCKED |Unlimited   |SubTestA     |v1     |
 
 
-@ExternalGateway
+@ExternalGatewaySubscriptonApproval 
 Scenario Outline: HUB-356 : Operator admin user approves task without changing already applied throttling layer
 Given I am in hubmanager
 Then I should see the apimanager Manager page header as "Manager"
@@ -389,7 +389,7 @@ Examples:
 |AdminUser|APPCREATE |AuXTestAPPC   |Approve |UNBLOCKED |Unlimited   |SubTestA     |v1     |
 
 
-@ExternalGateway
+@ExternalGatewaySubscriptonApproval 
 Scenario Outline: HUB-357 : Operator admin user approves task and changes the previously applied throttling layer
 Given I am in hubmanager
 Then I should see the apimanager Manager page header as "Manager"
@@ -428,7 +428,7 @@ Examples:
 |AdminUser|APPCREATE |AuXTestAPPD   |Approve |UNBLOCKED |Unlimited   |Gold    |SubTestA     |v1     |
 
 
-@ExternalGateway
+@ExternalGatewaySubscriptonApproval 
 Scenario Outline: HUB-358 : Operator admin user rejects subscription approval task
 Given I am in hubmanager
 Then I should see the apimanager Manager page header as "Manager"
@@ -466,7 +466,7 @@ Examples:
 |AdminUser|APPCREATE |AuXTestAPPE |Reject  |REJECTED |Default |SubTestA     |v1     |
 
 
-@ExternalGateway 
+@ExternalGatewaySubscriptonApproval  
 Scenario Outline: HUB-645 : SP unsubscribe API from application before approval
 Given I am in apimanager
 When I click on apimanager login

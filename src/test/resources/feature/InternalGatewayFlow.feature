@@ -7,7 +7,6 @@ Given I am in apipublisher
 When I provide apipublisher username and password for "<usertypePub>"
 And I click on apipublisher login button
 Then I should see apipublisher username "<usertypePub>" at the top right corner of the page
-When I search existing API "<apiName>" "<version>" and delete it
 When I click on apipublisher Add link
 And I click Design new API radio button
 And I click Start Creating button
@@ -29,6 +28,16 @@ Then I should see api successfully published pop up with "Congratulations... Wha
 When I click on pop up button Go to Overview
 Then I should see the status as "PUBLISHED"
 #Service Provider Sign up to API store
+Given I am in identity server page
+When I enter identity server username credentials
+And I click on identity server sign in
+Then I should see the ids Home page header as "WSO2Telco Hub Home"
+When I click on identity server Main tab
+And I click on identity server Configuration Users and Roles List link
+Then I should see ids Configuration menu with first item as "Users and Roles"
+When I click identity server User Management Users link
+Then I should see ids User Management Users page header as "Users"
+When I clear existing users "<usertypeSP>"
 Given I am in apimanager
 When I click on apimanager sign-up button
 Then I should see the apimanager sign-up for a new account form as "Create your Account"
@@ -88,6 +97,7 @@ Then I should see the apimanager Application page header as "Applications"
 Then I should see the Application "<appName>" workflow status as "<AppStatusAfterApprove>" and Tier as "<AppTier>"
 #Service Provider Subscribe an API
 And I click on apimanager APIs module
+Then I should search apimanager API "<apiName>"
 When I click on the apimanager "<apiName>" "<version>" api
 Then I should see the apimanager APIs "<apiName>" status as "Published"
 When I click on Applications dropdown

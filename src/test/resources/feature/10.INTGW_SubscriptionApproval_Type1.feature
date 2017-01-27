@@ -1,7 +1,7 @@
 Feature: API Publisher Approves created Subscriptions Type 1
 
 ### Data Preparation for Subscription Approval Scenarios ###
-@BeforeTest @InternalGatewayTypeOne 
+@BeforeTest @InternalGatewayTypeOneSubscriptonApproval  
 Scenario Outline: Create and Publish APIs needed for Subscription Management
 Given I am in apipublisher
 When I provide apipublisher username and password for "<usertype>"
@@ -40,7 +40,7 @@ Examples:
 | usertype|usertypeSP|apiName     |version|prodEndpoint |roleType		   |tier                                                                  |
 |PUBLISHER|APPCREATE |SubTestB    |v1     |auxProd	   |Internal/publisher |Unlimited,Default,Requestbased,Silver,Subscription,Gold,Premium,Bronze|
 
-@BeforeTest @InternalGatewayTypeOne
+@BeforeTest @InternalGatewayTypeOneSubscriptonApproval 
 Scenario Outline: User creates an application 
 Given I am in apimanager
 When I click on apimanager login
@@ -62,7 +62,7 @@ Examples:
 |APPCREATE|AuXTestAPPD	|AuXTestingAPP|INACTIVE|
 |APPCREATE|AuXTestAPPE	|AuXTestingAPP|INACTIVE|
 
-@BeforeTest @InternalGatewayTypeOne
+@BeforeTest @InternalGatewayTypeOneSubscriptonApproval 
 Scenario Outline: Application Approval
 Given I am in hubmanager
 Then I should see the apimanager Manager page header as "Manager"
@@ -101,7 +101,7 @@ Examples:
 |AdminUser|APPCREATE   |AuXTestAPPD  |Approve |ACTIVE |Large   |
 |AdminUser|APPCREATE   |AuXTestAPPE  |Approve |ACTIVE |Large   |
 
-@BeforeTest @InternalGatewayTypeOne
+@BeforeTest @InternalGatewayTypeOneSubscriptonApproval 
 Scenario Outline: User subscribes to Custom API
 Given I am in apimanager
 When I click on apimanager login
@@ -131,7 +131,7 @@ Examples:
 
 
 ### Subscription Approval Scenarios ### 
-@InternalGatewayTypeOne 
+@InternalGatewayTypeOneSubscriptonApproval  
 Scenario Outline: DEP-INTGW-658:API publisher starts assigned task without applying throttling layer
 Given I am in apimanager
 When I click on apimanager login
@@ -193,7 +193,7 @@ Examples:
 |usertypeAdmin|usertype |usertypeSP|apiPublisherOne|appName     |action |options        |apiname   |version|
 |AdminUser    |PUBLISHER|APPCREATE |apipublisherOne|AuXTestAPPA |Approve|Approve,Reject |SubTestB  |v1     |
 
-@InternalGatewayTypeOne 
+@InternalGatewayTypeOneSubscriptonApproval  
 Scenario Outline: DEP-INTGW-659:API publisher starts assigned task and applies throttling layer
 Given I am in apimanager
 When I click on apimanager login
@@ -257,7 +257,7 @@ Examples:
 |usertypeAdmin|usertype |usertypeSP|apiPublisherOne|appName     |action |options        |tiers    |apiname   |version|
 |AdminUser    |PUBLISHER|APPCREATE |apipublisherOne|AuXTestAPPC |Approve|Approve,Reject |Unlimited|SubTestB  |v1     |
 
-@InternalGatewayTypeOne 
+@InternalGatewayTypeOneSubscriptonApproval  
 Scenario Outline: DEP-INTGW-660:API publisher starts assigned task without changing already applied throttling layer
 Given I am in hubmanager
 Then I should see the apimanager Manager page header as "Manager"
@@ -281,7 +281,7 @@ Examples:
 |usertype |apiPublisherOne|appName     |action |options        |subscribeAPI |version|tiers    |
 |PUBLISHER|apipublisherOne|AuXTestAPPC |Approve|Approve,Reject |SubTestB     |v1     |Unlimited|
 
-@InternalGatewayTypeOne
+@InternalGatewayTypeOneSubscriptonApproval 
 Scenario Outline: DEP-INTGW-661:API publisher user starts assigned task and changes the existing throttling layer
 Given I am in hubmanager
 Then I should see the apimanager Manager page header as "Manager"
@@ -306,7 +306,7 @@ Examples:
 |usertype |apiPublisherOne|appName     |action |options        |subscribeAPI |version|olderTier|newTier |
 |PUBLISHER|apipublisherOne|AuXTestAPPC |Approve|Approve,Reject |SubTestB     |v1     |Unlimited|Large   |
 
-@InternalGatewayTypeOne
+@InternalGatewayTypeOneSubscriptonApproval 
 Scenario Outline: DEP-INTGW-662:API publisher approves task without applying throttling layer
 Given I am in hubmanager
 Then I should see the apimanager Manager page header as "Manager"
@@ -341,7 +341,7 @@ Examples:
 |usertypeSP|usertype |apiPublisherOne|appName     |action |subscribeAPI |version|tier  |status   |
 |APPCREATE |PUBLISHER|apipublisherOne|AuXTestAPPA |Approve|SubTestB     |v1     |Bronze|UNBLOCKED|
 
-@InternalGatewayTypeOne
+@InternalGatewayTypeOneSubscriptonApproval 
 Scenario Outline: DEP-INTGW-663:API publisher approves task while applying throttling layer
 Given I am in hubmanager
 Then I should see the apimanager Manager page header as "Manager"
@@ -378,7 +378,7 @@ Examples:
 |usertypeSP|usertype |apiPublisherOne|appName     |action |subscribeAPI |version|tiers  |status   |
 |APPCREATE |PUBLISHER|apipublisherOne|AuXTestAPPC |Approve|SubTestB     |v1     |Premium|UNBLOCKED|
 
-@InternalGatewayTypeOne 
+@InternalGatewayTypeOneSubscriptonApproval  
 Scenario Outline: DEP-INTGW-664:API publisher approves task without changing already applied throttling layer
 Given I am in apimanager
 When I click on apimanager login
@@ -457,7 +457,7 @@ Examples:
 |usertypeAdmin|usertypeSP|usertype |apiPublisherOne|appName     |action |tiers  |status   |apiname   |version|
 |AdminUser    |APPCREATE |PUBLISHER|apipublisherOne|AuXTestAPPD |Approve|Premium|UNBLOCKED|SubTestB  |v1     |
 
-@InternalGatewayTypeOne 
+@InternalGatewayTypeOneSubscriptonApproval  
 Scenario Outline: DEP-INTGW-665:API publisher approves task and changes the previously applied throttling layer
 Given I am in apimanager
 When I click on apimanager login
@@ -536,7 +536,7 @@ Examples:
 |usertypeAdmin|usertypeSP|usertype |apiPublisherOne|appName     |action |olderTier|newTier  |status|apiname   |version|
 |AdminUser    |APPCREATE |PUBLISHER|apipublisherOne|AuXTestAPPE |Approve|Large    |Unlimited|ACTIVE|SubTestB  |v1     |
 
-@InternalGatewayTypeOne 
+@InternalGatewayTypeOneSubscriptonApproval  
 Scenario Outline: DEP-INTGW-666:API publisher rejects subscription approval task
 Given I am in apimanager
 When I click on apimanager login
@@ -612,7 +612,7 @@ Examples:
 |usertypeAdmin|usertypeSP|usertype |apiPublisherOne|appName     |actionAdmin|actionPub |tier   |status  |apiname   |version|
 |AdminUser    |APPCREATE |PUBLISHER|apipublisherOne|AuXTestAPPB |Approve    |Reject    |Default|REJECTED|SubTestB  |v1     |
 
-@InternalGatewayTypeOne 
+@InternalGatewayTypeOneSubscriptonApproval  
 Scenario Outline: DEP-INTGW-667:SP unsubscribe API from application before approval
 Given I am in apimanager
 When I click on apimanager login
@@ -696,7 +696,7 @@ Examples:
 |usertypeAdmin|usertypeSP|usertype |apiPublisherOne|appName     |actionAdmin|tier   |status  |apiname   |version|
 |AdminUser    |APPCREATE |PUBLISHER|apipublisherOne|AuXTestAPPB |Approve    |Default|ON_HOLD |SubTestB  |v1     |
 
-@InternalGatewayTypeOne 
+@InternalGatewayTypeOneSubscriptonApproval  
 Scenario Outline: DEP-INTGW-1289:Subscription task get approved with thorttling layer which is selected by operator admin
 Given I am in apimanager
 When I click on apimanager login

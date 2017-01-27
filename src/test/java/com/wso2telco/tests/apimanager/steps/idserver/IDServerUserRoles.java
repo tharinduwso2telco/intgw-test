@@ -418,11 +418,11 @@ public class IDServerUserRoles extends BasicTestObject {
 	@When("^I clear existing users \"([^\"]*)\"$")
 	public void i_clear_existing_users(String arg1) throws Throwable {
 		CarbonRolesPage carbonRoles = new CarbonRolesPage(driver);
-        carbonRoles.enterUsersName(config.getValue(getEnvironment()) + arg1 + "user");
+        carbonRoles.enterUsersName(config.getValue(getEnvironment() + arg1 + "user"));
 		carbonRoles.clickSearchUsers();
 
 		if (carbonRoles.isUserNameVisible()) {
-			carbonRoles.clickDeleteUser(arg1);
+			carbonRoles.clickDeleteUser(config.getValue(getEnvironment() + arg1 + "user"));
 			carbonRoles.clickYes();
 			Thread.sleep(2000);
 			carbonRoles.clickOK();
