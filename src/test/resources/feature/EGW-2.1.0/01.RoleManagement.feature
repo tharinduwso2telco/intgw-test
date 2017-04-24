@@ -5,7 +5,7 @@ Scenario Outline: HUB-52 : Hub administrator creates user role with API creating
 Given I am in identity server page
 When I enter identity server username credentials
 And I click on identity server sign in
-Then I should see the ids Home page header as "WSO2Telco Hub Home"
+Then I should see the ids Home page header as "WSO2 Identity Server Home"
 When I click on identity server Main tab
 And I click on identity server Configuration Users and Roles List link
 Then I should see ids Configuration menu with first item as "Users and Roles"
@@ -27,12 +27,12 @@ Examples:
 |role   |permissions |
 |Creator|Login,Create|
 
-
+@runner
 Scenario Outline: HUB-53 : Hub administrator creates user role with API publishing permission
 Given I am in identity server page
 When I enter identity server username credentials
 And I click on identity server sign in
-Then I should see the ids Home page header as "WSO2Telco Hub Home"
+Then I should see the ids Home page header as "WSO2 Identity Server Home"
 When I click on identity server Main tab
 And I click on identity server Configuration Users and Roles List link
 Then I should see ids Configuration menu with first item as "Users and Roles"
@@ -62,7 +62,7 @@ Scenario Outline: HUB-54 : Hub administrator creates user role with operator adm
 Given I am in identity server page
 When I enter identity server username credentials
 And I click on identity server sign in
-Then I should see the ids Home page header as "WSO2Telco Hub Home"
+Then I should see the ids Home page header as "WSO2 Identity Server Home"
 When I click on identity server Main tab
 And I click on identity server Configuration Users and Roles List link
 Then I should see ids Configuration menu with first item as "Users and Roles"

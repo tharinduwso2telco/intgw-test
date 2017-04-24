@@ -305,13 +305,13 @@ public class IDServerUserRoles extends BasicTestObject {
 		if (carbonRoles.isRoleVisible()) {
 			carbonRoles.clickDelete();
 			carbonRoles.clickYes();
-			Thread.sleep(3000);
+			//Thread.sleep(3000);
 			carbonRoles.clickOK();
-			Thread.sleep(2000);
+			//Thread.sleep(2000);
 		} else {
-			Thread.sleep(4000);
+			//Thread.sleep(4000);
 			carbonRoles.clickOK();
-			Thread.sleep(5000);
+			//Thread.sleep(5000);
 		}
 	}
    
