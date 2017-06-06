@@ -306,8 +306,11 @@ public class IDServerUserRoles extends BasicTestObject {
 			carbonRoles.clickDelete();
 			carbonRoles.clickYes();
 			//Thread.sleep(3000);
+			Thread.sleep(2000);
 			carbonRoles.clickOK();
 			//Thread.sleep(2000);
+			//carbonRoles.clickOK();
+			//
 		} else {
 			//Thread.sleep(4000);
 			carbonRoles.clickOK();
