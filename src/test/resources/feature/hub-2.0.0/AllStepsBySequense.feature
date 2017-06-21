@@ -1,7 +1,7 @@
 Feature: Create SP and Add New Application
 
 #API Publisher Create and Publish an APIs
-
+  @runnerAllsteps
   Scenario Outline: HUB API Create flow
     Given I am in apipublisher
     When I provide apipublisher username and password for "<usertypePub>"
