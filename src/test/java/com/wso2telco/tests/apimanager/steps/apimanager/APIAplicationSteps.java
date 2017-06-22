@@ -60,15 +60,15 @@ public class APIAplicationSteps extends BasicTestObject {
 	@Then("^I enter \"([^\"]*)\" as name and \"([^\"]*)\" as Description$")
 	public void i_enter_as_name_and_as_Description(String arg1, String arg2) throws Throwable {
 		ApplicationsPage apppage = new ApplicationsPage(driver);
-		if(arg1.isEmpty()){
-			apppage.enterAppllicationName(arg1);
-		}
-		else{
-			String appName = arg1 + randomNumber;
-			apppage.enterAppllicationName(appName);
-			config.setValue(arg1, appName);
-		}
-	
+//		if(arg1.isEmpty()){
+//			apppage.enterAppllicationName(arg1);
+//		}
+//		else{
+//			String appName = arg1;// + randomNumber;
+//
+//			config.setValue(arg1, appName);
+//		}
+		apppage.enterAppllicationName(config.getValue(arg1));
 		Thread.sleep(sleepTime);
 		apppage.enterAppllicationDescription(arg2);
 		Thread.sleep(sleepTime);

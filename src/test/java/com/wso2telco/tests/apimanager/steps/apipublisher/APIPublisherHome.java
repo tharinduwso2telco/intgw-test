@@ -63,7 +63,7 @@ public class APIPublisherHome extends BasicTestObject{
 		publisherHome.deleteExistingAPI(config.getValue(arg1), arg2);
 		Thread.sleep(sleepTime);
 	}
-	
+
 	@When("^I click on apipublisher Add link$")
 	public void i_click_on_apipublisher_Add_link() throws Throwable {
 		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
@@ -85,7 +85,7 @@ public class APIPublisherHome extends BasicTestObject{
 	@When("^I provide apipublisher Design name as \"([^\"]*)\"$")
 	public void i_provide_apipublisher_Design_name_as(String arg1) throws Throwable {
 		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
-		String apiName = arg1+randomNumber;
+		String apiName = arg1;//+randomNumber;
 		publisherHome.enterAPIName(apiName);
 		config.setValue(arg1,apiName);
 	}
@@ -93,7 +93,7 @@ public class APIPublisherHome extends BasicTestObject{
 	@When("^I provide apipublisher Design Context as \"([^\"]*)\"$")
 	public void i_provide_apipublisher_Design_Context_as(String arg1) throws Throwable {
 		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
-		publisherHome.enterAPIContext(arg1+randomNumber);
+		publisherHome.enterAPIContext(arg1);//+randomNumber
 	}
 	
 	@When("^I provide apipublisher Design Version as \"([^\"]*)\"$")
@@ -119,6 +119,11 @@ public class APIPublisherHome extends BasicTestObject{
 	public void i_click_on_Resource_Add_button() throws Throwable {
 		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
 		publisherHome.clickResourceAdd();
+	}
+	@When("^I click wildcard resource all message button")
+	public void i_click_wildcard_resource_all_message_button() throws Throwable {
+		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
+		publisherHome.clickResourceAllYes();
 	}
 	
 	@When("^I provide apipublisher Design Provide Resource name as \"([^\"]*)\"$")
@@ -242,17 +247,20 @@ public class APIPublisherHome extends BasicTestObject{
 	@When("^I provide apipublisher Implement production endpoint as \"([^\"]*)\"$")
 	public void i_provide_apipublisher_Implement_production_endpoint_as(String arg1) throws Throwable {
 		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
+		Thread.sleep(2000);
 		publisherHome.enterProdEndpoint(arg1);
 	}
 	
 	@When("^I provide apipublisher Implement sandbox endpoint as \"([^\"]*)\"$")
 	public void i_provide_apipublisher_Implement_sandbox_endpoint_as(String arg1) throws Throwable {
+		Thread.sleep(1500);
 		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
 		publisherHome.enterSandboxEndpoint(arg1);
 	}
-	
+
 	@When("^I click on apipublisher apipublisher manage button$")
 	public void i_click_on_apipublisher_apipublisher_manage_button() throws Throwable {
+		Thread.sleep(2000);
 		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
 		publisherHome.clickManage();
 	}
@@ -420,7 +428,8 @@ public class APIPublisherHome extends BasicTestObject{
 	public void i_search_API_with(String arg1) throws Throwable {
 		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
 		Thread.sleep(sleepTime);
-		publisherHome.enterAPINameSearch(config.getValue(arg1));
+		publisherHome.enterAPINameSearch(arg1);
+		//publisherHome.enterAPINameSearch(config.getValue(arg1));
 		Thread.sleep(sleepTime);
 		publisherHome.clickSearch();
 		Thread.sleep(sleepTime);
@@ -457,5 +466,11 @@ public class APIPublisherHome extends BasicTestObject{
 		ApplicationsPage apppage = new ApplicationsPage(driver);
 		apppage.clickOk();
 		Thread.sleep(sleepTime);
+	}
+
+	@Then("^I should see the apipublisher \"([^\"]*)\" info label$")
+	public void i_should_see_the_apipublisher_info_label(String arg1) throws Throwable{
+		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
+		Assert.assertTrue(publisherHome.checkApiAvailability(arg1));
 	}
 }

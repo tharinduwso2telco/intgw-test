@@ -33,12 +33,14 @@ public class APIHomeSteps extends BasicTestObject {
 
 	@When("^I click on apimanager sign-up button$")
 	public void i_click_on_apimanager_sign_up_button() throws Throwable {
+		Thread.sleep(3000);
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.clickSignUp();
 	}
 
 	@Then("^I should see the apimanager sign-up for a new account form as \"([^\"]*)\"$")
 	public void i_should_see_the_apimanager_sign_up_for_a_new_account_form_as(String arg1) throws Throwable {
+		Thread.sleep(2000);
 		SignUpPage signupPage = new SignUpPage(driver);
 		Assert.assertTrue("Sign up page did not load properly", signupPage.isSignUpHeader(arg1));
 	}
@@ -156,6 +158,7 @@ public class APIHomeSteps extends BasicTestObject {
 
 	@Then("^I should see the apimanager \"([^\"]*)\" pop up$")
 	public void i_should_see_the_apimanager_pop_up(String arg1) throws Throwable {
+		Thread.sleep(2000);
 		LoginPage loginPage = new LoginPage(driver);
 		Assert.assertTrue("Login pop up is not displayed", loginPage.isLoginDisplayed(arg1));
 	}
