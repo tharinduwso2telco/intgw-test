@@ -18,7 +18,8 @@ glue={
 		"com.wso2telco.tests.apimanager.steps.apimanager",
 		"com.wso2telco.tests.apimanager.steps.apipublisher",
 		"com.wso2telco.tests.apimanager.steps.idserver",
-		"com.wso2telco.tests.apimanager.steps.activitymonitor"
+		"com.wso2telco.tests.apimanager.steps.activitymonitor",
+		"com.wso2telco.tests.apimanager.steps.mailinator"
 },
 tags = {//"@smoke"
 
