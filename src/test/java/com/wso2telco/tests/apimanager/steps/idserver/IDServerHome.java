@@ -64,7 +64,73 @@ public class IDServerHome extends BasicTestObject {
 		CarbonHomePage carbonHome = new CarbonHomePage(driver);
 		carbonHome.clickConfigure();
 	}
-	
+
+	@When("^I click on Features")
+	public void i_click_on_Features() throws Throwable{
+		CarbonHomePage carbonHomePage = new CarbonHomePage(driver);
+		carbonHomePage.clickFeature();
+	}
+
+	@When("^I click on Repository Management tab$")
+	public void i_click_on_Repository_Management_tab() throws Throwable {
+		CarbonHomePage carbonHome = new CarbonHomePage(driver);
+		carbonHome.clickRepoMgt();
+	}
+
+	@When("^I click add repository button$")
+	public void i_click_add_repository_button() throws Throwable {
+		CarbonHomePage carbonHome = new CarbonHomePage(driver);
+		carbonHome.clickAddRepo();
+	}
+
+	@When("^I set values for the repository name as \"([^\"]*)\" and url as \"([^\"]*)\"$")
+	public void i_set_values_for_the_repository_as_and_url_as(String name, String url) throws Throwable {
+		CarbonHomePage carbonHome = new CarbonHomePage(driver);
+		carbonHome.setRepositoryValues(name, url);
+	}
+
+	@When("^I click Available Feature tab$")
+	public void i_click_available_feature_tab() throws Throwable {
+		CarbonHomePage carbonHome = new CarbonHomePage(driver);
+		carbonHome.clickAvlblFeature();
+	}
+
+	@When("^I click find feature button$")
+	public void i_click_find_feature_button() throws Throwable {
+		CarbonHomePage carbonHome = new CarbonHomePage(driver);
+		carbonHome.clickFindFeature();
+	}
+
+	@When("^I click api Key Manager button$")
+	public void i_click_api_key_manager_button() throws Throwable {
+		CarbonHomePage carbonHome = new CarbonHomePage(driver);
+		carbonHome.clickApiKeyManager();
+	}
+
+	@When("^I click api Key Manager Version$")
+	public void i_click_api_key_manager_version() throws Throwable {
+		CarbonHomePage carbonHome = new CarbonHomePage(driver);
+		carbonHome.clickApiKeyManagerVersion();
+	}
+
+	@When("^I tick api management$")
+	public void i_tick_api_management() throws Throwable {
+		CarbonHomePage carbonHome = new CarbonHomePage(driver);
+		carbonHome.tickApiManagement();
+	}
+
+	@When("^I click install button$")
+	public void i_click_install_button() throws Throwable {
+		CarbonHomePage carbonHome = new CarbonHomePage(driver);
+		carbonHome.clickInstall();
+	}
+
+	@When("^I continue install feature process label \"([^\"]*)\" and complete \"([^\"]*)\"")
+	public void i_continue_install_feature_process_label_and_complete(String installing, String installComplete) throws Throwable {
+		CarbonHomePage carbonHome = new CarbonHomePage(driver);
+		carbonHome.installFeature(installing, installComplete);
+	}
+
 	@When("^I click on identity server Main tab$")
 	public void i_click_on_identity_server_Main_tab() throws Throwable {
 		CarbonHomePage carbonHome = new CarbonHomePage(driver);
