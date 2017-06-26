@@ -372,8 +372,9 @@ public class APIPublisherHome extends BasicTestObject{
 	@When("^I click on pop up button Go to Overview$")
 	public void i_click_on_pop_up_button_Go_to_Overview() throws Throwable {
 		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
-		publisherHome.clickPopupGoToOverview();
 		Thread.sleep(sleepTime);
+		publisherHome.clickPopupGoToOverview();
+		
 	}
 	
 	@Then("^I click on apipublisher API \"([^\"]*)\" \"([^\"]*)\"$")

@@ -27,7 +27,7 @@ Feature: Create SP and Add New Application
     Then I should see the status as "PUBLISHED"
     Examples:
       |usertypePub|apiName      |version|context        |prodEndpoint                   |sandboxEndpoint                |ApiTier                                                               |
-      |PUBLISHER  |payment      |v1     |payment     |http://localhost:8281/payment/v1|http://localhost:8181/payment/v1|Unlimited,Default,Requestbased,Silver,Subscription,Gold,Premium,Bronze|
+      |PUBLISHER  |payment      |v1     |payment     |http://localhost:8281/payment/v1|http://localhost:8181/payment/v1|Unlimited,Default,Requestbased,Silver,Subscription,Premium,Bronze|
       |PUBLISHER  |ussd         |v1     |ussd        |http://localhost:8281/ussd/v1     |http://localhost:8181/ussd/v1|Unlimited,Default,Requestbased,Silver,Subscription,Gold,Premium,Bronze|
       |PUBLISHER  |location     |v1     |location     |http://localhost:8281/location/v1|http://localhost:8181/location/v1|Unlimited,Default,Requestbased,Silver,Subscription,Gold,Premium,Bronze|
       |PUBLISHER  |smsmessaging |v1     |smsmessaging|http://localhost:8281/smsmessaging/v1|http://localhost:8181/smsmessaging/v1|Unlimited,Default,Requestbased,Silver,Subscription,Gold,Premium,Bronze|
