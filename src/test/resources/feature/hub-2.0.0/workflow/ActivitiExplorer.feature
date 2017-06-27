@@ -16,10 +16,3 @@ Scenario Outline: Activiti-Explorer bar file upload flow
   Examples:
     |activityBarFile                        |subscriptionFile|
     |ApplicationCreationApprovalWorkflow.bar|SubscriptionCreationApprovalWorkflow.bar|
-
-
-
-#  Given I am in apipublisher
-#  When I provide apipublisher username and password for "<usertypePub>"
-
-#When I enter ActivitiExplorer credentials
