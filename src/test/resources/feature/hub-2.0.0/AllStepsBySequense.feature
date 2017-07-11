@@ -2,7 +2,7 @@ Feature: Create SP and Add New Application
 
 #API Publisher Create and Publish an APIs
 
-  @runnerAllsteps
+  @createAllAPIs
   Scenario Outline: HUB API Create flow
     Given I am in apipublisher
     When I provide apipublisher username and password for "<usertypePub>"
@@ -36,6 +36,7 @@ Feature: Create SP and Add New Application
       |PUBLISHER  |provisioning |v1     |provisioning|http://localhost:8281/provisioning/v1|http://localhost:8181/provisioning/v1|Unlimited,Default,Requestbased,Silver,Subscription,Gold,Premium,Bronze|
       |PUBLISHER  |customerinfo |v1     |customerinfo|http://localhost:8281/customerinfo/v1|http://localhost:8181/customerinfo/v1|Unlimited,Default,Requestbased,Silver,Subscription,Gold,Premium,Bronze|
 
+	@createSPandAddApp
   Scenario Outline: Create SP and Add New Application
     Given I am in apimanager
     When I click on apimanager sign-up button
@@ -62,6 +63,7 @@ Feature: Create SP and Add New Application
       | usertype|LastName   |FirstName   |Email               |appName|Description  |status|
       |SP       |Rajith     |Sudarshana  |rajith@wso2telco.com|APPNAME|AuXTestingAPP|INACTIVE|
 
+	@createOperatorAdmin
   Scenario Outline: Create Operator admin users
     Given I am in apimanager
     When I click on apimanager sign-up button
@@ -81,7 +83,7 @@ Feature: Create SP and Add New Application
       |OPERATOR1ADMIN|TestName1|AuxTestFirst2|ksrajith@gmail.com|
       |OPERATOR2ADMIN|TestName2|AuxTestFirst3|ksrajith@yahoo.com|
 
-
+	@createUserRoles
   Scenario Outline:Hub administrator creates user role with API creating permission
     Given I am in identity server page
     When I enter identity server username credentials
@@ -109,7 +111,7 @@ Feature: Create SP and Add New Application
       |OPERATOR1-admin-role|Login|
       |OPERATOR2-admin-role|Login|
 
-
+	@assignOperatorAdminRoles
   Scenario Outline: Assign operator-admin-roles to operators
     Given I am in identity server page
     When I enter identity server username credentials
@@ -135,7 +137,7 @@ Feature: Create SP and Add New Application
     |OPERATOR1ADMIN|OPERATOR1-admin-role|
     |OPERATOR2ADMIN|OPERATOR2-admin-role|
 
-
+	@adminApproveApp
   Scenario Outline: Admin Approves the created application
     Given I am in hubmanager
     Then I should see the apimanager Manager page header as "Manager"
@@ -164,7 +166,7 @@ Feature: Create SP and Add New Application
     |usertypeAdmin|appName|action |AppTier|
     |AdminUser    |APPNAME|Approve|Unlimited|
 
-
+	@operatorAdminApproveApp
   Scenario Outline: Operator Admin Approves the created application
     Given I am in hubmanager
     Then I should see the apimanager Manager page header as "Manager"
@@ -189,7 +191,7 @@ Feature: Create SP and Add New Application
     |OPERATOR1ADMIN|AdminUser    |APPNAME|Approve|
     |OPERATOR2ADMIN|AdminUser    |APPNAME|Approve|
 
-
+	@adminApproveAPIs
   Scenario Outline:  Admin approve the APIs
     #Login to store and subscribes to the apis
     Given I am in apimanager
