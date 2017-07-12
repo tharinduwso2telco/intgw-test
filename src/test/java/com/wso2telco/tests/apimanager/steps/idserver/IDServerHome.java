@@ -184,5 +184,71 @@ public class IDServerHome extends BasicTestObject {
 		CarbonUserRoles carbonUserRolePage = new CarbonUserRoles(driver);
 		carbonUserRolePage.clickAddNewUser();
 	}
+	
+	@When("^I click on identity server Configuration Claims List link$")
+	public void i_click_on_identity_server_Configuration_Clamis_List_link() throws Throwable {
+		CarbonLeftNav leftNav = new CarbonLeftNav(driver);
+		leftNav.getClaimsListPage();
+	}
+	
+	@When("^I click on wso2 org claims link$")
+	public void I_click_on_wso2_org_claims_link() throws Throwable {
+		CarbonLeftNav leftNav = new CarbonLeftNav(driver);
+		leftNav.clickWSO2OrgClaims();
+	}
+	
+	@When("^I click on Email edit link$")
+	public void I_click_on_Email_edit_link() throws Throwable{
+		CarbonLeftNav leftNav = new CarbonLeftNav(driver);
+		leftNav.clickEmailEdit();
+	}
+	
+	@When("^I click on First Name edit link$")
+	public void I_click_on_First_Name_edit_link() throws Throwable{
+		CarbonLeftNav leftNav = new CarbonLeftNav(driver);
+		leftNav.clickFirstNameEdit();
+	}
+	
+	@When("^I click on Last Name edit link$")
+	public void I_click_on_Last_Name_edit_link() throws Throwable{
+		CarbonLeftNav leftNav = new CarbonLeftNav(driver);
+		leftNav.clickLastNameEdit();
+	}
+	
+	@When("^I select claim required box$")
+	public void I_select_claim_required_box() throws Throwable{
+		CarbonLeftNav leftNav = new CarbonLeftNav(driver);
+		leftNav.clickClaimrequire();
+	}
+	
+	@When("^I click on claim update$")
+	public void I_click_on_claim_update() throws Throwable{
+		CarbonLeftNav leftNav = new CarbonLeftNav(driver);
+		leftNav.clickClaimUpdate();
+	}
+	
+	@When("^I click shutdown or restart link$")
+	public void I_click_shutdown_or_restart_link() throws Throwable{
+		CarbonLeftNav leftNav = new CarbonLeftNav(driver);
+		leftNav.clickShutdownRestart();
+	}
+	
+	@When("^I click on graceful restart link$")
+	public void I_click_on_graceful_restart_link() throws Throwable{
+		CarbonLeftNav leftNav = new CarbonLeftNav(driver);
+		leftNav.clickGracefulRestart();
+	}
+	
+	@When("^I click on yes$")
+	public void I_click_on_yes() throws Throwable{
+		CarbonLeftNav leftNav = new CarbonLeftNav(driver);
+		leftNav.clickYes();
+	}
+	
+	@When("^I click on ok$")
+	public void I_click_on_ok() throws Throwable{
+		CarbonLeftNav leftNav = new CarbonLeftNav(driver);
+		leftNav.clickOK();
+	}
 }
 

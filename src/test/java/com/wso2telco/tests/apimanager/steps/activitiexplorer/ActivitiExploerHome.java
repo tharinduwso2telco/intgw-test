@@ -2,6 +2,8 @@ package com.wso2telco.tests.apimanager.steps.activitiexplorer;
 
 import com.wso2telco.apimanager.pageobjects.activitiexplorer.ActivitiExplorerHomePage;
 import com.wso2telco.tests.apimanager.base.BasicTestObject;
+
+import cucumber.api.java.After;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.By;
@@ -66,6 +68,12 @@ public class ActivitiExploerHome extends BasicTestObject {
         ActivitiExplorerHomePage actExpHome = new ActivitiExplorerHomePage(driver);
         actExpHome.uploadBarFile(config.getValue(environment+"barFileLocation")+fileName);
     }
+    
+	@After
+	public void tearDown() {
+		closeAllBrowsers();
+	}
+   
 
 
 }
