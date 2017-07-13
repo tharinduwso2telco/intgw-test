@@ -48,6 +48,7 @@ public class APIPublisherHome extends BasicTestObject{
 	
 	@Then("^I should see apipublisher username \"([^\"]*)\" at the top right corner of the page$")
 	public void i_should_see_apipublisher_username_at_the_top_right_corner_of_the_page(String arg1) throws Throwable {
+		Thread.sleep(sleepTime);
 		APIPublisherHomePage publisherHome = new APIPublisherHomePage(driver);
 		Assert.assertTrue("Incorrect user login", publisherHome.isUserLogin(config.getValue(getEnvironment() + arg1 + "user")));
 	}
