@@ -22,7 +22,10 @@ glue={
 tags = {
 		//"@smoke"
         //"@BarFileUpload"
-		"@runnerAllsteps"
+		//"@runnerAllsteps"
+//		"@createPublishers"
+//		"@createAPIPublisherRoles"
+		"@assignPublisherRoles"
 }
 )
 public class RunCukesTest {

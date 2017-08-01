@@ -108,8 +108,8 @@ Feature: Create SP and Add New Application
     And I click on Success pop up message Ok button
   Examples:
       |role                |permissions |
-      |operator1-admin-role|Login|
-      |operator2-admin-role|Login|
+      |OPERATOR1ROLE|Login|
+      |OPERATOR2ROLE|Login|
 
 	@assignOperatorAdminRoles
   Scenario Outline: Assign operator-admin-roles to operators
@@ -134,8 +134,8 @@ Feature: Create SP and Add New Application
 
   Examples:
     |usertype      |roleType|
-    |OPERATOR1ADMIN|operator1-admin-role|
-    |OPERATOR2ADMIN|operator2-admin-role|
+    |OPERATOR1ADMIN|OPERATOR1ROLE|
+    |OPERATOR2ADMIN|OPERATOR2ROLE|
 
 	@adminApproveApp
   Scenario Outline: Admin Approves the created application

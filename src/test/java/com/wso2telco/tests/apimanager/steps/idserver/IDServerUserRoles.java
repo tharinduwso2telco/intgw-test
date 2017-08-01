@@ -41,7 +41,7 @@ public class IDServerUserRoles extends BasicTestObject {
 	@When("^I enter ids Add Role role name as \"([^\"]*)\"$")
 	public void i_enter_ids_Add_Role_role_name_as(String arg1) throws Throwable {
 		CarbonRolesPage carbonRoles = new CarbonRolesPage(driver);
-		carbonRoles.enterRoleName(arg1);
+		carbonRoles.enterRoleName(config.getValue(getEnvironment() + arg1));
 	}
 
 	@When("^I click on ids Add Role next button$")
@@ -245,7 +245,7 @@ public class IDServerUserRoles extends BasicTestObject {
 	@When("^I checked the ids List of roles \"([^\"]*)\" check box$")
 	public void i_checked_the_ids_List_of_roles_check_box(String arg1) throws Throwable {
 		CarbonUserRoles carbonUserRolesPage = new CarbonUserRoles(driver);
-		carbonUserRolesPage.clickRolesSearchArea(arg1);
+		carbonUserRolesPage.clickRolesSearchArea(config.getValue(getEnvironment() + arg1));
 	}
 	
 	@When("^I click on ids List of roles finish button$")
@@ -299,7 +299,7 @@ public class IDServerUserRoles extends BasicTestObject {
 	@When("^I clear existing aggrigator role \"([^\"]*)\"$")
 	public void i_clear_existing_aggrigator_role(String arg1) throws Throwable {
 		CarbonRolesPage carbonRoles = new CarbonRolesPage(driver);
-		carbonRoles.enterAggrigatorRoleName(arg1);
+		carbonRoles.enterAggrigatorRoleName(config.getValue(getEnvironment() + arg1));
 		carbonRoles.clickSearch();
 
 		if (carbonRoles.isRoleVisible()) {
